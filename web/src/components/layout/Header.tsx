@@ -1,5 +1,6 @@
 import { Info, Share2, Check } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import type { CityId, Lang } from '@/api/types'
 import { Button } from '@/components/ui/button'
@@ -7,6 +8,7 @@ import { Tip } from '@/components/ui/tooltip'
 import { DATA_MODE } from '@/lib/env'
 import { cn } from '@/lib/utils'
 import { CITY_IDS, useApp } from '@/state/store'
+import { HeaderSearch } from './HeaderSearch'
 
 export function Logo({ onClick }: { onClick?: () => void }) {
   const { t } = useTranslation()
@@ -67,24 +69,68 @@ export function CitySwitch({ className }: { className?: string }) {
   )
 }
 
+/** Clipboard API first; outside a secure context (LAN demo over http) fall back to execCommand. */
+async function copyText(text: string): Promise<boolean> {
+  if (window.isSecureContext && navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text)
+      return true
+    } catch {
+      /* fall through */
+    }
+  }
+  const ta = document.createElement('textarea')
+  ta.value = text
+  ta.setAttribute('readonly', '')
+  ta.style.position = 'fixed'
+  ta.style.top = '0'
+  ta.style.opacity = '0'
+  document.body.appendChild(ta)
+  ta.select()
+  try {
+    return document.execCommand('copy')
+  } catch {
+    return false
+  } finally {
+    ta.remove()
+  }
+}
+
 export function ShareButton({ compact }: { compact?: boolean }) {
   const { t } = useTranslation()
   const [done, setDone] = useState(false)
+  useEffect(() => {
+    if (!done) return
+    const h = setTimeout(() => setDone(false), 2000)
+    return () => clearTimeout(h)
+  }, [done])
   const share = async () => {
     const url = window.location.href
-    try {
-      await navigator.clipboard.writeText(url)
-      setDone(true)
-      setTimeout(() => setDone(false), 2000)
-    } catch {
-      window.prompt(t('nav.shareFailed'), url)
+    if (typeof navigator.share === 'function' && window.matchMedia('(pointer: coarse)').matches) {
+      try {
+        await navigator.share({ title: document.title, url })
+        return
+      } catch (e) {
+        if ((e as DOMException)?.name === 'AbortError') return
+      }
     }
+    if (await copyText(url)) setDone(true)
+    else window.prompt(t('nav.shareFailed'), url)
   }
   return (
-    <Button variant="secondary" size={compact ? 'icon' : 'sm'} onClick={share} aria-label={t('nav.share')} aria-live="polite">
-      {done ? <Check size={16} /> : <Share2 size={16} />}
-      {!compact && (done ? t('nav.shareCopied') : t('nav.share'))}
-    </Button>
+    <>
+      <Button variant="secondary" size={compact ? 'icon' : 'sm'} onClick={share} aria-label={t('nav.share')}>
+        {done ? <Check size={16} /> : <Share2 size={16} />}
+        {!compact && (done ? t('nav.shareCopied') : t('nav.share'))}
+      </Button>
+      {done &&
+        createPortal(
+          <div role="status" className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2 rounded-full bg-ink px-4 py-2 text-sm font-medium text-white shadow-[var(--shadow-pop)]">
+            {t('nav.shareCopied')}
+          </div>,
+          document.body,
+        )}
+    </>
   )
 }
 
@@ -104,9 +150,10 @@ export function Header() {
   const { t } = useTranslation()
   const { set, city } = useApp()
   return (
-    <header className="z-30 flex h-16 shrink-0 items-center gap-2 border-b border-line bg-surface/95 px-3 backdrop-blur sm:gap-3 sm:px-5">
+    <header className="relative z-30 flex h-16 shrink-0 items-center gap-2 border-b border-line bg-surface/95 px-3 backdrop-blur sm:gap-3 sm:px-5">
       <Logo onClick={() => set({ city: null, step: 'persona', view: 'app', sel: null })} />
       <DataModeBadge />
+      <HeaderSearch />
       <div className="ml-auto flex items-center gap-2">
         {city && <CitySwitch className="hidden sm:inline-flex" />}
         <LangSwitch />

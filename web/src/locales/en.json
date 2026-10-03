@@ -223,6 +223,21 @@
     "loading": "Loading map…",
     "error": "The map could not load."
   },
+  "mapUi": {
+    "searchPlaceholder": "Search an address or place…",
+    "openSearch": "Search an address",
+    "closeSearch": "Close search",
+    "nearest": "Nobody lives here – showing the nearest place",
+    "noneNearby": "Nobody lives here and there is no housing nearby",
+    "outside": "This address is outside the city map",
+    "hover": {
+      "match": "{{value}}% match",
+      "failing": "outside your limits",
+      "criterion": "{{criterion}} {{value}}/100",
+      "uninhabited": "Nobody lives here",
+      "noData": "no data"
+    }
+  },
   "detail": {
     "title": "Place details",
     "radar": "Compared with the city median",

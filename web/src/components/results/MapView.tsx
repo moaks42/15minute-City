@@ -7,6 +7,7 @@ import { useCommute, useCriterionScore, useGrid, useScore } from '@/api/hooks'
 import type { CityId } from '@/api/types'
 import { commuteExpression, FAILING, quantileBreaks, seqExpression, UNINHABITED } from '@/lib/palette'
 import { useApp } from '@/state/store'
+import { HoverCard, type HoverInfo } from './HoverCard'
 import { Legend } from './Legend'
 
 const NOT_HAB = ['!', ['to-boolean', ['get', 'habitable']]]
@@ -49,6 +50,9 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
   const commute = useCommute(mapMode === 'commute' ? anchor?.lat : undefined, anchor?.lon, anchor?.mode)
   const critMode = mapMode !== 'match' && mapMode !== 'commute' ? mapMode : null
   const critScores = useCriterionScore(critMode)
+  // Hover card: desktop pointers only (touch devices get no hover).
+  const [canHover] = useState(() => window.matchMedia('(hover: hover)').matches)
+  const [pointer, setPointer] = useState<HoverInfo | null>(null)
 
   const habitable = useMemo(() => {
     const s = new Set<string>()
@@ -58,6 +62,27 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
     }
     return s
   }, [grid.data])
+
+  // Per-cell values for the hover card (`Map` is the map component here, hence globalThis.Map).
+  const scoreByCell = useMemo(() => new globalThis.Map((score.data?.cells ?? []).map(([id, s, pass]) => [id, { s, pass }] as const)), [score.data])
+  const commuteByCell = useMemo(() => new globalThis.Map((commute.data?.cells ?? []).map(([id, m]) => [id, m] as const)), [commute.data])
+  const critByCell = useMemo(() => new globalThis.Map((critScores.data?.cells ?? []).map(([id, v]) => [id, v] as const)), [critScores.data])
+  const hoverText = useMemo((): { value: string; note: string | null } | null => {
+    if (!pointer) return null
+    if (!pointer.habitable) return { value: t('mapUi.hover.uninhabited'), note: null }
+    const noData = { value: t('mapUi.hover.noData'), note: null }
+    if (mapMode === 'match') {
+      const v = scoreByCell.get(pointer.h3)
+      return v ? { value: t('mapUi.hover.match', { value: v.s }), note: v.pass === 0 ? t('mapUi.hover.failing') : null } : noData
+    }
+    if (mapMode === 'commute') {
+      if (!commute.data) return noData
+      const m = commuteByCell.get(pointer.h3)
+      return { value: m === undefined || m >= 255 ? t('map.over60') : t('map.minutes', { count: m }), note: null }
+    }
+    const v = critByCell.get(pointer.h3)
+    return v == null || !critMode ? noData : { value: t('mapUi.hover.criterion', { criterion: t(`criteria.${critMode}`), value: Math.round(v) }), note: null }
+  }, [pointer, mapMode, critMode, scoreByCell, commuteByCell, critByCell, commute.data, t])
 
   // Fly to the city when it changes.
   useEffect(() => {
@@ -160,8 +185,25 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
         }}
         interactiveLayerIds={preview ? [] : ['hex-fill']}
         onClick={preview ? undefined : onClick}
-        onMouseMove={preview ? undefined : (e) => set({ hover: (e.features?.[0]?.properties?.h3 as string) ?? null })}
-        onMouseLeave={() => set({ hover: null })}
+        onMouseMove={
+          preview
+            ? undefined
+            : (e) => {
+                const p = e.features?.[0]?.properties
+                const id = (p?.h3 as string | undefined) ?? null
+                set({ hover: id })
+                if (!canHover) return
+                setPointer(
+                  id && p
+                    ? { h3: id, lng: e.lngLat.lng, lat: e.lngLat.lat, name: (p.neighborhood as string) || null, district: (p.district_name as string) || null, habitable: !!p.habitable }
+                    : null,
+                )
+              }
+        }
+        onMouseLeave={() => {
+          set({ hover: null })
+          setPointer(null)
+        }}
         cursor={hover ? 'pointer' : 'grab'}
         attributionControl={{ compact: true }}
         style={{ width: '100%', height: '100%' }}
@@ -211,6 +253,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
             </button>
           </Marker>
         ))}
+        {!preview && canHover && pointer && hoverText && <HoverCard info={pointer} value={hoverText.value} note={hoverText.note} />}
         {!preview &&
           anchors.map((a) => (
             <Marker key={a.id} latitude={a.lat} longitude={a.lon} anchor="bottom">

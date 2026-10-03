@@ -228,6 +228,21 @@
     "loading": "Ładuję mapę…",
     "error": "Nie udało się załadować mapy."
   },
+  "mapUi": {
+    "searchPlaceholder": "Szukaj adresu lub miejsca…",
+    "openSearch": "Szukaj adresu",
+    "closeSearch": "Zamknij wyszukiwanie",
+    "nearest": "Tu nikt nie mieszka – pokazuję najbliższe miejsce",
+    "noneNearby": "Tu nikt nie mieszka, a w pobliżu nie ma zamieszkanych miejsc",
+    "outside": "Ten adres jest poza mapą miasta",
+    "hover": {
+      "match": "{{value}}% dopasowania",
+      "failing": "poza Twoimi limitami",
+      "criterion": "{{criterion}} {{value}}/100",
+      "uninhabited": "Tu nikt nie mieszka",
+      "noData": "brak danych"
+    }
+  },
   "detail": {
     "title": "Szczegóły miejsca",
     "radar": "W porównaniu z medianą miasta",

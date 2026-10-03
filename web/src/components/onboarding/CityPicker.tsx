@@ -29,7 +29,7 @@ export function CityPicker() {
   const { t } = useTranslation()
   const setCity = useApp((s) => s.setCity)
   return (
-    <div className="min-h-full bg-bg">
+    <div className="h-full overflow-y-auto bg-bg">
       <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4 sm:px-6">
         <Logo />
         <LangSwitch />

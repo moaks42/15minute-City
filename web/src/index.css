@@ -36,6 +36,12 @@
   #root {
     height: 100%;
   }
+  /* The app scrolls inside its own panels; the page itself never scrolls or bounces (wheel over the header). */
+  html,
+  body {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
   body {
     background: var(--color-bg);
     color: var(--color-ink);
@@ -68,6 +74,21 @@
 
 .maplibregl-ctrl-attrib {
   font-size: 11px;
+}
+/* Map hover card: follows the mouse, must never intercept it. */
+.hover-card,
+.hover-card * {
+  pointer-events: none !important;
+}
+.hover-card .maplibregl-popup-content {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-pop);
+  font-family: var(--font-sans);
+}
+.hover-card .maplibregl-popup-tip {
+  display: none;
 }
 .sr-only {
   position: absolute;

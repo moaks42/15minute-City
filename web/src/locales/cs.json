@@ -228,6 +228,21 @@
     "loading": "Načítám mapu…",
     "error": "Mapu se nepodařilo načíst."
   },
+  "mapUi": {
+    "searchPlaceholder": "Hledat adresu nebo místo…",
+    "openSearch": "Hledat adresu",
+    "closeSearch": "Zavřít hledání",
+    "nearest": "Tady nikdo nebydlí – ukazuji nejbližší místo",
+    "noneNearby": "Tady nikdo nebydlí a v okolí není žádné obydlené místo",
+    "outside": "Adresa je mimo mapu města",
+    "hover": {
+      "match": "{{value}} % shoda",
+      "failing": "mimo tvé limity",
+      "criterion": "{{criterion}} {{value}}/100",
+      "uninhabited": "Nikdo tu nebydlí",
+      "noData": "bez dat"
+    }
+  },
   "detail": {
     "title": "Detail místa",
     "radar": "Ve srovnání s mediánem města",
