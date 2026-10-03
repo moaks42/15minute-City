@@ -10,7 +10,7 @@ import pandas as pd
 import shapely
 from scipy.spatial import cKDTree
 
-from . import osm
+from . import osm, slope
 from .common import log
 from .context import Ctx
 from .network import MAJOR, STREET, count_within, lengths_within, segments, to_xy
@@ -194,7 +194,12 @@ def compute(ctx: Ctx, parks_extra: gpd.GeoDataFrame | None = None, walk_override
     out["transit.night_departures_500m"] = a_night
     out["accessibility.accessible_stop_share"] = np.round(a_wcs, 1)
     out["accessibility.lowfloor_trip_share"] = np.round(a_wct, 1)
-    out["accessibility.slope_pct"] = np.nan  # P2: needs a DEM
+    try:
+        out["accessibility.slope_pct"] = slope.compute(ctx)
+    except Exception as ex:  # noqa: BLE001 — P2 indicator; never block the build
+        log.warning("[%s] slope_pct failed: %s → NaN", ctx.city, ex)
+        ctx.man.record("copernicus_dem", status="missing", note=f"DEM failed: {str(ex)[:200]}")
+        out["accessibility.slope_pct"] = np.nan
     if not has_wcb:
         log.warning("[%s] GTFS has no wheelchair_boarding info → accessible_stop_share NaN", ctx.city)
     if not has_wct:

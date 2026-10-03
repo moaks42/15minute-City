@@ -108,7 +108,7 @@ def write(ctx: Ctx, g: gpd.GeoDataFrame, feats: pd.DataFrame, pois: pd.DataFrame
 
     # manifest hygiene: drop stale keys, explain verified-but-unused sources, clear stale fetch-failure notes
     keys = {x["key"]: x for x in ctx.s["sources"]}
-    derived = {"r5py_travel_times"}
+    derived = {"r5py_travel_times", "copernicus_dem"}
     ctx.man.data["sources"] = [e for e in ctx.man.data["sources"] if e["key"] in keys or e["key"] in derived]
     for e in ctx.man.data["sources"]:
         src = keys.get(e["key"], {})

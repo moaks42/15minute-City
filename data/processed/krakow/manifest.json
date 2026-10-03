@@ -1,6 +1,6 @@
 {
   "city": "krakow",
-  "updatedAt": "2026-10-03T14:56:30+00:00",
+  "updatedAt": "2026-10-03T15:03:48+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -10,6 +10,15 @@
       "rows": null,
       "status": "ok",
       "note": "reachable (verified 2026-10-03); not used for features — web basemap (C)"
+    },
+    {
+      "key": "copernicus_dem",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_{tile}_DEM/Copernicus_DSM_COG_10_{tile}_DEM.tif",
+      "fetchedAt": "2026-10-03T15:03:30+00:00",
+      "licence": "Copernicus DEM GLO-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA",
+      "rows": 4,
+      "status": "ok",
+      "note": "GLO-30 tiles N49_00_E019_00, N49_00_E020_00, N50_00_E019_00, N50_00_E020_00; reprojected to EPSG:2180 at 30 m, Gaussian σ=60 m (DSM → terrain-scale), slope % mean within 180 m"
     },
     {
       "key": "geocode",
@@ -113,7 +122,7 @@
     {
       "key": "nfz",
       "url": "https://api.nfz.gov.pl/app-itl-api/queues",
-      "fetchedAt": "2026-10-03T14:55:51+00:00",
+      "fetchedAt": "2026-10-03T15:01:09+00:00",
       "licence": "NFZ open API",
       "rows": 46,
       "status": "ok",
@@ -135,7 +144,7 @@
       "licence": "ODbL",
       "rows": null,
       "status": "missing",
-      "note": "fetch failed 2026-10-03T14:04: HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/status (Caused by NewConnectionError(\"HTTPSConnection(host='overpass-api.de', port=443): Failed to establish  (optional) [ad-hoc checks only; PBF used instead]"
+      "note": "fetch failed 2026-10-03T14:04: HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/status (Caused by NewConnectionError(\"HTTPSConnection(host='overpass-api.de', port=443): Failed to establish  (optional) [ad-hoc checks only; PBF used instead] [ad-hoc checks only; PBF used instead]"
     },
     {
       "key": "park_e_bike",
@@ -158,7 +167,7 @@
     {
       "key": "rcn",
       "url": "https://geodezja.eco.um.krakow.pl/cgi-bin/krakow-rcn?SERVICE=WFS&REQUEST=GetCapabilities",
-      "fetchedAt": "2026-10-03T14:56:30+00:00",
+      "fetchedAt": "2026-10-03T15:03:47+00:00",
       "licence": "RCN, Wydział Geodezji UM Kraków (public register)",
       "rows": 23022,
       "status": "ok",
@@ -226,6 +235,6 @@
     "h3Res": 9,
     "metricCrs": "EPSG:2180"
   },
-  "dataVersion": "2026-10-03T14:56:30+00:00",
-  "builtAt": "2026-10-03T14:56:30+00:00"
+  "dataVersion": "2026-10-03T15:03:47+00:00",
+  "builtAt": "2026-10-03T15:03:47+00:00"
 }
