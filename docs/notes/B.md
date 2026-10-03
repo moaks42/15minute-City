@@ -2,8 +2,11 @@
 
 ## Status
 - **contracts-v1** is on main: `config/indicators.yaml`, `config/cities/{krakow,praha}.yaml`, `contracts/openapi.yaml`, `contracts/types.ts`, `contracts/DATA_CONTRACT.md`, `contracts/fixtures/**`, `contracts/tools/*`.
-- The engine is in progress on branch `b-engine`.
-- Engine URL: _TBD (deployed by M2)_
+- The engine on branch `b-engine` implements every §7.2 endpoint (departures = P2 stub) and serves `contracts/openapi.yaml` as `/openapi.json`. 45 tests are green (contract, monotonicity, filters, relax hint, determinism, explanations = raw values, partial data, export, latency).
+- Until A's data is in `data/processed/`, it runs on **synthetic** data (`/api/health` → `dataSource: synthetic`, status `degraded`).
+- Perf: `/score` Praha (4.9k cells) compute p95 ≈ 3–5 ms single-threaded; load test 300 req at concurrency 16 on 2 workers → 0 errors, ~140 req/s, server p95 < 100 ms.
+- Engine URL: _TBD. Render blueprint `render.yaml` is ready; waiting for `RENDER_API_KEY` in `.env`._
+- Local Docker could not be verified (colima VM on this machine fails SSH provisioning). The build steps were replicated without Docker (`--no-dev` env, warm-up, uvicorn): OK, ready in 0.4 s.
 
 ## Contract changes (after v1: additive only, tagged contracts-vN)
 | tag | change |
@@ -19,6 +22,7 @@
 - A complete example dataset in the right layout (from M1, once `b-engine` is merged): `cd engine && uv run python -m app.devdata` → `engine/.devdata/{city}/` (synthetic values).
 
 ## For C (web)
+- **Run the engine locally:** `cd engine && uv sync && uv run uvicorn app.main:app --port 8000` → http://localhost:8000/docs (CORS `*`). Synthetic data is generated on first start.
 - Types: `contracts/types.ts` (generated: `./contracts/tools/gen-types.sh`). Use the aliases at the bottom (`ScoreRequest`, `ScoreResponse`, `Place`…).
 - Fixtures: `contracts/fixtures/` → `cities.json`, `health.json`, `twins.json` (K→P), `twins_praha_krakow.json`, and per city: `meta`, `score_student`, `score_parent`, `score_districts` (aggregate=district), `score_nomatch` (relax hint), `place`, `commute`, `similar`, `districts`, `geocode`, `live_air`, `grid.sample.geojson` (217 cells, numeric feature `id`).
 - Labels in `/meta` are `{pl, cs, en}` objects. Explanation, relax-hint and budget sentences arrive as strings in the requested `lang`.
@@ -30,3 +34,4 @@
 
 ## Log
 - 10-03: contracts v1 written; fixtures generated and validated (26 files, 0 schema errors); data validator tested on synthetic data (positive + negative).
+- 10-03: contracts v2 (optional addresses.parquet). Engine on b-engine: all endpoints, ML (k=6, MLP holdout 0.95 on synthetic), live air verified against GIOŚ + ČHMÚ, Photon fallback, static export, CI workflow, load test script (`engine/scripts/loadtest.py`).
