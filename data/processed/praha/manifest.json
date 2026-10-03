@@ -1,6 +1,6 @@
 {
   "city": "praha",
-  "updatedAt": "2026-10-03T14:35:33+00:00",
+  "updatedAt": "2026-10-03T14:41:52+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -256,11 +256,12 @@
     }
   ],
   "build": {
-    "builtAt": "2026-10-03T14:35:33+00:00",
     "serviceDate": "20261006",
     "cells": 4976,
     "habitable": 2967,
     "h3Res": 9,
     "metricCrs": "EPSG:5514"
-  }
+  },
+  "dataVersion": "2026-10-03T14:41:52+00:00",
+  "builtAt": "2026-10-03T14:41:52+00:00"
 }

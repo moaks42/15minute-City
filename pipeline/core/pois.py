@@ -44,19 +44,27 @@ CATEGORIES = {
     "playground": "leisure=playground",
     "park": "leisure=park",
     "sports": "leisure=sports_centre|fitness_centre|sports_hall|ice_rink|swimming_pool(public)",
-    "pool": "public swimming pool / water park",
-    "food": "amenity=restaurant|cafe|fast_food|food_court|ice_cream|pub|bar|biergarten",
-    "nightlife": "amenity=bar|pub|nightclub|biergarten",
+    "kids_sports": "public swimming pool / water park / sports centre or hall",
+    "restaurant": "amenity=restaurant|fast_food|food_court",
+    "cafe": "amenity=cafe|ice_cream",
+    "bar": "amenity=bar|pub|biergarten",
+    "nightclub": "amenity=nightclub",
     "culture": "amenity=theatre|cinema|arts_centre|community_centre; tourism=museum|gallery",
     "bench": "amenity=bench",
-    "bicycle_parking": "amenity=bicycle_parking (PL: + ZTP stojaki)",
-    "bike_share": "amenity=bicycle_rental",
+    "bike_rack": "amenity=bicycle_parking (PL: + ZTP stojaki)",
+    "bikeshare_station": "amenity=bicycle_rental",
     "tram_stop": "GTFS route_type 0 stop / railway=tram_stop",
     "bus_stop": "GTFS route_type 3 stop",
     "metro_station": "GTFS route_type 1 stop / station=subway",
     "rail_station": "railway=station|halt (train) / GTFS route_type 2",
     "transit_stop": "any GTFS stop with weekday service",
 }
+# categories written to pois.parquet (contracts/DATA_CONTRACT.md §3); the rest are internal helpers
+VOCAB = ["supermarket", "discount_grocery", "pharmacy", "post_office", "parcel_locker", "bakery", "marketplace", "atm",
+         "playground", "park", "nursery", "kindergarten", "primary_school", "secondary_school", "university", "library",
+         "gp_clinic", "paediatrician", "gynaecology", "dentist", "hospital_er", "maternity_ward", "bus_stop", "tram_stop",
+         "metro_station", "rail_station", "bike_rack", "bikeshare_station", "culture", "sports", "kids_sports",
+         "restaurant", "cafe", "bar", "nightclub", "bench"]
 
 DISCOUNT = re.compile(r"lidl|biedronka|aldi|penny|netto|kaufland|dino", re.I)
 NURSERY = re.compile(r"żłob|zlob|jesl|dětsk[áa] skupin|detska skupin|nursery|kids club", re.I)
@@ -115,15 +123,17 @@ def from_osm(city: str) -> pd.DataFrame:
         "park": leis.eq("park"),
         "sports": leis.isin(["sports_centre", "fitness_centre", "sports_hall", "ice_rink"])
         | (leis.eq("swimming_pool") & ~access.isin(["private", "customers", "no"])),
-        "pool": leis.eq("water_park") | (leis.isin(["swimming_pool", "sports_centre"]) & col(g, "sport").fillna("").str.contains("swimming")
-                                         & ~access.isin(["private", "no"])),
-        "food": amen.isin(["restaurant", "cafe", "fast_food", "food_court", "ice_cream", "pub", "bar", "biergarten"]),
-        "nightlife": amen.isin(["bar", "pub", "nightclub", "biergarten"]),
+        "kids_sports": leis.eq("water_park") | (leis.isin(["swimming_pool", "sports_centre", "sports_hall"])
+                                                & ~access.isin(["private", "customers", "no"])),
+        "restaurant": amen.isin(["restaurant", "fast_food", "food_court"]),
+        "cafe": amen.isin(["cafe", "ice_cream"]),
+        "bar": amen.isin(["bar", "pub", "biergarten"]),
+        "nightclub": amen.eq("nightclub"),
         "culture": amen.isin(["theatre", "cinema", "arts_centre", "community_centre", "concert_hall"])
         | tour.isin(["museum", "gallery"]),
         "bench": amen.eq("bench"),
-        "bicycle_parking": amen.eq("bicycle_parking"),
-        "bike_share": amen.eq("bicycle_rental"),
+        "bike_rack": amen.eq("bicycle_parking"),
+        "bikeshare_station": amen.eq("bicycle_rental"),
         "tram_stop": rail.eq("tram_stop"),
         "metro_station": station.eq("subway") | (rail.eq("station") & subway.eq("yes")),
         "rail_station": rail.isin(["station", "halt"]) & ~station.isin(["subway", "light_rail", "monorail"])
@@ -137,7 +147,7 @@ def from_osm(city: str) -> pd.DataFrame:
         extra = sub[["osm_type", "osm_id"]].astype(str).apply(lambda r: json.dumps({"osm": f"{r.iloc[0]}/{r.iloc[1]}"}), axis=1)
         rows.append(pd.DataFrame({"category": cat, "name": col(sub, "name").fillna("").to_numpy(),
                                   "lat": sub["lat"].to_numpy(), "lon": sub["lon"].to_numpy(),
-                                  "source": "osm", "extra_json": extra.to_numpy()}))
+                                  "source": f"osm_{city}", "extra_json": extra.to_numpy()}))
     df = pd.concat(rows, ignore_index=True)
     return df
 

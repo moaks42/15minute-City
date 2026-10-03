@@ -18,10 +18,8 @@ from core import grid as core_grid
 from core import gtfs, osm, pois as core_pois
 from core.common import interim_dir, log, now_iso, out_dir
 from core.context import Ctx
+from core.align import align
 from core.network import WalkGraph
-
-FEATURE_ORDER = ["commute", "transit", "active", "green", "education", "family", "safety", "price", "shops",
-                 "health", "environment", "leisure", "accessibility"]
 
 
 def neighborhoods_from_places(ctx: Ctx) -> tuple[pd.Series, pd.Series]:
@@ -55,8 +53,9 @@ def gtfs_stops(ctx: Ctx) -> pd.DataFrame:
     return st
 
 
-def stop_pois(st: pd.DataFrame) -> pd.DataFrame:
+def stop_pois(ctx: Ctx, st: pd.DataFrame) -> pd.DataFrame:
     s = st[st["departures_day"] > 0]
+    feed_key = {x["file"].rsplit(".", 1)[0]: x["key"] for x in ctx.s["sources"]}
     rows = []
     for cat, m in [("transit_stop", np.ones(len(s), bool)),
                    ("tram_stop", s["modes"].apply(lambda x: "tram" in x).to_numpy()),
@@ -65,10 +64,53 @@ def stop_pois(st: pd.DataFrame) -> pd.DataFrame:
                    ("rail_station", s["modes"].apply(lambda x: "rail" in x).to_numpy())]:
         sub = s[m]
         rows.append(pd.DataFrame({"category": cat, "name": sub["stop_name"].to_numpy(), "lat": sub["lat"].to_numpy(),
-                                  "lon": sub["lon"].to_numpy(), "source": "gtfs:" + sub["feed"].to_numpy(),
+                                  "lon": sub["lon"].to_numpy(), "source": sub["feed"].map(feed_key).to_numpy(),
                                   "extra_json": [json.dumps({"stop_id": a, "dep_peak_per_h": float(b)})
                                                  for a, b in zip(sub["stop_id"], sub["dep_peak_per_h"])]}))
     return pd.concat(rows, ignore_index=True)
+
+
+def write(ctx: Ctx, g: gpd.GeoDataFrame, feats: pd.DataFrame, pois: pd.DataFrame, districts: gpd.GeoDataFrame,
+          nb_polys: gpd.GeoDataFrame | None) -> None:
+    """Write data/processed/{city}/ exactly as contracts/DATA_CONTRACT.md describes."""
+    od = out_dir(ctx.city)
+    built = now_iso()
+    # grid.geojson: numeric feature id = row index (same order as features.parquet)
+    feats_json = []
+    for i, r in enumerate(g.itertuples(index=False)):
+        feats_json.append({"type": "Feature", "id": i, "geometry": {"type": "Polygon", "coordinates": [
+            [[round(x, 6), round(y, 6)] for x, y in r.geometry.exterior.coords]]},
+            "properties": {"h3": r.h3, "district_id": str(r.district_id), "district_name": str(r.district_name),
+                           "neighborhood": None if pd.isna(r.neighborhood) else str(r.neighborhood),
+                           "neighborhood_id": None if pd.isna(r.neighborhood_id) else str(r.neighborhood_id),
+                           "habitable": bool(r.habitable), "population_est": int(r.population_est)}})
+    (od / "grid.geojson").write_text(json.dumps({"type": "FeatureCollection", "features": feats_json},
+                                                ensure_ascii=False, separators=(",", ":")))
+    feats.to_parquet(od / "features.parquet", index=False, compression="snappy")
+    pois[pois["category"].isin(core_pois.VOCAB)].reset_index(drop=True).to_parquet(
+        od / "pois.parquet", index=False, compression="snappy")
+
+    pop = g.groupby("district_id")["population_est"].sum()
+    d = districts.rename(columns={"district_id": "id", "district_name": "name"}).copy()
+    d["population_est"] = d["id"].map(pop).fillna(0).astype(int)
+    d["geometry"] = d.to_crs(ctx.crs).simplify(10).to_crs(4326)
+    d.to_file(od / "districts.geojson", driver="GeoJSON", COORDINATE_PRECISION=6)
+
+    if nb_polys is None:
+        nb_polys = g.dissolve(by="neighborhood_id", as_index=False)[["neighborhood_id", "neighborhood", "geometry"]]
+    n = nb_polys.rename(columns={"neighborhood_id": "id", "neighborhood": "name"}).copy()
+    gg = g.groupby("neighborhood_id")
+    n["population_est"] = n["id"].map(gg["population_est"].sum()).fillna(0).astype(int)
+    n["district_id"] = n["id"].map(gg["district_id"].agg(lambda s: s.value_counts().index[0]))
+    n["geometry"] = n.to_crs(ctx.crs).simplify(10).to_crs(4326)
+    n[["id", "name", "district_id", "population_est", "geometry"]].to_file(
+        od / "neighborhoods.geojson", driver="GeoJSON", COORDINATE_PRECISION=6)
+
+    ctx.man.data["dataVersion"] = built
+    ctx.man.data["builtAt"] = built
+    ctx.man.data["build"] = {"serviceDate": ctx.service_date, "cells": int(len(g)),
+                             "habitable": int(g["habitable"].sum()), "h3Res": ctx.s["h3Res"], "metricCrs": ctx.crs}
+    ctx.man.save()
 
 
 def build(city: str, force_osm: bool = False) -> None:
@@ -112,7 +154,7 @@ def build(city: str, force_osm: bool = False) -> None:
                 and "stops" not in k]:
         ctx.man.record(key, rows=int(len(ctx.stops)), status="ok",
                        note=f"weekday service date {ctx.service_date}; stop-level stats 07–09 & 23–05")
-    p = [core_pois.from_osm(city), stop_pois(st)]
+    p = [core_pois.from_osm(city), stop_pois(ctx, st)]
     extra = ad.extra_pois(ctx) if hasattr(ad, "extra_pois") else None
     if extra is not None and len(extra):
         replace = set(extra.attrs.get("replace", []))
@@ -131,30 +173,11 @@ def build(city: str, force_osm: bool = False) -> None:
         af = ad.features(ctx)
         for c in af.columns:
             feats[c] = af[c].to_numpy()
-    feats.insert(0, "h3", g["h3"].to_numpy())
-    feats = feats[["h3"] + sorted([c for c in feats.columns if c != "h3"],
-                                  key=lambda c: (FEATURE_ORDER.index(c.split(".")[0]) if c.split(".")[0] in FEATURE_ORDER else 99, c))]
-
-    # ---- write ---------------------------------------------------------------------------------
-    od = out_dir(city)
-    grid_out = g[["h3", "district_id", "district_name", "neighborhood_id", "neighborhood", "habitable",
-                  "population_est", "geometry"]].copy()
-    grid_out["habitable"] = grid_out["habitable"].astype(bool)
-    grid_out.to_file(od / "grid.geojson", driver="GeoJSON", COORDINATE_PRECISION=6)
-    feats.to_parquet(od / "features.parquet", index=False)
-    pois.to_parquet(od / "pois.parquet", index=False)
-    d = districts.copy()
-    d = d.merge(g.groupby("district_id").agg(population_est=("population_est", "sum"), cells=("h3", "size")).reset_index(),
-                on="district_id", how="left")
-    d.to_file(od / "districts.geojson", driver="GeoJSON", COORDINATE_PRECISION=6)
-    if nb_polys is None:
-        nb_polys = g.dissolve(by="neighborhood_id", as_index=False)[["neighborhood_id", "neighborhood", "geometry"]]
-    nb_polys.to_file(od / "neighborhoods.geojson", driver="GeoJSON", COORDINATE_PRECISION=6)
-    ctx.man.data["build"] = {"builtAt": now_iso(), "serviceDate": ctx.service_date, "cells": int(len(g)),
-                             "habitable": int(g["habitable"].sum()), "h3Res": ctx.s["h3Res"],
-                             "metricCrs": ctx.crs}
-    ctx.man.save()
-    log.info("[%s] done in %.0fs → %s", city, time.time() - t0, od)
+    for c in ("h3", "lat", "lon", "habitable", "district_id", "district_name", "neighborhood", "population_est"):
+        feats[c] = g[c].to_numpy()
+    feats = align(city, feats)
+    write(ctx, g, feats, pois, districts, nb_polys)
+    log.info("[%s] done in %.0fs → %s", city, time.time() - t0, out_dir(city))
 
 
 if __name__ == "__main__":

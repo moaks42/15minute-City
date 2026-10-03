@@ -73,7 +73,7 @@ def men_schools(ctx: Ctx, geo: Geocoder) -> pd.DataFrame:
     log.info("[krakow] MEN schools geocoding: %s", stats)
     k = k.dropna(subset=["lat"])
     out = pd.DataFrame({"category": k["category"], "name": k["Nazwa placówki"].str.title(), "lat": k["lat"],
-                        "lon": k["lon"], "source": "men_sio",
+                        "lon": k["lon"], "source": "men_schools",
                         "extra_json": [json.dumps({"rspo": r, "public": p, "geocode": h}, ensure_ascii=False)
                                        for r, p, h in zip(k["RSPO"], k["Publiczność"], k["how"])]})
     ctx.ok("men_schools", len(out), f"SIO 30.09.2025, powiat 1261; geocoded via EMUiA {stats}")
@@ -129,8 +129,8 @@ def ztp_racks(ctx: Ctx) -> pd.DataFrame:
     g = gpd.read_file(ctx.raw_file("ztp_hub_bike_racks"))
     g = g[g.geometry.notna()]
     p = g.geometry.representative_point()
-    ctx.ok("ztp_hub_bike_racks", len(g), "ZTP bike racks (stojaki) added to bicycle_parking")
-    return pd.DataFrame({"category": "bicycle_parking", "name": "", "lat": p.y, "lon": p.x, "source": "ztp_hub",
+    ctx.ok("ztp_hub_bike_racks", len(g), "ZTP bike racks (stojaki) added to POI category bike_rack")
+    return pd.DataFrame({"category": "bike_rack", "name": "", "lat": p.y, "lon": p.x, "source": "ztp_hub_bike_racks",
                          "extra_json": "{}"})
 
 

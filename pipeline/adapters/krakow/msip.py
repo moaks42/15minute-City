@@ -10,11 +10,11 @@ def districts(ctx: Ctx) -> gpd.GeoDataFrame:
     d = gpd.read_file(f"zip://{ctx.raw_file('msip_districts')}!Dzielnice.geojson")
     if d.crs is None:
         d = d.set_crs(2178)
-    d["district_id"] = d["id_dzielni"].astype(int).map(lambda i: f"{i:02d}")
+    d["district_id"] = d["id_dzielni"].astype(int).astype(str)  # contract: "1"…"18"
     d["district_name"] = d["nazwa"].str.strip()
     d["district_full_name"] = d["nazwa_peln"].str.strip()
     d["district_no"] = d["nr_dzielni"]
-    d = d.sort_values("district_id").to_crs(4326)
+    d = d.sort_values("id_dzielni").to_crs(4326)
     ctx.ok("msip_districts", len(d), "18 dzielnic, union = city boundary")
     return d[["district_id", "district_name", "district_full_name", "district_no", "geometry"]]
 

@@ -39,7 +39,7 @@ def msmt_schools(ctx: Ctx) -> pd.DataFrame:
     ctx.ok("msmt_schools", len(df), f"RSSZ Hl. m. Praha (LKOD JSON-LD); místa výuky geocoded by RÚIAN code "
            f"(unmatched {miss}); A00→kindergarten, B00→primary, C00→secondary")
     return pd.DataFrame({"category": df["category"], "name": df["name"], "lat": df["lat"], "lon": df["lon"],
-                         "source": "msmt", "extra_json": [json.dumps({"izo": i, "redizo": z}) for i, z in
+                         "source": "msmt_schools", "extra_json": [json.dumps({"izo": i, "redizo": z}) for i, z in
                                                           zip(df["izo"], df["redizo"])]})
 
 

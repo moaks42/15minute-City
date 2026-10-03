@@ -36,15 +36,18 @@ def count_points(grid: pd.DataFrame, pts: gpd.GeoDataFrame, res: int = 9) -> np.
     return grid["h3"].map(vc).fillna(0).astype(np.int32).to_numpy()
 
 
-def label(grid: gpd.GeoDataFrame, polys: gpd.GeoDataFrame, id_col: str, name_col: str) -> pd.DataFrame:
-    """Assign each cell the polygon containing its centroid (nearest polygon if outside all)."""
-    pts = gpd.GeoDataFrame(grid[["h3"]], geometry=gpd.points_from_xy(grid["lon"], grid["lat"]), crs=4326)
+def label(grid: gpd.GeoDataFrame, polys: gpd.GeoDataFrame, id_col: str, name_col: str, crs: str = "EPSG:3857") -> pd.DataFrame:
+    """Assign each cell the polygon holding the majority of its area; else the one containing / nearest to the centroid."""
     polys = polys.to_crs(4326)[[id_col, name_col, "geometry"]]
-    j = gpd.sjoin(pts, polys, how="left", predicate="within").drop_duplicates("h3")
-    miss = j[id_col].isna()
+    cells = gpd.GeoDataFrame(grid[["h3"]].copy(), geometry=grid.geometry, crs=4326).to_crs(crs)
+    ov = gpd.overlay(cells, polys.to_crs(crs), how="intersection", keep_geom_type=True)
+    ov["a"] = ov.area
+    best = ov.sort_values("a", ascending=False).drop_duplicates("h3").set_index("h3")
+    j = best[[id_col, name_col]].reindex(grid["h3"])
+    miss = j[id_col].isna().to_numpy()
     if miss.any():
-        m = 3857
-        nn = gpd.sjoin_nearest(pts[miss.to_numpy()].to_crs(m), polys.to_crs(m), how="left").drop_duplicates("h3")
-        j.loc[miss, [id_col, name_col]] = nn[[id_col, name_col]].to_numpy()
-    j = j.set_index("h3").reindex(grid["h3"])
-    return j[[id_col, name_col]].reset_index(drop=True)
+        pts = gpd.GeoDataFrame(grid[["h3"]][miss], geometry=gpd.points_from_xy(grid["lon"][miss], grid["lat"][miss]),
+                               crs=4326).to_crs(crs)
+        nn = gpd.sjoin_nearest(pts, polys.to_crs(crs), how="left").drop_duplicates("h3").set_index("h3")
+        j.loc[nn.index, [id_col, name_col]] = nn[[id_col, name_col]].to_numpy()
+    return j.reset_index(drop=True)

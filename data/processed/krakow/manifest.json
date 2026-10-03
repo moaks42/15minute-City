@@ -1,6 +1,6 @@
 {
   "city": "krakow",
-  "updatedAt": "2026-10-03T14:25:54+00:00",
+  "updatedAt": "2026-10-03T14:40:30+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -113,7 +113,7 @@
     {
       "key": "nfz",
       "url": "https://api.nfz.gov.pl/app-itl-api/queues",
-      "fetchedAt": "2026-10-03T14:25:20+00:00",
+      "fetchedAt": "2026-10-03T14:39:51+00:00",
       "licence": "NFZ open API",
       "rows": 46,
       "status": "ok",
@@ -149,7 +149,7 @@
     {
       "key": "rcn",
       "url": "https://geodezja.eco.um.krakow.pl/cgi-bin/krakow-rcn?SERVICE=WFS&REQUEST=GetCapabilities",
-      "fetchedAt": "2026-10-03T14:25:54+00:00",
+      "fetchedAt": "2026-10-03T14:40:30+00:00",
       "licence": "RCN, Wydział Geodezji UM Kraków (public register)",
       "rows": 23022,
       "status": "ok",
@@ -180,7 +180,7 @@
       "licence": "ZTP Kraków (ArcGIS Hub, open)",
       "rows": 3157,
       "status": "ok",
-      "note": "ZTP bike racks (stojaki) added to bicycle_parking"
+      "note": "ZTP bike racks (stojaki) added to POI category bike_rack"
     },
     {
       "key": "ztp_hub_cycle_lines",
@@ -211,11 +211,12 @@
     }
   ],
   "build": {
-    "builtAt": "2026-10-03T14:25:54+00:00",
     "serviceDate": "20261006",
     "cells": 3217,
     "habitable": 2162,
     "h3Res": 9,
     "metricCrs": "EPSG:2180"
-  }
+  },
+  "dataVersion": "2026-10-03T14:40:30+00:00",
+  "builtAt": "2026-10-03T14:40:30+00:00"
 }
