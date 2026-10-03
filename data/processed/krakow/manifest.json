@@ -1,6 +1,6 @@
 {
   "city": "krakow",
-  "updatedAt": "2026-10-03T14:40:30+00:00",
+  "updatedAt": "2026-10-03T14:44:17+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -145,6 +145,15 @@
       "rows": null,
       "status": "ok",
       "note": ""
+    },
+    {
+      "key": "r5py_travel_times",
+      "url": "https://r5py.readthedocs.io",
+      "fetchedAt": "2026-10-03T14:44:17+00:00",
+      "licence": "derived (OSM ODbL + GTFS)",
+      "rows": 1093972,
+      "status": "ok",
+      "note": "r5py 1.1.7; 2162 habitable res-9 origins × 506 res-8 dests; departure 2026-10-06T08:00:00 (+30-min window, median) for transit; modes ['bike', 'transit', 'walk']; uint8 minutes, 255 = unreachable/>120"
     },
     {
       "key": "rcn",

@@ -1,6 +1,6 @@
 {
   "city": "praha",
-  "updatedAt": "2026-10-03T14:41:52+00:00",
+  "updatedAt": "2026-10-03T14:46:57+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -148,12 +148,12 @@
     },
     {
       "key": "ipr_noise_day",
-      "url": "https://lkod-iprpraha.hub.arcgis.com/api/download/v1/items/934bce6998c84d5ca9a31c4a2d654a2f/geojson?layers=0",
-      "fetchedAt": "2026-10-03T14:03:26+00:00",
-      "licence": "CC BY 4.0 (IPR Praha, Hluková mapa)",
+      "url": "https://lkod-iprpraha.hub.arcgis.com/api/download/v1/items/6ea612215c8646dab1ea975aa64276b5/geojson?layers=0",
+      "fetchedAt": "2026-10-03T14:44:54+00:00",
+      "licence": "CC BY 4.0 (IPR Praha, Hluková mapa automobilové dopravy)",
       "rows": 4976,
       "status": "ok",
-      "note": "IPR Hluková mapa – den (LAeq day, all sources combined) 5-dB bands; mean per cell. Note: Kraków uses Lden (LDWN) — absolute values differ by a few dB"
+      "note": "IPR Hluková mapa automobilové dopravy – den (LAeq,day, road traffic) 5-dB bands; mean per cell. IPR publishes no tram/rail layer, so Praha = road only (Kraków = max(road, rail+tram), Lden)"
     },
     {
       "key": "ipr_noise_night",
@@ -262,6 +262,6 @@
     "h3Res": 9,
     "metricCrs": "EPSG:5514"
   },
-  "dataVersion": "2026-10-03T14:41:52+00:00",
-  "builtAt": "2026-10-03T14:41:52+00:00"
+  "dataVersion": "2026-10-03T14:46:57+00:00",
+  "builtAt": "2026-10-03T14:46:57+00:00"
 }

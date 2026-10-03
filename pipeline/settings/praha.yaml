@@ -41,10 +41,10 @@ sources:
      url: "https://mp.iprpraha.cz/arcgis/rest/services/Hosted/MAP_CUR_MAP_MESTSKECASTI_P/FeatureServer/0"}
   - {key: ipr_katastralni_uzemi, kind: arcgis, file: ipr_katastralni_uzemi.geojson, licence: "CC BY 4.0 (IPR Praha / ČÚZK)",
      url: "https://services5.arcgis.com/SBTXIEUGWbqzUecw/arcgis/rest/services/katastry/FeatureServer/0"}
-  - {key: ipr_noise_day, kind: http, file: ipr_hlukova_mapa_den.geojson, licence: "CC BY 4.0 (IPR Praha, Hluková mapa)", timeout: 900,
-     url: "https://lkod-iprpraha.hub.arcgis.com/api/download/v1/items/934bce6998c84d5ca9a31c4a2d654a2f/geojson?layers=0"}
-  - {key: ipr_noise_night, kind: http, file: ipr_hlukova_mapa_noc.geojson, licence: "CC BY 4.0 (IPR Praha, Hluková mapa)", timeout: 900, optional: true,
-     url: "https://lkod-iprpraha.hub.arcgis.com/api/download/v1/items/83c81bf4e8ed47c5b38c7d1344d6b41a/geojson?layers=0"}
+  # road-traffic noise map (day). The generic "Hluková mapa – den" layer (934bce69…) gives 20–25 dB on the
+  # Magistrála, so it is not used; IPR publishes no tram/rail noise layer.
+  - {key: ipr_noise_day, kind: http, file: ipr_hlukova_mapa_adp_den.geojson, licence: "CC BY 4.0 (IPR Praha, Hluková mapa automobilové dopravy)", timeout: 900,
+     url: "https://lkod-iprpraha.hub.arcgis.com/api/download/v1/items/6ea612215c8646dab1ea975aa64276b5/geojson?layers=0"}
   - {key: ipr_parks, kind: arcgis, file: ipr_parky_uap.geojson, licence: "CC BY 4.0 (IPR Praha)", optional: true,
      url: "https://mp.iprpraha.cz/arcgis/rest/services/Hosted/URK_CUR_URK_PARKY_P/FeatureServer/0"}
   # --- ČÚZK RÚIAN addresses (obec Praha 554782) ---

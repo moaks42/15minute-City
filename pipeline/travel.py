@@ -8,6 +8,7 @@ uint8 minutes (255 = unreachable or > 120). Transit = median over a 30-min windo
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import sys
 import time
@@ -72,9 +73,11 @@ def run(city: str, modes: list[str]) -> None:
         reach = (out[m] < 255).mean()
         log.info("[%s] %s matrix in %.0fs, reachable %.1f%%, median %s min", city, m, time.time() - t0,
                  100 * reach, np.median(out[m][out[m] < 255]) if reach else None)
-    np.savez_compressed(npz, origins=np.array(origins), dests=np.array(dests),
+    meta = {"date": dep.strftime("%Y-%m-%d"), "departure": dep.strftime("%H:%M"), "windowMinutes": 30,
+            "method": "r5py", "r5py": r5py.__version__, "maxMinutes": MAX_MIN, "unreachable": 255}
+    np.savez_compressed(npz, origins=np.array(origins, dtype="<U15"), dests=np.array(dests, dtype="<U15"),
                         **{k: v for k, v in out.items() if k in ("transit", "bike", "walk")},
-                        departure=np.array(dep.isoformat()), max_minutes=np.array(MAX_MIN))
+                        meta_json=np.array(json.dumps(meta)))
     man = Manifest(city)
     man.record("r5py_travel_times", url="https://r5py.readthedocs.io", fetchedAt=now_iso(),
                licence="derived (OSM ODbL + GTFS)", rows=len(origins) * len(dests), status="ok",

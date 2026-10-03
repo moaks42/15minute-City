@@ -22,8 +22,8 @@ def noise(ctx: Ctx) -> np.ndarray:
     g = g.rename(columns={"db_lo": "lo", "db_hi": "hi"})
     v = noise_db(ctx, [g])
     ctx.ok("ipr_noise_day", int(np.isfinite(v).sum()),
-           "IPR Hluková mapa – den (LAeq day, all sources combined) 5-dB bands; mean per cell. "
-           "Note: Kraków uses Lden (LDWN) — absolute values differ by a few dB")
+           "IPR Hluková mapa automobilové dopravy – den (LAeq,day, road traffic) 5-dB bands; mean per cell. IPR "
+           "publishes no tram/rail layer, so Praha = road only (Kraków = max(road, rail+tram), Lden)")
     return v
 
 
