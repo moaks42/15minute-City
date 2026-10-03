@@ -92,7 +92,7 @@ def from_osm(city: str) -> pd.DataFrame:
     emerg = col(g, "emergency").fillna("")
     access = col(g, "access").fillna("")
     rail, station = col(g, "railway").fillna(""), col(g, "station").fillna("")
-    train, subway = col(g, "train").fillna(""), col(g, "subway").fillna("")
+    subway = col(g, "subway").fillna("")
     vending, atm = col(g, "vending").fillna(""), col(g, "atm").fillna("")
 
     rules: dict[str, pd.Series] = {

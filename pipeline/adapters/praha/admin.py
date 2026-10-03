@@ -54,7 +54,7 @@ def addresses(ctx: Ctx) -> gpd.GeoDataFrame:
     df["source"] = "ruian"
     df["label"] = pd.Series(base, index=df.index) + " " + pd.Series(num, index=df.index)
     # search key also accepts "Street co" and "Street cp" (people use the orientation number)
-    df["search"] = [f"{fold(l)} {fold(b)} {c}".strip() for l, b, c in zip(df["label"], base, co)]
+    df["search"] = [f"{fold(lab)} {fold(b)} {c}".strip() for lab, b, c in zip(df["label"], base, co)]
     g = gpd.GeoDataFrame(df[["Kód ADM", "Název MOMC", "Název části obce", "Název ulice", "Číslo domovní",
                              "Číslo orientační", "street", "housenumber", "postcode", "source", "label", "search"]],
                          geometry=gpd.points_from_xy(df["x"], df["y"]), crs=5514).to_crs(4326)

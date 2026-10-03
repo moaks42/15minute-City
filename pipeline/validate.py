@@ -14,7 +14,6 @@ import json
 import re
 import sys
 
-import geopandas as gpd
 import numpy as np
 import pandas as pd
 

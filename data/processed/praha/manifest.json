@@ -1,6 +1,6 @@
 {
   "city": "praha",
-  "updatedAt": "2026-10-03T15:23:04+00:00",
+  "updatedAt": "2026-10-03T15:54:10+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -257,7 +257,7 @@
     {
       "key": "r5py_travel_times",
       "url": "https://r5py.readthedocs.io",
-      "fetchedAt": "2026-10-03T15:07:00+00:00",
+      "fetchedAt": "2026-10-03T15:54:10+00:00",
       "licence": "derived (OSM ODbL + GTFS)",
       "rows": 2299425,
       "status": "ok",
