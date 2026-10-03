@@ -118,6 +118,11 @@ def write(ctx: Ctx, g: gpd.GeoDataFrame, feats: pd.DataFrame, pois: pd.DataFrame
             e["note"] = f"reachable (verified {str(e.get('fetchedAt'))[:10]}); not used for features — {src.get('use', 'reference')}"
         if e["status"] == "missing" and src.get("use"):
             e["note"] = (e.get("note") or "") + f" [{src['use']}]"
+    # optional, additive: local geocoder index for the engine (/api/{city}/geocode)
+    from core import geocode
+    gi = geocode.build(ctx.addresses, g, d, n)
+    gi.to_parquet(od / "geocode.parquet", index=False, compression="snappy")
+    log.info("[%s] geocode.parquet: %s", ctx.city, gi["kind"].value_counts().to_dict())
     ctx.man.data["dataVersion"] = built
     ctx.man.data["builtAt"] = built
     ctx.man.data["build"] = {"serviceDate": ctx.service_date, "cells": int(len(g)),

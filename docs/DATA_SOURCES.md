@@ -16,6 +16,7 @@ All sources below were checked with a real request on **2026-10-03**. Where the 
 | build | `python run.py --city X` | Builds the H3 grid, habitable mask, labels, POIs, walk network and indicators, then writes `grid.geojson`, `features.parquet`, `pois.parquet`, `districts.geojson` and `neighborhoods.geojson`. Takes about 70 s per city. |
 | travel | `python travel.py --city X` | r5py commute matrices → `travel_times.npz`. Takes about 12 min (K) and 20 min (P). |
 | ml | `python ml_features.py` | Writes `_shared/ml_features.parquet`, which pools the `crossCity` indicators of both cities. |
+| (build) | also writes `geocode.parquet` | Local geocoder index (EMUiA / RÚIAN addresses, streets, neighbourhoods, districts) with an accent-free search key. |
 | validate | `python validate.py --city all [--write-docs]` | Runs B's contract validator (`contracts/tools/validate_data.py`), then the README §5 sanity checks, then refreshes §5 of this file. |
 
 **City-agnostic core** (`pipeline/core/`), identical for both cities:

@@ -25,5 +25,9 @@ def addresses(ctx: Ctx) -> gpd.GeoDataFrame:
     if a.crs is None:
         a = a.set_crs(2178)
     a = a[a.geometry.notna()].to_crs(4326)
+    from core.geocode import fold
+    a["street"] = a["nazwa_ulicy"].fillna("").str.strip()
+    a["label"] = (a["street"] + " " + a["numer_adresowy"].fillna("").str.strip()).str.strip()
+    a["search"] = a["label"].map(fold)
     ctx.ok("msip_addresses", len(a), "EMUiA address points → habitable mask + population proxy")
     return a
