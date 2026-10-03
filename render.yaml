@@ -1,0 +1,18 @@
+# Render blueprint for the engine (Dashboard → New → Blueprint → this repo).
+# The Docker build context is the repo root, so config/, contracts/ and data/processed/ get baked into the image.
+services:
+  - type: web
+    name: kompas-engine
+    runtime: docker
+    plan: free
+    region: frankfurt
+    branch: b-engine          # staging until the M1 merge, then switch to main
+    dockerfilePath: ./engine/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: GOLEMIO_API_KEY
+        sync: false

@@ -536,7 +536,7 @@ criteria:
         unit: db
         norm: {type: inverse_percentile}
         weight: 3
-        crossCity: true
+        crossCity: false        # city-level offset (K Lden vs P LAeq; regional PM) dominates → not comparable across cities
         priority: P0
         sources: {krakow: [msip], praha: [ipr]}
         explain: {pl: "Hałas ok. {{value}} dB", cs: "Hluk cca {{value}} dB", en: "Noise ~{{value}} dB"}
@@ -546,7 +546,7 @@ criteria:
         decimals: 1
         norm: {type: inverse_percentile}
         weight: 2
-        crossCity: true
+        crossCity: false        # city-level offset (K Lden vs P LAeq; regional PM) dominates → not comparable across cities
         priority: P0
         sources: {krakow: [gios], praha: [chmi_air]}
         explain: {pl: "PM2,5 ok. {{value}} µg/m³", cs: "PM2,5 cca {{value}} µg/m³", en: "PM2.5 ~{{value}} µg/m³"}
@@ -556,7 +556,7 @@ criteria:
         decimals: 1
         norm: {type: inverse_percentile}
         weight: 1
-        crossCity: true
+        crossCity: false        # city-level offset (K Lden vs P LAeq; regional PM) dominates → not comparable across cities
         priority: P0
         sources: {krakow: [gios], praha: [chmi_air]}
         explain: {pl: "PM10 ok. {{value}} µg/m³", cs: "PM10 cca {{value}} µg/m³", en: "PM10 ~{{value}} µg/m³"}
