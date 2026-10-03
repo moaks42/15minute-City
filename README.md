@@ -16,15 +16,15 @@ A student, a young family, a pregnant woman and a senior all need very different
 ## What Kompas does
 
 1. **Pick a city:** Kraków or Praha.
-2. **Pick who you are:** :school_satchel: Student, :briefcase: Working, :man-woman-girl: Parent, :pregnant_woman: Expecting, :older_adult: Senior, or :pencil2: Custom.
-3. **Rate what matters with emoji:** 13 topics, each from :neutral_face: "barely matters" to :star-struck: "essential":
+2. **Pick who you are:** 🎒 Student, 💼 Working, 👨‍👩‍👧 Parent, 🤰 Expecting, 🧓 Senior, 🧳 Relocating (finds a look-alike of your current neighbourhood in the other city), or ✏️ Custom.
+3. **Rate what matters with emoji:** 13 topics, each from 😐 "barely matters" to 🤩 "essential":
 
    | | | | |
    |---|---|---|---|
-   | :compass: Commute to my places | :train: Public transport | :bike: Cycling & walking | :deciduous_tree: Green space |
-   | :mortar_board: Education | :teddy_bear: Family & kids | :shield: Safety | :moneybag: Affordability |
-   | :shopping_trolley: Shops & services | :hospital: Health | :wind_blowing_face: Quiet & clean air | :performing_arts: Culture, sport & food |
-   | :wheelchair: Accessibility | | | |
+   | 🧭 Commute to my places | 🚋 Public transport | 🚲 Cycling & walking | 🌳 Green space |
+   | 🎓 Education | 🧸 Family & kids | 🛡️ Safety | 💰 Affordability |
+   | 🛒 Shops & services | 🏥 Health | 🌬️ Quiet & clean air | 🎭 Culture, sport & food |
+   | ♿ Accessibility | | | |
 
 4. **Optionally add your places** (work, university, a child's school) and limits such as a budget, a maximum commute, or "a park within 10 minutes' walk".
 5. **See the results:**
@@ -56,7 +56,7 @@ flowchart LR
 ```
 
 1. **Data pipeline.** Downloads open data for both cities and splits each city into hexagons of about 0.1 km² ([H3](https://h3geo.org/), resolution 9). For every hexagon it measures things like walking minutes to the nearest tram stop, departures per hour, share of greenery, noise in dB, air pollution, and the local price per m².
-2. **Scoring engine.** Turns each measurement into a 0–100 score **compared within the same city**, then combines them using your emoji weights (:neutral_face: 1 · :slightly_smiling_face: 2 · :blush: 3 · :heart_eyes: 5 · :star-struck: 8). Hard limits remove places instead of lowering their score. Travel times are pre-computed on the real transport network for a weekday morning.
+2. **Scoring engine.** Turns each measurement into a 0–100 score **compared within the same city**, then combines them using your emoji weights (😐 1 · 🙂 2 · 😊 3 · 😍 5 · 🤩 8). Hard limits remove places instead of lowering their score. Travel times are pre-computed on the real transport network for a weekday morning.
 3. **Machine learning.**
    - **Neighbourhood types:** clusters both cities together into types such as *Historic heart*, *Student buzz* or *Green residential*; a small neural network then gives each place a type with a probability. The types come from unsupervised clustering, so they are indicative only.
    - **Twin neighbourhoods:** the most similar places in the other city, using only measurements that compare across countries (minutes, counts, dB, µg/m³; not prices in different currencies).
@@ -74,7 +74,7 @@ Every number in the app traces back to one of these open sources. The in-app **"
 | [OpenFreeMap](https://openfreemap.org/) | background map tiles | free, OSM-based |
 | [Photon](https://photon.komoot.io/) | address search fallback | OSM-based |
 
-### Kraków :flag-pl:
+### Kraków 🇵🇱
 
 | Source | What we use it for |
 |---|---|
@@ -87,7 +87,7 @@ Every number in the app traces back to one of these open sources. The in-app **"
 | [GUGiK – real-estate price register (RCN)](https://www.geoportal.gov.pl/) | apartment sale prices per m² |
 | [Bezpieczny Kraków](https://bezpiecznykrakow-gmk.hub.arcgis.com/) | registered incidents per district |
 
-### Praha :flag-cz:
+### Praha 🇨🇿
 
 | Source | What we use it for |
 |---|---|
