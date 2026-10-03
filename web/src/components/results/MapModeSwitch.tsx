@@ -54,7 +54,7 @@ export function MapModeSwitch() {
         </select>
       )}
       {mapMode === 'commute' && anchors.length === 0 && (
-        <button onClick={() => set({ step: 'places' })} className="rounded-full bg-ink px-3 py-2 text-xs font-medium text-white shadow">
+        <button onClick={() => set({ placesOpen: true, prefsOpen: true })} data-testid="commute-add-place" className="rounded-full bg-ink px-3 py-2 text-xs font-medium text-white shadow">
           {t('map.commuteNoAnchor')}
         </button>
       )}

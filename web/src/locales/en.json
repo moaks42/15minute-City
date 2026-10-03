@@ -12,6 +12,10 @@
     "privacy": "No login, no cookies, no tracking. Everything you choose stays in the link."
   },
   "nav": {
+    "collapsePrefs": "Hide preferences",
+    "expandPrefs": "Show preferences",
+    "collapseResults": "Hide results",
+    "expandResults": "Show results panel",
     "about": "About the data",
     "share": "Share",
     "shareCopied": "Link copied",
@@ -120,6 +124,8 @@
     }
   },
   "places": {
+    "section": "My places and limits",
+    "sectionCount": "Set: {{count}}",
     "anchors": "My places",
     "anchorsHint": "Up to 3 places you travel to often.",
     "addAnchor": "Add a place",

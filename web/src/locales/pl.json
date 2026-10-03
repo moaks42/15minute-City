@@ -12,6 +12,10 @@
     "privacy": "Bez logowania, bez ciasteczek, bez śledzenia. Wszystkie wybory zostają w linku."
   },
   "nav": {
+    "collapsePrefs": "Ukryj preferencje",
+    "expandPrefs": "Pokaż preferencje",
+    "collapseResults": "Ukryj wyniki",
+    "expandResults": "Pokaż panel wyników",
     "about": "O danych",
     "share": "Udostępnij",
     "shareCopied": "Link skopiowany",
@@ -120,6 +124,8 @@
     }
   },
   "places": {
+    "section": "Moje miejsca i limity",
+    "sectionCount": "Ustawione: {{count}}",
     "anchors": "Moje miejsca",
     "anchorsHint": "Do 3 miejsc, do których często dojeżdżasz.",
     "addAnchor": "Dodaj miejsce",

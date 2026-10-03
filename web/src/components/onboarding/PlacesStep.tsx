@@ -103,7 +103,8 @@ function NumberField({ label, value, onChange, suffix, hint, testId }: { label: 
   )
 }
 
-export function PlacesStep() {
+/** `compact`: inside the narrow preferences panel (one column, tighter spacing). */
+export function PlacesStep({ compact = false }: { compact?: boolean }) {
   const { t } = useTranslation()
   const { city, lang, persona, anchors, setAnchors, filters, setFilters, budget, set } = useApp()
   const { data: meta } = useMeta(city)
@@ -124,9 +125,9 @@ export function PlacesStep() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className={compact ? 'space-y-5' : 'space-y-8'}>
       <section>
-        <h3 className="font-semibold">{t('places.anchors')}</h3>
+        <h3 className={cn('font-semibold', compact && 'text-sm')}>{t('places.anchors')}</h3>
         <p className="mb-3 text-sm text-ink-3">{t('places.anchorsHint')}</p>
         <div className="space-y-3">
           {anchors.map((a, i) => (
@@ -142,8 +143,8 @@ export function PlacesStep() {
       </section>
 
       <section>
-        <h3 className="mb-3 font-semibold">{t('places.limits')}</h3>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <h3 className={cn('mb-3 font-semibold', compact && 'text-sm')}>{t('places.limits')}</h3>
+        <div className={cn('grid', compact ? 'gap-3' : 'gap-4 sm:grid-cols-2')}>
           <NumberField
             testId="budget"
             label={t(isBuy ? 'places.budget.buy' : 'places.budget.rent')}
@@ -161,7 +162,7 @@ export function PlacesStep() {
           <NumberField label={t('places.maxNoise')} value={filters.maxNoiseDb} onChange={(v) => setFilters({ maxNoiseDb: v })} suffix="dB" />
         </div>
 
-        <h4 className="mb-2 mt-6 text-sm font-medium text-ink-2">{t('places.mustHave')}</h4>
+        <h4 className={cn('mb-2 text-sm font-medium text-ink-2', compact ? 'mt-4' : 'mt-6')}>{t('places.mustHave')}</h4>
         <ul className="mb-3 flex flex-wrap gap-2">
           {filters.mustHave.map((m, i) => (
             <li key={i} className="inline-flex items-center gap-1 rounded-full bg-accent-soft py-1 pl-3 pr-1 text-sm">
@@ -177,7 +178,7 @@ export function PlacesStep() {
           ))}
         </ul>
         <div className="flex flex-wrap gap-2">
-          <select className="h-11 rounded-xl border border-line bg-surface px-3" value={mhCat} onChange={(e) => setMhCat(e.target.value)} aria-label={t('places.mustHave')}>
+          <select className={cn('h-11 rounded-xl border border-line bg-surface px-3', compact && 'min-w-0 flex-1')} value={mhCat} onChange={(e) => setMhCat(e.target.value)} aria-label={t('places.mustHave')}>
             {categories.map((c) => (
               <option key={c.id} value={c.id}>
                 {c.label}

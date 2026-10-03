@@ -12,6 +12,10 @@
     "privacy": "Bez přihlášení, bez cookies, bez sledování. Vše, co zvolíte, zůstává v odkazu."
   },
   "nav": {
+    "collapsePrefs": "Skrýt preference",
+    "expandPrefs": "Zobrazit preference",
+    "collapseResults": "Skrýt výsledky",
+    "expandResults": "Zobrazit panel výsledků",
     "about": "O datech",
     "share": "Sdílet",
     "shareCopied": "Odkaz zkopírován",
@@ -120,6 +124,8 @@
     }
   },
   "places": {
+    "section": "Moje místa a limity",
+    "sectionCount": "Nastaveno: {{count}}",
     "anchors": "Moje místa",
     "anchorsHint": "Až 3 místa, kam často jezdíte.",
     "addAnchor": "Přidat místo",

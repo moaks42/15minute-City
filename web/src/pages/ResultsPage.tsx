@@ -1,9 +1,10 @@
-import { ArrowLeft, ChevronUp, Info, MapPin, SlidersHorizontal } from 'lucide-react'
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { ArrowLeft, ChevronDown, ChevronUp, Info, MapPin, PanelLeftClose, PanelLeftOpen, PanelRightClose, PanelRightOpen, SlidersHorizontal } from 'lucide-react'
+import { lazy, Suspense, useEffect, useId, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useMeta } from '@/api/hooks'
 import { CitySwitch, Header } from '@/components/layout/Header'
 import { CriteriaList } from '@/components/onboarding/CriteriaList'
+import { PlacesStep } from '@/components/onboarding/PlacesStep'
 import { Compare } from '@/components/results/Compare'
 import { DetailPanel } from '@/components/results/DetailPanel'
 import { MapModeSwitch } from '@/components/results/MapModeSwitch'
@@ -29,14 +30,57 @@ function useIsDesktop() {
   return d
 }
 
+/** Scrolls the nearest scrollable ancestor (panel or sheet), never the page. */
+function scrollToTop(el: HTMLElement) {
+  let p = el.parentElement
+  while (p && !/(auto|scroll)/.test(getComputedStyle(p).overflowY)) p = p.parentElement
+  p?.scrollBy({ top: el.getBoundingClientRect().top - p.getBoundingClientRect().top - 8, behavior: 'smooth' })
+}
+
+/** "My places and limits": collapsible, opened from the map or the detail too. */
+function PlacesSection() {
+  const { t } = useTranslation()
+  const { placesOpen, set, anchors, filters, budget } = useApp()
+  const ref = useRef<HTMLElement>(null)
+  const id = useId()
+  const limits = (budget ? 1 : 0) + (filters.maxPricePerM2 || filters.maxRentPerM2 ? 1 : 0) + (filters.maxNoiseDb ? 1 : 0) + filters.mustHave.length
+  useEffect(() => {
+    if (placesOpen && ref.current) scrollToTop(ref.current)
+  }, [placesOpen])
+  return (
+    <section ref={ref} className="mt-3 rounded-2xl border border-line bg-surface" data-testid="places-section">
+      <button
+        className="flex min-h-11 w-full items-center gap-2 rounded-2xl px-3 py-2 text-left font-medium hover:bg-sunken"
+        aria-expanded={placesOpen}
+        aria-controls={id}
+        onClick={() => set({ placesOpen: !placesOpen })}
+        data-testid="places-toggle"
+      >
+        <MapPin size={16} className="shrink-0 text-accent" />
+        <span className="min-w-0 flex-1 truncate">{t('places.section')}</span>
+        {anchors.length + limits > 0 && (
+          <span className="rounded-full bg-accent px-1.5 text-xs text-white" aria-label={t('places.sectionCount', { count: anchors.length + limits })}>
+            {anchors.length + limits}
+          </span>
+        )}
+        <ChevronDown size={18} className={cn('shrink-0 text-ink-3 transition-transform', placesOpen && 'rotate-180')} />
+      </button>
+      {placesOpen && (
+        <div id={id} className="border-t border-line px-3 pb-4 pt-3">
+          <PlacesStep compact />
+        </div>
+      )}
+    </section>
+  )
+}
+
 function Preferences() {
   const { t } = useTranslation()
-  const { city, persona, pickPersona, set, anchors } = useApp()
+  const { city, persona, pickPersona } = useApp()
   const { data: meta } = useMeta(city)
   const personas: PersonaLite[] = meta?.personas?.length ? meta.personas : DEFAULT_PERSONAS
   return (
     <div className="px-4 py-3">
-      <h2 className="sr-only">{t('nav.filters')}</h2>
       <div role="radiogroup" aria-label={t('steps.persona.title')} className="mb-2 flex flex-wrap gap-1.5">
         {personas.map((p) => (
           <button
@@ -52,21 +96,50 @@ function Preferences() {
         ))}
       </div>
       <CriteriaList compact />
-      <Button variant="secondary" className="mt-3 w-full" onClick={() => set({ step: 'places' })}>
-        <MapPin size={16} /> {t('steps.places.title')}
-        {anchors.length > 0 && <span className="rounded-full bg-accent px-1.5 text-xs text-white">{anchors.length}</span>}
-      </Button>
+      <PlacesSection />
     </div>
+  )
+}
+
+/** A collapsed desktop panel: a slim rail that opens it again. */
+function Rail({ side, label, action, onOpen }: { side: 'left' | 'right'; label: string; action: string; onOpen: () => void }) {
+  const Icon = side === 'left' ? PanelLeftOpen : PanelRightOpen
+  return (
+    <button
+      onClick={onOpen}
+      aria-label={action}
+      title={action}
+      className={cn('flex w-11 shrink-0 flex-col items-center gap-3 border-line bg-surface py-3 text-ink-2 hover:bg-sunken hover:text-ink', side === 'left' ? 'border-r' : 'border-l')}
+      data-testid={`rail-${side}`}
+    >
+      <Icon size={18} />
+      <span className="text-sm font-medium [writing-mode:vertical-rl]" aria-hidden>
+        {label}
+      </span>
+    </button>
+  )
+}
+
+function CollapseButton({ side, label, onClick }: { side: 'left' | 'right'; label: string; onClick: () => void }) {
+  const Icon = side === 'left' ? PanelLeftClose : PanelRightClose
+  return (
+    <Button variant="ghost" size="icon" onClick={onClick} aria-label={label} title={label} className="ml-auto shrink-0" data-testid={`collapse-${side}`}>
+      <Icon size={18} />
+    </Button>
   )
 }
 
 export function ResultsPage() {
   const { t } = useTranslation()
   const desktop = useIsDesktop()
-  const { sel, select, compare, set, city } = useApp()
+  const { sel, select, compare, set, city, prefsOpen, leftOpen, rightOpen } = useApp()
   const [compareOpen, setCompareOpen] = useState(false)
-  const [filtersOpen, setFiltersOpen] = useState(false)
   const [sheetUp, setSheetUp] = useState(false)
+
+  // On desktop the preferences live in the left panel, which set() already expanded.
+  useEffect(() => {
+    if (desktop && prefsOpen) set({ prefsOpen: false })
+  }, [desktop, prefsOpen, set])
 
   const compareBtn = compare.length >= 2 && (
     <Button size="sm" onClick={() => setCompareOpen(true)} data-testid="open-compare">
@@ -74,6 +147,7 @@ export function ResultsPage() {
     </Button>
   )
 
+  const collapseRight = <CollapseButton side="right" label={t('nav.collapseResults')} onClick={() => set({ rightOpen: false })} />
   const right = sel ? (
     <div className="flex h-full min-h-0 flex-col">
       <div className="flex items-center gap-2 border-b border-line px-3 py-2">
@@ -81,27 +155,43 @@ export function ResultsPage() {
           <ArrowLeft size={16} /> {t('nav.back')}
         </Button>
         <h2 className="truncate font-display text-lg font-semibold">{t('detail.title')}</h2>
+        {collapseRight}
       </div>
       <div className="min-h-0 flex-1 overflow-y-auto">
         <DetailPanel h3={sel} />
       </div>
     </div>
   ) : (
-    <RankingPanel />
+    <div className="flex h-full min-h-0 flex-col">
+      <div className="flex items-center gap-2 border-b border-line py-1 pl-4 pr-3">
+        <h2 className="text-sm font-semibold text-ink-2">{t('nav.results')}</h2>
+        {collapseRight}
+      </div>
+      <div className="min-h-0 flex-1">
+        <RankingPanel />
+      </div>
+    </div>
   )
 
   return (
     <div className="flex h-full flex-col">
       <Header />
       <div className="relative flex min-h-0 flex-1">
-        {desktop && (
-          <aside className="flex w-[340px] shrink-0 flex-col border-r border-line bg-surface xl:w-[380px]" aria-label={t('nav.filters')}>
-            <div className="min-h-0 flex-1 overflow-y-auto">
-              <Preferences />
-            </div>
-            <Attribution compact />
-          </aside>
-        )}
+        {desktop &&
+          (leftOpen ? (
+            <aside className="flex w-[340px] shrink-0 flex-col border-r border-line bg-surface xl:w-[380px]" aria-label={t('nav.filters')}>
+              <div className="flex items-center gap-2 border-b border-line py-1 pl-4 pr-3">
+                <h2 className="text-sm font-semibold text-ink-2">{t('nav.filters')}</h2>
+                <CollapseButton side="left" label={t('nav.collapsePrefs')} onClick={() => set({ leftOpen: false })} />
+              </div>
+              <div className="min-h-0 flex-1 overflow-y-auto">
+                <Preferences />
+              </div>
+              <Attribution compact />
+            </aside>
+          ) : (
+            <Rail side="left" label={t('nav.filters')} action={t('nav.expandPrefs')} onOpen={() => set({ leftOpen: true })} />
+          ))}
         <main className="relative min-w-0 flex-1" aria-label={t('nav.map')}>
           <Suspense fallback={<div className="grid h-full place-items-center text-ink-3">{t('map.loading')}</div>}>
             <MapView />
@@ -109,16 +199,19 @@ export function ResultsPage() {
           <MapModeSwitch />
           {desktop && compareBtn && <div className="absolute bottom-8 right-3 z-10">{compareBtn}</div>}
         </main>
-        {desktop && (
-          <aside className="flex w-[400px] shrink-0 flex-col border-l border-line bg-bg xl:w-[440px]" aria-label={t('nav.results')}>
-            {right}
-          </aside>
-        )}
+        {desktop &&
+          (rightOpen ? (
+            <aside className="flex w-[400px] shrink-0 flex-col border-l border-line bg-bg xl:w-[440px]" aria-label={t('nav.results')}>
+              {right}
+            </aside>
+          ) : (
+            <Rail side="right" label={t('nav.results')} action={t('nav.expandResults')} onOpen={() => set({ rightOpen: true })} />
+          ))}
 
         {!desktop && (
           <>
             <div className="absolute right-3 top-14 z-20 flex flex-col items-end gap-2">
-              <Button variant="secondary" size="icon" onClick={() => setFiltersOpen(true)} aria-label={t('nav.filters')} data-testid="open-filters">
+              <Button variant="secondary" size="icon" onClick={() => set({ prefsOpen: true })} aria-label={t('nav.filters')} data-testid="open-filters">
                 <SlidersHorizontal size={18} />
               </Button>
             </div>
@@ -151,10 +244,10 @@ export function ResultsPage() {
                 <RankingPanel />
               </div>
             </section>
-            <Sheet open={filtersOpen} onOpenChange={setFiltersOpen} title={t('nav.filters')} side="bottom">
+            <Sheet open={prefsOpen} onOpenChange={(o) => set({ prefsOpen: o })} title={t('nav.filters')} side="bottom">
               <Preferences />
               <div className="sticky bottom-0 border-t border-line bg-surface p-3">
-                <Button className="w-full" onClick={() => setFiltersOpen(false)}>
+                <Button className="w-full" onClick={() => set({ prefsOpen: false })}>
                   {t('nav.showResults')}
                 </Button>
               </div>
