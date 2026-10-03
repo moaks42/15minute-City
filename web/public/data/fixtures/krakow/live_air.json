@@ -1,0 +1,22 @@
+{
+ "city": "krakow",
+ "status": "ok",
+ "source": "GIOŚ",
+ "station": {
+  "id": "400",
+  "name": "Kraków, Aleja Krasińskiego",
+  "lat": 50.0577,
+  "lon": 19.9265,
+  "distanceKm": 0.8
+ },
+ "level": 2,
+ "pollutants": {
+  "pm25": 17.4,
+  "pm10": 26.1,
+  "no2": 21.3,
+  "o3": 44.0
+ },
+ "measuredAt": "2026-10-03T15:00:00Z",
+ "fetchedAt": "2026-10-03T15:12:00Z",
+ "cacheTtlS": 600
+}

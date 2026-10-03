@@ -1,0 +1,12 @@
+{
+ "status": "ok",
+ "dataVersion": {
+  "krakow": "fixture-2026-10-03",
+  "praha": "fixture-2026-10-03"
+ },
+ "dataSource": {
+  "krakow": "fixture",
+  "praha": "fixture"
+ },
+ "builtAt": "2026-10-03T16:00:00Z"
+}

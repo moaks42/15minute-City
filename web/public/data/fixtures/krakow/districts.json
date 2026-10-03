@@ -1,0 +1,105 @@
+{
+ "city": "krakow",
+ "level": "district",
+ "items": [
+  {
+   "id": "1",
+   "name": "Stare Miasto",
+   "centroid": {
+    "lat": 50.0619,
+    "lon": 19.9369
+   },
+   "cellCount": 64,
+   "habitableCount": 60,
+   "populationEst": 42565
+  },
+  {
+   "id": "2",
+   "name": "Grzegórzki",
+   "centroid": {
+    "lat": 50.062,
+    "lon": 19.962
+   },
+   "cellCount": 48,
+   "habitableCount": 48,
+   "populationEst": 25130
+  },
+  {
+   "id": "3",
+   "name": "Prądnik Czerwony",
+   "centroid": {
+    "lat": 50.09,
+    "lon": 19.97
+   },
+   "cellCount": 6,
+   "habitableCount": 6,
+   "populationEst": 3088
+  },
+  {
+   "id": "4",
+   "name": "Prądnik Biały",
+   "centroid": {
+    "lat": 50.095,
+    "lon": 19.925
+   },
+   "cellCount": 1,
+   "habitableCount": 1,
+   "populationEst": 434
+  },
+  {
+   "id": "5",
+   "name": "Krowodrza",
+   "centroid": {
+    "lat": 50.075,
+    "lon": 19.915
+   },
+   "cellCount": 40,
+   "habitableCount": 40,
+   "populationEst": 21537
+  },
+  {
+   "id": "7",
+   "name": "Zwierzyniec",
+   "centroid": {
+    "lat": 50.055,
+    "lon": 19.89
+   },
+   "cellCount": 14,
+   "habitableCount": 12,
+   "populationEst": 5604
+  },
+  {
+   "id": "8",
+   "name": "Dębniki",
+   "centroid": {
+    "lat": 50.038,
+    "lon": 19.915
+   },
+   "cellCount": 26,
+   "habitableCount": 23,
+   "populationEst": 12134
+  },
+  {
+   "id": "9",
+   "name": "Łagiewniki-Borek Fałęcki",
+   "centroid": {
+    "lat": 50.025,
+    "lon": 19.935
+   },
+   "cellCount": 1,
+   "habitableCount": 1,
+   "populationEst": 400
+  },
+  {
+   "id": "13",
+   "name": "Podgórze",
+   "centroid": {
+    "lat": 50.042,
+    "lon": 19.97
+   },
+   "cellCount": 17,
+   "habitableCount": 15,
+   "populationEst": 7465
+  }
+ ]
+}

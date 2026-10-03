@@ -1,0 +1,83 @@
+{
+ "city": "praha",
+ "level": "district",
+ "items": [
+  {
+   "id": "500054",
+   "name": "Praha 1",
+   "centroid": {
+    "lat": 50.087,
+    "lon": 14.42
+   },
+   "cellCount": 37,
+   "habitableCount": 31,
+   "populationEst": 16766
+  },
+  {
+   "id": "500089",
+   "name": "Praha 2",
+   "centroid": {
+    "lat": 50.074,
+    "lon": 14.433
+   },
+   "cellCount": 67,
+   "habitableCount": 67,
+   "populationEst": 46300
+  },
+  {
+   "id": "500097",
+   "name": "Praha 3",
+   "centroid": {
+    "lat": 50.085,
+    "lon": 14.46
+   },
+   "cellCount": 46,
+   "habitableCount": 46,
+   "populationEst": 25191
+  },
+  {
+   "id": "500119",
+   "name": "Praha 4",
+   "centroid": {
+    "lat": 50.042,
+    "lon": 14.445
+   },
+   "cellCount": 14,
+   "habitableCount": 14,
+   "populationEst": 6462
+  },
+  {
+   "id": "500143",
+   "name": "Praha 5",
+   "centroid": {
+    "lat": 50.07,
+    "lon": 14.4
+   },
+   "cellCount": 27,
+   "habitableCount": 23,
+   "populationEst": 11198
+  },
+  {
+   "id": "500186",
+   "name": "Praha 7",
+   "centroid": {
+    "lat": 50.103,
+    "lon": 14.435
+   },
+   "cellCount": 9,
+   "habitableCount": 7,
+   "populationEst": 3161
+  },
+  {
+   "id": "500224",
+   "name": "Praha 10",
+   "centroid": {
+    "lat": 50.07,
+    "lon": 14.485
+   },
+   "cellCount": 17,
+   "habitableCount": 17,
+   "populationEst": 7854
+  }
+ ]
+}

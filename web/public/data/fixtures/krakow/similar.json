@@ -1,0 +1,126 @@
+{
+ "city": "krakow",
+ "from": "891e2e6b027ffff",
+ "items": [
+  {
+   "id": "891e2e6b143ffff",
+   "kind": "hex",
+   "name": "Stradom",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.058277,
+    "lon": 19.939274
+   },
+   "similarity": 0.94,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "green",
+    "education"
+   ]
+  },
+  {
+   "id": "891e2e6b037ffff",
+   "kind": "hex",
+   "name": "Piasek",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.063369,
+    "lon": 19.929436
+   },
+   "similarity": 0.939,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "education",
+    "family"
+   ]
+  },
+  {
+   "id": "891e2e6b02fffff",
+   "kind": "hex",
+   "name": "Nowy Świat",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.058233,
+    "lon": 19.929336
+   },
+   "similarity": 0.923,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "green",
+    "education"
+   ]
+  },
+  {
+   "id": "891e2e6b1cbffff",
+   "kind": "hex",
+   "name": "Stare Miasto",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.063391,
+    "lon": 19.934406
+   },
+   "similarity": 0.911,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "education",
+    "shops"
+   ]
+  },
+  {
+   "id": "891e2e6b11bffff",
+   "kind": "hex",
+   "name": "Wesoła",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.063434,
+    "lon": 19.944344
+   },
+   "similarity": 0.91,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "education",
+    "family"
+   ]
+  }
+ ]
+}

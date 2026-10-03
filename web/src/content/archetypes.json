@@ -1,0 +1,75 @@
+{
+  "_note": "Archetype names per engine id (pl/cs/en), owned by Workstream C. Ids are fixed in config/indicators.yaml + contracts/openapi.yaml (ArchetypeId). Warm, non-stigmatizing wording (README §11 C.7).",
+  "historic_core": {
+    "color": 0,
+    "label": { "pl": "Historyczne serce", "cs": "Historické srdce", "en": "Historic heart" },
+    "desc": {
+      "pl": "Zabytkowa zabudowa, wszystko pieszo, dużo ludzi i życia przez cały dzień.",
+      "cs": "Historická zástavba, vše pěšky, hodně lidí a života po celý den.",
+      "en": "Historic streets, everything on foot, lively all day."
+    }
+  },
+  "urban_mix": {
+    "color": 1,
+    "label": { "pl": "Miejski mix", "cs": "Městský mix", "en": "Urban mix" },
+    "desc": {
+      "pl": "Kamienice i bloki, sklepy blisko, dobra komunikacja.",
+      "cs": "Činžáky i paneláky, obchody blízko, dobrá doprava.",
+      "en": "Mixed housing, shops nearby, good transport."
+    }
+  },
+  "student_buzz": {
+    "color": 2,
+    "label": { "pl": "Studencki puls", "cs": "Studentský puls", "en": "Student buzz" },
+    "desc": {
+      "pl": "Gęsta komunikacja, kawiarnie i kultura, życie także wieczorem.",
+      "cs": "Hustá doprava, kavárny a kultura, život i po večerech.",
+      "en": "Frequent transport, cafés and culture, busy into the evening."
+    }
+  },
+  "estate_blocks": {
+    "color": 3,
+    "label": { "pl": "Osiedle z pełnym zapleczem", "cs": "Sídliště s vybaveností", "en": "Estate with everything nearby" },
+    "desc": {
+      "pl": "Bloki z usługami na miejscu, tramwaj lub autobus niedaleko.",
+      "cs": "Sídliště se službami na místě, tramvaj nebo metro nedaleko.",
+      "en": "Housing estate with services on site and transport close by."
+    }
+  },
+  "green_residential": {
+    "color": 4,
+    "label": { "pl": "Zielone osiedle", "cs": "Zelená rezidenční čtvrť", "en": "Green residential" },
+    "desc": {
+      "pl": "Spokojne ulice, dużo drzew i park w zasięgu spaceru.",
+      "cs": "Klidné ulice, hodně stromů a park na dosah procházky.",
+      "en": "Calm streets, lots of trees and a park within a walk."
+    }
+  },
+  "family_suburb": {
+    "color": 5,
+    "label": { "pl": "Rodzinne przedmieście", "cs": "Rodinné předměstí", "en": "Family suburb" },
+    "desc": {
+      "pl": "Domy i niska zabudowa, szkoły i place zabaw, więcej miejsca.",
+      "cs": "Domky a nízká zástavba, školy a hřiště, víc prostoru.",
+      "en": "Houses and low-rise, schools and playgrounds, more space."
+    }
+  },
+  "quiet_outskirts": {
+    "color": 6,
+    "label": { "pl": "Spokojne obrzeża", "cs": "Klidný okraj města", "en": "Quiet outskirts" },
+    "desc": {
+      "pl": "Cisza i natura, dalej do centrum i usług.",
+      "cs": "Klid a příroda, dál do centra a za službami.",
+      "en": "Peace and nature; further from the centre and services."
+    }
+  },
+  "industrial_edge": {
+    "color": 7,
+    "label": { "pl": "Na styku z przemysłem", "cs": "Na pomezí průmyslu", "en": "Next to industry" },
+    "desc": {
+      "pl": "Mieszkania obok zakładów, magazynów lub torów; często taniej, czasem głośniej.",
+      "cs": "Bydlení u závodů, skladů nebo kolejí; často levněji, někdy hlučněji.",
+      "en": "Homes near works, warehouses or rail; often cheaper, sometimes louder."
+    }
+  }
+}
