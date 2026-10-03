@@ -5,7 +5,7 @@
 - The engine on branch `b-engine` implements every §7.2 endpoint (departures = P2 stub) and serves `contracts/openapi.yaml` as `/openapi.json`. 45 tests are green (contract, monotonicity, filters, relax hint, determinism, explanations = raw values, partial data, export, latency).
 - Until A's data is in `data/processed/`, it runs on **synthetic** data (`/api/health` → `dataSource: synthetic`, status `degraded`).
 - Perf: `/score` Praha (4.9k cells) compute p95 ≈ 3–5 ms single-threaded; load test 300 req at concurrency 16 on 2 workers → 0 errors, ~140 req/s, server p95 < 100 ms.
-- Engine URL: _TBD. Render blueprint `render.yaml` is ready; waiting for `RENDER_API_KEY` in `.env`._
+- Engine URL: _not deployed yet (postponed, before M2)._ The Render API needs a card (402) and HF Docker Spaces need PRO (402). `render.yaml` and `engine/scripts/deploy_hf.py` are ready.
 - Local Docker could not be verified (colima VM on this machine fails SSH provisioning). The build steps were replicated without Docker (`--no-dev` env, warm-up, uvicorn): OK, ready in 0.4 s.
 
 ## Contract changes (after v1: additive only, tagged contracts-vN)
