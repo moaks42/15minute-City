@@ -20,7 +20,8 @@ for (const city of ['krakow', 'praha'] as const) {
     await expect(cards.first()).toBeVisible({ timeout: 20_000 })
     await expect(page.getByTestId('legend')).toBeVisible()
 
-    await cards.first().getByRole('button').first().click()
+    // Tap near the top of the card: on mobile the collapsed sheet shows only its upper part.
+    await cards.first().getByRole('button').first().click({ position: { x: 40, y: 24 } })
     const detail = page.getByTestId('detail').last()
     await expect(detail).toBeVisible()
     await expect(detail.getByTestId('archetype')).toBeVisible()

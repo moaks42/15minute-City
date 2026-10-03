@@ -16,7 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "resolveJsonModule": true,
-    "paths": { "@/*": ["./src/*"] },
+    "paths": { "@/*": ["./src/*"], "@contracts/*": ["../contracts/*"] },
 
     /* Linting */
     "noUnusedLocals": true,
@@ -24,5 +24,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "../contracts/types.ts"]
 }

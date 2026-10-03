@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import type { Criterion, CriterionId } from '@/api/types'
+import type { CriterionId } from '@/api/types'
+import type { CriterionLite } from '@/content/defaults'
 import { Tip } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
 
@@ -12,14 +13,14 @@ export function EmojiRow({
   onChange,
   compact,
 }: {
-  criterion: Pick<Criterion, 'id' | 'emoji' | 'coverage'>
+  criterion: CriterionLite
   value: number
   onChange: (id: CriterionId, level: number) => void
   compact?: boolean
 }) {
   const { t } = useTranslation()
   const name = t(`criteria.${criterion.id}`)
-  const beta = criterion.coverage > 0 && criterion.coverage < 0.6
+  const beta = criterion.beta || (criterion.coverage > 0 && criterion.coverage < 0.6)
   return (
     <fieldset className={cn('flex flex-col gap-2 border-b border-line py-3 last:border-0', compact ? 'gap-1 py-2' : 'sm:flex-row sm:items-center')} data-testid={`criterion-${criterion.id}`}>
       <legend className="sr-only">{t('levels.groupLabel', { criterion: name })}</legend>

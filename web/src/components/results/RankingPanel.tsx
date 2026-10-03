@@ -2,7 +2,7 @@ import { latLngToCell } from 'h3-js'
 import { AlertTriangle, Check, RefreshCw } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useScore } from '@/api/hooks'
-import type { TopItem } from '@/api/types'
+import type { RankedPlace } from '@/api/types'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CRITERION_EMOJI } from '@/content/defaults'
@@ -24,7 +24,7 @@ export function ScoreBadge({ score, size = 'md' }: { score: number; size?: 'md' 
   )
 }
 
-function MiniBars({ criteria }: { criteria: TopItem['criteria'] }) {
+function MiniBars({ criteria }: { criteria: RankedPlace['criteria'] }) {
   const { t } = useTranslation()
   const rows = Object.entries(criteria)
     .sort((a, b) => (b[1] ?? 0) - (a[1] ?? 0))
@@ -45,10 +45,10 @@ function MiniBars({ criteria }: { criteria: TopItem['criteria'] }) {
   )
 }
 
-export function PlaceCard({ p }: { p: TopItem }) {
+export function PlaceCard({ p }: { p: RankedPlace }) {
   const { t } = useTranslation()
   const { city, lang, anchors, sel, select, set, compare, toggleCompare, hover } = useApp()
-  const arch = p.archetype ? archetypeInfo(p.archetype.id, lang, p.archetype.label) : null
+  const arch = p.archetype ? archetypeInfo(p.archetype.id, lang) : null
   const active = sel === p.id
   const inCompare = compare.includes(p.id)
   return (
@@ -104,12 +104,12 @@ export function PlaceCard({ p }: { p: TopItem }) {
           const an = anchors.find((x) => x.id === a.id)
           return (
             <span key={a.id} className="pointer-events-none">
-              🧭 {an?.label ?? a.id}: <b className="tabular-nums">{a.minutes != null ? t('map.minutes', { count: a.minutes }) : '–'}</b>
+              🧭 {an?.label ?? a.label ?? a.id}: <b className="tabular-nums">{a.minutes != null ? t('map.minutes', { count: a.minutes }) : '–'}</b>
             </span>
           )
         })}
         {p.price?.value != null && city && <span className="pointer-events-none">💰 {fmtPricePerM2(p.price.value, lang, city)}</span>}
-        {p.budgetM2 != null && <span className="pointer-events-none font-medium text-accent">{t('results.budgetM2', { m2: p.budgetM2 })}</span>}
+        {p.budgetM2 != null && <span className="pointer-events-none font-medium text-accent">{p.budgetText ?? t('results.budgetM2', { m2: p.budgetM2 })}</span>}
         {p.kind === 'hex' && (
           <label className="relative z-10 ml-auto inline-flex min-h-9 cursor-pointer items-center gap-1.5 rounded-full px-2 hover:bg-sunken">
             <input type="checkbox" checked={inCompare} onChange={() => toggleCompare(p.id)} className="h-4 w-4 accent-[var(--color-accent)]" data-testid="compare-toggle" />
@@ -132,15 +132,8 @@ export function RankingPanel() {
   const relax = (filter: string) => {
     if (filter === 'price') setFilters({ maxPricePerM2: null, maxRentPerM2: null })
     else if (filter === 'noise') setFilters({ maxNoiseDb: null })
-    else if (filter.startsWith('must:')) setFilters({ mustHave: filters.mustHave.filter((m) => `must:${m.category}` !== filter) })
-    else if (filter.startsWith('anchor:')) setAnchors(anchors.map((a) => (`anchor:${a.id}` === filter ? { ...a, maxMinutes: null } : a)))
-  }
-  const relaxName = (filter: string) => {
-    if (filter === 'price') return t('criteria.price')
-    if (filter === 'noise') return t('places.maxNoise')
-    if (filter.startsWith('must:')) return t(`places.categories.${filter.slice(5)}`)
-    if (filter.startsWith('anchor:')) return anchors.find((a) => `anchor:${a.id}` === filter)?.label ?? filter
-    return filter
+    else if (filter.startsWith('mustHave:')) setFilters({ mustHave: filters.mustHave.filter((m) => `mustHave:${m.category}` !== filter) })
+    else if (filter.startsWith('commute:')) setAnchors(anchors.map((a) => (`commute:${a.id}` === filter ? { ...a, maxMinutes: null } : a)))
   }
 
   return (
@@ -183,9 +176,7 @@ export function RankingPanel() {
             <p className="font-medium">{tab === 'districts' ? t('results.noDistricts') : t('results.empty')}</p>
             {data.relaxHint && (
               <>
-                <p className="mt-2 text-ink-2">
-                  {t('results.relax', { filter: relaxName(data.relaxHint.filter), places: t('units.places', { count: data.relaxHint.gain ?? 0 }) })}
-                </p>
+                <p className="mt-2 text-ink-2">{data.relaxHint.text}</p>
                 <Button className="mt-3" size="sm" variant="secondary" onClick={() => relax(data.relaxHint!.filter)}>
                   {t('results.relaxAction')}
                 </Button>

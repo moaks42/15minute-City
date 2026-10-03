@@ -144,7 +144,7 @@ interface Actions {
   set: (p: Partial<AppState>) => void
   setCity: (c: CityId | null) => void
   setLang: (l: Lang) => void
-  pickPersona: (id: string, weights: Weights) => void
+  pickPersona: (id: string, weights: Record<string, number>) => void
   setLevel: (c: CriterionId, level: number) => void
   setAnchors: (a: Anchor[]) => void
   setFilters: (f: Partial<Filters>) => void
@@ -194,7 +194,7 @@ export const useApp = create<AppState & Actions>((set, get) => ({
     }
   },
   setLang: (lang) => set({ lang }),
-  pickPersona: (persona, weights) => set({ persona, weights: { ...weights } }),
+  pickPersona: (persona, weights) => set({ persona, weights: { ...DEFAULT_WEIGHTS, ...weights } as Weights }),
   setLevel: (c, level) => set((s) => ({ weights: { ...s.weights, [c]: level } })),
   setAnchors: (anchors) => set({ anchors: anchors.map((a, i) => ({ ...a, id: `a${i + 1}` })) }),
   setFilters: (f) => set((s) => ({ filters: { ...s.filters, ...f } })),

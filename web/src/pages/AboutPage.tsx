@@ -16,7 +16,7 @@ export function AboutPage() {
   const { data: meta, isPending, isError, refetch } = useMeta(city)
   const method = t('about.method', { returnObjects: true }) as string[]
   const limits = t('about.limits', { returnObjects: true }) as string[]
-  const date = (s?: string) => (s ? new Date(s).toLocaleDateString(locale(lang)) : '–')
+  const date = (s?: string | null) => (s ? new Date(s).toLocaleDateString(locale(lang)) : '–')
 
   return (
     <div className="flex h-full flex-col">

@@ -1,0 +1,2747 @@
+{
+ "city": "praha",
+ "currency": "CZK",
+ "lang": "cs",
+ "computeMs": 12.4,
+ "aggregate": "hex",
+ "count": {
+  "cells": 217,
+  "habitable": 205,
+  "passing": 118
+ },
+ "cells": [
+  [
+   "891e3541803ffff",
+   64,
+   1
+  ],
+  [
+   "891e3541807ffff",
+   68,
+   1
+  ],
+  [
+   "891e354180bffff",
+   68,
+   1
+  ],
+  [
+   "891e354180fffff",
+   76,
+   1
+  ],
+  [
+   "891e3541813ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541817ffff",
+   65,
+   0
+  ],
+  [
+   "891e354181bffff",
+   75,
+   0
+  ],
+  [
+   "891e3541823ffff",
+   59,
+   1
+  ],
+  [
+   "891e3541827ffff",
+   59,
+   0
+  ],
+  [
+   "891e354182bffff",
+   67,
+   1
+  ],
+  [
+   "891e354182fffff",
+   74,
+   1
+  ],
+  [
+   "891e3541833ffff",
+   66,
+   1
+  ],
+  [
+   "891e3541837ffff",
+   63,
+   0
+  ],
+  [
+   "891e354183bffff",
+   59,
+   1
+  ],
+  [
+   "891e3541843ffff",
+   75,
+   1
+  ],
+  [
+   "891e3541847ffff",
+   73,
+   1
+  ],
+  [
+   "891e354184bffff",
+   76,
+   1
+  ],
+  [
+   "891e354184fffff",
+   77,
+   1
+  ],
+  [
+   "891e3541853ffff",
+   71,
+   1
+  ],
+  [
+   "891e3541857ffff",
+   75,
+   1
+  ],
+  [
+   "891e354185bffff",
+   83,
+   1
+  ],
+  [
+   "891e3541863ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541867ffff",
+   73,
+   1
+  ],
+  [
+   "891e354186bffff",
+   75,
+   1
+  ],
+  [
+   "891e354186fffff",
+   70,
+   1
+  ],
+  [
+   "891e3541873ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541877ffff",
+   76,
+   1
+  ],
+  [
+   "891e354187bffff",
+   77,
+   1
+  ],
+  [
+   "891e3541883ffff",
+   52,
+   0
+  ],
+  [
+   "891e3541887ffff",
+   60,
+   0
+  ],
+  [
+   "891e354188bffff",
+   65,
+   0
+  ],
+  [
+   "891e354188fffff",
+   56,
+   1
+  ],
+  [
+   "891e354189bffff",
+   62,
+   0
+  ],
+  [
+   "891e35418a3ffff",
+   62,
+   0
+  ],
+  [
+   "891e35418a7ffff",
+   64,
+   0
+  ],
+  [
+   "891e35418abffff",
+   65,
+   0
+  ],
+  [
+   "891e35418afffff",
+   60,
+   0
+  ],
+  [
+   "891e35418b3ffff",
+   64,
+   0
+  ],
+  [
+   "891e35418b7ffff",
+   54,
+   0
+  ],
+  [
+   "891e35418bbffff",
+   66,
+   1
+  ],
+  [
+   "891e35418c3ffff",
+   64,
+   1
+  ],
+  [
+   "891e35418c7ffff",
+   71,
+   0
+  ],
+  [
+   "891e35418cbffff",
+   69,
+   1
+  ],
+  [
+   "891e35418cfffff",
+   71,
+   1
+  ],
+  [
+   "891e35418d3ffff",
+   55,
+   1
+  ],
+  [
+   "891e35418d7ffff",
+   58,
+   0
+  ],
+  [
+   "891e35418dbffff",
+   66,
+   1
+  ],
+  [
+   "891e3541943ffff",
+   58,
+   0
+  ],
+  [
+   "891e354194bffff",
+   55,
+   0
+  ],
+  [
+   "891e354194fffff",
+   53,
+   0
+  ],
+  [
+   "891e3541953ffff",
+   62,
+   0
+  ],
+  [
+   "891e354195bffff",
+   55,
+   0
+  ],
+  [
+   "891e35419cbffff",
+   58,
+   0
+  ],
+  [
+   "891e35419dbffff",
+   52,
+   0
+  ],
+  [
+   "891e3541a03ffff",
+   66,
+   1
+  ],
+  [
+   "891e3541a07ffff",
+   74,
+   1
+  ],
+  [
+   "891e3541a0bffff",
+   77,
+   1
+  ],
+  [
+   "891e3541a0fffff",
+   76,
+   1
+  ],
+  [
+   "891e3541a13ffff",
+   80,
+   1
+  ],
+  [
+   "891e3541a17ffff",
+   71,
+   1
+  ],
+  [
+   "891e3541a1bffff",
+   71,
+   1
+  ],
+  [
+   "891e3541a23ffff",
+   70,
+   1
+  ],
+  [
+   "891e3541a27ffff",
+   75,
+   1
+  ],
+  [
+   "891e3541a2bffff",
+   66,
+   0
+  ],
+  [
+   "891e3541a2fffff",
+   74,
+   1
+  ],
+  [
+   "891e3541a33ffff",
+   72,
+   1
+  ],
+  [
+   "891e3541a37ffff",
+   75,
+   1
+  ],
+  [
+   "891e3541a3bffff",
+   81,
+   1
+  ],
+  [
+   "891e3541a43ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541a47ffff",
+   64,
+   1
+  ],
+  [
+   "891e3541a4bffff",
+   68,
+   0
+  ],
+  [
+   "891e3541a4fffff",
+   57,
+   0
+  ],
+  [
+   "891e3541a53ffff",
+   70,
+   1
+  ],
+  [
+   "891e3541a57ffff",
+   71,
+   1
+  ],
+  [
+   "891e3541a5bffff",
+   60,
+   0
+  ],
+  [
+   "891e3541a63ffff",
+   77,
+   1
+  ],
+  [
+   "891e3541a67ffff",
+   68,
+   1
+  ],
+  [
+   "891e3541a6bffff",
+   68,
+   1
+  ],
+  [
+   "891e3541a6fffff",
+   74,
+   1
+  ],
+  [
+   "891e3541a73ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541a77ffff",
+   68,
+   0
+  ],
+  [
+   "891e3541a7bffff",
+   61,
+   1
+  ],
+  [
+   "891e3541a83ffff",
+   71,
+   1
+  ],
+  [
+   "891e3541a87ffff",
+   74,
+   1
+  ],
+  [
+   "891e3541a8bffff",
+   75,
+   1
+  ],
+  [
+   "891e3541a8fffff",
+   73,
+   1
+  ],
+  [
+   "891e3541a93ffff",
+   69,
+   1
+  ],
+  [
+   "891e3541a97ffff",
+   69,
+   1
+  ],
+  [
+   "891e3541a9bffff",
+   66,
+   1
+  ],
+  [
+   "891e3541aa3ffff",
+   77,
+   1
+  ],
+  [
+   "891e3541aa7ffff",
+   71,
+   0
+  ],
+  [
+   "891e3541aabffff",
+   80,
+   1
+  ],
+  [
+   "891e3541aafffff",
+   73,
+   1
+  ],
+  [
+   "891e3541ab3ffff",
+   75,
+   1
+  ],
+  [
+   "891e3541ab7ffff",
+   74,
+   1
+  ],
+  [
+   "891e3541abbffff",
+   79,
+   1
+  ],
+  [
+   "891e3541ac3ffff",
+   71,
+   1
+  ],
+  [
+   "891e3541ac7ffff",
+   71,
+   1
+  ],
+  [
+   "891e3541acbffff",
+   66,
+   0
+  ],
+  [
+   "891e3541acfffff",
+   72,
+   1
+  ],
+  [
+   "891e3541ad3ffff",
+   66,
+   0
+  ],
+  [
+   "891e3541ad7ffff",
+   68,
+   1
+  ],
+  [
+   "891e3541adbffff",
+   58,
+   0
+  ],
+  [
+   "891e3541b03ffff",
+   69,
+   1
+  ],
+  [
+   "891e3541b07ffff",
+   63,
+   1
+  ],
+  [
+   "891e3541b0bffff",
+   72,
+   1
+  ],
+  [
+   "891e3541b0fffff",
+   58,
+   0
+  ],
+  [
+   "891e3541b13ffff",
+   66,
+   1
+  ],
+  [
+   "891e3541b17ffff",
+   64,
+   0
+  ],
+  [
+   "891e3541b1bffff",
+   64,
+   1
+  ],
+  [
+   "891e3541b33ffff",
+   48,
+   0
+  ],
+  [
+   "891e3541b3bffff",
+   53,
+   0
+  ],
+  [
+   "891e3541b43ffff",
+   71,
+   1
+  ],
+  [
+   "891e3541b47ffff",
+   65,
+   0
+  ],
+  [
+   "891e3541b4bffff",
+   70,
+   1
+  ],
+  [
+   "891e3541b4fffff",
+   67,
+   1
+  ],
+  [
+   "891e3541b53ffff",
+   77,
+   1
+  ],
+  [
+   "891e3541b57ffff",
+   68,
+   1
+  ],
+  [
+   "891e3541b5bffff",
+   80,
+   1
+  ],
+  [
+   "891e3541b63ffff",
+   59,
+   0
+  ],
+  [
+   "891e3541b6bffff",
+   56,
+   0
+  ],
+  [
+   "891e3541b73ffff",
+   67,
+   0
+  ],
+  [
+   "891e3541b77ffff",
+   64,
+   0
+  ],
+  [
+   "891e3541b7bffff",
+   62,
+   1
+  ],
+  [
+   "891e3541b83ffff",
+   63,
+   1
+  ],
+  [
+   "891e3541b87ffff",
+   60,
+   1
+  ],
+  [
+   "891e3541b8bffff",
+   68,
+   0
+  ],
+  [
+   "891e3541b8fffff",
+   73,
+   1
+  ],
+  [
+   "891e3541b93ffff",
+   72,
+   1
+  ],
+  [
+   "891e3541b97ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541b9bffff",
+   70,
+   1
+  ],
+  [
+   "891e3541ba3ffff",
+   67,
+   0
+  ],
+  [
+   "891e3541ba7ffff",
+   57,
+   0
+  ],
+  [
+   "891e3541babffff",
+   64,
+   0
+  ],
+  [
+   "891e3541bafffff",
+   48,
+   0
+  ],
+  [
+   "891e3541bb3ffff",
+   56,
+   0
+  ],
+  [
+   "891e3541bb7ffff",
+   61,
+   0
+  ],
+  [
+   "891e3541bbbffff",
+   66,
+   0
+  ],
+  [
+   "891e3541bc3ffff",
+   77,
+   1
+  ],
+  [
+   "891e3541bc7ffff",
+   68,
+   1
+  ],
+  [
+   "891e3541bcbffff",
+   74,
+   1
+  ],
+  [
+   "891e3541bcfffff",
+   69,
+   1
+  ],
+  [
+   "891e3541bd3ffff",
+   73,
+   1
+  ],
+  [
+   "891e3541bd7ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541bdbffff",
+   73,
+   1
+  ],
+  [
+   "891e3541c6bffff",
+   54,
+   0
+  ],
+  [
+   "891e3541c6fffff",
+   58,
+   0
+  ],
+  [
+   "891e3541e03ffff",
+   67,
+   0
+  ],
+  [
+   "891e3541e07ffff",
+   68,
+   0
+  ],
+  [
+   "891e3541e0bffff",
+   64,
+   0
+  ],
+  [
+   "891e3541e0fffff",
+   65,
+   0
+  ],
+  [
+   "891e3541e17ffff",
+   58,
+   0
+  ],
+  [
+   "891e3541e23ffff",
+   66,
+   1
+  ],
+  [
+   "891e3541e27ffff",
+   70,
+   1
+  ],
+  [
+   "891e3541e2bffff",
+   71,
+   1
+  ],
+  [
+   "891e3541e2fffff",
+   68,
+   1
+  ],
+  [
+   "891e3541e33ffff",
+   62,
+   1
+  ],
+  [
+   "891e3541e37ffff",
+   70,
+   1
+  ],
+  [
+   "891e3541e3bffff",
+   63,
+   1
+  ],
+  [
+   "891e3541e47ffff",
+   51,
+   0
+  ],
+  [
+   "891e3541e4fffff",
+   57,
+   0
+  ],
+  [
+   "891e3541e63ffff",
+   64,
+   0
+  ],
+  [
+   "891e3541e67ffff",
+   72,
+   1
+  ],
+  [
+   "891e3541e6bffff",
+   60,
+   1
+  ],
+  [
+   "891e3541e6fffff",
+   64,
+   1
+  ],
+  [
+   "891e3541e73ffff",
+   64,
+   0
+  ],
+  [
+   "891e3541e77ffff",
+   70,
+   1
+  ],
+  [
+   "891e3541e7bffff",
+   71,
+   0
+  ],
+  [
+   "891e3541ea3ffff",
+   60,
+   0
+  ],
+  [
+   "891e3541ea7ffff",
+   58,
+   0
+  ],
+  [
+   "891e3541eabffff",
+   58,
+   0
+  ],
+  [
+   "891e3541eafffff",
+   66,
+   0
+  ],
+  [
+   "891e3541eb3ffff",
+   53,
+   0
+  ],
+  [
+   "891e3541eb7ffff",
+   59,
+   0
+  ],
+  [
+   "891e3541ebbffff",
+   56,
+   0
+  ],
+  [
+   "891e354a987ffff",
+   60,
+   0
+  ],
+  [
+   "891e354a997ffff",
+   63,
+   0
+  ],
+  [
+   "891e354a9a3ffff",
+   59,
+   0
+  ],
+  [
+   "891e354a9a7ffff",
+   62,
+   1
+  ],
+  [
+   "891e354a9abffff",
+   61,
+   0
+  ],
+  [
+   "891e354a9afffff",
+   65,
+   0
+  ],
+  [
+   "891e354a9b3ffff",
+   59,
+   0
+  ],
+  [
+   "891e354a9b7ffff",
+   66,
+   0
+  ],
+  [
+   "891e354a9bbffff",
+   68,
+   0
+  ],
+  [
+   "891e354ad23ffff",
+   59,
+   0
+  ],
+  [
+   "891e354ad27ffff",
+   65,
+   0
+  ],
+  [
+   "891e354ad2fffff",
+   60,
+   0
+  ],
+  [
+   "891e354ad33ffff",
+   62,
+   0
+  ],
+  [
+   "891e354ad37ffff",
+   72,
+   0
+  ],
+  [
+   "891e354ada3ffff",
+   63,
+   0
+  ],
+  [
+   "891e354ada7ffff",
+   58,
+   0
+  ],
+  [
+   "891e354adabffff",
+   59,
+   0
+  ],
+  [
+   "891e354adafffff",
+   68,
+   0
+  ],
+  [
+   "891e354adb3ffff",
+   61,
+   0
+  ],
+  [
+   "891e354adb7ffff",
+   65,
+   0
+  ],
+  [
+   "891e354adbbffff",
+   53,
+   0
+  ],
+  [
+   "891e354f413ffff",
+   65,
+   0
+  ],
+  [
+   "891e354f417ffff",
+   58,
+   0
+  ],
+  [
+   "891e354f483ffff",
+   71,
+   1
+  ],
+  [
+   "891e354f487ffff",
+   70,
+   1
+  ],
+  [
+   "891e354f48bffff",
+   67,
+   1
+  ],
+  [
+   "891e354f48fffff",
+   59,
+   0
+  ],
+  [
+   "891e354f493ffff",
+   71,
+   1
+  ],
+  [
+   "891e354f497ffff",
+   63,
+   1
+  ],
+  [
+   "891e354f49bffff",
+   60,
+   1
+  ],
+  [
+   "891e354f4a3ffff",
+   62,
+   0
+  ],
+  [
+   "891e354f4a7ffff",
+   60,
+   0
+  ],
+  [
+   "891e354f4abffff",
+   59,
+   0
+  ],
+  [
+   "891e354f4afffff",
+   49,
+   0
+  ],
+  [
+   "891e354f4b3ffff",
+   65,
+   1
+  ],
+  [
+   "891e354f4b7ffff",
+   56,
+   1
+  ],
+  [
+   "891e354f4bbffff",
+   65,
+   0
+  ],
+  [
+   "891e354f4c3ffff",
+   61,
+   0
+  ],
+  [
+   "891e354f4c7ffff",
+   59,
+   0
+  ],
+  [
+   "891e354f4d3ffff",
+   67,
+   1
+  ],
+  [
+   "891e354f4d7ffff",
+   67,
+   1
+  ],
+  [
+   "891e354f4dbffff",
+   62,
+   0
+  ]
+ ],
+ "top": [
+  {
+   "id": "891e354185bffff",
+   "kind": "hex",
+   "rank": 1,
+   "score": 83,
+   "name": "Nové Město",
+   "district": {
+    "id": "500054",
+    "name": "Praha 1"
+   },
+   "centroid": {
+    "lat": 50.082521,
+    "lon": 14.429984
+   },
+   "criteria": {
+    "transit": 83,
+    "active": 62,
+    "green": 62,
+    "education": 94,
+    "family": 71,
+    "safety": 47,
+    "price": 97,
+    "shops": 78,
+    "health": 81,
+    "environment": 37,
+    "leisure": 93,
+    "accessibility": 75,
+    "commute": 98
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 335.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 335 Kč/m²/měs."
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "environment",
+     "indicator": "environment.noise_db",
+     "value": 69.0,
+     "unit": "db",
+     "text": "Hluk cca 69 dB"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 16,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 335.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 42,
+   "budgetText": "Za váš rozpočet ~42 m²",
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 451
+  },
+  {
+   "id": "891e3541a3bffff",
+   "kind": "hex",
+   "rank": 2,
+   "score": 81,
+   "name": "Nusle",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.067478,
+    "lon": 14.435753
+   },
+   "criteria": {
+    "transit": 74,
+    "active": 87,
+    "green": 63,
+    "education": 91,
+    "family": 86,
+    "safety": 34,
+    "price": 95,
+    "shops": 62,
+    "health": 75,
+    "environment": 35,
+    "leisure": 95,
+    "accessibility": 66,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 344.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 344 Kč/m²/měs."
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 87.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 87 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 13,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 344.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 41,
+   "budgetText": "Za váš rozpočet ~41 m²",
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 909
+  },
+  {
+   "id": "891e3541a13ffff",
+   "kind": "hex",
+   "rank": 3,
+   "score": 80,
+   "name": "Nové Město",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.072068,
+    "lon": 14.425663
+   },
+   "criteria": {
+    "transit": 87,
+    "active": 72,
+    "green": 56,
+    "education": 93,
+    "family": 79,
+    "safety": 30,
+    "price": 78,
+    "shops": 73,
+    "health": 79,
+    "environment": 62,
+    "leisure": 88,
+    "accessibility": 71,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Zastávka 3 min pěšky"
+    },
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 375.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 375 Kč/m²/měs."
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 86.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 86 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 12,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 375.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 37,
+   "budgetText": "Za váš rozpočet ~37 m²",
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 945
+  },
+  {
+   "id": "891e3541aabffff",
+   "kind": "hex",
+   "rank": 4,
+   "score": 80,
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.072578,
+    "lon": 14.435464
+   },
+   "criteria": {
+    "transit": 89,
+    "active": 78,
+    "green": 54,
+    "education": 97,
+    "family": 86,
+    "safety": 25,
+    "price": 73,
+    "shops": 77,
+    "health": 78,
+    "environment": 40,
+    "leisure": 97,
+    "accessibility": 64,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 2.0,
+     "unit": "min",
+     "text": "Zastávka 2 min pěšky"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 92.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 92 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 13,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 379.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 37,
+   "budgetText": "Za váš rozpočet ~37 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 935
+  },
+  {
+   "id": "891e3541b5bffff",
+   "kind": "hex",
+   "rank": 5,
+   "score": 80,
+   "name": "Nusle",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.065564,
+    "lon": 14.448147
+   },
+   "criteria": {
+    "transit": 86,
+    "active": 84,
+    "green": 62,
+    "education": 81,
+    "family": 76,
+    "safety": 69,
+    "price": 73,
+    "shops": 56,
+    "health": 76,
+    "environment": 76,
+    "leisure": 79,
+    "accessibility": 65,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Zastávka 3 min pěšky"
+    },
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 372.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 372 Kč/m²/měs."
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "green",
+     "indicator": "green.forest_meadow_ha_1km",
+     "value": 0.0,
+     "unit": "ha",
+     "text": "0 ha lesů a luk do 1 km"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 15,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 372.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 38,
+   "budgetText": "Za váš rozpočet ~38 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 807
+  },
+  {
+   "id": "891e3541abbffff",
+   "kind": "hex",
+   "rank": 6,
+   "score": 79,
+   "name": "Nové Město",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.075,
+    "lon": 14.432869
+   },
+   "criteria": {
+    "transit": 86,
+    "active": 88,
+    "green": 56,
+    "education": 84,
+    "family": 64,
+    "safety": 28,
+    "price": 60,
+    "shops": 82,
+    "health": 90,
+    "environment": 35,
+    "leisure": 97,
+    "accessibility": 72,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.food_10min",
+     "value": 137.0,
+     "unit": "count",
+     "text": "Restaurace a kavárny do 10 min: 137"
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 2.0,
+     "unit": "min",
+     "text": "Zastávka 2 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 94.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 94 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 14,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 393.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 36,
+   "budgetText": "Za váš rozpočet ~36 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 923
+  },
+  {
+   "id": "891e354184fffff",
+   "kind": "hex",
+   "rank": 7,
+   "score": 77,
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.080354,
+    "lon": 14.43748
+   },
+   "criteria": {
+    "transit": 94,
+    "active": 90,
+    "green": 54,
+    "education": 87,
+    "family": 56,
+    "safety": 30,
+    "price": 48,
+    "shops": 86,
+    "health": 87,
+    "environment": 32,
+    "leisure": 88,
+    "accessibility": 93,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 2.0,
+     "unit": "min",
+     "text": "Zastávka 2 min pěšky"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 405.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 405 Kč/m²/měs."
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 12,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 405.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 35,
+   "budgetText": "Za váš rozpočet ~35 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 734
+  },
+  {
+   "id": "891e354187bffff",
+   "kind": "hex",
+   "rank": 8,
+   "score": 77,
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.080608,
+    "lon": 14.442381
+   },
+   "criteria": {
+    "transit": 94,
+    "active": 94,
+    "green": 48,
+    "education": 95,
+    "family": 55,
+    "safety": 45,
+    "price": 43,
+    "shops": 82,
+    "health": 76,
+    "environment": 31,
+    "leisure": 94,
+    "accessibility": 66,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Zastávka 3 min pěšky"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 4.0,
+     "unit": "min",
+     "text": "Kultura 4 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 411.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 411 Kč/m²/měs."
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 13,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 411.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 34,
+   "budgetText": "Za váš rozpočet ~34 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 701
+  },
+  {
+   "id": "891e3541a0bffff",
+   "kind": "hex",
+   "rank": 9,
+   "score": 77,
+   "name": "Vyšehrad",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.066969,
+    "lon": 14.425953
+   },
+   "criteria": {
+    "transit": 71,
+    "active": 70,
+    "green": 77,
+    "education": 80,
+    "family": 65,
+    "safety": 56,
+    "price": 64,
+    "shops": 68,
+    "health": 82,
+    "environment": 64,
+    "leisure": 87,
+    "accessibility": 93,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pěšky"
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 4.0,
+     "unit": "min",
+     "text": "Zastávka 4 min pěšky"
+    }
+   ],
+   "warnings": [],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 9,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 383.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 37,
+   "budgetText": "Za váš rozpočet ~37 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 661
+  },
+  {
+   "id": "891e3541a63ffff",
+   "kind": "hex",
+   "rank": 10,
+   "score": 77,
+   "name": "Nusle",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.062124,
+    "lon": 14.431142
+   },
+   "criteria": {
+    "transit": 72,
+    "active": 66,
+    "green": 80,
+    "education": 83,
+    "family": 39,
+    "safety": 32,
+    "price": 92,
+    "shops": 53,
+    "health": 69,
+    "environment": 46,
+    "leisure": 80,
+    "accessibility": 88,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 347.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 347 Kč/m²/měs."
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 4.0,
+     "unit": "min",
+     "text": "Zastávka 4 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 76.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 76 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 12,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 347.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 40,
+   "budgetText": "Za váš rozpočet ~40 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 722
+  },
+  {
+   "id": "891e3541aa3ffff",
+   "kind": "hex",
+   "rank": 11,
+   "score": 77,
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.075255,
+    "lon": 14.437769
+   },
+   "criteria": {
+    "transit": 95,
+    "active": 88,
+    "green": 68,
+    "education": 100,
+    "family": 87,
+    "safety": 27,
+    "price": 36,
+    "shops": 87,
+    "health": 94,
+    "environment": 34,
+    "leisure": 99,
+    "accessibility": 68,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Zastávka 3 min pěšky"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.food_10min",
+     "value": 163.0,
+     "unit": "count",
+     "text": "Restaurace a kavárny do 10 min: 163"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 423.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 423 Kč/m²/měs."
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 15,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 423.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 33,
+   "budgetText": "Za váš rozpočet ~33 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 993
+  },
+  {
+   "id": "891e3541b53ffff",
+   "kind": "hex",
+   "rank": 12,
+   "score": 77,
+   "name": "Vršovice",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.068241,
+    "lon": 14.450453
+   },
+   "criteria": {
+    "transit": 75,
+    "active": 64,
+    "green": 58,
+    "education": 87,
+    "family": 76,
+    "safety": 39,
+    "price": 78,
+    "shops": 71,
+    "health": 74,
+    "environment": 48,
+    "leisure": 90,
+    "accessibility": 78,
+    "commute": 96
+   },
+   "highlights": [
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Kultura 6 min pěšky"
+    },
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 371.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 371 Kč/m²/měs."
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 94.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 94 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 17,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 371.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 38,
+   "budgetText": "Za váš rozpočet ~38 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 721
+  },
+  {
+   "id": "891e3541bc3ffff",
+   "kind": "hex",
+   "rank": 13,
+   "score": 77,
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.073341,
+    "lon": 14.450165
+   },
+   "criteria": {
+    "transit": 86,
+    "active": 80,
+    "green": 61,
+    "education": 90,
+    "family": 59,
+    "safety": 30,
+    "price": 48,
+    "shops": 77,
+    "health": 82,
+    "environment": 69,
+    "leisure": 93,
+    "accessibility": 78,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 2.0,
+     "unit": "min",
+     "text": "Zastávka 2 min pěšky"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.food_10min",
+     "value": 137.0,
+     "unit": "count",
+     "text": "Restaurace a kavárny do 10 min: 137"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 406.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 406 Kč/m²/měs."
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 13,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 406.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 34,
+   "budgetText": "Za váš rozpočet ~34 m²",
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 711
+  },
+  {
+   "id": "891e354180fffff",
+   "kind": "hex",
+   "rank": 14,
+   "score": 76,
+   "name": "Žižkov",
+   "district": {
+    "id": "500097",
+    "name": "Praha 3"
+   },
+   "centroid": {
+    "lat": 50.085961,
+    "lon": 14.446994
+   },
+   "criteria": {
+    "transit": 76,
+    "active": 82,
+    "green": 50,
+    "education": 87,
+    "family": 85,
+    "safety": 29,
+    "price": 82,
+    "shops": 59,
+    "health": 78,
+    "environment": 67,
+    "leisure": 81,
+    "accessibility": 76,
+    "commute": 91
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 358.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 358 Kč/m²/měs."
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Zastávka 3 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 82.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 82 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 19,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 358.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 39,
+   "budgetText": "Za váš rozpočet ~39 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 526
+  },
+  {
+   "id": "891e354184bffff",
+   "kind": "hex",
+   "rank": 15,
+   "score": 76,
+   "name": "Nové Město",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.080099,
+    "lon": 14.43258
+   },
+   "criteria": {
+    "transit": 83,
+    "active": 81,
+    "green": 57,
+    "education": 93,
+    "family": 57,
+    "safety": 18,
+    "price": 57,
+    "shops": 66,
+    "health": 83,
+    "environment": 66,
+    "leisure": 95,
+    "accessibility": 76,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pěšky"
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.departures_per_h_500m",
+     "value": 70.0,
+     "unit": "dep_h",
+     "text": "70 odj./h do 500 m"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 84.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 84 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 12,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 387.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 36,
+   "budgetText": "Za váš rozpočet ~36 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 584
+  },
+  {
+   "id": "891e3541877ffff",
+   "kind": "hex",
+   "rank": 16,
+   "score": 76,
+   "name": "Žižkov",
+   "district": {
+    "id": "500097",
+    "name": "Praha 3"
+   },
+   "centroid": {
+    "lat": 50.083539,
+    "lon": 14.449589
+   },
+   "criteria": {
+    "transit": 75,
+    "active": 62,
+    "green": 67,
+    "education": 87,
+    "family": 51,
+    "safety": 36,
+    "price": 90,
+    "shops": 45,
+    "health": 71,
+    "environment": 80,
+    "leisure": 75,
+    "accessibility": 75,
+    "commute": 98
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 348.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 348 Kč/m²/měs."
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 4.0,
+     "unit": "min",
+     "text": "Zastávka 4 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 84.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 84 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 16,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 348.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 40,
+   "budgetText": "Za váš rozpočet ~40 m²",
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 302
+  },
+  {
+   "id": "891e3541a0fffff",
+   "kind": "hex",
+   "rank": 17,
+   "score": 76,
+   "name": "Nusle",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.067224,
+    "lon": 14.430853
+   },
+   "criteria": {
+    "transit": 88,
+    "active": 75,
+    "green": 66,
+    "education": 88,
+    "family": 76,
+    "safety": 36,
+    "price": 56,
+    "shops": 65,
+    "health": 85,
+    "environment": 60,
+    "leisure": 84,
+    "accessibility": 68,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Zastávka 3 min pěšky"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Kultura 6 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 93.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 93 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 11,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 396.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 35,
+   "budgetText": "Za váš rozpočet ~35 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 812
+  },
+  {
+   "id": "891e3541843ffff",
+   "kind": "hex",
+   "rank": 18,
+   "score": 75,
+   "name": "Nové Město",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.082776,
+    "lon": 14.434885
+   },
+   "criteria": {
+    "transit": 81,
+    "active": 87,
+    "green": 63,
+    "education": 96,
+    "family": 71,
+    "safety": 26,
+    "price": 62,
+    "shops": 59,
+    "health": 81,
+    "environment": 45,
+    "leisure": 87,
+    "accessibility": 74,
+    "commute": 98
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.departures_per_h_500m",
+     "value": 76.0,
+     "unit": "dep_h",
+     "text": "76 odj./h do 500 m"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Kultura 6 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 83.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 83 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 16,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 389.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 36,
+   "budgetText": "Za váš rozpočet ~36 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [
+    "health.gynaecology_walk_min"
+   ],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 745
+  },
+  {
+   "id": "891e3541857ffff",
+   "kind": "hex",
+   "rank": 19,
+   "score": 75,
+   "name": "Nové Město",
+   "district": {
+    "id": "500054",
+    "name": "Praha 1"
+   },
+   "centroid": {
+    "lat": 50.085452,
+    "lon": 14.437191
+   },
+   "criteria": {
+    "transit": 68,
+    "active": 79,
+    "green": 50,
+    "education": 89,
+    "family": 70,
+    "safety": 26,
+    "price": 83,
+    "shops": 66,
+    "health": 79,
+    "environment": 29,
+    "leisure": 93,
+    "accessibility": 65,
+    "commute": 93
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 352.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 352 Kč/m²/měs."
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 76.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 76 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 18,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 352.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 40,
+   "budgetText": "Za váš rozpočet ~40 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 507
+  },
+  {
+   "id": "891e354186bffff",
+   "kind": "hex",
+   "rank": 20,
+   "score": 75,
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.078186,
+    "lon": 14.444976
+   },
+   "criteria": {
+    "transit": 92,
+    "active": 79,
+    "green": 53,
+    "education": 85,
+    "family": 61,
+    "safety": 22,
+    "price": 49,
+    "shops": 85,
+    "health": 83,
+    "environment": 49,
+    "leisure": 87,
+    "accessibility": 60,
+    "commute": 98
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.departures_per_h_500m",
+     "value": 83.0,
+     "unit": "dep_h",
+     "text": "83 odj./h do 500 m"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 87.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 87 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "UK – Albertov",
+     "minutes": 16,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 401.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 35,
+   "budgetText": "Za váš rozpočet ~35 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 834
+  }
+ ],
+ "relaxHint": null,
+ "excludedCriteria": [],
+ "weightsUsed": {
+  "commute": 5,
+  "transit": 5,
+  "active": 3,
+  "green": 2,
+  "education": 1,
+  "family": 0,
+  "safety": 3,
+  "price": 5,
+  "shops": 3,
+  "health": 1,
+  "environment": 2,
+  "leisure": 5,
+  "accessibility": 0
+ },
+ "cityMedian": {
+  "transit": 59,
+  "active": 52,
+  "green": 63,
+  "education": 79,
+  "family": 72,
+  "safety": 53,
+  "price": 57,
+  "shops": 50,
+  "health": 70,
+  "environment": 55,
+  "leisure": 68,
+  "accessibility": 73,
+  "commute": 98
+ }
+}

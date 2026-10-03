@@ -1,7 +1,8 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useEffect, useMemo, useState } from 'react'
 import { api } from './client'
-import type { CityId, Mode, ScoreRequest } from './types'
+import type { CityId, CriterionId, Mode, ScoreRequest } from './types'
+import { CRITERIA } from './types'
 import { useApp } from '@/state/store'
 import { STATIC_FALLBACK } from '@/lib/env'
 
@@ -16,16 +17,16 @@ function useDebounced<T>(value: T, ms: number): T {
 
 export const useCities = () => useQuery({ queryKey: ['cities'], queryFn: api.cities, staleTime: Infinity })
 
+/** /meta labels are {pl,cs,en}, so a language switch needs no refetch. */
 export function useMeta(city: CityId | null) {
-  const lang = useApp((s) => s.lang)
-  return useQuery({ queryKey: ['meta', city, lang], queryFn: () => api.meta(city!, lang), enabled: !!city, staleTime: Infinity, placeholderData: keepPreviousData })
+  return useQuery({ queryKey: ['meta', city], queryFn: () => api.meta(city!, 'en'), enabled: !!city, staleTime: Infinity, placeholderData: keepPreviousData })
 }
 
 export const useGrid = (city: CityId | null) =>
   useQuery({ queryKey: ['grid', city], queryFn: () => api.grid(city!), enabled: !!city, staleTime: Infinity })
 
 /** The /score request built from the current state. */
-export function useScoreRequest(aggregate: 'hex' | 'district' = 'hex'): ScoreRequest {
+export function useScoreRequest(aggregate: ScoreRequest['aggregate'] = 'hex'): ScoreRequest {
   const { lang, persona, weights, anchors, filters, budget, city } = useApp()
   return useMemo(
     () => ({
@@ -38,12 +39,13 @@ export function useScoreRequest(aggregate: 'hex' | 'district' = 'hex'): ScoreReq
       budget: city === 'krakow' ? { total: budget } : { monthlyRent: budget },
       aggregate,
       limit: 20,
+      includeCells: aggregate === 'hex',
     }),
     [lang, persona, weights, anchors, filters, budget, city, aggregate],
   )
 }
 
-export function useScore(aggregate: 'hex' | 'district' = 'hex', enabled = true) {
+export function useScore(aggregate: ScoreRequest['aggregate'] = 'hex', enabled = true) {
   const city = useApp((s) => s.city)
   const req = useDebounced(useScoreRequest(aggregate), 250)
   return useQuery({
@@ -55,15 +57,45 @@ export function useScore(aggregate: 'hex' | 'district' = 'hex', enabled = true) 
   })
 }
 
+/** Single-criterion map mode: /score with only that criterion weighted
+ *  returns exactly its 0–100 score per cell. */
+export function useCriterionScore(criterion: CriterionId | null) {
+  const { city, lang, persona } = useApp()
+  const req: ScoreRequest | null = criterion
+    ? {
+        v: 1,
+        lang,
+        persona: persona ?? 'custom',
+        weights: Object.fromEntries(CRITERIA.map((c) => [c, c === criterion ? 5 : 0])),
+        anchors: [],
+        filters: { mustHave: [] },
+        aggregate: 'hex',
+        limit: 1,
+        includeCells: true,
+      }
+    : null
+  return useQuery({
+    queryKey: ['critScore', city, req],
+    queryFn: () => api.score(city!, req!),
+    enabled: !!city && !!req,
+    staleTime: Infinity,
+  })
+}
+
 export function usePlace(h3: string | null) {
   const city = useApp((s) => s.city)
   const req = useDebounced(useScoreRequest('hex'), 250)
   return useQuery({
     queryKey: ['place', city, h3, req],
-    queryFn: () => api.place(city!, h3!, req),
+    queryFn: () => api.place(city!, h3!, { ...req, includeCells: false }),
     enabled: !!city && !!h3,
     placeholderData: (prev, q) => (q?.queryKey[2] === h3 ? prev : undefined),
   })
+}
+
+export function useSimilar(h3: string | null) {
+  const city = useApp((s) => s.city)
+  return useQuery({ queryKey: ['similar', city, h3], queryFn: () => api.similar(city!, h3!), enabled: !!city && !!h3 && !STATIC_FALLBACK, staleTime: Infinity })
 }
 
 export function useCommute(lat?: number, lon?: number, mode?: Mode) {
@@ -97,6 +129,3 @@ export function useAir(lat?: number, lon?: number) {
     retry: false,
   })
 }
-
-export const useCriteriaScores = (city: CityId | null) =>
-  useQuery({ queryKey: ['critScores', city], queryFn: () => api.criteriaScores(city!), enabled: !!city, staleTime: Infinity })

@@ -180,7 +180,6 @@
     "error": "Something went wrong while loading results.",
     "retry": "Try again",
     "empty": "No place passes all your limits.",
-    "relax": "Removing “{{filter}}” would bring back {{places}}.",
     "relaxAction": "Remove this limit",
     "highlights": "Why it fits",
     "warning": "Watch out",

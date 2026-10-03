@@ -1,0 +1,2875 @@
+{
+ "city": "praha",
+ "currency": "CZK",
+ "lang": "cs",
+ "computeMs": 12.4,
+ "aggregate": "hex",
+ "count": {
+  "cells": 217,
+  "habitable": 205,
+  "passing": 145
+ },
+ "cells": [
+  [
+   "891e3541803ffff",
+   60,
+   1
+  ],
+  [
+   "891e3541807ffff",
+   67,
+   1
+  ],
+  [
+   "891e354180bffff",
+   65,
+   1
+  ],
+  [
+   "891e354180fffff",
+   69,
+   1
+  ],
+  [
+   "891e3541813ffff",
+   65,
+   0
+  ],
+  [
+   "891e3541817ffff",
+   63,
+   1
+  ],
+  [
+   "891e354181bffff",
+   69,
+   1
+  ],
+  [
+   "891e3541823ffff",
+   63,
+   1
+  ],
+  [
+   "891e3541827ffff",
+   57,
+   1
+  ],
+  [
+   "891e354182bffff",
+   63,
+   0
+  ],
+  [
+   "891e354182fffff",
+   68,
+   1
+  ],
+  [
+   "891e3541833ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541837ffff",
+   66,
+   1
+  ],
+  [
+   "891e354183bffff",
+   63,
+   0
+  ],
+  [
+   "891e3541843ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541847ffff",
+   64,
+   0
+  ],
+  [
+   "891e354184bffff",
+   66,
+   1
+  ],
+  [
+   "891e354184fffff",
+   66,
+   0
+  ],
+  [
+   "891e3541853ffff",
+   69,
+   1
+  ],
+  [
+   "891e3541857ffff",
+   63,
+   0
+  ],
+  [
+   "891e354185bffff",
+   72,
+   0
+  ],
+  [
+   "891e3541863ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541867ffff",
+   69,
+   1
+  ],
+  [
+   "891e354186bffff",
+   65,
+   1
+  ],
+  [
+   "891e354186fffff",
+   61,
+   0
+  ],
+  [
+   "891e3541873ffff",
+   57,
+   0
+  ],
+  [
+   "891e3541877ffff",
+   66,
+   1
+  ],
+  [
+   "891e354187bffff",
+   65,
+   0
+  ],
+  [
+   "891e3541883ffff",
+   58,
+   1
+  ],
+  [
+   "891e3541887ffff",
+   62,
+   1
+  ],
+  [
+   "891e354188bffff",
+   66,
+   1
+  ],
+  [
+   "891e354188fffff",
+   62,
+   0
+  ],
+  [
+   "891e354189bffff",
+   66,
+   0
+  ],
+  [
+   "891e35418a3ffff",
+   59,
+   1
+  ],
+  [
+   "891e35418a7ffff",
+   66,
+   0
+  ],
+  [
+   "891e35418abffff",
+   65,
+   0
+  ],
+  [
+   "891e35418afffff",
+   72,
+   1
+  ],
+  [
+   "891e35418b3ffff",
+   65,
+   1
+  ],
+  [
+   "891e35418b7ffff",
+   61,
+   0
+  ],
+  [
+   "891e35418bbffff",
+   66,
+   1
+  ],
+  [
+   "891e35418c3ffff",
+   63,
+   1
+  ],
+  [
+   "891e35418c7ffff",
+   68,
+   1
+  ],
+  [
+   "891e35418cbffff",
+   63,
+   1
+  ],
+  [
+   "891e35418cfffff",
+   68,
+   1
+  ],
+  [
+   "891e35418d3ffff",
+   61,
+   1
+  ],
+  [
+   "891e35418d7ffff",
+   64,
+   1
+  ],
+  [
+   "891e35418dbffff",
+   63,
+   1
+  ],
+  [
+   "891e3541943ffff",
+   65,
+   1
+  ],
+  [
+   "891e354194bffff",
+   66,
+   1
+  ],
+  [
+   "891e354194fffff",
+   61,
+   1
+  ],
+  [
+   "891e3541953ffff",
+   62,
+   0
+  ],
+  [
+   "891e354195bffff",
+   59,
+   1
+  ],
+  [
+   "891e35419cbffff",
+   70,
+   1
+  ],
+  [
+   "891e35419dbffff",
+   61,
+   1
+  ],
+  [
+   "891e3541a03ffff",
+   62,
+   0
+  ],
+  [
+   "891e3541a07ffff",
+   71,
+   0
+  ],
+  [
+   "891e3541a0bffff",
+   72,
+   1
+  ],
+  [
+   "891e3541a0fffff",
+   70,
+   1
+  ],
+  [
+   "891e3541a13ffff",
+   69,
+   1
+  ],
+  [
+   "891e3541a17ffff",
+   66,
+   0
+  ],
+  [
+   "891e3541a1bffff",
+   67,
+   1
+  ],
+  [
+   "891e3541a23ffff",
+   69,
+   0
+  ],
+  [
+   "891e3541a27ffff",
+   71,
+   1
+  ],
+  [
+   "891e3541a2bffff",
+   57,
+   0
+  ],
+  [
+   "891e3541a2fffff",
+   66,
+   1
+  ],
+  [
+   "891e3541a33ffff",
+   64,
+   0
+  ],
+  [
+   "891e3541a37ffff",
+   67,
+   0
+  ],
+  [
+   "891e3541a3bffff",
+   69,
+   0
+  ],
+  [
+   "891e3541a43ffff",
+   63,
+   0
+  ],
+  [
+   "891e3541a47ffff",
+   57,
+   0
+  ],
+  [
+   "891e3541a4bffff",
+   61,
+   1
+  ],
+  [
+   "891e3541a4fffff",
+   58,
+   0
+  ],
+  [
+   "891e3541a53ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541a57ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541a5bffff",
+   62,
+   0
+  ],
+  [
+   "891e3541a63ffff",
+   62,
+   1
+  ],
+  [
+   "891e3541a67ffff",
+   62,
+   1
+  ],
+  [
+   "891e3541a6bffff",
+   66,
+   1
+  ],
+  [
+   "891e3541a6fffff",
+   71,
+   1
+  ],
+  [
+   "891e3541a73ffff",
+   58,
+   1
+  ],
+  [
+   "891e3541a77ffff",
+   63,
+   0
+  ],
+  [
+   "891e3541a7bffff",
+   61,
+   0
+  ],
+  [
+   "891e3541a83ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541a87ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541a8bffff",
+   64,
+   0
+  ],
+  [
+   "891e3541a8fffff",
+   72,
+   1
+  ],
+  [
+   "891e3541a93ffff",
+   63,
+   0
+  ],
+  [
+   "891e3541a97ffff",
+   60,
+   1
+  ],
+  [
+   "891e3541a9bffff",
+   63,
+   1
+  ],
+  [
+   "891e3541aa3ffff",
+   72,
+   0
+  ],
+  [
+   "891e3541aa7ffff",
+   61,
+   0
+  ],
+  [
+   "891e3541aabffff",
+   68,
+   1
+  ],
+  [
+   "891e3541aafffff",
+   69,
+   0
+  ],
+  [
+   "891e3541ab3ffff",
+   67,
+   0
+  ],
+  [
+   "891e3541ab7ffff",
+   65,
+   0
+  ],
+  [
+   "891e3541abbffff",
+   68,
+   1
+  ],
+  [
+   "891e3541ac3ffff",
+   63,
+   1
+  ],
+  [
+   "891e3541ac7ffff",
+   62,
+   0
+  ],
+  [
+   "891e3541acbffff",
+   66,
+   0
+  ],
+  [
+   "891e3541acfffff",
+   68,
+   1
+  ],
+  [
+   "891e3541ad3ffff",
+   62,
+   0
+  ],
+  [
+   "891e3541ad7ffff",
+   64,
+   1
+  ],
+  [
+   "891e3541adbffff",
+   62,
+   1
+  ],
+  [
+   "891e3541b03ffff",
+   62,
+   1
+  ],
+  [
+   "891e3541b07ffff",
+   68,
+   1
+  ],
+  [
+   "891e3541b0bffff",
+   63,
+   1
+  ],
+  [
+   "891e3541b0fffff",
+   64,
+   0
+  ],
+  [
+   "891e3541b13ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541b17ffff",
+   59,
+   1
+  ],
+  [
+   "891e3541b1bffff",
+   66,
+   1
+  ],
+  [
+   "891e3541b33ffff",
+   62,
+   0
+  ],
+  [
+   "891e3541b3bffff",
+   58,
+   1
+  ],
+  [
+   "891e3541b43ffff",
+   66,
+   1
+  ],
+  [
+   "891e3541b47ffff",
+   63,
+   1
+  ],
+  [
+   "891e3541b4bffff",
+   66,
+   1
+  ],
+  [
+   "891e3541b4fffff",
+   66,
+   1
+  ],
+  [
+   "891e3541b53ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541b57ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541b5bffff",
+   74,
+   1
+  ],
+  [
+   "891e3541b63ffff",
+   69,
+   1
+  ],
+  [
+   "891e3541b6bffff",
+   65,
+   1
+  ],
+  [
+   "891e3541b73ffff",
+   63,
+   1
+  ],
+  [
+   "891e3541b77ffff",
+   59,
+   1
+  ],
+  [
+   "891e3541b7bffff",
+   59,
+   0
+  ],
+  [
+   "891e3541b83ffff",
+   63,
+   1
+  ],
+  [
+   "891e3541b87ffff",
+   68,
+   1
+  ],
+  [
+   "891e3541b8bffff",
+   67,
+   1
+  ],
+  [
+   "891e3541b8fffff",
+   69,
+   1
+  ],
+  [
+   "891e3541b93ffff",
+   66,
+   1
+  ],
+  [
+   "891e3541b97ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541b9bffff",
+   68,
+   1
+  ],
+  [
+   "891e3541ba3ffff",
+   62,
+   1
+  ],
+  [
+   "891e3541ba7ffff",
+   61,
+   1
+  ],
+  [
+   "891e3541babffff",
+   64,
+   1
+  ],
+  [
+   "891e3541bafffff",
+   60,
+   0
+  ],
+  [
+   "891e3541bb3ffff",
+   61,
+   1
+  ],
+  [
+   "891e3541bb7ffff",
+   64,
+   1
+  ],
+  [
+   "891e3541bbbffff",
+   64,
+   1
+  ],
+  [
+   "891e3541bc3ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541bc7ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541bcbffff",
+   63,
+   0
+  ],
+  [
+   "891e3541bcfffff",
+   65,
+   1
+  ],
+  [
+   "891e3541bd3ffff",
+   65,
+   0
+  ],
+  [
+   "891e3541bd7ffff",
+   66,
+   0
+  ],
+  [
+   "891e3541bdbffff",
+   68,
+   1
+  ],
+  [
+   "891e3541c6bffff",
+   65,
+   0
+  ],
+  [
+   "891e3541c6fffff",
+   60,
+   0
+  ],
+  [
+   "891e3541e03ffff",
+   72,
+   1
+  ],
+  [
+   "891e3541e07ffff",
+   60,
+   0
+  ],
+  [
+   "891e3541e0bffff",
+   63,
+   0
+  ],
+  [
+   "891e3541e0fffff",
+   66,
+   0
+  ],
+  [
+   "891e3541e17ffff",
+   60,
+   1
+  ],
+  [
+   "891e3541e23ffff",
+   59,
+   1
+  ],
+  [
+   "891e3541e27ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541e2bffff",
+   58,
+   0
+  ],
+  [
+   "891e3541e2fffff",
+   61,
+   1
+  ],
+  [
+   "891e3541e33ffff",
+   60,
+   1
+  ],
+  [
+   "891e3541e37ffff",
+   62,
+   1
+  ],
+  [
+   "891e3541e3bffff",
+   65,
+   0
+  ],
+  [
+   "891e3541e47ffff",
+   60,
+   1
+  ],
+  [
+   "891e3541e4fffff",
+   57,
+   1
+  ],
+  [
+   "891e3541e63ffff",
+   60,
+   0
+  ],
+  [
+   "891e3541e67ffff",
+   63,
+   0
+  ],
+  [
+   "891e3541e6bffff",
+   63,
+   0
+  ],
+  [
+   "891e3541e6fffff",
+   59,
+   0
+  ],
+  [
+   "891e3541e73ffff",
+   67,
+   1
+  ],
+  [
+   "891e3541e77ffff",
+   66,
+   1
+  ],
+  [
+   "891e3541e7bffff",
+   70,
+   1
+  ],
+  [
+   "891e3541ea3ffff",
+   65,
+   0
+  ],
+  [
+   "891e3541ea7ffff",
+   61,
+   1
+  ],
+  [
+   "891e3541eabffff",
+   67,
+   0
+  ],
+  [
+   "891e3541eafffff",
+   63,
+   0
+  ],
+  [
+   "891e3541eb3ffff",
+   63,
+   0
+  ],
+  [
+   "891e3541eb7ffff",
+   65,
+   1
+  ],
+  [
+   "891e3541ebbffff",
+   62,
+   1
+  ],
+  [
+   "891e354a987ffff",
+   59,
+   0
+  ],
+  [
+   "891e354a997ffff",
+   66,
+   1
+  ],
+  [
+   "891e354a9a3ffff",
+   64,
+   1
+  ],
+  [
+   "891e354a9a7ffff",
+   62,
+   1
+  ],
+  [
+   "891e354a9abffff",
+   59,
+   1
+  ],
+  [
+   "891e354a9afffff",
+   67,
+   1
+  ],
+  [
+   "891e354a9b3ffff",
+   55,
+   1
+  ],
+  [
+   "891e354a9b7ffff",
+   63,
+   0
+  ],
+  [
+   "891e354a9bbffff",
+   66,
+   1
+  ],
+  [
+   "891e354ad23ffff",
+   60,
+   1
+  ],
+  [
+   "891e354ad27ffff",
+   66,
+   1
+  ],
+  [
+   "891e354ad2fffff",
+   63,
+   1
+  ],
+  [
+   "891e354ad33ffff",
+   64,
+   1
+  ],
+  [
+   "891e354ad37ffff",
+   69,
+   1
+  ],
+  [
+   "891e354ada3ffff",
+   65,
+   1
+  ],
+  [
+   "891e354ada7ffff",
+   51,
+   0
+  ],
+  [
+   "891e354adabffff",
+   65,
+   1
+  ],
+  [
+   "891e354adafffff",
+   65,
+   1
+  ],
+  [
+   "891e354adb3ffff",
+   58,
+   0
+  ],
+  [
+   "891e354adb7ffff",
+   62,
+   1
+  ],
+  [
+   "891e354adbbffff",
+   59,
+   1
+  ],
+  [
+   "891e354f413ffff",
+   69,
+   1
+  ],
+  [
+   "891e354f417ffff",
+   59,
+   1
+  ],
+  [
+   "891e354f483ffff",
+   66,
+   1
+  ],
+  [
+   "891e354f487ffff",
+   69,
+   1
+  ],
+  [
+   "891e354f48bffff",
+   62,
+   0
+  ],
+  [
+   "891e354f48fffff",
+   62,
+   0
+  ],
+  [
+   "891e354f493ffff",
+   62,
+   0
+  ],
+  [
+   "891e354f497ffff",
+   68,
+   1
+  ],
+  [
+   "891e354f49bffff",
+   64,
+   1
+  ],
+  [
+   "891e354f4a3ffff",
+   63,
+   1
+  ],
+  [
+   "891e354f4a7ffff",
+   64,
+   0
+  ],
+  [
+   "891e354f4abffff",
+   58,
+   1
+  ],
+  [
+   "891e354f4afffff",
+   57,
+   1
+  ],
+  [
+   "891e354f4b3ffff",
+   69,
+   1
+  ],
+  [
+   "891e354f4b7ffff",
+   61,
+   0
+  ],
+  [
+   "891e354f4bbffff",
+   68,
+   0
+  ],
+  [
+   "891e354f4c3ffff",
+   63,
+   1
+  ],
+  [
+   "891e354f4c7ffff",
+   67,
+   1
+  ],
+  [
+   "891e354f4d3ffff",
+   69,
+   1
+  ],
+  [
+   "891e354f4d7ffff",
+   62,
+   1
+  ],
+  [
+   "891e354f4dbffff",
+   65,
+   1
+  ]
+ ],
+ "top": [
+  {
+   "id": "891e3541b5bffff",
+   "kind": "hex",
+   "rank": 1,
+   "score": 74,
+   "name": "Nusle",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.065564,
+    "lon": 14.448147
+   },
+   "criteria": {
+    "transit": 86,
+    "active": 84,
+    "green": 62,
+    "education": 91,
+    "family": 74,
+    "safety": 69,
+    "price": 73,
+    "shops": 56,
+    "health": 76,
+    "environment": 76,
+    "leisure": 79,
+    "accessibility": 65,
+    "commute": 90
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 58.0,
+     "unit": "per_1000",
+     "text": "Evidované trestné činy v městské části: 58 na 1000 obyv."
+    },
+    {
+     "criterion": "environment",
+     "indicator": "environment.noise_db",
+     "value": 57.0,
+     "unit": "db",
+     "text": "Hluk cca 57 dB"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "accessibility",
+     "indicator": "accessibility.benches_300m",
+     "value": 13.0,
+     "unit": "count",
+     "text": "Lavičky do 300 m: 13"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 19,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 20,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 372.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 70,
+   "budgetText": "Za váš rozpočet ~70 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 807
+  },
+  {
+   "id": "891e35418afffff",
+   "kind": "hex",
+   "rank": 2,
+   "score": 72,
+   "name": "Karlín",
+   "district": {
+    "id": "500097",
+    "name": "Praha 3"
+   },
+   "centroid": {
+    "lat": 50.091567,
+    "lon": 14.45651
+   },
+   "criteria": {
+    "transit": 48,
+    "active": 35,
+    "green": 55,
+    "education": 82,
+    "family": 92,
+    "safety": 89,
+    "price": 52,
+    "shops": 44,
+    "health": 64,
+    "environment": 95,
+    "leisure": 44,
+    "accessibility": 70,
+    "commute": 84
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 47.0,
+     "unit": "per_1000",
+     "text": "Evidované trestné činy v městské části: 47 na 1000 obyv."
+    },
+    {
+     "criterion": "environment",
+     "indicator": "environment.noise_db",
+     "value": 53.0,
+     "unit": "db",
+     "text": "Hluk cca 53 dB"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "green",
+     "indicator": "green.forest_meadow_ha_1km",
+     "value": 3.0,
+     "unit": "ha",
+     "text": "3 ha lesů a luk do 1 km"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 10,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 29,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 395.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 66,
+   "budgetText": "Za váš rozpočet ~66 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 494
+  },
+  {
+   "id": "891e3541a0bffff",
+   "kind": "hex",
+   "rank": 3,
+   "score": 72,
+   "name": "Vyšehrad",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.066969,
+    "lon": 14.425953
+   },
+   "criteria": {
+    "transit": 72,
+    "active": 70,
+    "green": 77,
+    "education": 86,
+    "family": 61,
+    "safety": 56,
+    "price": 64,
+    "shops": 68,
+    "health": 82,
+    "environment": 64,
+    "leisure": 87,
+    "accessibility": 93,
+    "commute": 82
+   },
+   "highlights": [
+    {
+     "criterion": "green",
+     "indicator": "green.park_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Park 6 min pěšky"
+    },
+    {
+     "criterion": "shops",
+     "indicator": "shops.supermarket_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Supermarket 6 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 4.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 4"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 19,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 27,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 383.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 68,
+   "budgetText": "Za váš rozpočet ~68 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 661
+  },
+  {
+   "id": "891e3541a8fffff",
+   "kind": "hex",
+   "rank": 4,
+   "score": 72,
+   "name": "Nové Město",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.074745,
+    "lon": 14.427968
+   },
+   "criteria": {
+    "transit": 89,
+    "active": 67,
+    "green": 57,
+    "education": 100,
+    "family": 96,
+    "safety": 41,
+    "price": 38,
+    "shops": 64,
+    "health": 89,
+    "environment": 44,
+    "leisure": 86,
+    "accessibility": 76,
+    "commute": 92
+   },
+   "highlights": [
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 7.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 7"
+    },
+    {
+     "criterion": "education",
+     "indicator": "education.kindergarten_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Školka 5 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 86.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 86 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 19,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 18,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 420.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 62,
+   "budgetText": "Za váš rozpočet ~62 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 606
+  },
+  {
+   "id": "891e3541e03ffff",
+   "kind": "hex",
+   "rank": 5,
+   "score": 72,
+   "name": "Malá Strana",
+   "district": {
+    "id": "500054",
+    "name": "Praha 1"
+   },
+   "centroid": {
+    "lat": 50.086599,
+    "lon": 14.410091
+   },
+   "criteria": {
+    "transit": 51,
+    "active": 18,
+    "green": 72,
+    "education": 75,
+    "family": 85,
+    "safety": 94,
+    "price": 81,
+    "shops": 43,
+    "health": 67,
+    "environment": 82,
+    "leisure": 52,
+    "accessibility": 74,
+    "commute": 67
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 39.0,
+     "unit": "per_1000",
+     "text": "Evidované trestné činy v městské části: 39 na 1000 obyv."
+    },
+    {
+     "criterion": "environment",
+     "indicator": "environment.noise_db",
+     "value": 56.0,
+     "unit": "db",
+     "text": "Hluk cca 56 dB"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "active",
+     "indicator": "active.bike_racks_300m",
+     "value": 0.0,
+     "unit": "count",
+     "text": "Stojany na kola do 300 m: 0"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 19,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 41,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 352.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 74,
+   "budgetText": "Za váš rozpočet ~74 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 457
+  },
+  {
+   "id": "891e3541a27ffff",
+   "kind": "hex",
+   "rank": 6,
+   "score": 71,
+   "name": "Nusle",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.067987,
+    "lon": 14.445553
+   },
+   "criteria": {
+    "transit": 81,
+    "active": 55,
+    "green": 77,
+    "education": 83,
+    "family": 84,
+    "safety": 29,
+    "price": 65,
+    "shops": 76,
+    "health": 88,
+    "environment": 51,
+    "leisure": 80,
+    "accessibility": 79,
+    "commute": 93
+   },
+   "highlights": [
+    {
+     "criterion": "shops",
+     "indicator": "shops.supermarket_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Supermarket 6 min pěšky"
+    },
+    {
+     "criterion": "green",
+     "indicator": "green.park_walk_min",
+     "value": 7.0,
+     "unit": "min",
+     "text": "Park 7 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 87.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 87 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 20,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 16,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 375.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 69,
+   "budgetText": "Za váš rozpočet ~69 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 739
+  },
+  {
+   "id": "891e3541a6fffff",
+   "kind": "hex",
+   "rank": 7,
+   "score": 71,
+   "name": "Nusle",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.059701,
+    "lon": 14.433737
+   },
+   "criteria": {
+    "transit": 64,
+    "active": 55,
+    "green": 74,
+    "education": 78,
+    "family": 83,
+    "safety": 81,
+    "price": 73,
+    "shops": 54,
+    "health": 63,
+    "environment": 56,
+    "leisure": 76,
+    "accessibility": 64,
+    "commute": 77
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 42.0,
+     "unit": "per_1000",
+     "text": "Evidované trestné činy v městské části: 42 na 1000 obyv."
+    },
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 6.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 6"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "health",
+     "indicator": "health.pharmacy_walk_min",
+     "value": 9.0,
+     "unit": "min",
+     "text": "Lékárna 9 min pěšky"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 19,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 32,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 371.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 70,
+   "budgetText": "Za váš rozpočet ~70 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 542
+  },
+  {
+   "id": "891e35419cbffff",
+   "kind": "hex",
+   "rank": 8,
+   "score": 70,
+   "name": "Žižkov",
+   "district": {
+    "id": "500097",
+    "name": "Praha 3"
+   },
+   "centroid": {
+    "lat": 50.089399,
+    "lon": 14.464007
+   },
+   "criteria": {
+    "transit": 37,
+    "active": 60,
+    "green": 67,
+    "education": 75,
+    "family": 85,
+    "safety": 87,
+    "price": 57,
+    "shops": 47,
+    "health": 70,
+    "environment": 62,
+    "leisure": 47,
+    "accessibility": 68,
+    "commute": 82
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 38.0,
+     "unit": "per_1000",
+     "text": "Evidované trestné činy v městské části: 38 na 1000 obyv."
+    },
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 7.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 7"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.night_departures_500m",
+     "value": 6.0,
+     "unit": "count",
+     "text": "Noční odjezdy poblíž (23–5): 6"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 14,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 31,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 384.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 68,
+   "budgetText": "Za váš rozpočet ~68 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 475
+  },
+  {
+   "id": "891e3541a0fffff",
+   "kind": "hex",
+   "rank": 9,
+   "score": 70,
+   "name": "Nusle",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.067224,
+    "lon": 14.430853
+   },
+   "criteria": {
+    "transit": 88,
+    "active": 75,
+    "green": 66,
+    "education": 90,
+    "family": 74,
+    "safety": 36,
+    "price": 56,
+    "shops": 65,
+    "health": 85,
+    "environment": 60,
+    "leisure": 84,
+    "accessibility": 68,
+    "commute": 88
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Zastávka 3 min pěšky"
+    },
+    {
+     "criterion": "health",
+     "indicator": "health.gp_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Praktický lékař 5 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 93.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 93 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 19,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 22,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 396.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 66,
+   "budgetText": "Za váš rozpočet ~66 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 812
+  },
+  {
+   "id": "891e3541e7bffff",
+   "kind": "hex",
+   "rank": 10,
+   "score": 70,
+   "name": "Smíchov",
+   "district": {
+    "id": "500143",
+    "name": "Praha 5"
+   },
+   "centroid": {
+    "lat": 50.078823,
+    "lon": 14.408077
+   },
+   "criteria": {
+    "transit": 61,
+    "active": 40,
+    "green": 72,
+    "education": 78,
+    "family": 80,
+    "safety": 85,
+    "price": 82,
+    "shops": 49,
+    "health": 67,
+    "environment": 51,
+    "leisure": 65,
+    "accessibility": 77,
+    "commute": 64
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 49.0,
+     "unit": "per_1000",
+     "text": "Evidované trestné činy v městské části: 49 na 1000 obyv."
+    },
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 7.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 7"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "commute",
+     "indicator": null,
+     "value": 22,
+     "unit": "min",
+     "text": "Práce – Karlín: 22 min MHD"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 22,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 40,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 349.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 74,
+   "budgetText": "Za váš rozpočet ~74 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 623
+  },
+  {
+   "id": "891e354180fffff",
+   "kind": "hex",
+   "rank": 11,
+   "score": 69,
+   "name": "Žižkov",
+   "district": {
+    "id": "500097",
+    "name": "Praha 3"
+   },
+   "centroid": {
+    "lat": 50.085961,
+    "lon": 14.446994
+   },
+   "criteria": {
+    "transit": 78,
+    "active": 82,
+    "green": 50,
+    "education": 88,
+    "family": 84,
+    "safety": 29,
+    "price": 82,
+    "shops": 59,
+    "health": 78,
+    "environment": 67,
+    "leisure": 81,
+    "accessibility": 76,
+    "commute": 99
+   },
+   "highlights": [
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 6.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 6"
+    },
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 358.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 358 Kč/m²/měs."
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 82.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 82 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 13,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 16,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 358.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 73,
+   "budgetText": "Za váš rozpočet ~73 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 526
+  },
+  {
+   "id": "891e354181bffff",
+   "kind": "hex",
+   "rank": 12,
+   "score": 69,
+   "name": "Karlín",
+   "district": {
+    "id": "500054",
+    "name": "Praha 1"
+   },
+   "centroid": {
+    "lat": 50.088129,
+    "lon": 14.439498
+   },
+   "criteria": {
+    "transit": 80,
+    "active": 78,
+    "green": 68,
+    "education": 85,
+    "family": 90,
+    "safety": 28,
+    "price": 71,
+    "shops": 63,
+    "health": 65,
+    "environment": 54,
+    "leisure": 82,
+    "accessibility": 67,
+    "commute": 94
+   },
+   "highlights": [
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 7.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 7"
+    },
+    {
+     "criterion": "shops",
+     "indicator": "shops.supermarket_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Supermarket 6 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 79.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 79 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 12,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 20,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 376.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 69,
+   "budgetText": "Za váš rozpočet ~69 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 655
+  },
+  {
+   "id": "891e3541853ffff",
+   "kind": "hex",
+   "rank": 13,
+   "score": 69,
+   "name": "Nové Město",
+   "district": {
+    "id": "500054",
+    "name": "Praha 1"
+   },
+   "centroid": {
+    "lat": 50.085198,
+    "lon": 14.43229
+   },
+   "criteria": {
+    "transit": 78,
+    "active": 61,
+    "green": 72,
+    "education": 91,
+    "family": 61,
+    "safety": 52,
+    "price": 36,
+    "shops": 66,
+    "health": 79,
+    "environment": 58,
+    "leisure": 84,
+    "accessibility": 68,
+    "commute": 94
+   },
+   "highlights": [
+    {
+     "criterion": "shops",
+     "indicator": "shops.supermarket_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Supermarket 6 min pěšky"
+    },
+    {
+     "criterion": "education",
+     "indicator": "education.primary_school_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Základní škola 6 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 4.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 4"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 16,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 19,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 413.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 63,
+   "budgetText": "Za váš rozpočet ~63 m²",
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 408
+  },
+  {
+   "id": "891e3541867ffff",
+   "kind": "hex",
+   "rank": 14,
+   "score": 69,
+   "name": "Žižkov",
+   "district": {
+    "id": "500097",
+    "name": "Praha 3"
+   },
+   "centroid": {
+    "lat": 50.081116,
+    "lon": 14.452184
+   },
+   "criteria": {
+    "transit": 85,
+    "active": 87,
+    "green": 55,
+    "education": 95,
+    "family": 71,
+    "safety": 43,
+    "price": 47,
+    "shops": 69,
+    "health": 69,
+    "environment": 57,
+    "leisure": 81,
+    "accessibility": 69,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "education",
+     "indicator": "education.kindergarten_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Školka 6 min pěšky"
+    },
+    {
+     "criterion": "shops",
+     "indicator": "shops.supermarket_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Supermarket 6 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 85.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 85 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 13,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 12,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 404.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 64,
+   "budgetText": "Za váš rozpočet ~64 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 494
+  },
+  {
+   "id": "891e3541a13ffff",
+   "kind": "hex",
+   "rank": 15,
+   "score": 69,
+   "name": "Nové Město",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.072068,
+    "lon": 14.425663
+   },
+   "criteria": {
+    "transit": 86,
+    "active": 72,
+    "green": 56,
+    "education": 90,
+    "family": 79,
+    "safety": 30,
+    "price": 78,
+    "shops": 73,
+    "health": 79,
+    "environment": 62,
+    "leisure": 88,
+    "accessibility": 71,
+    "commute": 87
+   },
+   "highlights": [
+    {
+     "criterion": "shops",
+     "indicator": "shops.supermarket_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Supermarket 5 min pěšky"
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Zastávka 3 min pěšky"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 86.0,
+     "unit": "pct",
+     "text": "Osvětlené ulice: 86 %"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 20,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 22,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 375.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 69,
+   "budgetText": "Za váš rozpočet ~69 m²",
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 945
+  },
+  {
+   "id": "891e3541b63ffff",
+   "kind": "hex",
+   "rank": 16,
+   "score": 69,
+   "name": "Vršovice",
+   "district": {
+    "id": "500224",
+    "name": "Praha 10"
+   },
+   "centroid": {
+    "lat": 50.063902,
+    "lon": 14.465442
+   },
+   "criteria": {
+    "transit": 45,
+    "active": 31,
+    "green": 74,
+    "education": 75,
+    "family": 89,
+    "safety": 81,
+    "price": 59,
+    "shops": 33,
+    "health": 62,
+    "environment": 83,
+    "leisure": 47,
+    "accessibility": 76,
+    "commute": 74
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 44.0,
+     "unit": "per_1000",
+     "text": "Evidované trestné činy v městské části: 44 na 1000 obyv."
+    },
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 8.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 8"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "shops",
+     "indicator": "shops.shops_10min",
+     "value": 35.0,
+     "unit": "count",
+     "text": "Obchody do 10 min pěšky: 35"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 20,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 33,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 386.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 67,
+   "budgetText": "Za váš rozpočet ~67 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 505
+  },
+  {
+   "id": "891e3541b8fffff",
+   "kind": "hex",
+   "rank": 17,
+   "score": 69,
+   "name": "Vršovice",
+   "district": {
+    "id": "500097",
+    "name": "Praha 3"
+   },
+   "centroid": {
+    "lat": 50.076525,
+    "lon": 14.462274
+   },
+   "criteria": {
+    "transit": 66,
+    "active": 43,
+    "green": 61,
+    "education": 82,
+    "family": 77,
+    "safety": 60,
+    "price": 95,
+    "shops": 42,
+    "health": 74,
+    "environment": 62,
+    "leisure": 68,
+    "accessibility": 77,
+    "commute": 94
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 305.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 305 Kč/m²/měs."
+    },
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 6.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 6"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "shops",
+     "indicator": "shops.atm_walk_min",
+     "value": 10.0,
+     "unit": "min",
+     "text": "Bankomat 10 min pěšky"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 14,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 20,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 305.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 85,
+   "budgetText": "Za váš rozpočet ~85 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 712
+  },
+  {
+   "id": "891e354ad37ffff",
+   "kind": "hex",
+   "rank": 18,
+   "score": 69,
+   "name": "Smíchov",
+   "district": {
+    "id": "500143",
+    "name": "Praha 5"
+   },
+   "centroid": {
+    "lat": 50.068625,
+    "lon": 14.408659
+   },
+   "criteria": {
+    "transit": 56,
+    "active": 60,
+    "green": 66,
+    "education": 82,
+    "family": 87,
+    "safety": 71,
+    "price": 88,
+    "shops": 42,
+    "health": 66,
+    "environment": 57,
+    "leisure": 64,
+    "accessibility": 63,
+    "commute": 60
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 51.0,
+     "unit": "per_1000",
+     "text": "Evidované trestné činy v městské části: 51 na 1000 obyv."
+    },
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 7.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 7"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "commute",
+     "indicator": null,
+     "value": 24,
+     "unit": "min",
+     "text": "Práce – Karlín: 24 min MHD"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 24,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 42,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 333.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 78,
+   "budgetText": "Za váš rozpočet ~78 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 559
+  },
+  {
+   "id": "891e354f413ffff",
+   "kind": "hex",
+   "rank": 19,
+   "score": 69,
+   "name": "Michle",
+   "district": {
+    "id": "500119",
+    "name": "Praha 4"
+   },
+   "centroid": {
+    "lat": 50.055109,
+    "lon": 14.443824
+   },
+   "criteria": {
+    "transit": 59,
+    "active": 36,
+    "green": 60,
+    "education": 74,
+    "family": 86,
+    "safety": 83,
+    "price": 62,
+    "shops": 47,
+    "health": 67,
+    "environment": 71,
+    "leisure": 52,
+    "accessibility": 76,
+    "commute": 66
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 51.0,
+     "unit": "per_1000",
+     "text": "Evidované trestné činy v městské části: 51 na 1000 obyv."
+    },
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 7.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 7"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "education",
+     "indicator": "education.kindergarten_walk_min",
+     "value": 10.0,
+     "unit": "min",
+     "text": "Školka 10 min pěšky"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 23,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 38,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 383.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 68,
+   "budgetText": "Za váš rozpočet ~68 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 609
+  },
+  {
+   "id": "891e354f487ffff",
+   "kind": "hex",
+   "rank": 20,
+   "score": 69,
+   "name": "Michle",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.060464,
+    "lon": 14.448435
+   },
+   "criteria": {
+    "transit": 49,
+    "active": 40,
+    "green": 66,
+    "education": 89,
+    "family": 89,
+    "safety": 53,
+    "price": 91,
+    "shops": 38,
+    "health": 58,
+    "environment": 75,
+    "leisure": 71,
+    "accessibility": 91,
+    "commute": 78
+   },
+   "highlights": [
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 7.0,
+     "unit": "count",
+     "text": "Dětská hřiště do 500 m: 7"
+    },
+    {
+     "criterion": "price",
+     "indicator": "price.rent_per_m2",
+     "value": 343.0,
+     "unit": "czk_m2_month",
+     "text": "Nájem cca 343 Kč/m²/měs."
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "health",
+     "indicator": "health.pharmacy_walk_min",
+     "value": 10.0,
+     "unit": "min",
+     "text": "Lékárna 10 min pěšky"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Práce – Karlín",
+     "minutes": 21,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "ZŠ Vinohradská",
+     "minutes": 29,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "rent_per_m2",
+    "value": 343.0,
+    "unit": "Kč/m²/měs.",
+    "currency": "CZK",
+    "imputed": false
+   },
+   "budgetM2": 76,
+   "budgetText": "Za váš rozpočet ~76 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [
+    "health.gynaecology_walk_min"
+   ],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 797
+  }
+ ],
+ "relaxHint": null,
+ "excludedCriteria": [],
+ "weightsUsed": {
+  "commute": 3,
+  "transit": 3,
+  "active": 2,
+  "green": 5,
+  "education": 5,
+  "family": 5,
+  "safety": 5,
+  "price": 3,
+  "shops": 4,
+  "health": 4,
+  "environment": 4,
+  "leisure": 1,
+  "accessibility": 2
+ },
+ "cityMedian": {
+  "transit": 60,
+  "active": 52,
+  "green": 63,
+  "education": 81,
+  "family": 70,
+  "safety": 53,
+  "price": 57,
+  "shops": 50,
+  "health": 70,
+  "environment": 55,
+  "leisure": 68,
+  "accessibility": 73,
+  "commute": 82
+ }
+}

@@ -198,12 +198,16 @@ export function PlacesStep() {
   const cur = CURRENCY[city!]
   const curSym = cur === 'PLN' ? (lang === 'en' ? 'PLN' : 'zł') : lang === 'en' ? 'CZK' : 'Kč'
   const suggested = meta?.personas.find((p) => p.id === persona)?.suggestedAnchors?.[anchors.length]
-  const categories = meta?.mustHaveCategories?.length ? meta.mustHaveCategories : MUST_HAVE
-  const [mhCat, setMhCat] = useState(categories[0])
+  const categories = (meta?.mustHaveCategories?.length ? meta.mustHaveCategories.filter((c) => c.available) : MUST_HAVE.map((id) => ({ id, emoji: '', label: null }))).map((c) => ({
+    id: c.id,
+    label: `${c.emoji ? c.emoji + ' ' : ''}${c.label ? L(c.label, lang) : t(`places.categories.${c.id}`, { defaultValue: c.id })}`,
+  }))
+  const catLabel = (id: string) => categories.find((c) => c.id === id)?.label ?? t(`places.categories.${id}`, { defaultValue: id })
+  const [mhCat, setMhCat] = useState(categories[0]?.id ?? 'park')
 
   const add = (h: GeocodeHit) => {
     const label = suggested ? L(suggested.label, lang) : h.label.split(',')[0]
-    setAnchors([...anchors, { id: '', label, lat: h.lat, lon: h.lon, mode: suggested?.mode ?? 'transit', level: 4, maxMinutes: null }])
+    setAnchors([...anchors, { id: '', label, lat: h.lat, lon: h.lon, mode: suggested?.mode ?? 'transit', level: suggested?.level ?? 4, maxMinutes: null }])
   }
 
   return (
@@ -248,10 +252,10 @@ export function PlacesStep() {
         <ul className="mb-3 flex flex-wrap gap-2">
           {filters.mustHave.map((m, i) => (
             <li key={i} className="inline-flex items-center gap-1 rounded-full bg-accent-soft py-1 pl-3 pr-1 text-sm">
-              {t(`places.categories.${m.category}`, { defaultValue: m.category })} · {t('places.walkMinutes', { count: m.maxWalkMin })}
+              {catLabel(m.category)} · {t('places.walkMinutes', { count: m.maxWalkMin })}
               <button
                 className="grid h-7 w-7 place-items-center rounded-full hover:bg-white"
-                aria-label={t('places.removeAnchor', { label: t(`places.categories.${m.category}`) })}
+                aria-label={t('places.removeAnchor', { label: catLabel(m.category) })}
                 onClick={() => setFilters({ mustHave: filters.mustHave.filter((_, j) => j !== i) })}
               >
                 <Trash2 size={14} />
@@ -262,8 +266,8 @@ export function PlacesStep() {
         <div className="flex flex-wrap gap-2">
           <select className="h-11 rounded-xl border border-line bg-surface px-3" value={mhCat} onChange={(e) => setMhCat(e.target.value)} aria-label={t('places.mustHave')}>
             {categories.map((c) => (
-              <option key={c} value={c}>
-                {t(`places.categories.${c}`, { defaultValue: c })}
+              <option key={c.id} value={c.id}>
+                {c.label}
               </option>
             ))}
           </select>

@@ -3,7 +3,7 @@ import type { MapLayerMouseEvent, MapRef } from 'react-map-gl/maplibre'
 import Map, { Layer, Marker, NavigationControl, Source } from 'react-map-gl/maplibre'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useCommute, useCriteriaScores, useGrid, useScore } from '@/api/hooks'
+import { useCommute, useCriterionScore, useGrid, useScore } from '@/api/hooks'
 import type { CityId } from '@/api/types'
 import { commuteExpression, FAILING, quantileBreaks, seqExpression, UNINHABITED } from '@/lib/palette'
 import { useApp } from '@/state/store'
@@ -48,7 +48,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
   const anchor = anchors.find((a) => a.id === commuteAnchor) ?? anchors[0]
   const commute = useCommute(mapMode === 'commute' ? anchor?.lat : undefined, anchor?.lon, anchor?.mode)
   const critMode = mapMode !== 'match' && mapMode !== 'commute' ? mapMode : null
-  const critScores = useCriteriaScores(critMode ? city : null)
+  const critScores = useCriterionScore(critMode)
 
   const habitable = useMemo(() => {
     const s = new Set<string>()
@@ -94,10 +94,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
     } else if (mapMode === 'commute' && commute.data) {
       for (const [id, minutes] of commute.data.cells) m.setFeatureState({ source: 'grid', id }, { minutes: minutes >= 255 ? 997 : minutes })
     } else if (critMode && critScores.data) {
-      for (const [id, s] of Object.entries(critScores.data)) {
-        const v = s[critMode]
-        if (habitable.has(id) && v != null) m.setFeatureState({ source: 'grid', id }, { score: v })
-      }
+      for (const [id, v] of critScores.data.cells) if (habitable.has(id)) m.setFeatureState({ source: 'grid', id }, { score: v })
     }
   }, [ready, srcLoaded, grid.data, score.data, commute.data, critScores.data, mapMode, critMode, habitable])
 
@@ -135,7 +132,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
 
   const breaks = useMemo(() => {
     if (mapMode === 'match') return quantileBreaks((score.data?.cells ?? []).filter((c) => c[2] === 1).map((c) => c[1]))
-    if (critMode && critScores.data) return quantileBreaks(Object.entries(critScores.data).filter(([id]) => habitable.has(id)).map(([, s]) => s[critMode] ?? NaN))
+    if (critMode && critScores.data) return quantileBreaks(critScores.data.cells.filter(([id]) => habitable.has(id)).map((c) => c[1]))
     return quantileBreaks([])
   }, [mapMode, critMode, score.data, critScores.data, habitable])
 

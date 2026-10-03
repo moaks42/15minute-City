@@ -10,7 +10,7 @@ import { MapModeSwitch } from '@/components/results/MapModeSwitch'
 import { RankingPanel } from '@/components/results/RankingPanel'
 import { Button } from '@/components/ui/button'
 import { Sheet } from '@/components/ui/sheet'
-import { DEFAULT_PERSONAS } from '@/content/defaults'
+import { DEFAULT_PERSONAS, type PersonaLite } from '@/content/defaults'
 import { Attribution } from '@/components/layout/Attribution'
 import { cn } from '@/lib/utils'
 import { useApp } from '@/state/store'
@@ -33,7 +33,7 @@ function Preferences() {
   const { t } = useTranslation()
   const { city, persona, pickPersona, set, anchors } = useApp()
   const { data: meta } = useMeta(city)
-  const personas = meta?.personas?.length ? meta.personas : DEFAULT_PERSONAS
+  const personas: PersonaLite[] = meta?.personas?.length ? meta.personas : DEFAULT_PERSONAS
   return (
     <div className="px-4 py-3">
       <h2 className="sr-only">{t('nav.filters')}</h2>

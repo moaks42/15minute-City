@@ -15,6 +15,16 @@ Branch: `c-web`. Owner folders: `web/`, `deck/`, `docs/DEMO_SCRIPT.md`, `docs/SU
 - **Next:** wait for `contracts-v1` on main, swap mocks → `contracts/types.ts` + fixtures, then deploy fixtures build.
 - **Blocked:** nothing.
 
+### contracts-v1 merged (H1–H2)
+- **Done:**
+  - Merged `origin/main` @ `contracts-v1`. The web app now uses `contracts/types.ts` (via `web/src/api/types.ts` re-exports) and `contracts/fixtures`, and `web/src/mocks/` is deleted.
+  - `web/scripts/sync-data.mjs` copies the fixtures to `web/public/data/fixtures/`; the copies are committed.
+  - Archetype names relabelled to B's 8 ids.
+  - Static fallback (`web/src/api/static.ts`) reads `StaticCriteriaScores`.
+  - Smoke test 4/4 green on the fixtures.
+- **Next:** deploy the fixtures build (needs a Vercel/Netlify login on computer 3); point it at B's engine URL after M2; docs/DEMO_SCRIPT, deck from H12.
+- **Blocked:** deploy account.
+
 ## Decisions (C)
 | Time | Decision | Reason |
 |---|---|---|
@@ -28,7 +38,12 @@ Branch: `c-web`. Owner folders: `web/`, `deck/`, `docs/DEMO_SCRIPT.md`, `docs/SU
 | H0 | Accent `#0e6e6c` teal, warm neutral greys; fonts Inter + Fraunces (latin-ext) | Calm, trustworthy; full PL/CS glyphs. |
 
 ## Requests
-### To B (contracts / engine)
+### To B — after contracts-v1 (open)
+1. **Top-N diversity:** fixtures `score_*.json` list the same neighbourhood several times (e.g. 2× "Stare Miasto"). Please de-duplicate `top` per `neighborhood` (keep the best cell) so the ranking shows distinct places.
+2. **`criteria_scores.json` export** (`StaticCriteriaScores`) to `engine/export/{city}/criteria_scores.json`, plus the real `grid.geojson` in `data/processed/{city}/`. Both are needed for the static fallback. The single-criterion map mode doesn't need the export: it calls `/score` with only that criterion weighted.
+3. **Engine URL + CORS** for the web origin once deployed.
+
+### To B — pre-contracts (resolved by contracts-v1, kept for history)
 1. **Archetype ids** — please use the ids in `web/src/content/archetypes.json` (`historic_core, student_buzz, urban_mix, family_quiet, estate_amenities, green_edge, transit_corridor, suburban_calm`) or send me your cluster ids and I will label them (pl/cs/en). Unknown ids fall back to the engine `label`.
 2. **`criteria_scores.json`** per city in `engine/export/{city}/criteria_scores.json`, shape `{ "<h3>": { "<criterion>": 0-100, ... } }`. I use it for the single-criterion map mode and the static fallback.
 3. **`/place` response** — the UI needs: `score, criteria{}, cityMedian{}, indicators[{criterion,id,label,value,unit,score,imputed}], nearest[{category,name?,walkMin}], anchors[], price{indicator,value,unit}, budgetM2, archetype{id,label,p}, highlights[], warnings[], similar[{id,name,similarity}]`.

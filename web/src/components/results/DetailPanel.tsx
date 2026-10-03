@@ -1,7 +1,7 @@
 import { AlertTriangle, ArrowRight, Check, Info, Wind } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Legend as RLegend } from 'recharts'
-import { useAir, usePlace, useTwins } from '@/api/hooks'
+import { useAir, useMeta, usePlace, useSimilar, useTwins } from '@/api/hooks'
 import type { CityId, CriterionId, Place } from '@/api/types'
 import { Button } from '@/components/ui/button'
 import { Tip } from '@/components/ui/tooltip'
@@ -10,6 +10,7 @@ import { STATIC_FALLBACK } from '@/lib/env'
 import { archetypeInfo, fmtNum, fmtPricePerM2 } from '@/lib/format'
 import { CATEGORICAL, seqColor } from '@/lib/palette'
 import { useApp } from '@/state/store'
+import { L } from '@/lib/utils'
 import { ScoreBadge } from './RankingPanel'
 
 function Section({ title, children, hint }: { title: string; children: React.ReactNode; hint?: string }) {
@@ -76,8 +77,8 @@ function Twins({ place, city }: { place: Place; city: CityId }) {
       {twins.isPending && <div className="h-24 animate-pulse rounded-xl bg-sunken" />}
       {twins.isError && <p className="text-sm text-ink-3">{t('states.error')}</p>}
       <ul className="space-y-2" data-testid="twins">
-        {twins.data?.twins.map((tw) => {
-          const a = tw.archetype ? archetypeInfo(tw.archetype.id, lang, tw.archetype.label) : null
+        {twins.data?.items.map((tw) => {
+          const a = tw.archetype ? archetypeInfo(tw.archetype.id, lang) : null
           return (
             <li key={tw.id}>
               <button
@@ -108,6 +109,8 @@ function Twins({ place, city }: { place: Place; city: CityId }) {
   )
 }
 
+const AIR_LEVELS = ['very_good', 'good', 'moderate', 'sufficient', 'bad', 'very_bad']
+
 function Air({ lat, lon }: { lat: number; lon: number }) {
   const { t } = useTranslation()
   const air = useAir(lat, lon)
@@ -119,11 +122,16 @@ function Air({ lat, lon }: { lat: number; lon: number }) {
       <Wind size={18} className="mt-0.5 shrink-0 text-ink-3" />
       <p>
       <span className="font-medium">{t('detail.air')}: </span>
-      {d?.level ? (
+      {d && d.status !== 'unavailable' && d.level != null ? (
         <span>
-          {t(`detail.airLevels.${d.level}`)}
-          {d.pm25 != null && ` · PM2,5 ${fmtNum(d.pm25, lang, 1)} µg/m³`}
-          {d.station && <span className="text-ink-3"> ({d.station})</span>}
+          {t(`detail.airLevels.${AIR_LEVELS[d.level] ?? 'moderate'}`)}
+          {d.pollutants?.pm25 != null && ` · PM2,5 ${fmtNum(d.pollutants.pm25, lang, 1)} µg/m³`}
+          {d.station && (
+            <span className="text-ink-3">
+              {' '}
+              ({d.station.name}, {d.source})
+            </span>
+          )}
         </span>
       ) : (
         <span className="text-ink-3">{air.isPending ? t('states.loading') : t('detail.airUnavailable')}</span>
@@ -137,6 +145,8 @@ export function DetailPanel({ h3 }: { h3: string }) {
   const { t } = useTranslation()
   const { city, lang, anchors, budget, select, set } = useApp()
   const q = usePlace(h3)
+  const { data: meta } = useMeta(city)
+  const similar = useSimilar(h3)
   const p = q.data
   if (q.isPending) return <p className="p-5 text-ink-3">{t('detail.loading')}</p>
   if (q.isError || !p || !city)
@@ -148,20 +158,25 @@ export function DetailPanel({ h3 }: { h3: string }) {
         </Button>
       </div>
     )
-  const arch = p.archetype ? archetypeInfo(p.archetype.id, lang, p.archetype.label) : null
+  const arch = p.archetype ? archetypeInfo(p.archetype.id, lang) : null
+  const catLabel = (id: string) => {
+    const c = meta?.mustHaveCategories.find((x) => x.id === id)
+    return c ? `${c.emoji} ${L(c.label, lang)}` : t(`places.categories.${id}`, { defaultValue: id.replace(/_/g, ' ') })
+  }
+  const indMeta = new Map(meta?.criteria.flatMap((c) => c.indicators.map((i) => [i.column, i] as const)) ?? [])
   const byCrit = new Map<CriterionId, typeof p.indicators>()
   for (const i of p.indicators) byCrit.set(i.criterion, [...(byCrit.get(i.criterion) ?? []), i])
 
   return (
     <div data-testid="detail">
       <div className="flex items-center gap-4 px-5 py-4">
-        <ScoreBadge score={p.score} size="lg" />
+        <ScoreBadge score={p.score ?? 0} size="lg" />
         <div className="min-w-0">
           <h2 className="font-display text-2xl font-semibold leading-tight" data-testid="detail-name">
             {p.name}
           </h2>
           <p className="text-sm text-ink-3">{p.district?.name}</p>
-          <p className="text-sm text-ink-2">{t('results.matchPct', { pct: p.score })}</p>
+          <p className="text-sm text-ink-2">{t('results.matchPct', { pct: p.score ?? 0 })}</p>
           {arch && (
             <Tip content={`${arch.desc} ${t('detail.archetypeHint')}`}>
               <span tabIndex={0} className="mt-1 inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-xs font-medium" data-testid="archetype">
@@ -173,12 +188,12 @@ export function DetailPanel({ h3 }: { h3: string }) {
         </div>
       </div>
       <div className="space-y-1 px-5 pb-4 text-sm">
-        {p.highlights.map((h, i) => (
+        {(p.highlights ?? []).map((h, i) => (
           <p key={i} className="flex gap-1.5">
             <Check size={16} className="mt-0.5 shrink-0 text-good" /> {h.text}
           </p>
         ))}
-        {p.warnings.map((h, i) => (
+        {(p.warnings ?? []).map((h, i) => (
           <p key={i} className="flex gap-1.5 text-ink-2">
             <AlertTriangle size={16} className="mt-0.5 shrink-0 text-warn" /> {h.text}
           </p>
@@ -225,7 +240,7 @@ export function DetailPanel({ h3 }: { h3: string }) {
           <ul className="space-y-1 text-sm">
             {p.anchors.map((a) => (
               <li key={a.id} className="flex justify-between">
-                <span>{anchors.find((x) => x.id === a.id)?.label ?? a.id}</span>
+                <span>{anchors.find((x) => x.id === a.id)?.label ?? a.label ?? a.id}</span>
                 <b className="tabular-nums">{a.minutes != null ? t('map.minutes', { count: a.minutes }) : '–'}</b>
               </li>
             ))}
@@ -246,15 +261,17 @@ export function DetailPanel({ h3 }: { h3: string }) {
                 )}
               </p>
               <ul className="space-y-1.5">
-                {inds.map((i) => (
-                  <li key={i.id} className="grid grid-cols-[1fr_auto] items-center gap-x-3 text-sm sm:grid-cols-[minmax(0,10rem)_1fr_auto]">
-                    <span className="truncate text-ink-2">{i.label}</span>
+                {inds.map((i) => {
+                  const im = indMeta.get(i.column)
+                  return (
+                  <li key={i.column} className="grid grid-cols-[1fr_auto] items-center gap-x-3 text-sm sm:grid-cols-[minmax(0,10rem)_1fr_auto]">
+                    <span className="truncate text-ink-2" title={i.text ?? undefined}>{im ? L(im.label, lang) : i.indicator}</span>
                     <span className="col-span-2 row-start-2 flex sm:col-span-1 sm:row-start-auto">
                       <Scale score={i.score} />
                     </span>
                     <span className="text-right tabular-nums">
-                      {i.value != null ? (
-                        `${fmtNum(i.value, lang, 1)} ${i.unit ?? ''}`
+                      {i.value != null && !i.imputed ? (
+                        `${fmtNum(i.value, lang, im?.decimals ?? 1)} ${im ? L(im.unitLabel, lang) : i.unit}`
                       ) : (
                         <Tip content={t('detail.imputed')}>
                           <span tabIndex={0} className="text-ink-3 italic">
@@ -264,7 +281,8 @@ export function DetailPanel({ h3 }: { h3: string }) {
                       )}
                     </span>
                   </li>
-                ))}
+                  )
+                })}
               </ul>
             </div>
           ))}
@@ -275,19 +293,19 @@ export function DetailPanel({ h3 }: { h3: string }) {
         <Section title={t('detail.nearest')}>
           <ul className="grid grid-cols-1 gap-1.5 text-sm sm:grid-cols-2">
             {p.nearest.map((n) => (
-              <li key={n.category} className="flex justify-between gap-2 rounded-lg bg-sunken px-3 py-2">
-                <span className="truncate">{n.name ?? t(`places.categories.${n.category}`, { defaultValue: n.category })}</span>
-                <span className="shrink-0 tabular-nums text-ink-2">{t('detail.walk', { count: n.walkMin })}</span>
+              <li key={n.category} title={catLabel(n.category)} className="flex justify-between gap-2 rounded-lg bg-sunken px-3 py-2">
+                <span className="truncate">{n.name ?? catLabel(n.category)}</span>
+                <span className="shrink-0 tabular-nums text-ink-2">{t('detail.walk', { count: Math.round(n.walkMin) })}</span>
               </li>
             ))}
           </ul>
         </Section>
       )}
 
-      {p.similar.length > 0 && (
+      {!!similar.data?.items.length && (
         <Section title={t('detail.similar')}>
           <div className="flex flex-wrap gap-2">
-            {p.similar.map((s) => (
+            {similar.data.items.map((s) => (
               <Button key={s.id} variant="secondary" size="sm" onClick={() => select(s.id)}>
                 {s.name}
                 {s.similarity != null && <span className="text-xs text-ink-3">{t('detail.similarity', { pct: Math.round(s.similarity * 100) })}</span>}

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { useMeta } from '@/api/hooks'
-import { DEFAULT_PERSONAS } from '@/content/defaults'
+import { DEFAULT_PERSONAS, type PersonaLite } from '@/content/defaults'
 import { cn } from '@/lib/utils'
 import { useApp } from '@/state/store'
 
@@ -8,7 +8,7 @@ export function PersonaStep({ onPicked }: { onPicked: () => void }) {
   const { t } = useTranslation()
   const { city, persona, pickPersona } = useApp()
   const { data: meta } = useMeta(city)
-  const personas = meta?.personas?.length ? meta.personas : DEFAULT_PERSONAS
+  const personas: PersonaLite[] = meta?.personas?.length ? meta.personas : DEFAULT_PERSONAS
   return (
     <div role="radiogroup" aria-label={t('steps.persona.title')} className="grid grid-cols-2 gap-3 sm:grid-cols-3">
       {personas.map((p) => {

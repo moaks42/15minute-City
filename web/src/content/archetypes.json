@@ -1,5 +1,5 @@
 {
-  "_note": "Archetype labels per id (pl/cs/en), owned by Workstream C. Engine cluster ids map to these; unknown ids fall back to the engine label.",
+  "_note": "Archetype names per engine id (pl/cs/en), owned by Workstream C. Ids are fixed in config/indicators.yaml + contracts/openapi.yaml (ArchetypeId). Warm, non-stigmatizing wording (README §11 C.7).",
   "historic_core": {
     "color": 0,
     "label": { "pl": "Historyczne serce", "cs": "Historické srdce", "en": "Historic heart" },
@@ -9,17 +9,8 @@
       "en": "Historic streets, everything on foot, lively all day."
     }
   },
-  "student_buzz": {
-    "color": 1,
-    "label": { "pl": "Studencki puls", "cs": "Studentský puls", "en": "Student buzz" },
-    "desc": {
-      "pl": "Gęsta komunikacja, kawiarnie i kultura, życie także wieczorem.",
-      "cs": "Hustá doprava, kavárny a kultura, život i po večerech.",
-      "en": "Frequent transport, cafés and culture, busy into the evening."
-    }
-  },
   "urban_mix": {
-    "color": 2,
+    "color": 1,
     "label": { "pl": "Miejski mix", "cs": "Městský mix", "en": "Urban mix" },
     "desc": {
       "pl": "Kamienice i bloki, sklepy blisko, dobra komunikacja.",
@@ -27,49 +18,58 @@
       "en": "Mixed housing, shops nearby, good transport."
     }
   },
-  "family_quiet": {
-    "color": 3,
-    "label": { "pl": "Spokojna rodzinna okolica", "cs": "Klidná rodinná čtvrť", "en": "Calm family area" },
+  "student_buzz": {
+    "color": 2,
+    "label": { "pl": "Studencki puls", "cs": "Studentský puls", "en": "Student buzz" },
     "desc": {
-      "pl": "Szkoły i place zabaw w zasięgu spaceru, spokojniejsze ulice.",
-      "cs": "Školy a hřiště v docházkové vzdálenosti, klidnější ulice.",
-      "en": "Schools and playgrounds within a walk, calmer streets."
+      "pl": "Gęsta komunikacja, kawiarnie i kultura, życie także wieczorem.",
+      "cs": "Hustá doprava, kavárny a kultura, život i po večerech.",
+      "en": "Frequent transport, cafés and culture, busy into the evening."
     }
   },
-  "estate_amenities": {
-    "color": 4,
+  "estate_blocks": {
+    "color": 3,
     "label": { "pl": "Osiedle z pełnym zapleczem", "cs": "Sídliště s vybaveností", "en": "Estate with everything nearby" },
     "desc": {
-      "pl": "Bloki z usługami na miejscu, tramwaj lub metro niedaleko.",
+      "pl": "Bloki z usługami na miejscu, tramwaj lub autobus niedaleko.",
       "cs": "Sídliště se službami na místě, tramvaj nebo metro nedaleko.",
-      "en": "Housing estate with services on site and a tram or metro close by."
+      "en": "Housing estate with services on site and transport close by."
     }
   },
-  "green_edge": {
+  "green_residential": {
+    "color": 4,
+    "label": { "pl": "Zielone osiedle", "cs": "Zelená rezidenční čtvrť", "en": "Green residential" },
+    "desc": {
+      "pl": "Spokojne ulice, dużo drzew i park w zasięgu spaceru.",
+      "cs": "Klidné ulice, hodně stromů a park na dosah procházky.",
+      "en": "Calm streets, lots of trees and a park within a walk."
+    }
+  },
+  "family_suburb": {
     "color": 5,
-    "label": { "pl": "Zielony skraj", "cs": "Zelený okraj", "en": "Green edge" },
+    "label": { "pl": "Rodzinne przedmieście", "cs": "Rodinné předměstí", "en": "Family suburb" },
     "desc": {
-      "pl": "Las, łąki lub duży park tuż obok, ciszej i czyściej.",
-      "cs": "Les, louky nebo velký park hned vedle, klidněji a čistěji.",
-      "en": "Forest, meadows or a big park next door; quieter, cleaner air."
+      "pl": "Domy i niska zabudowa, szkoły i place zabaw, więcej miejsca.",
+      "cs": "Domky a nízká zástavba, školy a hřiště, víc prostoru.",
+      "en": "Houses and low-rise, schools and playgrounds, more space."
     }
   },
-  "transit_corridor": {
+  "quiet_outskirts": {
     "color": 6,
-    "label": { "pl": "Przy głównych trasach", "cs": "U hlavních tras", "en": "On the main lines" },
+    "label": { "pl": "Spokojne obrzeża", "cs": "Klidný okraj města", "en": "Quiet outskirts" },
     "desc": {
-      "pl": "Świetny dojazd wszędzie, ale głośniej przy ruchliwych ulicach.",
-      "cs": "Skvělé spojení všude, ale u rušných ulic hlučněji.",
-      "en": "Great connections everywhere, louder next to busy roads."
+      "pl": "Cisza i natura, dalej do centrum i usług.",
+      "cs": "Klid a příroda, dál do centra a za službami.",
+      "en": "Peace and nature; further from the centre and services."
     }
   },
-  "suburban_calm": {
+  "industrial_edge": {
     "color": 7,
-    "label": { "pl": "Podmiejski spokój", "cs": "Předměstský klid", "en": "Suburban calm" },
+    "label": { "pl": "Na styku z przemysłem", "cs": "Na pomezí průmyslu", "en": "Next to industry" },
     "desc": {
-      "pl": "Domy i niska zabudowa, więcej miejsca, dalej do centrum.",
-      "cs": "Domky a nízká zástavba, víc prostoru, dál do centra.",
-      "en": "Houses and low-rise, more space, further from the centre."
+      "pl": "Mieszkania obok zakładów, magazynów lub torów; często taniej, czasem głośniej.",
+      "cs": "Bydlení u závodů, skladů nebo kolejí; často levněji, někdy hlučněji.",
+      "en": "Homes near works, warehouses or rail; often cheaper, sometimes louder."
     }
   }
 }

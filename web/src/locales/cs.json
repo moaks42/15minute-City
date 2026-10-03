@@ -185,7 +185,6 @@
     "error": "Při načítání výsledků se něco pokazilo.",
     "retry": "Zkusit znovu",
     "empty": "Všem vašim limitům nevyhovuje žádné místo.",
-    "relax": "Bez limitu „{{filter}}“ by se vrátilo: {{places}}.",
     "relaxAction": "Odebrat tento limit",
     "highlights": "Proč sedí",
     "warning": "Pozor",

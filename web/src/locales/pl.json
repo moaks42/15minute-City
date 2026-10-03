@@ -185,7 +185,6 @@
     "error": "Coś poszło nie tak przy ładowaniu wyników.",
     "retry": "Spróbuj ponownie",
     "empty": "Żadne miejsce nie spełnia wszystkich limitów.",
-    "relax": "Bez limitu „{{filter}}” wróci: {{places}}.",
     "relaxAction": "Usuń ten limit",
     "highlights": "Dlaczego pasuje",
     "warning": "Uwaga",
