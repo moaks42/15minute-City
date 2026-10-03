@@ -6,33 +6,37 @@ Data documentation: [`docs/DATA_SOURCES.md`](../DATA_SOURCES.md).
 
 ## Status
 
-### 2026-10-03 17:00 (≈H1.7): M1 done, M2 mostly done
+### 2026-10-03 17:20 (≈H2): M1 + M2 done, M3 items mostly done
 **Done**
-- Every §4 source was hit with a real request. Raw files are in `data/raw/{city}/` (gitignored). The manifests list every key with its status and notes.
-- Both cities are built to **contracts-v1** (merged from main): `contracts/tools/validate_data.py` reports **0 errors** for each.
-  - **Kraków:** 3,217 cells, 2,162 habitable. Coverage is 100% for 10 of 12 criteria; price 88%; accessibility 17% (beta).
-  - **Praha:** 4,976 cells, 2,967 habitable. Coverage is 100% for 11 of 12 criteria; accessibility 80%.
-- `travel_times.npz` (r5py, transit/bike/walk, Tue 2026-10-06 08:00):
-  - Kraków: done (2,162 × 506).
-  - Praha: transit done (97% reachable); bike and walk are running.
-- `_shared/ml_features.parquet`: 49 crossCity columns, both cities.
-- `pipeline/validate.py` runs the contract check, the README §5 sanity checks and the coverage report in `docs/DATA_SOURCES.md` §5.
-  - Kraków passes all 6 checks.
-  - Praha passes 5 of 6. The failure is "Praha 1 loud": the modelled road noise is low in the pedestrian Old Town. See DATA_SOURCES §7.
+- Every §4 source was hit with a real request. Raw files are in `data/raw/{city}/` (gitignored). The manifests list every key with its status, rows and note.
+- Both cities are built to **contracts-v1**. `contracts/tools/validate_data.py --city all` reports **0 errors**.
+  - **Kraków:** 3,217 cells, 2,162 habitable.
+  - **Praha:** 4,976 cells, 2,967 habitable.
+- `travel_times.npz` for **both** cities (r5py; transit, bike and walk; Tue 2026-10-06 08:00 with a 30-min window):
+  - Kraków: 2,162 × 506.
+  - Praha: 2,967 × 775, 97% of transit pairs reachable.
+- `_shared/ml_features.parquet`: 49 crossCity columns, 8,193 rows.
+- **New:** `geocode.parquet` per city (addresses, streets, places, districts; accent-free search key) for `/geocode`. See "For B".
+- **New:**
+  - `accessibility.slope_pct` from the Copernicus DEM (both cities).
+  - Nurseries from official registers: K = UM Kraków żłobki layer (263); P = MPSV dětské skupiny (417).
+- `pipeline/validate.py` and `make qa` run the contract check, the README §5 sanity checks and the coverage tables in `docs/DATA_SOURCES.md` §5.
+  - Kraków passes 6 of 6 checks.
+  - Praha passes 5 of 6. The failure is "Praha 1 loud": modelled road noise is low in the pedestrian Old Town. It is reported, not tuned away.
+- `docs/DATA_SOURCES.md` covers sources, URLs, licences, methods, coverage, attribution and limitations.
 
 **Coverage (weighted share of habitable cells with data)**
 
 | criterion | Kraków | Praha |
 |---|---|---|
 | transit, active, green, education, family, safety, shops, health, environment, leisure | 100% | 100% |
-| price | 88% (RCN: n<5 → NaN) | 100% |
-| accessibility | 17% (no GTFS wheelchair data) | 80% |
-| commute | travel_times.npz ✓ | transit ✓, bike/walk running |
+| price | 88% (RCN: fewer than 5 sales within k ≤ 3 → NaN) | 100% |
+| accessibility | 33% (benches + slope; ZTP GTFS has no wheelchair data) | 97% |
+| commute | ✓ transit/bike/walk | ✓ transit/bike/walk |
 
 **Next**
-- Praha bike/walk matrices → commit `travel_times.npz` → refresh `ml_features.parquet`.
-- P2: `accessibility.slope_pct` from a DEM.
-- QA pass on outliers.
+- Kraków GP clinics from NFZ POZ contracts (the `app-umw-api` was in maintenance (503) at 17:15; retry later).
+- Further QA on outliers; re-run `make data` timing for the DoD.
 
 **Blocked**: nothing.
 
