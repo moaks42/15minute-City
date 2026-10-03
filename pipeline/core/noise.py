@@ -12,7 +12,7 @@ from .raster import Canvas
 def band_value(lo: np.ndarray, hi: np.ndarray) -> np.ndarray:
     lo, hi = np.asarray(lo, float), np.asarray(hi, float)
     v = (lo + hi) / 2
-    v = np.where((lo < 40) | ~np.isfinite(lo), hi - 5, v)  # open lower band "<55" → 50
+    v = np.where(((hi - lo) > 10) | ~np.isfinite(lo), hi - 5, v)  # open lower band e.g. "-24..55" → 50
     v = np.where((hi >= 99) | ~np.isfinite(hi), lo + 2.5, v)  # open upper band "≥75" → 77.5
     return v
 

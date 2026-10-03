@@ -68,6 +68,8 @@ sources:
      url: "https://kriminalita.policie.gov.cz/api/v2/downloads/types.json"}
   - {key: police_cz, kind: police_months, file: police_months, licence: "Policie ČR – non-commercial use only",
      url: "https://kriminalita.policie.gov.cz/api/v2/downloads/{month}.zip", months: 12}
+  - {key: csu_population, kind: http, file: csu_oby01b01.csv, licence: "ČSÚ open data (CC BY 4.0)", timeout: 900,
+     url: "https://data.csu.gov.cz/opendata/sady/OBY01B01/distribuce/csv"}
   # --- price: MF ČR rent map (quarterly XLSX) ---
   - {key: mf_rent, kind: http, file: mf_cenova_mapa_2026-08-15.xlsx, licence: "MF ČR (open, attribution)",
      url: "https://mf.gov.cz/assets/attachments/2026-08-15_Cenova-mapa.xlsx"}
