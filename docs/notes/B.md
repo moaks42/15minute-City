@@ -1,12 +1,10 @@
 # Workstream B: notes (engine + ML + API, integrator)
 
-## Status
-- **contracts-v1** is on main: `config/indicators.yaml`, `config/cities/{krakow,praha}.yaml`, `contracts/openapi.yaml`, `contracts/types.ts`, `contracts/DATA_CONTRACT.md`, `contracts/fixtures/**`, `contracts/tools/*`.
-- The engine on branch `b-engine` implements every §7.2 endpoint (departures = P2 stub) and serves `contracts/openapi.yaml` as `/openapi.json`. 45 tests are green (contract, monotonicity, filters, relax hint, determinism, explanations = raw values, partial data, export, latency).
-- Until A's data is in `data/processed/`, it runs on **synthetic** data (`/api/health` → `dataSource: synthetic`, status `degraded`).
-- Perf: `/score` Praha (4.9k cells) compute p95 ≈ 3–5 ms single-threaded; load test 300 req at concurrency 16 on 2 workers → 0 errors, ~140 req/s, server p95 < 100 ms.
-- Engine URL: _not deployed yet (postponed, before M2)._ The Render API needs a card (402) and HF Docker Spaces need PRO (402). `render.yaml` and `engine/scripts/deploy_hf.py` are ready.
-- Local Docker could not be verified (colima VM on this machine fails SSH provisioning). The build steps were replicated without Docker (`--no-dev` env, warm-up, uvicorn): OK, ready in 0.4 s.
+## Status (10-03 ~18:20, after the integration merge)
+- **main = a-data + b-engine + c-web**. The engine runs on **A's real data** for both cities (validator: 0 errors). 47 engine tests are green on real and on synthetic data. `/score` p95 ≈ 3.4 ms (Praha, 4,976 cells).
+- **Hosting:** none (team decision). Everything runs locally; see README → "Run locally". Engine at `http://localhost:8000`, web at `http://localhost:5173`. `render.yaml` / `engine/scripts/deploy_hf.py` stay as options (Render needs a card, HF Docker needs PRO).
+- Static fallback export from real data: `engine/export/criteria_scores_{krakow,praha}.json` (`npm run sync-data` copies them to `web/public/data/{city}/criteria_scores.json`).
+- ML on real data: k = 8, holdout 0.943, 5 archetypes in use (see `docs/ML.md`).
 
 ## Contract changes (after v1: additive only, tagged contracts-vN)
 | tag | change |
@@ -35,3 +33,16 @@
 ## Log
 - 10-03: contracts v1 written; fixtures generated and validated (26 files, 0 schema errors); data validator tested on synthetic data (positive + negative).
 - 10-03: contracts v2 (optional addresses.parquet). Engine on b-engine: all endpoints, ML (k=6, MLP holdout 0.95 on synthetic), live air verified against GIOŚ + ČHMÚ, Photon fallback, static export, CI workflow, load test script (`engine/scripts/loadtest.py`).
+
+## Resolved requests
+- C1 (top-N diversity): `top` now lists at most one cell per neighbourhood.
+- C2 (criteria_scores export): done from real data; the file names match `sync-data.mjs`.
+- C3 (engine URL + CORS): local `http://localhost:8000`, CORS `*`.
+- A (no2, optional): not added yet. It would be an additive indicator (`environment.no2`, crossCity false) if time allows.
+
+## For A: data issue
+- Praha `environment.noise_db`: 13 cells at 0 dB or up to 176 dB (Lipence, Ruzyně, Újezd nad Lesy). The engine now treats values outside 20–120 dB as missing, but please fix them at the source.
+
+## For C: after merging main
+- `contracts/fixtures` were regenerated (`noise_db`/`pm25`/`pm10` → `crossCity: false`; same shapes). Run `npm run sync-data` and commit the refreshed `web/public/data/fixtures`.
+- Archetype ids actually emitted on real data: `urban_mix`, `estate_blocks`, `family_suburb`, `green_residential`, `quiet_outskirts`.

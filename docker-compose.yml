@@ -1,5 +1,5 @@
-# Local run and venue fallback: `docker compose up --build`
-# engine → http://localhost:8000/docs · web → http://localhost:5173
+# Optional: the engine in Docker (`docker compose up --build` → http://localhost:8000/docs).
+# The web app runs with npm (see README "Run locally"); point it at VITE_API_URL=http://localhost:8000.
 services:
   engine:
     build:
@@ -11,21 +11,6 @@ services:
     environment:
       DATA_DIR: /app/data/processed
       CONFIG_DIR: /app/config
-      CORS_ORIGINS: http://localhost:5173
+      CORS_ORIGINS: "*"
     ports:
       - "8000:8000"
-    healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
-      interval: 15s
-      timeout: 5s
-      retries: 5
-
-  web:
-    build:
-      context: web
-      args:
-        VITE_API_URL: http://localhost:8000
-    ports:
-      - "5173:80"
-    depends_on:
-      - engine

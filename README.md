@@ -1,5 +1,53 @@
 This project was made by psimcak, moaks, dkolarov, msimek.
 
+## ▶ Run locally (Kraków + Praha)
+
+Everything runs on one laptop: no accounts, no cloud. The processed data in `data/processed/` is committed, so you don't need to rebuild it.
+
+**Prerequisites:** [uv](https://docs.astral.sh/uv/) (`brew install uv` or `pip install uv`; uv installs Python 3.12 itself) and Node.js ≥ 20 with npm.
+
+**1. Engine (API), terminal 1**
+```bash
+cd engine
+uv sync
+uv run uvicorn app.main:app --port 8000
+```
+The first start trains the neighbourhood-type model (about 10 s).
+- Check http://localhost:8000/api/health: both cities should report `dataSource: real`.
+- API docs: http://localhost:8000/docs
+
+**2. Web app, terminal 2**
+```bash
+cd web
+npm ci
+npm run sync-data                      # copies grids, static exports and fixtures into web/public/data
+printf 'VITE_API_URL=http://localhost:8000\nVITE_USE_FIXTURES=0\n' > .env.local
+npm run dev
+```
+Open http://localhost:5173. Kraków is at `/krakow`, Praha at `/praha`.
+
+**Demo on a phone on the same Wi-Fi**
+1. Start the engine with `--host 0.0.0.0`.
+2. Set `VITE_API_URL=http://<laptop-IP>:8000` in `web/.env.local`.
+3. Run `npm run dev -- --host`.
+4. Open `http://<laptop-IP>:5173` on the phone.
+
+**Other modes**
+- No engine: `VITE_STATIC_FALLBACK=1` (scores computed in the browser from `criteria_scores.json`; no commute, twins or live data).
+- Contract fixtures only: `VITE_USE_FIXTURES=1`.
+- Engine in Docker: `docker compose up --build`.
+
+**Tests**
+- Engine: `cd engine && uv run pytest -q`
+- Web: `cd web && npm run build` (includes the locale check)
+- Smoke test: `cd web && npx playwright test`
+
+**Rebuild the data** (optional, ~45 min, needs Java 21): `cd pipeline && make data CITY=all`
+
+More: `docs/ARCHITECTURE.md` · `docs/DATA_SOURCES.md` · `docs/ML.md` · `docs/DECISIONS.md` · `contracts/` (API + data contract).
+
+---
+
 
 # MASTER PROMPT: "Kompas" (working title) · Kraków + Praha
 ### HackYeah 2026 · Category: SMART CITY (sponsor: Bank Pekao) · 24-hour build · UI in Polish, Czech and English

@@ -28,3 +28,6 @@ engine/.devdata/
 # os / editors
 .DS_Store
 .idea/
+
+# engine runtime artefacts (retrained automatically from data/processed)
+engine/models/

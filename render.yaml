@@ -6,7 +6,7 @@ services:
     runtime: docker
     plan: free
     region: frankfurt
-    branch: b-engine          # staging until the M1 merge, then switch to main
+    branch: main
     dockerfilePath: ./engine/Dockerfile
     dockerContext: .
     healthCheckPath: /api/health
