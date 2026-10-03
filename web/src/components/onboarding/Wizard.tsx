@@ -6,25 +6,25 @@ import { Header } from '@/components/layout/Header'
 import { useApp, type Step } from '@/state/store'
 import { CriteriaList } from './CriteriaList'
 import { PersonaStep } from './PersonaStep'
-import { PlacesStep } from './PlacesStep'
 
 const MapView = lazy(() => import('@/components/results/MapView'))
 
-const ORDER: Exclude<Step, 'results'>[] = ['persona', 'criteria', 'places']
+// Two steps; places and limits are set in the results, next to the map.
+const ORDER = ['persona', 'criteria'] as const
+type WizardStep = (typeof ORDER)[number]
 
 export function Wizard() {
   const { t } = useTranslation()
   const { step, set, city } = useApp()
-  const idx = Math.max(0, ORDER.indexOf(step as Exclude<Step, 'results'>))
+  const idx = Math.max(0, ORDER.indexOf(step as WizardStep))
   const go = (s: Step) => {
     set({ step: s })
     document.getElementById('wizard-scroll')?.scrollTo({ top: 0 })
   }
   const next = () => go(idx < ORDER.length - 1 ? ORDER[idx + 1] : 'results')
   const back = () => (idx === 0 ? set({ city: null }) : go(ORDER[idx - 1]))
-  // Total steps include the city choice (step 1).
-  const n = idx + 2
-  const total = 4
+  const n = idx + 1
+  const total = ORDER.length
 
   return (
     <div className="flex h-full flex-col">
@@ -44,7 +44,6 @@ export function Wizard() {
             <p className="mb-6 mt-1 text-ink-3">{t(`steps.${ORDER[idx]}.lead`)}</p>
             {step === 'persona' && <PersonaStep onPicked={next} />}
             {step === 'criteria' && <CriteriaList />}
-            {step === 'places' && <PlacesStep />}
           </div>
           <div className="sticky bottom-0 flex items-center gap-2 border-t border-line bg-surface/95 px-4 py-3 backdrop-blur sm:px-8">
             <Button variant="ghost" onClick={back}>

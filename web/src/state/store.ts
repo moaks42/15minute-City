@@ -4,7 +4,9 @@ import { create } from 'zustand'
 import type { Anchor, CityId, CriterionId, Filters, Lang, Mode, MustHave, Weights } from '@/api/types'
 import { CRITERIA } from '@/api/types'
 
-export type Step = 'persona' | 'criteria' | 'places' | 'results'
+// 'places' is only a request ("open my places"): set() turns it into the
+// results with the places section open, so it is never stored.
+export type Step = 'persona' | 'criteria' | 'results' | 'places'
 export type MapMode = 'match' | 'commute' | CriterionId
 export type Tab = 'places' | 'districts'
 
@@ -24,11 +26,17 @@ export interface AppState {
   tab: Tab
   compare: string[]
   hover: string | null
+  // UI only, not in the URL.
+  placesOpen: boolean // "My places and limits" section in the preferences panel
+  prefsOpen: boolean // preferences: mobile sheet / desktop left panel
+  leftOpen: boolean // desktop panels (persisted in localStorage)
+  rightOpen: boolean
 }
 
 export const CITY_IDS: CityId[] = ['krakow', 'praha']
-export const CITY_LANG: Record<CityId, Lang> = { krakow: 'pl', praha: 'cs' }
 const LANGS: Lang[] = ['pl', 'cs', 'en']
+const LANG_KEY = 'kompas.lang'
+const PANELS_KEY = 'kompas.panels'
 
 export const DEFAULT_WEIGHTS = Object.fromEntries(CRITERIA.map((c) => [c, 3])) as Weights
 const EMPTY_FILTERS: Filters = { maxPricePerM2: null, maxRentPerM2: null, mustHave: [], maxNoiseDb: null }
@@ -39,7 +47,34 @@ export function browserLang(): Lang {
     if ((LANGS as string[]).includes(s)) return s as Lang
     if (s === 'sk') return 'cs'
   }
-  return 'pl'
+  return 'en'
+}
+
+/** The language the user picked explicitly; it always wins. */
+export function storedLang(): Lang | null {
+  try {
+    const l = localStorage.getItem(LANG_KEY)
+    return l && (LANGS as string[]).includes(l) ? (l as Lang) : null
+  } catch {
+    return null
+  }
+}
+
+function storedPanels(): { leftOpen: boolean; rightOpen: boolean } {
+  try {
+    const p = JSON.parse(localStorage.getItem(PANELS_KEY) ?? '{}') as { left?: boolean; right?: boolean }
+    return { leftOpen: p.left !== false, rightOpen: p.right !== false }
+  } catch {
+    return { leftOpen: true, rightOpen: true }
+  }
+}
+
+function save(key: string, value: string) {
+  try {
+    localStorage.setItem(key, value)
+  } catch {
+    // Private mode or blocked storage: the choice just won't survive a reload.
+  }
 }
 
 // ---------- URL encoding ----------
@@ -101,13 +136,16 @@ export function stateFromUrl(loc: Location = window.location): Partial<AppState>
   const city = CITY_IDS.includes(segs[0] as CityId) ? (segs[0] as CityId) : null
   const q = new URLSearchParams(loc.search)
   const lang = q.get('lang') as Lang | null
-  const step = q.get('step') as Step | null
+  const step = q.get('step')
   const mode = q.get('mode')
   return {
     city,
     view: segs[1] === 'about' ? 'about' : 'app',
-    lang: lang && LANGS.includes(lang) ? lang : city ? CITY_LANG[city] : browserLang(),
-    step: step && ['persona', 'criteria', 'places', 'results'].includes(step) ? step : q.get('p') ? 'results' : 'persona',
+    // An explicit choice wins over the link; the city never decides the language.
+    lang: storedLang() ?? (lang && LANGS.includes(lang) ? lang : browserLang()),
+    // Old links may still say step=places: that section now lives in the results.
+    step: step === 'persona' || step === 'criteria' || step === 'results' ? step : step === 'places' || q.get('p') ? 'results' : 'persona',
+    ...(step === 'places' ? { placesOpen: true, prefsOpen: true } : {}),
     persona: q.get('p'),
     weights: decodeWeights(q.get('w')) ?? DEFAULT_WEIGHTS,
     anchors: decodeAnchors(q.get('a')),
@@ -168,12 +206,20 @@ const initial: AppState = {
   tab: 'places',
   compare: [],
   hover: null,
+  placesOpen: false,
+  prefsOpen: false,
+  ...storedPanels(),
   ...stateFromUrl(),
 }
+if (initial.sel) initial.rightOpen = true
 
 export const useApp = create<AppState & Actions>((set, get) => ({
   ...initial,
-  set: (p) => set(p),
+  set: (p) => {
+    if (p.step === 'places') p = { ...p, step: 'results', placesOpen: true, prefsOpen: true }
+    // Opening the preferences or places expands a collapsed left panel.
+    set(p.placesOpen || p.prefsOpen ? { ...p, leftOpen: true } : p)
+  },
   setCity: (city) => {
     const s = get()
     // Switching city keeps persona, levels and language; anchors, price
@@ -190,15 +236,19 @@ export const useApp = create<AppState & Actions>((set, get) => ({
         mapMode: s.mapMode === 'commute' ? 'match' : s.mapMode,
       })
     } else {
-      set({ city, lang: s.city || !city ? s.lang : CITY_LANG[city], view: 'app' })
+      set({ city, view: 'app' })
     }
   },
-  setLang: (lang) => set({ lang }),
+  setLang: (lang) => {
+    save(LANG_KEY, lang)
+    set({ lang })
+  },
   pickPersona: (persona, weights) => set({ persona, weights: { ...DEFAULT_WEIGHTS, ...weights } as Weights }),
   setLevel: (c, level) => set((s) => ({ weights: { ...s.weights, [c]: level } })),
   setAnchors: (anchors) => set({ anchors: anchors.map((a, i) => ({ ...a, id: `a${i + 1}` })) }),
   setFilters: (f) => set((s) => ({ filters: { ...s.filters, ...f } })),
-  select: (sel) => set({ sel }),
+  // Selecting a place expands a collapsed right panel so the detail is visible.
+  select: (sel) => set(sel ? { sel, rightOpen: true } : { sel }),
   toggleCompare: (id) =>
     set((s) => ({
       compare: s.compare.includes(id) ? s.compare.filter((x) => x !== id) : [...s.compare, id].slice(-3),
@@ -216,6 +266,9 @@ useApp.subscribe((s, prev) => {
   if (push) window.history.pushState(null, '', url)
   else window.history.replaceState(null, '', url)
   lastUrl = url
+})
+useApp.subscribe((s, prev) => {
+  if (s.leftOpen !== prev.leftOpen || s.rightOpen !== prev.rightOpen) save(PANELS_KEY, JSON.stringify({ left: s.leftOpen, right: s.rightOpen }))
 })
 window.addEventListener('popstate', () => {
   fromPop = true
