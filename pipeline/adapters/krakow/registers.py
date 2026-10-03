@@ -134,9 +134,27 @@ def ztp_racks(ctx: Ctx) -> pd.DataFrame:
                          "extra_json": "{}"})
 
 
+def nurseries(ctx: Ctx) -> pd.DataFrame:
+    """UM Kraków layer 'Żłobki i kluby dziecięce' (municipal + non-municipal), last edited 2023-07."""
+    out = []
+    for key, public in (("krk_zlobki_samorzadowe", True), ("krk_zlobki_niesamorzadowe", False)):
+        f = ctx.raw_file(key)
+        if not f.exists():
+            ctx.missing(key, "not fetched")
+            continue
+        g = gpd.read_file(f)
+        g = g[g.geometry.notna()]
+        out.append(pd.DataFrame({"category": "nursery", "name": g.get("Miejsce_pr", pd.Series("", index=g.index)).fillna("").str.strip(),
+                                 "lat": g.geometry.y, "lon": g.geometry.x, "source": key,
+                                 "extra_json": json.dumps({"public": public})}))
+        ctx.ok(key, len(g), f"żłobki i kluby dziecięce ({'samorządowe' if public else 'niesamorządowe'}), layer edited 2023-07; "
+               "added to POI category nursery together with OSM")
+    return pd.concat(out, ignore_index=True) if out else pd.DataFrame()
+
+
 def extra_pois(ctx: Ctx) -> pd.DataFrame:
     geo = Geocoder(ctx.addresses)
-    parts = [men_schools(ctx, geo), nfz(ctx, geo), ztp_racks(ctx)]
+    parts = [men_schools(ctx, geo), nfz(ctx, geo), ztp_racks(ctx), nurseries(ctx)]
     df = pd.concat(parts, ignore_index=True)
     # MEN register is authoritative for schools; OSM kept for nursery (żłobki are not in SIO)
     df.attrs["replace"] = ["kindergarten", "primary_school", "secondary_school"]

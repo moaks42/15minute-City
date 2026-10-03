@@ -25,8 +25,8 @@ ml:
 validate:
 	@for c in $(CITIES); do $(UV) python validate.py --city $$c || exit 1; done
 
-qa:
-	@for c in $(CITIES); do $(UV) python qa.py --city $$c || exit 1; done
+qa:  # validate + refresh the coverage / sanity section of docs/DATA_SOURCES.md
+	$(UV) python validate.py --city $(CITY) --write-docs
 
 clean-interim:
 	rm -rf ../data/interim

@@ -37,6 +37,10 @@ sources:
      url: "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Punkty_mobilności_warstwa_publiczna/FeatureServer/0"}
   - {key: ztp_hub_park_ride, use: "reference (P2 POI)", kind: arcgis, file: ztp_park_and_ride.geojson, licence: "ZTP Kraków (ArcGIS Hub, open)",
      url: "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Park_and_Ride/FeatureServer/0"}
+  - {key: krk_zlobki_niesamorzadowe, kind: arcgis, file: zlobki_niesamorzadowe.geojson, licence: "UM Kraków (GMK ArcGIS)",
+     url: "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/ŻŁOBKI_I_KLUBY_DZIECIĘCE_WFL1/FeatureServer/0"}
+  - {key: krk_zlobki_samorzadowe, kind: arcgis, file: zlobki_samorzadowe.geojson, licence: "UM Kraków (GMK ArcGIS)",
+     url: "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/ŻŁOBKI_I_KLUBY_DZIECIĘCE_WFL1/FeatureServer/1"}
   # --- MSIP (UM Kraków) ---
   - {key: msip_districts, kind: http, file: Dzielnice_JSON.zip, licence: "MSIP UM Kraków (open data, attribution)",
      url: "https://msip.um.krakow.pl/Dane/Dzielnice_JSON.zip"}
