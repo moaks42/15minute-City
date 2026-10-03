@@ -1,0 +1,331 @@
+{
+  "app": {
+    "name": "Kompas",
+    "tagline": "Najděte místo ve městě, které sedí vašemu životu.",
+    "taglineCity": "Najděte místo {{city}}, které sedí vašemu životu.",
+    "dataMode": {
+      "fixtures": "Ukázková data",
+      "fixturesHint": "Toto zobrazení používá ukázková data, ne skutečná měření.",
+      "static": "Režim offline",
+      "staticHint": "Server není dostupný. Skóre počítáme v prohlížeči; dojezdy, dvojčata čtvrtí a živá data jsou vypnutá."
+    },
+    "privacy": "Bez přihlášení, bez cookies, bez sledování. Vše, co zvolíte, zůstává v odkazu."
+  },
+  "nav": {
+    "about": "O datech",
+    "share": "Sdílet",
+    "shareCopied": "Odkaz zkopírován",
+    "shareFailed": "Zkopírujte tento odkaz:",
+    "language": "Jazyk",
+    "city": "Město",
+    "switchCity": "Změnit město",
+    "back": "Zpět",
+    "next": "Dále",
+    "skip": "Přeskočit",
+    "showResults": "Zobrazit výsledky",
+    "editPreferences": "Upravit preference",
+    "close": "Zavřít",
+    "home": "Začít znovu",
+    "filters": "Preference",
+    "results": "Výsledky",
+    "map": "Mapa"
+  },
+  "cities": {
+    "krakow": "Krakov",
+    "praha": "Praha",
+    "in": {
+      "krakow": "v Krakově",
+      "praha": "v Praze"
+    },
+    "cardHint": {
+      "krakow": "18 čtvrtí · tramvaje a autobusy ZTP · kupní ceny",
+      "praha": "57 městských částí · metro, tramvaje a autobusy PID · nájmy"
+    }
+  },
+  "steps": {
+    "progress": "Krok {{n}} z {{total}}",
+    "city": {
+      "title": "Které město?",
+      "lead": "Vyberte město. Kdykoli ho můžete změnit a nastavení zůstane."
+    },
+    "persona": {
+      "title": "Kdo jste?",
+      "lead": "Vyberte nejbližší profil. Předvyplní, co bývá důležité; vše můžete změnit."
+    },
+    "criteria": {
+      "title": "Co je pro vás důležité?",
+      "lead": "Ohodnoťte každé téma emoji. Co vás nezajímá, přeskočte."
+    },
+    "places": {
+      "title": "Vaše místa a limity",
+      "lead": "Nepovinné. Přidejte místa, kam jezdíte, a nastavte pevné limity."
+    }
+  },
+  "levels": {
+    "0": "Přeskočit",
+    "1": "Málo důležité",
+    "2": "Bylo by fajn",
+    "3": "Důležité",
+    "4": "Velmi důležité",
+    "5": "Zásadní",
+    "groupLabel": "Důležitost: {{criterion}}"
+  },
+  "criteria": {
+    "commute": "Dojezd do mých míst",
+    "transit": "Veřejná doprava (MHD)",
+    "active": "Kolo a chůze",
+    "green": "Zeleň",
+    "education": "Vzdělávání",
+    "family": "Rodina a děti",
+    "safety": "Bezpečnost",
+    "price": "Dostupné bydlení",
+    "shops": "Nákupy a služby",
+    "health": "Zdraví",
+    "environment": "Klid a čisté ovzduší",
+    "leisure": "Kultura, sport a gastronomie",
+    "accessibility": "Bezbariérovost",
+    "hint": {
+      "commute": "Čas ode dveří ke dveřím do míst, která přidáte v dalším kroku.",
+      "transit": "Nejbližší zastávka, odjezdy za hodinu, metro a vlak, noční spoje.",
+      "active": "Cyklostezky, ulice příjemné pro chůzi, stojany na kola.",
+      "green": "Podíl zeleně v okolí a cesta pěšky do velkého parku.",
+      "education": "Jesle, mateřské a základní školy, univerzity, knihovny.",
+      "family": "Dětská hřiště, pediatři, bazény a sport pro děti.",
+      "safety": "Evidované události v městské části a pouliční osvětlení.",
+      "price": "Místní cenová hladina ve srovnání se zbytkem města.",
+      "shops": "Supermarket, lékárna, pošta a výdejní boxy.",
+      "health": "Praktický lékař, lékárna, nemocnice, zubař.",
+      "environment": "Hluk z dopravy a znečištění ovzduší.",
+      "leisure": "Restaurace, kavárny, kultura a sport.",
+      "accessibility": "Bezbariérové zastávky a vozy, lavičky."
+    },
+    "beta": "beta",
+    "betaHint": "V tomto městě je méně dat. Kritérium má menší váhu a je označené.",
+    "noData": "chybí data"
+  },
+  "personas": {
+    "student": "Student/ka",
+    "working": "Pracuji",
+    "parent": "Rodič",
+    "expecting": "Těhotná",
+    "senior": "Senior/ka",
+    "custom": "Vlastní profil",
+    "desc": {
+      "student": "Rychle do školy, nízké ceny a život po večerech.",
+      "working": "Krátký dojezd do práce, obchody po cestě a trochu zeleně.",
+      "parent": "Školy, hřiště, parky a klidné, bezpečné ulice.",
+      "expecting": "Lékaři a porodnice nablízku, klid, čistý vzduch a krátké procházky.",
+      "senior": "Lékař a obchody kousek pěšky, lavičky, bezbariérová doprava.",
+      "custom": "Začněte z neutrálního nastavení a vše si zvolte sami."
+    }
+  },
+  "places": {
+    "anchors": "Moje místa",
+    "anchorsHint": "Až 3 místa, kam často jezdíte.",
+    "addAnchor": "Přidat místo",
+    "removeAnchor": "Odebrat: {{label}}",
+    "searchPlaceholder": "Hledat adresu nebo čtvrť…",
+    "searchNoResults": "Nic jsme nenašli. Zkuste název ulice nebo čtvrti.",
+    "searching": "Hledám…",
+    "labelPlaceholder": "Název, např. Práce",
+    "mode": "Jak cestujete",
+    "modes": {
+      "transit": "MHD",
+      "bike": "Kolo",
+      "walk": "Pěšky"
+    },
+    "importance": "Důležitost",
+    "maxMinutes": "Nejvýše",
+    "noLimit": "bez limitu",
+    "suggested": "Návrh: {{label}}",
+    "limits": "Pevné limity",
+    "budget": {
+      "buy": "Váš rozpočet na koupi (celkem)",
+      "rent": "Váš měsíční rozpočet na nájem",
+      "hint": "Ukážeme, kolik m² za něj v každém místě dostanete."
+    },
+    "maxPrice": {
+      "buy": "Max. cena za m²",
+      "rent": "Max. nájem za m² měsíčně"
+    },
+    "maxNoise": "Max. hluk",
+    "mustHave": "Musí být v docházkové vzdálenosti",
+    "addMustHave": "Přidat podmínku",
+    "walkMinutes_one": "do {{count}} minuty pěšky",
+    "walkMinutes_few": "do {{count}} minut pěšky",
+    "walkMinutes_many": "do {{count}} minuty pěšky",
+    "walkMinutes_other": "do {{count}} minut pěšky",
+    "categories": {
+      "nursery": "Jesle",
+      "kindergarten": "Mateřská škola",
+      "primary_school": "Základní škola",
+      "tram_stop": "Tramvajová zastávka",
+      "metro_station": "Stanice metra",
+      "park": "Park",
+      "pharmacy": "Lékárna",
+      "gp_clinic": "Praktický lékař",
+      "supermarket": "Supermarket",
+      "maternity_ward": "Porodnice"
+    }
+  },
+  "results": {
+    "tabs": {
+      "places": "Místa",
+      "districts": "Městské části"
+    },
+    "passing_one": "Vašim limitům vyhovuje {{count}} místo",
+    "passing_few": "Vašim limitům vyhovují {{count}} místa",
+    "passing_many": "Vašim limitům vyhovuje {{count}} místa",
+    "passing_other": "Vašim limitům vyhovuje {{count}} míst",
+    "computed": "Spočítáno za {{ms}} ms",
+    "match": "shoda",
+    "matchPct": "{{pct}} % shoda",
+    "rank": "Č. {{rank}}",
+    "loading": "Hledám místa, která vám sednou…",
+    "error": "Při načítání výsledků se něco pokazilo.",
+    "retry": "Zkusit znovu",
+    "empty": "Všem vašim limitům nevyhovuje žádné místo.",
+    "relax": "Bez limitu „{{filter}}“ by se vrátilo: {{places}}.",
+    "relaxAction": "Odebrat tento limit",
+    "highlights": "Proč sedí",
+    "warning": "Pozor",
+    "compare": "Porovnat",
+    "compareN": "Porovnat ({{count}})",
+    "compareLimit": "Porovnejte až 3 místa",
+    "sharePassing": "Limitům vyhovuje {{pct}} % části",
+    "budgetM2": "Za váš rozpočet ~{{m2}} m²",
+    "noDistricts": "Data o městských částech zatím nejsou.",
+    "openDetail": "Otevřít detail: {{name}}"
+  },
+  "map": {
+    "modes": {
+      "label": "Mapa ukazuje",
+      "match": "Shoda %",
+      "commute": "Doba dojezdu",
+      "criterion": "Jedno kritérium"
+    },
+    "legend": {
+      "title": "Legenda",
+      "match": "Shoda s vašimi preferencemi",
+      "commute": "Doba dojezdu do: {{place}}",
+      "criterion": "Skóre: {{criterion}}",
+      "low": "nízké",
+      "high": "vysoké",
+      "failing": "Mimo vaše limity",
+      "uninhabited": "Bez obytné zástavby",
+      "top": "Top 10",
+      "anchor": "Vaše místo"
+    },
+    "commuteNoAnchor": "Přidejte místo v preferencích a uvidíte doby dojezdu.",
+    "commuteFrom": "Z",
+    "minutes": "{{count}} min",
+    "over60": "> 60 min",
+    "loading": "Načítám mapu…",
+    "error": "Mapu se nepodařilo načíst."
+  },
+  "detail": {
+    "title": "Detail místa",
+    "radar": "Ve srovnání s mediánem města",
+    "thisPlace": "Toto místo",
+    "cityMedian": "Medián města",
+    "indicators": "Co jsme změřili",
+    "nearest": "Nejblíže",
+    "walk_one": "{{count}} minuta pěšky",
+    "walk_few": "{{count}} minuty pěšky",
+    "walk_many": "{{count}} minuty pěšky",
+    "walk_other": "{{count}} minut pěšky",
+    "commute": "Dojezd",
+    "budget": "Za váš rozpočet",
+    "budgetM2": "~{{m2}} m²",
+    "budgetNone": "Nastavte rozpočet v preferencích a uvidíte to.",
+    "price": "Místní cena",
+    "archetype": "Typ čtvrti",
+    "archetypeHint": "Určuje malá neuronová síť natrénovaná na shlucích z obou měst (učení bez učitele). Jen orientačně.",
+    "probability": "pravděpodobnost {{pct}} %",
+    "air": "Kvalita ovzduší teď",
+    "airUnavailable": "Živá data o ovzduší nejsou k dispozici.",
+    "airLevels": {
+      "very_good": "Velmi dobrá",
+      "good": "Dobrá",
+      "moderate": "Přijatelná",
+      "sufficient": "Dostatečná",
+      "bad": "Špatná",
+      "very_bad": "Velmi špatná"
+    },
+    "similar": "Podobná místa v tomto městě",
+    "twins": "Dvojčata čtvrtí",
+    "twinsLead": "Místa {{city}} s podobným každodenním charakterem.",
+    "twinsOpen": "Ukázat: {{city}}",
+    "similarity": "podobnost {{pct}} %",
+    "imputed": "Odhad: chybí data, použili jsme medián města.",
+    "loading": "Načítám detail…",
+    "error": "Detail se nepodařilo načíst."
+  },
+  "compare": {
+    "title": "Porovnání míst",
+    "empty": "Zaškrtněte „Porovnat“ u 2–3 míst.",
+    "clear": "Vymazat",
+    "criterion": "Kritérium"
+  },
+  "about": {
+    "title": "O datech",
+    "lead": "Každé číslo v Kompasu pochází z otevřených dat. Tady je odkud a co neříká.",
+    "sources": "Zdroje: {{city}}",
+    "table": {
+      "source": "Zdroj",
+      "licence": "Licence",
+      "fetched": "Staženo",
+      "status": "Stav",
+      "rows": "Řádky"
+    },
+    "status": {
+      "ok": "OK",
+      "fallback": "Náhradní",
+      "missing": "Chybí"
+    },
+    "methodTitle": "Jak počítáme shodu",
+    "method": [
+      "Město dělíme na šestiúhelníky o ploše asi 0,1 km² (H3, rozlišení 9). Pro každý počítáme ukazatele, např. minuty pěšky na zastávku, odjezdy za hodinu, podíl zeleně, hluk v dB nebo místní cenu za m².",
+      "Každý ukazatel převedeme na skóre 0–100 ve srovnání v rámci téhož města, takže shoda 80 % znamená „v tomto městě vám to sedí dobře“.",
+      "Vaše emoji určují váhy: 😐 1, 🙂 2, 😊 3, 😍 5, 🤩 8. Shoda je vážený průměr kritérií. Pevné limity místa vyřadí, místo aby jim snižovaly skóre.",
+      "Typy čtvrtí vznikají shlukováním obou měst dohromady; malá neuronová síť pak každému místu přiřadí typ s pravděpodobností. Dvojčata čtvrtí jsou nejpodobnější místa v druhém městě, počítaná jen ze srovnatelných měření (minuty, počty, dB, µg/m³)."
+    ],
+    "safetyTitle": "K bezpečnosti",
+    "safety": "Bezpečnost ukazujeme jen za celou městskou část, podle událostí evidovaných policií na 1 000 obyvatel. Evidované události nejsou totéž co pocit bezpečí. V rušném centru s mnoha návštěvníky se jich eviduje víc.",
+    "limitsTitle": "Omezení",
+    "limits": [
+      "Krakov nemá oficiální data o nájmech a Praha o kupních cenách. Pro Krakov ukazujeme transakční ceny (RCN), pro Prahu nájemné (cenová mapa nájemného MF ČR).",
+      "Kde data chybí, použijeme medián města a hodnotu označíme jako odhad.",
+      "Doby dojezdu jsou modelované pro ráno všedního dne, ne v reálném čase.",
+      "Data o kriminalitě v Praze mají licenci jen pro nekomerční použití."
+    ],
+    "attribution": "Zdroje dat a mapy",
+    "back": "Zpět na mapu"
+  },
+  "footer": {
+    "attribution": "Mapa © přispěvatelé OpenStreetMap · OpenFreeMap",
+    "sources": "Data: {{sources}}",
+    "team": "Vzniklo na HackYeah 2026"
+  },
+  "units": {
+    "min_one": "{{count}} min",
+    "min_few": "{{count}} min",
+    "min_many": "{{count}} min",
+    "min_other": "{{count}} min",
+    "departures_one": "{{count}} odjezd/h",
+    "departures_few": "{{count}} odjezdy/h",
+    "departures_many": "{{count}} odjezdu/h",
+    "departures_other": "{{count}} odjezdů/h",
+    "places_one": "{{count}} místo",
+    "places_few": "{{count}} místa",
+    "places_many": "{{count}} místa",
+    "places_other": "{{count}} míst",
+    "m2": "{{count}} m²"
+  },
+  "states": {
+    "loading": "Načítání…",
+    "error": "Něco se pokazilo.",
+    "retry": "Zkusit znovu",
+    "offline": "Jste offline."
+  }
+}

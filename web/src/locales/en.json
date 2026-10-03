@@ -1,0 +1,317 @@
+{
+  "app": {
+    "name": "Kompas",
+    "tagline": "Find the part of the city that fits your life.",
+    "taglineCity": "Find the place {{city}} that fits your life.",
+    "dataMode": {
+      "fixtures": "Demo data",
+      "fixturesHint": "This view uses sample data, not real measurements.",
+      "static": "Offline mode",
+      "staticHint": "The engine is unreachable. Scores are computed in your browser; commute, twins and live data are off."
+    },
+    "privacy": "No login, no cookies, no tracking. Everything you choose stays in the link."
+  },
+  "nav": {
+    "about": "About the data",
+    "share": "Share",
+    "shareCopied": "Link copied",
+    "shareFailed": "Copy this link:",
+    "language": "Language",
+    "city": "City",
+    "switchCity": "Switch city",
+    "back": "Back",
+    "next": "Next",
+    "skip": "Skip",
+    "showResults": "Show results",
+    "editPreferences": "Edit preferences",
+    "close": "Close",
+    "home": "Start over",
+    "filters": "Preferences",
+    "results": "Results",
+    "map": "Map"
+  },
+  "cities": {
+    "krakow": "Kraków",
+    "praha": "Prague",
+    "in": {
+      "krakow": "in Kraków",
+      "praha": "in Prague"
+    },
+    "cardHint": {
+      "krakow": "18 districts · ZTP trams and buses · prices to buy",
+      "praha": "57 city districts · PID metro, trams and buses · rents"
+    }
+  },
+  "steps": {
+    "progress": "Step {{n}} of {{total}}",
+    "city": {
+      "title": "Which city?",
+      "lead": "Choose a city. You can switch any time and keep your settings."
+    },
+    "persona": {
+      "title": "Who are you?",
+      "lead": "Pick the closest profile. It pre-fills what usually matters; you can change everything."
+    },
+    "criteria": {
+      "title": "What matters to you?",
+      "lead": "Rate each topic with an emoji. Skip what you don't care about."
+    },
+    "places": {
+      "title": "Your places and limits",
+      "lead": "Optional. Add places you travel to and set hard limits."
+    }
+  },
+  "levels": {
+    "0": "Skip",
+    "1": "Barely matters",
+    "2": "Nice to have",
+    "3": "Important",
+    "4": "Very important",
+    "5": "Essential",
+    "groupLabel": "Importance of {{criterion}}"
+  },
+  "criteria": {
+    "commute": "Commute to my places",
+    "transit": "Public transport",
+    "active": "Cycling & walking",
+    "green": "Green space",
+    "education": "Education",
+    "family": "Family & kids",
+    "safety": "Safety",
+    "price": "Affordability",
+    "shops": "Shops & services",
+    "health": "Health",
+    "environment": "Quiet & clean air",
+    "leisure": "Culture, sport & food",
+    "accessibility": "Accessibility",
+    "hint": {
+      "commute": "Door-to-door time to the places you add in the next step.",
+      "transit": "Nearest stop, departures per hour, metro and rail stations, night service.",
+      "active": "Cycle paths, walkable streets, bike racks.",
+      "green": "Share of greenery nearby and the walk to a large park.",
+      "education": "Nurseries, kindergartens, schools, universities, libraries.",
+      "family": "Playgrounds, paediatricians, pools and sports for kids.",
+      "safety": "Registered incidents per district and street lighting.",
+      "price": "Local price level compared with the rest of the city.",
+      "shops": "Supermarket, pharmacy, post office and parcel lockers.",
+      "health": "GP clinic, pharmacy, hospital, dentist.",
+      "environment": "Traffic noise and air pollution.",
+      "leisure": "Restaurants, cafés, culture and sport.",
+      "accessibility": "Step-free stops and vehicles, benches."
+    },
+    "beta": "beta",
+    "betaHint": "Limited data in this city. The criterion counts less and is labelled.",
+    "noData": "no data"
+  },
+  "personas": {
+    "student": "Student",
+    "working": "Working",
+    "parent": "Parent",
+    "expecting": "Expecting",
+    "senior": "Senior",
+    "custom": "Custom",
+    "desc": {
+      "student": "Fast transport to campus, low prices and life in the evening.",
+      "working": "A short commute, shops on the way and some greenery.",
+      "parent": "Schools, playgrounds, parks and safe, calm streets.",
+      "expecting": "Doctors and a maternity ward nearby, quiet, clean air and short walks.",
+      "senior": "Doctors and shops within a short walk, benches, step-free transport.",
+      "custom": "Start from neutral and set everything yourself."
+    }
+  },
+  "places": {
+    "anchors": "My places",
+    "anchorsHint": "Up to 3 places you travel to often.",
+    "addAnchor": "Add a place",
+    "removeAnchor": "Remove {{label}}",
+    "searchPlaceholder": "Search an address or area…",
+    "searchNoResults": "Nothing found. Try a street or area name.",
+    "searching": "Searching…",
+    "labelPlaceholder": "Name, e.g. Work",
+    "mode": "How you travel",
+    "modes": {
+      "transit": "Public transport",
+      "bike": "Bike",
+      "walk": "Walk"
+    },
+    "importance": "Importance",
+    "maxMinutes": "At most",
+    "noLimit": "no limit",
+    "suggested": "Suggested: {{label}}",
+    "limits": "Hard limits",
+    "budget": {
+      "buy": "Your budget to buy (total)",
+      "rent": "Your monthly rent budget",
+      "hint": "We show how many m² it buys in each place."
+    },
+    "maxPrice": {
+      "buy": "Max price per m²",
+      "rent": "Max rent per m² per month"
+    },
+    "maxNoise": "Max noise",
+    "mustHave": "Must have within walking distance",
+    "addMustHave": "Add a must-have",
+    "walkMinutes": "within {{count}} min walk",
+    "categories": {
+      "nursery": "Nursery",
+      "kindergarten": "Kindergarten",
+      "primary_school": "Primary school",
+      "tram_stop": "Tram stop",
+      "metro_station": "Metro station",
+      "park": "Park",
+      "pharmacy": "Pharmacy",
+      "gp_clinic": "GP clinic",
+      "supermarket": "Supermarket",
+      "maternity_ward": "Maternity ward"
+    }
+  },
+  "results": {
+    "tabs": {
+      "places": "Places",
+      "districts": "Districts"
+    },
+    "passing_one": "{{count}} place matches your limits",
+    "passing_other": "{{count}} places match your limits",
+    "computed": "Computed in {{ms}} ms",
+    "match": "match",
+    "matchPct": "{{pct}}% match",
+    "rank": "No. {{rank}}",
+    "loading": "Finding places that fit you…",
+    "error": "Something went wrong while loading results.",
+    "retry": "Try again",
+    "empty": "No place passes all your limits.",
+    "relax": "Removing “{{filter}}” would bring back {{places}}.",
+    "relaxAction": "Remove this limit",
+    "highlights": "Why it fits",
+    "warning": "Watch out",
+    "compare": "Compare",
+    "compareN": "Compare ({{count}})",
+    "compareLimit": "Compare up to 3 places",
+    "sharePassing": "{{pct}}% of the district passes",
+    "budgetM2": "Your budget ≈ {{m2}} m²",
+    "noDistricts": "No district data yet.",
+    "openDetail": "Open details for {{name}}"
+  },
+  "map": {
+    "modes": {
+      "label": "Map shows",
+      "match": "Match %",
+      "commute": "Commute time",
+      "criterion": "One criterion"
+    },
+    "legend": {
+      "title": "Legend",
+      "match": "Match with your preferences",
+      "commute": "Travel time to {{place}}",
+      "criterion": "{{criterion}} score",
+      "low": "low",
+      "high": "high",
+      "failing": "Outside your limits",
+      "uninhabited": "No housing",
+      "top": "Top 10",
+      "anchor": "Your place"
+    },
+    "commuteNoAnchor": "Add a place in your preferences to see commute times.",
+    "commuteFrom": "From",
+    "minutes": "{{count}} min",
+    "over60": "> 60 min",
+    "loading": "Loading map…",
+    "error": "The map could not load."
+  },
+  "detail": {
+    "title": "Place details",
+    "radar": "Compared with the city median",
+    "thisPlace": "This place",
+    "cityMedian": "City median",
+    "indicators": "What we measured",
+    "nearest": "Nearest",
+    "walk": "{{count}} min walk",
+    "commute": "Commute",
+    "budget": "For your budget",
+    "budgetM2": "≈ {{m2}} m²",
+    "budgetNone": "Set a budget in your preferences to see this.",
+    "price": "Local price",
+    "archetype": "Neighbourhood type",
+    "archetypeHint": "Assigned by a small neural network trained on unsupervised clusters of both cities. Indicative only.",
+    "probability": "{{pct}}% likely",
+    "air": "Air quality now",
+    "airUnavailable": "Live air data unavailable.",
+    "airLevels": {
+      "very_good": "Very good",
+      "good": "Good",
+      "moderate": "Moderate",
+      "sufficient": "Sufficient",
+      "bad": "Bad",
+      "very_bad": "Very bad"
+    },
+    "similar": "Similar places in this city",
+    "twins": "Twin neighbourhoods",
+    "twinsLead": "Places in {{city}} with a similar everyday feel.",
+    "twinsOpen": "Show in {{city}}",
+    "similarity": "{{pct}}% similar",
+    "imputed": "Estimated: no data here, we used the city median.",
+    "loading": "Loading details…",
+    "error": "Could not load details."
+  },
+  "compare": {
+    "title": "Compare places",
+    "empty": "Tick “Compare” on 2–3 places.",
+    "clear": "Clear",
+    "criterion": "Criterion"
+  },
+  "about": {
+    "title": "About the data",
+    "lead": "Every number in Kompas comes from open data. Here is where it comes from and what it can't tell you.",
+    "sources": "Sources for {{city}}",
+    "table": {
+      "source": "Source",
+      "licence": "Licence",
+      "fetched": "Fetched",
+      "status": "Status",
+      "rows": "Rows"
+    },
+    "status": {
+      "ok": "OK",
+      "fallback": "Fallback",
+      "missing": "Missing"
+    },
+    "methodTitle": "How the match works",
+    "method": [
+      "The city is divided into hexagons of about 0.1 km² (H3, resolution 9). For each hexagon we compute indicators such as walking minutes to the nearest stop, departures per hour, green share, noise in dB or the local price per m².",
+      "Each indicator becomes a 0–100 score compared within the same city, so a match of 80% means “fits you well in this city”.",
+      "Your emoji choices set the weights: 😐 1, 🙂 2, 😊 3, 😍 5, 🤩 8. The match is the weighted average of the criteria. Hard limits remove places instead of lowering their score.",
+      "Neighbourhood types come from clustering both cities together; a small neural network then assigns each place a type with a probability. Twin neighbourhoods are the most similar places in the other city, using only measurements that are comparable across both (minutes, counts, dB, µg/m³)."
+    ],
+    "safetyTitle": "A note on safety",
+    "safety": "Safety is shown only per district, based on incidents registered by the police per 1,000 residents. Registered incidents are not the same as how safe a place feels. Busy centres with many visitors register more incidents.",
+    "limitsTitle": "Limitations",
+    "limits": [
+      "Kraków has no official rent data and Prague no official sale-price data. Kraków prices are sale transactions (RCN); Prague prices are rents (Ministry of Finance rent map).",
+      "Where data is missing we use the city median and mark the value as estimated.",
+      "Travel times are modelled for a weekday morning, not live traffic.",
+      "Prague crime data is licensed for non-commercial use only."
+    ],
+    "attribution": "Data and map attributions",
+    "back": "Back to the map"
+  },
+  "footer": {
+    "attribution": "Map © OpenStreetMap contributors · OpenFreeMap",
+    "sources": "Data: {{sources}}",
+    "team": "Made at HackYeah 2026"
+  },
+  "units": {
+    "min_one": "{{count}} min",
+    "min_other": "{{count}} min",
+    "departures_one": "{{count}} departure/h",
+    "departures_other": "{{count}} departures/h",
+    "places_one": "{{count}} place",
+    "places_other": "{{count}} places",
+    "m2": "{{count}} m²"
+  },
+  "states": {
+    "loading": "Loading…",
+    "error": "Something went wrong.",
+    "retry": "Try again",
+    "offline": "You are offline."
+  }
+}

@@ -1,0 +1,331 @@
+{
+  "app": {
+    "name": "Kompas",
+    "tagline": "Znajdź miejsce w mieście, które pasuje do Twojego życia.",
+    "taglineCity": "Znajdź miejsce {{city}}, które pasuje do Twojego życia.",
+    "dataMode": {
+      "fixtures": "Dane demonstracyjne",
+      "fixturesHint": "Ten widok używa danych przykładowych, a nie prawdziwych pomiarów.",
+      "static": "Tryb offline",
+      "staticHint": "Silnik jest niedostępny. Wyniki liczymy w przeglądarce; dojazdy, bliźniacze okolice i dane na żywo są wyłączone."
+    },
+    "privacy": "Bez logowania, bez ciasteczek, bez śledzenia. Wszystkie wybory zostają w linku."
+  },
+  "nav": {
+    "about": "O danych",
+    "share": "Udostępnij",
+    "shareCopied": "Link skopiowany",
+    "shareFailed": "Skopiuj ten link:",
+    "language": "Język",
+    "city": "Miasto",
+    "switchCity": "Zmień miasto",
+    "back": "Wstecz",
+    "next": "Dalej",
+    "skip": "Pomiń",
+    "showResults": "Pokaż wyniki",
+    "editPreferences": "Zmień preferencje",
+    "close": "Zamknij",
+    "home": "Zacznij od nowa",
+    "filters": "Preferencje",
+    "results": "Wyniki",
+    "map": "Mapa"
+  },
+  "cities": {
+    "krakow": "Kraków",
+    "praha": "Praga",
+    "in": {
+      "krakow": "w Krakowie",
+      "praha": "w Pradze"
+    },
+    "cardHint": {
+      "krakow": "18 dzielnic · tramwaje i autobusy ZTP · ceny zakupu",
+      "praha": "57 dzielnic · metro, tramwaje i autobusy PID · czynsze"
+    }
+  },
+  "steps": {
+    "progress": "Krok {{n}} z {{total}}",
+    "city": {
+      "title": "W którym mieście?",
+      "lead": "Wybierz miasto. Możesz je zmienić w każdej chwili, ustawienia zostaną."
+    },
+    "persona": {
+      "title": "Kim jesteś?",
+      "lead": "Wybierz najbliższy profil. Podpowie, co zwykle jest ważne; wszystko możesz zmienić."
+    },
+    "criteria": {
+      "title": "Co jest dla Ciebie ważne?",
+      "lead": "Oceń każdy temat emotką. Pomiń to, co Cię nie interesuje."
+    },
+    "places": {
+      "title": "Twoje miejsca i granice",
+      "lead": "Opcjonalnie. Dodaj miejsca, do których dojeżdżasz, i ustaw twarde limity."
+    }
+  },
+  "levels": {
+    "0": "Pomiń",
+    "1": "Mało ważne",
+    "2": "Miło by było",
+    "3": "Ważne",
+    "4": "Bardzo ważne",
+    "5": "Kluczowe",
+    "groupLabel": "Waga: {{criterion}}"
+  },
+  "criteria": {
+    "commute": "Dojazd do moich miejsc",
+    "transit": "Komunikacja miejska",
+    "active": "Rower i spacery",
+    "green": "Zieleń",
+    "education": "Edukacja",
+    "family": "Rodzina i dzieci",
+    "safety": "Bezpieczeństwo",
+    "price": "Przystępne ceny",
+    "shops": "Zakupy i usługi",
+    "health": "Zdrowie",
+    "environment": "Cisza i czyste powietrze",
+    "leisure": "Kultura, sport i gastronomia",
+    "accessibility": "Dostępność",
+    "hint": {
+      "commute": "Czas od drzwi do drzwi do miejsc, które dodasz w następnym kroku.",
+      "transit": "Najbliższy przystanek, odjazdy na godzinę, stacje kolejowe i metro, linie nocne.",
+      "active": "Drogi rowerowe, ulice przyjazne pieszym, stojaki na rowery.",
+      "green": "Udział zieleni w okolicy i spacer do dużego parku.",
+      "education": "Żłobki, przedszkola, szkoły, uczelnie, biblioteki.",
+      "family": "Place zabaw, pediatrzy, baseny i sport dla dzieci.",
+      "safety": "Zarejestrowane zdarzenia w dzielnicy i oświetlenie ulic.",
+      "price": "Lokalny poziom cen w porównaniu z resztą miasta.",
+      "shops": "Supermarket, apteka, poczta i paczkomaty.",
+      "health": "Przychodnia POZ, apteka, szpital, dentysta.",
+      "environment": "Hałas uliczny i zanieczyszczenie powietrza.",
+      "leisure": "Restauracje, kawiarnie, kultura i sport.",
+      "accessibility": "Przystanki i pojazdy bez barier, ławki."
+    },
+    "beta": "beta",
+    "betaHint": "W tym mieście danych jest mniej. Kryterium liczy się słabiej i jest oznaczone.",
+    "noData": "brak danych"
+  },
+  "personas": {
+    "student": "Student/ka",
+    "working": "Pracuję",
+    "parent": "Rodzic",
+    "expecting": "W ciąży",
+    "senior": "Senior/ka",
+    "custom": "Własny profil",
+    "desc": {
+      "student": "Szybki dojazd na uczelnię, niskie ceny i życie wieczorem.",
+      "working": "Krótki dojazd do pracy, sklepy po drodze i trochę zieleni.",
+      "parent": "Szkoły, place zabaw, parki i spokojne, bezpieczne ulice.",
+      "expecting": "Lekarze i porodówka w pobliżu, cisza, czyste powietrze i krótkie spacery.",
+      "senior": "Lekarz i sklepy blisko, ławki, komunikacja bez barier.",
+      "custom": "Zacznij od neutralnych ustawień i dobierz wszystko sam(a)."
+    }
+  },
+  "places": {
+    "anchors": "Moje miejsca",
+    "anchorsHint": "Do 3 miejsc, do których często dojeżdżasz.",
+    "addAnchor": "Dodaj miejsce",
+    "removeAnchor": "Usuń: {{label}}",
+    "searchPlaceholder": "Wpisz adres lub okolicę…",
+    "searchNoResults": "Nic nie znaleziono. Spróbuj nazwy ulicy lub okolicy.",
+    "searching": "Szukam…",
+    "labelPlaceholder": "Nazwa, np. Praca",
+    "mode": "Jak dojeżdżasz",
+    "modes": {
+      "transit": "Komunikacja miejska",
+      "bike": "Rower",
+      "walk": "Pieszo"
+    },
+    "importance": "Waga",
+    "maxMinutes": "Najwyżej",
+    "noLimit": "bez limitu",
+    "suggested": "Proponowane: {{label}}",
+    "limits": "Twarde limity",
+    "budget": {
+      "buy": "Twój budżet na zakup (łącznie)",
+      "rent": "Twój miesięczny budżet na najem",
+      "hint": "Pokażemy, ile m² za to kupisz w każdym miejscu."
+    },
+    "maxPrice": {
+      "buy": "Maks. cena za m²",
+      "rent": "Maks. czynsz za m² miesięcznie"
+    },
+    "maxNoise": "Maks. hałas",
+    "mustHave": "Musi być w zasięgu spaceru",
+    "addMustHave": "Dodaj warunek",
+    "walkMinutes_one": "do {{count}} minuty pieszo",
+    "walkMinutes_few": "do {{count}} minut pieszo",
+    "walkMinutes_many": "do {{count}} minut pieszo",
+    "walkMinutes_other": "do {{count}} minuty pieszo",
+    "categories": {
+      "nursery": "Żłobek",
+      "kindergarten": "Przedszkole",
+      "primary_school": "Szkoła podstawowa",
+      "tram_stop": "Przystanek tramwajowy",
+      "metro_station": "Stacja metra",
+      "park": "Park",
+      "pharmacy": "Apteka",
+      "gp_clinic": "Przychodnia POZ",
+      "supermarket": "Supermarket",
+      "maternity_ward": "Porodówka"
+    }
+  },
+  "results": {
+    "tabs": {
+      "places": "Miejsca",
+      "districts": "Dzielnice"
+    },
+    "passing_one": "{{count}} miejsce spełnia Twoje limity",
+    "passing_few": "{{count}} miejsca spełniają Twoje limity",
+    "passing_many": "{{count}} miejsc spełnia Twoje limity",
+    "passing_other": "{{count}} miejsca spełnia Twoje limity",
+    "computed": "Policzone w {{ms}} ms",
+    "match": "dopasowania",
+    "matchPct": "{{pct}}% dopasowania",
+    "rank": "Nr {{rank}}",
+    "loading": "Szukam miejsc, które do Ciebie pasują…",
+    "error": "Coś poszło nie tak przy ładowaniu wyników.",
+    "retry": "Spróbuj ponownie",
+    "empty": "Żadne miejsce nie spełnia wszystkich limitów.",
+    "relax": "Bez limitu „{{filter}}” wróci: {{places}}.",
+    "relaxAction": "Usuń ten limit",
+    "highlights": "Dlaczego pasuje",
+    "warning": "Uwaga",
+    "compare": "Porównaj",
+    "compareN": "Porównaj ({{count}})",
+    "compareLimit": "Porównaj do 3 miejsc",
+    "sharePassing": "{{pct}}% dzielnicy spełnia limity",
+    "budgetM2": "Za Twój budżet ~{{m2}} m²",
+    "noDistricts": "Brak jeszcze danych o dzielnicach.",
+    "openDetail": "Pokaż szczegóły: {{name}}"
+  },
+  "map": {
+    "modes": {
+      "label": "Mapa pokazuje",
+      "match": "Dopasowanie %",
+      "commute": "Czas dojazdu",
+      "criterion": "Jedno kryterium"
+    },
+    "legend": {
+      "title": "Legenda",
+      "match": "Dopasowanie do Twoich preferencji",
+      "commute": "Czas dojazdu do: {{place}}",
+      "criterion": "Ocena: {{criterion}}",
+      "low": "nisko",
+      "high": "wysoko",
+      "failing": "Poza Twoimi limitami",
+      "uninhabited": "Brak zabudowy mieszkalnej",
+      "top": "Top 10",
+      "anchor": "Twoje miejsce"
+    },
+    "commuteNoAnchor": "Dodaj miejsce w preferencjach, aby zobaczyć czasy dojazdu.",
+    "commuteFrom": "Z",
+    "minutes": "{{count}} min",
+    "over60": "> 60 min",
+    "loading": "Ładuję mapę…",
+    "error": "Nie udało się załadować mapy."
+  },
+  "detail": {
+    "title": "Szczegóły miejsca",
+    "radar": "W porównaniu z medianą miasta",
+    "thisPlace": "To miejsce",
+    "cityMedian": "Mediana miasta",
+    "indicators": "Co zmierzyliśmy",
+    "nearest": "Najbliżej",
+    "walk_one": "{{count}} minuta pieszo",
+    "walk_few": "{{count}} minuty pieszo",
+    "walk_many": "{{count}} minut pieszo",
+    "walk_other": "{{count}} minuty pieszo",
+    "commute": "Dojazd",
+    "budget": "Za Twój budżet",
+    "budgetM2": "~{{m2}} m²",
+    "budgetNone": "Ustaw budżet w preferencjach, aby to zobaczyć.",
+    "price": "Lokalna cena",
+    "archetype": "Typ okolicy",
+    "archetypeHint": "Przypisany przez małą sieć neuronową wytrenowaną na klastrach z obu miast (uczenie nienadzorowane). Orientacyjnie.",
+    "probability": "{{pct}}% prawdopodobieństwa",
+    "air": "Jakość powietrza teraz",
+    "airUnavailable": "Brak danych o powietrzu na żywo.",
+    "airLevels": {
+      "very_good": "Bardzo dobra",
+      "good": "Dobra",
+      "moderate": "Umiarkowana",
+      "sufficient": "Dostateczna",
+      "bad": "Zła",
+      "very_bad": "Bardzo zła"
+    },
+    "similar": "Podobne miejsca w tym mieście",
+    "twins": "Bliźniacze okolice",
+    "twinsLead": "Miejsca {{city}} o podobnym charakterze na co dzień.",
+    "twinsOpen": "Pokaż: {{city}}",
+    "similarity": "{{pct}}% podobieństwa",
+    "imputed": "Szacunek: brak danych, użyliśmy mediany miasta.",
+    "loading": "Ładuję szczegóły…",
+    "error": "Nie udało się załadować szczegółów."
+  },
+  "compare": {
+    "title": "Porównanie miejsc",
+    "empty": "Zaznacz „Porównaj” przy 2–3 miejscach.",
+    "clear": "Wyczyść",
+    "criterion": "Kryterium"
+  },
+  "about": {
+    "title": "O danych",
+    "lead": "Każda liczba w Kompasie pochodzi z otwartych danych. Oto skąd i czego nie mówi.",
+    "sources": "Źródła: {{city}}",
+    "table": {
+      "source": "Źródło",
+      "licence": "Licencja",
+      "fetched": "Pobrano",
+      "status": "Status",
+      "rows": "Wiersze"
+    },
+    "status": {
+      "ok": "OK",
+      "fallback": "Zastępcze",
+      "missing": "Brak"
+    },
+    "methodTitle": "Jak liczymy dopasowanie",
+    "method": [
+      "Miasto dzielimy na sześciokąty o powierzchni ok. 0,1 km² (H3, rozdzielczość 9). Dla każdego liczymy wskaźniki, np. minuty pieszo do przystanku, odjazdy na godzinę, udział zieleni, hałas w dB czy lokalną cenę za m².",
+      "Każdy wskaźnik zamieniamy na ocenę 0–100 w porównaniu z tym samym miastem, więc 80% dopasowania znaczy „pasuje Ci dobrze w tym mieście”.",
+      "Twoje emotki ustalają wagi: 😐 1, 🙂 2, 😊 3, 😍 5, 🤩 8. Dopasowanie to średnia ważona kryteriów. Twarde limity wykluczają miejsca zamiast obniżać ich ocenę.",
+      "Typy okolic powstają z grupowania obu miast razem; mała sieć neuronowa przypisuje każdemu miejscu typ z prawdopodobieństwem. Bliźniacze okolice to najbardziej podobne miejsca w drugim mieście, liczone tylko na porównywalnych pomiarach (minuty, liczby obiektów, dB, µg/m³)."
+    ],
+    "safetyTitle": "O bezpieczeństwie",
+    "safety": "Bezpieczeństwo pokazujemy tylko na poziomie dzielnicy, na podstawie zdarzeń zarejestrowanych przez policję na 1000 mieszkańców. Zarejestrowane zdarzenia to nie to samo co poczucie bezpieczeństwa. W ruchliwym centrum, gdzie jest wielu odwiedzających, notuje się ich więcej.",
+    "limitsTitle": "Ograniczenia",
+    "limits": [
+      "Kraków nie ma oficjalnych danych o czynszach, a Praga o cenach zakupu. Dla Krakowa pokazujemy ceny transakcyjne (RCN), dla Pragi czynsze (mapa cen najmu Ministerstwa Finansów CZ).",
+      "Gdzie brakuje danych, używamy mediany miasta i oznaczamy wartość jako szacunek.",
+      "Czasy dojazdu są modelowane dla porannego dnia roboczego, nie na żywo.",
+      "Dane o przestępczości w Pradze mają licencję wyłącznie niekomercyjną."
+    ],
+    "attribution": "Źródła danych i mapy",
+    "back": "Wróć do mapy"
+  },
+  "footer": {
+    "attribution": "Mapa © autorzy OpenStreetMap · OpenFreeMap",
+    "sources": "Dane: {{sources}}",
+    "team": "Zrobione na HackYeah 2026"
+  },
+  "units": {
+    "min_one": "{{count}} min",
+    "min_few": "{{count}} min",
+    "min_many": "{{count}} min",
+    "min_other": "{{count}} min",
+    "departures_one": "{{count}} odjazd/h",
+    "departures_few": "{{count}} odjazdy/h",
+    "departures_many": "{{count}} odjazdów/h",
+    "departures_other": "{{count}} odjazdu/h",
+    "places_one": "{{count}} miejsce",
+    "places_few": "{{count}} miejsca",
+    "places_many": "{{count}} miejsc",
+    "places_other": "{{count}} miejsca",
+    "m2": "{{count}} m²"
+  },
+  "states": {
+    "loading": "Ładowanie…",
+    "error": "Coś poszło nie tak.",
+    "retry": "Spróbuj ponownie",
+    "offline": "Jesteś offline."
+  }
+}

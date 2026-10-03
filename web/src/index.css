@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+@import 'maplibre-gl/dist/maplibre-gl.css';
+
+/* Design tokens: warm neutrals + one teal accent (README §3.8). */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+  --color-bg: #faf8f5;
+  --color-surface: #ffffff;
+  --color-sunken: #f2efea;
+  --color-line: #e3ded6;
+  --color-line-strong: #c9c2b7;
+  --color-ink: #1f1d1a;
+  --color-ink-2: #514c45;
+  --color-ink-3: #6e675e; /* ≥ 4.5:1 on bg */
+
+  --color-accent: #0e6e6c;
+  --color-accent-strong: #0a5553;
+  --color-accent-soft: #e2f1ef;
+  --color-accent-ink: #ffffff;
+
+  --color-sun: #f2b84b;
+  --color-good: #1d7a46;
+  --color-warn: #a4520b;
+  --color-bad: #b42318;
+
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(31 29 26 / 0.06), 0 4px 16px rgb(31 29 26 / 0.06);
+  --shadow-pop: 0 8px 30px rgb(31 29 26 / 0.16);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  button,
+  [role='radio'],
+  [role='tab'] {
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 11px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes slideInR { from { transform: translateX(24px); opacity: 0 } to { transform: none; opacity: 1 } }
+@keyframes slideInL { from { transform: translateX(-24px); opacity: 0 } to { transform: none; opacity: 1 } }
+@keyframes slideInB { from { transform: translateY(32px); opacity: 0 } to { transform: none; opacity: 1 } }
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
