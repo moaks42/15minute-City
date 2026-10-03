@@ -1,0 +1,891 @@
+openapi: 3.1.0
+info:
+  title: Kompas engine API
+  version: "1.0.0"
+  description: |
+    Scoring engine for Kompas (Kraków + Praha). Owner: Workstream B.
+    Contract v1 (tag contracts-v1). Changes after v1 are ADDITIVE ONLY and are listed in docs/notes/B.md.
+
+    Conventions
+    - All labels that come from config are I18nText objects ({pl, cs, en}) so a language switch needs no refetch.
+    - Server-rendered sentences (explanations, relax hint) are plain strings in the requested `lang`.
+    - Scores are integers 0–100. Coordinates are WGS84 (EPSG:4326). H3 cells are res 9 unless stated.
+    - Archetypes are returned as ids; the web app owns their names ("archetype.<id>").
+    - Errors use the Error schema with HTTP 400/404/422/503.
+servers:
+  - url: http://localhost:8000
+tags:
+  - {name: core}
+  - {name: ml}
+  - {name: live}
+paths:
+  /api/health:
+    get:
+      tags: [core]
+      operationId: getHealth
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/Health"}}}}
+
+  /api/cities:
+    get:
+      tags: [core]
+      operationId: listCities
+      responses:
+        "200":
+          description: OK
+          content: {application/json: {schema: {type: array, items: {$ref: "#/components/schemas/City"}}}}
+
+  /api/{city}/meta:
+    get:
+      tags: [core]
+      operationId: getMeta
+      parameters:
+        - $ref: "#/components/parameters/City"
+        - $ref: "#/components/parameters/Lang"
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/Meta"}}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+
+  /api/{city}/grid:
+    get:
+      tags: [core]
+      operationId: getGrid
+      description: "The city's grid.geojson (H3 res-9 polygons; properties h3, district_id, district_name, neighborhood, habitable, population_est; numeric feature id = row index). Static, cache it. Same file as data/processed/{city}/grid.geojson."
+      parameters:
+        - $ref: "#/components/parameters/City"
+      responses:
+        "200":
+          description: GeoJSON FeatureCollection
+          content: {application/geo+json: {schema: {type: object}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+
+  /api/{city}/score:
+    post:
+      tags: [core]
+      operationId: score
+      parameters:
+        - $ref: "#/components/parameters/City"
+      requestBody:
+        required: true
+        content: {application/json: {schema: {$ref: "#/components/schemas/ScoreRequest"}}}
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/ScoreResponse"}}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+        "422": {$ref: "#/components/responses/Invalid"}
+
+  /api/{city}/place/{h3}:
+    get:
+      tags: [core]
+      operationId: getPlace
+      parameters:
+        - $ref: "#/components/parameters/City"
+        - {name: h3, in: path, required: true, schema: {$ref: "#/components/schemas/H3"}}
+        - $ref: "#/components/parameters/Lang"
+        - name: state
+          in: query
+          required: false
+          description: |
+            base64url (no padding) of the JSON of a ScoreRequest (persona, weights, anchors, filters, budget).
+            Without it the place is scored with the persona "custom" defaults and no anchors.
+          schema: {type: string}
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/Place"}}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+
+  /api/{city}/commute:
+    get:
+      tags: [core]
+      operationId: getCommute
+      description: Travel minutes from every habitable res-9 cell to the res-8 cell that contains (lat, lon). Unreachable (>120 min) cells are omitted.
+      parameters:
+        - $ref: "#/components/parameters/City"
+        - {name: lat, in: query, required: true, schema: {type: number}}
+        - {name: lon, in: query, required: true, schema: {type: number}}
+        - {name: mode, in: query, required: false, schema: {$ref: "#/components/schemas/Mode"}}
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/CommuteResponse"}}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+        "422": {$ref: "#/components/responses/Invalid"}
+
+  /api/{city}/districts:
+    get:
+      tags: [core]
+      operationId: listDistricts
+      description: Admin units of the city (static info). For a ranking use POST /score with aggregate=district.
+      parameters:
+        - $ref: "#/components/parameters/City"
+        - {name: level, in: query, required: false, schema: {type: string, enum: [district, neighborhood], default: district}}
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/DistrictList"}}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+
+  /api/{city}/similar/{h3}:
+    get:
+      tags: [ml]
+      operationId: getSimilar
+      parameters:
+        - $ref: "#/components/parameters/City"
+        - {name: h3, in: path, required: true, schema: {$ref: "#/components/schemas/H3"}}
+        - {name: limit, in: query, required: false, schema: {type: integer, minimum: 1, maximum: 20, default: 5}}
+        - $ref: "#/components/parameters/Lang"
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/SimilarResponse"}}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+
+  /api/twins:
+    get:
+      tags: [ml]
+      operationId: getTwins
+      description: Twin neighbourhoods across cities (cosine similarity on the pooled cross-city feature vector). Give either h3 or district.
+      parameters:
+        - {name: from, in: query, required: true, schema: {$ref: "#/components/schemas/CityId"}}
+        - {name: to, in: query, required: true, schema: {$ref: "#/components/schemas/CityId"}}
+        - {name: h3, in: query, required: false, schema: {$ref: "#/components/schemas/H3"}}
+        - {name: district, in: query, required: false, schema: {type: string}}
+        - {name: limit, in: query, required: false, schema: {type: integer, minimum: 1, maximum: 20, default: 5}}
+        - $ref: "#/components/parameters/Lang"
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/TwinsResponse"}}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+        "422": {$ref: "#/components/responses/Invalid"}
+
+  /api/{city}/geocode:
+    get:
+      tags: [core]
+      operationId: geocode
+      description: Local, accent-insensitive address/POI/place search ("zizkov" → "Žižkov"); Photon fallback.
+      parameters:
+        - $ref: "#/components/parameters/City"
+        - {name: q, in: query, required: true, schema: {type: string, minLength: 2}}
+        - {name: limit, in: query, required: false, schema: {type: integer, minimum: 1, maximum: 20, default: 8}}
+        - $ref: "#/components/parameters/Lang"
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/GeocodeResponse"}}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+
+  /api/{city}/live/air:
+    get:
+      tags: [live]
+      operationId: getLiveAir
+      description: "Nearest air-quality station (K: GIOŚ, P: ČHMÚ/Golemio). Cached ≥ 10 min. Never fails hard; status tells the story."
+      parameters:
+        - $ref: "#/components/parameters/City"
+        - {name: lat, in: query, required: true, schema: {type: number}}
+        - {name: lon, in: query, required: true, schema: {type: number}}
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/LiveAir"}}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+
+  /api/{city}/live/departures:
+    get:
+      tags: [live]
+      operationId: getLiveDepartures
+      description: "(P2) Live departures. K: ZTP GTFS-RT; P: Golemio departure boards. May return status=unavailable."
+      parameters:
+        - $ref: "#/components/parameters/City"
+        - {name: stopId, in: query, required: true, schema: {type: string}}
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/LiveDepartures"}}}}
+        "404": {$ref: "#/components/responses/NotFound"}
+
+  /api/{city}/prefs/pairs:
+    get:
+      tags: [ml]
+      operationId: getPrefPairs
+      description: (P2) Pairs of contrasting place profiles for preference learning.
+      parameters:
+        - $ref: "#/components/parameters/City"
+        - {name: n, in: query, required: false, schema: {type: integer, minimum: 2, maximum: 12, default: 6}}
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/PrefPairs"}}}}
+
+  /api/prefs/fit:
+    post:
+      tags: [ml]
+      operationId: fitPrefs
+      description: (P2) Bradley–Terry logistic regression on criterion-difference vectors → suggested emoji levels.
+      requestBody:
+        required: true
+        content: {application/json: {schema: {$ref: "#/components/schemas/PrefFitRequest"}}}
+      responses:
+        "200": {description: OK, content: {application/json: {schema: {$ref: "#/components/schemas/PrefFitResponse"}}}}
+        "422": {$ref: "#/components/responses/Invalid"}
+
+components:
+  parameters:
+    City:
+      name: city
+      in: path
+      required: true
+      schema: {$ref: "#/components/schemas/CityId"}
+    Lang:
+      name: lang
+      in: query
+      required: false
+      description: Language of server-rendered sentences. Defaults to the city's defaultLang.
+      schema: {$ref: "#/components/schemas/Lang"}
+
+  responses:
+    NotFound:
+      description: Unknown city, cell or district
+      content: {application/json: {schema: {$ref: "#/components/schemas/Error"}}}
+    Invalid:
+      description: Invalid request
+      content: {application/json: {schema: {$ref: "#/components/schemas/Error"}}}
+
+  schemas:
+    # ───────────────────────── primitives
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code: {type: string, examples: [unknown_city, unknown_cell, invalid_request, unavailable]}
+            message: {type: string}
+    Lang: {type: string, enum: [pl, cs, en]}
+    CityId: {type: string, enum: [krakow, praha]}
+    Currency: {type: string, enum: [PLN, CZK]}
+    Mode: {type: string, enum: [transit, bike, walk], default: transit}
+    Level: {type: integer, minimum: 0, maximum: 5}
+    H3: {type: string, pattern: "^[0-9a-f]{15}$", examples: ["891e2040d4bffff"]}
+    CriterionId:
+      type: string
+      enum: [commute, transit, active, green, education, family, safety, price, shops, health, environment, leisure, accessibility]
+    ArchetypeId:
+      type: string
+      enum: [historic_core, urban_mix, student_buzz, estate_blocks, green_residential, family_suburb, quiet_outskirts, industrial_edge]
+    I18nText:
+      type: object
+      required: [pl, cs, en]
+      properties: {pl: {type: string}, cs: {type: string}, en: {type: string}}
+    LatLon:
+      type: object
+      required: [lat, lon]
+      properties: {lat: {type: number}, lon: {type: number}}
+    CriterionScores:
+      type: object
+      description: criterionId → 0–100
+      additionalProperties: {type: integer, minimum: 0, maximum: 100}
+    CriterionLevels:
+      type: object
+      description: criterionId → importance level 0–5
+      additionalProperties: {$ref: "#/components/schemas/Level"}
+    DataSource:
+      type: string
+      enum: [real, synthetic, fixture]
+      description: real = A's data/processed; synthetic = engine dev data generated from config (no real data yet); fixture = static JSON
+
+    # ───────────────────────── health / cities
+    Health:
+      type: object
+      required: [status, dataVersion, builtAt]
+      properties:
+        status: {type: string, enum: [ok, degraded]}
+        dataVersion:
+          type: object
+          additionalProperties: {type: string}
+          examples: [{krakow: "2026-10-03T18:00:00Z", praha: "2026-10-03T19:30:00Z"}]
+        dataSource: {type: object, additionalProperties: {$ref: "#/components/schemas/DataSource"}}
+        builtAt: {type: string, format: date-time}
+
+    City:
+      type: object
+      required: [id, name, country, defaultLang, currency, center, zoom, bbox, priceMode, coverage]
+      properties:
+        id: {$ref: "#/components/schemas/CityId"}
+        name: {$ref: "#/components/schemas/I18nText"}
+        country: {type: string, examples: [PL, CZ]}
+        defaultLang: {$ref: "#/components/schemas/Lang"}
+        currency: {$ref: "#/components/schemas/Currency"}
+        center: {type: array, items: {type: number}, minItems: 2, maxItems: 2, description: "[lat, lon]"}
+        zoom: {type: number}
+        bbox: {type: array, items: {type: number}, minItems: 4, maxItems: 4, description: "[minLon, minLat, maxLon, maxLat]"}
+        priceMode: {type: string, enum: [buy, rent]}
+        coverage:
+          type: object
+          description: criterionId → share 0–1 of the criterion's indicator weight that has real data in this city
+          additionalProperties: {type: number, minimum: 0, maximum: 1}
+        dataVersion: {type: string}
+        dataSource: {$ref: "#/components/schemas/DataSource"}
+
+    # ───────────────────────── meta
+    Meta:
+      type: object
+      required: [city, levels, criteria, personas, mustHaveCategories, archetypes, modes, price, adminLevels, manifest]
+      properties:
+        city: {$ref: "#/components/schemas/CityId"}
+        dataVersion: {type: string}
+        dataSource: {$ref: "#/components/schemas/DataSource"}
+        walkSpeedKmh: {type: number}
+        levels:
+          type: array
+          items:
+            type: object
+            required: [level, weight, emoji, label]
+            properties:
+              level: {$ref: "#/components/schemas/Level"}
+              weight: {type: number}
+              emoji: {type: string}
+              label: {$ref: "#/components/schemas/I18nText"}
+        criteria: {type: array, items: {$ref: "#/components/schemas/CriterionMeta"}}
+        personas: {type: array, items: {$ref: "#/components/schemas/Persona"}}
+        mustHaveCategories:
+          type: array
+          items:
+            type: object
+            required: [id, emoji, label, available]
+            properties:
+              id: {type: string}
+              emoji: {type: string}
+              label: {$ref: "#/components/schemas/I18nText"}
+              available: {type: boolean, description: false if the category does not exist in this city or has no data}
+        archetypes:
+          type: array
+          items:
+            type: object
+            required: [id, emoji]
+            properties: {id: {$ref: "#/components/schemas/ArchetypeId"}, emoji: {type: string}}
+        modes:
+          type: array
+          items:
+            type: object
+            required: [id, emoji, label]
+            properties: {id: {$ref: "#/components/schemas/Mode"}, emoji: {type: string}, label: {$ref: "#/components/schemas/I18nText"}}
+        price:
+          type: object
+          required: [indicator, mode, currency, unit, filterField, budgetField]
+          properties:
+            indicator: {type: string, examples: [buy_per_m2, rent_per_m2]}
+            mode: {type: string, enum: [buy, rent]}
+            currency: {$ref: "#/components/schemas/Currency"}
+            unit: {$ref: "#/components/schemas/I18nText"}
+            filterField: {type: string, enum: [maxPricePerM2, maxRentPerM2]}
+            budgetField: {type: string, enum: [total, monthlyRent]}
+            cityMedian: {type: [number, "null"]}
+            min: {type: [number, "null"]}
+            max: {type: [number, "null"]}
+        adminLevels:
+          type: object
+          required: [district, neighborhood]
+          properties:
+            district: {$ref: "#/components/schemas/AdminLevel"}
+            neighborhood: {$ref: "#/components/schemas/AdminLevel"}
+        manifest: {type: array, items: {$ref: "#/components/schemas/ManifestEntry"}}
+
+    AdminLevel:
+      type: object
+      required: [label]
+      properties:
+        label: {$ref: "#/components/schemas/I18nText"}
+        count: {type: [integer, "null"]}
+
+    CriterionMeta:
+      type: object
+      required: [id, emoji, label, coverage, beta, indicators, sources]
+      properties:
+        id: {$ref: "#/components/schemas/CriterionId"}
+        emoji: {type: string}
+        label: {$ref: "#/components/schemas/I18nText"}
+        runtime: {type: [string, "null"], enum: [anchors, null], description: "anchors = computed from request anchors (commute)"}
+        caveat: {oneOf: [{$ref: "#/components/schemas/I18nText"}, {type: "null"}]}
+        coverage: {type: number, minimum: 0, maximum: 1}
+        beta: {type: boolean, description: true when coverage < 0.5 — label "beta" in the UI}
+        sources: {type: array, items: {type: string}, description: manifest keys}
+        indicators: {type: array, items: {$ref: "#/components/schemas/IndicatorMeta"}}
+
+    IndicatorMeta:
+      type: object
+      required: [id, column, label, unit, unitLabel, norm, weight, crossCity, coverage, available]
+      properties:
+        id: {type: string, examples: [stop_walk_min]}
+        column: {type: string, examples: [transit.stop_walk_min]}
+        label: {$ref: "#/components/schemas/I18nText"}
+        unit: {type: string, examples: [min, dep_h, pct]}
+        unitLabel: {$ref: "#/components/schemas/I18nText"}
+        decimals: {type: integer}
+        norm: {$ref: "#/components/schemas/Norm"}
+        weight: {type: number}
+        walkScaled: {type: boolean}
+        crossCity: {type: boolean}
+        priority: {type: string, enum: [P0, P1, P2]}
+        coverage: {type: number, minimum: 0, maximum: 1, description: share of habitable cells with a real (non-NaN) value}
+        available: {type: boolean, description: false if restricted to other cities or 0% coverage}
+        sources: {type: array, items: {type: string}}
+
+    Norm:
+      type: object
+      required: [type]
+      properties:
+        type: {type: string, enum: [decay, percentile, inverse_percentile, threshold]}
+        good: {type: number}
+        bad: {type: number}
+        at: {type: number}
+
+    Persona:
+      type: object
+      required: [id, emoji, label, weights, indicatorWeights, walkFactor, suggestedAnchors]
+      properties:
+        id: {type: string, enum: [student, working, parent, expecting, senior, custom]}
+        emoji: {type: string}
+        label: {$ref: "#/components/schemas/I18nText"}
+        weights: {$ref: "#/components/schemas/CriterionLevels"}
+        indicatorWeights: {type: object, additionalProperties: {type: number}, description: "column → weight override"}
+        walkFactor: {type: number}
+        suggestedAnchors:
+          type: array
+          items:
+            type: object
+            required: [id, label, mode, level]
+            properties:
+              id: {type: string}
+              label: {$ref: "#/components/schemas/I18nText"}
+              mode: {$ref: "#/components/schemas/Mode"}
+              level: {$ref: "#/components/schemas/Level"}
+              poiCategory: {type: string, description: "pick the place from geocode results of this POI category (e.g. university)"}
+
+    ManifestEntry:
+      type: object
+      required: [key, status]
+      properties:
+        key: {type: string}
+        url: {type: [string, "null"]}
+        fetchedAt: {type: [string, "null"], format: date-time}
+        licence: {type: [string, "null"]}
+        rows: {type: [integer, "null"]}
+        status: {type: string, enum: [ok, fallback, missing]}
+        note: {type: [string, "null"]}
+
+    # ───────────────────────── score
+    Anchor:
+      type: object
+      required: [id, lat, lon]
+      properties:
+        id: {type: string, examples: [a1]}
+        label: {type: string}
+        lat: {type: number}
+        lon: {type: number}
+        mode: {$ref: "#/components/schemas/Mode"}
+        level: {type: integer, minimum: 1, maximum: 5, default: 3}
+        maxMinutes: {type: [integer, "null"], minimum: 1, maximum: 120, description: hard filter for this anchor}
+
+    MustHave:
+      type: object
+      required: [category, maxWalkMin]
+      properties:
+        category: {type: string, examples: [metro_station, pharmacy]}
+        maxWalkMin: {type: number, minimum: 1, maximum: 60}
+
+    Filters:
+      type: object
+      properties:
+        maxPricePerM2: {type: [number, "null"], description: "Kraków (buy), zł/m²"}
+        maxRentPerM2: {type: [number, "null"], description: "Praha (rent), Kč/m²/month"}
+        maxCommuteMinutes: {type: [integer, "null"], description: default maxMinutes for anchors that do not set their own}
+        mustHave: {type: array, items: {$ref: "#/components/schemas/MustHave"}, default: []}
+        maxNoiseDb: {type: [number, "null"]}
+
+    Budget:
+      type: object
+      properties:
+        total: {type: [number, "null"], description: "Kraków: total purchase budget (PLN)"}
+        monthlyRent: {type: [number, "null"], description: "Praha: monthly rent budget (CZK)"}
+
+    ScoreRequest:
+      type: object
+      required: [weights]
+      properties:
+        v: {type: integer, const: 1, default: 1}
+        lang: {$ref: "#/components/schemas/Lang"}
+        persona: {type: [string, "null"], description: "persona id; drives indicatorWeights and walkFactor"}
+        weights: {$ref: "#/components/schemas/CriterionLevels"}
+        indicatorWeights: {type: object, additionalProperties: {type: number}, description: "optional column → weight override on top of the persona"}
+        anchors: {type: array, maxItems: 3, items: {$ref: "#/components/schemas/Anchor"}, default: []}
+        filters: {$ref: "#/components/schemas/Filters"}
+        budget: {$ref: "#/components/schemas/Budget"}
+        aggregate: {type: string, enum: [hex, district, neighborhood], default: hex}
+        limit: {type: integer, minimum: 1, maximum: 100, default: 20}
+        includeCells: {type: boolean, default: true, description: "false → cells: [] (smaller payload)"}
+
+    CellTuple:
+      type: array
+      description: "[h3, score 0–100, passes 0|1]. passes = habitable AND all hard filters pass."
+      prefixItems:
+        - {$ref: "#/components/schemas/H3"}
+        - {type: integer, minimum: 0, maximum: 100}
+        - {type: integer, enum: [0, 1]}
+      minItems: 3
+      maxItems: 3
+
+    Explanation:
+      type: object
+      required: [criterion, value, text]
+      properties:
+        criterion: {$ref: "#/components/schemas/CriterionId"}
+        indicator: {type: [string, "null"], description: "column, e.g. transit.stop_walk_min; null for commute"}
+        value: {type: number, description: raw value behind the sentence}
+        unit: {type: string}
+        text: {type: string, examples: ["Metro/vlak 6 min pěšky"]}
+
+    AnchorTime:
+      type: object
+      required: [id, minutes, mode]
+      properties:
+        id: {type: string}
+        label: {type: [string, "null"]}
+        minutes: {type: [integer, "null"], description: null = unreachable within 120 min}
+        mode: {$ref: "#/components/schemas/Mode"}
+
+    PriceInfo:
+      type: object
+      required: [indicator, value, unit, currency]
+      properties:
+        indicator: {type: string}
+        value: {type: [number, "null"]}
+        unit: {type: string, examples: ["Kč/m²/měs.", "zł/m²"]}
+        currency: {$ref: "#/components/schemas/Currency"}
+        imputed: {type: boolean}
+
+    ArchetypeRef:
+      type: object
+      required: [id, p]
+      properties:
+        id: {$ref: "#/components/schemas/ArchetypeId"}
+        p: {type: number, minimum: 0, maximum: 1}
+
+    PlaceRef:
+      type: object
+      required: [id, name]
+      properties:
+        id: {type: string}
+        name: {type: string}
+
+    RankedPlace:
+      type: object
+      required: [id, kind, rank, score, name, centroid, criteria, highlights, warnings, anchors, imputed, passes]
+      properties:
+        id: {type: string, description: "h3 for kind=hex, admin id otherwise"}
+        kind: {type: string, enum: [hex, district, neighborhood]}
+        rank: {type: integer, minimum: 1}
+        score: {type: integer, minimum: 0, maximum: 100}
+        name: {type: string, description: "neighbourhood name for hex, admin name otherwise"}
+        district: {oneOf: [{$ref: "#/components/schemas/PlaceRef"}, {type: "null"}]}
+        centroid: {$ref: "#/components/schemas/LatLon"}
+        criteria: {$ref: "#/components/schemas/CriterionScores"}
+        highlights: {type: array, items: {$ref: "#/components/schemas/Explanation"}}
+        warnings: {type: array, items: {$ref: "#/components/schemas/Explanation"}}
+        anchors: {type: array, items: {$ref: "#/components/schemas/AnchorTime"}}
+        price: {oneOf: [{$ref: "#/components/schemas/PriceInfo"}, {type: "null"}]}
+        budgetM2: {type: [number, "null"]}
+        budgetText: {type: [string, "null"], examples: ["Za váš rozpočet ~55 m²"]}
+        archetype: {oneOf: [{$ref: "#/components/schemas/ArchetypeRef"}, {type: "null"}]}
+        imputed: {type: array, items: {type: string}, description: columns whose value was imputed with the city median}
+        passes: {type: boolean}
+        sharePassing: {type: [number, "null"], description: "aggregates only: share of habitable cells that pass"}
+        cellCount: {type: [integer, "null"], description: aggregates only}
+        populationEst: {type: [integer, "null"]}
+
+    RelaxHint:
+      type: object
+      required: [filter, passingAfter, text]
+      properties:
+        filter: {type: string, description: "price | noise | commute:<anchorId> | mustHave:<category>"}
+        passingAfter: {type: integer}
+        text: {type: string}
+
+    ScoreResponse:
+      type: object
+      required: [city, currency, lang, computeMs, aggregate, count, cells, top, relaxHint, excludedCriteria, weightsUsed, cityMedian]
+      properties:
+        city: {$ref: "#/components/schemas/CityId"}
+        currency: {$ref: "#/components/schemas/Currency"}
+        lang: {$ref: "#/components/schemas/Lang"}
+        computeMs: {type: number}
+        aggregate: {type: string, enum: [hex, district, neighborhood]}
+        count:
+          type: object
+          required: [cells, habitable, passing]
+          properties: {cells: {type: integer}, habitable: {type: integer}, passing: {type: integer}}
+        cells: {type: array, items: {$ref: "#/components/schemas/CellTuple"}}
+        top: {type: array, items: {$ref: "#/components/schemas/RankedPlace"}}
+        relaxHint: {oneOf: [{$ref: "#/components/schemas/RelaxHint"}, {type: "null"}]}
+        excludedCriteria: {type: array, items: {$ref: "#/components/schemas/CriterionId"}, description: "level>0 but no data in this city (or commute without anchors)"}
+        weightsUsed: {$ref: "#/components/schemas/CriterionLevels"}
+        cityMedian: {$ref: "#/components/schemas/CriterionScores"}
+
+    # ───────────────────────── place
+    IndicatorValue:
+      type: object
+      required: [criterion, indicator, column, value, unit, score, imputed]
+      properties:
+        criterion: {$ref: "#/components/schemas/CriterionId"}
+        indicator: {type: string}
+        column: {type: string}
+        value: {type: [number, "null"], description: raw value; null when no data (imputed)}
+        unit: {type: string}
+        score: {type: integer, minimum: 0, maximum: 100}
+        weight: {type: number, description: effective weight for the current persona}
+        cityMedianValue: {type: [number, "null"]}
+        imputed: {type: boolean}
+        text: {type: [string, "null"], description: explanation sentence with the raw value}
+
+    NearestPoi:
+      type: object
+      required: [category, lat, lon, walkMin]
+      properties:
+        category: {type: string}
+        name: {type: [string, "null"]}
+        lat: {type: number}
+        lon: {type: number}
+        walkMin: {type: number}
+
+    ArchetypeDetail:
+      allOf:
+        - {$ref: "#/components/schemas/ArchetypeRef"}
+        - type: object
+          properties:
+            probs: {type: object, additionalProperties: {type: number}, description: archetypeId → probability}
+
+    Place:
+      type: object
+      required: [id, kind, city, centroid, name, district, habitable, criteria, cityMedian, indicators, nearest, anchors]
+      properties:
+        id: {$ref: "#/components/schemas/H3"}
+        kind: {type: string, enum: [hex]}
+        city: {$ref: "#/components/schemas/CityId"}
+        lang: {$ref: "#/components/schemas/Lang"}
+        centroid: {$ref: "#/components/schemas/LatLon"}
+        name: {type: string}
+        neighborhood: {type: [string, "null"]}
+        district: {oneOf: [{$ref: "#/components/schemas/PlaceRef"}, {type: "null"}]}
+        habitable: {type: boolean}
+        populationEst: {type: [integer, "null"]}
+        score: {type: [integer, "null"]}
+        passes: {type: [boolean, "null"]}
+        criteria: {$ref: "#/components/schemas/CriterionScores"}
+        cityMedian: {$ref: "#/components/schemas/CriterionScores"}
+        indicators: {type: array, items: {$ref: "#/components/schemas/IndicatorValue"}}
+        nearest: {type: array, items: {$ref: "#/components/schemas/NearestPoi"}}
+        anchors: {type: array, items: {$ref: "#/components/schemas/AnchorTime"}}
+        price: {oneOf: [{$ref: "#/components/schemas/PriceInfo"}, {type: "null"}]}
+        budgetM2: {type: [number, "null"]}
+        budgetText: {type: [string, "null"]}
+        archetype: {oneOf: [{$ref: "#/components/schemas/ArchetypeDetail"}, {type: "null"}]}
+        highlights: {type: array, items: {$ref: "#/components/schemas/Explanation"}}
+        warnings: {type: array, items: {$ref: "#/components/schemas/Explanation"}}
+
+    # ───────────────────────── commute / districts
+    CommuteResponse:
+      type: object
+      required: [city, anchorCell, mode, maxMinutes, cells]
+      properties:
+        city: {$ref: "#/components/schemas/CityId"}
+        anchorCell: {type: string, description: res-8 H3 cell used as the destination}
+        mode: {$ref: "#/components/schemas/Mode"}
+        maxMinutes: {type: integer, const: 120}
+        cells:
+          type: array
+          description: "[res-9 h3, minutes]"
+          items:
+            type: array
+            prefixItems: [{$ref: "#/components/schemas/H3"}, {type: integer, minimum: 0, maximum: 120}]
+            minItems: 2
+            maxItems: 2
+        computeMs: {type: number}
+
+    DistrictList:
+      type: object
+      required: [city, level, items]
+      properties:
+        city: {$ref: "#/components/schemas/CityId"}
+        level: {type: string, enum: [district, neighborhood]}
+        items:
+          type: array
+          items:
+            type: object
+            required: [id, name, centroid, cellCount]
+            properties:
+              id: {type: string}
+              name: {type: string}
+              centroid: {$ref: "#/components/schemas/LatLon"}
+              cellCount: {type: integer}
+              habitableCount: {type: integer}
+              populationEst: {type: [integer, "null"]}
+
+    # ───────────────────────── ML
+    SimilarPlace:
+      type: object
+      required: [id, kind, name, centroid, similarity]
+      properties:
+        id: {type: string}
+        kind: {type: string, enum: [hex, district]}
+        name: {type: string}
+        district: {oneOf: [{$ref: "#/components/schemas/PlaceRef"}, {type: "null"}]}
+        centroid: {$ref: "#/components/schemas/LatLon"}
+        similarity: {type: number, minimum: 0, maximum: 1}
+        archetype: {oneOf: [{$ref: "#/components/schemas/ArchetypeRef"}, {type: "null"}]}
+        sharedTraits: {type: array, items: {$ref: "#/components/schemas/CriterionId"}, description: criteria where both places are strong}
+
+    SimilarResponse:
+      type: object
+      required: [city, from, items]
+      properties:
+        city: {$ref: "#/components/schemas/CityId"}
+        from: {$ref: "#/components/schemas/H3"}
+        items: {type: array, items: {$ref: "#/components/schemas/SimilarPlace"}}
+
+    TwinsResponse:
+      type: object
+      required: [from, to, items]
+      properties:
+        from:
+          type: object
+          required: [city, id, kind, name, centroid]
+          properties:
+            city: {$ref: "#/components/schemas/CityId"}
+            id: {type: string}
+            kind: {type: string, enum: [hex, district]}
+            name: {type: string}
+            district: {oneOf: [{$ref: "#/components/schemas/PlaceRef"}, {type: "null"}]}
+            centroid: {$ref: "#/components/schemas/LatLon"}
+            archetype: {oneOf: [{$ref: "#/components/schemas/ArchetypeRef"}, {type: "null"}]}
+        to: {$ref: "#/components/schemas/CityId"}
+        items: {type: array, items: {$ref: "#/components/schemas/SimilarPlace"}}
+
+    PrefPairs:
+      type: object
+      required: [city, pairs]
+      properties:
+        city: {$ref: "#/components/schemas/CityId"}
+        pairs:
+          type: array
+          items:
+            type: object
+            required: [id, a, b]
+            properties:
+              id: {type: string}
+              a: {$ref: "#/components/schemas/CriterionScores"}
+              b: {$ref: "#/components/schemas/CriterionScores"}
+
+    PrefFitRequest:
+      type: object
+      required: [choices]
+      properties:
+        choices:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required: [a, b, choice]
+            properties:
+              a: {$ref: "#/components/schemas/CriterionScores"}
+              b: {$ref: "#/components/schemas/CriterionScores"}
+              choice: {type: string, enum: [a, b]}
+
+    PrefFitResponse:
+      type: object
+      required: [weights]
+      properties:
+        weights: {$ref: "#/components/schemas/CriterionLevels"}
+        confidence: {type: number}
+
+    # ───────────────────────── geocode / live
+    GeocodeResponse:
+      type: object
+      required: [query, items]
+      properties:
+        query: {type: string}
+        items:
+          type: array
+          items:
+            type: object
+            required: [label, kind, lat, lon, source]
+            properties:
+              label: {type: string}
+              sublabel: {type: [string, "null"]}
+              kind: {type: string, enum: [address, poi, place, district]}
+              category: {type: [string, "null"], description: POI category when kind=poi (e.g. university)}
+              lat: {type: number}
+              lon: {type: number}
+              h3: {type: [string, "null"]}
+              source: {type: string, enum: [local, photon]}
+
+    LiveAir:
+      type: object
+      required: [city, status, source, fetchedAt]
+      properties:
+        city: {$ref: "#/components/schemas/CityId"}
+        status: {type: string, enum: [ok, stale, unavailable]}
+        source: {type: string, examples: ["GIOŚ", "ČHMÚ", "Golemio"]}
+        station:
+          oneOf:
+            - type: object
+              required: [id, name, lat, lon, distanceKm]
+              properties:
+                id: {type: string}
+                name: {type: string}
+                lat: {type: number}
+                lon: {type: number}
+                distanceKm: {type: number}
+            - {type: "null"}
+        level: {type: [integer, "null"], minimum: 0, maximum: 5, description: "0 very good … 5 very bad (labels: texts.airLevel in indicators.yaml)"}
+        pollutants:
+          type: object
+          description: µg/m³
+          properties:
+            pm25: {type: [number, "null"]}
+            pm10: {type: [number, "null"]}
+            no2: {type: [number, "null"]}
+            o3: {type: [number, "null"]}
+        measuredAt: {type: [string, "null"], format: date-time}
+        fetchedAt: {type: string, format: date-time}
+        cacheTtlS: {type: integer}
+
+    LiveDepartures:
+      type: object
+      required: [city, stopId, status, departures, fetchedAt]
+      properties:
+        city: {$ref: "#/components/schemas/CityId"}
+        stopId: {type: string}
+        stopName: {type: [string, "null"]}
+        status: {type: string, enum: [ok, stale, unavailable]}
+        source: {type: string}
+        departures:
+          type: array
+          items:
+            type: object
+            required: [line, headsign, scheduled]
+            properties:
+              line: {type: string}
+              headsign: {type: string}
+              mode: {type: [string, "null"], enum: [tram, bus, metro, train, ferry, null]}
+              scheduled: {type: string, format: date-time}
+              predicted: {type: [string, "null"], format: date-time}
+              delayMin: {type: [integer, "null"]}
+        fetchedAt: {type: string, format: date-time}
+
+    # ───────────────────────── static fallback file (not an endpoint)
+    StaticCriteriaScores:
+      type: object
+      description: |
+        engine/export/criteria_scores_{city}.json — for VITE_STATIC_FALLBACK=1. The web app computes
+        M = Σ W(level_c)·S_c / Σ W(level_c) over the criteria present (commute is absent).
+        Persona indicator tweaks are pre-applied per persona in `byPersona`.
+      required: [city, dataVersion, generatedAt, criteria, levels, cells]
+      properties:
+        city: {$ref: "#/components/schemas/CityId"}
+        dataVersion: {type: string}
+        generatedAt: {type: string, format: date-time}
+        criteria: {type: array, items: {$ref: "#/components/schemas/CriterionId"}, description: column order of the score arrays}
+        levels: {type: object, additionalProperties: {type: number}, description: "level → weight"}
+        cells:
+          type: array
+          description: "[h3, habitable 0|1, ...scores in `criteria` order (null = no data)] for persona custom"
+          items: {type: array}
+        byPersona:
+          type: object
+          description: "personaId → scores rows in the same order as `cells` (without h3/habitable)"
+          additionalProperties: {type: array, items: {type: array}}
+        cityMedian: {$ref: "#/components/schemas/CriterionScores"}

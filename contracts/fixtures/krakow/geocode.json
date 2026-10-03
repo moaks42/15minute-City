@@ -1,0 +1,65 @@
+{
+ "query": "fixture",
+ "items": [
+  {
+   "label": "Rynek Główny",
+   "sublabel": "Stare Miasto",
+   "kind": "address",
+   "category": null,
+   "lat": 50.0617,
+   "lon": 19.9373,
+   "h3": "891e2e6b153ffff",
+   "source": "local"
+  },
+  {
+   "label": "Rakowicka 27",
+   "sublabel": "Grzegórzki",
+   "kind": "address",
+   "category": null,
+   "lat": 50.0687,
+   "lon": 19.9532,
+   "h3": "891e2e6b1bbffff",
+   "source": "local"
+  },
+  {
+   "label": "Akademia Górniczo-Hutnicza (AGH)",
+   "sublabel": "Krowodrza",
+   "kind": "poi",
+   "category": "university",
+   "lat": 50.0646,
+   "lon": 19.9234,
+   "h3": "891e2e6b033ffff",
+   "source": "local"
+  },
+  {
+   "label": "Uniwersytet Jagielloński – Collegium Novum",
+   "sublabel": "Stare Miasto",
+   "kind": "poi",
+   "category": "university",
+   "lat": 50.0608,
+   "lon": 19.933,
+   "h3": "891e2e6b027ffff",
+   "source": "local"
+  },
+  {
+   "label": "Kazimierz",
+   "sublabel": "Stare Miasto",
+   "kind": "place",
+   "category": null,
+   "lat": 50.051,
+   "lon": 19.946,
+   "h3": "891e2e6b3a7ffff",
+   "source": "local"
+  },
+  {
+   "label": "Zabłocie",
+   "sublabel": "Podgórze",
+   "kind": "place",
+   "category": null,
+   "lat": 50.049,
+   "lon": 19.964,
+   "h3": "891e2e68613ffff",
+   "source": "local"
+  }
+ ]
+}

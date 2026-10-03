@@ -1,1 +1,30 @@
+# secrets
 .env
+.env.*
+!.env.example
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+
+# node
+node_modules/
+dist/
+.vite/
+
+# data (raw downloads are never committed)
+data/raw/
+*.pbf
+*.zip
+
+# engine local synthetic data
+engine/.devdata/
+
+# os / editors
+.DS_Store
+.idea/

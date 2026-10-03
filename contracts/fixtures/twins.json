@@ -1,0 +1,143 @@
+{
+ "from": {
+  "city": "krakow",
+  "id": "891e2e6b3b7ffff",
+  "kind": "hex",
+  "name": "Kazimierz",
+  "district": {
+   "id": "1",
+   "name": "Stare Miasto"
+  },
+  "centroid": {
+   "lat": 50.053163,
+   "lon": 19.944142
+  },
+  "archetype": {
+   "id": "student_buzz",
+   "p": 0.61
+  }
+ },
+ "to": "praha",
+ "items": [
+  {
+   "id": "891e3541a3bffff",
+   "kind": "hex",
+   "name": "Nusle",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.067478,
+    "lon": 14.435753
+   },
+   "similarity": 0.813,
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "green",
+    "education"
+   ]
+  },
+  {
+   "id": "891e3541bdbffff",
+   "kind": "hex",
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.073087,
+    "lon": 14.445265
+   },
+   "similarity": 0.783,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "green",
+    "education"
+   ]
+  },
+  {
+   "id": "891e3541a87ffff",
+   "kind": "hex",
+   "name": "Nové Město",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.077422,
+    "lon": 14.430274
+   },
+   "similarity": 0.783,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "green",
+    "education"
+   ]
+  },
+  {
+   "id": "891e3541aa3ffff",
+   "kind": "hex",
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.075255,
+    "lon": 14.437769
+   },
+   "similarity": 0.782,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "green",
+    "education"
+   ]
+  },
+  {
+   "id": "891e3541ab7ffff",
+   "kind": "hex",
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.077932,
+    "lon": 14.440075
+   },
+   "similarity": 0.779,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "education",
+    "health"
+   ]
+  }
+ ]
+}

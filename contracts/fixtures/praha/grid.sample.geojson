@@ -1,0 +1,10204 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "id": 0,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.4419,
+       50.089106
+      ],
+      [
+       14.441997,
+       50.087406
+      ],
+      [
+       14.444495,
+       50.086684
+      ],
+      [
+       14.446898,
+       50.087661
+      ],
+      [
+       14.446802,
+       50.08936
+      ],
+      [
+       14.444303,
+       50.090083
+      ],
+      [
+       14.4419,
+       50.089106
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541803ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 629
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 1,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.446802,
+       50.08936
+      ],
+      [
+       14.446898,
+       50.087661
+      ],
+      [
+       14.449397,
+       50.086938
+      ],
+      [
+       14.4518,
+       50.087915
+      ],
+      [
+       14.451704,
+       50.089614
+      ],
+      [
+       14.449205,
+       50.090337
+      ],
+      [
+       14.446802,
+       50.08936
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541807ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 643
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 2,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.439594,
+       50.086429
+      ],
+      [
+       14.43969,
+       50.08473
+      ],
+      [
+       14.442189,
+       50.084007
+      ],
+      [
+       14.444592,
+       50.084984
+      ],
+      [
+       14.444495,
+       50.086684
+      ],
+      [
+       14.441997,
+       50.087406
+      ],
+      [
+       14.439594,
+       50.086429
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354180bffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 647
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 3,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.444495,
+       50.086684
+      ],
+      [
+       14.444592,
+       50.084984
+      ],
+      [
+       14.44709,
+       50.084262
+      ],
+      [
+       14.449493,
+       50.085238
+      ],
+      [
+       14.449397,
+       50.086938
+      ],
+      [
+       14.446898,
+       50.087661
+      ],
+      [
+       14.444495,
+       50.086684
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354180fffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 526
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 4,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.439305,
+       50.091528
+      ],
+      [
+       14.439401,
+       50.089828
+      ],
+      [
+       14.4419,
+       50.089106
+      ],
+      [
+       14.444303,
+       50.090083
+      ],
+      [
+       14.444207,
+       50.091782
+      ],
+      [
+       14.441708,
+       50.092505
+      ],
+      [
+       14.439305,
+       50.091528
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541813ffff",
+    "district_id": "500186",
+    "district_name": "Praha 7",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 521
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 5,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.444207,
+       50.091782
+      ],
+      [
+       14.444303,
+       50.090083
+      ],
+      [
+       14.446802,
+       50.08936
+      ],
+      [
+       14.449205,
+       50.090337
+      ],
+      [
+       14.449109,
+       50.092036
+      ],
+      [
+       14.44661,
+       50.092759
+      ],
+      [
+       14.444207,
+       50.091782
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541817ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 419
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 6,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.436999,
+       50.088851
+      ],
+      [
+       14.437095,
+       50.087152
+      ],
+      [
+       14.439594,
+       50.086429
+      ],
+      [
+       14.441997,
+       50.087406
+      ],
+      [
+       14.4419,
+       50.089106
+      ],
+      [
+       14.439401,
+       50.089828
+      ],
+      [
+       14.436999,
+       50.088851
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354181bffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 655
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 7,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.454299,
+       50.087192
+      ],
+      [
+       14.454395,
+       50.085492
+      ],
+      [
+       14.456893,
+       50.084769
+      ],
+      [
+       14.459296,
+       50.085746
+      ],
+      [
+       14.4592,
+       50.087446
+      ],
+      [
+       14.456702,
+       50.088169
+      ],
+      [
+       14.454299,
+       50.087192
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541823ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 773
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 8,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.4592,
+       50.087446
+      ],
+      [
+       14.459296,
+       50.085746
+      ],
+      [
+       14.461795,
+       50.085023
+      ],
+      [
+       14.464198,
+       50.086
+      ],
+      [
+       14.464102,
+       50.087699
+      ],
+      [
+       14.461603,
+       50.088422
+      ],
+      [
+       14.4592,
+       50.087446
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541827ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 446
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 9,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.451992,
+       50.084516
+      ],
+      [
+       14.452088,
+       50.082816
+      ],
+      [
+       14.454586,
+       50.082093
+      ],
+      [
+       14.456989,
+       50.08307
+      ],
+      [
+       14.456893,
+       50.084769
+      ],
+      [
+       14.454395,
+       50.085492
+      ],
+      [
+       14.451992,
+       50.084516
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354182bffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 536
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 10,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.456893,
+       50.084769
+      ],
+      [
+       14.456989,
+       50.08307
+      ],
+      [
+       14.459488,
+       50.082347
+      ],
+      [
+       14.461891,
+       50.083323
+      ],
+      [
+       14.461795,
+       50.085023
+      ],
+      [
+       14.459296,
+       50.085746
+      ],
+      [
+       14.456893,
+       50.084769
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354182fffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 648
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 11,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.451704,
+       50.089614
+      ],
+      [
+       14.4518,
+       50.087915
+      ],
+      [
+       14.454299,
+       50.087192
+      ],
+      [
+       14.456702,
+       50.088169
+      ],
+      [
+       14.456606,
+       50.089868
+      ],
+      [
+       14.454107,
+       50.090591
+      ],
+      [
+       14.451704,
+       50.089614
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541833ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 613
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 12,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.456606,
+       50.089868
+      ],
+      [
+       14.456702,
+       50.088169
+      ],
+      [
+       14.4592,
+       50.087446
+      ],
+      [
+       14.461603,
+       50.088422
+      ],
+      [
+       14.461508,
+       50.090122
+      ],
+      [
+       14.459009,
+       50.090845
+      ],
+      [
+       14.456606,
+       50.089868
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541837ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 529
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 13,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.449397,
+       50.086938
+      ],
+      [
+       14.449493,
+       50.085238
+      ],
+      [
+       14.451992,
+       50.084516
+      ],
+      [
+       14.454395,
+       50.085492
+      ],
+      [
+       14.454299,
+       50.087192
+      ],
+      [
+       14.4518,
+       50.087915
+      ],
+      [
+       14.449397,
+       50.086938
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354183bffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 480
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 14,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.432387,
+       50.083498
+      ],
+      [
+       14.432483,
+       50.081799
+      ],
+      [
+       14.434982,
+       50.081076
+      ],
+      [
+       14.437384,
+       50.082053
+      ],
+      [
+       14.437288,
+       50.083753
+      ],
+      [
+       14.434789,
+       50.084475
+      ],
+      [
+       14.432387,
+       50.083498
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541843ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 745
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 15,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.437288,
+       50.083753
+      ],
+      [
+       14.437384,
+       50.082053
+      ],
+      [
+       14.439883,
+       50.081331
+      ],
+      [
+       14.442285,
+       50.082308
+      ],
+      [
+       14.442189,
+       50.084007
+      ],
+      [
+       14.43969,
+       50.08473
+      ],
+      [
+       14.437288,
+       50.083753
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541847ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 851
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 16,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.430081,
+       50.080822
+      ],
+      [
+       14.430177,
+       50.079122
+      ],
+      [
+       14.432676,
+       50.0784
+      ],
+      [
+       14.435078,
+       50.079377
+      ],
+      [
+       14.434982,
+       50.081076
+      ],
+      [
+       14.432483,
+       50.081799
+      ],
+      [
+       14.430081,
+       50.080822
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354184bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 584
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 17,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.434982,
+       50.081076
+      ],
+      [
+       14.435078,
+       50.079377
+      ],
+      [
+       14.437577,
+       50.078654
+      ],
+      [
+       14.439979,
+       50.079631
+      ],
+      [
+       14.439883,
+       50.081331
+      ],
+      [
+       14.437384,
+       50.082053
+      ],
+      [
+       14.434982,
+       50.081076
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354184fffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 734
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 18,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.429791,
+       50.08592
+      ],
+      [
+       14.429888,
+       50.084221
+      ],
+      [
+       14.432387,
+       50.083498
+      ],
+      [
+       14.434789,
+       50.084475
+      ],
+      [
+       14.434693,
+       50.086175
+      ],
+      [
+       14.432194,
+       50.086897
+      ],
+      [
+       14.429791,
+       50.08592
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541853ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 408
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 19,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.434693,
+       50.086175
+      ],
+      [
+       14.434789,
+       50.084475
+      ],
+      [
+       14.437288,
+       50.083753
+      ],
+      [
+       14.43969,
+       50.08473
+      ],
+      [
+       14.439594,
+       50.086429
+      ],
+      [
+       14.437095,
+       50.087152
+      ],
+      [
+       14.434693,
+       50.086175
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541857ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 507
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 20,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.427486,
+       50.083243
+      ],
+      [
+       14.427582,
+       50.081544
+      ],
+      [
+       14.430081,
+       50.080822
+      ],
+      [
+       14.432483,
+       50.081799
+      ],
+      [
+       14.432387,
+       50.083498
+      ],
+      [
+       14.429888,
+       50.084221
+      ],
+      [
+       14.427486,
+       50.083243
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354185bffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 451
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 21,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.444784,
+       50.081585
+      ],
+      [
+       14.44488,
+       50.079885
+      ],
+      [
+       14.447379,
+       50.079163
+      ],
+      [
+       14.449781,
+       50.08014
+      ],
+      [
+       14.449685,
+       50.081839
+      ],
+      [
+       14.447186,
+       50.082562
+      ],
+      [
+       14.444784,
+       50.081585
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541863ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 702
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 22,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.449685,
+       50.081839
+      ],
+      [
+       14.449781,
+       50.08014
+      ],
+      [
+       14.45228,
+       50.079417
+      ],
+      [
+       14.454682,
+       50.080393
+      ],
+      [
+       14.454586,
+       50.082093
+      ],
+      [
+       14.452088,
+       50.082816
+      ],
+      [
+       14.449685,
+       50.081839
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541867ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 494
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 23,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.442478,
+       50.078909
+      ],
+      [
+       14.442574,
+       50.077209
+      ],
+      [
+       14.445072,
+       50.076486
+      ],
+      [
+       14.447475,
+       50.077463
+      ],
+      [
+       14.447379,
+       50.079163
+      ],
+      [
+       14.44488,
+       50.079885
+      ],
+      [
+       14.442478,
+       50.078909
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354186bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 834
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 24,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.447379,
+       50.079163
+      ],
+      [
+       14.447475,
+       50.077463
+      ],
+      [
+       14.449973,
+       50.07674
+      ],
+      [
+       14.452376,
+       50.077717
+      ],
+      [
+       14.45228,
+       50.079417
+      ],
+      [
+       14.449781,
+       50.08014
+      ],
+      [
+       14.447379,
+       50.079163
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354186fffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 758
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 25,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.442189,
+       50.084007
+      ],
+      [
+       14.442285,
+       50.082308
+      ],
+      [
+       14.444784,
+       50.081585
+      ],
+      [
+       14.447186,
+       50.082562
+      ],
+      [
+       14.44709,
+       50.084262
+      ],
+      [
+       14.444592,
+       50.084984
+      ],
+      [
+       14.442189,
+       50.084007
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541873ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 693
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 26,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.44709,
+       50.084262
+      ],
+      [
+       14.447186,
+       50.082562
+      ],
+      [
+       14.449685,
+       50.081839
+      ],
+      [
+       14.452088,
+       50.082816
+      ],
+      [
+       14.451992,
+       50.084516
+      ],
+      [
+       14.449493,
+       50.085238
+      ],
+      [
+       14.44709,
+       50.084262
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541877ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 302
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 27,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.439883,
+       50.081331
+      ],
+      [
+       14.439979,
+       50.079631
+      ],
+      [
+       14.442478,
+       50.078909
+      ],
+      [
+       14.44488,
+       50.079885
+      ],
+      [
+       14.444784,
+       50.081585
+      ],
+      [
+       14.442285,
+       50.082308
+      ],
+      [
+       14.439883,
+       50.081331
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354187bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 701
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 28,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.439016,
+       50.096626
+      ],
+      [
+       14.439112,
+       50.094926
+      ],
+      [
+       14.441612,
+       50.094204
+      ],
+      [
+       14.444015,
+       50.095181
+      ],
+      [
+       14.443918,
+       50.09688
+      ],
+      [
+       14.441419,
+       50.097603
+      ],
+      [
+       14.439016,
+       50.096626
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541883ffff",
+    "district_id": "500186",
+    "district_name": "Praha 7",
+    "neighborhood": "Holešovice",
+    "habitable": true,
+    "population_est": 482
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 29,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.443918,
+       50.09688
+      ],
+      [
+       14.444015,
+       50.095181
+      ],
+      [
+       14.446514,
+       50.094458
+      ],
+      [
+       14.448917,
+       50.095435
+      ],
+      [
+       14.448821,
+       50.097134
+      ],
+      [
+       14.446321,
+       50.097857
+      ],
+      [
+       14.443918,
+       50.09688
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541887ffff",
+    "district_id": "500186",
+    "district_name": "Praha 7",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 489
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 30,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.43671,
+       50.09395
+      ],
+      [
+       14.436806,
+       50.09225
+      ],
+      [
+       14.439305,
+       50.091528
+      ],
+      [
+       14.441708,
+       50.092505
+      ],
+      [
+       14.441612,
+       50.094204
+      ],
+      [
+       14.439112,
+       50.094926
+      ],
+      [
+       14.43671,
+       50.09395
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354188bffff",
+    "district_id": "500186",
+    "district_name": "Praha 7",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 315
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 31,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.441612,
+       50.094204
+      ],
+      [
+       14.441708,
+       50.092505
+      ],
+      [
+       14.444207,
+       50.091782
+      ],
+      [
+       14.44661,
+       50.092759
+      ],
+      [
+       14.446514,
+       50.094458
+      ],
+      [
+       14.444015,
+       50.095181
+      ],
+      [
+       14.441612,
+       50.094204
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354188fffff",
+    "district_id": "500186",
+    "district_name": "Praha 7",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 459
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 32,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.434114,
+       50.096371
+      ],
+      [
+       14.434211,
+       50.094672
+      ],
+      [
+       14.43671,
+       50.09395
+      ],
+      [
+       14.439112,
+       50.094926
+      ],
+      [
+       14.439016,
+       50.096626
+      ],
+      [
+       14.436517,
+       50.097348
+      ],
+      [
+       14.434114,
+       50.096371
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354189bffff",
+    "district_id": "500186",
+    "district_name": "Praha 7",
+    "neighborhood": "Holešovice",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 33,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.451416,
+       50.094712
+      ],
+      [
+       14.451512,
+       50.093013
+      ],
+      [
+       14.454011,
+       50.09229
+      ],
+      [
+       14.456414,
+       50.093267
+      ],
+      [
+       14.456318,
+       50.094966
+      ],
+      [
+       14.453819,
+       50.095689
+      ],
+      [
+       14.451416,
+       50.094712
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418a3ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 355
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 34,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.456318,
+       50.094966
+      ],
+      [
+       14.456414,
+       50.093267
+      ],
+      [
+       14.458913,
+       50.092544
+      ],
+      [
+       14.461316,
+       50.093521
+      ],
+      [
+       14.46122,
+       50.09522
+      ],
+      [
+       14.458721,
+       50.095943
+      ],
+      [
+       14.456318,
+       50.094966
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418a7ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 597
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 35,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.449109,
+       50.092036
+      ],
+      [
+       14.449205,
+       50.090337
+      ],
+      [
+       14.451704,
+       50.089614
+      ],
+      [
+       14.454107,
+       50.090591
+      ],
+      [
+       14.454011,
+       50.09229
+      ],
+      [
+       14.451512,
+       50.093013
+      ],
+      [
+       14.449109,
+       50.092036
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418abffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 416
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 36,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.454011,
+       50.09229
+      ],
+      [
+       14.454107,
+       50.090591
+      ],
+      [
+       14.456606,
+       50.089868
+      ],
+      [
+       14.459009,
+       50.090845
+      ],
+      [
+       14.458913,
+       50.092544
+      ],
+      [
+       14.456414,
+       50.093267
+      ],
+      [
+       14.454011,
+       50.09229
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418afffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 494
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 37,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.448821,
+       50.097134
+      ],
+      [
+       14.448917,
+       50.095435
+      ],
+      [
+       14.451416,
+       50.094712
+      ],
+      [
+       14.453819,
+       50.095689
+      ],
+      [
+       14.453723,
+       50.097388
+      ],
+      [
+       14.451224,
+       50.098111
+      ],
+      [
+       14.448821,
+       50.097134
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418b3ffff",
+    "district_id": "500186",
+    "district_name": "Praha 7",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 580
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 38,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.453723,
+       50.097388
+      ],
+      [
+       14.453819,
+       50.095689
+      ],
+      [
+       14.456318,
+       50.094966
+      ],
+      [
+       14.458721,
+       50.095943
+      ],
+      [
+       14.458625,
+       50.097642
+      ],
+      [
+       14.456126,
+       50.098365
+      ],
+      [
+       14.453723,
+       50.097388
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418b7ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 327
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 39,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.446514,
+       50.094458
+      ],
+      [
+       14.44661,
+       50.092759
+      ],
+      [
+       14.449109,
+       50.092036
+      ],
+      [
+       14.451512,
+       50.093013
+      ],
+      [
+       14.451416,
+       50.094712
+      ],
+      [
+       14.448917,
+       50.095435
+      ],
+      [
+       14.446514,
+       50.094458
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418bbffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 491
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 40,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.429502,
+       50.091018
+      ],
+      [
+       14.429598,
+       50.089319
+      ],
+      [
+       14.432097,
+       50.088597
+      ],
+      [
+       14.4345,
+       50.089574
+      ],
+      [
+       14.434403,
+       50.091273
+      ],
+      [
+       14.431904,
+       50.091995
+      ],
+      [
+       14.429502,
+       50.091018
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418c3ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 611
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 41,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.434403,
+       50.091273
+      ],
+      [
+       14.4345,
+       50.089574
+      ],
+      [
+       14.436999,
+       50.088851
+      ],
+      [
+       14.439401,
+       50.089828
+      ],
+      [
+       14.439305,
+       50.091528
+      ],
+      [
+       14.436806,
+       50.09225
+      ],
+      [
+       14.434403,
+       50.091273
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418c7ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 608
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 42,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.427196,
+       50.088342
+      ],
+      [
+       14.427293,
+       50.086642
+      ],
+      [
+       14.429791,
+       50.08592
+      ],
+      [
+       14.432194,
+       50.086897
+      ],
+      [
+       14.432097,
+       50.088597
+      ],
+      [
+       14.429598,
+       50.089319
+      ],
+      [
+       14.427196,
+       50.088342
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418cbffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 452
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 43,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.432097,
+       50.088597
+      ],
+      [
+       14.432194,
+       50.086897
+      ],
+      [
+       14.434693,
+       50.086175
+      ],
+      [
+       14.437095,
+       50.087152
+      ],
+      [
+       14.436999,
+       50.088851
+      ],
+      [
+       14.4345,
+       50.089574
+      ],
+      [
+       14.432097,
+       50.088597
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418cfffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 660
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 44,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.426906,
+       50.09344
+      ],
+      [
+       14.427003,
+       50.091741
+      ],
+      [
+       14.429502,
+       50.091018
+      ],
+      [
+       14.431904,
+       50.091995
+      ],
+      [
+       14.431808,
+       50.093695
+      ],
+      [
+       14.429309,
+       50.094417
+      ],
+      [
+       14.426906,
+       50.09344
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418d3ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 743
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.431808,
+       50.093695
+      ],
+      [
+       14.431904,
+       50.091995
+      ],
+      [
+       14.434403,
+       50.091273
+      ],
+      [
+       14.436806,
+       50.09225
+      ],
+      [
+       14.43671,
+       50.09395
+      ],
+      [
+       14.434211,
+       50.094672
+      ],
+      [
+       14.431808,
+       50.093695
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418d7ffff",
+    "district_id": "500186",
+    "district_name": "Praha 7",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 315
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 46,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.4246,
+       50.090763
+      ],
+      [
+       14.424697,
+       50.089064
+      ],
+      [
+       14.427196,
+       50.088342
+      ],
+      [
+       14.429598,
+       50.089319
+      ],
+      [
+       14.429502,
+       50.091018
+      ],
+      [
+       14.427003,
+       50.091741
+      ],
+      [
+       14.4246,
+       50.090763
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35418dbffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 707
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 47,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.466697,
+       50.085276
+      ],
+      [
+       14.466792,
+       50.083577
+      ],
+      [
+       14.469291,
+       50.082854
+      ],
+      [
+       14.471694,
+       50.08383
+      ],
+      [
+       14.471599,
+       50.08553
+      ],
+      [
+       14.4691,
+       50.086253
+      ],
+      [
+       14.466697,
+       50.085276
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541943ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 476
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 48,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.464389,
+       50.0826
+      ],
+      [
+       14.464485,
+       50.080901
+      ],
+      [
+       14.466984,
+       50.080177
+      ],
+      [
+       14.469387,
+       50.081154
+      ],
+      [
+       14.469291,
+       50.082854
+      ],
+      [
+       14.466792,
+       50.083577
+      ],
+      [
+       14.464389,
+       50.0826
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354194bffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 409
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 49,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.469291,
+       50.082854
+      ],
+      [
+       14.469387,
+       50.081154
+      ],
+      [
+       14.471885,
+       50.080431
+      ],
+      [
+       14.474288,
+       50.081407
+      ],
+      [
+       14.474193,
+       50.083107
+      ],
+      [
+       14.471694,
+       50.08383
+      ],
+      [
+       14.469291,
+       50.082854
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354194fffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 744
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 50,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.464102,
+       50.087699
+      ],
+      [
+       14.464198,
+       50.086
+      ],
+      [
+       14.466697,
+       50.085276
+      ],
+      [
+       14.4691,
+       50.086253
+      ],
+      [
+       14.469004,
+       50.087952
+      ],
+      [
+       14.466505,
+       50.088676
+      ],
+      [
+       14.464102,
+       50.087699
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541953ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 579
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 51,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.461795,
+       50.085023
+      ],
+      [
+       14.461891,
+       50.083323
+      ],
+      [
+       14.464389,
+       50.0826
+      ],
+      [
+       14.466792,
+       50.083577
+      ],
+      [
+       14.466697,
+       50.085276
+      ],
+      [
+       14.464198,
+       50.086
+      ],
+      [
+       14.461795,
+       50.085023
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354195bffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 337
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 52,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.461508,
+       50.090122
+      ],
+      [
+       14.461603,
+       50.088422
+      ],
+      [
+       14.464102,
+       50.087699
+      ],
+      [
+       14.466505,
+       50.088676
+      ],
+      [
+       14.46641,
+       50.090375
+      ],
+      [
+       14.463911,
+       50.091098
+      ],
+      [
+       14.461508,
+       50.090122
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35419cbffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 475
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 53,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.458913,
+       50.092544
+      ],
+      [
+       14.459009,
+       50.090845
+      ],
+      [
+       14.461508,
+       50.090122
+      ],
+      [
+       14.463911,
+       50.091098
+      ],
+      [
+       14.463815,
+       50.092798
+      ],
+      [
+       14.461316,
+       50.093521
+      ],
+      [
+       14.458913,
+       50.092544
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e35419dbffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Karlín",
+    "habitable": true,
+    "population_est": 541
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 54,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42576,
+       50.070368
+      ],
+      [
+       14.425856,
+       50.068669
+      ],
+      [
+       14.428355,
+       50.067946
+      ],
+      [
+       14.430756,
+       50.068923
+      ],
+      [
+       14.43066,
+       50.070623
+      ],
+      [
+       14.428162,
+       50.071346
+      ],
+      [
+       14.42576,
+       50.070368
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a03ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 702
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 55,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.43066,
+       50.070623
+      ],
+      [
+       14.430756,
+       50.068923
+      ],
+      [
+       14.433255,
+       50.068201
+      ],
+      [
+       14.435656,
+       50.069178
+      ],
+      [
+       14.43556,
+       50.070878
+      ],
+      [
+       14.433062,
+       50.071601
+      ],
+      [
+       14.43066,
+       50.070623
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a07ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 875
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 56,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.423455,
+       50.067691
+      ],
+      [
+       14.423551,
+       50.065991
+      ],
+      [
+       14.42605,
+       50.065269
+      ],
+      [
+       14.428451,
+       50.066246
+      ],
+      [
+       14.428355,
+       50.067946
+      ],
+      [
+       14.425856,
+       50.068669
+      ],
+      [
+       14.423455,
+       50.067691
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a0bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 661
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 57,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.428355,
+       50.067946
+      ],
+      [
+       14.428451,
+       50.066246
+      ],
+      [
+       14.430949,
+       50.065524
+      ],
+      [
+       14.433351,
+       50.066501
+      ],
+      [
+       14.433255,
+       50.068201
+      ],
+      [
+       14.430756,
+       50.068923
+      ],
+      [
+       14.428355,
+       50.067946
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a0fffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 812
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 58,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.423165,
+       50.072791
+      ],
+      [
+       14.423261,
+       50.071091
+      ],
+      [
+       14.42576,
+       50.070368
+      ],
+      [
+       14.428162,
+       50.071346
+      ],
+      [
+       14.428065,
+       50.073046
+      ],
+      [
+       14.425567,
+       50.073768
+      ],
+      [
+       14.423165,
+       50.072791
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a13ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 945
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 59,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.428065,
+       50.073046
+      ],
+      [
+       14.428162,
+       50.071346
+      ],
+      [
+       14.43066,
+       50.070623
+      ],
+      [
+       14.433062,
+       50.071601
+      ],
+      [
+       14.432965,
+       50.0733
+      ],
+      [
+       14.430467,
+       50.074023
+      ],
+      [
+       14.428065,
+       50.073046
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a17ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 686
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 60,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42086,
+       50.070113
+      ],
+      [
+       14.420957,
+       50.068414
+      ],
+      [
+       14.423455,
+       50.067691
+      ],
+      [
+       14.425856,
+       50.068669
+      ],
+      [
+       14.42576,
+       50.070368
+      ],
+      [
+       14.423261,
+       50.071091
+      ],
+      [
+       14.42086,
+       50.070113
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a1bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 708
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 61,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.438155,
+       50.068455
+      ],
+      [
+       14.438251,
+       50.066755
+      ],
+      [
+       14.440749,
+       50.066033
+      ],
+      [
+       14.443151,
+       50.06701
+      ],
+      [
+       14.443055,
+       50.06871
+      ],
+      [
+       14.440557,
+       50.069433
+      ],
+      [
+       14.438155,
+       50.068455
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a23ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 671
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 62,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.443055,
+       50.06871
+      ],
+      [
+       14.443151,
+       50.06701
+      ],
+      [
+       14.445649,
+       50.066287
+      ],
+      [
+       14.448051,
+       50.067264
+      ],
+      [
+       14.447955,
+       50.068964
+      ],
+      [
+       14.445457,
+       50.069687
+      ],
+      [
+       14.443055,
+       50.06871
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a27ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 739
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 63,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.435849,
+       50.065778
+      ],
+      [
+       14.435945,
+       50.064078
+      ],
+      [
+       14.438444,
+       50.063355
+      ],
+      [
+       14.440845,
+       50.064333
+      ],
+      [
+       14.440749,
+       50.066033
+      ],
+      [
+       14.438251,
+       50.066755
+      ],
+      [
+       14.435849,
+       50.065778
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a2bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 513
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 64,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.440749,
+       50.066033
+      ],
+      [
+       14.440845,
+       50.064333
+      ],
+      [
+       14.443343,
+       50.06361
+      ],
+      [
+       14.445745,
+       50.064587
+      ],
+      [
+       14.445649,
+       50.066287
+      ],
+      [
+       14.443151,
+       50.06701
+      ],
+      [
+       14.440749,
+       50.066033
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a2fffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 597
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 65,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.43556,
+       50.070878
+      ],
+      [
+       14.435656,
+       50.069178
+      ],
+      [
+       14.438155,
+       50.068455
+      ],
+      [
+       14.440557,
+       50.069433
+      ],
+      [
+       14.44046,
+       50.071132
+      ],
+      [
+       14.437962,
+       50.071855
+      ],
+      [
+       14.43556,
+       50.070878
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a33ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 764
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 66,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.44046,
+       50.071132
+      ],
+      [
+       14.440557,
+       50.069433
+      ],
+      [
+       14.443055,
+       50.06871
+      ],
+      [
+       14.445457,
+       50.069687
+      ],
+      [
+       14.445361,
+       50.071387
+      ],
+      [
+       14.442862,
+       50.072109
+      ],
+      [
+       14.44046,
+       50.071132
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a37ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 913
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 67,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.433255,
+       50.068201
+      ],
+      [
+       14.433351,
+       50.066501
+      ],
+      [
+       14.435849,
+       50.065778
+      ],
+      [
+       14.438251,
+       50.066755
+      ],
+      [
+       14.438155,
+       50.068455
+      ],
+      [
+       14.435656,
+       50.069178
+      ],
+      [
+       14.433255,
+       50.068201
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a3bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 909
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 68,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.41625,
+       50.064759
+      ],
+      [
+       14.416347,
+       50.063059
+      ],
+      [
+       14.418845,
+       50.062336
+      ],
+      [
+       14.421247,
+       50.063314
+      ],
+      [
+       14.42115,
+       50.065014
+      ],
+      [
+       14.418652,
+       50.065736
+      ],
+      [
+       14.41625,
+       50.064759
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a43ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 366
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 69,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42115,
+       50.065014
+      ],
+      [
+       14.421247,
+       50.063314
+      ],
+      [
+       14.423745,
+       50.062591
+      ],
+      [
+       14.426146,
+       50.063569
+      ],
+      [
+       14.42605,
+       50.065269
+      ],
+      [
+       14.423551,
+       50.065991
+      ],
+      [
+       14.42115,
+       50.065014
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a47ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 492
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 70,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.413946,
+       50.062081
+      ],
+      [
+       14.414043,
+       50.060381
+      ],
+      [
+       14.416541,
+       50.059659
+      ],
+      [
+       14.418942,
+       50.060636
+      ],
+      [
+       14.418845,
+       50.062336
+      ],
+      [
+       14.416347,
+       50.063059
+      ],
+      [
+       14.413946,
+       50.062081
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a4bffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 603
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 71,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.418845,
+       50.062336
+      ],
+      [
+       14.418942,
+       50.060636
+      ],
+      [
+       14.42144,
+       50.059914
+      ],
+      [
+       14.423841,
+       50.060891
+      ],
+      [
+       14.423745,
+       50.062591
+      ],
+      [
+       14.421247,
+       50.063314
+      ],
+      [
+       14.418845,
+       50.062336
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a4fffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 252
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 72,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.413655,
+       50.067181
+      ],
+      [
+       14.413752,
+       50.065481
+      ],
+      [
+       14.41625,
+       50.064759
+      ],
+      [
+       14.418652,
+       50.065736
+      ],
+      [
+       14.418555,
+       50.067436
+      ],
+      [
+       14.416057,
+       50.068158
+      ],
+      [
+       14.413655,
+       50.067181
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a53ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 499
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 73,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.418555,
+       50.067436
+      ],
+      [
+       14.418652,
+       50.065736
+      ],
+      [
+       14.42115,
+       50.065014
+      ],
+      [
+       14.423551,
+       50.065991
+      ],
+      [
+       14.423455,
+       50.067691
+      ],
+      [
+       14.420957,
+       50.068414
+      ],
+      [
+       14.418555,
+       50.067436
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a57ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 608
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 74,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.411351,
+       50.064503
+      ],
+      [
+       14.411448,
+       50.062803
+      ],
+      [
+       14.413946,
+       50.062081
+      ],
+      [
+       14.416347,
+       50.063059
+      ],
+      [
+       14.41625,
+       50.064759
+      ],
+      [
+       14.413752,
+       50.065481
+      ],
+      [
+       14.411351,
+       50.064503
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a5bffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 75,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.428644,
+       50.062846
+      ],
+      [
+       14.428741,
+       50.061146
+      ],
+      [
+       14.431239,
+       50.060424
+      ],
+      [
+       14.43364,
+       50.061401
+      ],
+      [
+       14.433544,
+       50.063101
+      ],
+      [
+       14.431046,
+       50.063824
+      ],
+      [
+       14.428644,
+       50.062846
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a63ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 722
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 76,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.433544,
+       50.063101
+      ],
+      [
+       14.43364,
+       50.061401
+      ],
+      [
+       14.436138,
+       50.060678
+      ],
+      [
+       14.43854,
+       50.061655
+      ],
+      [
+       14.438444,
+       50.063355
+      ],
+      [
+       14.435945,
+       50.064078
+      ],
+      [
+       14.433544,
+       50.063101
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a67ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 587
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 77,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.426339,
+       50.060169
+      ],
+      [
+       14.426436,
+       50.058469
+      ],
+      [
+       14.428934,
+       50.057746
+      ],
+      [
+       14.431335,
+       50.058723
+      ],
+      [
+       14.431239,
+       50.060424
+      ],
+      [
+       14.428741,
+       50.061146
+      ],
+      [
+       14.426339,
+       50.060169
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a6bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 503
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 78,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.431239,
+       50.060424
+      ],
+      [
+       14.431335,
+       50.058723
+      ],
+      [
+       14.433833,
+       50.058001
+      ],
+      [
+       14.436234,
+       50.058978
+      ],
+      [
+       14.436138,
+       50.060678
+      ],
+      [
+       14.43364,
+       50.061401
+      ],
+      [
+       14.431239,
+       50.060424
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a6fffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 542
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 79,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42605,
+       50.065269
+      ],
+      [
+       14.426146,
+       50.063569
+      ],
+      [
+       14.428644,
+       50.062846
+      ],
+      [
+       14.431046,
+       50.063824
+      ],
+      [
+       14.430949,
+       50.065524
+      ],
+      [
+       14.428451,
+       50.066246
+      ],
+      [
+       14.42605,
+       50.065269
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a73ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 879
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 80,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.430949,
+       50.065524
+      ],
+      [
+       14.431046,
+       50.063824
+      ],
+      [
+       14.433544,
+       50.063101
+      ],
+      [
+       14.435945,
+       50.064078
+      ],
+      [
+       14.435849,
+       50.065778
+      ],
+      [
+       14.433351,
+       50.066501
+      ],
+      [
+       14.430949,
+       50.065524
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a77ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 614
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 81,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.423745,
+       50.062591
+      ],
+      [
+       14.423841,
+       50.060891
+      ],
+      [
+       14.426339,
+       50.060169
+      ],
+      [
+       14.428741,
+       50.061146
+      ],
+      [
+       14.428644,
+       50.062846
+      ],
+      [
+       14.426146,
+       50.063569
+      ],
+      [
+       14.423745,
+       50.062591
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a7bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 544
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 82,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.422875,
+       50.07789
+      ],
+      [
+       14.422972,
+       50.07619
+      ],
+      [
+       14.42547,
+       50.075468
+      ],
+      [
+       14.427872,
+       50.076445
+      ],
+      [
+       14.427775,
+       50.078145
+      ],
+      [
+       14.425277,
+       50.078867
+      ],
+      [
+       14.422875,
+       50.07789
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a83ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 790
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 83,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.427775,
+       50.078145
+      ],
+      [
+       14.427872,
+       50.076445
+      ],
+      [
+       14.43037,
+       50.075723
+      ],
+      [
+       14.432772,
+       50.0767
+      ],
+      [
+       14.432676,
+       50.0784
+      ],
+      [
+       14.430177,
+       50.079122
+      ],
+      [
+       14.427775,
+       50.078145
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a87ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 778
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 84,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42057,
+       50.075213
+      ],
+      [
+       14.420666,
+       50.073513
+      ],
+      [
+       14.423165,
+       50.072791
+      ],
+      [
+       14.425567,
+       50.073768
+      ],
+      [
+       14.42547,
+       50.075468
+      ],
+      [
+       14.422972,
+       50.07619
+      ],
+      [
+       14.42057,
+       50.075213
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a8bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 680
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 85,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42547,
+       50.075468
+      ],
+      [
+       14.425567,
+       50.073768
+      ],
+      [
+       14.428065,
+       50.073046
+      ],
+      [
+       14.430467,
+       50.074023
+      ],
+      [
+       14.43037,
+       50.075723
+      ],
+      [
+       14.427872,
+       50.076445
+      ],
+      [
+       14.42547,
+       50.075468
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a8fffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 606
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 86,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42028,
+       50.080312
+      ],
+      [
+       14.420376,
+       50.078612
+      ],
+      [
+       14.422875,
+       50.07789
+      ],
+      [
+       14.425277,
+       50.078867
+      ],
+      [
+       14.42518,
+       50.080567
+      ],
+      [
+       14.422682,
+       50.081289
+      ],
+      [
+       14.42028,
+       50.080312
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a93ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 689
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 87,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42518,
+       50.080567
+      ],
+      [
+       14.425277,
+       50.078867
+      ],
+      [
+       14.427775,
+       50.078145
+      ],
+      [
+       14.430177,
+       50.079122
+      ],
+      [
+       14.430081,
+       50.080822
+      ],
+      [
+       14.427582,
+       50.081544
+      ],
+      [
+       14.42518,
+       50.080567
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a97ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 677
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 88,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.417974,
+       50.077635
+      ],
+      [
+       14.418071,
+       50.075935
+      ],
+      [
+       14.42057,
+       50.075213
+      ],
+      [
+       14.422972,
+       50.07619
+      ],
+      [
+       14.422875,
+       50.07789
+      ],
+      [
+       14.420376,
+       50.078612
+      ],
+      [
+       14.417974,
+       50.077635
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541a9bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 851
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 89,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.435271,
+       50.075977
+      ],
+      [
+       14.435367,
+       50.074278
+      ],
+      [
+       14.437866,
+       50.073555
+      ],
+      [
+       14.440268,
+       50.074532
+      ],
+      [
+       14.440172,
+       50.076232
+      ],
+      [
+       14.437673,
+       50.076954
+      ],
+      [
+       14.435271,
+       50.075977
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541aa3ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 993
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 90,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.440172,
+       50.076232
+      ],
+      [
+       14.440268,
+       50.074532
+      ],
+      [
+       14.442766,
+       50.073809
+      ],
+      [
+       14.445168,
+       50.074786
+      ],
+      [
+       14.445072,
+       50.076486
+      ],
+      [
+       14.442574,
+       50.077209
+      ],
+      [
+       14.440172,
+       50.076232
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541aa7ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 834
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 91,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.432965,
+       50.0733
+      ],
+      [
+       14.433062,
+       50.071601
+      ],
+      [
+       14.43556,
+       50.070878
+      ],
+      [
+       14.437962,
+       50.071855
+      ],
+      [
+       14.437866,
+       50.073555
+      ],
+      [
+       14.435367,
+       50.074278
+      ],
+      [
+       14.432965,
+       50.0733
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541aabffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 935
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 92,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.437866,
+       50.073555
+      ],
+      [
+       14.437962,
+       50.071855
+      ],
+      [
+       14.44046,
+       50.071132
+      ],
+      [
+       14.442862,
+       50.072109
+      ],
+      [
+       14.442766,
+       50.073809
+      ],
+      [
+       14.440268,
+       50.074532
+      ],
+      [
+       14.437866,
+       50.073555
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541aafffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 786
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 93,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.432676,
+       50.0784
+      ],
+      [
+       14.432772,
+       50.0767
+      ],
+      [
+       14.435271,
+       50.075977
+      ],
+      [
+       14.437673,
+       50.076954
+      ],
+      [
+       14.437577,
+       50.078654
+      ],
+      [
+       14.435078,
+       50.079377
+      ],
+      [
+       14.432676,
+       50.0784
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ab3ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 1003
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 94,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.437577,
+       50.078654
+      ],
+      [
+       14.437673,
+       50.076954
+      ],
+      [
+       14.440172,
+       50.076232
+      ],
+      [
+       14.442574,
+       50.077209
+      ],
+      [
+       14.442478,
+       50.078909
+      ],
+      [
+       14.439979,
+       50.079631
+      ],
+      [
+       14.437577,
+       50.078654
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ab7ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 842
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 95,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.43037,
+       50.075723
+      ],
+      [
+       14.430467,
+       50.074023
+      ],
+      [
+       14.432965,
+       50.0733
+      ],
+      [
+       14.435367,
+       50.074278
+      ],
+      [
+       14.435271,
+       50.075977
+      ],
+      [
+       14.432772,
+       50.0767
+      ],
+      [
+       14.43037,
+       50.075723
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541abbffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 923
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 96,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.413365,
+       50.07228
+      ],
+      [
+       14.413462,
+       50.07058
+      ],
+      [
+       14.41596,
+       50.069858
+      ],
+      [
+       14.418362,
+       50.070836
+      ],
+      [
+       14.418265,
+       50.072535
+      ],
+      [
+       14.415766,
+       50.073258
+      ],
+      [
+       14.413365,
+       50.07228
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ac3ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 414
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 97,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.418265,
+       50.072535
+      ],
+      [
+       14.418362,
+       50.070836
+      ],
+      [
+       14.42086,
+       50.070113
+      ],
+      [
+       14.423261,
+       50.071091
+      ],
+      [
+       14.423165,
+       50.072791
+      ],
+      [
+       14.420666,
+       50.073513
+      ],
+      [
+       14.418265,
+       50.072535
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ac7ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 721
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 98,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.41106,
+       50.069603
+      ],
+      [
+       14.411157,
+       50.067903
+      ],
+      [
+       14.413655,
+       50.067181
+      ],
+      [
+       14.416057,
+       50.068158
+      ],
+      [
+       14.41596,
+       50.069858
+      ],
+      [
+       14.413462,
+       50.07058
+      ],
+      [
+       14.41106,
+       50.069603
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541acbffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 99,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.41596,
+       50.069858
+      ],
+      [
+       14.416057,
+       50.068158
+      ],
+      [
+       14.418555,
+       50.067436
+      ],
+      [
+       14.420957,
+       50.068414
+      ],
+      [
+       14.42086,
+       50.070113
+      ],
+      [
+       14.418362,
+       50.070836
+      ],
+      [
+       14.41596,
+       50.069858
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541acfffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 315
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 100,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.410769,
+       50.074702
+      ],
+      [
+       14.410866,
+       50.073002
+      ],
+      [
+       14.413365,
+       50.07228
+      ],
+      [
+       14.415766,
+       50.073258
+      ],
+      [
+       14.41567,
+       50.074957
+      ],
+      [
+       14.413171,
+       50.075679
+      ],
+      [
+       14.410769,
+       50.074702
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ad3ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 101,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.41567,
+       50.074957
+      ],
+      [
+       14.415766,
+       50.073258
+      ],
+      [
+       14.418265,
+       50.072535
+      ],
+      [
+       14.420666,
+       50.073513
+      ],
+      [
+       14.42057,
+       50.075213
+      ],
+      [
+       14.418071,
+       50.075935
+      ],
+      [
+       14.41567,
+       50.074957
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ad7ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 512
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 102,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.408465,
+       50.072025
+      ],
+      [
+       14.408562,
+       50.070325
+      ],
+      [
+       14.41106,
+       50.069603
+      ],
+      [
+       14.413462,
+       50.07058
+      ],
+      [
+       14.413365,
+       50.07228
+      ],
+      [
+       14.410866,
+       50.073002
+      ],
+      [
+       14.408465,
+       50.072025
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541adbffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 570
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 103,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.460063,
+       50.072148
+      ],
+      [
+       14.460158,
+       50.070448
+      ],
+      [
+       14.462657,
+       50.069725
+      ],
+      [
+       14.465059,
+       50.070702
+      ],
+      [
+       14.464964,
+       50.072402
+      ],
+      [
+       14.462465,
+       50.073125
+      ],
+      [
+       14.460063,
+       50.072148
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b03ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 908
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 104,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.464964,
+       50.072402
+      ],
+      [
+       14.465059,
+       50.070702
+      ],
+      [
+       14.467557,
+       50.069978
+      ],
+      [
+       14.46996,
+       50.070955
+      ],
+      [
+       14.469864,
+       50.072655
+      ],
+      [
+       14.467366,
+       50.073378
+      ],
+      [
+       14.464964,
+       50.072402
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b07ffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 387
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 105,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.457756,
+       50.069471
+      ],
+      [
+       14.457852,
+       50.067771
+      ],
+      [
+       14.46035,
+       50.067048
+      ],
+      [
+       14.462752,
+       50.068025
+      ],
+      [
+       14.462657,
+       50.069725
+      ],
+      [
+       14.460158,
+       50.070448
+      ],
+      [
+       14.457756,
+       50.069471
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b0bffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 488
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 106,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.462657,
+       50.069725
+      ],
+      [
+       14.462752,
+       50.068025
+      ],
+      [
+       14.465251,
+       50.067302
+      ],
+      [
+       14.467653,
+       50.068278
+      ],
+      [
+       14.467557,
+       50.069978
+      ],
+      [
+       14.465059,
+       50.070702
+      ],
+      [
+       14.462657,
+       50.069725
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b0fffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 556
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 107,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.457469,
+       50.074571
+      ],
+      [
+       14.457564,
+       50.072871
+      ],
+      [
+       14.460063,
+       50.072148
+      ],
+      [
+       14.462465,
+       50.073125
+      ],
+      [
+       14.462369,
+       50.074825
+      ],
+      [
+       14.459871,
+       50.075548
+      ],
+      [
+       14.457469,
+       50.074571
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b13ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 687
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 108,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.462369,
+       50.074825
+      ],
+      [
+       14.462465,
+       50.073125
+      ],
+      [
+       14.464964,
+       50.072402
+      ],
+      [
+       14.467366,
+       50.073378
+      ],
+      [
+       14.467271,
+       50.075078
+      ],
+      [
+       14.464772,
+       50.075801
+      ],
+      [
+       14.462369,
+       50.074825
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b17ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 525
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 109,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.455162,
+       50.071895
+      ],
+      [
+       14.455258,
+       50.070195
+      ],
+      [
+       14.457756,
+       50.069471
+      ],
+      [
+       14.460158,
+       50.070448
+      ],
+      [
+       14.460063,
+       50.072148
+      ],
+      [
+       14.457564,
+       50.072871
+      ],
+      [
+       14.455162,
+       50.071895
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b1bffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 600
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 110,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.469864,
+       50.072655
+      ],
+      [
+       14.46996,
+       50.070955
+      ],
+      [
+       14.472458,
+       50.070231
+      ],
+      [
+       14.474861,
+       50.071208
+      ],
+      [
+       14.474766,
+       50.072908
+      ],
+      [
+       14.472267,
+       50.073631
+      ],
+      [
+       14.469864,
+       50.072655
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b33ffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 556
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 111,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.467557,
+       50.069978
+      ],
+      [
+       14.467653,
+       50.068278
+      ],
+      [
+       14.470151,
+       50.067555
+      ],
+      [
+       14.472554,
+       50.068531
+      ],
+      [
+       14.472458,
+       50.070231
+      ],
+      [
+       14.46996,
+       50.070955
+      ],
+      [
+       14.467557,
+       50.069978
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b3bffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 545
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 112,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.450549,
+       50.066541
+      ],
+      [
+       14.450645,
+       50.064841
+      ],
+      [
+       14.453143,
+       50.064118
+      ],
+      [
+       14.455545,
+       50.065095
+      ],
+      [
+       14.45545,
+       50.066795
+      ],
+      [
+       14.452951,
+       50.067518
+      ],
+      [
+       14.450549,
+       50.066541
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b43ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 469
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 113,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.45545,
+       50.066795
+      ],
+      [
+       14.455545,
+       50.065095
+      ],
+      [
+       14.458044,
+       50.064371
+      ],
+      [
+       14.460446,
+       50.065348
+      ],
+      [
+       14.46035,
+       50.067048
+      ],
+      [
+       14.457852,
+       50.067771
+      ],
+      [
+       14.45545,
+       50.066795
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b47ffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 568
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 114,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.448243,
+       50.063864
+      ],
+      [
+       14.448339,
+       50.062164
+      ],
+      [
+       14.450837,
+       50.061441
+      ],
+      [
+       14.453239,
+       50.062418
+      ],
+      [
+       14.453143,
+       50.064118
+      ],
+      [
+       14.450645,
+       50.064841
+      ],
+      [
+       14.448243,
+       50.063864
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b4bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 607
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 115,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.453143,
+       50.064118
+      ],
+      [
+       14.453239,
+       50.062418
+      ],
+      [
+       14.455737,
+       50.061694
+      ],
+      [
+       14.458139,
+       50.062671
+      ],
+      [
+       14.458044,
+       50.064371
+      ],
+      [
+       14.455545,
+       50.065095
+      ],
+      [
+       14.453143,
+       50.064118
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b4fffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 408
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 116,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.447955,
+       50.068964
+      ],
+      [
+       14.448051,
+       50.067264
+      ],
+      [
+       14.450549,
+       50.066541
+      ],
+      [
+       14.452951,
+       50.067518
+      ],
+      [
+       14.452856,
+       50.069218
+      ],
+      [
+       14.450357,
+       50.069941
+      ],
+      [
+       14.447955,
+       50.068964
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b53ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 721
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 117,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.452856,
+       50.069218
+      ],
+      [
+       14.452951,
+       50.067518
+      ],
+      [
+       14.45545,
+       50.066795
+      ],
+      [
+       14.457852,
+       50.067771
+      ],
+      [
+       14.457756,
+       50.069471
+      ],
+      [
+       14.455258,
+       50.070195
+      ],
+      [
+       14.452856,
+       50.069218
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b57ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 506
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 118,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.445649,
+       50.066287
+      ],
+      [
+       14.445745,
+       50.064587
+      ],
+      [
+       14.448243,
+       50.063864
+      ],
+      [
+       14.450645,
+       50.064841
+      ],
+      [
+       14.450549,
+       50.066541
+      ],
+      [
+       14.448051,
+       50.067264
+      ],
+      [
+       14.445649,
+       50.066287
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b5bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 807
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 119,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.462944,
+       50.064625
+      ],
+      [
+       14.46304,
+       50.062925
+      ],
+      [
+       14.465537,
+       50.062201
+      ],
+      [
+       14.46794,
+       50.063178
+      ],
+      [
+       14.467844,
+       50.064878
+      ],
+      [
+       14.465346,
+       50.065602
+      ],
+      [
+       14.462944,
+       50.064625
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b63ffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 505
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 120,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.460637,
+       50.061948
+      ],
+      [
+       14.460733,
+       50.060248
+      ],
+      [
+       14.463231,
+       50.059524
+      ],
+      [
+       14.465633,
+       50.060501
+      ],
+      [
+       14.465537,
+       50.062201
+      ],
+      [
+       14.46304,
+       50.062925
+      ],
+      [
+       14.460637,
+       50.061948
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b6bffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 480
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 121,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.46035,
+       50.067048
+      ],
+      [
+       14.460446,
+       50.065348
+      ],
+      [
+       14.462944,
+       50.064625
+      ],
+      [
+       14.465346,
+       50.065602
+      ],
+      [
+       14.465251,
+       50.067302
+      ],
+      [
+       14.462752,
+       50.068025
+      ],
+      [
+       14.46035,
+       50.067048
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b73ffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 441
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 122,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.465251,
+       50.067302
+      ],
+      [
+       14.465346,
+       50.065602
+      ],
+      [
+       14.467844,
+       50.064878
+      ],
+      [
+       14.470247,
+       50.065855
+      ],
+      [
+       14.470151,
+       50.067555
+      ],
+      [
+       14.467653,
+       50.068278
+      ],
+      [
+       14.465251,
+       50.067302
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b77ffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 458
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 123,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.458044,
+       50.064371
+      ],
+      [
+       14.458139,
+       50.062671
+      ],
+      [
+       14.460637,
+       50.061948
+      ],
+      [
+       14.46304,
+       50.062925
+      ],
+      [
+       14.462944,
+       50.064625
+      ],
+      [
+       14.460446,
+       50.065348
+      ],
+      [
+       14.458044,
+       50.064371
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b7bffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 224
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 124,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.457181,
+       50.07967
+      ],
+      [
+       14.457277,
+       50.077971
+      ],
+      [
+       14.459775,
+       50.077248
+      ],
+      [
+       14.462178,
+       50.078224
+      ],
+      [
+       14.462082,
+       50.079924
+      ],
+      [
+       14.459584,
+       50.080647
+      ],
+      [
+       14.457181,
+       50.07967
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b83ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 441
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 125,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.462082,
+       50.079924
+      ],
+      [
+       14.462178,
+       50.078224
+      ],
+      [
+       14.464676,
+       50.077501
+      ],
+      [
+       14.467079,
+       50.078478
+      ],
+      [
+       14.466984,
+       50.080177
+      ],
+      [
+       14.464485,
+       50.080901
+      ],
+      [
+       14.462082,
+       50.079924
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b87ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 603
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 126,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.454874,
+       50.076994
+      ],
+      [
+       14.45497,
+       50.075294
+      ],
+      [
+       14.457469,
+       50.074571
+      ],
+      [
+       14.459871,
+       50.075548
+      ],
+      [
+       14.459775,
+       50.077248
+      ],
+      [
+       14.457277,
+       50.077971
+      ],
+      [
+       14.454874,
+       50.076994
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b8bffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 329
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 127,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.459775,
+       50.077248
+      ],
+      [
+       14.459871,
+       50.075548
+      ],
+      [
+       14.462369,
+       50.074825
+      ],
+      [
+       14.464772,
+       50.075801
+      ],
+      [
+       14.464676,
+       50.077501
+      ],
+      [
+       14.462178,
+       50.078224
+      ],
+      [
+       14.459775,
+       50.077248
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b8fffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 712
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 128,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.454586,
+       50.082093
+      ],
+      [
+       14.454682,
+       50.080393
+      ],
+      [
+       14.457181,
+       50.07967
+      ],
+      [
+       14.459584,
+       50.080647
+      ],
+      [
+       14.459488,
+       50.082347
+      ],
+      [
+       14.456989,
+       50.08307
+      ],
+      [
+       14.454586,
+       50.082093
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b93ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 364
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 129,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.459488,
+       50.082347
+      ],
+      [
+       14.459584,
+       50.080647
+      ],
+      [
+       14.462082,
+       50.079924
+      ],
+      [
+       14.464485,
+       50.080901
+      ],
+      [
+       14.464389,
+       50.0826
+      ],
+      [
+       14.461891,
+       50.083323
+      ],
+      [
+       14.459488,
+       50.082347
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b97ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 680
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 130,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.45228,
+       50.079417
+      ],
+      [
+       14.452376,
+       50.077717
+      ],
+      [
+       14.454874,
+       50.076994
+      ],
+      [
+       14.457277,
+       50.077971
+      ],
+      [
+       14.457181,
+       50.07967
+      ],
+      [
+       14.454682,
+       50.080393
+      ],
+      [
+       14.45228,
+       50.079417
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541b9bffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 546
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 131,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.469578,
+       50.077754
+      ],
+      [
+       14.469673,
+       50.076055
+      ],
+      [
+       14.472172,
+       50.075331
+      ],
+      [
+       14.474575,
+       50.076308
+      ],
+      [
+       14.474479,
+       50.078007
+      ],
+      [
+       14.471981,
+       50.078731
+      ],
+      [
+       14.469578,
+       50.077754
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ba3ffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 576
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 132,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.474479,
+       50.078007
+      ],
+      [
+       14.474575,
+       50.076308
+      ],
+      [
+       14.477073,
+       50.075584
+      ],
+      [
+       14.479476,
+       50.07656
+      ],
+      [
+       14.479381,
+       50.07826
+      ],
+      [
+       14.476882,
+       50.078984
+      ],
+      [
+       14.474479,
+       50.078007
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ba7ffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 415
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 133,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.467271,
+       50.075078
+      ],
+      [
+       14.467366,
+       50.073378
+      ],
+      [
+       14.469864,
+       50.072655
+      ],
+      [
+       14.472267,
+       50.073631
+      ],
+      [
+       14.472172,
+       50.075331
+      ],
+      [
+       14.469673,
+       50.076055
+      ],
+      [
+       14.467271,
+       50.075078
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541babffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 258
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 134,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.472172,
+       50.075331
+      ],
+      [
+       14.472267,
+       50.073631
+      ],
+      [
+       14.474766,
+       50.072908
+      ],
+      [
+       14.477168,
+       50.073884
+      ],
+      [
+       14.477073,
+       50.075584
+      ],
+      [
+       14.474575,
+       50.076308
+      ],
+      [
+       14.472172,
+       50.075331
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bafffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 613
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 135,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.466984,
+       50.080177
+      ],
+      [
+       14.467079,
+       50.078478
+      ],
+      [
+       14.469578,
+       50.077754
+      ],
+      [
+       14.471981,
+       50.078731
+      ],
+      [
+       14.471885,
+       50.080431
+      ],
+      [
+       14.469387,
+       50.081154
+      ],
+      [
+       14.466984,
+       50.080177
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bb3ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 702
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 136,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.471885,
+       50.080431
+      ],
+      [
+       14.471981,
+       50.078731
+      ],
+      [
+       14.474479,
+       50.078007
+      ],
+      [
+       14.476882,
+       50.078984
+      ],
+      [
+       14.476787,
+       50.080684
+      ],
+      [
+       14.474288,
+       50.081407
+      ],
+      [
+       14.471885,
+       50.080431
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bb7ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Žižkov",
+    "habitable": true,
+    "population_est": 413
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 137,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.464676,
+       50.077501
+      ],
+      [
+       14.464772,
+       50.075801
+      ],
+      [
+       14.467271,
+       50.075078
+      ],
+      [
+       14.469673,
+       50.076055
+      ],
+      [
+       14.469578,
+       50.077754
+      ],
+      [
+       14.467079,
+       50.078478
+      ],
+      [
+       14.464676,
+       50.077501
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bbbffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 481
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 138,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.447667,
+       50.074063
+      ],
+      [
+       14.447763,
+       50.072364
+      ],
+      [
+       14.450261,
+       50.071641
+      ],
+      [
+       14.452664,
+       50.072618
+      ],
+      [
+       14.452568,
+       50.074317
+      ],
+      [
+       14.450069,
+       50.07504
+      ],
+      [
+       14.447667,
+       50.074063
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bc3ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 711
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 139,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.452568,
+       50.074317
+      ],
+      [
+       14.452664,
+       50.072618
+      ],
+      [
+       14.455162,
+       50.071895
+      ],
+      [
+       14.457564,
+       50.072871
+      ],
+      [
+       14.457469,
+       50.074571
+      ],
+      [
+       14.45497,
+       50.075294
+      ],
+      [
+       14.452568,
+       50.074317
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bc7ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 529
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 140,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.445361,
+       50.071387
+      ],
+      [
+       14.445457,
+       50.069687
+      ],
+      [
+       14.447955,
+       50.068964
+      ],
+      [
+       14.450357,
+       50.069941
+      ],
+      [
+       14.450261,
+       50.071641
+      ],
+      [
+       14.447763,
+       50.072364
+      ],
+      [
+       14.445361,
+       50.071387
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bcbffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 903
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 141,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.450261,
+       50.071641
+      ],
+      [
+       14.450357,
+       50.069941
+      ],
+      [
+       14.452856,
+       50.069218
+      ],
+      [
+       14.455258,
+       50.070195
+      ],
+      [
+       14.455162,
+       50.071895
+      ],
+      [
+       14.452664,
+       50.072618
+      ],
+      [
+       14.450261,
+       50.071641
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bcfffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 606
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 142,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.445072,
+       50.076486
+      ],
+      [
+       14.445168,
+       50.074786
+      ],
+      [
+       14.447667,
+       50.074063
+      ],
+      [
+       14.450069,
+       50.07504
+      ],
+      [
+       14.449973,
+       50.07674
+      ],
+      [
+       14.447475,
+       50.077463
+      ],
+      [
+       14.445072,
+       50.076486
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bd3ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 767
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 143,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.449973,
+       50.07674
+      ],
+      [
+       14.450069,
+       50.07504
+      ],
+      [
+       14.452568,
+       50.074317
+      ],
+      [
+       14.45497,
+       50.075294
+      ],
+      [
+       14.454874,
+       50.076994
+      ],
+      [
+       14.452376,
+       50.077717
+      ],
+      [
+       14.449973,
+       50.07674
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bd7ffff",
+    "district_id": "500097",
+    "district_name": "Praha 3",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 592
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 144,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.442766,
+       50.073809
+      ],
+      [
+       14.442862,
+       50.072109
+      ],
+      [
+       14.445361,
+       50.071387
+      ],
+      [
+       14.447763,
+       50.072364
+      ],
+      [
+       14.447667,
+       50.074063
+      ],
+      [
+       14.445168,
+       50.074786
+      ],
+      [
+       14.442766,
+       50.073809
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541bdbffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vinohrady",
+    "habitable": true,
+    "population_est": 699
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 145,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42431,
+       50.095861
+      ],
+      [
+       14.424407,
+       50.094162
+      ],
+      [
+       14.426906,
+       50.09344
+      ],
+      [
+       14.429309,
+       50.094417
+      ],
+      [
+       14.429212,
+       50.096116
+      ],
+      [
+       14.426713,
+       50.096838
+      ],
+      [
+       14.42431,
+       50.095861
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541c6bffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 146,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.429212,
+       50.096116
+      ],
+      [
+       14.429309,
+       50.094417
+      ],
+      [
+       14.431808,
+       50.093695
+      ],
+      [
+       14.434211,
+       50.094672
+      ],
+      [
+       14.434114,
+       50.096371
+      ],
+      [
+       14.431615,
+       50.097093
+      ],
+      [
+       14.429212,
+       50.096116
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541c6fffff",
+    "district_id": "500186",
+    "district_name": "Praha 7",
+    "neighborhood": "Holešovice",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 147,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.407592,
+       50.08732
+      ],
+      [
+       14.407689,
+       50.085621
+      ],
+      [
+       14.410188,
+       50.084899
+      ],
+      [
+       14.41259,
+       50.085877
+      ],
+      [
+       14.412493,
+       50.087576
+      ],
+      [
+       14.409994,
+       50.088298
+      ],
+      [
+       14.407592,
+       50.08732
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e03ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Malá Strana",
+    "habitable": true,
+    "population_est": 457
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 148,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.412493,
+       50.087576
+      ],
+      [
+       14.41259,
+       50.085877
+      ],
+      [
+       14.415088,
+       50.085155
+      ],
+      [
+       14.41749,
+       50.086132
+      ],
+      [
+       14.417394,
+       50.087832
+      ],
+      [
+       14.414895,
+       50.088553
+      ],
+      [
+       14.412493,
+       50.087576
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e07ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 149,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.405287,
+       50.084643
+      ],
+      [
+       14.405384,
+       50.082944
+      ],
+      [
+       14.407883,
+       50.082222
+      ],
+      [
+       14.410285,
+       50.0832
+      ],
+      [
+       14.410188,
+       50.084899
+      ],
+      [
+       14.407689,
+       50.085621
+      ],
+      [
+       14.405287,
+       50.084643
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e0bffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Malá Strana",
+    "habitable": true,
+    "population_est": 481
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 150,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.410188,
+       50.084899
+      ],
+      [
+       14.410285,
+       50.0832
+      ],
+      [
+       14.412783,
+       50.082478
+      ],
+      [
+       14.415185,
+       50.083455
+      ],
+      [
+       14.415088,
+       50.085155
+      ],
+      [
+       14.41259,
+       50.085877
+      ],
+      [
+       14.410188,
+       50.084899
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e0fffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 151,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.409897,
+       50.089997
+      ],
+      [
+       14.409994,
+       50.088298
+      ],
+      [
+       14.412493,
+       50.087576
+      ],
+      [
+       14.414895,
+       50.088553
+      ],
+      [
+       14.414798,
+       50.090253
+      ],
+      [
+       14.412299,
+       50.090975
+      ],
+      [
+       14.409897,
+       50.089997
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e17ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Malá Strana",
+    "habitable": true,
+    "population_est": 424
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 152,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.419989,
+       50.08541
+      ],
+      [
+       14.420086,
+       50.083711
+      ],
+      [
+       14.422585,
+       50.082988
+      ],
+      [
+       14.424987,
+       50.083966
+      ],
+      [
+       14.42489,
+       50.085665
+      ],
+      [
+       14.422391,
+       50.086387
+      ],
+      [
+       14.419989,
+       50.08541
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e23ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 547
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 153,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42489,
+       50.085665
+      ],
+      [
+       14.424987,
+       50.083966
+      ],
+      [
+       14.427486,
+       50.083243
+      ],
+      [
+       14.429888,
+       50.084221
+      ],
+      [
+       14.429791,
+       50.08592
+      ],
+      [
+       14.427293,
+       50.086642
+      ],
+      [
+       14.42489,
+       50.085665
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e27ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 670
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 154,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.417684,
+       50.082733
+      ],
+      [
+       14.417781,
+       50.081034
+      ],
+      [
+       14.42028,
+       50.080312
+      ],
+      [
+       14.422682,
+       50.081289
+      ],
+      [
+       14.422585,
+       50.082988
+      ],
+      [
+       14.420086,
+       50.083711
+      ],
+      [
+       14.417684,
+       50.082733
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e2bffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 583
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 155,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.422585,
+       50.082988
+      ],
+      [
+       14.422682,
+       50.081289
+      ],
+      [
+       14.42518,
+       50.080567
+      ],
+      [
+       14.427582,
+       50.081544
+      ],
+      [
+       14.427486,
+       50.083243
+      ],
+      [
+       14.424987,
+       50.083966
+      ],
+      [
+       14.422585,
+       50.082988
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e2fffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 643
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 156,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.417394,
+       50.087832
+      ],
+      [
+       14.41749,
+       50.086132
+      ],
+      [
+       14.419989,
+       50.08541
+      ],
+      [
+       14.422391,
+       50.086387
+      ],
+      [
+       14.422295,
+       50.088087
+      ],
+      [
+       14.419796,
+       50.088809
+      ],
+      [
+       14.417394,
+       50.087832
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e33ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 366
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 157,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.422295,
+       50.088087
+      ],
+      [
+       14.422391,
+       50.086387
+      ],
+      [
+       14.42489,
+       50.085665
+      ],
+      [
+       14.427293,
+       50.086642
+      ],
+      [
+       14.427196,
+       50.088342
+      ],
+      [
+       14.424697,
+       50.089064
+      ],
+      [
+       14.422295,
+       50.088087
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e37ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 489
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 158,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.415088,
+       50.085155
+      ],
+      [
+       14.415185,
+       50.083455
+      ],
+      [
+       14.417684,
+       50.082733
+      ],
+      [
+       14.420086,
+       50.083711
+      ],
+      [
+       14.419989,
+       50.08541
+      ],
+      [
+       14.41749,
+       50.086132
+      ],
+      [
+       14.415088,
+       50.085155
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e3bffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 833
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 159,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.402982,
+       50.081966
+      ],
+      [
+       14.40308,
+       50.080267
+      ],
+      [
+       14.405578,
+       50.079545
+      ],
+      [
+       14.40798,
+       50.080523
+      ],
+      [
+       14.407883,
+       50.082222
+      ],
+      [
+       14.405384,
+       50.082944
+      ],
+      [
+       14.402982,
+       50.081966
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e47ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Malá Strana",
+    "habitable": true,
+    "population_est": 369
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 160,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.400678,
+       50.079289
+      ],
+      [
+       14.400775,
+       50.077589
+      ],
+      [
+       14.403274,
+       50.076868
+      ],
+      [
+       14.405675,
+       50.077845
+      ],
+      [
+       14.405578,
+       50.079545
+      ],
+      [
+       14.40308,
+       50.080267
+      ],
+      [
+       14.400678,
+       50.079289
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e4fffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 293
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 161,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.410479,
+       50.079801
+      ],
+      [
+       14.410576,
+       50.078101
+      ],
+      [
+       14.413074,
+       50.077379
+      ],
+      [
+       14.415476,
+       50.078357
+      ],
+      [
+       14.415379,
+       50.080056
+      ],
+      [
+       14.41288,
+       50.080778
+      ],
+      [
+       14.410479,
+       50.079801
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e63ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Nové Město",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 162,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.415379,
+       50.080056
+      ],
+      [
+       14.415476,
+       50.078357
+      ],
+      [
+       14.417974,
+       50.077635
+      ],
+      [
+       14.420376,
+       50.078612
+      ],
+      [
+       14.42028,
+       50.080312
+      ],
+      [
+       14.417781,
+       50.081034
+      ],
+      [
+       14.415379,
+       50.080056
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e67ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 844
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 163,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.408174,
+       50.077123
+      ],
+      [
+       14.408271,
+       50.075424
+      ],
+      [
+       14.410769,
+       50.074702
+      ],
+      [
+       14.413171,
+       50.075679
+      ],
+      [
+       14.413074,
+       50.077379
+      ],
+      [
+       14.410576,
+       50.078101
+      ],
+      [
+       14.408174,
+       50.077123
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e6bffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 333
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 164,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.413074,
+       50.077379
+      ],
+      [
+       14.413171,
+       50.075679
+      ],
+      [
+       14.41567,
+       50.074957
+      ],
+      [
+       14.418071,
+       50.075935
+      ],
+      [
+       14.417974,
+       50.077635
+      ],
+      [
+       14.415476,
+       50.078357
+      ],
+      [
+       14.413074,
+       50.077379
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e6fffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Nové Město",
+    "habitable": true,
+    "population_est": 582
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 165,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.407883,
+       50.082222
+      ],
+      [
+       14.40798,
+       50.080523
+      ],
+      [
+       14.410479,
+       50.079801
+      ],
+      [
+       14.41288,
+       50.080778
+      ],
+      [
+       14.412783,
+       50.082478
+      ],
+      [
+       14.410285,
+       50.0832
+      ],
+      [
+       14.407883,
+       50.082222
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e73ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Malá Strana",
+    "habitable": true,
+    "population_est": 433
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 166,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.412783,
+       50.082478
+      ],
+      [
+       14.41288,
+       50.080778
+      ],
+      [
+       14.415379,
+       50.080056
+      ],
+      [
+       14.417781,
+       50.081034
+      ],
+      [
+       14.417684,
+       50.082733
+      ],
+      [
+       14.415185,
+       50.083455
+      ],
+      [
+       14.412783,
+       50.082478
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e77ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 321
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 167,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.405578,
+       50.079545
+      ],
+      [
+       14.405675,
+       50.077845
+      ],
+      [
+       14.408174,
+       50.077123
+      ],
+      [
+       14.410576,
+       50.078101
+      ],
+      [
+       14.410479,
+       50.079801
+      ],
+      [
+       14.40798,
+       50.080523
+      ],
+      [
+       14.405578,
+       50.079545
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541e7bffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 623
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 168,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.417103,
+       50.092929
+      ],
+      [
+       14.4172,
+       50.09123
+      ],
+      [
+       14.419699,
+       50.090508
+      ],
+      [
+       14.422101,
+       50.091486
+      ],
+      [
+       14.422005,
+       50.093185
+      ],
+      [
+       14.419506,
+       50.093907
+      ],
+      [
+       14.417103,
+       50.092929
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ea3ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 169,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.422005,
+       50.093185
+      ],
+      [
+       14.422101,
+       50.091486
+      ],
+      [
+       14.4246,
+       50.090763
+      ],
+      [
+       14.427003,
+       50.091741
+      ],
+      [
+       14.426906,
+       50.09344
+      ],
+      [
+       14.424407,
+       50.094162
+      ],
+      [
+       14.422005,
+       50.093185
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ea7ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 531
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 170,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.414798,
+       50.090253
+      ],
+      [
+       14.414895,
+       50.088553
+      ],
+      [
+       14.417394,
+       50.087832
+      ],
+      [
+       14.419796,
+       50.088809
+      ],
+      [
+       14.419699,
+       50.090508
+      ],
+      [
+       14.4172,
+       50.09123
+      ],
+      [
+       14.414798,
+       50.090253
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541eabffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 171,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.419699,
+       50.090508
+      ],
+      [
+       14.419796,
+       50.088809
+      ],
+      [
+       14.422295,
+       50.088087
+      ],
+      [
+       14.424697,
+       50.089064
+      ],
+      [
+       14.4246,
+       50.090763
+      ],
+      [
+       14.422101,
+       50.091486
+      ],
+      [
+       14.419699,
+       50.090508
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541eafffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 619
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 172,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.414507,
+       50.095351
+      ],
+      [
+       14.414604,
+       50.093651
+      ],
+      [
+       14.417103,
+       50.092929
+      ],
+      [
+       14.419506,
+       50.093907
+      ],
+      [
+       14.419409,
+       50.095606
+      ],
+      [
+       14.41691,
+       50.096328
+      ],
+      [
+       14.414507,
+       50.095351
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541eb3ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Bubeneč",
+    "habitable": true,
+    "population_est": 352
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 173,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.419409,
+       50.095606
+      ],
+      [
+       14.419506,
+       50.093907
+      ],
+      [
+       14.422005,
+       50.093185
+      ],
+      [
+       14.424407,
+       50.094162
+      ],
+      [
+       14.42431,
+       50.095861
+      ],
+      [
+       14.421811,
+       50.096583
+      ],
+      [
+       14.419409,
+       50.095606
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541eb7ffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Bubeneč",
+    "habitable": true,
+    "population_est": 440
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 174,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.412202,
+       50.092674
+      ],
+      [
+       14.412299,
+       50.090975
+      ],
+      [
+       14.414798,
+       50.090253
+      ],
+      [
+       14.4172,
+       50.09123
+      ],
+      [
+       14.417103,
+       50.092929
+      ],
+      [
+       14.414604,
+       50.093651
+      ],
+      [
+       14.412202,
+       50.092674
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e3541ebbffff",
+    "district_id": "500054",
+    "district_name": "Praha 1",
+    "neighborhood": "Staré Město",
+    "habitable": true,
+    "population_est": 291
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 175,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.411642,
+       50.059403
+      ],
+      [
+       14.411739,
+       50.057703
+      ],
+      [
+       14.414237,
+       50.056981
+      ],
+      [
+       14.416638,
+       50.057959
+      ],
+      [
+       14.416541,
+       50.059659
+      ],
+      [
+       14.414043,
+       50.060381
+      ],
+      [
+       14.411642,
+       50.059403
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354a987ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 176,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.409047,
+       50.061825
+      ],
+      [
+       14.409144,
+       50.060125
+      ],
+      [
+       14.411642,
+       50.059403
+      ],
+      [
+       14.414043,
+       50.060381
+      ],
+      [
+       14.413946,
+       50.062081
+      ],
+      [
+       14.411448,
+       50.062803
+      ],
+      [
+       14.409047,
+       50.061825
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354a997ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 657
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 177,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.419135,
+       50.057236
+      ],
+      [
+       14.419232,
+       50.055536
+      ],
+      [
+       14.42173,
+       50.054813
+      ],
+      [
+       14.424131,
+       50.055791
+      ],
+      [
+       14.424035,
+       50.057491
+      ],
+      [
+       14.421537,
+       50.058214
+      ],
+      [
+       14.419135,
+       50.057236
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354a9a3ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 391
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 178,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.424035,
+       50.057491
+      ],
+      [
+       14.424131,
+       50.055791
+      ],
+      [
+       14.426629,
+       50.055068
+      ],
+      [
+       14.42903,
+       50.056046
+      ],
+      [
+       14.428934,
+       50.057746
+      ],
+      [
+       14.426436,
+       50.058469
+      ],
+      [
+       14.424035,
+       50.057491
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354a9a7ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 542
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 179,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.416831,
+       50.054558
+      ],
+      [
+       14.416928,
+       50.052858
+      ],
+      [
+       14.419426,
+       50.052136
+      ],
+      [
+       14.421827,
+       50.053113
+      ],
+      [
+       14.42173,
+       50.054813
+      ],
+      [
+       14.419232,
+       50.055536
+      ],
+      [
+       14.416831,
+       50.054558
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354a9abffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 401
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 180,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42173,
+       50.054813
+      ],
+      [
+       14.421827,
+       50.053113
+      ],
+      [
+       14.424324,
+       50.052391
+      ],
+      [
+       14.426725,
+       50.053368
+      ],
+      [
+       14.426629,
+       50.055068
+      ],
+      [
+       14.424131,
+       50.055791
+      ],
+      [
+       14.42173,
+       50.054813
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354a9afffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 371
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 181,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.416541,
+       50.059659
+      ],
+      [
+       14.416638,
+       50.057959
+      ],
+      [
+       14.419135,
+       50.057236
+      ],
+      [
+       14.421537,
+       50.058214
+      ],
+      [
+       14.42144,
+       50.059914
+      ],
+      [
+       14.418942,
+       50.060636
+      ],
+      [
+       14.416541,
+       50.059659
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354a9b3ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 414
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 182,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.42144,
+       50.059914
+      ],
+      [
+       14.421537,
+       50.058214
+      ],
+      [
+       14.424035,
+       50.057491
+      ],
+      [
+       14.426436,
+       50.058469
+      ],
+      [
+       14.426339,
+       50.060169
+      ],
+      [
+       14.423841,
+       50.060891
+      ],
+      [
+       14.42144,
+       50.059914
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354a9b7ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 623
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 183,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.414237,
+       50.056981
+      ],
+      [
+       14.414333,
+       50.055281
+      ],
+      [
+       14.416831,
+       50.054558
+      ],
+      [
+       14.419232,
+       50.055536
+      ],
+      [
+       14.419135,
+       50.057236
+      ],
+      [
+       14.416638,
+       50.057959
+      ],
+      [
+       14.414237,
+       50.056981
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354a9bbffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 384
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 184,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.403857,
+       50.066669
+      ],
+      [
+       14.403954,
+       50.06497
+      ],
+      [
+       14.406452,
+       50.064248
+      ],
+      [
+       14.408853,
+       50.065225
+      ],
+      [
+       14.408756,
+       50.066925
+      ],
+      [
+       14.406258,
+       50.067647
+      ],
+      [
+       14.403857,
+       50.066669
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354ad23ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 430
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 185,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.408756,
+       50.066925
+      ],
+      [
+       14.408853,
+       50.065225
+      ],
+      [
+       14.411351,
+       50.064503
+      ],
+      [
+       14.413752,
+       50.065481
+      ],
+      [
+       14.413655,
+       50.067181
+      ],
+      [
+       14.411157,
+       50.067903
+      ],
+      [
+       14.408756,
+       50.066925
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354ad27ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 515
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 186,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.406452,
+       50.064248
+      ],
+      [
+       14.406549,
+       50.062548
+      ],
+      [
+       14.409047,
+       50.061825
+      ],
+      [
+       14.411448,
+       50.062803
+      ],
+      [
+       14.411351,
+       50.064503
+      ],
+      [
+       14.408853,
+       50.065225
+      ],
+      [
+       14.406452,
+       50.064248
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354ad2fffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Vyšehrad",
+    "habitable": true,
+    "population_est": 635
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 187,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.401261,
+       50.069091
+      ],
+      [
+       14.401358,
+       50.067391
+      ],
+      [
+       14.403857,
+       50.066669
+      ],
+      [
+       14.406258,
+       50.067647
+      ],
+      [
+       14.406161,
+       50.069347
+      ],
+      [
+       14.403662,
+       50.070069
+      ],
+      [
+       14.401261,
+       50.069091
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354ad33ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 542
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 188,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.406161,
+       50.069347
+      ],
+      [
+       14.406258,
+       50.067647
+      ],
+      [
+       14.408756,
+       50.066925
+      ],
+      [
+       14.411157,
+       50.067903
+      ],
+      [
+       14.41106,
+       50.069603
+      ],
+      [
+       14.408562,
+       50.070325
+      ],
+      [
+       14.406161,
+       50.069347
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354ad37ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 559
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 189,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.40097,
+       50.07419
+      ],
+      [
+       14.401067,
+       50.072491
+      ],
+      [
+       14.403565,
+       50.071769
+      ],
+      [
+       14.405967,
+       50.072746
+      ],
+      [
+       14.405869,
+       50.074446
+      ],
+      [
+       14.403371,
+       50.075168
+      ],
+      [
+       14.40097,
+       50.07419
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354ada3ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 373
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 190,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.405869,
+       50.074446
+      ],
+      [
+       14.405967,
+       50.072746
+      ],
+      [
+       14.408465,
+       50.072025
+      ],
+      [
+       14.410866,
+       50.073002
+      ],
+      [
+       14.410769,
+       50.074702
+      ],
+      [
+       14.408271,
+       50.075424
+      ],
+      [
+       14.405869,
+       50.074446
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354ada7ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 313
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 191,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.398666,
+       50.071513
+      ],
+      [
+       14.398763,
+       50.069813
+      ],
+      [
+       14.401261,
+       50.069091
+      ],
+      [
+       14.403662,
+       50.070069
+      ],
+      [
+       14.403565,
+       50.071769
+      ],
+      [
+       14.401067,
+       50.072491
+      ],
+      [
+       14.398666,
+       50.071513
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354adabffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 562
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 192,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.403565,
+       50.071769
+      ],
+      [
+       14.403662,
+       50.070069
+      ],
+      [
+       14.406161,
+       50.069347
+      ],
+      [
+       14.408562,
+       50.070325
+      ],
+      [
+       14.408465,
+       50.072025
+      ],
+      [
+       14.405967,
+       50.072746
+      ],
+      [
+       14.403565,
+       50.071769
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354adafffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 628
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 193,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.398374,
+       50.076612
+      ],
+      [
+       14.398471,
+       50.074912
+      ],
+      [
+       14.40097,
+       50.07419
+      ],
+      [
+       14.403371,
+       50.075168
+      ],
+      [
+       14.403274,
+       50.076868
+      ],
+      [
+       14.400775,
+       50.077589
+      ],
+      [
+       14.398374,
+       50.076612
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354adb3ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 404
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 194,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.403274,
+       50.076868
+      ],
+      [
+       14.403371,
+       50.075168
+      ],
+      [
+       14.405869,
+       50.074446
+      ],
+      [
+       14.408271,
+       50.075424
+      ],
+      [
+       14.408174,
+       50.077123
+      ],
+      [
+       14.405675,
+       50.077845
+      ],
+      [
+       14.403274,
+       50.076868
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354adb7ffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 570
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 195,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.39607,
+       50.073934
+      ],
+      [
+       14.396167,
+       50.072235
+      ],
+      [
+       14.398666,
+       50.071513
+      ],
+      [
+       14.401067,
+       50.072491
+      ],
+      [
+       14.40097,
+       50.07419
+      ],
+      [
+       14.398471,
+       50.074912
+      ],
+      [
+       14.39607,
+       50.073934
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354adbbffff",
+    "district_id": "500143",
+    "district_name": "Praha 5",
+    "neighborhood": "Smíchov",
+    "habitable": true,
+    "population_est": 511
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 196,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.441326,
+       50.055832
+      ],
+      [
+       14.441423,
+       50.054132
+      ],
+      [
+       14.44392,
+       50.053409
+      ],
+      [
+       14.446322,
+       50.054386
+      ],
+      [
+       14.446226,
+       50.056086
+      ],
+      [
+       14.443728,
+       50.056809
+      ],
+      [
+       14.441326,
+       50.055832
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f413ffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 609
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 197,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.446226,
+       50.056086
+      ],
+      [
+       14.446322,
+       50.054386
+      ],
+      [
+       14.44882,
+       50.053663
+      ],
+      [
+       14.451221,
+       50.05464
+      ],
+      [
+       14.451125,
+       50.05634
+      ],
+      [
+       14.448627,
+       50.057063
+      ],
+      [
+       14.446226,
+       50.056086
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f417ffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 611
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 198,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.441038,
+       50.060933
+      ],
+      [
+       14.441134,
+       50.059232
+      ],
+      [
+       14.443632,
+       50.058509
+      ],
+      [
+       14.446034,
+       50.059487
+      ],
+      [
+       14.445937,
+       50.061187
+      ],
+      [
+       14.44344,
+       50.06191
+      ],
+      [
+       14.441038,
+       50.060933
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f483ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 517
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 199,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.445937,
+       50.061187
+      ],
+      [
+       14.446034,
+       50.059487
+      ],
+      [
+       14.448531,
+       50.058763
+      ],
+      [
+       14.450933,
+       50.059741
+      ],
+      [
+       14.450837,
+       50.061441
+      ],
+      [
+       14.448339,
+       50.062164
+      ],
+      [
+       14.445937,
+       50.061187
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f487ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 797
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 200,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.438732,
+       50.058255
+      ],
+      [
+       14.438829,
+       50.056555
+      ],
+      [
+       14.441326,
+       50.055832
+      ],
+      [
+       14.443728,
+       50.056809
+      ],
+      [
+       14.443632,
+       50.058509
+      ],
+      [
+       14.441134,
+       50.059232
+      ],
+      [
+       14.438732,
+       50.058255
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f48bffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 351
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 201,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.443632,
+       50.058509
+      ],
+      [
+       14.443728,
+       50.056809
+      ],
+      [
+       14.446226,
+       50.056086
+      ],
+      [
+       14.448627,
+       50.057063
+      ],
+      [
+       14.448531,
+       50.058763
+      ],
+      [
+       14.446034,
+       50.059487
+      ],
+      [
+       14.443632,
+       50.058509
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f48fffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 659
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 202,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.438444,
+       50.063355
+      ],
+      [
+       14.43854,
+       50.061655
+      ],
+      [
+       14.441038,
+       50.060933
+      ],
+      [
+       14.44344,
+       50.06191
+      ],
+      [
+       14.443343,
+       50.06361
+      ],
+      [
+       14.440845,
+       50.064333
+      ],
+      [
+       14.438444,
+       50.063355
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f493ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 713
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 203,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.443343,
+       50.06361
+      ],
+      [
+       14.44344,
+       50.06191
+      ],
+      [
+       14.445937,
+       50.061187
+      ],
+      [
+       14.448339,
+       50.062164
+      ],
+      [
+       14.448243,
+       50.063864
+      ],
+      [
+       14.445745,
+       50.064587
+      ],
+      [
+       14.443343,
+       50.06361
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f497ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 758
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 204,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.436138,
+       50.060678
+      ],
+      [
+       14.436234,
+       50.058978
+      ],
+      [
+       14.438732,
+       50.058255
+      ],
+      [
+       14.441134,
+       50.059232
+      ],
+      [
+       14.441038,
+       50.060933
+      ],
+      [
+       14.43854,
+       50.061655
+      ],
+      [
+       14.436138,
+       50.060678
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f49bffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 871
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 205,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.453431,
+       50.059017
+      ],
+      [
+       14.453527,
+       50.057317
+      ],
+      [
+       14.456025,
+       50.056594
+      ],
+      [
+       14.458427,
+       50.057571
+      ],
+      [
+       14.458331,
+       50.059271
+      ],
+      [
+       14.455833,
+       50.059994
+      ],
+      [
+       14.453431,
+       50.059017
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4a3ffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 707
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 206,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.458331,
+       50.059271
+      ],
+      [
+       14.458427,
+       50.057571
+      ],
+      [
+       14.460925,
+       50.056847
+      ],
+      [
+       14.463327,
+       50.057824
+      ],
+      [
+       14.463231,
+       50.059524
+      ],
+      [
+       14.460733,
+       50.060248
+      ],
+      [
+       14.458331,
+       50.059271
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4a7ffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 278
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 207,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.451125,
+       50.05634
+      ],
+      [
+       14.451221,
+       50.05464
+      ],
+      [
+       14.453719,
+       50.053917
+      ],
+      [
+       14.456121,
+       50.054894
+      ],
+      [
+       14.456025,
+       50.056594
+      ],
+      [
+       14.453527,
+       50.057317
+      ],
+      [
+       14.451125,
+       50.05634
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4abffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 200
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 208,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.456025,
+       50.056594
+      ],
+      [
+       14.456121,
+       50.054894
+      ],
+      [
+       14.458618,
+       50.05417
+      ],
+      [
+       14.46102,
+       50.055147
+      ],
+      [
+       14.460925,
+       50.056847
+      ],
+      [
+       14.458427,
+       50.057571
+      ],
+      [
+       14.456025,
+       50.056594
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4afffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 548
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 209,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.450837,
+       50.061441
+      ],
+      [
+       14.450933,
+       50.059741
+      ],
+      [
+       14.453431,
+       50.059017
+      ],
+      [
+       14.455833,
+       50.059994
+      ],
+      [
+       14.455737,
+       50.061694
+      ],
+      [
+       14.453239,
+       50.062418
+      ],
+      [
+       14.450837,
+       50.061441
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4b3ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 391
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 210,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.455737,
+       50.061694
+      ],
+      [
+       14.455833,
+       50.059994
+      ],
+      [
+       14.458331,
+       50.059271
+      ],
+      [
+       14.460733,
+       50.060248
+      ],
+      [
+       14.460637,
+       50.061948
+      ],
+      [
+       14.458139,
+       50.062671
+      ],
+      [
+       14.455737,
+       50.061694
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4b7ffff",
+    "district_id": "500224",
+    "district_name": "Praha 10",
+    "neighborhood": "Vršovice",
+    "habitable": true,
+    "population_est": 506
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 211,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.448531,
+       50.058763
+      ],
+      [
+       14.448627,
+       50.057063
+      ],
+      [
+       14.451125,
+       50.05634
+      ],
+      [
+       14.453527,
+       50.057317
+      ],
+      [
+       14.453431,
+       50.059017
+      ],
+      [
+       14.450933,
+       50.059741
+      ],
+      [
+       14.448531,
+       50.058763
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4bbffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 637
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 212,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.431528,
+       50.055323
+      ],
+      [
+       14.431624,
+       50.053623
+      ],
+      [
+       14.434122,
+       50.0529
+      ],
+      [
+       14.436523,
+       50.053877
+      ],
+      [
+       14.436427,
+       50.055578
+      ],
+      [
+       14.433929,
+       50.056301
+      ],
+      [
+       14.431528,
+       50.055323
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4c3ffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 232
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 213,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.436427,
+       50.055578
+      ],
+      [
+       14.436523,
+       50.053877
+      ],
+      [
+       14.439021,
+       50.053155
+      ],
+      [
+       14.441423,
+       50.054132
+      ],
+      [
+       14.441326,
+       50.055832
+      ],
+      [
+       14.438829,
+       50.056555
+      ],
+      [
+       14.436427,
+       50.055578
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4c7ffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Michle",
+    "habitable": true,
+    "population_est": 170
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 214,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.428934,
+       50.057746
+      ],
+      [
+       14.42903,
+       50.056046
+      ],
+      [
+       14.431528,
+       50.055323
+      ],
+      [
+       14.433929,
+       50.056301
+      ],
+      [
+       14.433833,
+       50.058001
+      ],
+      [
+       14.431335,
+       50.058723
+      ],
+      [
+       14.428934,
+       50.057746
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4d3ffff",
+    "district_id": "500089",
+    "district_name": "Praha 2",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 560
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 215,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.433833,
+       50.058001
+      ],
+      [
+       14.433929,
+       50.056301
+      ],
+      [
+       14.436427,
+       50.055578
+      ],
+      [
+       14.438829,
+       50.056555
+      ],
+      [
+       14.438732,
+       50.058255
+      ],
+      [
+       14.436234,
+       50.058978
+      ],
+      [
+       14.433833,
+       50.058001
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4d7ffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 541
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 216,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       14.426629,
+       50.055068
+      ],
+      [
+       14.426725,
+       50.053368
+      ],
+      [
+       14.429223,
+       50.052645
+      ],
+      [
+       14.431624,
+       50.053623
+      ],
+      [
+       14.431528,
+       50.055323
+      ],
+      [
+       14.42903,
+       50.056046
+      ],
+      [
+       14.426629,
+       50.055068
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e354f4dbffff",
+    "district_id": "500119",
+    "district_name": "Praha 4",
+    "neighborhood": "Nusle",
+    "habitable": true,
+    "population_est": 425
+   }
+  }
+ ]
+}
