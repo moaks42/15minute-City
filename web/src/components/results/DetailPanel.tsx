@@ -11,7 +11,7 @@ import { archetypeInfo, fmtNum, fmtPricePerM2 } from '@/lib/format'
 import { CATEGORICAL, seqColor } from '@/lib/palette'
 import { useApp } from '@/state/store'
 import { L } from '@/lib/utils'
-import { ScoreBadge } from './RankingPanel'
+import { SaveButton, ScoreBadge } from './RankingPanel'
 
 function Section({ title, children, hint }: { title: string; children: React.ReactNode; hint?: string }) {
   return (
@@ -171,7 +171,7 @@ export function DetailPanel({ h3 }: { h3: string }) {
     <div data-testid="detail">
       <div className="flex items-center gap-4 px-5 py-4">
         <ScoreBadge score={p.score ?? 0} size="lg" />
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <h2 className="font-display text-2xl font-semibold leading-tight" data-testid="detail-name">
             {p.name}
           </h2>
@@ -186,6 +186,7 @@ export function DetailPanel({ h3 }: { h3: string }) {
             </Tip>
           )}
         </div>
+        <SaveButton className="self-start" item={{ city, id: p.id, kind: 'hex', name: p.name, lat: p.centroid.lat, lon: p.centroid.lon }} />
       </div>
       <div className="space-y-1 px-5 pb-4 text-sm">
         {(p.highlights ?? []).map((h, i) => (

@@ -113,6 +113,7 @@
     "parent": "Rodič",
     "expecting": "Těhotná",
     "senior": "Senior/ka",
+    "expat": "Stěhuju se",
     "custom": "Vlastní profil",
     "desc": {
       "student": "Rychle do školy, nízké ceny a život po večerech.",
@@ -120,6 +121,7 @@
       "parent": "Školy, hřiště, parky a klidné, bezpečné ulice.",
       "expecting": "Lékaři a porodnice nablízku, klid, čistý vzduch a krátké procházky.",
       "senior": "Lékař a obchody kousek pěšky, lavičky, bezbariérová doprava.",
+      "expat": "Stěhuju se mezi Krakovem a Prahou – najdu čtvrť podobnou té, kde bydlím teď.",
       "custom": "Začněte z neutrálního nastavení a vše si zvolte sami."
     }
   },
@@ -201,6 +203,27 @@
     "budgetM2": "Za váš rozpočet ~{{m2}} m²",
     "noDistricts": "Data o městských částech zatím nejsou.",
     "openDetail": "Otevřít detail: {{name}}"
+  },
+  "saved": {
+    "save": "Uložit",
+    "saved": "Uloženo",
+    "tab": "Uložené",
+    "empty": "Zatím nic uloženého – klikněte na záložku u místa.",
+    "remove": "Odebrat {{name}} z uložených",
+    "open": "Otevřít {{name}}",
+    "district": "Městská část"
+  },
+  "expat": {
+    "title": "Kde teď bydlíte {{in}}?",
+    "lead": "Zadejte svou současnou adresu a najdeme místa {{in}} s podobným každodenním charakterem.",
+    "placeholder": "Vaše současná ulice nebo adresa",
+    "loading": "Hledám podobná místa…",
+    "error": "Podobná místa se nepodařilo načíst.",
+    "empty": "Žádná podobná místa jsme nenašli. Zkuste jinou adresu.",
+    "show": "Ukázat na mapě",
+    "from": "Podobné jako {{name}}",
+    "unavailable": "Porovnání mezi městy vyžaduje živý engine.",
+    "change": "Změnit adresu"
   },
   "map": {
     "modes": {

@@ -428,7 +428,7 @@ components:
       type: object
       required: [id, emoji, label, weights, indicatorWeights, walkFactor, suggestedAnchors]
       properties:
-        id: {type: string, enum: [student, working, parent, expecting, senior, custom]}
+        id: {type: string, enum: [student, working, parent, expecting, senior, expat, custom]}
         emoji: {type: string}
         label: {$ref: "#/components/schemas/I18nText"}
         weights: {$ref: "#/components/schemas/CriterionLevels"}

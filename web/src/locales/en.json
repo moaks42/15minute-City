@@ -113,6 +113,7 @@
     "parent": "Parent",
     "expecting": "Expecting",
     "senior": "Senior",
+    "expat": "Relocating",
     "custom": "Custom",
     "desc": {
       "student": "Fast transport to campus, low prices and life in the evening.",
@@ -120,6 +121,7 @@
       "parent": "Schools, playgrounds, parks and safe, calm streets.",
       "expecting": "Doctors and a maternity ward nearby, quiet, clean air and short walks.",
       "senior": "Doctors and shops within a short walk, benches, step-free transport.",
+      "expat": "Moving between Kraków and Prague – I'll find a neighbourhood like the one I live in now.",
       "custom": "Start from neutral and set everything yourself."
     }
   },
@@ -196,6 +198,27 @@
     "budgetM2": "Your budget ≈ {{m2}} m²",
     "noDistricts": "No district data yet.",
     "openDetail": "Open details for {{name}}"
+  },
+  "saved": {
+    "save": "Save",
+    "saved": "Saved",
+    "tab": "Saved",
+    "empty": "Nothing saved yet – tap the bookmark on a place.",
+    "remove": "Remove {{name}} from saved",
+    "open": "Open {{name}}",
+    "district": "District"
+  },
+  "expat": {
+    "title": "Where do you live now {{in}}?",
+    "lead": "Pick your current address and we will find places {{in}} with a similar everyday feel.",
+    "placeholder": "Your current street or address",
+    "loading": "Looking for similar places…",
+    "error": "Similar places could not be loaded.",
+    "empty": "No similar places found. Try a different address.",
+    "show": "Show on map",
+    "from": "Similar to {{name}}",
+    "unavailable": "Matching across cities needs the live engine.",
+    "change": "Change address"
   },
   "map": {
     "modes": {

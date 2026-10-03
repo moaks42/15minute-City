@@ -2198,6 +2198,44 @@
    ]
   },
   {
+   "id": "expat",
+   "emoji": "🧳",
+   "label": {
+    "pl": "Przeprowadzam się",
+    "cs": "Stěhuju se",
+    "en": "Relocating"
+   },
+   "weights": {
+    "commute": 4,
+    "transit": 5,
+    "active": 3,
+    "green": 3,
+    "education": 0,
+    "family": 0,
+    "safety": 4,
+    "price": 4,
+    "shops": 4,
+    "health": 2,
+    "environment": 3,
+    "leisure": 5,
+    "accessibility": 0
+   },
+   "indicatorWeights": {},
+   "walkFactor": 1.0,
+   "suggestedAnchors": [
+    {
+     "id": "work",
+     "label": {
+      "pl": "Praca",
+      "cs": "Práce",
+      "en": "Work"
+     },
+     "mode": "transit",
+     "level": 5
+    }
+   ]
+  },
+  {
    "id": "custom",
    "emoji": "✏️",
    "label": {

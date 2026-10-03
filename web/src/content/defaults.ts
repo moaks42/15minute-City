@@ -41,6 +41,7 @@ export const DEFAULT_PERSONAS: PersonaLite[] = [
   { id: 'parent', emoji: '👨‍👩‍👧', weights: w([3, 3, 2, 5, 5, 5, 5, 3, 4, 4, 4, 1, 2]) },
   { id: 'expecting', emoji: '🤰', weights: w([3, 4, 2, 4, 3, 4, 4, 3, 4, 5, 5, 1, 4]) },
   { id: 'senior', emoji: '🧓', weights: w([1, 4, 3, 4, 0, 0, 5, 3, 5, 5, 4, 3, 5]) },
+  { id: 'expat', emoji: '🧳', weights: w([4, 5, 3, 3, 0, 0, 4, 4, 4, 2, 3, 5, 0]) },
   { id: 'custom', emoji: '✏️', weights: w([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]) },
 ]
 

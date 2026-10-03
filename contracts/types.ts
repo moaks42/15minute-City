@@ -460,7 +460,7 @@ export interface components {
         };
         Persona: {
             /** @enum {string} */
-            id: "student" | "working" | "parent" | "expecting" | "senior" | "custom";
+            id: "student" | "working" | "parent" | "expecting" | "senior" | "expat" | "custom";
             emoji: string;
             label: components["schemas"]["I18nText"];
             weights: components["schemas"]["CriterionLevels"];

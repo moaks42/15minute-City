@@ -16,7 +16,7 @@ def test_static_export(tmp_path, state):
         data = json.loads(p.read_text(encoding="utf-8"))
         assert not check(p.name, data, "StaticCriteriaScores")
         cd = state.cities[data["city"]]
-        assert len(data["cells"]) == cd.n and set(data["byPersona"]) == {"student", "working", "parent", "expecting", "senior"}
+        assert len(data["cells"]) == cd.n and set(data["byPersona"]) == {"student", "working", "parent", "expecting", "senior", "expat"}
         # the web fallback formula reproduces the engine's match % (no anchors) within rounding
         w = state.cfg.persona("custom")["weights"]
         ctx = compute(cd, state.cfg, ScoreRequest(persona="custom", weights=w))

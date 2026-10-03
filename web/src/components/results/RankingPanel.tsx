@@ -1,15 +1,73 @@
 import { latLngToCell } from 'h3-js'
-import { AlertTriangle, Check, RefreshCw } from 'lucide-react'
+import { AlertTriangle, Bookmark, BookmarkCheck, Check, RefreshCw, Trash2 } from 'lucide-react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useScore } from '@/api/hooks'
-import type { RankedPlace } from '@/api/types'
+import type { CityId, RankedPlace } from '@/api/types'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CRITERION_EMOJI } from '@/content/defaults'
 import { archetypeInfo, fmtPricePerM2 } from '@/lib/format'
 import { CATEGORICAL, seqColor } from '@/lib/palette'
 import { cn } from '@/lib/utils'
+import { type SavedItem, useIsSaved, useSaved } from '@/state/saved'
 import { useApp } from '@/state/store'
+import { ExpatTwins } from './ExpatTwins'
+
+export function SaveButton({ item, className }: { item: Omit<SavedItem, 'savedAt' | 'city'> & { city: CityId | null }; className?: string }) {
+  const { t } = useTranslation()
+  const saved = useIsSaved(item.city, item.id)
+  const toggle = useSaved((s) => s.toggle)
+  const label = saved ? t('saved.saved') : t('saved.save')
+  const Icon = saved ? BookmarkCheck : Bookmark
+  return (
+    <button
+      type="button"
+      aria-pressed={saved}
+      title={label}
+      aria-label={label}
+      disabled={!item.city}
+      onClick={() => item.city && toggle({ ...item, city: item.city })}
+      className={cn('relative z-10 grid h-9 w-9 shrink-0 place-items-center rounded-full hover:bg-sunken', saved ? 'text-accent' : 'text-ink-2', className)}
+      data-testid="save-toggle"
+    >
+      <Icon size={18} fill={saved ? 'currentColor' : 'none'} />
+    </button>
+  )
+}
+
+function SavedList() {
+  const { t } = useTranslation()
+  const { city, select, sel } = useApp()
+  const all = useSaved((s) => s.items)
+  const remove = useSaved((s) => s.remove)
+  const items = all.filter((x) => x.city === city).sort((a, b) => b.savedAt - a.savedAt)
+  if (!items.length)
+    return (
+      <div className="rounded-2xl border border-dashed border-line-strong p-4 text-sm text-ink-2" role="status" data-testid="saved-empty">
+        {t('saved.empty')}
+      </div>
+    )
+  return (
+    <ul className="space-y-2" aria-label={t('saved.tab')} data-testid="saved-list">
+      {items.map((x) => {
+        const h3 = x.kind === 'hex' ? x.id : latLngToCell(x.lat, x.lon, 9)
+        return (
+          <li key={x.id} className={cn('flex items-center gap-2 rounded-2xl border bg-surface p-2 pl-3', sel === h3 ? 'border-ink' : 'border-line')}>
+            <Bookmark size={16} className="shrink-0 text-accent" fill="currentColor" aria-hidden />
+            <button className="min-w-0 flex-1 py-1 text-left" onClick={() => select(h3)} aria-label={t('saved.open', { name: x.name })}>
+              <span className="block truncate font-medium">{x.name}</span>
+              {x.kind === 'district' && <span className="block text-xs text-ink-3">{t('saved.district')}</span>}
+            </button>
+            <button className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-ink-3 hover:bg-sunken hover:text-ink" onClick={() => remove(x.city, x.id)} aria-label={t('saved.remove', { name: x.name })} title={t('saved.remove', { name: x.name })}>
+              <Trash2 size={16} />
+            </button>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
 
 export function ScoreBadge({ score, size = 'md' }: { score: number; size?: 'md' | 'lg' }) {
   const dark = score >= 57
@@ -110,12 +168,15 @@ export function PlaceCard({ p }: { p: RankedPlace }) {
         })}
         {p.price?.value != null && city && <span className="pointer-events-none">💰 {fmtPricePerM2(p.price.value, lang, city)}</span>}
         {p.budgetM2 != null && <span className="pointer-events-none font-medium text-accent">{p.budgetText ?? t('results.budgetM2', { m2: p.budgetM2 })}</span>}
-        {p.kind === 'hex' && (
-          <label className="relative z-10 ml-auto inline-flex min-h-9 cursor-pointer items-center gap-1.5 rounded-full px-2 hover:bg-sunken">
-            <input type="checkbox" checked={inCompare} onChange={() => toggleCompare(p.id)} className="h-4 w-4 accent-[var(--color-accent)]" data-testid="compare-toggle" />
-            {t('results.compare')}
-          </label>
-        )}
+        <span className="relative z-10 ml-auto flex items-center gap-1">
+          {p.kind === 'hex' && (
+            <label className="relative z-10 inline-flex min-h-9 cursor-pointer items-center gap-1.5 rounded-full px-2 hover:bg-sunken">
+              <input type="checkbox" checked={inCompare} onChange={() => toggleCompare(p.id)} className="h-4 w-4 accent-[var(--color-accent)]" data-testid="compare-toggle" />
+              {t('results.compare')}
+            </label>
+          )}
+          <SaveButton item={{ city, id: p.id, kind: p.kind === 'hex' ? 'hex' : 'district', name: p.name, lat: p.centroid.lat, lon: p.centroid.lon }} />
+        </span>
       </div>
     </li>
   )
@@ -123,7 +184,9 @@ export function PlaceCard({ p }: { p: RankedPlace }) {
 
 export function RankingPanel() {
   const { t } = useTranslation()
-  const { tab, set, setFilters, filters, anchors, setAnchors } = useApp()
+  const { tab, set, setFilters, filters, anchors, setAnchors, city, persona } = useApp()
+  const [showSaved, setShowSaved] = useState(false)
+  const savedCount = useSaved((s) => s.items.filter((x) => x.city === city).length)
   const places = useScore('hex')
   const districts = useScore('district', tab === 'districts')
   const q = tab === 'districts' ? districts : places
@@ -139,57 +202,74 @@ export function RankingPanel() {
   return (
     <div className="flex h-full min-h-0 flex-col">
       <div className="flex items-center justify-between gap-2 px-4 pb-2 pt-3">
-        <Tabs value={tab} onValueChange={(v) => set({ tab: v as 'places' | 'districts' })}>
+        <Tabs
+          value={showSaved ? 'saved' : tab}
+          onValueChange={(v) => {
+            setShowSaved(v === 'saved')
+            if (v !== 'saved') set({ tab: v as 'places' | 'districts' })
+          }}
+        >
           <TabsList>
             <TabsTrigger value="places">{t('results.tabs.places')}</TabsTrigger>
             <TabsTrigger value="districts" data-testid="tab-districts">
               {t('results.tabs.districts')}
             </TabsTrigger>
+            <TabsTrigger value="saved" data-testid="tab-saved">
+              {t('saved.tab')}
+              {savedCount > 0 && <span className="ml-1 tabular-nums text-ink-3">{savedCount}</span>}
+            </TabsTrigger>
           </TabsList>
         </Tabs>
-        {q.isFetching && <RefreshCw size={16} className="animate-spin text-ink-3" aria-label={t('states.loading')} />}
+        {!showSaved && q.isFetching && <RefreshCw size={16} className="animate-spin text-ink-3" aria-label={t('states.loading')} />}
       </div>
-      {data && (
+      {data && !showSaved && (
         <p className="px-4 pb-2 text-xs text-ink-3" aria-live="polite">
           {t('results.passing', { count: data.count.passing })} · {t('results.computed', { ms: data.computeMs })}
         </p>
       )}
       <div className="min-h-0 flex-1 overflow-y-auto px-3 pb-4">
-        {q.isPending && (
-          <div className="space-y-3 pt-1" aria-busy="true" aria-label={t('results.loading')}>
-            <p className="px-1 text-sm text-ink-3">{t('results.loading')}</p>
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="h-40 animate-pulse rounded-2xl bg-sunken" />
-            ))}
-          </div>
-        )}
-        {q.isError && !data && (
-          <div className="rounded-2xl border border-line p-4 text-center" role="alert">
-            <p className="mb-3 text-sm">{t('results.error')}</p>
-            <Button variant="secondary" size="sm" onClick={() => q.refetch()}>
-              {t('results.retry')}
-            </Button>
-          </div>
-        )}
-        {data && data.top.length === 0 && (
-          <div className="rounded-2xl border border-dashed border-line-strong p-4 text-sm" role="status">
-            <p className="font-medium">{tab === 'districts' ? t('results.noDistricts') : t('results.empty')}</p>
-            {data.relaxHint && (
-              <>
-                <p className="mt-2 text-ink-2">{data.relaxHint.text}</p>
-                <Button className="mt-3" size="sm" variant="secondary" onClick={() => relax(data.relaxHint!.filter)}>
-                  {t('results.relaxAction')}
-                </Button>
-              </>
+        {showSaved ? (
+          <SavedList />
+        ) : (
+          <>
+            {persona === 'expat' && city && <ExpatTwins city={city} />}
+            {q.isPending && (
+              <div className="space-y-3 pt-1" aria-busy="true" aria-label={t('results.loading')}>
+                <p className="px-1 text-sm text-ink-3">{t('results.loading')}</p>
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="h-40 animate-pulse rounded-2xl bg-sunken" />
+                ))}
+              </div>
             )}
-          </div>
-        )}
-        {data && data.top.length > 0 && (
-          <ol className="space-y-3" aria-label={t(`results.tabs.${tab}`)}>
-            {data.top.map((p) => (
-              <PlaceCard key={p.id} p={p} />
-            ))}
-          </ol>
+            {q.isError && !data && (
+              <div className="rounded-2xl border border-line p-4 text-center" role="alert">
+                <p className="mb-3 text-sm">{t('results.error')}</p>
+                <Button variant="secondary" size="sm" onClick={() => q.refetch()}>
+                  {t('results.retry')}
+                </Button>
+              </div>
+            )}
+            {data && data.top.length === 0 && (
+              <div className="rounded-2xl border border-dashed border-line-strong p-4 text-sm" role="status">
+                <p className="font-medium">{tab === 'districts' ? t('results.noDistricts') : t('results.empty')}</p>
+                {data.relaxHint && (
+                  <>
+                    <p className="mt-2 text-ink-2">{data.relaxHint.text}</p>
+                    <Button className="mt-3" size="sm" variant="secondary" onClick={() => relax(data.relaxHint!.filter)}>
+                      {t('results.relaxAction')}
+                    </Button>
+                  </>
+                )}
+              </div>
+            )}
+            {data && data.top.length > 0 && (
+              <ol className="space-y-3" aria-label={t(`results.tabs.${tab}`)}>
+                {data.top.map((p) => (
+                  <PlaceCard key={p.id} p={p} />
+                ))}
+              </ol>
+            )}
+          </>
         )}
       </div>
     </div>

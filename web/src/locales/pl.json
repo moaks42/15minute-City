@@ -113,6 +113,7 @@
     "parent": "Rodzic",
     "expecting": "W ciąży",
     "senior": "Senior/ka",
+    "expat": "Przeprowadzam się",
     "custom": "Własny profil",
     "desc": {
       "student": "Szybki dojazd na uczelnię, niskie ceny i życie wieczorem.",
@@ -120,6 +121,7 @@
       "parent": "Szkoły, place zabaw, parki i spokojne, bezpieczne ulice.",
       "expecting": "Lekarze i porodówka w pobliżu, cisza, czyste powietrze i krótkie spacery.",
       "senior": "Lekarz i sklepy blisko, ławki, komunikacja bez barier.",
+      "expat": "Przeprowadzam się między Krakowem a Pragą – znajdę dzielnicę podobną do tej, w której mieszkam teraz.",
       "custom": "Zacznij od neutralnych ustawień i dobierz wszystko sam(a)."
     }
   },
@@ -201,6 +203,27 @@
     "budgetM2": "Za Twój budżet ~{{m2}} m²",
     "noDistricts": "Brak jeszcze danych o dzielnicach.",
     "openDetail": "Pokaż szczegóły: {{name}}"
+  },
+  "saved": {
+    "save": "Zapisz",
+    "saved": "Zapisano",
+    "tab": "Zapisane",
+    "empty": "Nic jeszcze nie zapisano – kliknij zakładkę przy miejscu.",
+    "remove": "Usuń {{name}} z zapisanych",
+    "open": "Otwórz {{name}}",
+    "district": "Dzielnica"
+  },
+  "expat": {
+    "title": "Gdzie mieszkasz teraz {{in}}?",
+    "lead": "Podaj swój obecny adres, a znajdziemy miejsca {{in}} o podobnym charakterze na co dzień.",
+    "placeholder": "Twoja obecna ulica lub adres",
+    "loading": "Szukam podobnych miejsc…",
+    "error": "Nie udało się wczytać podobnych miejsc.",
+    "empty": "Nie znaleziono podobnych miejsc. Spróbuj innego adresu.",
+    "show": "Pokaż na mapie",
+    "from": "Podobne do {{name}}",
+    "unavailable": "Porównanie między miastami wymaga działającego silnika.",
+    "change": "Zmień adres"
   },
   "map": {
     "modes": {
