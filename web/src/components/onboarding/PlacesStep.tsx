@@ -1,9 +1,9 @@
-import { Bike, Footprints, MapPin, Plus, TramFront, Trash2 } from 'lucide-react'
-import { useEffect, useId, useState } from 'react'
+import { Bike, Footprints, Plus, TramFront, Trash2 } from 'lucide-react'
+import { useId, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { api } from '@/api/client'
 import { useMeta } from '@/api/hooks'
 import type { Anchor, GeocodeHit, Mode } from '@/api/types'
+import { GeoSearch } from '@/components/common/GeoSearch'
 import { Button } from '@/components/ui/button'
 import { MUST_HAVE } from '@/content/defaults'
 import { CURRENCY } from '@/lib/format'
@@ -13,93 +13,6 @@ import { LEVEL_EMOJI } from './EmojiRow'
 
 const MODE_ICON: Record<Mode, typeof TramFront> = { transit: TramFront, bike: Bike, walk: Footprints }
 const inputCls = 'h-11 w-full rounded-xl border border-line bg-surface px-3 text-[15px] placeholder:text-ink-3 focus:border-accent focus:outline-none focus-visible:outline-3 focus-visible:outline-accent'
-
-function GeoSearch({ onPick }: { onPick: (h: GeocodeHit) => void }) {
-  const { t } = useTranslation()
-  const city = useApp((s) => s.city)!
-  const [q, setQ] = useState('')
-  const [hits, setHits] = useState<GeocodeHit[] | null>(null)
-  const [busy, setBusy] = useState(false)
-  const [active, setActive] = useState(0)
-  const listId = useId()
-
-  useEffect(() => {
-    if (q.trim().length < 2) {
-      setHits(null)
-      return
-    }
-    setBusy(true)
-    const h = setTimeout(() => {
-      api
-        .geocode(city, q.trim())
-        .then((r) => {
-          setHits(r)
-          setActive(0)
-        })
-        .catch(() => setHits([]))
-        .finally(() => setBusy(false))
-    }, 250)
-    return () => clearTimeout(h)
-  }, [q, city])
-
-  const pick = (h: GeocodeHit) => {
-    onPick(h)
-    setQ('')
-    setHits(null)
-  }
-
-  return (
-    <div className="relative">
-      <MapPin size={18} className="pointer-events-none absolute left-3 top-3 text-ink-3" />
-      <input
-        className={cn(inputCls, 'pl-9')}
-        placeholder={t('places.searchPlaceholder')}
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        role="combobox"
-        aria-expanded={!!hits?.length}
-        aria-controls={listId}
-        aria-autocomplete="list"
-        aria-label={t('places.searchPlaceholder')}
-        data-testid="geo-search"
-        onKeyDown={(e) => {
-          if (!hits?.length) return
-          if (e.key === 'ArrowDown') setActive((a) => Math.min(hits.length - 1, a + 1))
-          else if (e.key === 'ArrowUp') setActive((a) => Math.max(0, a - 1))
-          else if (e.key === 'Enter') {
-            e.preventDefault()
-            pick(hits[active])
-          } else return
-          e.preventDefault()
-        }}
-      />
-      {q.trim().length >= 2 && (
-        <div className="absolute z-20 mt-1 w-full overflow-hidden rounded-xl border border-line bg-surface shadow-[var(--shadow-pop)]">
-          {busy && !hits && <p className="px-3 py-2 text-sm text-ink-3">{t('places.searching')}</p>}
-          {hits && hits.length === 0 && <p className="px-3 py-2 text-sm text-ink-3">{t('places.searchNoResults')}</p>}
-          {hits && hits.length > 0 && (
-            <ul id={listId} role="listbox">
-              {hits.map((h, i) => (
-                <li
-                  key={`${h.label}-${i}`}
-                  role="option"
-                  aria-selected={i === active}
-                  onMouseDown={(e) => {
-                    e.preventDefault()
-                    pick(h)
-                  }}
-                  className={cn('cursor-pointer px-3 py-2.5 text-sm', i === active && 'bg-accent-soft')}
-                >
-                  {h.label}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      )}
-    </div>
-  )
-}
 
 function AnchorRow({ a, onChange, onRemove }: { a: Anchor; onChange: (a: Anchor) => void; onRemove: () => void }) {
   const { t } = useTranslation()
