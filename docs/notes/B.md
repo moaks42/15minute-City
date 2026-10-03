@@ -9,6 +9,7 @@
 | tag | change |
 |---|---|
 | contracts-v1 | initial |
+| contracts-v2 | `DATA_CONTRACT.md` §3b: **optional** `data/processed/{city}/addresses.parquet` (street, housenumber, postcode, lat, lon, h3_9, source) for the local geocoder; `validate_data.py` checks it when present. Nothing changes for C. |
 
 ## For A (data)
 - Build exactly what `contracts/DATA_CONTRACT.md` describes. Column names come from `config/indicators.yaml` (`<criterion>.<indicator>`).
