@@ -6,7 +6,7 @@ Data documentation: [`docs/DATA_SOURCES.md`](../DATA_SOURCES.md).
 
 ## Status
 
-### 2026-10-03 17:20 (≈H2): M1 + M2 done, M3 items mostly done
+### 2026-10-03 18:00 (≈H2.5): M1 + M2 + M3 done
 **Done**
 - Every §4 source was hit with a real request. Raw files are in `data/raw/{city}/` (gitignored). The manifests list every key with its status, rows and note.
 - Both cities are built to **contracts-v1**. `contracts/tools/validate_data.py --city all` reports **0 errors**.
@@ -30,13 +30,20 @@ Data documentation: [`docs/DATA_SOURCES.md`](../DATA_SOURCES.md).
 | criterion | Kraków | Praha |
 |---|---|---|
 | transit, active, green, education, family, safety, shops, health, environment, leisure | 100% | 100% |
-| price | 88% (RCN: fewer than 5 sales within k ≤ 3 → NaN) | 100% |
+| price | 87% weighted; 18% of cells NaN (fewer than 5 qualifying RCN sales within k ≤ 3) | 100% |
 | accessibility | 33% (benches + slope; ZTP GTFS has no wheelchair data) | 97% |
 | commute | ✓ transit/bike/walk | ✓ transit/bike/walk |
 
+- **DoD:** `make data CITY=all` ran end-to-end in **35 min** (downloads cached, r5py recomputed) with 0 contract errors. The r5py outputs are deterministic (identical reachability across runs).
+- **Integration check (17:20):** I ran B's engine (`origin/b-engine`) on this data. `/api/health` reports `ok`, `dataSource: real` for both cities; `/score` takes ~1 ms.
+  - Explanations carry real values, e.g. "Mieszkania ok. 11 600 zł/m²", "Zastávka 3 min pěšky".
+  - Twins: Kraków Piasek → Vinohrady, Nové Město, Staré Město.
+  - Local geocode works on `addresses.parquet`.
+- **QA fix (17:55):** Kraków RCN is now limited to arm's-length household purchases (full ownership, one flat per transaction, individual buyer). A 9 M zł bulk deal for 24 flats had dragged a Stare Miasto cell to 11.6k zł/m²; it is now 19.4k.
+
 **Next**
-- Kraków GP clinics from NFZ POZ contracts (the `app-umw-api` was in maintenance (503) at 17:15; retry later).
-- Further QA on outliers; re-run `make data` timing for the DoD.
+- Kraków GP clinics from NFZ POZ contracts (the `app-umw-api` returned 503 "Maintenance" at 17:15 and 17:40; retry later).
+- On request from B or C: extra columns, re-runs after feed updates (PID GTFS only covers 10-03…10-16).
 
 **Blocked**: nothing.
 
