@@ -37,12 +37,14 @@ RANGES = {
     "pln_m2": (2000, 60000), "czk_m2_month": (100, 1500),
 }
 POI_COLUMNS = ["category", "name", "lat", "lon", "h3_9", "source", "extra_json"]
+ADDRESS_COLUMNS = ["street", "housenumber", "lat", "lon", "h3_9"]
 POI_VOCAB = set("""supermarket discount_grocery pharmacy post_office parcel_locker bakery marketplace atm playground park
 nursery kindergarten primary_school secondary_school university library gp_clinic paediatrician gynaecology dentist
 hospital_er maternity_ward bus_stop tram_stop metro_station rail_station bike_rack bikeshare_station culture sports
 kids_sports restaurant cafe bar nightclub bench""".split())
 REQUIRED_FILES = ["grid.geojson", "features.parquet", "manifest.json"]
 OPTIONAL_FILES = ["pois.parquet", "travel_times.npz", "districts.geojson", "neighborhoods.geojson"]
+SILENT_OPTIONAL = ["addresses.parquet"]  # contracts-v2; absence is fine
 
 
 @dataclass
@@ -105,8 +107,10 @@ def validate_city(data_dir: Path, city: str, config_dir: Path = ROOT / "config")
     if not d.is_dir():
         r.err(f"{d} does not exist")
         return r
-    for f in REQUIRED_FILES + OPTIONAL_FILES:
+    for f in REQUIRED_FILES + OPTIONAL_FILES + SILENT_OPTIONAL:
         p = d / f
+        if not p.exists() and f in SILENT_OPTIONAL:
+            continue
         if not p.exists():
             (r.err if f in REQUIRED_FILES else r.warn)(f"missing {f}" + ("" if f in REQUIRED_FILES else " (engine runs degraded)"))
         elif p.stat().st_size > MAX_BYTES:
@@ -221,6 +225,14 @@ def validate_city(data_dir: Path, city: str, config_dir: Path = ROOT / "config")
             sample = pt.column("h3_9").to_pylist()[:5000]
             if (bad := _valid_h3(sample, 9)):
                 r.err(f"pois.parquet: {bad} invalid h3_9 values (first 5000 rows)")
+
+    # ── addresses (contracts-v2, optional)
+    if (d / "addresses.parquet").exists():
+        at = pq.read_table(d / "addresses.parquet")
+        if missing := [c for c in ADDRESS_COLUMNS if c not in at.column_names]:
+            r.err(f"addresses.parquet: missing columns {missing}")
+        elif at.num_rows and (bad := _valid_h3(at.column("h3_9").to_pylist()[:5000], 9)):
+            r.err(f"addresses.parquet: {bad} invalid h3_9 values (first 5000 rows)")
 
     # ── travel times
     if (d / "travel_times.npz").exists():

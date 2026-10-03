@@ -140,6 +140,21 @@ The engine **rejects** any other column not listed here (to catch typos).
 
 Extend it only additively and tell B. The engine uses it for the "nearest amenities" list, the geocoder (`university` drives the student's suggested anchor) and mustHave categories. Keep it under 50 MB: drop benches and bike racks outside the routing area if needed.
 
+## 3b. `addresses.parquet` (optional, added in contracts-v2)
+
+The address points behind the local geocoder (K: MSIP EMUiA, P: RÚIAN). If this file is missing, the geocoder searches only places and POIs and falls back to Photon for addresses.
+
+| column | dtype | notes |
+|---|---|---|
+| `street` | string | street name with diacritics (`"Rakowicka"`, `"Vinohradská"`). P: use the place name (`nazev_casti_obce`) when an address has no street. |
+| `housenumber` | string | as displayed: `"27"`, `"12a"`, `"1234/5"` (P: číslo popisné/orientační) |
+| `postcode` | string (nullable) | |
+| `lat`, `lon` | float64 | WGS84 (P: mind the EPSG:5514 sign flip) |
+| `h3_9` | string | res-9 cell |
+| `source` | string | manifest key (`msip`, `ruian`) |
+
+Keep it under 50 MB. If needed, drop the extra columns or keep only addresses inside the city boundary.
+
 ## 4. `travel_times.npz`
 
 Written with `numpy.savez_compressed`.
@@ -197,7 +212,7 @@ uv run contracts/tools/validate_data.py --city krakow --data-dir data/processed
 ```
 
 **Required files:** `grid.geojson`, `features.parquet`, `manifest.json`. Without them the engine won't load the city.
-**Optional files:** `pois.parquet`, `travel_times.npz`, `districts.geojson`, `neighborhoods.geojson`. Without them the engine runs degraded (no nearest list / commute / outlines) and says so.
+**Optional files:** `pois.parquet`, `addresses.parquet`, `travel_times.npz`, `districts.geojson`, `neighborhoods.geojson`. Without them the engine runs degraded (no nearest list / commute / outlines) and says so.
 
 **Errors:** missing required file, missing or unknown column, wrong dtype, invalid h3, grid/features mismatch, shape mismatch in npz, file > 50 MB, bad manifest.
 **Warnings:** values outside the expected range, NaN share > 20% per column, coverage per criterion. Paste the NaN report into `docs/DATA_SOURCES.md`.
