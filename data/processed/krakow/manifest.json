@@ -1,0 +1,221 @@
+{
+  "city": "krakow",
+  "updatedAt": "2026-10-03T14:16:47+00:00",
+  "sources": [
+    {
+      "key": "basemap",
+      "url": "https://tiles.openfreemap.org/styles/positron",
+      "fetchedAt": "2026-10-03T14:01:34+00:00",
+      "licence": "OpenFreeMap / OpenMapTiles (© OSM contributors)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "geocode",
+      "url": "https://photon.komoot.io/api/?q=Rynek%20G%C5%82%C3%B3wny&bbox=19.79,49.96,20.22,50.13&limit=3",
+      "fetchedAt": "2026-10-03T14:01:35+00:00",
+      "licence": "ODbL (Photon / komoot)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "gios",
+      "url": "https://api.gios.gov.pl/pjp-api/v1/rest/station/findAll?size=500",
+      "fetchedAt": "2026-10-03T14:08:47+00:00",
+      "licence": "GIOŚ (cite 'GIOŚ')",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "gtfs_rt_ztp",
+      "url": "https://gtfs.ztp.krakow.pl/VehiclePositions_A.pb",
+      "fetchedAt": "2026-10-03T14:10:14+00:00",
+      "licence": "ZTP Kraków open data",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "gtfs_ztp_a",
+      "url": "https://gtfs.ztp.krakow.pl/GTFS_KRK_A.zip",
+      "fetchedAt": "2026-10-03T14:04:05+00:00",
+      "licence": "ZTP Kraków open data",
+      "rows": 3310,
+      "status": "ok",
+      "note": "weekday service date 20261006; stop-level stats 07–09 & 23–05"
+    },
+    {
+      "key": "gtfs_ztp_t",
+      "url": "https://gtfs.ztp.krakow.pl/GTFS_KRK_T.zip",
+      "fetchedAt": "2026-10-03T14:04:05+00:00",
+      "licence": "ZTP Kraków open data",
+      "rows": 3310,
+      "status": "ok",
+      "note": "weekday service date 20261006; stop-level stats 07–09 & 23–05"
+    },
+    {
+      "key": "gus_bdl",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?name=Krak%C3%B3w&format=json",
+      "fetchedAt": "2026-10-03T14:09:17+00:00",
+      "licence": "GUS BDL",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "krk_open",
+      "url": "https://otwartedane.um.krakow.pl/zbiory-danych",
+      "fetchedAt": "2026-10-03T14:09:18+00:00",
+      "licence": "UM Kraków open data terms",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "men_schools",
+      "url": "https://api.dane.gov.pl/resources/1254769,wykaz-szko-i-placowek-oswiatowych-wg-stanu-bazy-sio-na-30092025/file",
+      "fetchedAt": "2026-10-03T14:09:12+00:00",
+      "licence": "CC BY 4.0 (MEN / dane.gov.pl)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "msip_addresses",
+      "url": "https://msip.um.krakow.pl/Dane/Adresy_JSON.zip",
+      "fetchedAt": "2026-10-03T14:04:11+00:00",
+      "licence": "MSIP UM Kraków (EMUiA, open data, attribution)",
+      "rows": 70217,
+      "status": "ok",
+      "note": "EMUiA address points → habitable mask + population proxy"
+    },
+    {
+      "key": "msip_districts",
+      "url": "https://msip.um.krakow.pl/Dane/Dzielnice_JSON.zip",
+      "fetchedAt": "2026-10-03T14:04:10+00:00",
+      "licence": "MSIP UM Kraków (open data, attribution)",
+      "rows": 18,
+      "status": "ok",
+      "note": "18 dzielnic, union = city boundary"
+    },
+    {
+      "key": "msip_noise",
+      "url": "https://msip.um.krakow.pl/Dane/Mapa_Halasu_2022_JSON.zip",
+      "fetchedAt": "2026-10-03T14:08:44+00:00",
+      "licence": "MSIP UM Kraków (strategic noise map 2022)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "nfz",
+      "url": "https://api.nfz.gov.pl/app-itl-api/queues?province=06&case=1&benefit=ortopedia&format=json&limit=5&api-version=1.3",
+      "fetchedAt": "2026-10-03T14:09:17+00:00",
+      "licence": "NFZ open API",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "osm_krakow",
+      "url": "https://download.geofabrik.de/europe/poland/malopolskie-latest.osm.pbf",
+      "fetchedAt": "2026-10-03T14:01:34+00:00",
+      "licence": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "rows": null,
+      "status": "ok",
+      "note": "clipped to city + 5 km"
+    },
+    {
+      "key": "overpass",
+      "url": "https://overpass-api.de/api/status",
+      "fetchedAt": null,
+      "licence": "ODbL",
+      "rows": null,
+      "status": "missing",
+      "note": "fetch failed 2026-10-03T14:04: HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/status (Caused by NewConnectionError(\"HTTPSConnection(host='overpass-api.de', port=443): Failed to establish  (optional)"
+    },
+    {
+      "key": "park_e_bike",
+      "url": "https://ztp.krakow.pl/rower/park-e-bike",
+      "fetchedAt": "2026-10-03T14:09:18+00:00",
+      "licence": "ZTP Kraków",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "rcn",
+      "url": "https://geodezja.eco.um.krakow.pl/cgi-bin/krakow-rcn?SERVICE=WFS&REQUEST=GetCapabilities",
+      "fetchedAt": "2026-10-03T14:09:12+00:00",
+      "licence": "RCN, Wydział Geodezji UM Kraków (public register)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "rcn_gugik",
+      "url": "https://mapy.geoportal.gov.pl/wss/service/rcn?SERVICE=WFS&REQUEST=GetCapabilities",
+      "fetchedAt": "2026-10-03T14:09:16+00:00",
+      "licence": "GUGiK",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "safety_krk",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Przestepstwa_ogolem_msc_pub_2022_mapa/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:08:45+00:00",
+      "licence": "Bezpieczny Kraków / UM Kraków (ArcGIS Hub)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "ztp_hub_bike_racks",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Stojaki_ZTP_wyświetlenie/FeatureServer/1",
+      "fetchedAt": "2026-10-03T14:10:16+00:00",
+      "licence": "ZTP Kraków (ArcGIS Hub, open)",
+      "rows": null,
+      "status": "ok",
+      "note": "fetch failed 2026-10-03T14:04: 400 Client Error: Bad Request for url: https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Stojaki_ZTP_wy%C5%9Bwietlenie/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f="
+    },
+    {
+      "key": "ztp_hub_cycle_lines",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Ciagi_rowerowe/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:04:09+00:00",
+      "licence": "ZTP Kraków (ArcGIS Hub, open)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "ztp_hub_mobility_points",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Punkty_mobilności_warstwa_publiczna/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:04:09+00:00",
+      "licence": "ZTP Kraków (ArcGIS Hub, open)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "ztp_hub_park_ride",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Park_and_Ride/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:04:09+00:00",
+      "licence": "ZTP Kraków (ArcGIS Hub, open)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    }
+  ],
+  "build": {
+    "builtAt": "2026-10-03T14:16:47+00:00",
+    "serviceDate": "20261006",
+    "cells": 3217,
+    "habitable": 2162,
+    "h3Res": 9,
+    "metricCrs": "EPSG:2180"
+  }
+}

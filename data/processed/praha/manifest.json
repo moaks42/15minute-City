@@ -1,0 +1,249 @@
+{
+  "city": "praha",
+  "updatedAt": "2026-10-03T14:10:17+00:00",
+  "sources": [
+    {
+      "key": "basemap",
+      "url": "https://tiles.openfreemap.org/styles/positron",
+      "fetchedAt": "2026-10-03T14:01:34+00:00",
+      "licence": "OpenFreeMap / OpenMapTiles (© OSM contributors)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "bikeshare_praha",
+      "url": "https://praha.eu/bikesharing",
+      "fetchedAt": null,
+      "licence": "praha.eu",
+      "rows": null,
+      "status": "missing",
+      "note": "fetch failed 2026-10-03T14:10: HTTPSConnectionPool(host='praha.eu', port=443): Max retries exceeded with url: /bikesharing (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: (optional)"
+    },
+    {
+      "key": "chmi_air",
+      "url": "https://opendata.chmi.cz/air_quality/products/5year_avg/sit1000_5lprum_20_24_CR_JTSK.zip",
+      "fetchedAt": "2026-10-03T14:04:42+00:00",
+      "licence": "ČHMÚ open data (attribution)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "chmi_air_now_meta",
+      "url": "https://opendata.chmi.cz/air_quality/now/metadata/",
+      "fetchedAt": "2026-10-03T14:04:42+00:00",
+      "licence": "ČHMÚ open data (attribution)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "geocode",
+      "url": "https://photon.komoot.io/api/?q=Karl%C3%ADn&bbox=14.22,49.94,14.71,50.18&limit=3",
+      "fetchedAt": "2026-10-03T14:01:35+00:00",
+      "licence": "ODbL (Photon / komoot)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "golemio_air",
+      "url": "https://api.golemio.cz/v2/airqualitystations",
+      "fetchedAt": "2026-10-03T14:10:17+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": null,
+      "status": "ok",
+      "note": "fetch failed 2026-10-03T14:02: 504 Server Error: Gateway Timeout for url: https://api.golemio.cz/v2/airqualitystations?limit=1000&offset=0"
+    },
+    {
+      "key": "golemio_districts",
+      "url": "https://api.golemio.cz/v2/citydistricts",
+      "fetchedAt": "2026-10-03T14:02:40+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "golemio_gardens",
+      "url": "https://api.golemio.cz/v2/gardens",
+      "fetchedAt": "2026-10-03T14:01:38+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "golemio_libraries",
+      "url": "https://api.golemio.cz/v2/municipallibraries",
+      "fetchedAt": "2026-10-03T14:01:38+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "golemio_medical",
+      "url": "https://api.golemio.cz/v2/medicalinstitutions",
+      "fetchedAt": "2026-10-03T14:01:38+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "golemio_playgrounds",
+      "url": "https://api.golemio.cz/v2/playgrounds",
+      "fetchedAt": "2026-10-03T14:01:37+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "gtfs_pid",
+      "url": "https://data.pid.cz/PID_GTFS.zip",
+      "fetchedAt": "2026-10-03T14:01:35+00:00",
+      "licence": "CC BY 4.0 (PID / ROPID)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "gtfs_pid_stops",
+      "url": "https://data.pid.cz/stops/json/stops.json",
+      "fetchedAt": "2026-10-03T14:01:36+00:00",
+      "licence": "CC BY 4.0 (PID / ROPID)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "ipr_katastralni_uzemi",
+      "url": "https://services5.arcgis.com/SBTXIEUGWbqzUecw/arcgis/rest/services/katastry/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:02:45+00:00",
+      "licence": "CC BY 4.0 (IPR Praha / ČÚZK)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "ipr_mestske_casti",
+      "url": "https://mp.iprpraha.cz/arcgis/rest/services/Hosted/MAP_CUR_MAP_MESTSKECASTI_P/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:02:42+00:00",
+      "licence": "CC BY 4.0 (IPR Praha)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "ipr_noise_day",
+      "url": "https://lkod-iprpraha.hub.arcgis.com/api/download/v1/items/934bce6998c84d5ca9a31c4a2d654a2f/geojson?layers=0",
+      "fetchedAt": "2026-10-03T14:03:26+00:00",
+      "licence": "CC BY 4.0 (IPR Praha, Hluková mapa)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "ipr_noise_night",
+      "url": "https://lkod-iprpraha.hub.arcgis.com/api/download/v1/items/83c81bf4e8ed47c5b38c7d1344d6b41a/geojson?layers=0",
+      "fetchedAt": "2026-10-03T14:04:12+00:00",
+      "licence": "CC BY 4.0 (IPR Praha, Hluková mapa)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "ipr_parks",
+      "url": "https://mp.iprpraha.cz/arcgis/rest/services/Hosted/URK_CUR_URK_PARKY_P/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:04:21+00:00",
+      "licence": "CC BY 4.0 (IPR Praha)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "mf_rent",
+      "url": "https://mf.gov.cz/assets/attachments/2026-08-15_Cenova-mapa.xlsx",
+      "fetchedAt": "2026-10-03T14:10:00+00:00",
+      "licence": "MF ČR (open, attribution)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "msmt_schools",
+      "url": "https://lkod-ftp.msmt.gov.cz/00022985/21e5fd4a-5378-4d64-90e9-759b15d01f28/RSSZ-Hl-m-Praha.jsonld",
+      "fetchedAt": "2026-10-03T14:04:26+00:00",
+      "licence": "CC BY 4.0 (MŠMT, Rejstřík škol a školských zařízení)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "nrpzs",
+      "url": "https://datanzis.uzis.gov.cz/data/NR-01-NRPZS/NR-01-06/Otevrena-data-NR-01-06-nrpzs-mista-poskytovani-zdravotnich-sluzeb.csv",
+      "fetchedAt": "2026-10-03T14:04:34+00:00",
+      "licence": "CC BY 4.0 (ÚZIS ČR, NRPZS)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "osm_praha",
+      "url": "https://download.geofabrik.de/europe/czech-republic/stredocesky-latest.osm.pbf",
+      "fetchedAt": "2026-10-03T14:01:34+00:00",
+      "licence": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "police_cz",
+      "url": "https://kriminalita.policie.gov.cz/api/v2/downloads/{month}.zip",
+      "fetchedAt": "2026-10-03T14:09:56+00:00",
+      "licence": "Policie ČR – non-commercial use only",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "police_cz_types",
+      "url": "https://kriminalita.policie.gov.cz/api/v2/downloads/types.json",
+      "fetchedAt": "2026-10-03T14:06:33+00:00",
+      "licence": "Policie ČR – non-commercial use only",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "police_cz_voronoi",
+      "url": "https://kriminalita.policie.gov.cz/voronoi.geojson.zip",
+      "fetchedAt": "2026-10-03T14:06:32+00:00",
+      "licence": "Policie ČR – non-commercial use only",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "praha_open",
+      "url": "https://opendata.praha.eu/",
+      "fetchedAt": "2026-10-03T14:10:01+00:00",
+      "licence": "Praha open data",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    },
+    {
+      "key": "ruian",
+      "url": "https://vdp.cuzk.gov.cz/vymenny_format/csv/20260930_OB_554782_ADR.csv.zip",
+      "fetchedAt": "2026-10-03T14:04:24+00:00",
+      "licence": "CC BY 4.0 (ČÚZK RÚIAN)",
+      "rows": null,
+      "status": "ok",
+      "note": ""
+    }
+  ]
+}
