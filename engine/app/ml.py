@@ -11,7 +11,6 @@ from dataclasses import dataclass
 
 import joblib
 import numpy as np
-from scipy.optimize import linear_sum_assignment
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from sklearn.model_selection import train_test_split
@@ -25,26 +24,35 @@ log = logging.getLogger("kompas.ml")
 SEED = 42
 LOG_UNITS = {"count", "dep_h", "ha", "m", "per_km2", "km"}  # heavy-tailed → log1p before scaling
 
-# Archetype prototypes: signed z-score directions on cross-city columns (cluster → id by Hungarian matching).
-PROTOTYPES: dict[str, dict[str, float]] = {
-    "historic_core": {"transit.departures_per_h_500m": 1, "leisure.food_10min": 1.2, "leisure.nightlife_10min": 1,
-                      "leisure.culture_walk_min": -1, "environment.noise_db": 0.8, "green.green_share_500m": -0.8,
-                      "active.intersection_density": 1},
-    "urban_mix": {"transit.departures_per_h_500m": 0.8, "shops.shops_10min": 0.8, "leisure.food_10min": 0.5,
-                  "transit.stop_walk_min": -0.6, "shops.supermarket_walk_min": -0.6},
-    "student_buzz": {"education.university_walk_min": -1.2, "leisure.nightlife_10min": 0.8, "leisure.food_10min": 0.6,
-                     "transit.departures_per_h_500m": 0.5},
-    "estate_blocks": {"family.playgrounds_500m": 0.8, "accessibility.benches_300m": 0.6, "transit.stop_walk_min": -0.5,
-                      "shops.supermarket_walk_min": -0.5, "leisure.nightlife_10min": -0.5, "leisure.food_10min": -0.4},
-    "green_residential": {"green.green_share_500m": 1.2, "green.park_walk_min": -1, "environment.noise_db": -0.8,
-                          "green.forest_meadow_ha_1km": 0.5},
-    "family_suburb": {"family.playgrounds_500m": 0.6, "education.primary_school_walk_min": -0.4,
-                      "transit.departures_per_h_500m": -0.7, "leisure.food_10min": -0.6, "green.green_share_500m": 0.5},
-    "quiet_outskirts": {"green.forest_meadow_ha_1km": 1.2, "transit.stop_walk_min": 1, "shops.shops_10min": -1,
-                        "environment.noise_db": -1, "active.intersection_density": -0.8},
-    "industrial_edge": {"environment.industrial_ha_1km": 1.4, "environment.major_road_m": -1, "environment.noise_db": 0.6,
-                        "green.green_share_500m": -0.6},
-}
+SIL_TOLERANCE = 0.005  # silhouettes within this of the best are "equal" → prefer the larger k (finer archetypes)
+
+
+def name_cluster(z: dict[str, float]) -> str:
+    """Archetype id for a cluster centroid (pooled z-scores; walk minutes: + = farther). First matching rule wins.
+    Several clusters may share an id. Rules were checked against the real K + P clusters (docs/ML.md)."""
+    g = lambda c: float(z.get(c, 0.0))  # noqa: E731
+    mean = lambda *cs: sum(g(c) for c in cs) / len(cs)  # noqa: E731
+    dense = mean("leisure.food_10min", "leisure.nightlife_10min", "shops.shops_10min")
+    services_far = mean("health.gp_walk_min", "health.pharmacy_walk_min", "shops.supermarket_walk_min",
+                        "education.primary_school_walk_min", "health.dentist_walk_min")
+    green = mean("green.green_share_500m", "green.forest_meadow_ha_1km")
+    if dense > 2.0 and g("leisure.culture_walk_min") < -1.0:
+        return "historic_core"
+    if dense > 0.8:
+        return "urban_mix"
+    if g("education.university_walk_min") < -1.0 and g("leisure.nightlife_10min") > 0.5:
+        return "student_buzz"
+    if g("environment.industrial_ha_1km") > 1.0:
+        return "industrial_edge"
+    if services_far > 1.0:
+        return "quiet_outskirts"
+    if g("family.playgrounds_500m") > 0.5 and g("shops.shops_10min") > 0.3:
+        return "estate_blocks"
+    if green > 0.5:
+        return "green_residential"
+    if g("transit.departures_per_h_500m") > 0.3:
+        return "urban_mix"
+    return "family_suburb"
 
 
 @dataclass
@@ -82,18 +90,8 @@ def pool(cities: dict[str, CityData]) -> Pooled:
 
 
 def _assign_ids(centroids: np.ndarray, columns: list[str], ids: list[str]) -> list[str]:
-    col = {c: i for i, c in enumerate(columns)}
-    P = np.zeros((len(ids), len(columns)))
-    for a, aid in enumerate(ids):
-        for c, w in PROTOTYPES[aid].items():
-            if c in col:
-                P[a, col[c]] = w
-    P /= np.linalg.norm(P, axis=1, keepdims=True) + 1e-9
-    C = centroids / (np.linalg.norm(centroids, axis=1, keepdims=True) + 1e-9)
-    rows, cols = linear_sum_assignment(-(C @ P.T))
-    out = [""] * len(centroids)
-    for r, c in zip(rows, cols):
-        out[r] = ids[c]
+    out = [name_cluster(dict(zip(columns, c))) for c in centroids]
+    assert all(o in ids for o in out), out
     return out
 
 
@@ -103,22 +101,24 @@ def train(cities: dict[str, CityData], cfg: Config, pooled: Pooled) -> dict:
     city_lab = np.concatenate([[c] * int(cd.habitable.sum()) for c, cd in cities.items()])
     rng = np.random.default_rng(SEED)
     sample = rng.choice(len(Xs), size=min(4000, len(Xs)), replace=False)
-    best = None
-    sil = {}
+    fits, sil = {}, {}
     for k in range(6, min(8, len(ids)) + 1):
         km = KMeans(n_clusters=k, n_init=10, random_state=SEED).fit(Xs)
-        s = float(silhouette_score(Xs[sample], km.labels_[sample]))
-        sil[k] = round(s, 4)
-        if best is None or s > best[0]:
-            best = (s, k, km)
-    _, k, km = best
+        sil[k] = round(float(silhouette_score(Xs[sample], km.labels_[sample])), 4)
+        fits[k] = km
+    top = max(sil.values())
+    k = max(kk for kk, v in sil.items() if v >= top - SIL_TOLERANCE)
+    km = fits[k]
     labels = km.labels_
     Xtr, Xte, ytr, yte = train_test_split(Xs, labels, test_size=0.2, random_state=SEED, stratify=labels)
     mlp = MLPClassifier(hidden_layer_sizes=(32, 16), max_iter=600, early_stopping=True, random_state=SEED).fit(Xtr, ytr)
     acc = float(mlp.score(Xte, yte))
     cluster_ids = _assign_ids(km.cluster_centers_, pooled.columns, ids)
-    share = {cluster_ids[c]: {city: round(float(np.mean(labels[city_lab == city] == c)), 3) for city in cities}
-             for c in range(k)}
+    share: dict[str, dict[str, float]] = {}
+    for c in range(k):
+        for city in cities:
+            d = share.setdefault(cluster_ids[c], {})
+            d[city] = round(d.get(city, 0.0) + float(np.mean(labels[city_lab == city] == c)), 3)
     metrics = {
         "k": k, "silhouette": sil, "holdoutAccuracy": round(acc, 4), "nTrain": int(len(Xtr)), "nTest": int(len(Xte)),
         "columns": pooled.columns, "clusterIds": cluster_ids, "shareByCity": share,
@@ -157,8 +157,12 @@ def load_or_train(cities: dict[str, CityData], cfg: Config) -> tuple[dict, Poole
             log.warning("models dir not writable; keeping the model in memory only")
     for c, cd in cities.items():
         proba = model["mlp"].predict_proba(pooled.Z[c])
-        ids = [model["cluster_ids"][int(k)] for k in model["mlp"].classes_]
-        cd.archetype_ids, cd.archetype_proba = ids, proba
+        per_cluster = [model["cluster_ids"][int(k)] for k in model["mlp"].classes_]
+        ids = list(dict.fromkeys(per_cluster))            # clusters sharing an id → summed probability
+        agg = np.zeros((proba.shape[0], len(ids)))
+        for col, aid in enumerate(per_cluster):
+            agg[:, ids.index(aid)] += proba[:, col]
+        cd.archetype_ids, cd.archetype_proba = ids, agg
     return model, pooled
 
 

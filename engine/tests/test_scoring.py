@@ -5,7 +5,7 @@ import time
 import numpy as np
 import pytest
 
-from app.explain import fmt_number
+from app.explain import display_value
 from app.models import ScoreRequest
 from app.scoring import compute, score_response
 from conftest import persona_request
@@ -49,8 +49,8 @@ def test_monotonicity(state, city):
 def test_filters_exclude(state, city):
     cd, cfg = state.cities[city], state.cfg
     hab = cd.habitable
-    price = cd.col(cd.cc["price"]["column"])
-    noise = cd.col("environment.noise_db")
+    price = cd.col_filled(cd.cc["price"]["column"])
+    noise = cd.col_filled("environment.noise_db")
     smkt = cd.col("shops.supermarket_walk_min")
     pmax = float(np.nanpercentile(price[hab], 70))
     nmax = float(np.nanpercentile(noise[hab], 80))
@@ -118,6 +118,8 @@ def test_explanations_match_raw(state, city, lang):
     cd, cfg = state.cities[city], state.cfg
     out = score_response(cd, cfg, req(state, "student", lang=lang, limit=20))
     n = 0
+    names = [t["name"] for t in out["top"]]
+    assert len(names) == len(set(names)), "top must list distinct neighbourhoods"
     for t in out["top"]:
         i = cd.index[t["id"]]
         for e in t["highlights"] + t["warnings"]:
@@ -128,7 +130,7 @@ def test_explanations_match_raw(state, city, lang):
             assert not math.isnan(raw), f"explanation from an imputed value: {e}"
             assert math.isclose(e["value"], raw, rel_tol=1e-3, abs_tol=0.01), (e, raw)
             spec = next(s for s in cd.specs if s.column == e["indicator"])
-            assert fmt_number(raw, lang, spec.decimals) in e["text"], (e, raw)
+            assert display_value(raw, spec.unit, lang, spec.decimals) in e["text"], (e, raw)
             n += 1
     assert n > 10
 
@@ -195,3 +197,19 @@ def test_geocode_addresses(client, state):
     assert r["items"][0]["label"] == "Rakowicka 3"
     r = client.get("/api/praha/geocode?q=vinohradska").json()
     assert r["items"][0]["label"].startswith("Vinohradská")
+
+
+@pytest.mark.parametrize("city", CITIES)
+def test_explanations_are_meaningful(state, city):
+    """A highlight's indicator scores well, a warning's badly (no "⚠ lit streets 98%")."""
+    cd, cfg = state.cities[city], state.cfg
+    for persona in ("student", "parent", "senior"):
+        out = score_response(cd, cfg, req(state, persona, limit=30))
+        for t in out["top"]:
+            i = cd.index[t["id"]]
+            for e, good in [(e, True) for e in t["highlights"]] + [(e, False) for e in t["warnings"]]:
+                if e["indicator"] is None:
+                    continue
+                j = next(j for j, s in enumerate(cd.specs) if s.column == e["indicator"])
+                s = float(cd.normalized(state.cfg.persona(persona)["walkFactor"])[i, j])
+                assert (s >= 60) if good else (s <= 40), (persona, e, s)

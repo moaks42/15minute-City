@@ -100,9 +100,9 @@ One row per grid cell, **same cells and order as `grid.geojson`**.
 | `health.maternity_walk_min` | min | 0–60 | krakow, praha | P1 | P: NRPZS inpatient gynaecology & obstetrics; crossCity |
 | `health.gynaecology_walk_min` | min | 0–60 | krakow, praha | P1 | crossCity |
 | `health.dentist_walk_min` | min | 0–60 | krakow, praha | P2 | crossCity |
-| `environment.noise_db` | db | 30–90 | krakow, praha | P0 | Area-weighted mean of max(road, tram, rail). K: Lden, P: LAeq day / Ldvn. Record which one in the manifest note; crossCity |
-| `environment.pm25` | ugm3 | 0–150 | krakow, praha | P0 | Annual mean. K: GIOŚ IDW, P: ČHMÚ 5-yr 1×1 km grid; crossCity |
-| `environment.pm10` | ugm3 | 0–150 | krakow, praha | P0 | crossCity |
+| `environment.noise_db` | db | 30–90 | krakow, praha | P0 | Area-weighted mean of max(road, tram, rail). K: Lden, P: LAeq day / Ldvn. Record which one in the manifest note. Not crossCity (since 10-03 18:00) |
+| `environment.pm25` | ugm3 | 0–150 | krakow, praha | P0 | Annual mean. K: GIOŚ IDW, P: ČHMÚ 5-yr 1×1 km grid. Not crossCity |
+| `environment.pm10` | ugm3 | 0–150 | krakow, praha | P0 | Not crossCity |
 | `environment.major_road_m` | m | 0–20000 | krakow, praha | P1 | Distance to motorway/trunk/primary; crossCity |
 | `environment.industrial_ha_1km` | ha | 0–315 | krakow, praha | P1 | `landuse=industrial` within 1 km; crossCity |
 | `leisure.food_10min` | count | ≥ 0 | krakow, praha | P1 | Restaurants + cafés; crossCity |

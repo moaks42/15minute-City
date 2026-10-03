@@ -32,7 +32,7 @@ def test_partial_data(tmp_path, state):
                        filters={"maxPricePerM2": 15000, "maxNoiseDb": 60}, budget={"total": 800000})
     ctx = compute(cd, state.cfg, req)
     assert "commute" in ctx.excluded                       # no travel times → commute excluded, not a crash
-    assert ctx.passing.sum() == cd.habitable.sum()         # all-NaN price/noise → filters pass everything
+    assert ctx.passing.sum() == cd.habitable.sum()         # all-NaN price/noise → filters are skipped
     out = score_response(cd, state.cfg, req)
     assert out["top"] and out["top"][0]["price"] is None and out["top"][0]["budgetM2"] is None
     assert out["top"][0]["anchors"][0]["minutes"] is None

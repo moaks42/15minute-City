@@ -24,6 +24,7 @@ sys.path.insert(0, str(REPO_DIR / "contracts" / "tools"))
 from validate_data import validate_city  # noqa: E402
 
 TT_MODES = ("transit", "bike", "walk")
+PLAUSIBLE = {"db": (20.0, 120.0), "pct": (0.0, 100.0), "ugm3": (0.0, 500.0)}  # outside → NaN (missing), logged
 UNREACHABLE = 255
 
 
@@ -101,6 +102,13 @@ class CityData:
         for j, s in enumerate(self.specs):
             if s.column == column:
                 return self.raw[:, j]
+        return self.aux.get(column)
+
+    def col_filled(self, column: str) -> np.ndarray | None:
+        """Like col(), but NaN replaced by the city median (README §6.1 imputation)."""
+        for j, s in enumerate(self.specs):
+            if s.column == column:
+                return self.filled[:, j]
         return self.aux.get(column)
 
     def spec_index(self, key: str) -> int | None:
@@ -224,6 +232,14 @@ def load_city(city: str, cfg: Config, data_dir: Path, source: str) -> CityData:
     for j, s in enumerate(specs):
         if s.column in colnames:
             raw[:, j] = g(s.column).astype(float)
+    for j, s in enumerate(specs):
+        lo_hi = PLAUSIBLE.get(s.unit)
+        if lo_hi is not None and not s.is_alias:
+            bad = (raw[:, j] < lo_hi[0]) | (raw[:, j] > lo_hi[1])
+            if bad.any():
+                log.warning("%s: %s has %d physically implausible values (outside %s–%s %s) → treated as missing",
+                            city, s.column, int(bad.sum()), lo_hi[0], lo_hi[1], s.unit)
+                raw[bad, j] = np.nan
     nan = np.isnan(raw)
     with np.errstate(all="ignore"):
         median = np.array([np.nanmedian(raw[hab, j]) if (~nan[hab, j]).any() else np.nan for j in range(len(specs))])

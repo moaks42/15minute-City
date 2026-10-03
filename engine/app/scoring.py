@@ -9,10 +9,11 @@ import numpy as np
 
 from .config import Config
 from .data import UNREACHABLE, CityData, haversine_km
-from .explain import fmt_number, indicator_text, render
+from .explain import display_value, fmt_number, indicator_text, render
 from .models import Anchor, ScoreRequest
 
 COMMUTE_GOOD, COMMUTE_BAD = 15.0, 60.0
+HIGHLIGHT_MIN, WARNING_MAX = 60.0, 40.0   # an explained indicator must itself be good (highlight) or bad (warning)
 WALK_KMH = 4.8
 DETOUR = 1.3
 NEAREST = [  # category → column with network walk minutes (None → straight-line estimate)
@@ -137,12 +138,12 @@ def compute(cd: CityData, cfg: Config, req: ScoreRequest) -> Ctx:
     masks: dict[str, np.ndarray] = {}
     price_field = cc["price"]["filterField"]
     pmax = getattr(f, price_field, None)
-    price = cd.col(cc["price"]["column"])
-    if pmax is not None and price is not None:
-        masks["price"] = ~(price > pmax)                 # unknown price passes (flagged imputed)
-    noise = cd.col("environment.noise_db")
-    if f.maxNoiseDb is not None and noise is not None:
-        masks["noise"] = ~(noise > f.maxNoiseDb)
+    price = cd.col_filled(cc["price"]["column"])      # unknown → city median (flagged imputed), as in scoring
+    if pmax is not None and price is not None and not np.isnan(price).all():
+        masks["price"] = price <= pmax
+    noise = cd.col_filled("environment.noise_db")
+    if f.maxNoiseDb is not None and noise is not None and not np.isnan(noise).all():
+        masks["noise"] = noise <= f.maxNoiseDb
     for mh in f.mustHave:
         cat = cfg.must_have(mh.category)
         if cat is None or cd.city not in cat.get("cities", [cd.city]):
@@ -236,10 +237,10 @@ def _pick(ctx: Ctx, c: str, sub, raw, imputed, mins, best: bool) -> dict | None:
         tpl = next(x for x in ctx.cfg.criteria if x["id"] == "commute")["explain"][lang]
         mode = ctx.cfg.raw["modes"][a.mode]["phrase"][lang]
         return {"criterion": "commute", "indicator": None, "value": m, "unit": "min",
-                "text": render(tpl, anchor=a.label or a.id, value=fmt_number(m, lang), mode=mode)}
+                "text": render(tpl, anchor=a.label or a.id, value=display_value(m, "min", lang), mode=mode)}
     cand = [j for j, s in enumerate(ctx.cd.specs)
             if s.criterion == c and ctx.v[j] > 0 and not imputed[j] and not math.isnan(raw[j])
-            and (best or not s.no_warning)]
+            and (sub[j] >= HIGHLIGHT_MIN if best else (sub[j] <= WARNING_MAX and not s.no_warning))]
     if not cand:
         return None
     if best:
@@ -385,7 +386,16 @@ def score_response(cd: CityData, cfg: Config, req: ScoreRequest) -> dict:
     cand = np.flatnonzero(ctx.passing)
     order = cand[np.lexsort((cand, -ctx.Mf[cand]))]
     if req.aggregate == "hex":
-        top = [ranked_hex(ctx, int(i), r) for r, i in enumerate(order[: req.limit], start=1)]
+        picked, seen = [], set()
+        for i in order:   # at most one cell per neighbourhood, so the list shows distinct places
+            g = cd.neighborhood[i] or cd.district_name[i]
+            if g in seen:
+                continue
+            seen.add(g)
+            picked.append(int(i))
+            if len(picked) >= req.limit:
+                break
+        top = [ranked_hex(ctx, i, r) for r, i in enumerate(picked, start=1)]
     else:
         top = ranked_groups(ctx, req.aggregate, req.limit)
     relax = relax_hint(ctx)

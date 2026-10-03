@@ -28,7 +28,14 @@ def render(template: str, **values) -> str:
     return out
 
 
+def display_value(value: float, unit: str, lang: str, decimals: int = 0) -> str:
+    """Number as shown in a sentence; walk/commute minutes below 1 read "<1" rather than "0"."""
+    if unit == "min" and value < 1:
+        return "<1"
+    return fmt_number(value, lang, decimals)
+
+
 def indicator_text(spec, value: float, lang: str) -> str | None:
     if value is None or (isinstance(value, float) and math.isnan(value)):
         return None
-    return render(spec.explain[lang], value=fmt_number(value, lang, spec.decimals))
+    return render(spec.explain[lang], value=display_value(value, spec.unit, lang, spec.decimals))
