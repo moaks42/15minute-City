@@ -1,6 +1,6 @@
 {
   "city": "praha",
-  "updatedAt": "2026-10-03T15:04:59+00:00",
+  "updatedAt": "2026-10-03T15:07:00+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -257,11 +257,11 @@
     {
       "key": "r5py_travel_times",
       "url": "https://r5py.readthedocs.io",
-      "fetchedAt": "2026-10-03T14:48:34+00:00",
+      "fetchedAt": "2026-10-03T15:07:00+00:00",
       "licence": "derived (OSM ODbL + GTFS)",
       "rows": 2299425,
       "status": "ok",
-      "note": "r5py 1.1.7; 2967 habitable res-9 origins × 775 res-8 dests; departure 2026-10-06T08:00:00 (+30-min window, median) for transit; modes ['bike', 'transit', 'walk']; uint8 minutes, 255 = unreachable/>120"
+      "note": "r5py 1.1.7; 2967 habitable res-9 origins × 775 res-8 dests; departure 2026-10-06T08:00:00 (+30-min window, median) for transit; modes ['bike', 'dests', 'meta_json', 'origins', 'transit', 'walk']; uint8 minutes, 255 = unreachable/>120"
     },
     {
       "key": "ruian",

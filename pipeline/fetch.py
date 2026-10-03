@@ -135,6 +135,11 @@ def run(city: str, force: bool = False, only: set[str] | None = None) -> dict:
                        + (" (optional)" if src.get("optional") else ""))
     log_path.write_text(json.dumps(flog, ensure_ascii=False, indent=2))
     man.save()
+    # city-specific fetchers that need pacing or paging (e.g. GIOŚ 2 req/min); others fetch lazily in run.py
+    import importlib
+    ad = importlib.import_module(f"adapters.{city}")
+    if hasattr(ad, "fetch_extra") and not only:
+        ad.fetch_extra()
     return flog
 
 

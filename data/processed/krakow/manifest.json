@@ -1,6 +1,6 @@
 {
   "city": "krakow",
-  "updatedAt": "2026-10-03T15:03:48+00:00",
+  "updatedAt": "2026-10-03T15:07:55+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -121,8 +121,8 @@
     },
     {
       "key": "nfz",
-      "url": "https://api.nfz.gov.pl/app-itl-api/queues",
-      "fetchedAt": "2026-10-03T15:01:09+00:00",
+      "url": "https://api.nfz.gov.pl/app-itl-api/queues?province=06&case=1&benefit=ortopedia&format=json&limit=5&api-version=1.3",
+      "fetchedAt": "2026-10-03T14:09:17+00:00",
       "licence": "NFZ open API",
       "rows": 46,
       "status": "ok",
@@ -144,7 +144,7 @@
       "licence": "ODbL",
       "rows": null,
       "status": "missing",
-      "note": "fetch failed 2026-10-03T14:04: HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/status (Caused by NewConnectionError(\"HTTPSConnection(host='overpass-api.de', port=443): Failed to establish  (optional) [ad-hoc checks only; PBF used instead] [ad-hoc checks only; PBF used instead]"
+      "note": "fetch failed 2026-10-03T15:07: HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/status (Caused by NewConnectionError(\"HTTPSConnection(host='overpass-api.de', port=443): Failed to establish  (optional)"
     },
     {
       "key": "park_e_bike",
@@ -167,7 +167,7 @@
     {
       "key": "rcn",
       "url": "https://geodezja.eco.um.krakow.pl/cgi-bin/krakow-rcn?SERVICE=WFS&REQUEST=GetCapabilities",
-      "fetchedAt": "2026-10-03T15:03:47+00:00",
+      "fetchedAt": "2026-10-03T14:09:12+00:00",
       "licence": "RCN, Wydział Geodezji UM Kraków (public register)",
       "rows": 23022,
       "status": "ok",

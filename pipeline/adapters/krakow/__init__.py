@@ -5,3 +5,8 @@ from .registers import extra_pois  # noqa: F401
 
 # In Poland paediatric primary care is delivered by POZ (GP) clinics → count both
 WALK_OVERRIDES = {"family.paediatrician_walk_min": ["paediatrician", "gp_clinic"]}
+
+
+def fetch_extra() -> None:
+    from . import gios
+    gios.fetch()  # annual PM statistics, paced for the 2 req/min limit
