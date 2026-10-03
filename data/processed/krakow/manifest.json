@@ -1,6 +1,6 @@
 {
   "city": "krakow",
-  "updatedAt": "2026-10-03T15:35:39+00:00",
+  "updatedAt": "2026-10-03T15:55:30+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -14,7 +14,7 @@
     {
       "key": "copernicus_dem",
       "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_{tile}_DEM/Copernicus_DSM_COG_10_{tile}_DEM.tif",
-      "fetchedAt": "2026-10-03T15:21:40+00:00",
+      "fetchedAt": "2026-10-03T15:55:13+00:00",
       "licence": "Copernicus DEM GLO-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA",
       "rows": 4,
       "status": "ok",
@@ -140,7 +140,7 @@
     {
       "key": "nfz",
       "url": "https://api.nfz.gov.pl/app-itl-api/queues",
-      "fetchedAt": "2026-10-03T15:21:21+00:00",
+      "fetchedAt": "2026-10-03T15:54:54+00:00",
       "licence": "NFZ open API",
       "rows": 46,
       "status": "ok",
@@ -162,7 +162,7 @@
       "licence": "ODbL",
       "rows": null,
       "status": "missing",
-      "note": "fetch failed 2026-10-03T15:20: HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/status (Caused by NewConnectionError(\"HTTPSConnection(host='overpass-api.de', port=443): Failed to establish  (optional) [ad-hoc checks only; PBF used instead]"
+      "note": "fetch failed 2026-10-03T15:20: HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/status (Caused by NewConnectionError(\"HTTPSConnection(host='overpass-api.de', port=443): Failed to establish  (optional) [ad-hoc checks only; PBF used instead] [ad-hoc checks only; PBF used instead]"
     },
     {
       "key": "park_e_bike",
@@ -185,11 +185,11 @@
     {
       "key": "rcn",
       "url": "https://geodezja.eco.um.krakow.pl/cgi-bin/krakow-rcn?SERVICE=WFS&REQUEST=GetCapabilities",
-      "fetchedAt": "2026-10-03T15:21:57+00:00",
+      "fetchedAt": "2026-10-03T15:55:29+00:00",
       "licence": "RCN, Wydział Geodezji UM Kraków (public register)",
-      "rows": 23022,
+      "rows": 21644,
       "status": "ok",
-      "note": "Kraków RCN WFS ms:lokale, DOK_DATA ≥ last 24 months: 30581 records → 23022 free-market apartment sales after IQR filter; median zł/m² over H3 k-ring (k=0..3 until n≥5)"
+      "note": "Kraków RCN WFS ms:lokale, DOK_DATA ≥ last 24 months: 30581 records → 21644 free-market flat sales (full ownership, one flat per transaction, individual buyer, 15–250 m²) after IQR filter; median zł/m² over H3 k-ring (k=0..3 until n≥5)"
     },
     {
       "key": "rcn_gugik",
@@ -253,6 +253,6 @@
     "h3Res": 9,
     "metricCrs": "EPSG:2180"
   },
-  "dataVersion": "2026-10-03T15:21:57+00:00",
-  "builtAt": "2026-10-03T15:21:57+00:00"
+  "dataVersion": "2026-10-03T15:55:30+00:00",
+  "builtAt": "2026-10-03T15:55:30+00:00"
 }

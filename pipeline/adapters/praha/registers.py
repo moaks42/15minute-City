@@ -6,7 +6,6 @@ import re
 import unicodedata
 
 import geopandas as gpd
-import numpy as np
 import pandas as pd
 
 from core.common import log

@@ -92,7 +92,7 @@ def run(city: str, modes: list[str]) -> None:
     t0 = time.time()
     tn = r5py.TransportNetwork(str(pbf), [sanitize_gtfs(city, p) for p in gtfs_paths])
     log.info("[%s] transport network built in %.0fs", city, time.time() - t0)
-    O, D = points(origins), points(dests)
+    orig_pts, dest_pts = points(origins), points(dests)
     npz = od / "travel_times.npz"
     out = dict(np.load(npz, allow_pickle=False)) if npz.exists() else {}
     mode_sets = {"transit": [r5py.TransportMode.TRANSIT, r5py.TransportMode.WALK],
@@ -102,7 +102,7 @@ def run(city: str, modes: list[str]) -> None:
         kw = dict(departure=dep, transport_modes=mode_sets[m], max_time=timedelta(minutes=MAX_MIN))
         if m == "transit":
             kw["departure_time_window"] = timedelta(minutes=30)
-        ttm = r5py.TravelTimeMatrix(tn, origins=O, destinations=D, **kw)
+        ttm = r5py.TravelTimeMatrix(tn, origins=orig_pts, destinations=dest_pts, **kw)
         out[m] = matrix(pd.DataFrame(ttm), origins, dests)
         reach = (out[m] < 255).mean()
         log.info("[%s] %s matrix in %.0fs, reachable %.1f%%, median %s min", city, m, time.time() - t0,
