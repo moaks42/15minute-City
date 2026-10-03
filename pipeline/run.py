@@ -87,6 +87,7 @@ def build(city: str, force_osm: bool = False) -> None:
     g["district_id"], g["district_name"] = lab["district_id"].to_numpy(), lab["district_name"].to_numpy()
 
     addr = ad.addresses(ctx)
+    ctx.addresses = addr
     g["population_est"] = core_grid.count_points(g, addr, ctx.s["h3Res"])
     g["habitable"] = g["population_est"] >= int(ctx.s["habitableMinAddresses"])
     log.info("[%s] habitable %d / %d cells", city, g["habitable"].sum(), len(g))
@@ -125,7 +126,7 @@ def build(city: str, force_osm: bool = False) -> None:
     # ---- features ------------------------------------------------------------------------------
     ctx.graph = WalkGraph(city, ctx.crs)
     parks_extra = ad.parks(ctx) if hasattr(ad, "parks") else None
-    feats = core_features.compute(ctx, parks_extra)
+    feats = core_features.compute(ctx, parks_extra, getattr(ad, "WALK_OVERRIDES", None))
     if hasattr(ad, "features"):
         af = ad.features(ctx)
         for c in af.columns:

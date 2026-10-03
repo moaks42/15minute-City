@@ -73,7 +73,7 @@ def park_access_points(parks: gpd.GeoDataFrame, min_ha: float = 2.0, step: float
     return pd.DataFrame({"x": xy[:, 0], "y": xy[:, 1]})
 
 
-def compute(ctx: Ctx, parks_extra: gpd.GeoDataFrame | None = None) -> pd.DataFrame:
+def compute(ctx: Ctx, parks_extra: gpd.GeoDataFrame | None = None, walk_overrides: dict | None = None) -> pd.DataFrame:
     xy, pois, graph = ctx.xy, ctx.pois, ctx.graph
     out = pd.DataFrame(index=ctx.grid["h3"])
     pxy = to_xy(pois, ctx.crs)
@@ -102,7 +102,7 @@ def compute(ctx: Ctx, parks_extra: gpd.GeoDataFrame | None = None) -> pd.DataFra
     park_xy = acc[["x", "y"]].to_numpy()
 
     # ---- walk minutes -----------------------------------------------------------------------
-    for colname, cs in WALK.items():
+    for colname, cs in {**WALK, **(walk_overrides or {})}.items():
         if cs == ["park_2ha"]:
             dst = park_xy
         else:

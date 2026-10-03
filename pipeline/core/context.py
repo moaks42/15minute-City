@@ -23,6 +23,7 @@ class Ctx:
     districts: gpd.GeoDataFrame | None = None
     boundary: gpd.GeoDataFrame | None = None
     service_date: str | None = None
+    addresses: gpd.GeoDataFrame | None = None
 
     @classmethod
     def make(cls, city: str) -> "Ctx":

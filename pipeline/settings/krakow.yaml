@@ -61,8 +61,8 @@ sources:
   # --- P2 / context ---
   - {key: nfz, kind: http, file: nfz_queues_sample.json, licence: "NFZ open API", optional: true,
      url: "https://api.nfz.gov.pl/app-itl-api/queues?province=06&case=1&benefit=ortopedia&format=json&limit=5&api-version=1.3"}
-  - {key: gus_bdl, kind: http, file: gus_bdl_sample.json, licence: "GUS BDL", optional: true,
-     url: "https://bdl.stat.gov.pl/api/v1/units?name=Krak%C3%B3w&format=json"}
+  - {key: gus_bdl, kind: http, file: gus_pop_krakow.json, licence: "GUS BDL (CC BY 4.0)",
+     url: "https://bdl.stat.gov.pl/api/v1/data/by-unit/011212161000?var-id=72305&format=json"}
   - {key: park_e_bike, kind: http, file: park_e_bike.html, licence: "ZTP Kraków", optional: true,
      url: "https://ztp.krakow.pl/rower/park-e-bike"}
   - {key: krk_open, kind: http, file: otwartedane_index.html, licence: "UM Kraków open data terms", optional: true,

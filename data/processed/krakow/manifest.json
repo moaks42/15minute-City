@@ -1,6 +1,6 @@
 {
   "city": "krakow",
-  "updatedAt": "2026-10-03T14:16:47+00:00",
+  "updatedAt": "2026-10-03T14:25:54+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -25,9 +25,9 @@
       "url": "https://api.gios.gov.pl/pjp-api/v1/rest/station/findAll?size=500",
       "fetchedAt": "2026-10-03T14:08:47+00:00",
       "licence": "GIOŚ (cite 'GIOŚ')",
-      "rows": null,
+      "rows": 3217,
       "status": "ok",
-      "note": ""
+      "note": "IDW (p=2) of GIOŚ station annual means; PM10: 10 stations, annual means 2023–2024; PM2,5: 4 stations, annual means 2023–2024"
     },
     {
       "key": "gtfs_rt_ztp",
@@ -58,12 +58,12 @@
     },
     {
       "key": "gus_bdl",
-      "url": "https://bdl.stat.gov.pl/api/v1/units?name=Krak%C3%B3w&format=json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/by-unit/011212161000?var-id=72305&format=json",
       "fetchedAt": "2026-10-03T14:09:17+00:00",
-      "licence": "GUS BDL",
-      "rows": null,
+      "licence": "GUS BDL (CC BY 4.0)",
+      "rows": 1,
       "status": "ok",
-      "note": ""
+      "note": "population 816614 (2025), var 72305, unit 011212161000"
     },
     {
       "key": "krk_open",
@@ -79,9 +79,9 @@
       "url": "https://api.dane.gov.pl/resources/1254769,wykaz-szko-i-placowek-oswiatowych-wg-stanu-bazy-sio-na-30092025/file",
       "fetchedAt": "2026-10-03T14:09:12+00:00",
       "licence": "CC BY 4.0 (MEN / dane.gov.pl)",
-      "rows": null,
+      "rows": 830,
       "status": "ok",
-      "note": ""
+      "note": "SIO 30.09.2025, powiat 1261; geocoded via EMUiA {'exact': 819, 'street': 11}"
     },
     {
       "key": "msip_addresses",
@@ -106,18 +106,18 @@
       "url": "https://msip.um.krakow.pl/Dane/Mapa_Halasu_2022_JSON.zip",
       "fetchedAt": "2026-10-03T14:08:44+00:00",
       "licence": "MSIP UM Kraków (strategic noise map 2022)",
-      "rows": null,
+      "rows": 3217,
       "status": "ok",
-      "note": ""
+      "note": "Mapa imisyjna 2022, LDWN (Lden) 5-dB bands; max(road, rail+tram) per pixel, mean per cell; industrial layer has no dB attribute → not used"
     },
     {
       "key": "nfz",
-      "url": "https://api.nfz.gov.pl/app-itl-api/queues?province=06&case=1&benefit=ortopedia&format=json&limit=5&api-version=1.3",
-      "fetchedAt": "2026-10-03T14:09:17+00:00",
+      "url": "https://api.nfz.gov.pl/app-itl-api/queues",
+      "fetchedAt": "2026-10-03T14:25:20+00:00",
       "licence": "NFZ open API",
-      "rows": null,
+      "rows": 46,
       "status": "ok",
-      "note": ""
+      "note": "providers of ODDZIAŁ POŁOŻNICZO-GINEKOLOGICZNY (maternity) / PORADNIA POŁOŻNICZO-GINEKOLOGICZNA (gynaecology) in Kraków"
     },
     {
       "key": "osm_krakow",
@@ -149,11 +149,11 @@
     {
       "key": "rcn",
       "url": "https://geodezja.eco.um.krakow.pl/cgi-bin/krakow-rcn?SERVICE=WFS&REQUEST=GetCapabilities",
-      "fetchedAt": "2026-10-03T14:09:12+00:00",
+      "fetchedAt": "2026-10-03T14:25:54+00:00",
       "licence": "RCN, Wydział Geodezji UM Kraków (public register)",
-      "rows": null,
+      "rows": 23022,
       "status": "ok",
-      "note": ""
+      "note": "Kraków RCN WFS ms:lokale, DOK_DATA ≥ last 24 months: 30581 records → 23022 free-market apartment sales after IQR filter; median zł/m² over H3 k-ring (k=0..3 until n≥5)"
     },
     {
       "key": "rcn_gugik",
@@ -169,18 +169,18 @@
       "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Przestepstwa_ogolem_msc_pub_2022_mapa/FeatureServer/0",
       "fetchedAt": "2026-10-03T14:08:45+00:00",
       "licence": "Bezpieczny Kraków / UM Kraków (ArcGIS Hub)",
-      "rows": null,
+      "rows": 141,
       "status": "ok",
-      "note": ""
+      "note": "'Przestępstwa w przestrzeni publicznej 2023' (715 offences, 141 units) area-apportioned to dzielnice; residents = GUS 2025 total split by EMUiA address share"
     },
     {
       "key": "ztp_hub_bike_racks",
       "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Stojaki_ZTP_wyświetlenie/FeatureServer/1",
       "fetchedAt": "2026-10-03T14:10:16+00:00",
       "licence": "ZTP Kraków (ArcGIS Hub, open)",
-      "rows": null,
+      "rows": 3157,
       "status": "ok",
-      "note": "fetch failed 2026-10-03T14:04: 400 Client Error: Bad Request for url: https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Stojaki_ZTP_wy%C5%9Bwietlenie/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f="
+      "note": "ZTP bike racks (stojaki) added to bicycle_parking"
     },
     {
       "key": "ztp_hub_cycle_lines",
@@ -211,7 +211,7 @@
     }
   ],
   "build": {
-    "builtAt": "2026-10-03T14:16:47+00:00",
+    "builtAt": "2026-10-03T14:25:54+00:00",
     "serviceDate": "20261006",
     "cells": 3217,
     "habitable": 2162,
