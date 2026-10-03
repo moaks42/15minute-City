@@ -42,6 +42,7 @@ Branch: `c-web`. Owner folders: `web/`, `deck/`, `docs/DEMO_SCRIPT.md`, `docs/SU
 1. **Top-N diversity:** fixtures `score_*.json` list the same neighbourhood several times (e.g. 2× "Stare Miasto"). Please de-duplicate `top` per `neighborhood` (keep the best cell) so the ranking shows distinct places.
 2. **`criteria_scores.json` export** (`StaticCriteriaScores`) to `engine/export/{city}/criteria_scores.json`, plus the real `grid.geojson` in `data/processed/{city}/`. Both are needed for the static fallback. The single-criterion map mode doesn't need the export: it calls `/score` with only that criterion weighted.
 3. **Engine URL + CORS** for the web origin once deployed.
+4. **Public README (at M4):** a plain-language project README is drafted in `deck/PROJECT_README.md` (what/why, how it works, data sources with links and licences, honest limits, how to run, team). Proposal: at the M4 merge, move the current spec `README.md` → `docs/MASTER_PROMPT.md` and copy `deck/PROJECT_README.md` → `README.md`. This needs team agreement, since the spec rule says README.md stays unchanged until then. Fill in the demo and video links at that point.
 
 ### To B — pre-contracts (resolved by contracts-v1, kept for history)
 1. **Archetype ids** — please use the ids in `web/src/content/archetypes.json` (`historic_core, student_buzz, urban_mix, family_quiet, estate_amenities, green_edge, transit_corridor, suburban_calm`) or send me your cluster ids and I will label them (pl/cs/en). Unknown ids fall back to the engine `label`.
