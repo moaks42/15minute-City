@@ -1,0 +1,13 @@
+# Applies to builds with the repo root as context (engine/Dockerfile). Whitelist only.
+*
+!engine/pyproject.toml
+!engine/uv.lock
+!engine/app/
+!engine/models/
+!config/
+!contracts/openapi.yaml
+!contracts/tools/validate_data.py
+!contracts/tools/validate_fixtures.py
+!data/processed/
+**/__pycache__
+**/.DS_Store
