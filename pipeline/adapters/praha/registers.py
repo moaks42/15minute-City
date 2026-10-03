@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 
 import geopandas as gpd
 import numpy as np
@@ -41,6 +43,48 @@ def msmt_schools(ctx: Ctx) -> pd.DataFrame:
     return pd.DataFrame({"category": df["category"], "name": df["name"], "lat": df["lat"], "lon": df["lon"],
                          "source": "msmt_schools", "extra_json": [json.dumps({"izo": i, "redizo": z}) for i, z in
                                                           zip(df["izo"], df["redizo"])]})
+
+
+def _n(s) -> str:
+    s = unicodedata.normalize("NFKD", str(s).lower())
+    return re.sub(r"[^a-z0-9]", "", "".join(c for c in s if not unicodedata.combining(c)))
+
+
+def mpsv_nurseries(ctx: Ctx) -> pd.DataFrame:
+    """MPSV register of dětské skupiny (children's groups, the Czech nursery form), active, in Praha."""
+    f = ctx.raw_file("mpsv_detske_skupiny")
+    df = pd.read_csv(f, sep=";", dtype=str, encoding="utf-8-sig").fillna("")
+    df = df[df["kraj_ds"].str.contains("Praha") & df["stav_opravneni_ds"].eq("Aktivní")]
+    r = ruian(ctx)
+    pts = gpd.GeoSeries(gpd.points_from_xy(r["x"], r["y"]), crs=5514).to_crs(4326)
+    r = r.assign(lat=pts.y.to_numpy(), lon=pts.x.to_numpy(), st=r["Název ulice"].fillna("").map(_n),
+                 part=r["Název části obce"].fillna("").map(_n))
+    by_cp = r.drop_duplicates(["st", "Číslo domovní"]).set_index(["st", "Číslo domovní"])[["lat", "lon"]]
+    by_co = r[r["Číslo orientační"].notna()].drop_duplicates(["st", "Číslo orientační"]).set_index(
+        ["st", "Číslo orientační"])[["lat", "lon"]]
+    by_part = r.drop_duplicates(["part", "Číslo domovní"]).set_index(["part", "Číslo domovní"])[["lat", "lon"]]
+    rows, miss = [], 0
+    for _, x in df.iterrows():
+        addr = x["misto_poskytovani_ds"].split(",")[0].strip()
+        m = re.match(r"^(.*?)\s+(\d+)(?:/(\d+)\w*)?$", addr)
+        hit = None
+        if m:
+            st, cp, co = _n(m.group(1)), m.group(2), m.group(3)
+            for idx, key in ((by_cp, (st, cp)), (by_co, (st, co or cp)), (by_part, (st, cp))):
+                if key in idx.index:
+                    hit = idx.loc[key]
+                    break
+        if hit is None:
+            miss += 1
+            continue
+        rows.append({"category": "nursery", "name": x["nazev_ds"], "lat": float(hit["lat"]), "lon": float(hit["lon"]),
+                     "source": "mpsv_detske_skupiny",
+                     "extra_json": json.dumps({"kod": x["kod_detske_skupiny"], "kapacita": x["kapacita_ds"]},
+                                              ensure_ascii=False)})
+    out = pd.DataFrame(rows)
+    ctx.ok("mpsv_detske_skupiny", len(out), f"active dětské skupiny in Praha: {len(df)}; geocoded via RÚIAN street + "
+           f"house number {len(out)}, unmatched {miss}; added to POI category nursery (with OSM jesle)")
+    return out
 
 
 def nrpzs(ctx: Ctx) -> pd.DataFrame:
@@ -95,7 +139,7 @@ def golemio(ctx: Ctx) -> pd.DataFrame:
 
 
 def extra_pois(ctx: Ctx) -> pd.DataFrame:
-    df = pd.concat([msmt_schools(ctx), nrpzs(ctx), golemio(ctx)], ignore_index=True)
+    df = pd.concat([msmt_schools(ctx), nrpzs(ctx), golemio(ctx), mpsv_nurseries(ctx)], ignore_index=True)
     df.attrs["replace"] = ["kindergarten", "primary_school", "secondary_school", "gp_clinic", "paediatrician",
                            "gynaecology", "maternity_ward", "hospital_er", "dentist", "pharmacy"]
     return df

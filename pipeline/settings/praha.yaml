@@ -14,27 +14,27 @@ sources:
   # --- common ---
   - {key: osm_praha, kind: http, file: stredocesky-latest.osm.pbf, licence: "ODbL 1.0 (© OpenStreetMap contributors)",
      url: "https://download.geofabrik.de/europe/czech-republic/stredocesky-latest.osm.pbf"}
-  - {key: basemap, kind: http, file: openfreemap_positron.json, licence: "OpenFreeMap / OpenMapTiles (© OSM contributors)",
+  - {key: basemap, use: "web basemap (C)", kind: http, file: openfreemap_positron.json, licence: "OpenFreeMap / OpenMapTiles (© OSM contributors)",
      url: "https://tiles.openfreemap.org/styles/positron"}
-  - {key: geocode, kind: http, file: photon_sample.json, licence: "ODbL (Photon / komoot)",
+  - {key: geocode, use: "engine geocoder fallback (B)", kind: http, file: photon_sample.json, licence: "ODbL (Photon / komoot)",
      url: "https://photon.komoot.io/api/?q=Karl%C3%ADn&bbox=14.22,49.94,14.71,50.18&limit=3"}
   # --- transit ---
   - {key: gtfs_pid, kind: http, file: PID_GTFS.zip, licence: "CC BY 4.0 (PID / ROPID)",
      url: "https://data.pid.cz/PID_GTFS.zip"}
-  - {key: gtfs_pid_stops, kind: http, file: pid_stops.json, licence: "CC BY 4.0 (PID / ROPID)",
+  - {key: gtfs_pid_stops, use: "reference (stop names/ids for live departures)", kind: http, file: pid_stops.json, licence: "CC BY 4.0 (PID / ROPID)",
      url: "https://data.pid.cz/stops/json/stops.json"}
   # --- Golemio (key from env GOLEMIO_API_KEY, header X-Access-Token) ---
   - {key: golemio_playgrounds, kind: golemio, file: golemio_playgrounds.geojson, licence: "CC BY 4.0 (Golemio / OICT)",
      url: "https://api.golemio.cz/v2/playgrounds"}
   - {key: golemio_gardens, kind: golemio, file: golemio_gardens.geojson, licence: "CC BY 4.0 (Golemio / OICT)",
      url: "https://api.golemio.cz/v2/gardens"}
-  - {key: golemio_medical, kind: golemio, file: golemio_medicalinstitutions.geojson, licence: "CC BY 4.0 (Golemio / OICT)",
+  - {key: golemio_medical, use: "reference; NRPZS used for health", kind: golemio, file: golemio_medicalinstitutions.geojson, licence: "CC BY 4.0 (Golemio / OICT)",
      url: "https://api.golemio.cz/v2/medicalinstitutions"}
   - {key: golemio_libraries, kind: golemio, file: golemio_libraries.geojson, licence: "CC BY 4.0 (Golemio / OICT)",
      url: "https://api.golemio.cz/v2/municipallibraries"}
-  - {key: golemio_air, kind: golemio, file: golemio_airqualitystations.geojson, licence: "CC BY 4.0 (Golemio / OICT)",
+  - {key: golemio_air, use: "live air (engine)", kind: golemio, file: golemio_airqualitystations.geojson, licence: "CC BY 4.0 (Golemio / OICT)",
      url: "https://api.golemio.cz/v2/airqualitystations"}
-  - {key: golemio_districts, kind: golemio, file: golemio_citydistricts.geojson, licence: "CC BY 4.0 (Golemio / OICT)",
+  - {key: golemio_districts, use: "reference; IPR MČ used", kind: golemio, file: golemio_citydistricts.geojson, licence: "CC BY 4.0 (Golemio / OICT)",
      url: "https://api.golemio.cz/v2/citydistricts"}
   # --- IPR Praha (ArcGIS, org SBTXIEUGWbqzUecw, CC BY) ---
   - {key: ipr_mestske_casti, kind: arcgis, file: ipr_mestske_casti.geojson, licence: "CC BY 4.0 (IPR Praha)",
@@ -53,18 +53,20 @@ sources:
   # --- schools: MŠMT register (moved from rejstriky.msmt.cz XML to LKOD JSON-LD) ---
   - {key: msmt_schools, kind: http, file: RSSZ-Hl-m-Praha.jsonld, licence: "CC BY 4.0 (MŠMT, Rejstřík škol a školských zařízení)", timeout: 600,
      url: "https://lkod-ftp.msmt.gov.cz/00022985/21e5fd4a-5378-4d64-90e9-759b15d01f28/RSSZ-Hl-m-Praha.jsonld"}
+  - {key: mpsv_detske_skupiny, kind: http, file: mpsv_detske_skupiny.csv, licence: "MPSV open data (attribution)",
+     url: "https://data.mpsv.cz/portal/api/reports/by-table/detske_skupiny_evid_poskyt_seznam_akt_odata/data/csv?fileName=detske_skupiny_evidendce_poskytovatelu_data"}
   # --- health ---
   - {key: nrpzs, kind: http, file: nrpzs_mista.csv, licence: "CC BY 4.0 (ÚZIS ČR, NRPZS)", timeout: 600,
      url: "https://datanzis.uzis.gov.cz/data/NR-01-NRPZS/NR-01-06/Otevrena-data-NR-01-06-nrpzs-mista-poskytovani-zdravotnich-sluzeb.csv"}
   # --- air: ČHMÚ 5-year average 1x1 km grid 2020-2024 (S-JTSK) ---
   - {key: chmi_air, kind: http, file: chmi_sit1000_5lprum_20_24_CR_JTSK.zip, licence: "ČHMÚ open data (attribution)",
      url: "https://opendata.chmi.cz/air_quality/products/5year_avg/sit1000_5lprum_20_24_CR_JTSK.zip"}
-  - {key: chmi_air_now_meta, kind: http, file: chmi_now_metadata_index.html, licence: "ČHMÚ open data (attribution)", optional: true,
+  - {key: chmi_air_now_meta, use: "live air station metadata (engine)", kind: http, file: chmi_now_metadata_index.html, licence: "ČHMÚ open data (attribution)", optional: true,
      url: "https://opendata.chmi.cz/air_quality/now/metadata/"}
   # --- safety: Police ČR crime map (NON-COMMERCIAL licence) ---
-  - {key: police_cz_voronoi, kind: http, file: police_voronoi.geojson.zip, licence: "Policie ČR – non-commercial use only", timeout: 900,
+  - {key: police_cz_voronoi, use: "reference (anonymisation polygons)", kind: http, file: police_voronoi.geojson.zip, licence: "Policie ČR – non-commercial use only", timeout: 900,
      url: "https://kriminalita.policie.gov.cz/voronoi.geojson.zip"}
-  - {key: police_cz_types, kind: http, file: police_types.json, licence: "Policie ČR – non-commercial use only",
+  - {key: police_cz_types, use: "offence classes → filter to criminal offences", kind: http, file: police_types.json, licence: "Policie ČR – non-commercial use only",
      url: "https://kriminalita.policie.gov.cz/api/v2/downloads/types.json"}
   - {key: police_cz, kind: police_months, file: police_months, licence: "Policie ČR – non-commercial use only",
      url: "https://kriminalita.policie.gov.cz/api/v2/downloads/{month}.zip", months: 12}
@@ -74,7 +76,7 @@ sources:
   - {key: mf_rent, kind: http, file: mf_cenova_mapa_2026-08-15.xlsx, licence: "MF ČR (open, attribution)",
      url: "https://mf.gov.cz/assets/attachments/2026-08-15_Cenova-mapa.xlsx"}
   # --- P1/P2 ---
-  - {key: praha_open, kind: http, file: opendata_praha_index.html, licence: "Praha open data", optional: true,
+  - {key: praha_open, use: "portal checked", kind: http, file: opendata_praha_index.html, licence: "Praha open data", optional: true,
      url: "https://opendata.praha.eu/"}
-  - {key: bikeshare_praha, kind: http, file: praha_bikesharing.html, licence: "praha.eu", optional: true,
+  - {key: bikeshare_praha, use: "P2: no public GBFS found", kind: http, file: praha_bikesharing.html, licence: "praha.eu", optional: true,
      url: "https://praha.eu/bikesharing"}

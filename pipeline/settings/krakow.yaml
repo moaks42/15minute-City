@@ -15,27 +15,27 @@ sources:
   # --- common ---
   - {key: osm_krakow, kind: http, file: malopolskie-latest.osm.pbf, licence: "ODbL 1.0 (© OpenStreetMap contributors)",
      url: "https://download.geofabrik.de/europe/poland/malopolskie-latest.osm.pbf"}
-  - {key: basemap, kind: http, file: openfreemap_positron.json, licence: "OpenFreeMap / OpenMapTiles (© OSM contributors)",
+  - {key: basemap, use: "web basemap (C)", kind: http, file: openfreemap_positron.json, licence: "OpenFreeMap / OpenMapTiles (© OSM contributors)",
      url: "https://tiles.openfreemap.org/styles/positron"}
-  - {key: geocode, kind: http, file: photon_sample.json, licence: "ODbL (Photon / komoot)",
+  - {key: geocode, use: "engine geocoder fallback (B)", kind: http, file: photon_sample.json, licence: "ODbL (Photon / komoot)",
      url: "https://photon.komoot.io/api/?q=Rynek%20G%C5%82%C3%B3wny&bbox=19.79,49.96,20.22,50.13&limit=3"}
-  - {key: overpass, kind: http, file: overpass_status.txt, licence: "ODbL", optional: true,
+  - {key: overpass, use: "ad-hoc checks only; PBF used instead", kind: http, file: overpass_status.txt, licence: "ODbL", optional: true,
      url: "https://overpass-api.de/api/status"}
   # --- transit ---
   - {key: gtfs_ztp_a, kind: http, file: GTFS_KRK_A.zip, licence: "ZTP Kraków open data",
      url: "https://gtfs.ztp.krakow.pl/GTFS_KRK_A.zip"}
   - {key: gtfs_ztp_t, kind: http, file: GTFS_KRK_T.zip, licence: "ZTP Kraków open data",
      url: "https://gtfs.ztp.krakow.pl/GTFS_KRK_T.zip"}
-  - {key: gtfs_rt_ztp, kind: http, file: VehiclePositions_A.pb, licence: "ZTP Kraków open data",
+  - {key: gtfs_rt_ztp, use: "live departures (P2, engine)", kind: http, file: VehiclePositions_A.pb, licence: "ZTP Kraków open data",
      url: "https://gtfs.ztp.krakow.pl/VehiclePositions_A.pb"}
   # --- ZTP ArcGIS hub (GMK org svTzSt3AvH7sK6q9) ---
   - {key: ztp_hub_bike_racks, kind: arcgis, file: ztp_stojaki.geojson, licence: "ZTP Kraków (ArcGIS Hub, open)",
      url: "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Stojaki_ZTP_wyświetlenie/FeatureServer/1"}
-  - {key: ztp_hub_cycle_lines, kind: arcgis, file: ztp_ciagi_rowerowe.geojson, licence: "ZTP Kraków (ArcGIS Hub, open)",
+  - {key: ztp_hub_cycle_lines, use: "reference; OSM cycle network used for active.cycleway_km_1km", kind: arcgis, file: ztp_ciagi_rowerowe.geojson, licence: "ZTP Kraków (ArcGIS Hub, open)",
      url: "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Ciagi_rowerowe/FeatureServer/0"}
-  - {key: ztp_hub_mobility_points, kind: arcgis, file: ztp_punkty_mobilnosci.geojson, licence: "ZTP Kraków (ArcGIS Hub, open)",
+  - {key: ztp_hub_mobility_points, use: "reference (P2 POI)", kind: arcgis, file: ztp_punkty_mobilnosci.geojson, licence: "ZTP Kraków (ArcGIS Hub, open)",
      url: "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Punkty_mobilności_warstwa_publiczna/FeatureServer/0"}
-  - {key: ztp_hub_park_ride, kind: arcgis, file: ztp_park_and_ride.geojson, licence: "ZTP Kraków (ArcGIS Hub, open)",
+  - {key: ztp_hub_park_ride, use: "reference (P2 POI)", kind: arcgis, file: ztp_park_and_ride.geojson, licence: "ZTP Kraków (ArcGIS Hub, open)",
      url: "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Park_and_Ride/FeatureServer/0"}
   # --- MSIP (UM Kraków) ---
   - {key: msip_districts, kind: http, file: Dzielnice_JSON.zip, licence: "MSIP UM Kraków (open data, attribution)",
@@ -48,7 +48,7 @@ sources:
   - {key: safety_krk, kind: arcgis, file: przestepstwa_2023.geojson, licence: "Bezpieczny Kraków / UM Kraków (ArcGIS Hub)",
      url: "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Przestepstwa_ogolem_msc_pub_2022_mapa/FeatureServer/0"}
   # --- air ---
-  - {key: gios, kind: http, file: gios_stations.json, licence: "GIOŚ (cite 'GIOŚ')",
+  - {key: gios, use: "station metadata for IDW + live air (engine)", kind: http, file: gios_stations.json, licence: "GIOŚ (cite 'GIOŚ')",
      url: "https://api.gios.gov.pl/pjp-api/v1/rest/station/findAll?size=500"}
   # --- schools ---
   - {key: men_schools, kind: http, file: men_sio_2025-09-30.xlsx, licence: "CC BY 4.0 (MEN / dane.gov.pl)", timeout: 600,
@@ -56,14 +56,14 @@ sources:
   # --- prices (Kraków's own RCN WFS; GUGiK national WFS kept as reference) ---
   - {key: rcn, kind: http, file: rcn_krakow_capabilities.xml, licence: "RCN, Wydział Geodezji UM Kraków (public register)",
      url: "https://geodezja.eco.um.krakow.pl/cgi-bin/krakow-rcn?SERVICE=WFS&REQUEST=GetCapabilities"}
-  - {key: rcn_gugik, kind: http, file: rcn_gugik_capabilities.xml, licence: "GUGiK", optional: true,
+  - {key: rcn_gugik, use: "reference; Kraków's own RCN WFS used", kind: http, file: rcn_gugik_capabilities.xml, licence: "GUGiK", optional: true,
      url: "https://mapy.geoportal.gov.pl/wss/service/rcn?SERVICE=WFS&REQUEST=GetCapabilities"}
   # --- P2 / context ---
-  - {key: nfz, kind: http, file: nfz_queues_sample.json, licence: "NFZ open API", optional: true,
+  - {key: nfz, use: "maternity & gynaecology POIs", kind: http, file: nfz_queues_sample.json, licence: "NFZ open API", optional: true,
      url: "https://api.nfz.gov.pl/app-itl-api/queues?province=06&case=1&benefit=ortopedia&format=json&limit=5&api-version=1.3"}
   - {key: gus_bdl, kind: http, file: gus_pop_krakow.json, licence: "GUS BDL (CC BY 4.0)",
      url: "https://bdl.stat.gov.pl/api/v1/data/by-unit/011212161000?var-id=72305&format=json"}
-  - {key: park_e_bike, kind: http, file: park_e_bike.html, licence: "ZTP Kraków", optional: true,
+  - {key: park_e_bike, use: "reference (P2; seasonal)", kind: http, file: park_e_bike.html, licence: "ZTP Kraków", optional: true,
      url: "https://ztp.krakow.pl/rower/park-e-bike"}
-  - {key: krk_open, kind: http, file: otwartedane_index.html, licence: "UM Kraków open data terms", optional: true,
+  - {key: krk_open, use: "portal checked: no parks/żłobki datasets → OSM", kind: http, file: otwartedane_index.html, licence: "UM Kraków open data terms", optional: true,
      url: "https://otwartedane.um.krakow.pl/zbiory-danych"}

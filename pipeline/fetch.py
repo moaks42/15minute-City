@@ -124,8 +124,9 @@ def run(city: str, force: bool = False, only: set[str] | None = None) -> dict:
             res = FETCHERS[src["kind"]](src, dest)
             log.info("[%s] %s OK %s in %.1fs", city, key, res, time.time() - t0)
             flog[key] = {"fetchedAt": now_iso(), "result": res, "file": src["file"]}
+            note = prev.get("note") or ""
             man.record(key, url=src["url"], licence=src.get("licence"), fetchedAt=flog[key]["fetchedAt"],
-                       status="ok", note=prev.get("note") or "")
+                       status="ok", note="" if note.startswith("fetch failed") else note)
         except Exception as ex:  # noqa: BLE001 — record and continue, never block the pipeline
             log.warning("[%s] %s FAILED: %s", city, key, ex)
             flog[key] = {"fetchedAt": now_iso(), "result": f"error: {ex}", "file": src["file"]}

@@ -27,6 +27,35 @@ from core.common import Manifest, interim_dir, log, now_iso, out_dir, raw_dir, s
 MAX_MIN = 120
 
 
+def sanitize_gtfs(city: str, path) -> str:
+    """R5 rejects optional-but-empty stop_name (PID: 629 location_type=3 pathway nodes). Fill from the parent
+    station (or stop_id) and drop pathways/levels, which commute routing does not need."""
+    import zipfile
+
+    out = interim_dir(city) / f"{city}_{path.stem}_r5.zip"
+    if out.exists() and out.stat().st_mtime > path.stat().st_mtime:
+        return str(out)
+    with zipfile.ZipFile(path) as zin, zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zout:
+        for name in zin.namelist():
+            if name in ("pathways.txt", "levels.txt"):
+                continue
+            data = zin.read(name)
+            if name == "stops.txt":
+                st = pd.read_csv(zipfile.ZipFile(path).open(name), dtype=str, keep_default_na=False)
+                names = st.set_index("stop_id")["stop_name"]
+                empty = st["stop_name"].str.strip() == ""
+                if "parent_station" in st.columns:
+                    st.loc[empty, "stop_name"] = st.loc[empty, "parent_station"].map(names).fillna("")
+                empty = st["stop_name"].str.strip() == ""
+                st.loc[empty, "stop_name"] = st.loc[empty, "stop_id"]
+                if "level_id" in st.columns:
+                    st["level_id"] = ""
+                data = st.to_csv(index=False).encode("utf-8")
+            zout.writestr(name, data)
+    log.info("[%s] sanitized GTFS for R5 → %s", city, out.name)
+    return str(out)
+
+
 def points(cells: list[str]) -> gpd.GeoDataFrame:
     ll = np.array([h3.cell_to_latlng(c) for c in cells])
     return gpd.GeoDataFrame({"id": cells}, geometry=gpd.points_from_xy(ll[:, 1], ll[:, 0]), crs=4326)
@@ -54,9 +83,14 @@ def run(city: str, modes: list[str]) -> None:
     gtfs_paths = [raw_dir(city) / f for f in s["gtfs"]]
     day = gtfs.pick_date(gtfs_paths)
     dep = datetime.strptime(day, "%Y%m%d").replace(hour=8)
-    pbf = interim_dir(city) / "clip.osm.pbf"
+    # r5py caches inputs by file *basename* → use a city-specific name (clip.osm.pbf collided across cities)
+    pbf = interim_dir(city) / f"{city}_clip.osm.pbf"
+    src = interim_dir(city) / "clip.osm.pbf"
+    if not pbf.exists() or pbf.stat().st_mtime < src.stat().st_mtime:
+        pbf.unlink(missing_ok=True)
+        os.link(src, pbf)
     t0 = time.time()
-    tn = r5py.TransportNetwork(str(pbf), [str(p) for p in gtfs_paths])
+    tn = r5py.TransportNetwork(str(pbf), [sanitize_gtfs(city, p) for p in gtfs_paths])
     log.info("[%s] transport network built in %.0fs", city, time.time() - t0)
     O, D = points(origins), points(dests)
     npz = od / "travel_times.npz"

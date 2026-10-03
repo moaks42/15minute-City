@@ -1,6 +1,6 @@
 {
   "city": "praha",
-  "updatedAt": "2026-10-03T14:46:57+00:00",
+  "updatedAt": "2026-10-03T14:55:21+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -9,7 +9,7 @@
       "licence": "OpenFreeMap / OpenMapTiles (© OSM contributors)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — web basemap (C)"
     },
     {
       "key": "bikeshare_praha",
@@ -18,7 +18,7 @@
       "licence": "praha.eu",
       "rows": null,
       "status": "missing",
-      "note": "fetch failed 2026-10-03T14:10: HTTPSConnectionPool(host='praha.eu', port=443): Max retries exceeded with url: /bikesharing (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: (optional)"
+      "note": "fetch failed 2026-10-03T14:10: HTTPSConnectionPool(host='praha.eu', port=443): Max retries exceeded with url: /bikesharing (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: (optional) [P2: no public GBFS found]"
     },
     {
       "key": "chmi_air",
@@ -36,7 +36,7 @@
       "licence": "ČHMÚ open data (attribution)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — live air station metadata (engine)"
     },
     {
       "key": "csu_population",
@@ -54,7 +54,7 @@
       "licence": "ODbL (Photon / komoot)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — engine geocoder fallback (B)"
     },
     {
       "key": "golemio_air",
@@ -63,7 +63,7 @@
       "licence": "CC BY 4.0 (Golemio / OICT)",
       "rows": null,
       "status": "ok",
-      "note": "fetch failed 2026-10-03T14:02: 504 Server Error: Gateway Timeout for url: https://api.golemio.cz/v2/airqualitystations?limit=1000&offset=0"
+      "note": "reachable (verified 2026-10-03); not used for features — live air (engine)"
     },
     {
       "key": "golemio_districts",
@@ -72,7 +72,7 @@
       "licence": "CC BY 4.0 (Golemio / OICT)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — reference; IPR MČ used"
     },
     {
       "key": "golemio_gardens",
@@ -99,7 +99,7 @@
       "licence": "CC BY 4.0 (Golemio / OICT)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — reference; NRPZS used for health"
     },
     {
       "key": "golemio_playgrounds",
@@ -126,7 +126,7 @@
       "licence": "CC BY 4.0 (PID / ROPID)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — reference (stop names/ids for live departures)"
     },
     {
       "key": "ipr_katastralni_uzemi",
@@ -156,15 +156,6 @@
       "note": "IPR Hluková mapa automobilové dopravy – den (LAeq,day, road traffic) 5-dB bands; mean per cell. IPR publishes no tram/rail layer, so Praha = road only (Kraków = max(road, rail+tram), Lden)"
     },
     {
-      "key": "ipr_noise_night",
-      "url": "https://lkod-iprpraha.hub.arcgis.com/api/download/v1/items/83c81bf4e8ed47c5b38c7d1344d6b41a/geojson?layers=0",
-      "fetchedAt": "2026-10-03T14:04:12+00:00",
-      "licence": "CC BY 4.0 (IPR Praha, Hluková mapa)",
-      "rows": null,
-      "status": "ok",
-      "note": ""
-    },
-    {
       "key": "ipr_parks",
       "url": "https://mp.iprpraha.cz/arcgis/rest/services/Hosted/URK_CUR_URK_PARKY_P/FeatureServer/0",
       "fetchedAt": "2026-10-03T14:04:21+00:00",
@@ -181,6 +172,15 @@
       "rows": 112,
       "status": "ok",
       "note": "MF cenová mapa nájemného 2026-08-15: median Kč/m²/month per k.ú. = median over size categories; joined on k.ú. code (112) / name (0); cells take their k.ú. value"
+    },
+    {
+      "key": "mpsv_detske_skupiny",
+      "url": "https://data.mpsv.cz/portal/api/reports/by-table/detske_skupiny_evid_poskyt_seznam_akt_odata/data/csv?fileName=detske_skupiny_evidendce_poskytovatelu_data",
+      "fetchedAt": "2026-10-03T14:54:06+00:00",
+      "licence": "MPSV open data (attribution)",
+      "rows": 417,
+      "status": "ok",
+      "note": "active dětské skupiny in Praha: 433; geocoded via RÚIAN street + house number 417, unmatched 16; added to POI category nursery (with OSM jesle)"
     },
     {
       "key": "msmt_schools",
@@ -225,7 +225,7 @@
       "licence": "Policie ČR – non-commercial use only",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — offence classes → filter to criminal offences"
     },
     {
       "key": "police_cz_voronoi",
@@ -234,7 +234,7 @@
       "licence": "Policie ČR – non-commercial use only",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — reference (anonymisation polygons)"
     },
     {
       "key": "praha_open",
@@ -243,7 +243,16 @@
       "licence": "Praha open data",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — portal checked"
+    },
+    {
+      "key": "r5py_travel_times",
+      "url": "https://r5py.readthedocs.io",
+      "fetchedAt": "2026-10-03T14:48:34+00:00",
+      "licence": "derived (OSM ODbL + GTFS)",
+      "rows": 2299425,
+      "status": "ok",
+      "note": "r5py 1.1.7; 2967 habitable res-9 origins × 775 res-8 dests; departure 2026-10-06T08:00:00 (+30-min window, median) for transit; modes ['bike', 'transit', 'walk']; uint8 minutes, 255 = unreachable/>120"
     },
     {
       "key": "ruian",
@@ -262,6 +271,6 @@
     "h3Res": 9,
     "metricCrs": "EPSG:5514"
   },
-  "dataVersion": "2026-10-03T14:46:57+00:00",
-  "builtAt": "2026-10-03T14:46:57+00:00"
+  "dataVersion": "2026-10-03T14:55:21+00:00",
+  "builtAt": "2026-10-03T14:55:21+00:00"
 }

@@ -1,6 +1,6 @@
 {
   "city": "krakow",
-  "updatedAt": "2026-10-03T14:44:17+00:00",
+  "updatedAt": "2026-10-03T14:56:30+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -9,7 +9,7 @@
       "licence": "OpenFreeMap / OpenMapTiles (© OSM contributors)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — web basemap (C)"
     },
     {
       "key": "geocode",
@@ -18,7 +18,7 @@
       "licence": "ODbL (Photon / komoot)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — engine geocoder fallback (B)"
     },
     {
       "key": "gios",
@@ -32,11 +32,11 @@
     {
       "key": "gtfs_rt_ztp",
       "url": "https://gtfs.ztp.krakow.pl/VehiclePositions_A.pb",
-      "fetchedAt": "2026-10-03T14:10:14+00:00",
+      "fetchedAt": "2026-10-03T14:53:15+00:00",
       "licence": "ZTP Kraków open data",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — live departures (P2, engine)"
     },
     {
       "key": "gtfs_ztp_a",
@@ -72,7 +72,7 @@
       "licence": "UM Kraków open data terms",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — portal checked: no parks/żłobki datasets → OSM"
     },
     {
       "key": "men_schools",
@@ -113,7 +113,7 @@
     {
       "key": "nfz",
       "url": "https://api.nfz.gov.pl/app-itl-api/queues",
-      "fetchedAt": "2026-10-03T14:39:51+00:00",
+      "fetchedAt": "2026-10-03T14:55:51+00:00",
       "licence": "NFZ open API",
       "rows": 46,
       "status": "ok",
@@ -135,7 +135,7 @@
       "licence": "ODbL",
       "rows": null,
       "status": "missing",
-      "note": "fetch failed 2026-10-03T14:04: HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/status (Caused by NewConnectionError(\"HTTPSConnection(host='overpass-api.de', port=443): Failed to establish  (optional)"
+      "note": "fetch failed 2026-10-03T14:04: HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/status (Caused by NewConnectionError(\"HTTPSConnection(host='overpass-api.de', port=443): Failed to establish  (optional) [ad-hoc checks only; PBF used instead]"
     },
     {
       "key": "park_e_bike",
@@ -144,7 +144,7 @@
       "licence": "ZTP Kraków",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — reference (P2; seasonal)"
     },
     {
       "key": "r5py_travel_times",
@@ -158,7 +158,7 @@
     {
       "key": "rcn",
       "url": "https://geodezja.eco.um.krakow.pl/cgi-bin/krakow-rcn?SERVICE=WFS&REQUEST=GetCapabilities",
-      "fetchedAt": "2026-10-03T14:40:30+00:00",
+      "fetchedAt": "2026-10-03T14:56:30+00:00",
       "licence": "RCN, Wydział Geodezji UM Kraków (public register)",
       "rows": 23022,
       "status": "ok",
@@ -171,7 +171,7 @@
       "licence": "GUGiK",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — reference; Kraków's own RCN WFS used"
     },
     {
       "key": "safety_krk",
@@ -198,7 +198,7 @@
       "licence": "ZTP Kraków (ArcGIS Hub, open)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — reference; OSM cycle network used for active.cycleway_km_1km"
     },
     {
       "key": "ztp_hub_mobility_points",
@@ -207,7 +207,7 @@
       "licence": "ZTP Kraków (ArcGIS Hub, open)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — reference (P2 POI)"
     },
     {
       "key": "ztp_hub_park_ride",
@@ -216,7 +216,7 @@
       "licence": "ZTP Kraków (ArcGIS Hub, open)",
       "rows": null,
       "status": "ok",
-      "note": ""
+      "note": "reachable (verified 2026-10-03); not used for features — reference (P2 POI)"
     }
   ],
   "build": {
@@ -226,6 +226,6 @@
     "h3Res": 9,
     "metricCrs": "EPSG:2180"
   },
-  "dataVersion": "2026-10-03T14:40:30+00:00",
-  "builtAt": "2026-10-03T14:40:30+00:00"
+  "dataVersion": "2026-10-03T14:56:30+00:00",
+  "builtAt": "2026-10-03T14:56:30+00:00"
 }

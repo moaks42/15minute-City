@@ -106,6 +106,18 @@ def write(ctx: Ctx, g: gpd.GeoDataFrame, feats: pd.DataFrame, pois: pd.DataFrame
     n[["id", "name", "district_id", "population_est", "geometry"]].to_file(
         od / "neighborhoods.geojson", driver="GeoJSON", COORDINATE_PRECISION=6)
 
+    # manifest hygiene: drop stale keys, explain verified-but-unused sources, clear stale fetch-failure notes
+    keys = {x["key"]: x for x in ctx.s["sources"]}
+    derived = {"r5py_travel_times"}
+    ctx.man.data["sources"] = [e for e in ctx.man.data["sources"] if e["key"] in keys or e["key"] in derived]
+    for e in ctx.man.data["sources"]:
+        src = keys.get(e["key"], {})
+        if e["status"] == "ok" and (e.get("note") or "").startswith("fetch failed"):
+            e["note"] = ""
+        if e["status"] == "ok" and e.get("rows") is None and not e.get("note"):
+            e["note"] = f"reachable (verified {str(e.get('fetchedAt'))[:10]}); not used for features — {src.get('use', 'reference')}"
+        if e["status"] == "missing" and src.get("use"):
+            e["note"] = (e.get("note") or "") + f" [{src['use']}]"
     ctx.man.data["dataVersion"] = built
     ctx.man.data["builtAt"] = built
     ctx.man.data["build"] = {"serviceDate": ctx.service_date, "cells": int(len(g)),
