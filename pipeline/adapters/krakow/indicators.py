@@ -110,11 +110,14 @@ def price(ctx: Ctx) -> tuple[np.ndarray, np.ndarray]:
     num = lambda c: pd.to_numeric(df[c], errors="coerce")  # noqa: E731
     df["price"] = num("TRAN_CENA_BRUTTO")
     df["area"] = num("LOK_POW_UZYT")
-    # one transaction may contain several units: use the unit price when present, else the transaction price
+    # arm's-length household purchases only: full ownership, one flat per transaction, individual buyer
+    # (drops bulk/portfolio deals with apportioned unit prices and partial-share sales)
     lok = num("LOK_CENA_BRUTTO")
-    multi = df.groupby("TRAN_OZNACZENIE_TRANS")["LOK_ID_LOKALU"].transform("count") if "TRAN_OZNACZENIE_TRANS" in df else 1
-    df["p"] = np.where(lok.notna() & (lok > 0), lok, np.where(multi == 1, df["price"], np.nan))
+    units = df.groupby("TRAN_OZNACZENIE_TRANS")["LOK_ID_LOKALU"].transform("count")
+    flats = df.assign(f=(df.get("LOK_FUNKCJA") == "mieszkalna")).groupby("TRAN_OZNACZENIE_TRANS")["f"].transform("sum")
+    df["p"] = np.where(lok.notna() & (lok > 0), lok, np.where(units == 1, df["price"], np.nan))
     df = df[(df.get("LOK_FUNKCJA") == "mieszkalna") & (df.get("TRAN_RODZAJ_TRANS") == "wolnyRynek")
+            & (df.get("NIER_UDZIAL") == "1/1") & (flats == 1) & (df.get("TRAN_KUPUJACY") == "osobaFizyczna")
             & (df["area"] >= 15) & (df["area"] <= 250) & df["p"].notna()]
     df["ppm2"] = df["p"] / df["area"]
     q1, q3 = df["ppm2"].quantile([0.25, 0.75])
@@ -135,8 +138,9 @@ def price(ctx: Ctx) -> tuple[np.ndarray, np.ndarray]:
         nn.append(len(vals))
     med, nn = np.round(np.array(med), 0), np.array(nn)
     ctx.ok("rcn", int(len(df)),
-           f"Kraków RCN WFS ms:lokale, DOK_DATA ≥ last 24 months: {n0} records → {len(df)} free-market apartment "
-           "sales after IQR filter; median zł/m² over H3 k-ring (k=0..3 until n≥5)")
+           f"Kraków RCN WFS ms:lokale, DOK_DATA ≥ last 24 months: {n0} records → {len(df)} free-market flat sales "
+           "(full ownership, one flat per transaction, individual buyer, 15–250 m²) after IQR filter; "
+           "median zł/m² over H3 k-ring (k=0..3 until n≥5)")
     ctx.man.record("rcn", fetchedAt=now_iso())
     return med, nn
 
