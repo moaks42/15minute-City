@@ -1,0 +1,285 @@
+{
+  "city": "praha",
+  "updatedAt": "2026-10-03T15:54:10+00:00",
+  "sources": [
+    {
+      "key": "basemap",
+      "url": "https://tiles.openfreemap.org/styles/positron",
+      "fetchedAt": "2026-10-03T14:01:34+00:00",
+      "licence": "OpenFreeMap / OpenMapTiles (© OSM contributors)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — web basemap (C)"
+    },
+    {
+      "key": "bikeshare_praha",
+      "url": "https://praha.eu/bikesharing",
+      "fetchedAt": null,
+      "licence": "praha.eu",
+      "rows": null,
+      "status": "missing",
+      "note": "fetch failed 2026-10-03T15:20: HTTPSConnectionPool(host='praha.eu', port=443): Max retries exceeded with url: /bikesharing (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: (optional) [P2: no public GBFS found]"
+    },
+    {
+      "key": "chmi_air",
+      "url": "https://opendata.chmi.cz/air_quality/products/5year_avg/sit1000_5lprum_20_24_CR_JTSK.zip",
+      "fetchedAt": "2026-10-03T14:04:42+00:00",
+      "licence": "ČHMÚ open data (attribution)",
+      "rows": 4976,
+      "status": "ok",
+      "note": "ČHMÚ 5-year (2020–2024) annual-mean 1×1 km grid, S-JTSK; value of the grid square containing the centroid"
+    },
+    {
+      "key": "chmi_air_now_meta",
+      "url": "https://opendata.chmi.cz/air_quality/now/metadata/",
+      "fetchedAt": "2026-10-03T14:04:42+00:00",
+      "licence": "ČHMÚ open data (attribution)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — live air station metadata (engine)"
+    },
+    {
+      "key": "copernicus_dem",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_{tile}_DEM/Copernicus_DSM_COG_10_{tile}_DEM.tif",
+      "fetchedAt": "2026-10-03T15:22:54+00:00",
+      "licence": "Copernicus DEM GLO-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA",
+      "rows": 2,
+      "status": "ok",
+      "note": "GLO-30 tiles N49_00_E014_00, N50_00_E014_00; reprojected to EPSG:5514 at 30 m, Gaussian σ=60 m (DSM → terrain-scale), slope % mean within 180 m"
+    },
+    {
+      "key": "csu_population",
+      "url": "https://data.csu.gov.cz/opendata/sady/OBY01B01/distribuce/csv",
+      "fetchedAt": "2026-10-03T14:32:50+00:00",
+      "licence": "ČSÚ open data (CC BY 4.0)",
+      "rows": 1,
+      "status": "ok",
+      "note": "Praha population 1398674 (1 July 2025)"
+    },
+    {
+      "key": "geocode",
+      "url": "https://photon.komoot.io/api/?q=Karl%C3%ADn&bbox=14.22,49.94,14.71,50.18&limit=3",
+      "fetchedAt": "2026-10-03T14:01:35+00:00",
+      "licence": "ODbL (Photon / komoot)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — engine geocoder fallback (B)"
+    },
+    {
+      "key": "golemio_air",
+      "url": "https://api.golemio.cz/v2/airqualitystations",
+      "fetchedAt": "2026-10-03T14:10:17+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — live air (engine)"
+    },
+    {
+      "key": "golemio_districts",
+      "url": "https://api.golemio.cz/v2/citydistricts",
+      "fetchedAt": "2026-10-03T14:02:40+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — reference; IPR MČ used"
+    },
+    {
+      "key": "golemio_gardens",
+      "url": "https://api.golemio.cz/v2/gardens",
+      "fetchedAt": "2026-10-03T14:01:38+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": 13,
+      "status": "ok",
+      "note": "added to POI category 'park'"
+    },
+    {
+      "key": "golemio_libraries",
+      "url": "https://api.golemio.cz/v2/municipallibraries",
+      "fetchedAt": "2026-10-03T14:01:38+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": 107,
+      "status": "ok",
+      "note": "added to POI category 'library'"
+    },
+    {
+      "key": "golemio_medical",
+      "url": "https://api.golemio.cz/v2/medicalinstitutions",
+      "fetchedAt": "2026-10-03T14:01:38+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — reference; NRPZS used for health"
+    },
+    {
+      "key": "golemio_playgrounds",
+      "url": "https://api.golemio.cz/v2/playgrounds",
+      "fetchedAt": "2026-10-03T14:01:37+00:00",
+      "licence": "CC BY 4.0 (Golemio / OICT)",
+      "rows": 153,
+      "status": "ok",
+      "note": "added to POI category 'playground'"
+    },
+    {
+      "key": "gtfs_pid",
+      "url": "https://data.pid.cz/PID_GTFS.zip",
+      "fetchedAt": "2026-10-03T14:01:35+00:00",
+      "licence": "CC BY 4.0 (PID / ROPID)",
+      "rows": 17146,
+      "status": "ok",
+      "note": "weekday service date 20261006; stop-level stats 07–09 & 23–05"
+    },
+    {
+      "key": "gtfs_pid_stops",
+      "url": "https://data.pid.cz/stops/json/stops.json",
+      "fetchedAt": "2026-10-03T14:01:36+00:00",
+      "licence": "CC BY 4.0 (PID / ROPID)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — reference (stop names/ids for live departures)"
+    },
+    {
+      "key": "ipr_katastralni_uzemi",
+      "url": "https://services5.arcgis.com/SBTXIEUGWbqzUecw/arcgis/rest/services/katastry/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:02:45+00:00",
+      "licence": "CC BY 4.0 (IPR Praha / ČÚZK)",
+      "rows": 112,
+      "status": "ok",
+      "note": "112 katastrálních území; also the MF rent-map unit"
+    },
+    {
+      "key": "ipr_mestske_casti",
+      "url": "https://mp.iprpraha.cz/arcgis/rest/services/Hosted/MAP_CUR_MAP_MESTSKECASTI_P/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:02:42+00:00",
+      "licence": "CC BY 4.0 (IPR Praha)",
+      "rows": 57,
+      "status": "ok",
+      "note": "57 městských částí (IPR Praha), union = city boundary"
+    },
+    {
+      "key": "ipr_noise_day",
+      "url": "https://lkod-iprpraha.hub.arcgis.com/api/download/v1/items/6ea612215c8646dab1ea975aa64276b5/geojson?layers=0",
+      "fetchedAt": "2026-10-03T14:44:54+00:00",
+      "licence": "CC BY 4.0 (IPR Praha, Hluková mapa automobilové dopravy)",
+      "rows": 4976,
+      "status": "ok",
+      "note": "IPR Hluková mapa automobilové dopravy – den (LAeq,day, road traffic) 5-dB bands; mean per cell. IPR publishes no tram/rail layer, so Praha = road only (Kraków = max(road, rail+tram), Lden)"
+    },
+    {
+      "key": "ipr_parks",
+      "url": "https://mp.iprpraha.cz/arcgis/rest/services/Hosted/URK_CUR_URK_PARKY_P/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:04:21+00:00",
+      "licence": "CC BY 4.0 (IPR Praha)",
+      "rows": 1064,
+      "status": "ok",
+      "note": "IPR 'Parky (ÚAP)' polygons added to the park ≥ 2 ha layer"
+    },
+    {
+      "key": "mf_rent",
+      "url": "https://mf.gov.cz/assets/attachments/2026-08-15_Cenova-mapa.xlsx",
+      "fetchedAt": "2026-10-03T14:10:00+00:00",
+      "licence": "MF ČR (open, attribution)",
+      "rows": 112,
+      "status": "ok",
+      "note": "MF cenová mapa nájemného 2026-08-15: median Kč/m²/month per k.ú. = median over size categories; joined on k.ú. code (112) / name (0); cells take their k.ú. value"
+    },
+    {
+      "key": "mpsv_detske_skupiny",
+      "url": "https://data.mpsv.cz/portal/api/reports/by-table/detske_skupiny_evid_poskyt_seznam_akt_odata/data/csv?fileName=detske_skupiny_evidendce_poskytovatelu_data",
+      "fetchedAt": "2026-10-03T14:54:06+00:00",
+      "licence": "MPSV open data (attribution)",
+      "rows": 417,
+      "status": "ok",
+      "note": "active dětské skupiny in Praha: 433; geocoded via RÚIAN street + house number 417, unmatched 16; added to POI category nursery (with OSM jesle)"
+    },
+    {
+      "key": "msmt_schools",
+      "url": "https://lkod-ftp.msmt.gov.cz/00022985/21e5fd4a-5378-4d64-90e9-759b15d01f28/RSSZ-Hl-m-Praha.jsonld",
+      "fetchedAt": "2026-10-03T14:04:26+00:00",
+      "licence": "CC BY 4.0 (MŠMT, Rejstřík škol a školských zařízení)",
+      "rows": 1349,
+      "status": "ok",
+      "note": "RSSZ Hl. m. Praha (LKOD JSON-LD); místa výuky geocoded by RÚIAN code (unmatched 70); A00→kindergarten, B00→primary, C00→secondary"
+    },
+    {
+      "key": "nrpzs",
+      "url": "https://datanzis.uzis.gov.cz/data/NR-01-NRPZS/NR-01-06/Otevrena-data-NR-01-06-nrpzs-mista-poskytovani-zdravotnich-sluzeb.csv",
+      "fetchedAt": "2026-10-03T14:04:34+00:00",
+      "licence": "CC BY 4.0 (ÚZIS ČR, NRPZS)",
+      "rows": 2961,
+      "status": "ok",
+      "note": "kraj CZ010; GP, paediatrics, gynaecology, maternity (inpatient G&P/neonatology at hospitals), ER (acute hospitals), dentists, pharmacies derived from druh/obor/forma péče"
+    },
+    {
+      "key": "osm_praha",
+      "url": "https://download.geofabrik.de/europe/czech-republic/stredocesky-latest.osm.pbf",
+      "fetchedAt": "2026-10-03T14:01:34+00:00",
+      "licence": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "rows": null,
+      "status": "ok",
+      "note": "clipped to city + 5 km"
+    },
+    {
+      "key": "police_cz",
+      "url": "https://kriminalita.policie.gov.cz/api/v2/downloads/{month}.zip",
+      "fetchedAt": "2026-10-03T14:09:56+00:00",
+      "licence": "Policie ČR – non-commercial use only",
+      "rows": 27488,
+      "status": "ok",
+      "note": "12 months (202510–202609), criminal offences only (excl. přestupky, traffic accidents, fires); anonymised Voronoi points → městská část; residents = ČSÚ 2025 total split by RÚIAN address share. NON-COMMERCIAL licence"
+    },
+    {
+      "key": "police_cz_types",
+      "url": "https://kriminalita.policie.gov.cz/api/v2/downloads/types.json",
+      "fetchedAt": "2026-10-03T14:06:33+00:00",
+      "licence": "Policie ČR – non-commercial use only",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — offence classes → filter to criminal offences"
+    },
+    {
+      "key": "police_cz_voronoi",
+      "url": "https://kriminalita.policie.gov.cz/voronoi.geojson.zip",
+      "fetchedAt": "2026-10-03T14:06:32+00:00",
+      "licence": "Policie ČR – non-commercial use only",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — reference (anonymisation polygons)"
+    },
+    {
+      "key": "praha_open",
+      "url": "https://opendata.praha.eu/",
+      "fetchedAt": "2026-10-03T14:10:01+00:00",
+      "licence": "Praha open data",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — portal checked"
+    },
+    {
+      "key": "r5py_travel_times",
+      "url": "https://r5py.readthedocs.io",
+      "fetchedAt": "2026-10-03T15:54:10+00:00",
+      "licence": "derived (OSM ODbL + GTFS)",
+      "rows": 2299425,
+      "status": "ok",
+      "note": "r5py 1.1.7; 2967 habitable res-9 origins × 775 res-8 dests; departure 2026-10-06T08:00:00 (+30-min window, median) for transit; modes ['bike', 'dests', 'meta_json', 'origins', 'transit', 'walk']; uint8 minutes, 255 = unreachable/>120"
+    },
+    {
+      "key": "ruian",
+      "url": "https://vdp.cuzk.gov.cz/vymenny_format/csv/20260930_OB_554782_ADR.csv.zip",
+      "fetchedAt": "2026-10-03T14:04:24+00:00",
+      "licence": "CC BY 4.0 (ČÚZK RÚIAN)",
+      "rows": 134670,
+      "status": "ok",
+      "note": "RÚIAN address points (obec 554782), S-JTSK sign flip x=−Y, y=−X validated against Pražský hrad; cp1250 ';' CSV"
+    }
+  ],
+  "build": {
+    "serviceDate": "20261006",
+    "cells": 4976,
+    "habitable": 2967,
+    "h3Res": 9,
+    "metricCrs": "EPSG:5514"
+  },
+  "dataVersion": "2026-10-03T15:23:04+00:00",
+  "builtAt": "2026-10-03T15:23:04+00:00"
+}

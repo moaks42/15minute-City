@@ -31,7 +31,7 @@
     "lat": 50.067478,
     "lon": 14.435753
    },
-   "similarity": 0.813,
+   "similarity": 0.821,
    "archetype": {
     "id": "student_buzz",
     "p": 0.61
@@ -44,21 +44,21 @@
    ]
   },
   {
-   "id": "891e3541bdbffff",
+   "id": "891e3541a0fffff",
    "kind": "hex",
-   "name": "Vinohrady",
+   "name": "Nusle",
    "district": {
     "id": "500089",
     "name": "Praha 2"
    },
    "centroid": {
-    "lat": 50.073087,
-    "lon": 14.445265
+    "lat": 50.067224,
+    "lon": 14.430853
    },
-   "similarity": 0.783,
+   "similarity": 0.819,
    "archetype": {
-    "id": "historic_core",
-    "p": 0.72
+    "id": "urban_mix",
+    "p": 0.58
    },
    "sharedTraits": [
     "transit",
@@ -79,7 +79,7 @@
     "lat": 50.077422,
     "lon": 14.430274
    },
-   "similarity": 0.783,
+   "similarity": 0.81,
    "archetype": {
     "id": "historic_core",
     "p": 0.72
@@ -92,7 +92,7 @@
    ]
   },
   {
-   "id": "891e3541aa3ffff",
+   "id": "891e3541bdbffff",
    "kind": "hex",
    "name": "Vinohrady",
    "district": {
@@ -100,10 +100,10 @@
     "name": "Praha 2"
    },
    "centroid": {
-    "lat": 50.075255,
-    "lon": 14.437769
+    "lat": 50.073087,
+    "lon": 14.445265
    },
-   "similarity": 0.782,
+   "similarity": 0.797,
    "archetype": {
     "id": "historic_core",
     "p": 0.72
@@ -127,7 +127,7 @@
     "lat": 50.077932,
     "lon": 14.440075
    },
-   "similarity": 0.779,
+   "similarity": 0.795,
    "archetype": {
     "id": "historic_core",
     "p": 0.72

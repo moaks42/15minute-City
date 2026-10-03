@@ -20,6 +20,30 @@
  "to": "krakow",
  "items": [
   {
+   "id": "891e2e6b183ffff",
+   "kind": "hex",
+   "name": "Kleparz",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.071148,
+    "lon": 19.946981
+   },
+   "similarity": 0.746,
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "green",
+    "education"
+   ]
+  },
+  {
    "id": "891e2e6b037ffff",
    "kind": "hex",
    "name": "Piasek",
@@ -31,7 +55,7 @@
     "lat": 50.063369,
     "lon": 19.929436
    },
-   "similarity": 0.725,
+   "similarity": 0.741,
    "archetype": {
     "id": "historic_core",
     "p": 0.72
@@ -55,7 +79,7 @@
     "lat": 50.060812,
     "lon": 19.931871
    },
-   "similarity": 0.699,
+   "similarity": 0.719,
    "archetype": {
     "id": "historic_core",
     "p": 0.72
@@ -68,18 +92,18 @@
    ]
   },
   {
-   "id": "891e2e6b023ffff",
+   "id": "891e2e6b143ffff",
    "kind": "hex",
-   "name": "Piasek",
+   "name": "Stradom",
    "district": {
     "id": "1",
     "name": "Stare Miasto"
    },
    "centroid": {
-    "lat": 50.06079,
-    "lon": 19.926902
+    "lat": 50.058277,
+    "lon": 19.939274
    },
-   "similarity": 0.692,
+   "similarity": 0.713,
    "archetype": {
     "id": "historic_core",
     "p": 0.72
@@ -103,31 +127,7 @@
     "lat": 50.05572,
     "lon": 19.941708
    },
-   "similarity": 0.686,
-   "archetype": {
-    "id": "historic_core",
-    "p": 0.72
-   },
-   "sharedTraits": [
-    "transit",
-    "active",
-    "green",
-    "education"
-   ]
-  },
-  {
-   "id": "891e2e6b1cfffff",
-   "kind": "hex",
-   "name": "Stare Miasto",
-   "district": {
-    "id": "1",
-    "name": "Stare Miasto"
-   },
-   "centroid": {
-    "lat": 50.063413,
-    "lon": 19.939375
-   },
-   "similarity": 0.685,
+   "similarity": 0.713,
    "archetype": {
     "id": "historic_core",
     "p": 0.72

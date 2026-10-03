@@ -1,0 +1,258 @@
+{
+  "city": "krakow",
+  "updatedAt": "2026-10-03T15:55:30+00:00",
+  "sources": [
+    {
+      "key": "basemap",
+      "url": "https://tiles.openfreemap.org/styles/positron",
+      "fetchedAt": "2026-10-03T14:01:34+00:00",
+      "licence": "OpenFreeMap / OpenMapTiles (© OSM contributors)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — web basemap (C)"
+    },
+    {
+      "key": "copernicus_dem",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_{tile}_DEM/Copernicus_DSM_COG_10_{tile}_DEM.tif",
+      "fetchedAt": "2026-10-03T15:55:13+00:00",
+      "licence": "Copernicus DEM GLO-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA",
+      "rows": 4,
+      "status": "ok",
+      "note": "GLO-30 tiles N49_00_E019_00, N49_00_E020_00, N50_00_E019_00, N50_00_E020_00; reprojected to EPSG:2180 at 30 m, Gaussian σ=60 m (DSM → terrain-scale), slope % mean within 180 m"
+    },
+    {
+      "key": "geocode",
+      "url": "https://photon.komoot.io/api/?q=Rynek%20G%C5%82%C3%B3wny&bbox=19.79,49.96,20.22,50.13&limit=3",
+      "fetchedAt": "2026-10-03T14:01:35+00:00",
+      "licence": "ODbL (Photon / komoot)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — engine geocoder fallback (B)"
+    },
+    {
+      "key": "gios",
+      "url": "https://api.gios.gov.pl/pjp-api/v1/rest/station/findAll?size=500",
+      "fetchedAt": "2026-10-03T14:08:47+00:00",
+      "licence": "GIOŚ (cite 'GIOŚ')",
+      "rows": 3217,
+      "status": "ok",
+      "note": "IDW (p=2) of GIOŚ station annual means; PM10: 10 stations, annual means 2023–2024; PM2,5: 4 stations, annual means 2023–2024"
+    },
+    {
+      "key": "gtfs_rt_ztp",
+      "url": "https://gtfs.ztp.krakow.pl/VehiclePositions_A.pb",
+      "fetchedAt": "2026-10-03T14:53:15+00:00",
+      "licence": "ZTP Kraków open data",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — live departures (P2, engine)"
+    },
+    {
+      "key": "gtfs_ztp_a",
+      "url": "https://gtfs.ztp.krakow.pl/GTFS_KRK_A.zip",
+      "fetchedAt": "2026-10-03T14:04:05+00:00",
+      "licence": "ZTP Kraków open data",
+      "rows": 3310,
+      "status": "ok",
+      "note": "weekday service date 20261006; stop-level stats 07–09 & 23–05"
+    },
+    {
+      "key": "gtfs_ztp_t",
+      "url": "https://gtfs.ztp.krakow.pl/GTFS_KRK_T.zip",
+      "fetchedAt": "2026-10-03T14:04:05+00:00",
+      "licence": "ZTP Kraków open data",
+      "rows": 3310,
+      "status": "ok",
+      "note": "weekday service date 20261006; stop-level stats 07–09 & 23–05"
+    },
+    {
+      "key": "gus_bdl",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/by-unit/011212161000?var-id=72305&format=json",
+      "fetchedAt": "2026-10-03T14:09:17+00:00",
+      "licence": "GUS BDL (CC BY 4.0)",
+      "rows": 1,
+      "status": "ok",
+      "note": "population 816614 (2025), var 72305, unit 011212161000"
+    },
+    {
+      "key": "krk_open",
+      "url": "https://otwartedane.um.krakow.pl/zbiory-danych",
+      "fetchedAt": "2026-10-03T14:09:18+00:00",
+      "licence": "UM Kraków open data terms",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — portal checked: no parks/żłobki datasets → OSM"
+    },
+    {
+      "key": "krk_zlobki_niesamorzadowe",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/ŻŁOBKI_I_KLUBY_DZIECIĘCE_WFL1/FeatureServer/0",
+      "fetchedAt": "2026-10-03T15:13:10+00:00",
+      "licence": "UM Kraków (GMK ArcGIS)",
+      "rows": 241,
+      "status": "ok",
+      "note": "żłobki i kluby dziecięce (niesamorządowe), layer edited 2023-07; added to POI category nursery together with OSM"
+    },
+    {
+      "key": "krk_zlobki_samorzadowe",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/ŻŁOBKI_I_KLUBY_DZIECIĘCE_WFL1/FeatureServer/1",
+      "fetchedAt": "2026-10-03T15:13:10+00:00",
+      "licence": "UM Kraków (GMK ArcGIS)",
+      "rows": 22,
+      "status": "ok",
+      "note": "żłobki i kluby dziecięce (samorządowe), layer edited 2023-07; added to POI category nursery together with OSM"
+    },
+    {
+      "key": "men_schools",
+      "url": "https://api.dane.gov.pl/resources/1254769,wykaz-szko-i-placowek-oswiatowych-wg-stanu-bazy-sio-na-30092025/file",
+      "fetchedAt": "2026-10-03T14:09:12+00:00",
+      "licence": "CC BY 4.0 (MEN / dane.gov.pl)",
+      "rows": 830,
+      "status": "ok",
+      "note": "SIO 30.09.2025, powiat 1261; geocoded via EMUiA {'exact': 819, 'street': 11}"
+    },
+    {
+      "key": "msip_addresses",
+      "url": "https://msip.um.krakow.pl/Dane/Adresy_JSON.zip",
+      "fetchedAt": "2026-10-03T14:04:11+00:00",
+      "licence": "MSIP UM Kraków (EMUiA, open data, attribution)",
+      "rows": 70217,
+      "status": "ok",
+      "note": "EMUiA address points → habitable mask + population proxy"
+    },
+    {
+      "key": "msip_districts",
+      "url": "https://msip.um.krakow.pl/Dane/Dzielnice_JSON.zip",
+      "fetchedAt": "2026-10-03T14:04:10+00:00",
+      "licence": "MSIP UM Kraków (open data, attribution)",
+      "rows": 18,
+      "status": "ok",
+      "note": "18 dzielnic, union = city boundary"
+    },
+    {
+      "key": "msip_noise",
+      "url": "https://msip.um.krakow.pl/Dane/Mapa_Halasu_2022_JSON.zip",
+      "fetchedAt": "2026-10-03T14:08:44+00:00",
+      "licence": "MSIP UM Kraków (strategic noise map 2022)",
+      "rows": 3217,
+      "status": "ok",
+      "note": "Mapa imisyjna 2022, LDWN (Lden) 5-dB bands; max(road, rail+tram) per pixel, mean per cell; industrial layer has no dB attribute → not used"
+    },
+    {
+      "key": "nfz",
+      "url": "https://api.nfz.gov.pl/app-itl-api/queues",
+      "fetchedAt": "2026-10-03T15:54:54+00:00",
+      "licence": "NFZ open API",
+      "rows": 46,
+      "status": "ok",
+      "note": "providers of ODDZIAŁ POŁOŻNICZO-GINEKOLOGICZNY (maternity) / PORADNIA POŁOŻNICZO-GINEKOLOGICZNA (gynaecology) in Kraków"
+    },
+    {
+      "key": "osm_krakow",
+      "url": "https://download.geofabrik.de/europe/poland/malopolskie-latest.osm.pbf",
+      "fetchedAt": "2026-10-03T14:01:34+00:00",
+      "licence": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "rows": null,
+      "status": "ok",
+      "note": "clipped to city + 5 km"
+    },
+    {
+      "key": "overpass",
+      "url": "https://overpass-api.de/api/status",
+      "fetchedAt": null,
+      "licence": "ODbL",
+      "rows": null,
+      "status": "missing",
+      "note": "fetch failed 2026-10-03T15:20: HTTPSConnectionPool(host='overpass-api.de', port=443): Max retries exceeded with url: /api/status (Caused by NewConnectionError(\"HTTPSConnection(host='overpass-api.de', port=443): Failed to establish  (optional) [ad-hoc checks only; PBF used instead] [ad-hoc checks only; PBF used instead]"
+    },
+    {
+      "key": "park_e_bike",
+      "url": "https://ztp.krakow.pl/rower/park-e-bike",
+      "fetchedAt": "2026-10-03T14:09:18+00:00",
+      "licence": "ZTP Kraków",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — reference (P2; seasonal)"
+    },
+    {
+      "key": "r5py_travel_times",
+      "url": "https://r5py.readthedocs.io",
+      "fetchedAt": "2026-10-03T15:35:39+00:00",
+      "licence": "derived (OSM ODbL + GTFS)",
+      "rows": 1093972,
+      "status": "ok",
+      "note": "r5py 1.1.7; 2162 habitable res-9 origins × 506 res-8 dests; departure 2026-10-06T08:00:00 (+30-min window, median) for transit; modes ['bike', 'dests', 'meta_json', 'origins', 'transit', 'walk']; uint8 minutes, 255 = unreachable/>120"
+    },
+    {
+      "key": "rcn",
+      "url": "https://geodezja.eco.um.krakow.pl/cgi-bin/krakow-rcn?SERVICE=WFS&REQUEST=GetCapabilities",
+      "fetchedAt": "2026-10-03T15:55:29+00:00",
+      "licence": "RCN, Wydział Geodezji UM Kraków (public register)",
+      "rows": 21644,
+      "status": "ok",
+      "note": "Kraków RCN WFS ms:lokale, DOK_DATA ≥ last 24 months: 30581 records → 21644 free-market flat sales (full ownership, one flat per transaction, individual buyer, 15–250 m²) after IQR filter; median zł/m² over H3 k-ring (k=0..3 until n≥5)"
+    },
+    {
+      "key": "rcn_gugik",
+      "url": "https://mapy.geoportal.gov.pl/wss/service/rcn?SERVICE=WFS&REQUEST=GetCapabilities",
+      "fetchedAt": "2026-10-03T14:09:16+00:00",
+      "licence": "GUGiK",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — reference; Kraków's own RCN WFS used"
+    },
+    {
+      "key": "safety_krk",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Przestepstwa_ogolem_msc_pub_2022_mapa/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:08:45+00:00",
+      "licence": "Bezpieczny Kraków / UM Kraków (ArcGIS Hub)",
+      "rows": 141,
+      "status": "ok",
+      "note": "'Przestępstwa w przestrzeni publicznej 2023' (715 offences, 141 units) area-apportioned to dzielnice; residents = GUS 2025 total split by EMUiA address share"
+    },
+    {
+      "key": "ztp_hub_bike_racks",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Stojaki_ZTP_wyświetlenie/FeatureServer/1",
+      "fetchedAt": "2026-10-03T14:10:16+00:00",
+      "licence": "ZTP Kraków (ArcGIS Hub, open)",
+      "rows": 3157,
+      "status": "ok",
+      "note": "ZTP bike racks (stojaki) added to POI category bike_rack"
+    },
+    {
+      "key": "ztp_hub_cycle_lines",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Ciagi_rowerowe/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:04:09+00:00",
+      "licence": "ZTP Kraków (ArcGIS Hub, open)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — reference; OSM cycle network used for active.cycleway_km_1km"
+    },
+    {
+      "key": "ztp_hub_mobility_points",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Punkty_mobilności_warstwa_publiczna/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:04:09+00:00",
+      "licence": "ZTP Kraków (ArcGIS Hub, open)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — reference (P2 POI)"
+    },
+    {
+      "key": "ztp_hub_park_ride",
+      "url": "https://services-eu1.arcgis.com/svTzSt3AvH7sK6q9/arcgis/rest/services/Park_and_Ride/FeatureServer/0",
+      "fetchedAt": "2026-10-03T14:04:09+00:00",
+      "licence": "ZTP Kraków (ArcGIS Hub, open)",
+      "rows": null,
+      "status": "ok",
+      "note": "reachable (verified 2026-10-03); not used for features — reference (P2 POI)"
+    }
+  ],
+  "build": {
+    "serviceDate": "20261006",
+    "cells": 3217,
+    "habitable": 2162,
+    "h3Res": 9,
+    "metricCrs": "EPSG:2180"
+  },
+  "dataVersion": "2026-10-03T15:55:30+00:00",
+  "builtAt": "2026-10-03T15:55:30+00:00"
+}
