@@ -19,7 +19,7 @@ sources:
      url: "https://tiles.openfreemap.org/styles/positron"}
   - {key: geocode, use: "engine geocoder fallback (B)", kind: http, file: photon_sample.json, licence: "ODbL (Photon / komoot)",
      url: "https://photon.komoot.io/api/?q=Rynek%20G%C5%82%C3%B3wny&bbox=19.79,49.96,20.22,50.13&limit=3"}
-  - {key: overpass, use: "ad-hoc checks only; PBF used instead", kind: http, file: overpass_status.txt, licence: "ODbL", optional: true,
+  - {key: overpass, use: "ad-hoc checks only; PBF used instead", kind: http, file: overpass_status.txt, licence: "ODbL", optional: true, timeout: 20,
      url: "https://overpass-api.de/api/status"}
   # --- transit ---
   - {key: gtfs_ztp_a, kind: http, file: GTFS_KRK_A.zip, licence: "ZTP Kraków open data",

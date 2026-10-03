@@ -1,6 +1,6 @@
 {
   "city": "praha",
-  "updatedAt": "2026-10-03T15:11:28+00:00",
+  "updatedAt": "2026-10-03T15:18:39+00:00",
   "sources": [
     {
       "key": "basemap",
@@ -18,7 +18,7 @@
       "licence": "praha.eu",
       "rows": null,
       "status": "missing",
-      "note": "fetch failed 2026-10-03T14:10: HTTPSConnectionPool(host='praha.eu', port=443): Max retries exceeded with url: /bikesharing (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: (optional) [P2: no public GBFS found] [P2: no public GBFS found] [P2: no public GBFS found]"
+      "note": "fetch failed 2026-10-03T14:10: HTTPSConnectionPool(host='praha.eu', port=443): Max retries exceeded with url: /bikesharing (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: (optional) [P2: no public GBFS found] [P2: no public GBFS found] [P2: no public GBFS found] [P2: no public GBFS found]"
     },
     {
       "key": "chmi_air",
@@ -41,7 +41,7 @@
     {
       "key": "copernicus_dem",
       "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_{tile}_DEM/Copernicus_DSM_COG_10_{tile}_DEM.tif",
-      "fetchedAt": "2026-10-03T15:11:18+00:00",
+      "fetchedAt": "2026-10-03T15:18:29+00:00",
       "licence": "Copernicus DEM GLO-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA",
       "rows": 2,
       "status": "ok",
@@ -280,6 +280,6 @@
     "h3Res": 9,
     "metricCrs": "EPSG:5514"
   },
-  "dataVersion": "2026-10-03T15:11:27+00:00",
-  "builtAt": "2026-10-03T15:11:27+00:00"
+  "dataVersion": "2026-10-03T15:18:39+00:00",
+  "builtAt": "2026-10-03T15:18:39+00:00"
 }

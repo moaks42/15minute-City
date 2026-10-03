@@ -47,12 +47,16 @@ def addresses(ctx: Ctx) -> gpd.GeoDataFrame:
     co = df["Číslo orientační"].fillna("") + df["Znak čísla orientačního"].fillna("")
     num = np.where(co != "", cp + "/" + co, np.where(df["Typ SO"].eq("č.ev."), "ev. " + cp, cp))
     base = np.where(street != "", street, df["Název části obce"].fillna(""))
-    df["street"] = street
+    df["street"] = pd.Series(base, index=df.index)  # contract v2: place name when there is no street
+    df["housenumber"] = pd.Series(num, index=df.index)
+    psc = df["PSČ"].fillna("").astype(str).str.replace(" ", "")
+    df["postcode"] = np.where(psc.str.len() == 5, psc.str[:3] + " " + psc.str[3:], None)
+    df["source"] = "ruian"
     df["label"] = pd.Series(base, index=df.index) + " " + pd.Series(num, index=df.index)
     # search key also accepts "Street co" and "Street cp" (people use the orientation number)
     df["search"] = [f"{fold(l)} {fold(b)} {c}".strip() for l, b, c in zip(df["label"], base, co)]
     g = gpd.GeoDataFrame(df[["Kód ADM", "Název MOMC", "Název části obce", "Název ulice", "Číslo domovní",
-                             "Číslo orientační", "street", "label", "search"]],
+                             "Číslo orientační", "street", "housenumber", "postcode", "source", "label", "search"]],
                          geometry=gpd.points_from_xy(df["x"], df["y"]), crs=5514).to_crs(4326)
     # validate the sign flip against a known address: Hradčany, Hrad I. nádvoří 1 ≈ 50.0905 N, 14.4005 E
     p = g[(g["Název ulice"] == "Hrad I. nádvoří") & (g["Číslo domovní"] == "1")].geometry

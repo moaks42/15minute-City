@@ -29,5 +29,8 @@ def addresses(ctx: Ctx) -> gpd.GeoDataFrame:
     a["street"] = a["nazwa_ulicy"].fillna("").str.strip()
     a["label"] = (a["street"] + " " + a["numer_adresowy"].fillna("").str.strip()).str.strip()
     a["search"] = a["label"].map(fold)
+    a["housenumber"] = a["numer_adresowy"].fillna("").str.strip()
+    a["postcode"] = a["kod_pocztowy"].fillna("").str.strip().replace("", None)
+    a["source"] = "msip_addresses"
     ctx.ok("msip_addresses", len(a), "EMUiA address points → habitable mask + population proxy")
     return a

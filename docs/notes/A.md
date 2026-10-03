@@ -16,7 +16,7 @@ Data documentation: [`docs/DATA_SOURCES.md`](../DATA_SOURCES.md).
   - Kraków: 2,162 × 506.
   - Praha: 2,967 × 775, 97% of transit pairs reachable.
 - `_shared/ml_features.parquet`: 49 crossCity columns, 8,193 rows.
-- **New:** `geocode.parquet` per city (addresses, streets, places, districts; accent-free search key) for `/geocode`. See "For B".
+- **New:** `addresses.parquet` per city, exactly as in contracts-v2 §3b (K 70,217 EMUiA, P 134,670 RÚIAN). It replaces my earlier ad-hoc `geocode.parquet`.
 - **New:**
   - `accessibility.slope_pct` from the Copernicus DEM (both cities).
   - Nurseries from official registers: K = UM Kraków żłobki layer (263); P = MPSV dětské skupiny (417).
@@ -61,16 +61,11 @@ Data documentation: [`docs/DATA_SOURCES.md`](../DATA_SOURCES.md).
 - `grid.geojson` also carries `neighborhood_id`, which is handy for neighbourhood aggregation.
 - `travel_times.npz` has `meta_json` = `{"date":"2026-10-06","departure":"08:00","windowMinutes":30,"method":"r5py",…}`.
 
-- **New optional file `geocode.parquet`** (per city; K 73k rows, P 142k rows) for `/api/{city}/geocode`. Columns:
-  `label, sublabel (district name), kind (address|street|place|district), lat, lon, h3, search`. `search` is
-  lower-case and diacritics-free (ł→l): "zizkov" → "Žižkov", "rakowicka 27" → "Rakowicka 27". Praha address
-  labels use `street cp/co`, and the search key also contains the orientation number on its own. Please match by tokens, not by raw
-  substring ("vinohradska 12" also hits 1200/…), and rank place/district before street before address. POIs stay in `pois.parquet`.
+- `addresses.parquet` (contracts-v2): Praha `housenumber` is "č.p./č.o." (e.g. `1448/20`; `ev. 12` for registration numbers), and `street` falls back to the place name when an address has no street. `source` = manifest key (`msip_addresses`, `ruian`). Postcodes: K `31-045`, P `193 00`.
 
 ## For C (web)
 - `grid.geojson` per city is ready to copy to `web/public/data/{city}/` (README §5). The numeric feature `id` is the row index.
 - The About page can render `manifest.json` and the attribution list in `docs/DATA_SOURCES.md` §6.
 
 ## Requests to other workstreams
-- (B, additive) Add `geocode.parquet` (above) to DATA_CONTRACT §5 as an optional file, or tell me another shape you prefer.
 - (B, optional, additive) Consider adding `environment.no2` (µg/m³; Praha ČHMÚ grid, available now as `aux.environment_no2`; Kraków GIOŚ could follow).
