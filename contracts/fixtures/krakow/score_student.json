@@ -1,0 +1,2759 @@
+{
+ "city": "krakow",
+ "currency": "PLN",
+ "lang": "pl",
+ "computeMs": 12.4,
+ "aggregate": "hex",
+ "count": {
+  "cells": 217,
+  "habitable": 206,
+  "passing": 206
+ },
+ "cells": [
+  [
+   "891e2e68443ffff",
+   59,
+   1
+  ],
+  [
+   "891e2e6844bffff",
+   66,
+   1
+  ],
+  [
+   "891e2e68453ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e68457ffff",
+   55,
+   1
+  ],
+  [
+   "891e2e6845bffff",
+   67,
+   1
+  ],
+  [
+   "891e2e684c3ffff",
+   63,
+   1
+  ],
+  [
+   "891e2e684cbffff",
+   65,
+   1
+  ],
+  [
+   "891e2e684cfffff",
+   58,
+   1
+  ],
+  [
+   "891e2e684d3ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e684dbffff",
+   62,
+   1
+  ],
+  [
+   "891e2e68613ffff",
+   60,
+   1
+  ],
+  [
+   "891e2e6861bffff",
+   65,
+   1
+  ],
+  [
+   "891e2e68643ffff",
+   61,
+   1
+  ],
+  [
+   "891e2e68653ffff",
+   63,
+   1
+  ],
+  [
+   "891e2e68657ffff",
+   60,
+   1
+  ],
+  [
+   "891e2e6865bffff",
+   63,
+   1
+  ],
+  [
+   "891e2e68683ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e68687ffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6868bffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6868fffff",
+   61,
+   1
+  ],
+  [
+   "891e2e68693ffff",
+   73,
+   1
+  ],
+  [
+   "891e2e68697ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6869bffff",
+   62,
+   1
+  ],
+  [
+   "891e2e686c3ffff",
+   63,
+   0
+  ],
+  [
+   "891e2e686c7ffff",
+   67,
+   0
+  ],
+  [
+   "891e2e686cbffff",
+   63,
+   1
+  ],
+  [
+   "891e2e686cfffff",
+   62,
+   1
+  ],
+  [
+   "891e2e686d3ffff",
+   72,
+   1
+  ],
+  [
+   "891e2e686d7ffff",
+   60,
+   1
+  ],
+  [
+   "891e2e686dbffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6a243ffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6a247ffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6a24bffff",
+   61,
+   1
+  ],
+  [
+   "891e2e6a24fffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6a253ffff",
+   61,
+   1
+  ],
+  [
+   "891e2e6a257ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6a25bffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6a26bffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6a27bffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6a2cbffff",
+   62,
+   1
+  ],
+  [
+   "891e2e6a2cfffff",
+   58,
+   1
+  ],
+  [
+   "891e2e6b003ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b007ffff",
+   62,
+   1
+  ],
+  [
+   "891e2e6b00bffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b00fffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b013ffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b017ffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b01bffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b023ffff",
+   71,
+   1
+  ],
+  [
+   "891e2e6b027ffff",
+   76,
+   1
+  ],
+  [
+   "891e2e6b02bffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b02fffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b033ffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b037ffff",
+   73,
+   1
+  ],
+  [
+   "891e2e6b03bffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b043ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b047ffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b04bffff",
+   60,
+   0
+  ],
+  [
+   "891e2e6b04fffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b053ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b057ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b05bffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b063ffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b067ffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b06bffff",
+   70,
+   0
+  ],
+  [
+   "891e2e6b06fffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b073ffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b077ffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b07bffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b083ffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b087ffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b08bffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b08fffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b093ffff",
+   61,
+   1
+  ],
+  [
+   "891e2e6b097ffff",
+   58,
+   1
+  ],
+  [
+   "891e2e6b09bffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b0a3ffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b0a7ffff",
+   71,
+   1
+  ],
+  [
+   "891e2e6b0abffff",
+   71,
+   1
+  ],
+  [
+   "891e2e6b0afffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b0b3ffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b0b7ffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b0bbffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b0c3ffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b0c7ffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b0cbffff",
+   61,
+   1
+  ],
+  [
+   "891e2e6b0cfffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b0d7ffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b103ffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b107ffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b10bffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b10fffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b113ffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b117ffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b11bffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b123ffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b127ffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b12bffff",
+   62,
+   1
+  ],
+  [
+   "891e2e6b12fffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b133ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b137ffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b13bffff",
+   71,
+   1
+  ],
+  [
+   "891e2e6b143ffff",
+   73,
+   1
+  ],
+  [
+   "891e2e6b147ffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b14bffff",
+   73,
+   1
+  ],
+  [
+   "891e2e6b14fffff",
+   74,
+   1
+  ],
+  [
+   "891e2e6b153ffff",
+   71,
+   1
+  ],
+  [
+   "891e2e6b157ffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b15bffff",
+   74,
+   1
+  ],
+  [
+   "891e2e6b163ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b167ffff",
+   60,
+   1
+  ],
+  [
+   "891e2e6b16bffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b16fffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b173ffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b177ffff",
+   73,
+   1
+  ],
+  [
+   "891e2e6b17bffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b183ffff",
+   71,
+   1
+  ],
+  [
+   "891e2e6b187ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b18bffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b18fffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b193ffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b197ffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b19bffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b1a3ffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b1a7ffff",
+   59,
+   1
+  ],
+  [
+   "891e2e6b1abffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b1afffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b1b3ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b1b7ffff",
+   62,
+   1
+  ],
+  [
+   "891e2e6b1bbffff",
+   71,
+   1
+  ],
+  [
+   "891e2e6b1c3ffff",
+   73,
+   1
+  ],
+  [
+   "891e2e6b1c7ffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b1cbffff",
+   75,
+   1
+  ],
+  [
+   "891e2e6b1cfffff",
+   73,
+   1
+  ],
+  [
+   "891e2e6b1d3ffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b1d7ffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b1dbffff",
+   74,
+   1
+  ],
+  [
+   "891e2e6b227ffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b237ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b2a3ffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b2a7ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b2afffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b2b3ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b2b7ffff",
+   71,
+   0
+  ],
+  [
+   "891e2e6b303ffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b307ffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b30bffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b30fffff",
+   59,
+   1
+  ],
+  [
+   "891e2e6b313ffff",
+   66,
+   0
+  ],
+  [
+   "891e2e6b317ffff",
+   69,
+   0
+  ],
+  [
+   "891e2e6b31bffff",
+   71,
+   1
+  ],
+  [
+   "891e2e6b323ffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b327ffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b32bffff",
+   62,
+   1
+  ],
+  [
+   "891e2e6b32fffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b333ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b337ffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b33bffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b343ffff",
+   62,
+   1
+  ],
+  [
+   "891e2e6b347ffff",
+   60,
+   1
+  ],
+  [
+   "891e2e6b353ffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b357ffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b35bffff",
+   60,
+   1
+  ],
+  [
+   "891e2e6b373ffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b377ffff",
+   61,
+   1
+  ],
+  [
+   "891e2e6b383ffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b387ffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b38bffff",
+   67,
+   0
+  ],
+  [
+   "891e2e6b38fffff",
+   74,
+   1
+  ],
+  [
+   "891e2e6b393ffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b397ffff",
+   73,
+   1
+  ],
+  [
+   "891e2e6b39bffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b3a3ffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b3a7ffff",
+   66,
+   0
+  ],
+  [
+   "891e2e6b3abffff",
+   63,
+   0
+  ],
+  [
+   "891e2e6b3afffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b3b3ffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b3b7ffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b3bbffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b3c3ffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b3c7ffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b3cbffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b3cfffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b3d3ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b3d7ffff",
+   67,
+   0
+  ],
+  [
+   "891e2e6b3dbffff",
+   62,
+   1
+  ],
+  [
+   "891e2e6b427ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b42fffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b503ffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b507ffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b50bffff",
+   61,
+   1
+  ],
+  [
+   "891e2e6b50fffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b51bffff",
+   62,
+   1
+  ],
+  [
+   "891e2e6b523ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b527ffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b52bffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b52fffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b533ffff",
+   66,
+   1
+  ],
+  [
+   "891e2e6b537ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b53bffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b543ffff",
+   73,
+   1
+  ],
+  [
+   "891e2e6b547ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b54bffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b54fffff",
+   72,
+   1
+  ],
+  [
+   "891e2e6b553ffff",
+   65,
+   1
+  ],
+  [
+   "891e2e6b557ffff",
+   73,
+   1
+  ],
+  [
+   "891e2e6b55bffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b563ffff",
+   68,
+   1
+  ],
+  [
+   "891e2e6b567ffff",
+   69,
+   1
+  ],
+  [
+   "891e2e6b56bffff",
+   70,
+   1
+  ],
+  [
+   "891e2e6b56fffff",
+   71,
+   1
+  ],
+  [
+   "891e2e6b573ffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b577ffff",
+   64,
+   1
+  ],
+  [
+   "891e2e6b57bffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b5cbffff",
+   63,
+   1
+  ],
+  [
+   "891e2e6b5cfffff",
+   67,
+   1
+  ],
+  [
+   "891e2e6b627ffff",
+   60,
+   1
+  ]
+ ],
+ "top": [
+  {
+   "id": "891e2e6b027ffff",
+   "kind": "hex",
+   "rank": 1,
+   "score": 76,
+   "name": "Stare Miasto",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.060812,
+    "lon": 19.931871
+   },
+   "criteria": {
+    "transit": 90,
+    "active": 96,
+    "green": 66,
+    "education": 94,
+    "family": 70,
+    "safety": 28,
+    "price": 27,
+    "shops": 88,
+    "health": 87,
+    "environment": 55,
+    "leisure": 95,
+    "accessibility": 84,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Przystanek 3 min pieszo"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Kultura 6 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 16400.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 16 400 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 13,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 16400.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 37,
+   "budgetText": "Za Twój budżet ~37 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 848
+  },
+  {
+   "id": "891e2e6b1cbffff",
+   "kind": "hex",
+   "rank": 2,
+   "score": 75,
+   "name": "Stare Miasto",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.063391,
+    "lon": 19.934406
+   },
+   "criteria": {
+    "transit": 94,
+    "active": 89,
+    "green": 46,
+    "education": 92,
+    "family": 60,
+    "safety": 33,
+    "price": 26,
+    "shops": 85,
+    "health": 85,
+    "environment": 40,
+    "leisure": 98,
+    "accessibility": 87,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Przystanek 3 min pieszo"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 4.0,
+     "unit": "min",
+     "text": "Kultura 4 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 16946.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 16 946 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 10,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 16946.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 35,
+   "budgetText": "Za Twój budżet ~35 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 946
+  },
+  {
+   "id": "891e2e6b14fffff",
+   "kind": "hex",
+   "rank": 3,
+   "score": 74,
+   "name": "Stradom",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.05572,
+    "lon": 19.941708
+   },
+   "criteria": {
+    "transit": 93,
+    "active": 88,
+    "green": 64,
+    "education": 91,
+    "family": 54,
+    "safety": 21,
+    "price": 29,
+    "shops": 62,
+    "health": 83,
+    "environment": 63,
+    "leisure": 96,
+    "accessibility": 74,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 2.0,
+     "unit": "min",
+     "text": "Przystanek 2 min pieszo"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 13659.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 13 659 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 13,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 13659.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 44,
+   "budgetText": "Za Twój budżet ~44 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 738
+  },
+  {
+   "id": "891e2e6b15bffff",
+   "kind": "hex",
+   "rank": 4,
+   "score": 74,
+   "name": "Stare Miasto",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.058255,
+    "lon": 19.934305
+   },
+   "criteria": {
+    "transit": 91,
+    "active": 84,
+    "green": 48,
+    "education": 95,
+    "family": 65,
+    "safety": 31,
+    "price": 29,
+    "shops": 83,
+    "health": 88,
+    "environment": 28,
+    "leisure": 98,
+    "accessibility": 83,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.departures_per_h_500m",
+     "value": 82.0,
+     "unit": "dep_h",
+     "text": "82 odj./h w promieniu 500 m"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 14163.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 14 163 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 14,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 14163.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 42,
+   "budgetText": "Za Twój budżet ~42 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 957
+  },
+  {
+   "id": "891e2e6b1dbffff",
+   "kind": "hex",
+   "rank": 5,
+   "score": 74,
+   "name": "Piasek",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.065947,
+    "lon": 19.931971
+   },
+   "criteria": {
+    "transit": 91,
+    "active": 60,
+    "green": 64,
+    "education": 98,
+    "family": 89,
+    "safety": 37,
+    "price": 28,
+    "shops": 89,
+    "health": 84,
+    "environment": 43,
+    "leisure": 94,
+    "accessibility": 71,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Przystanek 3 min pieszo"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 15934.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 15 934 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 10,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 15934.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 38,
+   "budgetText": "Za Twój budżet ~38 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 838
+  },
+  {
+   "id": "891e2e6b38fffff",
+   "kind": "hex",
+   "rank": 6,
+   "score": 74,
+   "name": "Stradom",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.050541,
+    "lon": 19.93167
+   },
+   "criteria": {
+    "transit": 71,
+    "active": 76,
+    "green": 68,
+    "education": 88,
+    "family": 39,
+    "safety": 40,
+    "price": 50,
+    "shops": 74,
+    "health": 77,
+    "environment": 71,
+    "leisure": 87,
+    "accessibility": 74,
+    "commute": 98
+   },
+   "highlights": [
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Kultura 6 min pieszo"
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.departures_per_h_500m",
+     "value": 55.0,
+     "unit": "dep_h",
+     "text": "55 odj./h w promieniu 500 m"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 10566.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 10 566 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 16,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 10566.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 57,
+   "budgetText": "Za Twój budżet ~57 m²",
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 650
+  },
+  {
+   "id": "891e2e68693ffff",
+   "kind": "hex",
+   "rank": 7,
+   "score": 73,
+   "name": "Grzegórzki",
+   "district": {
+    "id": "2",
+    "name": "Grzegórzki"
+   },
+   "centroid": {
+    "lat": 50.055806,
+    "lon": 19.961584
+   },
+   "criteria": {
+    "transit": 53,
+    "active": 52,
+    "green": 68,
+    "education": 71,
+    "family": 82,
+    "safety": 56,
+    "price": 95,
+    "shops": 56,
+    "health": 66,
+    "environment": 61,
+    "leisure": 70,
+    "accessibility": 79,
+    "commute": 98
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 7875.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 7875 zł/m²"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 10.0,
+     "unit": "min",
+     "text": "Kultura 10 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.lines_500m",
+     "value": 8.0,
+     "unit": "count",
+     "text": "Linie w promieniu 500 m: 8"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 16,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 7875.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 76,
+   "budgetText": "Za Twój budżet ~76 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [
+    "environment.industrial_ha_1km"
+   ],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 532
+  },
+  {
+   "id": "891e2e6b037ffff",
+   "kind": "hex",
+   "rank": 8,
+   "score": 73,
+   "name": "Piasek",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.063369,
+    "lon": 19.929436
+   },
+   "criteria": {
+    "transit": 88,
+    "active": 87,
+    "green": 59,
+    "education": 100,
+    "family": 88,
+    "safety": 40,
+    "price": 24,
+    "shops": 81,
+    "health": 85,
+    "environment": 24,
+    "leisure": 92,
+    "accessibility": 80,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 4.0,
+     "unit": "min",
+     "text": "Przystanek 4 min pieszo"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 16710.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 16 710 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 9,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 16710.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 36,
+   "budgetText": "Za Twój budżet ~36 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 752
+  },
+  {
+   "id": "891e2e6b143ffff",
+   "kind": "hex",
+   "rank": 9,
+   "score": 73,
+   "name": "Stradom",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.058277,
+    "lon": 19.939274
+   },
+   "criteria": {
+    "transit": 89,
+    "active": 81,
+    "green": 68,
+    "education": 98,
+    "family": 70,
+    "safety": 22,
+    "price": 24,
+    "shops": 82,
+    "health": 87,
+    "environment": 34,
+    "leisure": 97,
+    "accessibility": 78,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Przystanek 3 min pieszo"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Kultura 5 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 16510.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 16 510 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 15,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 16510.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 36,
+   "budgetText": "Za Twój budżet ~36 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 775
+  },
+  {
+   "id": "891e2e6b14bffff",
+   "kind": "hex",
+   "rank": 10,
+   "score": 73,
+   "name": "Stradom",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.055699,
+    "lon": 19.936739
+   },
+   "criteria": {
+    "transit": 91,
+    "active": 89,
+    "green": 56,
+    "education": 88,
+    "family": 51,
+    "safety": 38,
+    "price": 23,
+    "shops": 79,
+    "health": 85,
+    "environment": 27,
+    "leisure": 97,
+    "accessibility": 68,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.departures_per_h_500m",
+     "value": 79.0,
+     "unit": "dep_h",
+     "text": "79 odj./h w promieniu 500 m"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 4.0,
+     "unit": "min",
+     "text": "Kultura 4 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 15615.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 15 615 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 12,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 15615.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 38,
+   "budgetText": "Za Twój budżet ~38 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 646
+  },
+  {
+   "id": "891e2e6b177ffff",
+   "kind": "hex",
+   "rank": 11,
+   "score": 73,
+   "name": "Grzegórzki",
+   "district": {
+    "id": "2",
+    "name": "Grzegórzki"
+   },
+   "centroid": {
+    "lat": 50.058342,
+    "lon": 19.954182
+   },
+   "criteria": {
+    "transit": 74,
+    "active": 84,
+    "green": 69,
+    "education": 82,
+    "family": 63,
+    "safety": 53,
+    "price": 41,
+    "shops": 68,
+    "health": 81,
+    "environment": 54,
+    "leisure": 90,
+    "accessibility": 77,
+    "commute": 93
+   },
+   "highlights": [
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Kultura 6 min pieszo"
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Przystanek 3 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 11428.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 11 428 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 18,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 11428.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 53,
+   "budgetText": "Za Twój budżet ~53 m²",
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 677
+  },
+  {
+   "id": "891e2e6b1c3ffff",
+   "kind": "hex",
+   "rank": 12,
+   "score": 73,
+   "name": "Kleparz",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.065969,
+    "lon": 19.936941
+   },
+   "criteria": {
+    "transit": 88,
+    "active": 71,
+    "green": 71,
+    "education": 96,
+    "family": 60,
+    "safety": 27,
+    "price": 30,
+    "shops": 77,
+    "health": 79,
+    "environment": 35,
+    "leisure": 95,
+    "accessibility": 82,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 2.0,
+     "unit": "min",
+     "text": "Przystanek 2 min pieszo"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Kultura 6 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 14955.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 14 955 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 11,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 14955.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 40,
+   "budgetText": "Za Twój budżet ~40 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [
+    "environment.industrial_ha_1km"
+   ],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 750
+  },
+  {
+   "id": "891e2e6b1cfffff",
+   "kind": "hex",
+   "rank": 13,
+   "score": 73,
+   "name": "Stare Miasto",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.063413,
+    "lon": 19.939375
+   },
+   "criteria": {
+    "transit": 91,
+    "active": 87,
+    "green": 60,
+    "education": 94,
+    "family": 57,
+    "safety": 28,
+    "price": 26,
+    "shops": 76,
+    "health": 91,
+    "environment": 44,
+    "leisure": 93,
+    "accessibility": 74,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Przystanek 3 min pieszo"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Kultura 6 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 16567.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 16 567 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 11,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 16567.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 36,
+   "budgetText": "Za Twój budżet ~36 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 813
+  },
+  {
+   "id": "891e2e6b397ffff",
+   "kind": "hex",
+   "rank": 14,
+   "score": 73,
+   "name": "Nowy Świat",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.055676,
+    "lon": 19.931771
+   },
+   "criteria": {
+    "transit": 81,
+    "active": 86,
+    "green": 52,
+    "education": 92,
+    "family": 51,
+    "safety": 13,
+    "price": 37,
+    "shops": 78,
+    "health": 86,
+    "environment": 44,
+    "leisure": 99,
+    "accessibility": 82,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.food_10min",
+     "value": 164.0,
+     "unit": "count",
+     "text": "Restauracje i kawiarnie w zasięgu 10 min: 164"
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Przystanek 3 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 13119.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 13 119 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 11,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 13119.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 46,
+   "budgetText": "Za Twój budżet ~46 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [
+    "environment.industrial_ha_1km"
+   ],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 671
+  },
+  {
+   "id": "891e2e6b543ffff",
+   "kind": "hex",
+   "rank": 15,
+   "score": 73,
+   "name": "Krowodrza",
+   "district": {
+    "id": "5",
+    "name": "Krowodrza"
+   },
+   "centroid": {
+    "lat": 50.076172,
+    "lon": 19.922231
+   },
+   "criteria": {
+    "transit": 67,
+    "active": 63,
+    "green": 58,
+    "education": 71,
+    "family": 83,
+    "safety": 32,
+    "price": 95,
+    "shops": 56,
+    "health": 72,
+    "environment": 64,
+    "leisure": 61,
+    "accessibility": 79,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 7875.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 7875 zł/m²"
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 4.0,
+     "unit": "min",
+     "text": "Przystanek 4 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.lit_share",
+     "value": 78.0,
+     "unit": "pct",
+     "text": "Oświetlone ulice: 78%"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 13,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 7875.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 76,
+   "budgetText": "Za Twój budżet ~76 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 602
+  },
+  {
+   "id": "891e2e6b557ffff",
+   "kind": "hex",
+   "rank": 16,
+   "score": 73,
+   "name": "Krowodrza",
+   "district": {
+    "id": "5",
+    "name": "Krowodrza"
+   },
+   "centroid": {
+    "lat": 50.07875,
+    "lon": 19.924766
+   },
+   "criteria": {
+    "transit": 63,
+    "active": 47,
+    "green": 59,
+    "education": 76,
+    "family": 70,
+    "safety": 81,
+    "price": 95,
+    "shops": 33,
+    "health": 65,
+    "environment": 74,
+    "leisure": 62,
+    "accessibility": 80,
+    "commute": 98
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 7875.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 7875 zł/m²"
+    },
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 48.0,
+     "unit": "per_1000",
+     "text": "Zarejestrowane przestępstwa w dzielnicy: 48 na 1000 mieszk."
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "shops",
+     "indicator": "shops.supermarket_walk_min",
+     "value": 11.0,
+     "unit": "min",
+     "text": "Supermarket 11 min pieszo"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 16,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 7875.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 76,
+   "budgetText": "Za Twój budżet ~76 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 514
+  },
+  {
+   "id": "891e2e686d3ffff",
+   "kind": "hex",
+   "rank": 17,
+   "score": 72,
+   "name": "Kazimierz",
+   "district": {
+    "id": "2",
+    "name": "Grzegórzki"
+   },
+   "centroid": {
+    "lat": 50.050627,
+    "lon": 19.951545
+   },
+   "criteria": {
+    "transit": 69,
+    "active": 61,
+    "green": 79,
+    "education": 85,
+    "family": 75,
+    "safety": 68,
+    "price": 56,
+    "shops": 63,
+    "health": 76,
+    "environment": 66,
+    "leisure": 78,
+    "accessibility": 81,
+    "commute": 91
+   },
+   "highlights": [
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 7.0,
+     "unit": "min",
+     "text": "Kultura 7 min pieszo"
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 4.0,
+     "unit": "min",
+     "text": "Przystanek 4 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "commute",
+     "indicator": null,
+     "value": 19,
+     "unit": "min",
+     "text": "AGH: 19 min komunikacją"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 19,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 9733.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 62,
+   "budgetText": "Za Twój budżet ~62 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 666
+  },
+  {
+   "id": "891e2e686dbffff",
+   "kind": "hex",
+   "rank": 18,
+   "score": 72,
+   "name": "Kazimierz",
+   "district": {
+    "id": "13",
+    "name": "Podgórze"
+   },
+   "centroid": {
+    "lat": 50.048049,
+    "lon": 19.94901
+   },
+   "criteria": {
+    "transit": 52,
+    "active": 42,
+    "green": 62,
+    "education": 87,
+    "family": 58,
+    "safety": 50,
+    "price": 98,
+    "shops": 58,
+    "health": 70,
+    "environment": 46,
+    "leisure": 76,
+    "accessibility": 66,
+    "commute": 93
+   },
+   "highlights": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 7875.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 7875 zł/m²"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 7.0,
+     "unit": "min",
+     "text": "Kultura 7 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.night_departures_500m",
+     "value": 5.0,
+     "unit": "count",
+     "text": "Nocne odjazdy w pobliżu (23–5): 5"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 18,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 7875.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 76,
+   "budgetText": "Za Twój budżet ~76 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 653
+  },
+  {
+   "id": "891e2e6b02bffff",
+   "kind": "hex",
+   "rank": 19,
+   "score": 72,
+   "name": "Nowy Świat",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.058211,
+    "lon": 19.924367
+   },
+   "criteria": {
+    "transit": 86,
+    "active": 53,
+    "green": 74,
+    "education": 94,
+    "family": 54,
+    "safety": 33,
+    "price": 39,
+    "shops": 66,
+    "health": 76,
+    "environment": 40,
+    "leisure": 89,
+    "accessibility": 78,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.departures_per_h_500m",
+     "value": 76.0,
+     "unit": "dep_h",
+     "text": "76 odj./h w promieniu 500 m"
+    },
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Kultura 6 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 12119.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 12 119 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 13,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 12119.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 50,
+   "budgetText": "Za Twój budżet ~50 m²",
+   "archetype": {
+    "id": "student_buzz",
+    "p": 0.61
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 774
+  },
+  {
+   "id": "891e2e6b02fffff",
+   "kind": "hex",
+   "rank": 20,
+   "score": 72,
+   "name": "Nowy Świat",
+   "district": {
+    "id": "1",
+    "name": "Stare Miasto"
+   },
+   "centroid": {
+    "lat": 50.058233,
+    "lon": 19.929336
+   },
+   "criteria": {
+    "transit": 83,
+    "active": 82,
+    "green": 61,
+    "education": 89,
+    "family": 60,
+    "safety": 35,
+    "price": 27,
+    "shops": 80,
+    "health": 84,
+    "environment": 40,
+    "leisure": 92,
+    "accessibility": 72,
+    "commute": 100
+   },
+   "highlights": [
+    {
+     "criterion": "leisure",
+     "indicator": "leisure.culture_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Kultura 6 min pieszo"
+    },
+    {
+     "criterion": "transit",
+     "indicator": "transit.stop_walk_min",
+     "value": 3.0,
+     "unit": "min",
+     "text": "Przystanek 3 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 15345.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 15 345 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "AGH",
+     "minutes": 13,
+     "mode": "transit"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 15345.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 39,
+   "budgetText": "Za Twój budżet ~39 m²",
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": null,
+   "cellCount": null,
+   "populationEst": 882
+  }
+ ],
+ "relaxHint": null,
+ "excludedCriteria": [],
+ "weightsUsed": {
+  "commute": 5,
+  "transit": 5,
+  "active": 3,
+  "green": 2,
+  "education": 1,
+  "family": 0,
+  "safety": 3,
+  "price": 5,
+  "shops": 3,
+  "health": 1,
+  "environment": 2,
+  "leisure": 5,
+  "accessibility": 0
+ },
+ "cityMedian": {
+  "transit": 59,
+  "active": 51,
+  "green": 65,
+  "education": 79,
+  "family": 72,
+  "safety": 52,
+  "price": 56,
+  "shops": 49,
+  "health": 68,
+  "environment": 56,
+  "leisure": 67,
+  "accessibility": 78,
+  "commute": 98
+ }
+}

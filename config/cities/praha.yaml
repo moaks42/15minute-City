@@ -1,0 +1,37 @@
+# Praha. Shape identical to krakow.yaml (README §7.1). Owner: Workstream B.
+id: praha
+name: {pl: "Praga", cs: "Praha", en: "Prague"}
+country: CZ
+defaultLang: cs
+currency: CZK
+timezone: Europe/Prague
+center: [50.0755, 14.4378]          # [lat, lon]
+zoom: 11
+bbox: [14.22, 49.94, 14.71, 50.18]  # [minLon, minLat, maxLon, maxLat] — geocoder fallback, map bounds
+metricCrs: "EPSG:5514"              # S-JTSK Křovák. RÚIAN CSV: x = −Y, y = −X
+osmPbf: https://download.geofabrik.de/europe/czech-republic/stredocesky-latest.osm.pbf
+routingBufferKm: 5
+gtfs: [http://data.pid.cz/PID_GTFS.zip]
+habitableMinAddresses: 3
+h3Resolution: 9
+commuteDestResolution: 8
+levels:
+  district:     {source: ipr_mestske_casti,     count: 57, label: {pl: "Dzielnica", cs: "Městská část",      en: "District"}}
+  neighborhood: {source: ipr_katastralni_uzemi, count: 112, label: {pl: "Okolica", cs: "Katastrální území", en: "Area"}}
+price:
+  indicator: rent_per_m2
+  column: price.rent_per_m2
+  mode: rent
+  unit: {pl: "Kč/m²/mies.", cs: "Kč/m²/měs.", en: "CZK/m²/month"}
+  filterField: maxRentPerM2         # ScoreRequest.filters.<filterField>
+  budgetField: monthlyRent          # ScoreRequest.budget.<budgetField> (CZK/month) → budgetM2 = monthlyRent / price
+adapters: [ruian_addresses, ipr_admin, msmt_schools, nrpzs_health, chmi_air, ipr_noise, police_cz, mf_rent, golemio_pois]
+live:
+  air: chmi_or_golemio
+  departures: golemio_pid
+indicatorOverrides:
+  "transit.rail_station_walk_min":
+    label:   {pl: "Metro lub pociąg", cs: "Metro nebo vlak", en: "Metro or train"}
+    explain: {pl: "Metro/pociąg {{value}} min pieszo", cs: "Metro/vlak {{value}} min pěšky", en: "Metro/train {{value}} min walk"}
+  "environment.noise_db":
+    label:   {pl: "Hałas (LAeq)", cs: "Hluk (LAeq)", en: "Noise (LAeq)"}

@@ -1,0 +1,126 @@
+{
+ "city": "praha",
+ "from": "891e354185bffff",
+ "items": [
+  {
+   "id": "891e3541aabffff",
+   "kind": "hex",
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.072578,
+    "lon": 14.435464
+   },
+   "similarity": 0.905,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "education",
+    "family"
+   ]
+  },
+  {
+   "id": "891e3541ab7ffff",
+   "kind": "hex",
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.077932,
+    "lon": 14.440075
+   },
+   "similarity": 0.905,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "education",
+    "shops"
+   ]
+  },
+  {
+   "id": "891e3541ab3ffff",
+   "kind": "hex",
+   "name": "Nové Město",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.077677,
+    "lon": 14.435175
+   },
+   "similarity": 0.899,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "education",
+    "shops"
+   ]
+  },
+  {
+   "id": "891e3541aa3ffff",
+   "kind": "hex",
+   "name": "Vinohrady",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.075255,
+    "lon": 14.437769
+   },
+   "similarity": 0.88,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "green",
+    "education"
+   ]
+  },
+  {
+   "id": "891e3541abbffff",
+   "kind": "hex",
+   "name": "Nové Město",
+   "district": {
+    "id": "500089",
+    "name": "Praha 2"
+   },
+   "centroid": {
+    "lat": 50.075,
+    "lon": 14.432869
+   },
+   "similarity": 0.88,
+   "archetype": {
+    "id": "historic_core",
+    "p": 0.72
+   },
+   "sharedTraits": [
+    "transit",
+    "active",
+    "education",
+    "family"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "city": "praha",
+ "status": "ok",
+ "source": "ČHMÚ",
+ "station": {
+  "id": "AKALA",
+  "name": "Praha 8-Karlín",
+  "lat": 50.0942,
+  "lon": 14.4428,
+  "distanceKm": 0.8
+ },
+ "level": 1,
+ "pollutants": {
+  "pm25": 11.0,
+  "pm10": 19.0,
+  "no2": 21.3,
+  "o3": 44.0
+ },
+ "measuredAt": "2026-10-03T15:00:00Z",
+ "fetchedAt": "2026-10-03T15:12:00Z",
+ "cacheTtlS": 600
+}

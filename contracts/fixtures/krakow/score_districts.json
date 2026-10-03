@@ -1,0 +1,803 @@
+{
+ "city": "krakow",
+ "currency": "PLN",
+ "lang": "pl",
+ "computeMs": 12.4,
+ "aggregate": "district",
+ "count": {
+  "cells": 217,
+  "habitable": 206,
+  "passing": 168
+ },
+ "cells": [],
+ "top": [
+  {
+   "id": "2",
+   "kind": "district",
+   "rank": 1,
+   "score": 68,
+   "name": "Grzegórzki",
+   "district": null,
+   "centroid": {
+    "lat": 50.063559,
+    "lon": 19.961066
+   },
+   "criteria": {
+    "transit": 55,
+    "active": 50,
+    "green": 69,
+    "education": 80,
+    "family": 70,
+    "safety": 66,
+    "price": 68,
+    "shops": 50,
+    "health": 68,
+    "environment": 65,
+    "leisure": 65,
+    "accessibility": 76,
+    "commute": 88
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 56.0,
+     "unit": "per_1000",
+     "text": "Zarejestrowane przestępstwa w dzielnicy: 56 na 1000 mieszk."
+    },
+    {
+     "criterion": "green",
+     "indicator": "green.park_walk_min",
+     "value": 6.0,
+     "unit": "min",
+     "text": "Park 6 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 9733.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 9733 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Praca – Zabłocie",
+     "minutes": 15,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "Szkoła Podstawowa nr 1",
+     "minutes": 28,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 9733.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 113,
+   "budgetText": "Za Twój budżet ~113 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": 0.875,
+   "cellCount": 48,
+   "populationEst": 25130
+  },
+  {
+   "id": "13",
+   "kind": "district",
+   "rank": 2,
+   "score": 68,
+   "name": "Podgórze",
+   "district": null,
+   "centroid": {
+    "lat": 50.044819,
+    "lon": 19.954411
+   },
+   "criteria": {
+    "transit": 44,
+    "active": 41,
+    "green": 72,
+    "education": 75,
+    "family": 80,
+    "safety": 72,
+    "price": 86,
+    "shops": 33,
+    "health": 61,
+    "environment": 72,
+    "leisure": 54,
+    "accessibility": 75,
+    "commute": 72
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 39.0,
+     "unit": "per_1000",
+     "text": "Zarejestrowane przestępstwa w dzielnicy: 39 na 1000 mieszk."
+    },
+    {
+     "criterion": "green",
+     "indicator": "green.park_walk_min",
+     "value": 8.0,
+     "unit": "min",
+     "text": "Park 8 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "shops",
+     "indicator": "shops.post_parcel_walk_min",
+     "value": 11.0,
+     "unit": "min",
+     "text": "Poczta lub paczkomat 11 min pieszo"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Praca – Zabłocie",
+     "minutes": 13,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "Szkoła Podstawowa nr 1",
+     "minutes": 40,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 7875.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 140,
+   "budgetText": "Za Twój budżet ~140 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": 0.933,
+   "cellCount": 15,
+   "populationEst": 7465
+  },
+  {
+   "id": "1",
+   "kind": "district",
+   "rank": 3,
+   "score": 67,
+   "name": "Stare Miasto",
+   "district": null,
+   "centroid": {
+    "lat": 50.061383,
+    "lon": 19.935319
+   },
+   "criteria": {
+    "transit": 79,
+    "active": 72,
+    "green": 65,
+    "education": 91,
+    "family": 67,
+    "safety": 40,
+    "price": 36,
+    "shops": 68,
+    "health": 81,
+    "environment": 51,
+    "leisure": 85,
+    "accessibility": 77,
+    "commute": 93
+   },
+   "highlights": [
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 7.0,
+     "unit": "count",
+     "text": "Place zabaw w promieniu 500 m: 7"
+    },
+    {
+     "criterion": "shops",
+     "indicator": "shops.supermarket_walk_min",
+     "value": 5.0,
+     "unit": "min",
+     "text": "Supermarket 5 min pieszo"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 12699.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 12 699 zł/m²"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Praca – Zabłocie",
+     "minutes": 18,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "Szkoła Podstawowa nr 1",
+     "minutes": 15,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 12699.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 87,
+   "budgetText": "Za Twój budżet ~87 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": 0.7,
+   "cellCount": 60,
+   "populationEst": 42565
+  },
+  {
+   "id": "8",
+   "kind": "district",
+   "rank": 4,
+   "score": 67,
+   "name": "Dębniki",
+   "district": null,
+   "centroid": {
+    "lat": 50.044473,
+    "lon": 19.923129
+   },
+   "criteria": {
+    "transit": 48,
+    "active": 45,
+    "green": 71,
+    "education": 76,
+    "family": 80,
+    "safety": 68,
+    "price": 75,
+    "shops": 41,
+    "health": 66,
+    "environment": 64,
+    "leisure": 58,
+    "accessibility": 80,
+    "commute": 67
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 50.0,
+     "unit": "per_1000",
+     "text": "Zarejestrowane przestępstwa w dzielnicy: 50 na 1000 mieszk."
+    },
+    {
+     "criterion": "environment",
+     "indicator": "environment.noise_db",
+     "value": 52.0,
+     "unit": "db",
+     "text": "Hałas ok. 52 dB"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "education",
+     "indicator": "education.primary_school_walk_min",
+     "value": 11.0,
+     "unit": "min",
+     "text": "Szkoła podstawowa 11 min pieszo"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Praca – Zabłocie",
+     "minutes": 18,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "Szkoła Podstawowa nr 1",
+     "minutes": 44,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 7875.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 140,
+   "budgetText": "Za Twój budżet ~140 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": 0.739,
+   "cellCount": 23,
+   "populationEst": 12134
+  },
+  {
+   "id": "5",
+   "kind": "district",
+   "rank": 5,
+   "score": 66,
+   "name": "Krowodrza",
+   "district": null,
+   "centroid": {
+    "lat": 50.072952,
+    "lon": 19.920057
+   },
+   "criteria": {
+    "transit": 59,
+    "active": 54,
+    "green": 67,
+    "education": 79,
+    "family": 76,
+    "safety": 58,
+    "price": 65,
+    "shops": 48,
+    "health": 67,
+    "environment": 64,
+    "leisure": 67,
+    "accessibility": 75,
+    "commute": 74
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 39.0,
+     "unit": "per_1000",
+     "text": "Zarejestrowane przestępstwa w dzielnicy: 39 na 1000 mieszk."
+    },
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 7.0,
+     "unit": "count",
+     "text": "Place zabaw w promieniu 500 m: 7"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "transit",
+     "indicator": "transit.departures_per_h_500m",
+     "value": 21.0,
+     "unit": "dep_h",
+     "text": "21 odj./h w promieniu 500 m"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Praca – Zabłocie",
+     "minutes": 23,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "Szkoła Podstawowa nr 1",
+     "minutes": 31,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 8423.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 131,
+   "budgetText": "Za Twój budżet ~131 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": 0.875,
+   "cellCount": 40,
+   "populationEst": 21537
+  },
+  {
+   "id": "7",
+   "kind": "district",
+   "rank": 6,
+   "score": 66,
+   "name": "Zwierzyniec",
+   "district": null,
+   "centroid": {
+    "lat": 50.058119,
+    "lon": 19.904491
+   },
+   "criteria": {
+    "transit": 49,
+    "active": 37,
+    "green": 71,
+    "education": 76,
+    "family": 76,
+    "safety": 70,
+    "price": 79,
+    "shops": 40,
+    "health": 62,
+    "environment": 63,
+    "leisure": 57,
+    "accessibility": 81,
+    "commute": 60
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 48.0,
+     "unit": "per_1000",
+     "text": "Zarejestrowane przestępstwa w dzielnicy: 48 na 1000 mieszk."
+    },
+    {
+     "criterion": "environment",
+     "indicator": "environment.noise_db",
+     "value": 55.0,
+     "unit": "db",
+     "text": "Hałas ok. 55 dB"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "family",
+     "indicator": "family.playgrounds_500m",
+     "value": 4.0,
+     "unit": "count",
+     "text": "Place zabaw w promieniu 500 m: 4"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Praca – Zabłocie",
+     "minutes": 22,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "Szkoła Podstawowa nr 1",
+     "minutes": 43,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 8838.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 124,
+   "budgetText": "Za Twój budżet ~124 m²",
+   "archetype": {
+    "id": "industrial_edge",
+    "p": 0.55
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": 0.917,
+   "cellCount": 12,
+   "populationEst": 5604
+  },
+  {
+   "id": "3",
+   "kind": "district",
+   "rank": 7,
+   "score": 65,
+   "name": "Prądnik Czerwony",
+   "district": null,
+   "centroid": {
+    "lat": 50.080159,
+    "lon": 19.953372
+   },
+   "criteria": {
+    "transit": 42,
+    "active": 37,
+    "green": 71,
+    "education": 70,
+    "family": 61,
+    "safety": 76,
+    "price": 89,
+    "shops": 44,
+    "health": 62,
+    "environment": 63,
+    "leisure": 56,
+    "accessibility": 76,
+    "commute": 78
+   },
+   "highlights": [
+    {
+     "criterion": "environment",
+     "indicator": "environment.noise_db",
+     "value": 56.0,
+     "unit": "db",
+     "text": "Hałas ok. 56 dB"
+    },
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 7875.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 7875 zł/m²"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "education",
+     "indicator": "education.nursery_walk_min",
+     "value": 12.0,
+     "unit": "min",
+     "text": "Żłobek 12 min pieszo"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Praca – Zabłocie",
+     "minutes": 22,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "Szkoła Podstawowa nr 1",
+     "minutes": 28,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 7875.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 140,
+   "budgetText": "Za Twój budżet ~140 m²",
+   "archetype": {
+    "id": "green_residential",
+    "p": 0.66
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": 1.0,
+   "cellCount": 6,
+   "populationEst": 3088
+  },
+  {
+   "id": "4",
+   "kind": "district",
+   "rank": 8,
+   "score": 65,
+   "name": "Prądnik Biały",
+   "district": null,
+   "centroid": {
+    "lat": 50.081394,
+    "lon": 19.942213
+   },
+   "criteria": {
+    "transit": 47,
+    "active": 21,
+    "green": 75,
+    "education": 75,
+    "family": 62,
+    "safety": 69,
+    "price": 95,
+    "shops": 49,
+    "health": 68,
+    "environment": 40,
+    "leisure": 51,
+    "accessibility": 85,
+    "commute": 78
+   },
+   "highlights": [
+    {
+     "criterion": "safety",
+     "indicator": "safety.crime_per_1000",
+     "value": 51.0,
+     "unit": "per_1000",
+     "text": "Zarejestrowane przestępstwa w dzielnicy: 51 na 1000 mieszk."
+    },
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 7875.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 7875 zł/m²"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "environment",
+     "indicator": "environment.noise_db",
+     "value": 67.0,
+     "unit": "db",
+     "text": "Hałas ok. 67 dB"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Praca – Zabłocie",
+     "minutes": 22,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "Szkoła Podstawowa nr 1",
+     "minutes": 28,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 7875.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 140,
+   "budgetText": "Za Twój budżet ~140 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": false,
+   "sharePassing": 0.0,
+   "cellCount": 1,
+   "populationEst": 434
+  },
+  {
+   "id": "9",
+   "kind": "district",
+   "rank": 9,
+   "score": 64,
+   "name": "Łagiewniki-Borek Fałęcki",
+   "district": null,
+   "centroid": {
+    "lat": 50.040311,
+    "lon": 19.941406
+   },
+   "criteria": {
+    "transit": 46,
+    "active": 37,
+    "green": 56,
+    "education": 82,
+    "family": 80,
+    "safety": 50,
+    "price": 88,
+    "shops": 36,
+    "health": 64,
+    "environment": 75,
+    "leisure": 51,
+    "accessibility": 79,
+    "commute": 66
+   },
+   "highlights": [
+    {
+     "criterion": "environment",
+     "indicator": "environment.noise_db",
+     "value": 60.0,
+     "unit": "db",
+     "text": "Hałas ok. 60 dB"
+    },
+    {
+     "criterion": "price",
+     "indicator": "price.buy_per_m2",
+     "value": 7875.0,
+     "unit": "pln_m2",
+     "text": "Mieszkania ok. 7875 zł/m²"
+    }
+   ],
+   "warnings": [
+    {
+     "criterion": "green",
+     "indicator": "green.green_share_500m",
+     "value": 15.0,
+     "unit": "pct",
+     "text": "15% zieleni w promieniu 500 m"
+    }
+   ],
+   "anchors": [
+    {
+     "id": "a1",
+     "label": "Praca – Zabłocie",
+     "minutes": 17,
+     "mode": "transit"
+    },
+    {
+     "id": "a2",
+     "label": "Szkoła Podstawowa nr 1",
+     "minutes": 44,
+     "mode": "walk"
+    }
+   ],
+   "price": {
+    "indicator": "buy_per_m2",
+    "value": 7875.0,
+    "unit": "zł/m²",
+    "currency": "PLN",
+    "imputed": false
+   },
+   "budgetM2": 140,
+   "budgetText": "Za Twój budżet ~140 m²",
+   "archetype": {
+    "id": "urban_mix",
+    "p": 0.58
+   },
+   "imputed": [],
+   "passes": true,
+   "sharePassing": 1.0,
+   "cellCount": 1,
+   "populationEst": 400
+  }
+ ],
+ "relaxHint": null,
+ "excludedCriteria": [],
+ "weightsUsed": {
+  "commute": 3,
+  "transit": 3,
+  "active": 2,
+  "green": 5,
+  "education": 5,
+  "family": 5,
+  "safety": 5,
+  "price": 3,
+  "shops": 4,
+  "health": 4,
+  "environment": 4,
+  "leisure": 1,
+  "accessibility": 2
+ },
+ "cityMedian": {
+  "transit": 60,
+  "active": 51,
+  "green": 65,
+  "education": 80,
+  "family": 71,
+  "safety": 52,
+  "price": 56,
+  "shops": 49,
+  "health": 68,
+  "environment": 56,
+  "leisure": 67,
+  "accessibility": 78,
+  "commute": 81
+ }
+}
