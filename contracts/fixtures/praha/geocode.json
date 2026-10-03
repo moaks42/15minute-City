@@ -1,0 +1,65 @@
+{
+ "query": "fixture",
+ "items": [
+  {
+   "label": "Václavské náměstí",
+   "sublabel": "Praha 1",
+   "kind": "address",
+   "category": null,
+   "lat": 50.081,
+   "lon": 14.428,
+   "h3": "891e3541a97ffff",
+   "source": "local"
+  },
+  {
+   "label": "Žižkov",
+   "sublabel": "Praha 3",
+   "kind": "place",
+   "category": null,
+   "lat": 50.085,
+   "lon": 14.455,
+   "h3": "891e354182bffff",
+   "source": "local"
+  },
+  {
+   "label": "Karlín",
+   "sublabel": "Praha 8",
+   "kind": "place",
+   "category": null,
+   "lat": 50.0925,
+   "lon": 14.452,
+   "h3": "891e35418abffff",
+   "source": "local"
+  },
+  {
+   "label": "Univerzita Karlova – Albertov",
+   "sublabel": "Praha 2",
+   "kind": "poi",
+   "category": "university",
+   "lat": 50.068,
+   "lon": 14.424,
+   "h3": "891e3541a1bffff",
+   "source": "local"
+  },
+  {
+   "label": "Vinohradská 12",
+   "sublabel": "Praha 2",
+   "kind": "address",
+   "category": null,
+   "lat": 50.0775,
+   "lon": 14.437,
+   "h3": "891e3541ab3ffff",
+   "source": "local"
+  },
+  {
+   "label": "Náměstí Míru",
+   "sublabel": "Praha 2",
+   "kind": "place",
+   "category": null,
+   "lat": 50.0753,
+   "lon": 14.4378,
+   "h3": "891e3541aa3ffff",
+   "source": "local"
+  }
+ ]
+}

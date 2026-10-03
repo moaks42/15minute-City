@@ -1,0 +1,10204 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "id": 0,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.971591,
+       50.059271
+      ],
+      [
+       19.971557,
+       50.057559
+      ],
+      [
+       19.974024,
+       50.056713
+      ],
+      [
+       19.976526,
+       50.057579
+      ],
+      [
+       19.97656,
+       50.059291
+      ],
+      [
+       19.974093,
+       50.060137
+      ],
+      [
+       19.971591,
+       50.059271
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68443ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Dąbie",
+    "habitable": true,
+    "population_est": 461
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 1,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.969055,
+       50.056693
+      ],
+      [
+       19.969021,
+       50.054981
+      ],
+      [
+       19.971488,
+       50.054135
+      ],
+      [
+       19.97399,
+       50.055001
+      ],
+      [
+       19.974024,
+       50.056713
+      ],
+      [
+       19.971557,
+       50.057559
+      ],
+      [
+       19.969055,
+       50.056693
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6844bffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Dąbie",
+    "habitable": true,
+    "population_est": 282
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 2,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.969158,
+       50.061828
+      ],
+      [
+       19.969124,
+       50.060116
+      ],
+      [
+       19.971591,
+       50.059271
+      ],
+      [
+       19.974093,
+       50.060137
+      ],
+      [
+       19.974127,
+       50.061849
+      ],
+      [
+       19.97166,
+       50.062694
+      ],
+      [
+       19.969158,
+       50.061828
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68453ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 562
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 3,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.974127,
+       50.061849
+      ],
+      [
+       19.974093,
+       50.060137
+      ],
+      [
+       19.97656,
+       50.059291
+      ],
+      [
+       19.979062,
+       50.060157
+      ],
+      [
+       19.979097,
+       50.061869
+      ],
+      [
+       19.976629,
+       50.062715
+      ],
+      [
+       19.974127,
+       50.061849
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68457ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Dąbie",
+    "habitable": true,
+    "population_est": 527
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 4,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.966622,
+       50.05925
+      ],
+      [
+       19.966587,
+       50.057538
+      ],
+      [
+       19.969055,
+       50.056693
+      ],
+      [
+       19.971557,
+       50.057559
+      ],
+      [
+       19.971591,
+       50.059271
+      ],
+      [
+       19.969124,
+       50.060116
+      ],
+      [
+       19.966622,
+       50.05925
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6845bffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 186
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 5,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.969261,
+       50.066963
+      ],
+      [
+       19.969226,
+       50.065252
+      ],
+      [
+       19.971694,
+       50.064406
+      ],
+      [
+       19.974196,
+       50.065272
+      ],
+      [
+       19.974231,
+       50.066984
+      ],
+      [
+       19.971763,
+       50.067829
+      ],
+      [
+       19.969261,
+       50.066963
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e684c3ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 244
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 6,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.966724,
+       50.064386
+      ],
+      [
+       19.96669,
+       50.062674
+      ],
+      [
+       19.969158,
+       50.061828
+      ],
+      [
+       19.97166,
+       50.062694
+      ],
+      [
+       19.971694,
+       50.064406
+      ],
+      [
+       19.969226,
+       50.065252
+      ],
+      [
+       19.966724,
+       50.064386
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e684cbffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 498
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 7,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.971694,
+       50.064406
+      ],
+      [
+       19.97166,
+       50.062694
+      ],
+      [
+       19.974127,
+       50.061849
+      ],
+      [
+       19.976629,
+       50.062715
+      ],
+      [
+       19.976664,
+       50.064426
+      ],
+      [
+       19.974196,
+       50.065272
+      ],
+      [
+       19.971694,
+       50.064406
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e684cfffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Dąbie",
+    "habitable": true,
+    "population_est": 368
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 8,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.966827,
+       50.06952
+      ],
+      [
+       19.966793,
+       50.067809
+      ],
+      [
+       19.969261,
+       50.066963
+      ],
+      [
+       19.971763,
+       50.067829
+      ],
+      [
+       19.971797,
+       50.069541
+      ],
+      [
+       19.969329,
+       50.070387
+      ],
+      [
+       19.966827,
+       50.06952
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e684d3ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 453
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 9,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.964291,
+       50.066943
+      ],
+      [
+       19.964257,
+       50.065231
+      ],
+      [
+       19.966724,
+       50.064386
+      ],
+      [
+       19.969226,
+       50.065252
+      ],
+      [
+       19.969261,
+       50.066963
+      ],
+      [
+       19.966793,
+       50.067809
+      ],
+      [
+       19.964291,
+       50.066943
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e684dbffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 373
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 10,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.961448,
+       50.048958
+      ],
+      [
+       19.961414,
+       50.047245
+      ],
+      [
+       19.963881,
+       50.0464
+      ],
+      [
+       19.966382,
+       50.047266
+      ],
+      [
+       19.966416,
+       50.048978
+      ],
+      [
+       19.963949,
+       50.049824
+      ],
+      [
+       19.961448,
+       50.048958
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68613ffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Zabłocie",
+    "habitable": true,
+    "population_est": 592
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 11,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.958912,
+       50.046379
+      ],
+      [
+       19.958878,
+       50.044667
+      ],
+      [
+       19.961346,
+       50.043821
+      ],
+      [
+       19.963847,
+       50.044688
+      ],
+      [
+       19.963881,
+       50.0464
+      ],
+      [
+       19.961414,
+       50.047245
+      ],
+      [
+       19.958912,
+       50.046379
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6861bffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": true,
+    "population_est": 567
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 12,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.953842,
+       50.041221
+      ],
+      [
+       19.953808,
+       50.039509
+      ],
+      [
+       19.956275,
+       50.038663
+      ],
+      [
+       19.958776,
+       50.03953
+      ],
+      [
+       19.95881,
+       50.041242
+      ],
+      [
+       19.956343,
+       50.042088
+      ],
+      [
+       19.953842,
+       50.041221
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68643ffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": true,
+    "population_est": 419
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 13,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.951409,
+       50.043779
+      ],
+      [
+       19.951375,
+       50.042067
+      ],
+      [
+       19.953842,
+       50.041221
+      ],
+      [
+       19.956343,
+       50.042088
+      ],
+      [
+       19.956377,
+       50.0438
+      ],
+      [
+       19.95391,
+       50.044646
+      ],
+      [
+       19.951409,
+       50.043779
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68653ffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": true,
+    "population_est": 638
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 14,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.956377,
+       50.0438
+      ],
+      [
+       19.956343,
+       50.042088
+      ],
+      [
+       19.95881,
+       50.041242
+      ],
+      [
+       19.961311,
+       50.042109
+      ],
+      [
+       19.961346,
+       50.043821
+      ],
+      [
+       19.958878,
+       50.044667
+      ],
+      [
+       19.956377,
+       50.0438
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68657ffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": true,
+    "population_est": 503
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 15,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.948874,
+       50.0412
+      ],
+      [
+       19.948841,
+       50.039488
+      ],
+      [
+       19.951308,
+       50.038642
+      ],
+      [
+       19.953808,
+       50.039509
+      ],
+      [
+       19.953842,
+       50.041221
+      ],
+      [
+       19.951375,
+       50.042067
+      ],
+      [
+       19.948874,
+       50.0412
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6865bffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": true,
+    "population_est": 309
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 16,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.96155,
+       50.054094
+      ],
+      [
+       19.961516,
+       50.052382
+      ],
+      [
+       19.963983,
+       50.051536
+      ],
+      [
+       19.966485,
+       50.052402
+      ],
+      [
+       19.966519,
+       50.054114
+      ],
+      [
+       19.964052,
+       50.05496
+      ],
+      [
+       19.96155,
+       50.054094
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68683ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Zabłocie",
+    "habitable": true,
+    "population_est": 567
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 17,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.966519,
+       50.054114
+      ],
+      [
+       19.966485,
+       50.052402
+      ],
+      [
+       19.968952,
+       50.051557
+      ],
+      [
+       19.971454,
+       50.052423
+      ],
+      [
+       19.971488,
+       50.054135
+      ],
+      [
+       19.969021,
+       50.054981
+      ],
+      [
+       19.966519,
+       50.054114
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68687ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Zabłocie",
+    "habitable": true,
+    "population_est": 309
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 18,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.959015,
+       50.051515
+      ],
+      [
+       19.958981,
+       50.049803
+      ],
+      [
+       19.961448,
+       50.048958
+      ],
+      [
+       19.963949,
+       50.049824
+      ],
+      [
+       19.963983,
+       50.051536
+      ],
+      [
+       19.961516,
+       50.052382
+      ],
+      [
+       19.959015,
+       50.051515
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6868bffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Zabłocie",
+    "habitable": true,
+    "population_est": 647
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 19,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.963983,
+       50.051536
+      ],
+      [
+       19.963949,
+       50.049824
+      ],
+      [
+       19.966416,
+       50.048978
+      ],
+      [
+       19.968918,
+       50.049845
+      ],
+      [
+       19.968952,
+       50.051557
+      ],
+      [
+       19.966485,
+       50.052402
+      ],
+      [
+       19.963983,
+       50.051536
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6868fffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Zabłocie",
+    "habitable": true,
+    "population_est": 453
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 20,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.959117,
+       50.056651
+      ],
+      [
+       19.959083,
+       50.054939
+      ],
+      [
+       19.96155,
+       50.054094
+      ],
+      [
+       19.964052,
+       50.05496
+      ],
+      [
+       19.964086,
+       50.056672
+      ],
+      [
+       19.961618,
+       50.057517
+      ],
+      [
+       19.959117,
+       50.056651
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68693ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 532
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 21,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.964086,
+       50.056672
+      ],
+      [
+       19.964052,
+       50.05496
+      ],
+      [
+       19.966519,
+       50.054114
+      ],
+      [
+       19.969021,
+       50.054981
+      ],
+      [
+       19.969055,
+       50.056693
+      ],
+      [
+       19.966587,
+       50.057538
+      ],
+      [
+       19.964086,
+       50.056672
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e68697ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 397
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 22,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.956581,
+       50.054073
+      ],
+      [
+       19.956547,
+       50.052361
+      ],
+      [
+       19.959015,
+       50.051515
+      ],
+      [
+       19.961516,
+       50.052382
+      ],
+      [
+       19.96155,
+       50.054094
+      ],
+      [
+       19.959083,
+       50.054939
+      ],
+      [
+       19.956581,
+       50.054073
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6869bffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Zabłocie",
+    "habitable": true,
+    "population_est": 752
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 23,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.951511,
+       50.048915
+      ],
+      [
+       19.951477,
+       50.047203
+      ],
+      [
+       19.953944,
+       50.046358
+      ],
+      [
+       19.956445,
+       50.047224
+      ],
+      [
+       19.956479,
+       50.048937
+      ],
+      [
+       19.954012,
+       50.049782
+      ],
+      [
+       19.951511,
+       50.048915
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e686c3ffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 24,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.956479,
+       50.048937
+      ],
+      [
+       19.956445,
+       50.047224
+      ],
+      [
+       19.958912,
+       50.046379
+      ],
+      [
+       19.961414,
+       50.047245
+      ],
+      [
+       19.961448,
+       50.048958
+      ],
+      [
+       19.958981,
+       50.049803
+      ],
+      [
+       19.956479,
+       50.048937
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e686c7ffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Zabłocie",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 25,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.948976,
+       50.046337
+      ],
+      [
+       19.948942,
+       50.044624
+      ],
+      [
+       19.951409,
+       50.043779
+      ],
+      [
+       19.95391,
+       50.044646
+      ],
+      [
+       19.953944,
+       50.046358
+      ],
+      [
+       19.951477,
+       50.047203
+      ],
+      [
+       19.948976,
+       50.046337
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e686cbffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": true,
+    "population_est": 476
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 26,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.953944,
+       50.046358
+      ],
+      [
+       19.95391,
+       50.044646
+      ],
+      [
+       19.956377,
+       50.0438
+      ],
+      [
+       19.958878,
+       50.044667
+      ],
+      [
+       19.958912,
+       50.046379
+      ],
+      [
+       19.956445,
+       50.047224
+      ],
+      [
+       19.953944,
+       50.046358
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e686cfffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": true,
+    "population_est": 572
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 27,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.949077,
+       50.051473
+      ],
+      [
+       19.949043,
+       50.049761
+      ],
+      [
+       19.951511,
+       50.048915
+      ],
+      [
+       19.954012,
+       50.049782
+      ],
+      [
+       19.954046,
+       50.051494
+      ],
+      [
+       19.951578,
+       50.052339
+      ],
+      [
+       19.949077,
+       50.051473
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e686d3ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 666
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 28,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.954046,
+       50.051494
+      ],
+      [
+       19.954012,
+       50.049782
+      ],
+      [
+       19.956479,
+       50.048937
+      ],
+      [
+       19.958981,
+       50.049803
+      ],
+      [
+       19.959015,
+       50.051515
+      ],
+      [
+       19.956547,
+       50.052361
+      ],
+      [
+       19.954046,
+       50.051494
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e686d7ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Zabłocie",
+    "habitable": true,
+    "population_est": 628
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 29,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.946542,
+       50.048894
+      ],
+      [
+       19.946509,
+       50.047182
+      ],
+      [
+       19.948976,
+       50.046337
+      ],
+      [
+       19.951477,
+       50.047203
+      ],
+      [
+       19.951511,
+       50.048915
+      ],
+      [
+       19.949043,
+       50.049761
+      ],
+      [
+       19.946542,
+       50.048894
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e686dbffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 653
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 30,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.954555,
+       50.07717
+      ],
+      [
+       19.954521,
+       50.075458
+      ],
+      [
+       19.956989,
+       50.074613
+      ],
+      [
+       19.959491,
+       50.07548
+      ],
+      [
+       19.959525,
+       50.077191
+      ],
+      [
+       19.957057,
+       50.078036
+      ],
+      [
+       19.954555,
+       50.07717
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a243ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 824
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 31,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.959525,
+       50.077191
+      ],
+      [
+       19.959491,
+       50.07548
+      ],
+      [
+       19.961959,
+       50.074634
+      ],
+      [
+       19.964462,
+       50.0755
+      ],
+      [
+       19.964496,
+       50.077212
+      ],
+      [
+       19.962028,
+       50.078057
+      ],
+      [
+       19.959525,
+       50.077191
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a247ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 396
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 32,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.952019,
+       50.074592
+      ],
+      [
+       19.951985,
+       50.072881
+      ],
+      [
+       19.954453,
+       50.072035
+      ],
+      [
+       19.956955,
+       50.072902
+      ],
+      [
+       19.956989,
+       50.074613
+      ],
+      [
+       19.954521,
+       50.075458
+      ],
+      [
+       19.952019,
+       50.074592
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a24bffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 486
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 33,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.956989,
+       50.074613
+      ],
+      [
+       19.956955,
+       50.072902
+      ],
+      [
+       19.959423,
+       50.072057
+      ],
+      [
+       19.961925,
+       50.072923
+      ],
+      [
+       19.961959,
+       50.074634
+      ],
+      [
+       19.959491,
+       50.07548
+      ],
+      [
+       19.956989,
+       50.074613
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a24fffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 394
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 34,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.952121,
+       50.079726
+      ],
+      [
+       19.952087,
+       50.078015
+      ],
+      [
+       19.954555,
+       50.07717
+      ],
+      [
+       19.957057,
+       50.078036
+      ],
+      [
+       19.957091,
+       50.079748
+      ],
+      [
+       19.954623,
+       50.080593
+      ],
+      [
+       19.952121,
+       50.079726
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a253ffff",
+    "district_id": "3",
+    "district_name": "Prądnik Czerwony",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 573
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 35,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.957091,
+       50.079748
+      ],
+      [
+       19.957057,
+       50.078036
+      ],
+      [
+       19.959525,
+       50.077191
+      ],
+      [
+       19.962028,
+       50.078057
+      ],
+      [
+       19.962062,
+       50.079769
+      ],
+      [
+       19.959594,
+       50.080614
+      ],
+      [
+       19.957091,
+       50.079748
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a257ffff",
+    "district_id": "3",
+    "district_name": "Prądnik Czerwony",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 611
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 36,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.949584,
+       50.077149
+      ],
+      [
+       19.949551,
+       50.075437
+      ],
+      [
+       19.952019,
+       50.074592
+      ],
+      [
+       19.954521,
+       50.075458
+      ],
+      [
+       19.954555,
+       50.07717
+      ],
+      [
+       19.952087,
+       50.078015
+      ],
+      [
+       19.949584,
+       50.077149
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a25bffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 525
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 37,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.964393,
+       50.072077
+      ],
+      [
+       19.964359,
+       50.070366
+      ],
+      [
+       19.966827,
+       50.06952
+      ],
+      [
+       19.969329,
+       50.070387
+      ],
+      [
+       19.969364,
+       50.072098
+      ],
+      [
+       19.966896,
+       50.072944
+      ],
+      [
+       19.964393,
+       50.072077
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a26bffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 338
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 38,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.961959,
+       50.074634
+      ],
+      [
+       19.961925,
+       50.072923
+      ],
+      [
+       19.964393,
+       50.072077
+      ],
+      [
+       19.966896,
+       50.072944
+      ],
+      [
+       19.96693,
+       50.074655
+      ],
+      [
+       19.964462,
+       50.0755
+      ],
+      [
+       19.961959,
+       50.074634
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a27bffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 341
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 39,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.949686,
+       50.082283
+      ],
+      [
+       19.949652,
+       50.080571
+      ],
+      [
+       19.952121,
+       50.079726
+      ],
+      [
+       19.954623,
+       50.080593
+      ],
+      [
+       19.954657,
+       50.082304
+      ],
+      [
+       19.952188,
+       50.083149
+      ],
+      [
+       19.949686,
+       50.082283
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a2cbffff",
+    "district_id": "3",
+    "district_name": "Prądnik Czerwony",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 550
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 40,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.954657,
+       50.082304
+      ],
+      [
+       19.954623,
+       50.080593
+      ],
+      [
+       19.957091,
+       50.079748
+      ],
+      [
+       19.959594,
+       50.080614
+      ],
+      [
+       19.959628,
+       50.082325
+      ],
+      [
+       19.957159,
+       50.08317
+      ],
+      [
+       19.954657,
+       50.082304
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6a2cfffff",
+    "district_id": "3",
+    "district_name": "Prądnik Czerwony",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 531
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 41,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.91206,
+       50.064145
+      ],
+      [
+       19.912027,
+       50.062433
+      ],
+      [
+       19.914495,
+       50.061589
+      ],
+      [
+       19.916996,
+       50.062456
+      ],
+      [
+       19.917029,
+       50.064168
+      ],
+      [
+       19.914561,
+       50.065012
+      ],
+      [
+       19.91206,
+       50.064145
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b003ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Piasek",
+    "habitable": true,
+    "population_est": 695
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 42,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.917029,
+       50.064168
+      ],
+      [
+       19.916996,
+       50.062456
+      ],
+      [
+       19.919464,
+       50.061612
+      ],
+      [
+       19.921966,
+       50.062479
+      ],
+      [
+       19.921999,
+       50.064191
+      ],
+      [
+       19.919531,
+       50.065035
+      ],
+      [
+       19.917029,
+       50.064168
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b007ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Piasek",
+    "habitable": true,
+    "population_est": 577
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 43,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.909526,
+       50.061566
+      ],
+      [
+       19.909493,
+       50.059854
+      ],
+      [
+       19.911961,
+       50.05901
+      ],
+      [
+       19.914462,
+       50.059877
+      ],
+      [
+       19.914495,
+       50.061589
+      ],
+      [
+       19.912027,
+       50.062433
+      ],
+      [
+       19.909526,
+       50.061566
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b00bffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 618
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 44,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.914495,
+       50.061589
+      ],
+      [
+       19.914462,
+       50.059877
+      ],
+      [
+       19.91693,
+       50.059033
+      ],
+      [
+       19.919431,
+       50.0599
+      ],
+      [
+       19.919464,
+       50.061612
+      ],
+      [
+       19.916996,
+       50.062456
+      ],
+      [
+       19.914495,
+       50.061589
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b00fffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Piasek",
+    "habitable": true,
+    "population_est": 665
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 45,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.909625,
+       50.066701
+      ],
+      [
+       19.909592,
+       50.064989
+      ],
+      [
+       19.91206,
+       50.064145
+      ],
+      [
+       19.914561,
+       50.065012
+      ],
+      [
+       19.914594,
+       50.066724
+      ],
+      [
+       19.912126,
+       50.067568
+      ],
+      [
+       19.909625,
+       50.066701
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b013ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 606
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 46,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.914594,
+       50.066724
+      ],
+      [
+       19.914561,
+       50.065012
+      ],
+      [
+       19.917029,
+       50.064168
+      ],
+      [
+       19.919531,
+       50.065035
+      ],
+      [
+       19.919564,
+       50.066747
+      ],
+      [
+       19.917096,
+       50.067591
+      ],
+      [
+       19.914594,
+       50.066724
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b017ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 764
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 47,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.907091,
+       50.064122
+      ],
+      [
+       19.907058,
+       50.06241
+      ],
+      [
+       19.909526,
+       50.061566
+      ],
+      [
+       19.912027,
+       50.062433
+      ],
+      [
+       19.91206,
+       50.064145
+      ],
+      [
+       19.909592,
+       50.064989
+      ],
+      [
+       19.907091,
+       50.064122
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b01bffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 584
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 48,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.924434,
+       50.061634
+      ],
+      [
+       19.9244,
+       50.059923
+      ],
+      [
+       19.926868,
+       50.059078
+      ],
+      [
+       19.92937,
+       50.059945
+      ],
+      [
+       19.929403,
+       50.061657
+      ],
+      [
+       19.926935,
+       50.062501
+      ],
+      [
+       19.924434,
+       50.061634
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b023ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Piasek",
+    "habitable": true,
+    "population_est": 877
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 49,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.929403,
+       50.061657
+      ],
+      [
+       19.92937,
+       50.059945
+      ],
+      [
+       19.931837,
+       50.0591
+      ],
+      [
+       19.934339,
+       50.059967
+      ],
+      [
+       19.934372,
+       50.061679
+      ],
+      [
+       19.931904,
+       50.062524
+      ],
+      [
+       19.929403,
+       50.061657
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b027ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stare Miasto",
+    "habitable": true,
+    "population_est": 848
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 50,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.921899,
+       50.059055
+      ],
+      [
+       19.921866,
+       50.057344
+      ],
+      [
+       19.924334,
+       50.056499
+      ],
+      [
+       19.926835,
+       50.057366
+      ],
+      [
+       19.926868,
+       50.059078
+      ],
+      [
+       19.9244,
+       50.059923
+      ],
+      [
+       19.921899,
+       50.059055
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b02bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Nowy Świat",
+    "habitable": true,
+    "population_est": 774
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 51,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.926868,
+       50.059078
+      ],
+      [
+       19.926835,
+       50.057366
+      ],
+      [
+       19.929303,
+       50.056521
+      ],
+      [
+       19.931804,
+       50.057388
+      ],
+      [
+       19.931837,
+       50.0591
+      ],
+      [
+       19.92937,
+       50.059945
+      ],
+      [
+       19.926868,
+       50.059078
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b02fffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Nowy Świat",
+    "habitable": true,
+    "population_est": 882
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 52,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.921999,
+       50.064191
+      ],
+      [
+       19.921966,
+       50.062479
+      ],
+      [
+       19.924434,
+       50.061634
+      ],
+      [
+       19.926935,
+       50.062501
+      ],
+      [
+       19.926968,
+       50.064213
+      ],
+      [
+       19.9245,
+       50.065058
+      ],
+      [
+       19.921999,
+       50.064191
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b033ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Piasek",
+    "habitable": true,
+    "population_est": 521
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 53,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.926968,
+       50.064213
+      ],
+      [
+       19.926935,
+       50.062501
+      ],
+      [
+       19.929403,
+       50.061657
+      ],
+      [
+       19.931904,
+       50.062524
+      ],
+      [
+       19.931938,
+       50.064235
+      ],
+      [
+       19.92947,
+       50.06508
+      ],
+      [
+       19.926968,
+       50.064213
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b037ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Piasek",
+    "habitable": true,
+    "population_est": 752
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 54,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.919464,
+       50.061612
+      ],
+      [
+       19.919431,
+       50.0599
+      ],
+      [
+       19.921899,
+       50.059055
+      ],
+      [
+       19.9244,
+       50.059923
+      ],
+      [
+       19.924434,
+       50.061634
+      ],
+      [
+       19.921966,
+       50.062479
+      ],
+      [
+       19.919464,
+       50.061612
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b03bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Piasek",
+    "habitable": true,
+    "population_est": 641
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 55,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.902023,
+       50.058963
+      ],
+      [
+       19.901991,
+       50.057252
+      ],
+      [
+       19.904459,
+       50.056407
+      ],
+      [
+       19.90696,
+       50.057275
+      ],
+      [
+       19.906992,
+       50.058987
+      ],
+      [
+       19.904524,
+       50.059831
+      ],
+      [
+       19.902023,
+       50.058963
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b043ffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 386
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 56,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.906992,
+       50.058987
+      ],
+      [
+       19.90696,
+       50.057275
+      ],
+      [
+       19.909428,
+       50.056431
+      ],
+      [
+       19.911928,
+       50.057298
+      ],
+      [
+       19.911961,
+       50.05901
+      ],
+      [
+       19.909493,
+       50.059854
+      ],
+      [
+       19.906992,
+       50.058987
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b047ffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 504
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 57,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.89949,
+       50.056384
+      ],
+      [
+       19.899457,
+       50.054672
+      ],
+      [
+       19.901925,
+       50.053828
+      ],
+      [
+       19.904426,
+       50.054695
+      ],
+      [
+       19.904459,
+       50.056407
+      ],
+      [
+       19.901991,
+       50.057252
+      ],
+      [
+       19.89949,
+       50.056384
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b04bffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 58,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.904459,
+       50.056407
+      ],
+      [
+       19.904426,
+       50.054695
+      ],
+      [
+       19.906894,
+       50.053851
+      ],
+      [
+       19.909395,
+       50.054719
+      ],
+      [
+       19.909428,
+       50.056431
+      ],
+      [
+       19.90696,
+       50.057275
+      ],
+      [
+       19.904459,
+       50.056407
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b04fffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 371
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 59,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.899588,
+       50.061519
+      ],
+      [
+       19.899555,
+       50.059808
+      ],
+      [
+       19.902023,
+       50.058963
+      ],
+      [
+       19.904524,
+       50.059831
+      ],
+      [
+       19.904557,
+       50.061543
+      ],
+      [
+       19.902089,
+       50.062387
+      ],
+      [
+       19.899588,
+       50.061519
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b053ffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 601
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 60,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.904557,
+       50.061543
+      ],
+      [
+       19.904524,
+       50.059831
+      ],
+      [
+       19.906992,
+       50.058987
+      ],
+      [
+       19.909493,
+       50.059854
+      ],
+      [
+       19.909526,
+       50.061566
+      ],
+      [
+       19.907058,
+       50.06241
+      ],
+      [
+       19.904557,
+       50.061543
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b057ffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 267
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 61,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.897055,
+       50.05894
+      ],
+      [
+       19.897022,
+       50.057228
+      ],
+      [
+       19.89949,
+       50.056384
+      ],
+      [
+       19.901991,
+       50.057252
+      ],
+      [
+       19.902023,
+       50.058963
+      ],
+      [
+       19.899555,
+       50.059808
+      ],
+      [
+       19.897055,
+       50.05894
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b05bffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 369
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 62,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.914396,
+       50.056454
+      ],
+      [
+       19.914363,
+       50.054742
+      ],
+      [
+       19.916831,
+       50.053897
+      ],
+      [
+       19.919332,
+       50.054764
+      ],
+      [
+       19.919365,
+       50.056476
+      ],
+      [
+       19.916897,
+       50.057321
+      ],
+      [
+       19.914396,
+       50.056454
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b063ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 646
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 63,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.919365,
+       50.056476
+      ],
+      [
+       19.919332,
+       50.054764
+      ],
+      [
+       19.9218,
+       50.05392
+      ],
+      [
+       19.924301,
+       50.054787
+      ],
+      [
+       19.924334,
+       50.056499
+      ],
+      [
+       19.921866,
+       50.057344
+      ],
+      [
+       19.919365,
+       50.056476
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b067ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Nowy Świat",
+    "habitable": true,
+    "population_est": 766
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 64,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.911863,
+       50.053874
+      ],
+      [
+       19.91183,
+       50.052162
+      ],
+      [
+       19.914297,
+       50.051318
+      ],
+      [
+       19.916798,
+       50.052185
+      ],
+      [
+       19.916831,
+       50.053897
+      ],
+      [
+       19.914363,
+       50.054742
+      ],
+      [
+       19.911863,
+       50.053874
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b06bffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 65,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.916831,
+       50.053897
+      ],
+      [
+       19.916798,
+       50.052185
+      ],
+      [
+       19.919266,
+       50.051341
+      ],
+      [
+       19.921767,
+       50.052208
+      ],
+      [
+       19.9218,
+       50.05392
+      ],
+      [
+       19.919332,
+       50.054764
+      ],
+      [
+       19.916831,
+       50.053897
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b06fffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 741
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 66,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.911961,
+       50.05901
+      ],
+      [
+       19.911928,
+       50.057298
+      ],
+      [
+       19.914396,
+       50.056454
+      ],
+      [
+       19.916897,
+       50.057321
+      ],
+      [
+       19.91693,
+       50.059033
+      ],
+      [
+       19.914462,
+       50.059877
+      ],
+      [
+       19.911961,
+       50.05901
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b073ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 556
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 67,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.91693,
+       50.059033
+      ],
+      [
+       19.916897,
+       50.057321
+      ],
+      [
+       19.919365,
+       50.056476
+      ],
+      [
+       19.921866,
+       50.057344
+      ],
+      [
+       19.921899,
+       50.059055
+      ],
+      [
+       19.919431,
+       50.0599
+      ],
+      [
+       19.91693,
+       50.059033
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b077ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Nowy Świat",
+    "habitable": true,
+    "population_est": 600
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 68,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.909428,
+       50.056431
+      ],
+      [
+       19.909395,
+       50.054719
+      ],
+      [
+       19.911863,
+       50.053874
+      ],
+      [
+       19.914363,
+       50.054742
+      ],
+      [
+       19.914396,
+       50.056454
+      ],
+      [
+       19.911928,
+       50.057298
+      ],
+      [
+       19.909428,
+       50.056431
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b07bffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 691
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 69,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.909723,
+       50.071836
+      ],
+      [
+       19.909691,
+       50.070124
+      ],
+      [
+       19.912159,
+       50.06928
+      ],
+      [
+       19.91466,
+       50.070147
+      ],
+      [
+       19.914693,
+       50.071859
+      ],
+      [
+       19.912225,
+       50.072703
+      ],
+      [
+       19.909723,
+       50.071836
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b083ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 504
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 70,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.914693,
+       50.071859
+      ],
+      [
+       19.91466,
+       50.070147
+      ],
+      [
+       19.917129,
+       50.069303
+      ],
+      [
+       19.91963,
+       50.07017
+      ],
+      [
+       19.919663,
+       50.071882
+      ],
+      [
+       19.917195,
+       50.072726
+      ],
+      [
+       19.914693,
+       50.071859
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b087ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 393
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 71,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.907189,
+       50.069257
+      ],
+      [
+       19.907156,
+       50.067545
+      ],
+      [
+       19.909625,
+       50.066701
+      ],
+      [
+       19.912126,
+       50.067568
+      ],
+      [
+       19.912159,
+       50.06928
+      ],
+      [
+       19.909691,
+       50.070124
+      ],
+      [
+       19.907189,
+       50.069257
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b08bffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 356
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 72,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.912159,
+       50.06928
+      ],
+      [
+       19.912126,
+       50.067568
+      ],
+      [
+       19.914594,
+       50.066724
+      ],
+      [
+       19.917096,
+       50.067591
+      ],
+      [
+       19.917129,
+       50.069303
+      ],
+      [
+       19.91466,
+       50.070147
+      ],
+      [
+       19.912159,
+       50.06928
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b08fffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 447
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 73,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.907288,
+       50.074391
+      ],
+      [
+       19.907255,
+       50.07268
+      ],
+      [
+       19.909723,
+       50.071836
+      ],
+      [
+       19.912225,
+       50.072703
+      ],
+      [
+       19.912258,
+       50.074415
+      ],
+      [
+       19.909789,
+       50.075259
+      ],
+      [
+       19.907288,
+       50.074391
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b093ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Łobzów",
+    "habitable": true,
+    "population_est": 553
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 74,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.912258,
+       50.074415
+      ],
+      [
+       19.912225,
+       50.072703
+      ],
+      [
+       19.914693,
+       50.071859
+      ],
+      [
+       19.917195,
+       50.072726
+      ],
+      [
+       19.917228,
+       50.074437
+      ],
+      [
+       19.914759,
+       50.075282
+      ],
+      [
+       19.912258,
+       50.074415
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b097ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 549
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 75,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.904754,
+       50.071813
+      ],
+      [
+       19.904721,
+       50.070101
+      ],
+      [
+       19.907189,
+       50.069257
+      ],
+      [
+       19.909691,
+       50.070124
+      ],
+      [
+       19.909723,
+       50.071836
+      ],
+      [
+       19.907255,
+       50.07268
+      ],
+      [
+       19.904754,
+       50.071813
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b09bffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Łobzów",
+    "habitable": true,
+    "population_est": 580
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 76,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.922098,
+       50.069326
+      ],
+      [
+       19.922065,
+       50.067614
+      ],
+      [
+       19.924533,
+       50.06677
+      ],
+      [
+       19.927035,
+       50.067637
+      ],
+      [
+       19.927068,
+       50.069348
+      ],
+      [
+       19.9246,
+       50.070193
+      ],
+      [
+       19.922098,
+       50.069326
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0a3ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 626
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 77,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.927068,
+       50.069348
+      ],
+      [
+       19.927035,
+       50.067637
+      ],
+      [
+       19.929503,
+       50.066792
+      ],
+      [
+       19.932004,
+       50.067659
+      ],
+      [
+       19.932038,
+       50.06937
+      ],
+      [
+       19.92957,
+       50.070215
+      ],
+      [
+       19.927068,
+       50.069348
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0a7ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 755
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 78,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.919564,
+       50.066747
+      ],
+      [
+       19.919531,
+       50.065035
+      ],
+      [
+       19.921999,
+       50.064191
+      ],
+      [
+       19.9245,
+       50.065058
+      ],
+      [
+       19.924533,
+       50.06677
+      ],
+      [
+       19.922065,
+       50.067614
+      ],
+      [
+       19.919564,
+       50.066747
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0abffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Piasek",
+    "habitable": true,
+    "population_est": 786
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 79,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.924533,
+       50.06677
+      ],
+      [
+       19.9245,
+       50.065058
+      ],
+      [
+       19.926968,
+       50.064213
+      ],
+      [
+       19.92947,
+       50.06508
+      ],
+      [
+       19.929503,
+       50.066792
+      ],
+      [
+       19.927035,
+       50.067637
+      ],
+      [
+       19.924533,
+       50.06677
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0afffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Piasek",
+    "habitable": true,
+    "population_est": 701
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 80,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.919663,
+       50.071882
+      ],
+      [
+       19.91963,
+       50.07017
+      ],
+      [
+       19.922098,
+       50.069326
+      ],
+      [
+       19.9246,
+       50.070193
+      ],
+      [
+       19.924633,
+       50.071904
+      ],
+      [
+       19.922165,
+       50.072749
+      ],
+      [
+       19.919663,
+       50.071882
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0b3ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 701
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 81,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.924633,
+       50.071904
+      ],
+      [
+       19.9246,
+       50.070193
+      ],
+      [
+       19.927068,
+       50.069348
+      ],
+      [
+       19.92957,
+       50.070215
+      ],
+      [
+       19.929603,
+       50.071927
+      ],
+      [
+       19.927135,
+       50.072771
+      ],
+      [
+       19.924633,
+       50.071904
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0b7ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 572
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 82,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.917129,
+       50.069303
+      ],
+      [
+       19.917096,
+       50.067591
+      ],
+      [
+       19.919564,
+       50.066747
+      ],
+      [
+       19.922065,
+       50.067614
+      ],
+      [
+       19.922098,
+       50.069326
+      ],
+      [
+       19.91963,
+       50.07017
+      ],
+      [
+       19.917129,
+       50.069303
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0bbffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 585
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 83,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.899686,
+       50.066654
+      ],
+      [
+       19.899653,
+       50.064943
+      ],
+      [
+       19.902122,
+       50.064099
+      ],
+      [
+       19.904623,
+       50.064966
+      ],
+      [
+       19.904655,
+       50.066678
+      ],
+      [
+       19.902187,
+       50.067522
+      ],
+      [
+       19.899686,
+       50.066654
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0c3ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 391
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 84,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.904655,
+       50.066678
+      ],
+      [
+       19.904623,
+       50.064966
+      ],
+      [
+       19.907091,
+       50.064122
+      ],
+      [
+       19.909592,
+       50.064989
+      ],
+      [
+       19.909625,
+       50.066701
+      ],
+      [
+       19.907156,
+       50.067545
+      ],
+      [
+       19.904655,
+       50.066678
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0c7ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 332
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 85,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.897152,
+       50.064075
+      ],
+      [
+       19.89712,
+       50.062363
+      ],
+      [
+       19.899588,
+       50.061519
+      ],
+      [
+       19.902089,
+       50.062387
+      ],
+      [
+       19.902122,
+       50.064099
+      ],
+      [
+       19.899653,
+       50.064943
+      ],
+      [
+       19.897152,
+       50.064075
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0cbffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 496
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 86,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.902122,
+       50.064099
+      ],
+      [
+       19.902089,
+       50.062387
+      ],
+      [
+       19.904557,
+       50.061543
+      ],
+      [
+       19.907058,
+       50.06241
+      ],
+      [
+       19.907091,
+       50.064122
+      ],
+      [
+       19.904623,
+       50.064966
+      ],
+      [
+       19.902122,
+       50.064099
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0cfffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 417
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 87,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.90222,
+       50.069234
+      ],
+      [
+       19.902187,
+       50.067522
+      ],
+      [
+       19.904655,
+       50.066678
+      ],
+      [
+       19.907156,
+       50.067545
+      ],
+      [
+       19.907189,
+       50.069257
+      ],
+      [
+       19.904721,
+       50.070101
+      ],
+      [
+       19.90222,
+       50.069234
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b0d7ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Łobzów",
+    "habitable": true,
+    "population_est": 469
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 88,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.946846,
+       50.064301
+      ],
+      [
+       19.946812,
+       50.062589
+      ],
+      [
+       19.94928,
+       50.061744
+      ],
+      [
+       19.951782,
+       50.062611
+      ],
+      [
+       19.951816,
+       50.064322
+      ],
+      [
+       19.949348,
+       50.065168
+      ],
+      [
+       19.946846,
+       50.064301
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b103ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 804
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 89,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.951816,
+       50.064322
+      ],
+      [
+       19.951782,
+       50.062611
+      ],
+      [
+       19.954249,
+       50.061766
+      ],
+      [
+       19.956751,
+       50.062632
+      ],
+      [
+       19.956785,
+       50.064344
+      ],
+      [
+       19.954317,
+       50.065189
+      ],
+      [
+       19.951816,
+       50.064322
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b107ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 736
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 90,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.944311,
+       50.061723
+      ],
+      [
+       19.944277,
+       50.060011
+      ],
+      [
+       19.946745,
+       50.059166
+      ],
+      [
+       19.949246,
+       50.060032
+      ],
+      [
+       19.94928,
+       50.061744
+      ],
+      [
+       19.946812,
+       50.062589
+      ],
+      [
+       19.944311,
+       50.061723
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b10bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 869
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 91,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.94928,
+       50.061744
+      ],
+      [
+       19.949246,
+       50.060032
+      ],
+      [
+       19.951714,
+       50.059187
+      ],
+      [
+       19.954216,
+       50.060054
+      ],
+      [
+       19.954249,
+       50.061766
+      ],
+      [
+       19.951782,
+       50.062611
+      ],
+      [
+       19.94928,
+       50.061744
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b10fffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 690
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 92,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.944412,
+       50.066858
+      ],
+      [
+       19.944378,
+       50.065146
+      ],
+      [
+       19.946846,
+       50.064301
+      ],
+      [
+       19.949348,
+       50.065168
+      ],
+      [
+       19.949382,
+       50.066879
+      ],
+      [
+       19.946914,
+       50.067724
+      ],
+      [
+       19.944412,
+       50.066858
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b113ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 675
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 93,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.949382,
+       50.066879
+      ],
+      [
+       19.949348,
+       50.065168
+      ],
+      [
+       19.951816,
+       50.064322
+      ],
+      [
+       19.954317,
+       50.065189
+      ],
+      [
+       19.954351,
+       50.066901
+      ],
+      [
+       19.951883,
+       50.067746
+      ],
+      [
+       19.949382,
+       50.066879
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b117ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 671
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 94,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.941877,
+       50.064279
+      ],
+      [
+       19.941843,
+       50.062568
+      ],
+      [
+       19.944311,
+       50.061723
+      ],
+      [
+       19.946812,
+       50.062589
+      ],
+      [
+       19.946846,
+       50.064301
+      ],
+      [
+       19.944378,
+       50.065146
+      ],
+      [
+       19.941877,
+       50.064279
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b11bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 539
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 95,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.959219,
+       50.061787
+      ],
+      [
+       19.959185,
+       50.060075
+      ],
+      [
+       19.961652,
+       50.059229
+      ],
+      [
+       19.964154,
+       50.060096
+      ],
+      [
+       19.964188,
+       50.061808
+      ],
+      [
+       19.961721,
+       50.062653
+      ],
+      [
+       19.959219,
+       50.061787
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b123ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 360
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 96,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.964188,
+       50.061808
+      ],
+      [
+       19.964154,
+       50.060096
+      ],
+      [
+       19.966622,
+       50.05925
+      ],
+      [
+       19.969124,
+       50.060116
+      ],
+      [
+       19.969158,
+       50.061828
+      ],
+      [
+       19.96669,
+       50.062674
+      ],
+      [
+       19.964188,
+       50.061808
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b127ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 315
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 97,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.956683,
+       50.059208
+      ],
+      [
+       19.956649,
+       50.057497
+      ],
+      [
+       19.959117,
+       50.056651
+      ],
+      [
+       19.961618,
+       50.057517
+      ],
+      [
+       19.961652,
+       50.059229
+      ],
+      [
+       19.959185,
+       50.060075
+      ],
+      [
+       19.956683,
+       50.059208
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b12bffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 454
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 98,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.961652,
+       50.059229
+      ],
+      [
+       19.961618,
+       50.057517
+      ],
+      [
+       19.964086,
+       50.056672
+      ],
+      [
+       19.966587,
+       50.057538
+      ],
+      [
+       19.966622,
+       50.05925
+      ],
+      [
+       19.964154,
+       50.060096
+      ],
+      [
+       19.961652,
+       50.059229
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b12fffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 601
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 99,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.956785,
+       50.064344
+      ],
+      [
+       19.956751,
+       50.062632
+      ],
+      [
+       19.959219,
+       50.061787
+      ],
+      [
+       19.961721,
+       50.062653
+      ],
+      [
+       19.961755,
+       50.064365
+      ],
+      [
+       19.959287,
+       50.06521
+      ],
+      [
+       19.956785,
+       50.064344
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b133ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 470
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 100,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.961755,
+       50.064365
+      ],
+      [
+       19.961721,
+       50.062653
+      ],
+      [
+       19.964188,
+       50.061808
+      ],
+      [
+       19.96669,
+       50.062674
+      ],
+      [
+       19.966724,
+       50.064386
+      ],
+      [
+       19.964257,
+       50.065231
+      ],
+      [
+       19.961755,
+       50.064365
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b137ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 486
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 101,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.954249,
+       50.061766
+      ],
+      [
+       19.954216,
+       50.060054
+      ],
+      [
+       19.956683,
+       50.059208
+      ],
+      [
+       19.959185,
+       50.060075
+      ],
+      [
+       19.959219,
+       50.061787
+      ],
+      [
+       19.956751,
+       50.062632
+      ],
+      [
+       19.954249,
+       50.061766
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b13bffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 836
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 102,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.936806,
+       50.059122
+      ],
+      [
+       19.936773,
+       50.05741
+      ],
+      [
+       19.939241,
+       50.056565
+      ],
+      [
+       19.941742,
+       50.057432
+      ],
+      [
+       19.941776,
+       50.059144
+      ],
+      [
+       19.939308,
+       50.059989
+      ],
+      [
+       19.936806,
+       50.059122
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b143ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stradom",
+    "habitable": true,
+    "population_est": 775
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 103,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.941776,
+       50.059144
+      ],
+      [
+       19.941742,
+       50.057432
+      ],
+      [
+       19.94421,
+       50.056587
+      ],
+      [
+       19.946711,
+       50.057454
+      ],
+      [
+       19.946745,
+       50.059166
+      ],
+      [
+       19.944277,
+       50.060011
+      ],
+      [
+       19.941776,
+       50.059144
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b147ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stradom",
+    "habitable": true,
+    "population_est": 894
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 104,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.934272,
+       50.056543
+      ],
+      [
+       19.934238,
+       50.054832
+      ],
+      [
+       19.936706,
+       50.053987
+      ],
+      [
+       19.939207,
+       50.054853
+      ],
+      [
+       19.939241,
+       50.056565
+      ],
+      [
+       19.936773,
+       50.05741
+      ],
+      [
+       19.934272,
+       50.056543
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b14bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stradom",
+    "habitable": true,
+    "population_est": 646
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 105,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.939241,
+       50.056565
+      ],
+      [
+       19.939207,
+       50.054853
+      ],
+      [
+       19.941675,
+       50.054008
+      ],
+      [
+       19.944176,
+       50.054875
+      ],
+      [
+       19.94421,
+       50.056587
+      ],
+      [
+       19.941742,
+       50.057432
+      ],
+      [
+       19.939241,
+       50.056565
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b14fffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stradom",
+    "habitable": true,
+    "population_est": 738
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 106,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.934372,
+       50.061679
+      ],
+      [
+       19.934339,
+       50.059967
+      ],
+      [
+       19.936806,
+       50.059122
+      ],
+      [
+       19.939308,
+       50.059989
+      ],
+      [
+       19.939341,
+       50.061701
+      ],
+      [
+       19.936874,
+       50.062546
+      ],
+      [
+       19.934372,
+       50.061679
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b153ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stare Miasto",
+    "habitable": true,
+    "population_est": 746
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 107,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.939341,
+       50.061701
+      ],
+      [
+       19.939308,
+       50.059989
+      ],
+      [
+       19.941776,
+       50.059144
+      ],
+      [
+       19.944277,
+       50.060011
+      ],
+      [
+       19.944311,
+       50.061723
+      ],
+      [
+       19.941843,
+       50.062568
+      ],
+      [
+       19.939341,
+       50.061701
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b157ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stare Miasto",
+    "habitable": true,
+    "population_est": 781
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 108,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.931837,
+       50.0591
+      ],
+      [
+       19.931804,
+       50.057388
+      ],
+      [
+       19.934272,
+       50.056543
+      ],
+      [
+       19.936773,
+       50.05741
+      ],
+      [
+       19.936806,
+       50.059122
+      ],
+      [
+       19.934339,
+       50.059967
+      ],
+      [
+       19.931837,
+       50.0591
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b15bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stare Miasto",
+    "habitable": true,
+    "population_est": 957
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 109,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.949179,
+       50.056609
+      ],
+      [
+       19.949145,
+       50.054897
+      ],
+      [
+       19.951612,
+       50.054051
+      ],
+      [
+       19.954114,
+       50.054918
+      ],
+      [
+       19.954148,
+       50.05663
+      ],
+      [
+       19.95168,
+       50.057475
+      ],
+      [
+       19.949179,
+       50.056609
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b163ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 417
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 110,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.954148,
+       50.05663
+      ],
+      [
+       19.954114,
+       50.054918
+      ],
+      [
+       19.956581,
+       50.054073
+      ],
+      [
+       19.959083,
+       50.054939
+      ],
+      [
+       19.959117,
+       50.056651
+      ],
+      [
+       19.956649,
+       50.057497
+      ],
+      [
+       19.954148,
+       50.05663
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b167ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 684
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 111,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.946644,
+       50.05403
+      ],
+      [
+       19.94661,
+       50.052318
+      ],
+      [
+       19.949077,
+       50.051473
+      ],
+      [
+       19.951578,
+       50.052339
+      ],
+      [
+       19.951612,
+       50.054051
+      ],
+      [
+       19.949145,
+       50.054897
+      ],
+      [
+       19.946644,
+       50.05403
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b16bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 706
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 112,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.951612,
+       50.054051
+      ],
+      [
+       19.951578,
+       50.052339
+      ],
+      [
+       19.954046,
+       50.051494
+      ],
+      [
+       19.956547,
+       50.052361
+      ],
+      [
+       19.956581,
+       50.054073
+      ],
+      [
+       19.954114,
+       50.054918
+      ],
+      [
+       19.951612,
+       50.054051
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b16fffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 533
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 113,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.946745,
+       50.059166
+      ],
+      [
+       19.946711,
+       50.057454
+      ],
+      [
+       19.949179,
+       50.056609
+      ],
+      [
+       19.95168,
+       50.057475
+      ],
+      [
+       19.951714,
+       50.059187
+      ],
+      [
+       19.949246,
+       50.060032
+      ],
+      [
+       19.946745,
+       50.059166
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b173ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 510
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 114,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.951714,
+       50.059187
+      ],
+      [
+       19.95168,
+       50.057475
+      ],
+      [
+       19.954148,
+       50.05663
+      ],
+      [
+       19.956649,
+       50.057497
+      ],
+      [
+       19.956683,
+       50.059208
+      ],
+      [
+       19.954216,
+       50.060054
+      ],
+      [
+       19.951714,
+       50.059187
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b177ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 677
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 115,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.94421,
+       50.056587
+      ],
+      [
+       19.944176,
+       50.054875
+      ],
+      [
+       19.946644,
+       50.05403
+      ],
+      [
+       19.949145,
+       50.054897
+      ],
+      [
+       19.949179,
+       50.056609
+      ],
+      [
+       19.946711,
+       50.057454
+      ],
+      [
+       19.94421,
+       50.056587
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b17bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 649
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 116,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.944513,
+       50.071993
+      ],
+      [
+       19.944479,
+       50.070281
+      ],
+      [
+       19.946947,
+       50.069436
+      ],
+      [
+       19.949449,
+       50.070303
+      ],
+      [
+       19.949483,
+       50.072014
+      ],
+      [
+       19.947015,
+       50.072859
+      ],
+      [
+       19.944513,
+       50.071993
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b183ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 699
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 117,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.949483,
+       50.072014
+      ],
+      [
+       19.949449,
+       50.070303
+      ],
+      [
+       19.951917,
+       50.069457
+      ],
+      [
+       19.954419,
+       50.070324
+      ],
+      [
+       19.954453,
+       50.072035
+      ],
+      [
+       19.951985,
+       50.072881
+      ],
+      [
+       19.949483,
+       50.072014
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b187ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 626
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 118,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.941977,
+       50.069414
+      ],
+      [
+       19.941944,
+       50.067703
+      ],
+      [
+       19.944412,
+       50.066858
+      ],
+      [
+       19.946914,
+       50.067724
+      ],
+      [
+       19.946947,
+       50.069436
+      ],
+      [
+       19.944479,
+       50.070281
+      ],
+      [
+       19.941977,
+       50.069414
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b18bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 965
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 119,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.946947,
+       50.069436
+      ],
+      [
+       19.946914,
+       50.067724
+      ],
+      [
+       19.949382,
+       50.066879
+      ],
+      [
+       19.951883,
+       50.067746
+      ],
+      [
+       19.951917,
+       50.069457
+      ],
+      [
+       19.949449,
+       50.070303
+      ],
+      [
+       19.946947,
+       50.069436
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b18fffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 645
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 120,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.942078,
+       50.074549
+      ],
+      [
+       19.942045,
+       50.072837
+      ],
+      [
+       19.944513,
+       50.071993
+      ],
+      [
+       19.947015,
+       50.072859
+      ],
+      [
+       19.947049,
+       50.074571
+      ],
+      [
+       19.94458,
+       50.075416
+      ],
+      [
+       19.942078,
+       50.074549
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b193ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 480
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 121,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.947049,
+       50.074571
+      ],
+      [
+       19.947015,
+       50.072859
+      ],
+      [
+       19.949483,
+       50.072014
+      ],
+      [
+       19.951985,
+       50.072881
+      ],
+      [
+       19.952019,
+       50.074592
+      ],
+      [
+       19.949551,
+       50.075437
+      ],
+      [
+       19.947049,
+       50.074571
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b197ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 630
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 122,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.939543,
+       50.071971
+      ],
+      [
+       19.939509,
+       50.070259
+      ],
+      [
+       19.941977,
+       50.069414
+      ],
+      [
+       19.944479,
+       50.070281
+      ],
+      [
+       19.944513,
+       50.071993
+      ],
+      [
+       19.942045,
+       50.072837
+      ],
+      [
+       19.939543,
+       50.071971
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b19bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 726
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 123,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.956887,
+       50.069479
+      ],
+      [
+       19.956853,
+       50.067767
+      ],
+      [
+       19.959321,
+       50.066922
+      ],
+      [
+       19.961823,
+       50.067788
+      ],
+      [
+       19.961857,
+       50.0695
+      ],
+      [
+       19.959389,
+       50.070345
+      ],
+      [
+       19.956887,
+       50.069479
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1a3ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 778
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 124,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.961857,
+       50.0695
+      ],
+      [
+       19.961823,
+       50.067788
+      ],
+      [
+       19.964291,
+       50.066943
+      ],
+      [
+       19.966793,
+       50.067809
+      ],
+      [
+       19.966827,
+       50.06952
+      ],
+      [
+       19.964359,
+       50.070366
+      ],
+      [
+       19.961857,
+       50.0695
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1a7ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 641
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 125,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.954351,
+       50.066901
+      ],
+      [
+       19.954317,
+       50.065189
+      ],
+      [
+       19.956785,
+       50.064344
+      ],
+      [
+       19.959287,
+       50.06521
+      ],
+      [
+       19.959321,
+       50.066922
+      ],
+      [
+       19.956853,
+       50.067767
+      ],
+      [
+       19.954351,
+       50.066901
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1abffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 678
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 126,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.959321,
+       50.066922
+      ],
+      [
+       19.959287,
+       50.06521
+      ],
+      [
+       19.961755,
+       50.064365
+      ],
+      [
+       19.964257,
+       50.065231
+      ],
+      [
+       19.964291,
+       50.066943
+      ],
+      [
+       19.961823,
+       50.067788
+      ],
+      [
+       19.959321,
+       50.066922
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1afffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Grzegórzki",
+    "habitable": true,
+    "population_est": 783
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 127,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.954453,
+       50.072035
+      ],
+      [
+       19.954419,
+       50.070324
+      ],
+      [
+       19.956887,
+       50.069479
+      ],
+      [
+       19.959389,
+       50.070345
+      ],
+      [
+       19.959423,
+       50.072057
+      ],
+      [
+       19.956955,
+       50.072902
+      ],
+      [
+       19.954453,
+       50.072035
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1b3ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 395
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 128,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.959423,
+       50.072057
+      ],
+      [
+       19.959389,
+       50.070345
+      ],
+      [
+       19.961857,
+       50.0695
+      ],
+      [
+       19.964359,
+       50.070366
+      ],
+      [
+       19.964393,
+       50.072077
+      ],
+      [
+       19.961925,
+       50.072923
+      ],
+      [
+       19.959423,
+       50.072057
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1b7ffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 424
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 129,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.951917,
+       50.069457
+      ],
+      [
+       19.951883,
+       50.067746
+      ],
+      [
+       19.954351,
+       50.066901
+      ],
+      [
+       19.956853,
+       50.067767
+      ],
+      [
+       19.956887,
+       50.069479
+      ],
+      [
+       19.954419,
+       50.070324
+      ],
+      [
+       19.951917,
+       50.069457
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1bbffff",
+    "district_id": "2",
+    "district_name": "Grzegórzki",
+    "neighborhood": "Wesoła",
+    "habitable": true,
+    "population_est": 491
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 130,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.934473,
+       50.066814
+      ],
+      [
+       19.934439,
+       50.065102
+      ],
+      [
+       19.936907,
+       50.064258
+      ],
+      [
+       19.939409,
+       50.065124
+      ],
+      [
+       19.939442,
+       50.066836
+      ],
+      [
+       19.936974,
+       50.067681
+      ],
+      [
+       19.934473,
+       50.066814
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1c3ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 750
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 131,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.939442,
+       50.066836
+      ],
+      [
+       19.939409,
+       50.065124
+      ],
+      [
+       19.941877,
+       50.064279
+      ],
+      [
+       19.944378,
+       50.065146
+      ],
+      [
+       19.944412,
+       50.066858
+      ],
+      [
+       19.941944,
+       50.067703
+      ],
+      [
+       19.939442,
+       50.066836
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1c7ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 579
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 132,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.931938,
+       50.064235
+      ],
+      [
+       19.931904,
+       50.062524
+      ],
+      [
+       19.934372,
+       50.061679
+      ],
+      [
+       19.936874,
+       50.062546
+      ],
+      [
+       19.936907,
+       50.064258
+      ],
+      [
+       19.934439,
+       50.065102
+      ],
+      [
+       19.931938,
+       50.064235
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1cbffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stare Miasto",
+    "habitable": true,
+    "population_est": 946
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 133,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.936907,
+       50.064258
+      ],
+      [
+       19.936874,
+       50.062546
+      ],
+      [
+       19.939341,
+       50.061701
+      ],
+      [
+       19.941843,
+       50.062568
+      ],
+      [
+       19.941877,
+       50.064279
+      ],
+      [
+       19.939409,
+       50.065124
+      ],
+      [
+       19.936907,
+       50.064258
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1cfffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stare Miasto",
+    "habitable": true,
+    "population_est": 813
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 134,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.932038,
+       50.06937
+      ],
+      [
+       19.932004,
+       50.067659
+      ],
+      [
+       19.934473,
+       50.066814
+      ],
+      [
+       19.936974,
+       50.067681
+      ],
+      [
+       19.937008,
+       50.069392
+      ],
+      [
+       19.934539,
+       50.070237
+      ],
+      [
+       19.932038,
+       50.06937
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1d3ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 534
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 135,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.937008,
+       50.069392
+      ],
+      [
+       19.936974,
+       50.067681
+      ],
+      [
+       19.939442,
+       50.066836
+      ],
+      [
+       19.941944,
+       50.067703
+      ],
+      [
+       19.941977,
+       50.069414
+      ],
+      [
+       19.939509,
+       50.070259
+      ],
+      [
+       19.937008,
+       50.069392
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1d7ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 600
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 136,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.929503,
+       50.066792
+      ],
+      [
+       19.92947,
+       50.06508
+      ],
+      [
+       19.931938,
+       50.064235
+      ],
+      [
+       19.934439,
+       50.065102
+      ],
+      [
+       19.934473,
+       50.066814
+      ],
+      [
+       19.932004,
+       50.067659
+      ],
+      [
+       19.929503,
+       50.066792
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b1dbffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Piasek",
+    "habitable": true,
+    "population_est": 838
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 137,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.911665,
+       50.043602
+      ],
+      [
+       19.911632,
+       50.04189
+      ],
+      [
+       19.9141,
+       50.041045
+      ],
+      [
+       19.9166,
+       50.041913
+      ],
+      [
+       19.916633,
+       50.043625
+      ],
+      [
+       19.914165,
+       50.044469
+      ],
+      [
+       19.911665,
+       50.043602
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b227ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 554
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 138,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.90923,
+       50.046159
+      ],
+      [
+       19.909198,
+       50.044446
+      ],
+      [
+       19.911665,
+       50.043602
+      ],
+      [
+       19.914165,
+       50.044469
+      ],
+      [
+       19.914198,
+       50.046182
+      ],
+      [
+       19.911731,
+       50.047026
+      ],
+      [
+       19.90923,
+       50.046159
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b237ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 746
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 139,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.904361,
+       50.051272
+      ],
+      [
+       19.904328,
+       50.04956
+      ],
+      [
+       19.906796,
+       50.048715
+      ],
+      [
+       19.909296,
+       50.049583
+      ],
+      [
+       19.909329,
+       50.051295
+      ],
+      [
+       19.906861,
+       50.052139
+      ],
+      [
+       19.904361,
+       50.051272
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b2a3ffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 896
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 140,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.909329,
+       50.051295
+      ],
+      [
+       19.909296,
+       50.049583
+      ],
+      [
+       19.911764,
+       50.048738
+      ],
+      [
+       19.914264,
+       50.049606
+      ],
+      [
+       19.914297,
+       50.051318
+      ],
+      [
+       19.91183,
+       50.052162
+      ],
+      [
+       19.909329,
+       50.051295
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b2a7ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 575
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 141,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.906796,
+       50.048715
+      ],
+      [
+       19.906763,
+       50.047003
+      ],
+      [
+       19.90923,
+       50.046159
+      ],
+      [
+       19.911731,
+       50.047026
+      ],
+      [
+       19.911764,
+       50.048738
+      ],
+      [
+       19.909296,
+       50.049583
+      ],
+      [
+       19.906796,
+       50.048715
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b2afffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 308
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 142,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.901925,
+       50.053828
+      ],
+      [
+       19.901893,
+       50.052116
+      ],
+      [
+       19.904361,
+       50.051272
+      ],
+      [
+       19.906861,
+       50.052139
+      ],
+      [
+       19.906894,
+       50.053851
+      ],
+      [
+       19.904426,
+       50.054695
+      ],
+      [
+       19.901925,
+       50.053828
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b2b3ffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 133
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 143,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.906894,
+       50.053851
+      ],
+      [
+       19.906861,
+       50.052139
+      ],
+      [
+       19.909329,
+       50.051295
+      ],
+      [
+       19.91183,
+       50.052162
+      ],
+      [
+       19.911863,
+       50.053874
+      ],
+      [
+       19.909395,
+       50.054719
+      ],
+      [
+       19.906894,
+       50.053851
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b2b7ffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 144,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.929103,
+       50.046249
+      ],
+      [
+       19.92907,
+       50.044537
+      ],
+      [
+       19.931537,
+       50.043692
+      ],
+      [
+       19.934038,
+       50.044559
+      ],
+      [
+       19.934071,
+       50.046271
+      ],
+      [
+       19.931604,
+       50.047116
+      ],
+      [
+       19.929103,
+       50.046249
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b303ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Ludwinów",
+    "habitable": true,
+    "population_est": 451
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 145,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.934071,
+       50.046271
+      ],
+      [
+       19.934038,
+       50.044559
+      ],
+      [
+       19.936505,
+       50.043714
+      ],
+      [
+       19.939006,
+       50.044581
+      ],
+      [
+       19.939039,
+       50.046293
+      ],
+      [
+       19.936572,
+       50.047138
+      ],
+      [
+       19.934071,
+       50.046271
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b307ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Ludwinów",
+    "habitable": true,
+    "population_est": 518
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 146,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.926569,
+       50.04367
+      ],
+      [
+       19.926536,
+       50.041958
+      ],
+      [
+       19.929003,
+       50.041113
+      ],
+      [
+       19.931503,
+       50.04198
+      ],
+      [
+       19.931537,
+       50.043692
+      ],
+      [
+       19.92907,
+       50.044537
+      ],
+      [
+       19.926569,
+       50.04367
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b30bffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Ludwinów",
+    "habitable": true,
+    "population_est": 424
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 147,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.931537,
+       50.043692
+      ],
+      [
+       19.931503,
+       50.04198
+      ],
+      [
+       19.933971,
+       50.041135
+      ],
+      [
+       19.936471,
+       50.042002
+      ],
+      [
+       19.936505,
+       50.043714
+      ],
+      [
+       19.934038,
+       50.044559
+      ],
+      [
+       19.931537,
+       50.043692
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b30fffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Ludwinów",
+    "habitable": true,
+    "population_est": 506
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 148,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.926669,
+       50.048806
+      ],
+      [
+       19.926635,
+       50.047094
+      ],
+      [
+       19.929103,
+       50.046249
+      ],
+      [
+       19.931604,
+       50.047116
+      ],
+      [
+       19.931637,
+       50.048828
+      ],
+      [
+       19.92917,
+       50.049673
+      ],
+      [
+       19.926669,
+       50.048806
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b313ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 149,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.931637,
+       50.048828
+      ],
+      [
+       19.931604,
+       50.047116
+      ],
+      [
+       19.934071,
+       50.046271
+      ],
+      [
+       19.936572,
+       50.047138
+      ],
+      [
+       19.936605,
+       50.048851
+      ],
+      [
+       19.934138,
+       50.049696
+      ],
+      [
+       19.931637,
+       50.048828
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b317ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stradom",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 150,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.924135,
+       50.046227
+      ],
+      [
+       19.924101,
+       50.044515
+      ],
+      [
+       19.926569,
+       50.04367
+      ],
+      [
+       19.92907,
+       50.044537
+      ],
+      [
+       19.929103,
+       50.046249
+      ],
+      [
+       19.926635,
+       50.047094
+      ],
+      [
+       19.924135,
+       50.046227
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b31bffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 531
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 151,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.941473,
+       50.043736
+      ],
+      [
+       19.941439,
+       50.042024
+      ],
+      [
+       19.943906,
+       50.041178
+      ],
+      [
+       19.946407,
+       50.042045
+      ],
+      [
+       19.946441,
+       50.043758
+      ],
+      [
+       19.943974,
+       50.044603
+      ],
+      [
+       19.941473,
+       50.043736
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b323ffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": true,
+    "population_est": 362
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 152,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.946441,
+       50.043758
+      ],
+      [
+       19.946407,
+       50.042045
+      ],
+      [
+       19.948874,
+       50.0412
+      ],
+      [
+       19.951375,
+       50.042067
+      ],
+      [
+       19.951409,
+       50.043779
+      ],
+      [
+       19.948942,
+       50.044624
+      ],
+      [
+       19.946441,
+       50.043758
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b327ffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": true,
+    "population_est": 246
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 153,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.938939,
+       50.041157
+      ],
+      [
+       19.938905,
+       50.039444
+      ],
+      [
+       19.941372,
+       50.038599
+      ],
+      [
+       19.943873,
+       50.039466
+      ],
+      [
+       19.943906,
+       50.041178
+      ],
+      [
+       19.941439,
+       50.042024
+      ],
+      [
+       19.938939,
+       50.041157
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b32bffff",
+    "district_id": "9",
+    "district_name": "Łagiewniki-Borek Fałęcki",
+    "neighborhood": "Ludwinów",
+    "habitable": true,
+    "population_est": 400
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 154,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.943906,
+       50.041178
+      ],
+      [
+       19.943873,
+       50.039466
+      ],
+      [
+       19.94634,
+       50.038621
+      ],
+      [
+       19.948841,
+       50.039488
+      ],
+      [
+       19.948874,
+       50.0412
+      ],
+      [
+       19.946407,
+       50.042045
+      ],
+      [
+       19.943906,
+       50.041178
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b32fffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Podgórze",
+    "habitable": true,
+    "population_est": 452
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 155,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.939039,
+       50.046293
+      ],
+      [
+       19.939006,
+       50.044581
+      ],
+      [
+       19.941473,
+       50.043736
+      ],
+      [
+       19.943974,
+       50.044603
+      ],
+      [
+       19.944008,
+       50.046315
+      ],
+      [
+       19.94154,
+       50.04716
+      ],
+      [
+       19.939039,
+       50.046293
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b333ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 840
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 156,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.944008,
+       50.046315
+      ],
+      [
+       19.943974,
+       50.044603
+      ],
+      [
+       19.946441,
+       50.043758
+      ],
+      [
+       19.948942,
+       50.044624
+      ],
+      [
+       19.948976,
+       50.046337
+      ],
+      [
+       19.946509,
+       50.047182
+      ],
+      [
+       19.944008,
+       50.046315
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b337ffff",
+    "district_id": "13",
+    "district_name": "Podgórze",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 576
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 157,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.936505,
+       50.043714
+      ],
+      [
+       19.936471,
+       50.042002
+      ],
+      [
+       19.938939,
+       50.041157
+      ],
+      [
+       19.941439,
+       50.042024
+      ],
+      [
+       19.941473,
+       50.043736
+      ],
+      [
+       19.939006,
+       50.044581
+      ],
+      [
+       19.936505,
+       50.043714
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b33bffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Ludwinów",
+    "habitable": true,
+    "population_est": 675
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 158,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.919067,
+       50.041068
+      ],
+      [
+       19.919034,
+       50.039355
+      ],
+      [
+       19.921501,
+       50.038511
+      ],
+      [
+       19.924002,
+       50.039378
+      ],
+      [
+       19.924035,
+       50.04109
+      ],
+      [
+       19.921568,
+       50.041935
+      ],
+      [
+       19.919067,
+       50.041068
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b343ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 359
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 159,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.924035,
+       50.04109
+      ],
+      [
+       19.924002,
+       50.039378
+      ],
+      [
+       19.926469,
+       50.038533
+      ],
+      [
+       19.92897,
+       50.0394
+      ],
+      [
+       19.929003,
+       50.041113
+      ],
+      [
+       19.926536,
+       50.041958
+      ],
+      [
+       19.924035,
+       50.04109
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b347ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Ludwinów",
+    "habitable": true,
+    "population_est": 279
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 160,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.916633,
+       50.043625
+      ],
+      [
+       19.9166,
+       50.041913
+      ],
+      [
+       19.919067,
+       50.041068
+      ],
+      [
+       19.921568,
+       50.041935
+      ],
+      [
+       19.921601,
+       50.043647
+      ],
+      [
+       19.919133,
+       50.044492
+      ],
+      [
+       19.916633,
+       50.043625
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b353ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 320
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 161,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.921601,
+       50.043647
+      ],
+      [
+       19.921568,
+       50.041935
+      ],
+      [
+       19.924035,
+       50.04109
+      ],
+      [
+       19.926536,
+       50.041958
+      ],
+      [
+       19.926569,
+       50.04367
+      ],
+      [
+       19.924101,
+       50.044515
+      ],
+      [
+       19.921601,
+       50.043647
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b357ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 386
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 162,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.9141,
+       50.041045
+      ],
+      [
+       19.914067,
+       50.039333
+      ],
+      [
+       19.916534,
+       50.038488
+      ],
+      [
+       19.919034,
+       50.039355
+      ],
+      [
+       19.919067,
+       50.041068
+      ],
+      [
+       19.9166,
+       50.041913
+      ],
+      [
+       19.9141,
+       50.041045
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b35bffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 723
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 163,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.929003,
+       50.041113
+      ],
+      [
+       19.92897,
+       50.0394
+      ],
+      [
+       19.931437,
+       50.038555
+      ],
+      [
+       19.933937,
+       50.039423
+      ],
+      [
+       19.933971,
+       50.041135
+      ],
+      [
+       19.931503,
+       50.04198
+      ],
+      [
+       19.929003,
+       50.041113
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b373ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Ludwinów",
+    "habitable": true,
+    "population_est": 349
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 164,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.933971,
+       50.041135
+      ],
+      [
+       19.933937,
+       50.039423
+      ],
+      [
+       19.936404,
+       50.038577
+      ],
+      [
+       19.938905,
+       50.039444
+      ],
+      [
+       19.938939,
+       50.041157
+      ],
+      [
+       19.936471,
+       50.042002
+      ],
+      [
+       19.933971,
+       50.041135
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b377ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Ludwinów",
+    "habitable": true,
+    "population_est": 603
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 165,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.926768,
+       50.053942
+      ],
+      [
+       19.926735,
+       50.05223
+      ],
+      [
+       19.929203,
+       50.051385
+      ],
+      [
+       19.931704,
+       50.052253
+      ],
+      [
+       19.931737,
+       50.053965
+      ],
+      [
+       19.92927,
+       50.054809
+      ],
+      [
+       19.926768,
+       50.053942
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b383ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Nowy Świat",
+    "habitable": true,
+    "population_est": 573
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 166,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.931737,
+       50.053965
+      ],
+      [
+       19.931704,
+       50.052253
+      ],
+      [
+       19.934171,
+       50.051408
+      ],
+      [
+       19.936672,
+       50.052275
+      ],
+      [
+       19.936706,
+       50.053987
+      ],
+      [
+       19.934238,
+       50.054832
+      ],
+      [
+       19.931737,
+       50.053965
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b387ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stradom",
+    "habitable": true,
+    "population_est": 871
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 167,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.924234,
+       50.051363
+      ],
+      [
+       19.924201,
+       50.049651
+      ],
+      [
+       19.926669,
+       50.048806
+      ],
+      [
+       19.92917,
+       50.049673
+      ],
+      [
+       19.929203,
+       50.051385
+      ],
+      [
+       19.926735,
+       50.05223
+      ],
+      [
+       19.924234,
+       50.051363
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b38bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Dębniki",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 168,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.929203,
+       50.051385
+      ],
+      [
+       19.92917,
+       50.049673
+      ],
+      [
+       19.931637,
+       50.048828
+      ],
+      [
+       19.934138,
+       50.049696
+      ],
+      [
+       19.934171,
+       50.051408
+      ],
+      [
+       19.931704,
+       50.052253
+      ],
+      [
+       19.929203,
+       50.051385
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b38fffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stradom",
+    "habitable": true,
+    "population_est": 650
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 169,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.924334,
+       50.056499
+      ],
+      [
+       19.924301,
+       50.054787
+      ],
+      [
+       19.926768,
+       50.053942
+      ],
+      [
+       19.92927,
+       50.054809
+      ],
+      [
+       19.929303,
+       50.056521
+      ],
+      [
+       19.926835,
+       50.057366
+      ],
+      [
+       19.924334,
+       50.056499
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b393ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Nowy Świat",
+    "habitable": true,
+    "population_est": 723
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 170,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.929303,
+       50.056521
+      ],
+      [
+       19.92927,
+       50.054809
+      ],
+      [
+       19.931737,
+       50.053965
+      ],
+      [
+       19.934238,
+       50.054832
+      ],
+      [
+       19.934272,
+       50.056543
+      ],
+      [
+       19.931804,
+       50.057388
+      ],
+      [
+       19.929303,
+       50.056521
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b397ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Nowy Świat",
+    "habitable": true,
+    "population_est": 671
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 171,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.9218,
+       50.05392
+      ],
+      [
+       19.921767,
+       50.052208
+      ],
+      [
+       19.924234,
+       50.051363
+      ],
+      [
+       19.926735,
+       50.05223
+      ],
+      [
+       19.926768,
+       50.053942
+      ],
+      [
+       19.924301,
+       50.054787
+      ],
+      [
+       19.9218,
+       50.05392
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b39bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Nowy Świat",
+    "habitable": true,
+    "population_est": 737
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 172,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.93914,
+       50.05143
+      ],
+      [
+       19.939106,
+       50.049718
+      ],
+      [
+       19.941574,
+       50.048872
+      ],
+      [
+       19.944075,
+       50.049739
+      ],
+      [
+       19.944109,
+       50.051451
+      ],
+      [
+       19.941641,
+       50.052296
+      ],
+      [
+       19.93914,
+       50.05143
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3a3ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 606
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 173,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.944109,
+       50.051451
+      ],
+      [
+       19.944075,
+       50.049739
+      ],
+      [
+       19.946542,
+       50.048894
+      ],
+      [
+       19.949043,
+       50.049761
+      ],
+      [
+       19.949077,
+       50.051473
+      ],
+      [
+       19.94661,
+       50.052318
+      ],
+      [
+       19.944109,
+       50.051451
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3a7ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kazimierz",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 174,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.936605,
+       50.048851
+      ],
+      [
+       19.936572,
+       50.047138
+      ],
+      [
+       19.939039,
+       50.046293
+      ],
+      [
+       19.94154,
+       50.04716
+      ],
+      [
+       19.941574,
+       50.048872
+      ],
+      [
+       19.939106,
+       50.049718
+      ],
+      [
+       19.936605,
+       50.048851
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3abffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kazimierz",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 175,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.941574,
+       50.048872
+      ],
+      [
+       19.94154,
+       50.04716
+      ],
+      [
+       19.944008,
+       50.046315
+      ],
+      [
+       19.946509,
+       50.047182
+      ],
+      [
+       19.946542,
+       50.048894
+      ],
+      [
+       19.944075,
+       50.049739
+      ],
+      [
+       19.941574,
+       50.048872
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3afffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 642
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 176,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.936706,
+       50.053987
+      ],
+      [
+       19.936672,
+       50.052275
+      ],
+      [
+       19.93914,
+       50.05143
+      ],
+      [
+       19.941641,
+       50.052296
+      ],
+      [
+       19.941675,
+       50.054008
+      ],
+      [
+       19.939207,
+       50.054853
+      ],
+      [
+       19.936706,
+       50.053987
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3b3ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stradom",
+    "habitable": true,
+    "population_est": 968
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 177,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.941675,
+       50.054008
+      ],
+      [
+       19.941641,
+       50.052296
+      ],
+      [
+       19.944109,
+       50.051451
+      ],
+      [
+       19.94661,
+       50.052318
+      ],
+      [
+       19.946644,
+       50.05403
+      ],
+      [
+       19.944176,
+       50.054875
+      ],
+      [
+       19.941675,
+       50.054008
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3b7ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kazimierz",
+    "habitable": true,
+    "population_est": 733
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 178,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.934171,
+       50.051408
+      ],
+      [
+       19.934138,
+       50.049696
+      ],
+      [
+       19.936605,
+       50.048851
+      ],
+      [
+       19.939106,
+       50.049718
+      ],
+      [
+       19.93914,
+       50.05143
+      ],
+      [
+       19.936672,
+       50.052275
+      ],
+      [
+       19.934171,
+       50.051408
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3bbffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Stradom",
+    "habitable": true,
+    "population_est": 665
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 179,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.916732,
+       50.048761
+      ],
+      [
+       19.916699,
+       50.047049
+      ],
+      [
+       19.919167,
+       50.046204
+      ],
+      [
+       19.921667,
+       50.047072
+      ],
+      [
+       19.9217,
+       50.048784
+      ],
+      [
+       19.919233,
+       50.049628
+      ],
+      [
+       19.916732,
+       50.048761
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3c3ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 592
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 180,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.9217,
+       50.048784
+      ],
+      [
+       19.921667,
+       50.047072
+      ],
+      [
+       19.924135,
+       50.046227
+      ],
+      [
+       19.926635,
+       50.047094
+      ],
+      [
+       19.926669,
+       50.048806
+      ],
+      [
+       19.924201,
+       50.049651
+      ],
+      [
+       19.9217,
+       50.048784
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3c7ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 783
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 181,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.914198,
+       50.046182
+      ],
+      [
+       19.914165,
+       50.044469
+      ],
+      [
+       19.916633,
+       50.043625
+      ],
+      [
+       19.919133,
+       50.044492
+      ],
+      [
+       19.919167,
+       50.046204
+      ],
+      [
+       19.916699,
+       50.047049
+      ],
+      [
+       19.914198,
+       50.046182
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3cbffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 522
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 182,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.919167,
+       50.046204
+      ],
+      [
+       19.919133,
+       50.044492
+      ],
+      [
+       19.921601,
+       50.043647
+      ],
+      [
+       19.924101,
+       50.044515
+      ],
+      [
+       19.924135,
+       50.046227
+      ],
+      [
+       19.921667,
+       50.047072
+      ],
+      [
+       19.919167,
+       50.046204
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3cfffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": true,
+    "population_est": 464
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 183,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.914297,
+       50.051318
+      ],
+      [
+       19.914264,
+       50.049606
+      ],
+      [
+       19.916732,
+       50.048761
+      ],
+      [
+       19.919233,
+       50.049628
+      ],
+      [
+       19.919266,
+       50.051341
+      ],
+      [
+       19.916798,
+       50.052185
+      ],
+      [
+       19.914297,
+       50.051318
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3d3ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 730
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 184,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.919266,
+       50.051341
+      ],
+      [
+       19.919233,
+       50.049628
+      ],
+      [
+       19.9217,
+       50.048784
+      ],
+      [
+       19.924201,
+       50.049651
+      ],
+      [
+       19.924234,
+       50.051363
+      ],
+      [
+       19.921767,
+       50.052208
+      ],
+      [
+       19.919266,
+       50.051341
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3d7ffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Dębniki",
+    "habitable": false,
+    "population_est": 0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 185,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.911764,
+       50.048738
+      ],
+      [
+       19.911731,
+       50.047026
+      ],
+      [
+       19.914198,
+       50.046182
+      ],
+      [
+       19.916699,
+       50.047049
+      ],
+      [
+       19.916732,
+       50.048761
+      ],
+      [
+       19.914264,
+       50.049606
+      ],
+      [
+       19.911764,
+       50.048738
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b3dbffff",
+    "district_id": "8",
+    "district_name": "Dębniki",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 736
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 186,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.912357,
+       50.079549
+      ],
+      [
+       19.912324,
+       50.077837
+      ],
+      [
+       19.914792,
+       50.076993
+      ],
+      [
+       19.917294,
+       50.07786
+      ],
+      [
+       19.917327,
+       50.079572
+      ],
+      [
+       19.914858,
+       50.080416
+      ],
+      [
+       19.912357,
+       50.079549
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b427ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Łobzów",
+    "habitable": true,
+    "population_est": 482
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 187,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.909822,
+       50.07697
+      ],
+      [
+       19.909789,
+       50.075259
+      ],
+      [
+       19.912258,
+       50.074415
+      ],
+      [
+       19.914759,
+       50.075282
+      ],
+      [
+       19.914792,
+       50.076993
+      ],
+      [
+       19.912324,
+       50.077837
+      ],
+      [
+       19.909822,
+       50.07697
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b42fffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Łobzów",
+    "habitable": true,
+    "population_est": 287
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 188,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.929803,
+       50.082195
+      ],
+      [
+       19.92977,
+       50.080484
+      ],
+      [
+       19.932238,
+       50.079639
+      ],
+      [
+       19.93474,
+       50.080506
+      ],
+      [
+       19.934774,
+       50.082217
+      ],
+      [
+       19.932305,
+       50.083062
+      ],
+      [
+       19.929803,
+       50.082195
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b503ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 292
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 189,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.934774,
+       50.082217
+      ],
+      [
+       19.93474,
+       50.080506
+      ],
+      [
+       19.937209,
+       50.079661
+      ],
+      [
+       19.939711,
+       50.080528
+      ],
+      [
+       19.939744,
+       50.082239
+      ],
+      [
+       19.937276,
+       50.083084
+      ],
+      [
+       19.934774,
+       50.082217
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b507ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 748
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 190,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.927268,
+       50.079617
+      ],
+      [
+       19.927235,
+       50.077906
+      ],
+      [
+       19.929703,
+       50.077061
+      ],
+      [
+       19.932205,
+       50.077928
+      ],
+      [
+       19.932238,
+       50.079639
+      ],
+      [
+       19.92977,
+       50.080484
+      ],
+      [
+       19.927268,
+       50.079617
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b50bffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 800
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 191,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.932238,
+       50.079639
+      ],
+      [
+       19.932205,
+       50.077928
+      ],
+      [
+       19.934673,
+       50.077083
+      ],
+      [
+       19.937175,
+       50.07795
+      ],
+      [
+       19.937209,
+       50.079661
+      ],
+      [
+       19.93474,
+       50.080506
+      ],
+      [
+       19.932238,
+       50.079639
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b50fffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 524
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 192,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.924832,
+       50.082173
+      ],
+      [
+       19.924799,
+       50.080461
+      ],
+      [
+       19.927268,
+       50.079617
+      ],
+      [
+       19.92977,
+       50.080484
+      ],
+      [
+       19.929803,
+       50.082195
+      ],
+      [
+       19.927334,
+       50.083039
+      ],
+      [
+       19.924832,
+       50.082173
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b51bffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 426
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 193,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.942179,
+       50.079683
+      ],
+      [
+       19.942146,
+       50.077972
+      ],
+      [
+       19.944614,
+       50.077127
+      ],
+      [
+       19.947116,
+       50.077993
+      ],
+      [
+       19.94715,
+       50.079705
+      ],
+      [
+       19.944682,
+       50.08055
+      ],
+      [
+       19.942179,
+       50.079683
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b523ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 755
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 194,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.94715,
+       50.079705
+      ],
+      [
+       19.947116,
+       50.077993
+      ],
+      [
+       19.949584,
+       50.077149
+      ],
+      [
+       19.952087,
+       50.078015
+      ],
+      [
+       19.952121,
+       50.079726
+      ],
+      [
+       19.949652,
+       50.080571
+      ],
+      [
+       19.94715,
+       50.079705
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b527ffff",
+    "district_id": "3",
+    "district_name": "Prądnik Czerwony",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 347
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 195,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.939644,
+       50.077105
+      ],
+      [
+       19.93961,
+       50.075394
+      ],
+      [
+       19.942078,
+       50.074549
+      ],
+      [
+       19.94458,
+       50.075416
+      ],
+      [
+       19.944614,
+       50.077127
+      ],
+      [
+       19.942146,
+       50.077972
+      ],
+      [
+       19.939644,
+       50.077105
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b52bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 460
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 196,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.944614,
+       50.077127
+      ],
+      [
+       19.94458,
+       50.075416
+      ],
+      [
+       19.947049,
+       50.074571
+      ],
+      [
+       19.949551,
+       50.075437
+      ],
+      [
+       19.949584,
+       50.077149
+      ],
+      [
+       19.947116,
+       50.077993
+      ],
+      [
+       19.944614,
+       50.077127
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b52fffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 670
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 197,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.939744,
+       50.082239
+      ],
+      [
+       19.939711,
+       50.080528
+      ],
+      [
+       19.942179,
+       50.079683
+      ],
+      [
+       19.944682,
+       50.08055
+      ],
+      [
+       19.944715,
+       50.082261
+      ],
+      [
+       19.942247,
+       50.083106
+      ],
+      [
+       19.939744,
+       50.082239
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b533ffff",
+    "district_id": "4",
+    "district_name": "Prądnik Biały",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 434
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 198,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.944715,
+       50.082261
+      ],
+      [
+       19.944682,
+       50.08055
+      ],
+      [
+       19.94715,
+       50.079705
+      ],
+      [
+       19.949652,
+       50.080571
+      ],
+      [
+       19.949686,
+       50.082283
+      ],
+      [
+       19.947217,
+       50.083127
+      ],
+      [
+       19.944715,
+       50.082261
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b537ffff",
+    "district_id": "3",
+    "district_name": "Prądnik Czerwony",
+    "neighborhood": "Olsza",
+    "habitable": true,
+    "population_est": 476
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 199,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.937209,
+       50.079661
+      ],
+      [
+       19.937175,
+       50.07795
+      ],
+      [
+       19.939644,
+       50.077105
+      ],
+      [
+       19.942146,
+       50.077972
+      ],
+      [
+       19.942179,
+       50.079683
+      ],
+      [
+       19.939711,
+       50.080528
+      ],
+      [
+       19.937209,
+       50.079661
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b53bffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 525
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 200,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.919762,
+       50.077016
+      ],
+      [
+       19.919729,
+       50.075305
+      ],
+      [
+       19.922198,
+       50.07446
+      ],
+      [
+       19.9247,
+       50.075327
+      ],
+      [
+       19.924733,
+       50.077039
+      ],
+      [
+       19.922264,
+       50.077883
+      ],
+      [
+       19.919762,
+       50.077016
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b543ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 602
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 201,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.924733,
+       50.077039
+      ],
+      [
+       19.9247,
+       50.075327
+      ],
+      [
+       19.927168,
+       50.074483
+      ],
+      [
+       19.92967,
+       50.07535
+      ],
+      [
+       19.929703,
+       50.077061
+      ],
+      [
+       19.927235,
+       50.077906
+      ],
+      [
+       19.924733,
+       50.077039
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b547ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 791
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 202,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.917228,
+       50.074437
+      ],
+      [
+       19.917195,
+       50.072726
+      ],
+      [
+       19.919663,
+       50.071882
+      ],
+      [
+       19.922165,
+       50.072749
+      ],
+      [
+       19.922198,
+       50.07446
+      ],
+      [
+       19.919729,
+       50.075305
+      ],
+      [
+       19.917228,
+       50.074437
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b54bffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 587
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 203,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.922198,
+       50.07446
+      ],
+      [
+       19.922165,
+       50.072749
+      ],
+      [
+       19.924633,
+       50.071904
+      ],
+      [
+       19.927135,
+       50.072771
+      ],
+      [
+       19.927168,
+       50.074483
+      ],
+      [
+       19.9247,
+       50.075327
+      ],
+      [
+       19.922198,
+       50.07446
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b54fffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 708
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 204,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.917327,
+       50.079572
+      ],
+      [
+       19.917294,
+       50.07786
+      ],
+      [
+       19.919762,
+       50.077016
+      ],
+      [
+       19.922264,
+       50.077883
+      ],
+      [
+       19.922297,
+       50.079594
+      ],
+      [
+       19.919829,
+       50.080439
+      ],
+      [
+       19.917327,
+       50.079572
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b553ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 184
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 205,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.922297,
+       50.079594
+      ],
+      [
+       19.922264,
+       50.077883
+      ],
+      [
+       19.924733,
+       50.077039
+      ],
+      [
+       19.927235,
+       50.077906
+      ],
+      [
+       19.927268,
+       50.079617
+      ],
+      [
+       19.924799,
+       50.080461
+      ],
+      [
+       19.922297,
+       50.079594
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b557ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 514
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 206,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.914792,
+       50.076993
+      ],
+      [
+       19.914759,
+       50.075282
+      ],
+      [
+       19.917228,
+       50.074437
+      ],
+      [
+       19.919729,
+       50.075305
+      ],
+      [
+       19.919762,
+       50.077016
+      ],
+      [
+       19.917294,
+       50.07786
+      ],
+      [
+       19.914792,
+       50.076993
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b55bffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 388
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 207,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.932138,
+       50.074505
+      ],
+      [
+       19.932105,
+       50.072794
+      ],
+      [
+       19.934573,
+       50.071949
+      ],
+      [
+       19.937075,
+       50.072816
+      ],
+      [
+       19.937108,
+       50.074527
+      ],
+      [
+       19.93464,
+       50.075372
+      ],
+      [
+       19.932138,
+       50.074505
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b563ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 470
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 208,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.937108,
+       50.074527
+      ],
+      [
+       19.937075,
+       50.072816
+      ],
+      [
+       19.939543,
+       50.071971
+      ],
+      [
+       19.942045,
+       50.072837
+      ],
+      [
+       19.942078,
+       50.074549
+      ],
+      [
+       19.93961,
+       50.075394
+      ],
+      [
+       19.937108,
+       50.074527
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b567ffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 519
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 209,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.929603,
+       50.071927
+      ],
+      [
+       19.92957,
+       50.070215
+      ],
+      [
+       19.932038,
+       50.06937
+      ],
+      [
+       19.934539,
+       50.070237
+      ],
+      [
+       19.934573,
+       50.071949
+      ],
+      [
+       19.932105,
+       50.072794
+      ],
+      [
+       19.929603,
+       50.071927
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b56bffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 648
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 210,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.934573,
+       50.071949
+      ],
+      [
+       19.934539,
+       50.070237
+      ],
+      [
+       19.937008,
+       50.069392
+      ],
+      [
+       19.939509,
+       50.070259
+      ],
+      [
+       19.939543,
+       50.071971
+      ],
+      [
+       19.937075,
+       50.072816
+      ],
+      [
+       19.934573,
+       50.071949
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b56fffff",
+    "district_id": "1",
+    "district_name": "Stare Miasto",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 843
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 211,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.929703,
+       50.077061
+      ],
+      [
+       19.92967,
+       50.07535
+      ],
+      [
+       19.932138,
+       50.074505
+      ],
+      [
+       19.93464,
+       50.075372
+      ],
+      [
+       19.934673,
+       50.077083
+      ],
+      [
+       19.932205,
+       50.077928
+      ],
+      [
+       19.929703,
+       50.077061
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b573ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 399
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 212,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.934673,
+       50.077083
+      ],
+      [
+       19.93464,
+       50.075372
+      ],
+      [
+       19.937108,
+       50.074527
+      ],
+      [
+       19.93961,
+       50.075394
+      ],
+      [
+       19.939644,
+       50.077105
+      ],
+      [
+       19.937175,
+       50.07795
+      ],
+      [
+       19.934673,
+       50.077083
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b577ffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Kleparz",
+    "habitable": true,
+    "population_est": 608
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 213,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.927168,
+       50.074483
+      ],
+      [
+       19.927135,
+       50.072771
+      ],
+      [
+       19.929603,
+       50.071927
+      ],
+      [
+       19.932105,
+       50.072794
+      ],
+      [
+       19.932138,
+       50.074505
+      ],
+      [
+       19.92967,
+       50.07535
+      ],
+      [
+       19.927168,
+       50.074483
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b57bffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Czarna Wieś",
+    "habitable": true,
+    "population_est": 567
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 214,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.914891,
+       50.082127
+      ],
+      [
+       19.914858,
+       50.080416
+      ],
+      [
+       19.917327,
+       50.079572
+      ],
+      [
+       19.919829,
+       50.080439
+      ],
+      [
+       19.919862,
+       50.08215
+      ],
+      [
+       19.917393,
+       50.082994
+      ],
+      [
+       19.914891,
+       50.082127
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b5cbffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Łobzów",
+    "habitable": true,
+    "population_est": 382
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 215,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.919862,
+       50.08215
+      ],
+      [
+       19.919829,
+       50.080439
+      ],
+      [
+       19.922297,
+       50.079594
+      ],
+      [
+       19.924799,
+       50.080461
+      ],
+      [
+       19.924832,
+       50.082173
+      ],
+      [
+       19.922364,
+       50.083017
+      ],
+      [
+       19.919862,
+       50.08215
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b5cfffff",
+    "district_id": "5",
+    "district_name": "Krowodrza",
+    "neighborhood": "Krowodrza",
+    "habitable": true,
+    "population_est": 612
+   }
+  },
+  {
+   "type": "Feature",
+   "id": 216,
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       19.894619,
+       50.061496
+      ],
+      [
+       19.894586,
+       50.059784
+      ],
+      [
+       19.897055,
+       50.05894
+      ],
+      [
+       19.899555,
+       50.059808
+      ],
+      [
+       19.899588,
+       50.061519
+      ],
+      [
+       19.89712,
+       50.062363
+      ],
+      [
+       19.894619,
+       50.061496
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "h3": "891e2e6b627ffff",
+    "district_id": "7",
+    "district_name": "Zwierzyniec",
+    "neighborhood": "Półwsie Zwierzynieckie",
+    "habitable": true,
+    "population_est": 473
+   }
+  }
+ ]
+}

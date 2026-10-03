@@ -1,0 +1,2537 @@
+{
+ "city": "praha",
+ "dataVersion": "fixture-2026-10-03",
+ "dataSource": "fixture",
+ "walkSpeedKmh": 4.8,
+ "levels": [
+  {
+   "level": 0,
+   "weight": 0,
+   "emoji": "",
+   "label": {
+    "pl": "Pomiń",
+    "cs": "Přeskočit",
+    "en": "Skip"
+   }
+  },
+  {
+   "level": 1,
+   "weight": 1,
+   "emoji": "😐",
+   "label": {
+    "pl": "Mało ważne",
+    "cs": "Málo důležité",
+    "en": "Barely matters"
+   }
+  },
+  {
+   "level": 2,
+   "weight": 2,
+   "emoji": "🙂",
+   "label": {
+    "pl": "Miło by było",
+    "cs": "Bylo by fajn",
+    "en": "Nice to have"
+   }
+  },
+  {
+   "level": 3,
+   "weight": 3,
+   "emoji": "😊",
+   "label": {
+    "pl": "Ważne",
+    "cs": "Důležité",
+    "en": "Important"
+   }
+  },
+  {
+   "level": 4,
+   "weight": 5,
+   "emoji": "😍",
+   "label": {
+    "pl": "Bardzo ważne",
+    "cs": "Velmi důležité",
+    "en": "Very important"
+   }
+  },
+  {
+   "level": 5,
+   "weight": 8,
+   "emoji": "🤩",
+   "label": {
+    "pl": "Kluczowe",
+    "cs": "Zásadní",
+    "en": "Essential"
+   }
+  }
+ ],
+ "criteria": [
+  {
+   "id": "commute",
+   "emoji": "🧭",
+   "label": {
+    "pl": "Dojazd do moich miejsc",
+    "cs": "Dojezd do mých míst",
+    "en": "Commute to my places"
+   },
+   "runtime": "anchors",
+   "caveat": null,
+   "coverage": 1.0,
+   "beta": false,
+   "sources": [
+    "osm_praha",
+    "gtfs_pid"
+   ],
+   "indicators": []
+  },
+  {
+   "id": "transit",
+   "emoji": "🚋",
+   "label": {
+    "pl": "Komunikacja miejska",
+    "cs": "Veřejná doprava (MHD)",
+    "en": "Public transport"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 1.0,
+   "beta": false,
+   "sources": [
+    "gtfs_pid",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "stop_walk_min",
+     "column": "transit.stop_walk_min",
+     "label": {
+      "pl": "Najbliższy przystanek",
+      "cs": "Nejbližší zastávka",
+      "en": "Nearest stop"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 3,
+      "bad": 12
+     },
+     "weight": 3,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "gtfs_pid",
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "tram_stop_walk_min",
+     "column": "transit.tram_stop_walk_min",
+     "label": {
+      "pl": "Najbliższy tramwaj",
+      "cs": "Nejbližší tramvaj",
+      "en": "Nearest tram stop"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 4,
+      "bad": 12
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "gtfs_pid"
+     ]
+    },
+    {
+     "id": "departures_per_h_500m",
+     "column": "transit.departures_per_h_500m",
+     "label": {
+      "pl": "Odjazdy w szczycie (500 m)",
+      "cs": "Odjezdy ve špičce (500 m)",
+      "en": "Peak departures (500 m)"
+     },
+     "unit": "dep_h",
+     "unitLabel": {
+      "pl": "odj./h",
+      "cs": "odj./h",
+      "en": "dep./h"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 3,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "gtfs_pid"
+     ]
+    },
+    {
+     "id": "lines_500m",
+     "column": "transit.lines_500m",
+     "label": {
+      "pl": "Linie w promieniu 500 m",
+      "cs": "Linky do 500 m",
+      "en": "Lines within 500 m"
+     },
+     "unit": "count",
+     "unitLabel": {
+      "pl": "",
+      "cs": "",
+      "en": ""
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "gtfs_pid"
+     ]
+    },
+    {
+     "id": "rail_station_walk_min",
+     "column": "transit.rail_station_walk_min",
+     "label": {
+      "pl": "Metro lub pociąg",
+      "cs": "Metro nebo vlak",
+      "en": "Metro or train"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 2,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "gtfs_pid"
+     ]
+    },
+    {
+     "id": "night_departures_500m",
+     "column": "transit.night_departures_500m",
+     "label": {
+      "pl": "Nocne odjazdy (500 m)",
+      "cs": "Noční odjezdy (500 m)",
+      "en": "Night departures (500 m)"
+     },
+     "unit": "count",
+     "unitLabel": {
+      "pl": "",
+      "cs": "",
+      "en": ""
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "gtfs_pid"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "active",
+   "emoji": "🚲",
+   "label": {
+    "pl": "Rower i spacery",
+    "cs": "Kolo a chůze",
+    "en": "Cycling & walking"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 1.0,
+   "beta": false,
+   "sources": [
+    "bikeshare_praha",
+    "golemio",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "cycleway_km_1km",
+     "column": "active.cycleway_km_1km",
+     "label": {
+      "pl": "Drogi rowerowe (1 km)",
+      "cs": "Cyklostezky (1 km)",
+      "en": "Cycle paths (1 km)"
+     },
+     "unit": "km",
+     "unitLabel": {
+      "pl": "km",
+      "cs": "km",
+      "en": "km"
+     },
+     "decimals": 1,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 3,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "intersection_density",
+     "column": "active.intersection_density",
+     "label": {
+      "pl": "Gęstość skrzyżowań",
+      "cs": "Hustota křižovatek",
+      "en": "Intersection density"
+     },
+     "unit": "per_km2",
+     "unitLabel": {
+      "pl": "/km²",
+      "cs": "/km²",
+      "en": "/km²"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 2,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "bike_racks_300m",
+     "column": "active.bike_racks_300m",
+     "label": {
+      "pl": "Stojaki rowerowe (300 m)",
+      "cs": "Stojany na kola (300 m)",
+      "en": "Bike racks (300 m)"
+     },
+     "unit": "count",
+     "unitLabel": {
+      "pl": "",
+      "cs": "",
+      "en": ""
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "car_free_walk_min",
+     "column": "active.car_free_walk_min",
+     "label": {
+      "pl": "Bulwary i deptaki",
+      "cs": "Nábřeží a pěší zóny",
+      "en": "Riverside & pedestrian zones"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "bikeshare_walk_min",
+     "column": "active.bikeshare_walk_min",
+     "label": {
+      "pl": "Rower miejski",
+      "cs": "Sdílená kola",
+      "en": "Bike share"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 3,
+      "bad": 10
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": false,
+     "priority": "P2",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "bikeshare_praha",
+      "golemio"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "green",
+   "emoji": "🌳",
+   "label": {
+    "pl": "Zieleń",
+    "cs": "Zeleň",
+    "en": "Green space"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 1.0,
+   "beta": false,
+   "sources": [
+    "golemio",
+    "ipr",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "green_share_500m",
+     "column": "green.green_share_500m",
+     "label": {
+      "pl": "Udział zieleni (500 m)",
+      "cs": "Podíl zeleně (500 m)",
+      "en": "Green share (500 m)"
+     },
+     "unit": "pct",
+     "unitLabel": {
+      "pl": "%",
+      "cs": "%",
+      "en": "%"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 40,
+      "bad": 5
+     },
+     "weight": 3,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha",
+      "ipr"
+     ]
+    },
+    {
+     "id": "park_walk_min",
+     "column": "green.park_walk_min",
+     "label": {
+      "pl": "Park (≥ 2 ha)",
+      "cs": "Park (≥ 2 ha)",
+      "en": "Park (≥ 2 ha)"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 3,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha",
+      "ipr",
+      "golemio"
+     ]
+    },
+    {
+     "id": "forest_meadow_ha_1km",
+     "column": "green.forest_meadow_ha_1km",
+     "label": {
+      "pl": "Lasy i łąki (1 km)",
+      "cs": "Lesy a louky (1 km)",
+      "en": "Forest & meadows (1 km)"
+     },
+     "unit": "ha",
+     "unitLabel": {
+      "pl": "ha",
+      "cs": "ha",
+      "en": "ha"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha",
+      "ipr"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "education",
+   "emoji": "🎓",
+   "label": {
+    "pl": "Edukacja",
+    "cs": "Vzdělávání",
+    "en": "Education"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 1.0,
+   "beta": false,
+   "sources": [
+    "golemio",
+    "msmt_schools",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "nursery_walk_min",
+     "column": "education.nursery_walk_min",
+     "label": {
+      "pl": "Żłobek",
+      "cs": "Jesle",
+      "en": "Nursery (0–3)"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 2,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "msmt_schools",
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "kindergarten_walk_min",
+     "column": "education.kindergarten_walk_min",
+     "label": {
+      "pl": "Przedszkole",
+      "cs": "Mateřská škola",
+      "en": "Kindergarten"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 2,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "msmt_schools"
+     ]
+    },
+    {
+     "id": "primary_school_walk_min",
+     "column": "education.primary_school_walk_min",
+     "label": {
+      "pl": "Szkoła podstawowa",
+      "cs": "Základní škola",
+      "en": "Primary school"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 3,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "msmt_schools"
+     ]
+    },
+    {
+     "id": "secondary_school_walk_min",
+     "column": "education.secondary_school_walk_min",
+     "label": {
+      "pl": "Szkoła średnia",
+      "cs": "Střední škola",
+      "en": "Secondary school"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 8,
+      "bad": 30
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "msmt_schools"
+     ]
+    },
+    {
+     "id": "university_walk_min",
+     "column": "education.university_walk_min",
+     "label": {
+      "pl": "Uczelnia",
+      "cs": "Vysoká škola",
+      "en": "University"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 10,
+      "bad": 40
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "library_walk_min",
+     "column": "education.library_walk_min",
+     "label": {
+      "pl": "Biblioteka",
+      "cs": "Knihovna",
+      "en": "Library"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha",
+      "golemio"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "family",
+   "emoji": "🧸",
+   "label": {
+    "pl": "Rodzina i dzieci",
+    "cs": "Rodina a děti",
+    "en": "Family & kids"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 1.0,
+   "beta": false,
+   "sources": [
+    "golemio",
+    "nrpzs",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "playgrounds_500m",
+     "column": "family.playgrounds_500m",
+     "label": {
+      "pl": "Place zabaw (500 m)",
+      "cs": "Dětská hřiště (500 m)",
+      "en": "Playgrounds (500 m)"
+     },
+     "unit": "count",
+     "unitLabel": {
+      "pl": "",
+      "cs": "",
+      "en": ""
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 3,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha",
+      "golemio"
+     ]
+    },
+    {
+     "id": "paediatrician_walk_min",
+     "column": "family.paediatrician_walk_min",
+     "label": {
+      "pl": "Pediatra",
+      "cs": "Dětský lékař",
+      "en": "Paediatrician"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 2,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "nrpzs"
+     ]
+    },
+    {
+     "id": "kids_sports_walk_min",
+     "column": "family.kids_sports_walk_min",
+     "label": {
+      "pl": "Basen lub sport dla dzieci",
+      "cs": "Bazén či sport pro děti",
+      "en": "Pool or kids' sports"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "safety",
+   "emoji": "🛡️",
+   "label": {
+    "pl": "Bezpieczeństwo",
+    "cs": "Bezpečnost",
+    "en": "Safety"
+   },
+   "runtime": null,
+   "caveat": {
+    "pl": "Zarejestrowane zdarzenia ≠ odczuwane bezpieczeństwo; ruchliwe centra notują więcej zdarzeń.",
+    "cs": "Evidované události ≠ pocit bezpečí; rušná centra mají více událostí.",
+    "en": "Recorded incidents ≠ perceived safety; busy centres record more incidents."
+   },
+   "coverage": 1.0,
+   "beta": false,
+   "sources": [
+    "osm_praha",
+    "police_cz"
+   ],
+   "indicators": [
+    {
+     "id": "crime_per_1000",
+     "column": "safety.crime_per_1000",
+     "label": {
+      "pl": "Zarejestrowane przestępstwa (dzielnica)",
+      "cs": "Evidovaná trestná činnost (městská část)",
+      "en": "Recorded crime (district)"
+     },
+     "unit": "per_1000",
+     "unitLabel": {
+      "pl": "na 1000 mieszk.",
+      "cs": "na 1000 obyv.",
+      "en": "per 1,000 residents"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "inverse_percentile"
+     },
+     "weight": 3,
+     "walkScaled": false,
+     "crossCity": false,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "police_cz"
+     ]
+    },
+    {
+     "id": "lit_share",
+     "column": "safety.lit_share",
+     "label": {
+      "pl": "Oświetlenie ulic",
+      "cs": "Osvětlení ulic",
+      "en": "Street lighting"
+     },
+     "unit": "pct",
+     "unitLabel": {
+      "pl": "%",
+      "cs": "%",
+      "en": "%"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "price",
+   "emoji": "💰",
+   "label": {
+    "pl": "Przystępne ceny",
+    "cs": "Dostupné bydlení",
+    "en": "Affordability"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 1.0,
+   "beta": false,
+   "sources": [
+    "mf_rent",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "buy_per_m2",
+     "column": "price.buy_per_m2",
+     "label": {
+      "pl": "Ceny mieszkań (transakcje, 24 mies.)",
+      "cs": "Ceny bytů (transakce, 24 měs.)",
+      "en": "Flat prices (transactions, 24 months)"
+     },
+     "unit": "pln_m2",
+     "unitLabel": {
+      "pl": "zł/m²",
+      "cs": "zł/m²",
+      "en": "PLN/m²"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "inverse_percentile"
+     },
+     "weight": 3,
+     "walkScaled": false,
+     "crossCity": false,
+     "priority": "P0",
+     "coverage": 0.0,
+     "available": false,
+     "sources": []
+    },
+    {
+     "id": "rent_per_m2",
+     "column": "price.rent_per_m2",
+     "label": {
+      "pl": "Czynsz najmu (mediana)",
+      "cs": "Nájemné (medián)",
+      "en": "Rent (median)"
+     },
+     "unit": "czk_m2_month",
+     "unitLabel": {
+      "pl": "Kč/m²/mies.",
+      "cs": "Kč/m²/měs.",
+      "en": "CZK/m²/month"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "inverse_percentile"
+     },
+     "weight": 3,
+     "walkScaled": false,
+     "crossCity": false,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "mf_rent"
+     ]
+    },
+    {
+     "id": "discount_grocery_walk_min",
+     "column": "price.discount_grocery_walk_min",
+     "label": {
+      "pl": "Dyskont spożywczy",
+      "cs": "Diskontní prodejna",
+      "en": "Discount grocery"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 15
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shops",
+   "emoji": "🛒",
+   "label": {
+    "pl": "Zakupy i usługi",
+    "cs": "Nákupy a služby",
+    "en": "Shops & services"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 1.0,
+   "beta": false,
+   "sources": [
+    "nrpzs",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "supermarket_walk_min",
+     "column": "shops.supermarket_walk_min",
+     "label": {
+      "pl": "Supermarket",
+      "cs": "Supermarket",
+      "en": "Supermarket"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 3,
+      "bad": 12
+     },
+     "weight": 3,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "pharmacy_walk_min",
+     "column": "health.pharmacy_walk_min",
+     "label": {
+      "pl": "Apteka",
+      "cs": "Lékárna",
+      "en": "Pharmacy"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 3,
+      "bad": 12
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": false,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "nrpzs",
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "post_parcel_walk_min",
+     "column": "shops.post_parcel_walk_min",
+     "label": {
+      "pl": "Poczta lub paczkomat",
+      "cs": "Pošta či výdejní box",
+      "en": "Post office or parcel locker"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 3,
+      "bad": 12
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "bakery_walk_min",
+     "column": "shops.bakery_walk_min",
+     "label": {
+      "pl": "Piekarnia",
+      "cs": "Pekárna",
+      "en": "Bakery"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 3,
+      "bad": 12
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P2",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "marketplace_walk_min",
+     "column": "shops.marketplace_walk_min",
+     "label": {
+      "pl": "Targowisko",
+      "cs": "Tržnice",
+      "en": "Marketplace"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P2",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "atm_walk_min",
+     "column": "shops.atm_walk_min",
+     "label": {
+      "pl": "Bankomat",
+      "cs": "Bankomat",
+      "en": "ATM"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 3,
+      "bad": 12
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P2",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "shops_10min",
+     "column": "shops.shops_10min",
+     "label": {
+      "pl": "Sklepy w zasięgu 10 min",
+      "cs": "Obchody do 10 min",
+      "en": "Shops within 10 min"
+     },
+     "unit": "count",
+     "unitLabel": {
+      "pl": "",
+      "cs": "",
+      "en": ""
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 2,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "health",
+   "emoji": "🏥",
+   "label": {
+    "pl": "Zdrowie",
+    "cs": "Zdraví",
+    "en": "Health"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 0.995,
+   "beta": false,
+   "sources": [
+    "nrpzs",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "gp_walk_min",
+     "column": "health.gp_walk_min",
+     "label": {
+      "pl": "Przychodnia POZ",
+      "cs": "Praktický lékař",
+      "en": "GP clinic"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 3,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "nrpzs"
+     ]
+    },
+    {
+     "id": "pharmacy_walk_min",
+     "column": "health.pharmacy_walk_min",
+     "label": {
+      "pl": "Apteka",
+      "cs": "Lékárna",
+      "en": "Pharmacy"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 3,
+      "bad": 12
+     },
+     "weight": 2,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "nrpzs",
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "hospital_er_walk_min",
+     "column": "health.hospital_er_walk_min",
+     "label": {
+      "pl": "Szpital z SOR",
+      "cs": "Nemocnice s urgentním příjmem",
+      "en": "Hospital with ER"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 10,
+      "bad": 45
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "nrpzs"
+     ]
+    },
+    {
+     "id": "maternity_walk_min",
+     "column": "health.maternity_walk_min",
+     "label": {
+      "pl": "Porodnia",
+      "cs": "Porodnice",
+      "en": "Maternity ward"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 10,
+      "bad": 45
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "nrpzs"
+     ]
+    },
+    {
+     "id": "gynaecology_walk_min",
+     "column": "health.gynaecology_walk_min",
+     "label": {
+      "pl": "Ginekolog",
+      "cs": "Gynekolog",
+      "en": "Gynaecologist"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 25
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 0.956,
+     "available": true,
+     "sources": [
+      "nrpzs"
+     ]
+    },
+    {
+     "id": "dentist_walk_min",
+     "column": "health.dentist_walk_min",
+     "label": {
+      "pl": "Dentysta",
+      "cs": "Zubař",
+      "en": "Dentist"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P2",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "nrpzs"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "environment",
+   "emoji": "🌬️",
+   "label": {
+    "pl": "Cisza i czyste powietrze",
+    "cs": "Klid a čisté ovzduší",
+    "en": "Quiet & clean air"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 0.998,
+   "beta": false,
+   "sources": [
+    "chmi_air",
+    "ipr",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "noise_db",
+     "column": "environment.noise_db",
+     "label": {
+      "pl": "Hałas (LAeq)",
+      "cs": "Hluk (LAeq)",
+      "en": "Noise (LAeq)"
+     },
+     "unit": "db",
+     "unitLabel": {
+      "pl": "dB",
+      "cs": "dB",
+      "en": "dB"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "inverse_percentile"
+     },
+     "weight": 3,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "ipr"
+     ]
+    },
+    {
+     "id": "pm25",
+     "column": "environment.pm25",
+     "label": {
+      "pl": "Pył PM2,5",
+      "cs": "Prach PM2,5",
+      "en": "PM2.5"
+     },
+     "unit": "ugm3",
+     "unitLabel": {
+      "pl": "µg/m³",
+      "cs": "µg/m³",
+      "en": "µg/m³"
+     },
+     "decimals": 1,
+     "norm": {
+      "type": "inverse_percentile"
+     },
+     "weight": 2,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "chmi_air"
+     ]
+    },
+    {
+     "id": "pm10",
+     "column": "environment.pm10",
+     "label": {
+      "pl": "Pył PM10",
+      "cs": "Prach PM10",
+      "en": "PM10"
+     },
+     "unit": "ugm3",
+     "unitLabel": {
+      "pl": "µg/m³",
+      "cs": "µg/m³",
+      "en": "µg/m³"
+     },
+     "decimals": 1,
+     "norm": {
+      "type": "inverse_percentile"
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "chmi_air"
+     ]
+    },
+    {
+     "id": "major_road_m",
+     "column": "environment.major_road_m",
+     "label": {
+      "pl": "Odległość od głównej drogi",
+      "cs": "Vzdálenost od hlavní silnice",
+      "en": "Distance to major road"
+     },
+     "unit": "m",
+     "unitLabel": {
+      "pl": "m",
+      "cs": "m",
+      "en": "m"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 300,
+      "bad": 30
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "industrial_ha_1km",
+     "column": "environment.industrial_ha_1km",
+     "label": {
+      "pl": "Tereny przemysłowe (1 km)",
+      "cs": "Průmyslové plochy (1 km)",
+      "en": "Industrial land (1 km)"
+     },
+     "unit": "ha",
+     "unitLabel": {
+      "pl": "ha",
+      "cs": "ha",
+      "en": "ha"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "inverse_percentile"
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 0.98,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "leisure",
+   "emoji": "🎭",
+   "label": {
+    "pl": "Kultura, sport i gastronomia",
+    "cs": "Kultura, sport a gastronomie",
+    "en": "Culture, sport & food"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 1.0,
+   "beta": false,
+   "sources": [
+    "golemio",
+    "ipr",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "food_10min",
+     "column": "leisure.food_10min",
+     "label": {
+      "pl": "Restauracje i kawiarnie (10 min)",
+      "cs": "Restaurace a kavárny (10 min)",
+      "en": "Restaurants & cafés (10 min)"
+     },
+     "unit": "count",
+     "unitLabel": {
+      "pl": "",
+      "cs": "",
+      "en": ""
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 2,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "culture_walk_min",
+     "column": "leisure.culture_walk_min",
+     "label": {
+      "pl": "Kultura (teatr, kino, muzeum)",
+      "cs": "Kultura (divadlo, kino, muzeum)",
+      "en": "Culture (theatre, cinema, museum)"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 25
+     },
+     "weight": 2,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "sports_walk_min",
+     "column": "leisure.sports_walk_min",
+     "label": {
+      "pl": "Sport i siłownia",
+      "cs": "Sport a posilovna",
+      "en": "Sports & gym"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 1,
+     "walkScaled": true,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "nightlife_10min",
+     "column": "leisure.nightlife_10min",
+     "label": {
+      "pl": "Życie nocne (10 min)",
+      "cs": "Noční život (10 min)",
+      "en": "Nightlife (10 min)"
+     },
+     "unit": "count",
+     "unitLabel": {
+      "pl": "",
+      "cs": "",
+      "en": ""
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "park_walk_min",
+     "column": "green.park_walk_min",
+     "label": {
+      "pl": "Park (≥ 2 ha)",
+      "cs": "Park (≥ 2 ha)",
+      "en": "Park (≥ 2 ha)"
+     },
+     "unit": "min",
+     "unitLabel": {
+      "pl": "min",
+      "cs": "min",
+      "en": "min"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 5,
+      "bad": 20
+     },
+     "weight": 0,
+     "walkScaled": true,
+     "crossCity": false,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha",
+      "ipr",
+      "golemio"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "accessibility",
+   "emoji": "♿",
+   "label": {
+    "pl": "Dostępność",
+    "cs": "Bezbariérovost",
+    "en": "Accessibility"
+   },
+   "runtime": null,
+   "caveat": null,
+   "coverage": 0.833,
+   "beta": false,
+   "sources": [
+    "dem",
+    "gtfs_pid",
+    "osm_praha"
+   ],
+   "indicators": [
+    {
+     "id": "accessible_stop_share",
+     "column": "accessibility.accessible_stop_share",
+     "label": {
+      "pl": "Przystanki bez barier (500 m)",
+      "cs": "Bezbariérové zastávky (500 m)",
+      "en": "Step-free stops (500 m)"
+     },
+     "unit": "pct",
+     "unitLabel": {
+      "pl": "%",
+      "cs": "%",
+      "en": "%"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 90,
+      "bad": 20
+     },
+     "weight": 2,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "gtfs_pid"
+     ]
+    },
+    {
+     "id": "lowfloor_trip_share",
+     "column": "accessibility.lowfloor_trip_share",
+     "label": {
+      "pl": "Kursy niskopodłogowe (500 m)",
+      "cs": "Nízkopodlažní spoje (500 m)",
+      "en": "Low-floor trips (500 m)"
+     },
+     "unit": "pct",
+     "unitLabel": {
+      "pl": "%",
+      "cs": "%",
+      "en": "%"
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "decay",
+      "good": 95,
+      "bad": 40
+     },
+     "weight": 2,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P0",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "gtfs_pid"
+     ]
+    },
+    {
+     "id": "benches_300m",
+     "column": "accessibility.benches_300m",
+     "label": {
+      "pl": "Ławki (300 m)",
+      "cs": "Lavičky (300 m)",
+      "en": "Benches (300 m)"
+     },
+     "unit": "count",
+     "unitLabel": {
+      "pl": "",
+      "cs": "",
+      "en": ""
+     },
+     "decimals": 0,
+     "norm": {
+      "type": "percentile"
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P1",
+     "coverage": 1.0,
+     "available": true,
+     "sources": [
+      "osm_praha"
+     ]
+    },
+    {
+     "id": "slope_pct",
+     "column": "accessibility.slope_pct",
+     "label": {
+      "pl": "Nachylenie terenu",
+      "cs": "Sklon terénu",
+      "en": "Terrain slope"
+     },
+     "unit": "pct",
+     "unitLabel": {
+      "pl": "%",
+      "cs": "%",
+      "en": "%"
+     },
+     "decimals": 1,
+     "norm": {
+      "type": "decay",
+      "good": 2,
+      "bad": 8
+     },
+     "weight": 1,
+     "walkScaled": false,
+     "crossCity": true,
+     "priority": "P2",
+     "coverage": 0.0,
+     "available": false,
+     "sources": [
+      "dem"
+     ]
+    }
+   ]
+  }
+ ],
+ "personas": [
+  {
+   "id": "student",
+   "emoji": "🎒",
+   "label": {
+    "pl": "Student/ka",
+    "cs": "Student/ka",
+    "en": "Student"
+   },
+   "weights": {
+    "commute": 5,
+    "transit": 5,
+    "active": 3,
+    "green": 2,
+    "education": 1,
+    "family": 0,
+    "safety": 3,
+    "price": 5,
+    "shops": 3,
+    "health": 1,
+    "environment": 2,
+    "leisure": 5,
+    "accessibility": 0
+   },
+   "indicatorWeights": {
+    "education.nursery_walk_min": 0,
+    "education.kindergarten_walk_min": 0,
+    "education.primary_school_walk_min": 0,
+    "education.secondary_school_walk_min": 0,
+    "education.university_walk_min": 3,
+    "education.library_walk_min": 2,
+    "transit.night_departures_500m": 2
+   },
+   "walkFactor": 1.0,
+   "suggestedAnchors": [
+    {
+     "id": "university",
+     "label": {
+      "pl": "Moja uczelnia",
+      "cs": "Moje škola/univerzita",
+      "en": "My university"
+     },
+     "mode": "transit",
+     "level": 5,
+     "poiCategory": "university"
+    }
+   ]
+  },
+  {
+   "id": "working",
+   "emoji": "💼",
+   "label": {
+    "pl": "Pracuję",
+    "cs": "Pracuji",
+    "en": "Working"
+   },
+   "weights": {
+    "commute": 5,
+    "transit": 4,
+    "active": 4,
+    "green": 3,
+    "education": 0,
+    "family": 0,
+    "safety": 3,
+    "price": 4,
+    "shops": 4,
+    "health": 2,
+    "environment": 3,
+    "leisure": 4,
+    "accessibility": 0
+   },
+   "indicatorWeights": {},
+   "walkFactor": 1.0,
+   "suggestedAnchors": [
+    {
+     "id": "work",
+     "label": {
+      "pl": "Praca",
+      "cs": "Práce",
+      "en": "Work"
+     },
+     "mode": "transit",
+     "level": 5
+    }
+   ]
+  },
+  {
+   "id": "parent",
+   "emoji": "👨‍👩‍👧",
+   "label": {
+    "pl": "Rodzic",
+    "cs": "Rodič",
+    "en": "Parent"
+   },
+   "weights": {
+    "commute": 3,
+    "transit": 3,
+    "active": 2,
+    "green": 5,
+    "education": 5,
+    "family": 5,
+    "safety": 5,
+    "price": 3,
+    "shops": 4,
+    "health": 4,
+    "environment": 4,
+    "leisure": 1,
+    "accessibility": 2
+   },
+   "indicatorWeights": {
+    "education.nursery_walk_min": 2,
+    "education.kindergarten_walk_min": 3,
+    "education.primary_school_walk_min": 3,
+    "education.secondary_school_walk_min": 0,
+    "education.university_walk_min": 0,
+    "education.library_walk_min": 0,
+    "family.playgrounds_500m": 4
+   },
+   "walkFactor": 1.0,
+   "suggestedAnchors": [
+    {
+     "id": "work",
+     "label": {
+      "pl": "Praca",
+      "cs": "Práce",
+      "en": "Work"
+     },
+     "mode": "transit",
+     "level": 4
+    },
+    {
+     "id": "school",
+     "label": {
+      "pl": "Szkoła dziecka",
+      "cs": "Škola dítěte",
+      "en": "Child's school"
+     },
+     "mode": "walk",
+     "level": 4,
+     "poiCategory": "primary_school"
+    }
+   ]
+  },
+  {
+   "id": "expecting",
+   "emoji": "🤰",
+   "label": {
+    "pl": "W ciąży",
+    "cs": "Těhotná",
+    "en": "Expecting"
+   },
+   "weights": {
+    "commute": 3,
+    "transit": 4,
+    "active": 2,
+    "green": 4,
+    "education": 3,
+    "family": 4,
+    "safety": 4,
+    "price": 3,
+    "shops": 4,
+    "health": 5,
+    "environment": 5,
+    "leisure": 1,
+    "accessibility": 4
+   },
+   "indicatorWeights": {
+    "health.maternity_walk_min": 3,
+    "health.gynaecology_walk_min": 3,
+    "health.gp_walk_min": 3,
+    "health.pharmacy_walk_min": 0,
+    "health.hospital_er_walk_min": 0,
+    "health.dentist_walk_min": 0,
+    "education.nursery_walk_min": 3,
+    "education.kindergarten_walk_min": 0,
+    "education.primary_school_walk_min": 0,
+    "education.secondary_school_walk_min": 0,
+    "education.university_walk_min": 0,
+    "education.library_walk_min": 0,
+    "accessibility.lowfloor_trip_share": 3,
+    "accessibility.benches_300m": 2,
+    "accessibility.accessible_stop_share": 0,
+    "accessibility.slope_pct": 0
+   },
+   "walkFactor": 1.3,
+   "suggestedAnchors": [
+    {
+     "id": "work",
+     "label": {
+      "pl": "Praca",
+      "cs": "Práce",
+      "en": "Work"
+     },
+     "mode": "transit",
+     "level": 3
+    }
+   ]
+  },
+  {
+   "id": "senior",
+   "emoji": "🧓",
+   "label": {
+    "pl": "Senior/ka",
+    "cs": "Senior/ka",
+    "en": "Senior"
+   },
+   "weights": {
+    "commute": 1,
+    "transit": 4,
+    "active": 3,
+    "green": 4,
+    "education": 0,
+    "family": 0,
+    "safety": 5,
+    "price": 3,
+    "shops": 5,
+    "health": 5,
+    "environment": 4,
+    "leisure": 3,
+    "accessibility": 5
+   },
+   "indicatorWeights": {
+    "health.gp_walk_min": 3,
+    "health.pharmacy_walk_min": 3,
+    "health.hospital_er_walk_min": 2,
+    "health.maternity_walk_min": 0,
+    "health.gynaecology_walk_min": 0,
+    "health.dentist_walk_min": 0,
+    "accessibility.benches_300m": 2,
+    "accessibility.lowfloor_trip_share": 3,
+    "accessibility.slope_pct": 2,
+    "accessibility.accessible_stop_share": 0,
+    "leisure.culture_walk_min": 3,
+    "leisure.park_walk_min": 2,
+    "leisure.nightlife_10min": 0,
+    "leisure.food_10min": 0,
+    "leisure.sports_walk_min": 0
+   },
+   "walkFactor": 1.35,
+   "suggestedAnchors": [
+    {
+     "id": "family",
+     "label": {
+      "pl": "Rodzina",
+      "cs": "Rodina",
+      "en": "Family"
+     },
+     "mode": "transit",
+     "level": 3
+    }
+   ]
+  },
+  {
+   "id": "custom",
+   "emoji": "✏️",
+   "label": {
+    "pl": "Własny profil",
+    "cs": "Vlastní profil",
+    "en": "Custom"
+   },
+   "weights": {
+    "commute": 3,
+    "transit": 3,
+    "active": 3,
+    "green": 3,
+    "education": 3,
+    "family": 3,
+    "safety": 3,
+    "price": 3,
+    "shops": 3,
+    "health": 3,
+    "environment": 3,
+    "leisure": 3,
+    "accessibility": 3
+   },
+   "indicatorWeights": {},
+   "walkFactor": 1.0,
+   "suggestedAnchors": []
+  }
+ ],
+ "mustHaveCategories": [
+  {
+   "id": "nursery",
+   "emoji": "🍼",
+   "label": {
+    "pl": "Żłobek",
+    "cs": "Jesle",
+    "en": "Nursery"
+   },
+   "available": true
+  },
+  {
+   "id": "kindergarten",
+   "emoji": "🧒",
+   "label": {
+    "pl": "Przedszkole",
+    "cs": "Mateřská škola",
+    "en": "Kindergarten"
+   },
+   "available": true
+  },
+  {
+   "id": "primary_school",
+   "emoji": "🏫",
+   "label": {
+    "pl": "Szkoła podstawowa",
+    "cs": "Základní škola",
+    "en": "Primary school"
+   },
+   "available": true
+  },
+  {
+   "id": "tram_stop",
+   "emoji": "🚋",
+   "label": {
+    "pl": "Przystanek tramwajowy",
+    "cs": "Tramvajová zastávka",
+    "en": "Tram stop"
+   },
+   "available": true
+  },
+  {
+   "id": "metro_station",
+   "emoji": "🚇",
+   "label": {
+    "pl": "Stacja metra",
+    "cs": "Stanice metra",
+    "en": "Metro station"
+   },
+   "available": true
+  },
+  {
+   "id": "rail_station",
+   "emoji": "🚆",
+   "label": {
+    "pl": "Stacja kolejowa",
+    "cs": "Železniční stanice",
+    "en": "Rail station"
+   },
+   "available": true
+  },
+  {
+   "id": "park",
+   "emoji": "🌳",
+   "label": {
+    "pl": "Park",
+    "cs": "Park",
+    "en": "Park"
+   },
+   "available": true
+  },
+  {
+   "id": "pharmacy",
+   "emoji": "💊",
+   "label": {
+    "pl": "Apteka",
+    "cs": "Lékárna",
+    "en": "Pharmacy"
+   },
+   "available": true
+  },
+  {
+   "id": "gp_clinic",
+   "emoji": "🩺",
+   "label": {
+    "pl": "Przychodnia",
+    "cs": "Praktický lékař",
+    "en": "GP clinic"
+   },
+   "available": true
+  },
+  {
+   "id": "supermarket",
+   "emoji": "🛒",
+   "label": {
+    "pl": "Supermarket",
+    "cs": "Supermarket",
+    "en": "Supermarket"
+   },
+   "available": true
+  },
+  {
+   "id": "maternity_ward",
+   "emoji": "🤱",
+   "label": {
+    "pl": "Porodnia",
+    "cs": "Porodnice",
+    "en": "Maternity ward"
+   },
+   "available": true
+  }
+ ],
+ "archetypes": [
+  {
+   "id": "historic_core",
+   "emoji": "🏛️"
+  },
+  {
+   "id": "urban_mix",
+   "emoji": "🏙️"
+  },
+  {
+   "id": "student_buzz",
+   "emoji": "🎓"
+  },
+  {
+   "id": "estate_blocks",
+   "emoji": "🏢"
+  },
+  {
+   "id": "green_residential",
+   "emoji": "🌳"
+  },
+  {
+   "id": "family_suburb",
+   "emoji": "🏡"
+  },
+  {
+   "id": "quiet_outskirts",
+   "emoji": "🌾"
+  },
+  {
+   "id": "industrial_edge",
+   "emoji": "🏭"
+  }
+ ],
+ "modes": [
+  {
+   "id": "transit",
+   "emoji": "🚋",
+   "label": {
+    "pl": "Komunikacja",
+    "cs": "MHD",
+    "en": "Transit"
+   }
+  },
+  {
+   "id": "bike",
+   "emoji": "🚲",
+   "label": {
+    "pl": "Rower",
+    "cs": "Kolo",
+    "en": "Bike"
+   }
+  },
+  {
+   "id": "walk",
+   "emoji": "🚶",
+   "label": {
+    "pl": "Pieszo",
+    "cs": "Pěšky",
+    "en": "Walk"
+   }
+  }
+ ],
+ "price": {
+  "indicator": "rent_per_m2",
+  "mode": "rent",
+  "currency": "CZK",
+  "unit": {
+   "pl": "Kč/m²/mies.",
+   "cs": "Kč/m²/měs.",
+   "en": "CZK/m²/month"
+  },
+  "filterField": "maxRentPerM2",
+  "budgetField": "monthlyRent",
+  "cityMedian": 388.0,
+  "min": 305.0,
+  "max": 493.0
+ },
+ "adminLevels": {
+  "district": {
+   "label": {
+    "pl": "Dzielnica",
+    "cs": "Městská část",
+    "en": "District"
+   },
+   "count": 57
+  },
+  "neighborhood": {
+   "label": {
+    "pl": "Okolica",
+    "cs": "Katastrální území",
+    "en": "Area"
+   },
+   "count": 112
+  }
+ },
+ "manifest": [
+  {
+   "key": "bikeshare_praha",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  },
+  {
+   "key": "chmi_air",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  },
+  {
+   "key": "dem",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  },
+  {
+   "key": "golemio",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  },
+  {
+   "key": "gtfs_pid",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  },
+  {
+   "key": "ipr",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  },
+  {
+   "key": "mf_rent",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  },
+  {
+   "key": "msmt_schools",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  },
+  {
+   "key": "nrpzs",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  },
+  {
+   "key": "osm_praha",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  },
+  {
+   "key": "police_cz",
+   "url": null,
+   "fetchedAt": null,
+   "licence": null,
+   "rows": null,
+   "status": "missing",
+   "note": "fixture — no real data yet"
+  }
+ ]
+}

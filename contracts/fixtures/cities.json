@@ -1,0 +1,82 @@
+[
+ {
+  "id": "krakow",
+  "name": {
+   "pl": "Kraków",
+   "cs": "Krakov",
+   "en": "Kraków"
+  },
+  "country": "PL",
+  "defaultLang": "pl",
+  "currency": "PLN",
+  "center": [
+   50.0614,
+   19.9366
+  ],
+  "zoom": 11.5,
+  "bbox": [
+   19.79,
+   49.96,
+   20.22,
+   50.13
+  ],
+  "priceMode": "buy",
+  "coverage": {
+   "commute": 1.0,
+   "transit": 1.0,
+   "active": 1.0,
+   "green": 1.0,
+   "education": 1.0,
+   "family": 1.0,
+   "safety": 1.0,
+   "price": 1.0,
+   "shops": 1.0,
+   "health": 0.992,
+   "environment": 0.989,
+   "leisure": 1.0,
+   "accessibility": 0.833
+  },
+  "dataVersion": "fixture-2026-10-03",
+  "dataSource": "fixture"
+ },
+ {
+  "id": "praha",
+  "name": {
+   "pl": "Praga",
+   "cs": "Praha",
+   "en": "Prague"
+  },
+  "country": "CZ",
+  "defaultLang": "cs",
+  "currency": "CZK",
+  "center": [
+   50.0755,
+   14.4378
+  ],
+  "zoom": 11,
+  "bbox": [
+   14.22,
+   49.94,
+   14.71,
+   50.18
+  ],
+  "priceMode": "rent",
+  "coverage": {
+   "commute": 1.0,
+   "transit": 1.0,
+   "active": 1.0,
+   "green": 1.0,
+   "education": 1.0,
+   "family": 1.0,
+   "safety": 1.0,
+   "price": 1.0,
+   "shops": 1.0,
+   "health": 0.995,
+   "environment": 0.998,
+   "leisure": 1.0,
+   "accessibility": 0.833
+  },
+  "dataVersion": "fixture-2026-10-03",
+  "dataSource": "fixture"
+ }
+]
