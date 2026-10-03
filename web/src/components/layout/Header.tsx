@@ -10,7 +10,8 @@ import { cn } from '@/lib/utils'
 import { CITY_IDS, useApp } from '@/state/store'
 import { HeaderSearch } from './HeaderSearch'
 
-export function Logo({ onClick }: { onClick?: () => void }) {
+/** `compact`: in the app header on phones the name gives way to search, language and share. */
+export function Logo({ onClick, compact }: { onClick?: () => void; compact?: boolean }) {
   const { t } = useTranslation()
   return (
     <button onClick={onClick} className="flex items-center gap-2 rounded-lg" aria-label={`${t('app.name')} – ${t('nav.home')}`}>
@@ -19,7 +20,7 @@ export function Logo({ onClick }: { onClick?: () => void }) {
         <path d="M16 5l4 11-4 11-4-11z" fill="#fff" />
         <path d="M16 5l4 11h-8z" fill="var(--color-sun)" />
       </svg>
-      <span className="hidden font-display text-xl font-bold tracking-tight min-[400px]:inline">{t('app.name')}</span>
+      <span className={cn('hidden font-display text-xl font-bold tracking-tight', compact ? 'sm:inline' : 'min-[400px]:inline')}>{t('app.name')}</span>
     </button>
   )
 }
@@ -151,7 +152,7 @@ export function Header() {
   const { set, city } = useApp()
   return (
     <header className="relative z-30 flex h-16 shrink-0 items-center gap-2 border-b border-line bg-surface/95 px-3 backdrop-blur sm:gap-3 sm:px-5">
-      <Logo onClick={() => set({ city: null, step: 'persona', view: 'app', sel: null })} />
+      <Logo compact={!!city} onClick={() => set({ city: null, step: 'persona', view: 'app', sel: null })} />
       <DataModeBadge />
       <HeaderSearch />
       <div className="ml-auto flex items-center gap-2">

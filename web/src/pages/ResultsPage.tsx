@@ -210,7 +210,7 @@ export function ResultsPage() {
 
         {!desktop && (
           <>
-            <div className="absolute right-3 top-14 z-20 flex flex-col items-end gap-2">
+            <div className="absolute right-2.5 top-20 z-20 flex flex-col items-end gap-2">
               <Button variant="secondary" size="icon" onClick={() => set({ prefsOpen: true })} aria-label={t('nav.filters')} data-testid="open-filters">
                 <SlidersHorizontal size={18} />
               </Button>
