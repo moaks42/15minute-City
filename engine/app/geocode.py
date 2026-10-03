@@ -142,9 +142,10 @@ def photon(cd: CityData, q: str, limit: int) -> list[dict]:
 def geocode(index: GeoIndex, q: str, limit: int) -> dict:
     items = index.search(q, limit)
     if len(items) < min(3, limit):
-        seen = {(i["label"], round(i["lat"], 3)) for i in items}
         for it in photon(index.cd, q, limit):
-            if (it["label"], round(it["lat"], 3)) not in seen:
+            # the same name within ~300 m is one place for the user (a square, its stop, its metro entrance…)
+            if not any(fold(it["label"]) == fold(x["label"]) and abs(it["lat"] - x["lat"]) < 0.003
+                       and abs(it["lon"] - x["lon"]) < 0.0045 for x in items):
                 items.append(it)
             if len(items) >= limit:
                 break

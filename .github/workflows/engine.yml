@@ -1,0 +1,27 @@
+name: engine + contracts
+
+on:
+  push:
+    branches: [main, b-engine]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      KOMPAS_OFFLINE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - name: Contract fixtures valid against OpenAPI
+        run: uv run contracts/tools/validate_fixtures.py
+      - name: Processed data valid against DATA_CONTRACT (if present)
+        run: |
+          if [ -d data/processed ]; then uv run contracts/tools/validate_data.py --city all; else echo "no data/processed yet"; fi
+      - name: Engine tests
+        working-directory: engine
+        run: |
+          uv sync --frozen
+          uv run pytest -q
