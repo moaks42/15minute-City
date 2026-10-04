@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// CI check: pl/cs/en locales have identical keys (plural-aware), the same
+// CI check: pl/cs/en/ko locales have identical keys (plural-aware), the same
 // array lengths and the same {{interpolation}} variables. Exit 1 on mismatch.
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 
 const dir = join(dirname(fileURLToPath(import.meta.url)), '../src/locales')
-const LANGS = ['pl', 'cs', 'en']
+const LANGS = ['pl', 'cs', 'en', 'ko']
 const PLURAL = /_(zero|one|two|few|many|other)$/
 
 function flatten(obj, prefix = '', out = {}) {

@@ -1219,7 +1219,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 56.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 56 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 56,0 na 1000 mieszk."
     },
     {
      "criterion": "green",
@@ -1306,7 +1306,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 50.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 50 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 50,0 na 1000 mieszk."
     },
     {
      "criterion": "family",
@@ -1395,7 +1395,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 54.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 54 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 54,0 na 1000 mieszk."
     },
     {
      "criterion": "education",
@@ -1482,7 +1482,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 50.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 50 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 50,0 na 1000 mieszk."
     },
     {
      "criterion": "environment",
@@ -1663,7 +1663,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 56.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 56 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 56,0 na 1000 mieszk."
     }
    ],
    "warnings": [
@@ -1917,7 +1917,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 48.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 48 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 48,0 na 1000 mieszk."
     },
     {
      "criterion": "price",
@@ -2004,7 +2004,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 39.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 39 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 39,0 na 1000 mieszk."
     },
     {
      "criterion": "family",
@@ -2091,7 +2091,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 39.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 39 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 39,0 na 1000 mieszk."
     },
     {
      "criterion": "green",
@@ -2441,7 +2441,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 50.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 50 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 50,0 na 1000 mieszk."
     },
     {
      "criterion": "family",
@@ -2615,7 +2615,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 43.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 43 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 43,0 na 1000 mieszk."
     },
     {
      "criterion": "environment",
@@ -2702,7 +2702,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 50.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 50 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 50,0 na 1000 mieszk."
     },
     {
      "criterion": "environment",
@@ -2789,7 +2789,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 48.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 48 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 48,0 na 1000 mieszk."
     },
     {
      "criterion": "environment",

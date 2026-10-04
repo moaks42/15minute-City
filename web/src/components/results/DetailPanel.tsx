@@ -126,7 +126,7 @@ function Air({ lat, lon }: { lat: number; lon: number }) {
       {d && d.status !== 'unavailable' && d.level != null ? (
         <span>
           {t(`detail.airLevels.${AIR_LEVELS[d.level] ?? 'moderate'}`)}
-          {d.pollutants?.pm25 != null && ` · PM2,5 ${fmtNum(d.pollutants.pm25, lang, 1)} µg/m³`}
+          {d.pollutants?.pm25 != null && ` · ${t('detail.pm25')} ${fmtNum(d.pollutants.pm25, lang, 1)} µg/m³`}
           {d.station && (
             <span className="text-ink-3">
               {' '}

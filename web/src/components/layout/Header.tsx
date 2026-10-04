@@ -1,4 +1,4 @@
-import { Info, Share2, Check } from 'lucide-react'
+import { Info, Share2, Check, ChevronDown } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Tip } from '@/components/ui/tooltip'
 import { DATA_MODE } from '@/lib/env'
 import { cn } from '@/lib/utils'
-import { CITY_IDS, useApp } from '@/state/store'
+import { CITY_IDS, LANGS, useApp } from '@/state/store'
 import { HeaderSearch } from './HeaderSearch'
 
 /** `compact`: in the app header on phones the name gives way to search, language and share. */
@@ -25,26 +25,49 @@ export function Logo({ onClick, compact }: { onClick?: () => void; compact?: boo
   )
 }
 
+/** Each language in its own name, so everyone can find theirs. */
+const LANG_LABEL: Record<Lang, { flag: string; name: string }> = {
+  pl: { flag: '🇵🇱', name: 'Polski' },
+  cs: { flag: '🇨🇿', name: 'Čeština' },
+  en: { flag: '🇬🇧', name: 'English' },
+  ko: { flag: '🇰🇷', name: '한국어' },
+}
+
+/** Native select under a pill (flag + name, just the code on phones), so phones get their own picker. */
 export function LangSwitch({ className }: { className?: string }) {
   const { t } = useTranslation()
   const { lang, setLang } = useApp()
   return (
-    <div role="radiogroup" aria-label={t('nav.language')} className={cn('inline-flex rounded-full bg-sunken p-1', className)}>
-      {(['pl', 'cs', 'en'] as Lang[]).map((l) => (
-        <button
-          key={l}
-          role="radio"
-          aria-checked={lang === l}
-          lang={l}
-          onClick={() => setLang(l)}
-          className={cn(
-            'min-h-9 min-w-10 rounded-full px-2.5 text-xs font-semibold uppercase tracking-wide text-ink-2',
-            lang === l && 'bg-surface text-ink shadow-sm',
-          )}
-        >
-          {l}
-        </button>
-      ))}
+    <div
+      className={cn(
+        'relative inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-sunken pl-3 pr-2 text-sm font-medium text-ink hover:bg-line',
+        'has-[select:focus-visible]:outline-3 has-[select:focus-visible]:outline-offset-2 has-[select:focus-visible]:outline-accent',
+        className,
+      )}
+    >
+      <span aria-hidden className="text-base leading-none">
+        {LANG_LABEL[lang].flag}
+      </span>
+      <span aria-hidden className="hidden sm:inline">
+        {LANG_LABEL[lang].name}
+      </span>
+      <span aria-hidden className="text-xs font-semibold uppercase tracking-wide sm:hidden">
+        {lang}
+      </span>
+      <ChevronDown size={14} aria-hidden className="text-ink-3" />
+      <select
+        value={lang}
+        onChange={(e) => setLang(e.target.value as Lang)}
+        aria-label={t('nav.language')}
+        data-testid="lang-select"
+        className="absolute inset-0 cursor-pointer appearance-none rounded-full opacity-0"
+      >
+        {LANGS.map((l) => (
+          <option key={l} value={l} lang={l}>
+            {LANG_LABEL[l].flag} {LANG_LABEL[l].name}
+          </option>
+        ))}
+      </select>
     </div>
   )
 }

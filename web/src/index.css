@@ -49,6 +49,10 @@
     -webkit-font-smoothing: antialiased;
     font-feature-settings: 'cv11', 'ss01';
   }
+  /* Korean wraps between words, not between syllables. */
+  html:lang(ko) body {
+    word-break: keep-all;
+  }
   :focus-visible {
     outline: 3px solid var(--color-accent);
     outline-offset: 2px;

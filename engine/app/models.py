@@ -7,7 +7,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-Lang = Literal["pl", "cs", "en"]
+Lang = Literal["pl", "cs", "en", "ko"]
 Mode = Literal["transit", "bike", "walk"]
 
 

@@ -4,7 +4,8 @@
   "name": {
    "pl": "Kraków",
    "cs": "Krakov",
-   "en": "Kraków"
+   "en": "Kraków",
+   "ko": "크라쿠프"
   },
   "country": "PL",
   "defaultLang": "pl",
@@ -44,7 +45,8 @@
   "name": {
    "pl": "Praga",
    "cs": "Praha",
-   "en": "Prague"
+   "en": "Prague",
+   "ko": "프라하"
   },
   "country": "CZ",
   "defaultLang": "cs",

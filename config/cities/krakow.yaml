@@ -1,6 +1,6 @@
 # Kraków — reference city. Shape identical to praha.yaml (README §7.1). Owner: Workstream B.
 id: krakow
-name: {pl: "Kraków", cs: "Krakov", en: "Kraków"}
+name: {pl: "Kraków", cs: "Krakov", en: "Kraków", ko: "크라쿠프"}
 country: PL
 defaultLang: pl
 currency: PLN
@@ -18,13 +18,13 @@ habitableMinAddresses: 3
 h3Resolution: 9
 commuteDestResolution: 8
 levels:
-  district:     {source: msip_dzielnice, count: 18, label: {pl: "Dzielnica", cs: "Čtvrť", en: "District"}}
-  neighborhood: {source: osm_place,               label: {pl: "Okolica",   cs: "Okolí", en: "Area"}}
+  district:     {source: msip_dzielnice, count: 18, label: {pl: "Dzielnica", cs: "Čtvrť", en: "District", ko: "구"}}
+  neighborhood: {source: osm_place,               label: {pl: "Okolica",   cs: "Okolí", en: "Area", ko: "지역"}}
 price:
   indicator: buy_per_m2
   column: price.buy_per_m2
   mode: buy
-  unit: {pl: "zł/m²", cs: "zł/m²", en: "PLN/m²"}
+  unit: {pl: "zł/m²", cs: "zł/m²", en: "PLN/m²", ko: "PLN/m²"}
   filterField: maxPricePerM2        # ScoreRequest.filters.<filterField>
   budgetField: total                # ScoreRequest.budget.<budgetField> (total purchase budget, PLN) → budgetM2 = total / price
 adapters: [msip_addresses, msip_admin, men_schools, krk_open, gios_air, msip_noise, safety_krk, rcn_prices, ztp_hub]
@@ -34,12 +34,12 @@ live:
 # Per-city label/explain overrides, keyed by "<criterion>.<indicator>". Same column, local wording.
 indicatorOverrides:
   "transit.rail_station_walk_min":
-    label:   {pl: "Stacja kolejowa (SKA)", cs: "Železniční stanice (SKA)", en: "Rail station (SKA)"}
-    explain: {pl: "Pociąg SKA {{value}} min pieszo", cs: "Vlak SKA {{value}} min pěšky", en: "SKA train {{value}} min walk"}
+    label:   {pl: "Stacja kolejowa (SKA)", cs: "Železniční stanice (SKA)", en: "Rail station (SKA)", ko: "기차역 (SKA)"}
+    explain: {pl: "Pociąg SKA {{value}} min pieszo", cs: "Vlak SKA {{value}} min pěšky", en: "SKA train {{value}} min walk", ko: "SKA 기차 도보 {{value}}분"}
   "environment.noise_db":
-    label:   {pl: "Hałas (Lden)", cs: "Hluk (Lden)", en: "Noise (Lden)"}
+    label:   {pl: "Hałas (Lden)", cs: "Hluk (Lden)", en: "Noise (Lden)", ko: "소음 (Lden)"}
   # Source counts only offences in public space (0.2–5 per 1,000), so whole numbers would read "0".
   "safety.crime_per_1000":
     decimals: 1
-    label:   {pl: "Przestępstwa w przestrzeni publicznej (dzielnica)", cs: "Trestné činy ve veřejném prostoru (čtvrť)", en: "Public-space offences (district)"}
-    explain: {pl: "Przestępstwa w przestrzeni publicznej w dzielnicy: {{value}} na 1000 mieszk.", cs: "Trestné činy ve veřejném prostoru ve čtvrti: {{value}} na 1000 obyv.", en: "Public-space offences in district: {{value}} per 1,000 residents"}
+    label:   {pl: "Przestępstwa w przestrzeni publicznej (dzielnica)", cs: "Trestné činy ve veřejném prostoru (čtvrť)", en: "Public-space offences (district)", ko: "공공장소 범죄 (구 단위)"}
+    explain: {pl: "Przestępstwa w przestrzeni publicznej w dzielnicy: {{value}} na 1000 mieszk.", cs: "Trestné činy ve veřejném prostoru ve čtvrti: {{value}} na 1000 obyv.", en: "Public-space offences in district: {{value}} per 1,000 residents", ko: "구 내 공공장소 범죄: 주민 1,000명당 {{value}}건"}

@@ -11,7 +11,8 @@
    "label": {
     "pl": "Pomiń",
     "cs": "Přeskočit",
-    "en": "Skip"
+    "en": "Skip",
+    "ko": "건너뛰기"
    }
   },
   {
@@ -21,7 +22,8 @@
    "label": {
     "pl": "Mało ważne",
     "cs": "Málo důležité",
-    "en": "Barely matters"
+    "en": "Barely matters",
+    "ko": "거의 상관없음"
    }
   },
   {
@@ -31,7 +33,8 @@
    "label": {
     "pl": "Miło by było",
     "cs": "Bylo by fajn",
-    "en": "Nice to have"
+    "en": "Nice to have",
+    "ko": "있으면 좋음"
    }
   },
   {
@@ -41,7 +44,8 @@
    "label": {
     "pl": "Ważne",
     "cs": "Důležité",
-    "en": "Important"
+    "en": "Important",
+    "ko": "중요"
    }
   },
   {
@@ -51,7 +55,8 @@
    "label": {
     "pl": "Bardzo ważne",
     "cs": "Velmi důležité",
-    "en": "Very important"
+    "en": "Very important",
+    "ko": "매우 중요"
    }
   },
   {
@@ -61,7 +66,8 @@
    "label": {
     "pl": "Kluczowe",
     "cs": "Zásadní",
-    "en": "Essential"
+    "en": "Essential",
+    "ko": "필수"
    }
   }
  ],
@@ -72,7 +78,8 @@
    "label": {
     "pl": "Dojazd do moich miejsc",
     "cs": "Dojezd do mých míst",
-    "en": "Commute to my places"
+    "en": "Commute to my places",
+    "ko": "내 장소까지 통근"
    },
    "runtime": "anchors",
    "caveat": null,
@@ -90,7 +97,8 @@
    "label": {
     "pl": "Komunikacja miejska",
     "cs": "Veřejná doprava (MHD)",
-    "en": "Public transport"
+    "en": "Public transport",
+    "ko": "대중교통"
    },
    "runtime": null,
    "caveat": null,
@@ -107,13 +115,15 @@
      "label": {
       "pl": "Najbliższy przystanek",
       "cs": "Nejbližší zastávka",
-      "en": "Nearest stop"
+      "en": "Nearest stop",
+      "ko": "가장 가까운 정류장"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -138,13 +148,15 @@
      "label": {
       "pl": "Najbliższy tramwaj",
       "cs": "Nejbližší tramvaj",
-      "en": "Nearest tram stop"
+      "en": "Nearest tram stop",
+      "ko": "가장 가까운 트램 정류장"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -168,13 +180,15 @@
      "label": {
       "pl": "Odjazdy w szczycie (500 m)",
       "cs": "Odjezdy ve špičce (500 m)",
-      "en": "Peak departures (500 m)"
+      "en": "Peak departures (500 m)",
+      "ko": "출퇴근 시간 출발 횟수 (500 m)"
      },
      "unit": "dep_h",
      "unitLabel": {
       "pl": "odj./h",
       "cs": "odj./h",
-      "en": "dep./h"
+      "en": "dep./h",
+      "ko": "회/시"
      },
      "decimals": 0,
      "norm": {
@@ -196,13 +210,15 @@
      "label": {
       "pl": "Linie w promieniu 500 m",
       "cs": "Linky do 500 m",
-      "en": "Lines within 500 m"
+      "en": "Lines within 500 m",
+      "ko": "500 m 이내 노선"
      },
      "unit": "count",
      "unitLabel": {
       "pl": "",
       "cs": "",
-      "en": ""
+      "en": "",
+      "ko": ""
      },
      "decimals": 0,
      "norm": {
@@ -224,13 +240,15 @@
      "label": {
       "pl": "Stacja kolejowa (SKA)",
       "cs": "Železniční stanice (SKA)",
-      "en": "Rail station (SKA)"
+      "en": "Rail station (SKA)",
+      "ko": "기차역 (SKA)"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -255,13 +273,15 @@
      "label": {
       "pl": "Nocne odjazdy (500 m)",
       "cs": "Noční odjezdy (500 m)",
-      "en": "Night departures (500 m)"
+      "en": "Night departures (500 m)",
+      "ko": "심야 출발 횟수 (500 m)"
      },
      "unit": "count",
      "unitLabel": {
       "pl": "",
       "cs": "",
-      "en": ""
+      "en": "",
+      "ko": ""
      },
      "decimals": 0,
      "norm": {
@@ -285,7 +305,8 @@
    "label": {
     "pl": "Rower i spacery",
     "cs": "Kolo a chůze",
-    "en": "Cycling & walking"
+    "en": "Cycling & walking",
+    "ko": "자전거·도보"
    },
    "runtime": null,
    "caveat": null,
@@ -302,13 +323,15 @@
      "label": {
       "pl": "Drogi rowerowe (1 km)",
       "cs": "Cyklostezky (1 km)",
-      "en": "Cycle paths (1 km)"
+      "en": "Cycle paths (1 km)",
+      "ko": "자전거 도로 (1 km)"
      },
      "unit": "km",
      "unitLabel": {
       "pl": "km",
       "cs": "km",
-      "en": "km"
+      "en": "km",
+      "ko": "km"
      },
      "decimals": 1,
      "norm": {
@@ -330,13 +353,15 @@
      "label": {
       "pl": "Gęstość skrzyżowań",
       "cs": "Hustota křižovatek",
-      "en": "Intersection density"
+      "en": "Intersection density",
+      "ko": "교차로 밀도"
      },
      "unit": "per_km2",
      "unitLabel": {
       "pl": "/km²",
       "cs": "/km²",
-      "en": "/km²"
+      "en": "/km²",
+      "ko": "/km²"
      },
      "decimals": 0,
      "norm": {
@@ -358,13 +383,15 @@
      "label": {
       "pl": "Stojaki rowerowe (300 m)",
       "cs": "Stojany na kola (300 m)",
-      "en": "Bike racks (300 m)"
+      "en": "Bike racks (300 m)",
+      "ko": "자전거 거치대 (300 m)"
      },
      "unit": "count",
      "unitLabel": {
       "pl": "",
       "cs": "",
-      "en": ""
+      "en": "",
+      "ko": ""
      },
      "decimals": 0,
      "norm": {
@@ -387,13 +414,15 @@
      "label": {
       "pl": "Bulwary i deptaki",
       "cs": "Nábřeží a pěší zóny",
-      "en": "Riverside & pedestrian zones"
+      "en": "Riverside & pedestrian zones",
+      "ko": "강변·보행자 구역"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -417,13 +446,15 @@
      "label": {
       "pl": "Rower miejski",
       "cs": "Sdílená kola",
-      "en": "Bike share"
+      "en": "Bike share",
+      "ko": "공유 자전거"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -447,7 +478,8 @@
    "label": {
     "pl": "Zieleń",
     "cs": "Zeleň",
-    "en": "Green space"
+    "en": "Green space",
+    "ko": "녹지"
    },
    "runtime": null,
    "caveat": null,
@@ -464,13 +496,15 @@
      "label": {
       "pl": "Udział zieleni (500 m)",
       "cs": "Podíl zeleně (500 m)",
-      "en": "Green share (500 m)"
+      "en": "Green share (500 m)",
+      "ko": "녹지 비율 (500 m)"
      },
      "unit": "pct",
      "unitLabel": {
       "pl": "%",
       "cs": "%",
-      "en": "%"
+      "en": "%",
+      "ko": "%"
      },
      "decimals": 0,
      "norm": {
@@ -495,13 +529,15 @@
      "label": {
       "pl": "Park (≥ 2 ha)",
       "cs": "Park (≥ 2 ha)",
-      "en": "Park (≥ 2 ha)"
+      "en": "Park (≥ 2 ha)",
+      "ko": "공원 (≥ 2 ha)"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -526,13 +562,15 @@
      "label": {
       "pl": "Lasy i łąki (1 km)",
       "cs": "Lesy a louky (1 km)",
-      "en": "Forest & meadows (1 km)"
+      "en": "Forest & meadows (1 km)",
+      "ko": "숲·초원 (1 km)"
      },
      "unit": "ha",
      "unitLabel": {
       "pl": "ha",
       "cs": "ha",
-      "en": "ha"
+      "en": "ha",
+      "ko": "ha"
      },
      "decimals": 0,
      "norm": {
@@ -556,7 +594,8 @@
    "label": {
     "pl": "Edukacja",
     "cs": "Vzdělávání",
-    "en": "Education"
+    "en": "Education",
+    "ko": "교육"
    },
    "runtime": null,
    "caveat": null,
@@ -574,13 +613,15 @@
      "label": {
       "pl": "Żłobek",
       "cs": "Jesle",
-      "en": "Nursery (0–3)"
+      "en": "Nursery (0–3)",
+      "ko": "어린이집 (0–3세)"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -605,13 +646,15 @@
      "label": {
       "pl": "Przedszkole",
       "cs": "Mateřská škola",
-      "en": "Kindergarten"
+      "en": "Kindergarten",
+      "ko": "유치원"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -635,13 +678,15 @@
      "label": {
       "pl": "Szkoła podstawowa",
       "cs": "Základní škola",
-      "en": "Primary school"
+      "en": "Primary school",
+      "ko": "초등학교"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -665,13 +710,15 @@
      "label": {
       "pl": "Szkoła średnia",
       "cs": "Střední škola",
-      "en": "Secondary school"
+      "en": "Secondary school",
+      "ko": "중·고등학교"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -695,13 +742,15 @@
      "label": {
       "pl": "Uczelnia",
       "cs": "Vysoká škola",
-      "en": "University"
+      "en": "University",
+      "ko": "대학교"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -725,13 +774,15 @@
      "label": {
       "pl": "Biblioteka",
       "cs": "Knihovna",
-      "en": "Library"
+      "en": "Library",
+      "ko": "도서관"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -757,7 +808,8 @@
    "label": {
     "pl": "Rodzina i dzieci",
     "cs": "Rodina a děti",
-    "en": "Family & kids"
+    "en": "Family & kids",
+    "ko": "가족·아이"
    },
    "runtime": null,
    "caveat": null,
@@ -773,13 +825,15 @@
      "label": {
       "pl": "Place zabaw (500 m)",
       "cs": "Dětská hřiště (500 m)",
-      "en": "Playgrounds (500 m)"
+      "en": "Playgrounds (500 m)",
+      "ko": "놀이터 (500 m)"
      },
      "unit": "count",
      "unitLabel": {
       "pl": "",
       "cs": "",
-      "en": ""
+      "en": "",
+      "ko": ""
      },
      "decimals": 0,
      "norm": {
@@ -801,13 +855,15 @@
      "label": {
       "pl": "Pediatra",
       "cs": "Dětský lékař",
-      "en": "Paediatrician"
+      "en": "Paediatrician",
+      "ko": "소아과"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -831,13 +887,15 @@
      "label": {
       "pl": "Basen lub sport dla dzieci",
       "cs": "Bazén či sport pro děti",
-      "en": "Pool or kids' sports"
+      "en": "Pool or kids' sports",
+      "ko": "수영장·어린이 스포츠"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -863,13 +921,15 @@
    "label": {
     "pl": "Bezpieczeństwo",
     "cs": "Bezpečnost",
-    "en": "Safety"
+    "en": "Safety",
+    "ko": "안전"
    },
    "runtime": null,
    "caveat": {
     "pl": "Zarejestrowane zdarzenia ≠ odczuwane bezpieczeństwo; ruchliwe centra notują więcej zdarzeń.",
     "cs": "Evidované události ≠ pocit bezpečí; rušná centra mají více událostí.",
-    "en": "Recorded incidents ≠ perceived safety; busy centres record more incidents."
+    "en": "Recorded incidents ≠ perceived safety; busy centres record more incidents.",
+    "ko": "신고된 사건 수 ≠ 체감 안전도. 붐비는 도심일수록 신고 건수가 많습니다."
    },
    "coverage": 1.0,
    "beta": false,
@@ -882,17 +942,19 @@
      "id": "crime_per_1000",
      "column": "safety.crime_per_1000",
      "label": {
-      "pl": "Zarejestrowane przestępstwa (dzielnica)",
-      "cs": "Evidovaná trestná činnost (městská část)",
-      "en": "Recorded crime (district)"
+      "pl": "Przestępstwa w przestrzeni publicznej (dzielnica)",
+      "cs": "Trestné činy ve veřejném prostoru (čtvrť)",
+      "en": "Public-space offences (district)",
+      "ko": "공공장소 범죄 (구 단위)"
      },
      "unit": "per_1000",
      "unitLabel": {
       "pl": "na 1000 mieszk.",
       "cs": "na 1000 obyv.",
-      "en": "per 1,000 residents"
+      "en": "per 1,000 residents",
+      "ko": "건/1,000명"
      },
-     "decimals": 0,
+     "decimals": 1,
      "norm": {
       "type": "inverse_percentile"
      },
@@ -912,13 +974,15 @@
      "label": {
       "pl": "Oświetlenie ulic",
       "cs": "Osvětlení ulic",
-      "en": "Street lighting"
+      "en": "Street lighting",
+      "ko": "가로등"
      },
      "unit": "pct",
      "unitLabel": {
       "pl": "%",
       "cs": "%",
-      "en": "%"
+      "en": "%",
+      "ko": "%"
      },
      "decimals": 0,
      "norm": {
@@ -942,7 +1006,8 @@
    "label": {
     "pl": "Przystępne ceny",
     "cs": "Dostupné bydlení",
-    "en": "Affordability"
+    "en": "Affordability",
+    "ko": "합리적인 가격"
    },
    "runtime": null,
    "caveat": null,
@@ -959,13 +1024,15 @@
      "label": {
       "pl": "Ceny mieszkań (transakcje, 24 mies.)",
       "cs": "Ceny bytů (transakce, 24 měs.)",
-      "en": "Flat prices (transactions, 24 months)"
+      "en": "Flat prices (transactions, 24 months)",
+      "ko": "아파트 매매가 (실거래, 24개월)"
      },
      "unit": "pln_m2",
      "unitLabel": {
       "pl": "zł/m²",
       "cs": "zł/m²",
-      "en": "PLN/m²"
+      "en": "PLN/m²",
+      "ko": "PLN/m²"
      },
      "decimals": 0,
      "norm": {
@@ -987,13 +1054,15 @@
      "label": {
       "pl": "Czynsz najmu (mediana)",
       "cs": "Nájemné (medián)",
-      "en": "Rent (median)"
+      "en": "Rent (median)",
+      "ko": "월세 (중앙값)"
      },
      "unit": "czk_m2_month",
      "unitLabel": {
       "pl": "Kč/m²/mies.",
       "cs": "Kč/m²/měs.",
-      "en": "CZK/m²/month"
+      "en": "CZK/m²/month",
+      "ko": "CZK/m²/월"
      },
      "decimals": 0,
      "norm": {
@@ -1013,13 +1082,15 @@
      "label": {
       "pl": "Dyskont spożywczy",
       "cs": "Diskontní prodejna",
-      "en": "Discount grocery"
+      "en": "Discount grocery",
+      "ko": "할인 식료품점"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1045,7 +1116,8 @@
    "label": {
     "pl": "Zakupy i usługi",
     "cs": "Nákupy a služby",
-    "en": "Shops & services"
+    "en": "Shops & services",
+    "ko": "쇼핑·생활 서비스"
    },
    "runtime": null,
    "caveat": null,
@@ -1061,13 +1133,15 @@
      "label": {
       "pl": "Supermarket",
       "cs": "Supermarket",
-      "en": "Supermarket"
+      "en": "Supermarket",
+      "ko": "슈퍼마켓"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1091,13 +1165,15 @@
      "label": {
       "pl": "Apteka",
       "cs": "Lékárna",
-      "en": "Pharmacy"
+      "en": "Pharmacy",
+      "ko": "약국"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1121,13 +1197,15 @@
      "label": {
       "pl": "Poczta lub paczkomat",
       "cs": "Pošta či výdejní box",
-      "en": "Post office or parcel locker"
+      "en": "Post office or parcel locker",
+      "ko": "우체국·택배 보관함"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1151,13 +1229,15 @@
      "label": {
       "pl": "Piekarnia",
       "cs": "Pekárna",
-      "en": "Bakery"
+      "en": "Bakery",
+      "ko": "빵집"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1181,13 +1261,15 @@
      "label": {
       "pl": "Targowisko",
       "cs": "Tržnice",
-      "en": "Marketplace"
+      "en": "Marketplace",
+      "ko": "시장"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1211,13 +1293,15 @@
      "label": {
       "pl": "Bankomat",
       "cs": "Bankomat",
-      "en": "ATM"
+      "en": "ATM",
+      "ko": "ATM"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1241,13 +1325,15 @@
      "label": {
       "pl": "Sklepy w zasięgu 10 min",
       "cs": "Obchody do 10 min",
-      "en": "Shops within 10 min"
+      "en": "Shops within 10 min",
+      "ko": "도보 10분 내 상점"
      },
      "unit": "count",
      "unitLabel": {
       "pl": "",
       "cs": "",
-      "en": ""
+      "en": "",
+      "ko": ""
      },
      "decimals": 0,
      "norm": {
@@ -1271,7 +1357,8 @@
    "label": {
     "pl": "Zdrowie",
     "cs": "Zdraví",
-    "en": "Health"
+    "en": "Health",
+    "ko": "의료"
    },
    "runtime": null,
    "caveat": null,
@@ -1287,13 +1374,15 @@
      "label": {
       "pl": "Przychodnia POZ",
       "cs": "Praktický lékař",
-      "en": "GP clinic"
+      "en": "GP clinic",
+      "ko": "동네 의원"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1317,13 +1406,15 @@
      "label": {
       "pl": "Apteka",
       "cs": "Lékárna",
-      "en": "Pharmacy"
+      "en": "Pharmacy",
+      "ko": "약국"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1347,13 +1438,15 @@
      "label": {
       "pl": "Szpital z SOR",
       "cs": "Nemocnice s urgentním příjmem",
-      "en": "Hospital with ER"
+      "en": "Hospital with ER",
+      "ko": "응급실 있는 병원"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1377,13 +1470,15 @@
      "label": {
       "pl": "Porodnia",
       "cs": "Porodnice",
-      "en": "Maternity ward"
+      "en": "Maternity ward",
+      "ko": "분만 병원"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1407,13 +1502,15 @@
      "label": {
       "pl": "Ginekolog",
       "cs": "Gynekolog",
-      "en": "Gynaecologist"
+      "en": "Gynaecologist",
+      "ko": "산부인과"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1437,13 +1534,15 @@
      "label": {
       "pl": "Dentysta",
       "cs": "Zubař",
-      "en": "Dentist"
+      "en": "Dentist",
+      "ko": "치과"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1469,7 +1568,8 @@
    "label": {
     "pl": "Cisza i czyste powietrze",
     "cs": "Klid a čisté ovzduší",
-    "en": "Quiet & clean air"
+    "en": "Quiet & clean air",
+    "ko": "조용함·깨끗한 공기"
    },
    "runtime": null,
    "caveat": null,
@@ -1487,13 +1587,15 @@
      "label": {
       "pl": "Hałas (Lden)",
       "cs": "Hluk (Lden)",
-      "en": "Noise (Lden)"
+      "en": "Noise (Lden)",
+      "ko": "소음 (Lden)"
      },
      "unit": "db",
      "unitLabel": {
       "pl": "dB",
       "cs": "dB",
-      "en": "dB"
+      "en": "dB",
+      "ko": "dB"
      },
      "decimals": 0,
      "norm": {
@@ -1515,13 +1617,15 @@
      "label": {
       "pl": "Pył PM2,5",
       "cs": "Prach PM2,5",
-      "en": "PM2.5"
+      "en": "PM2.5",
+      "ko": "초미세먼지 PM2.5"
      },
      "unit": "ugm3",
      "unitLabel": {
       "pl": "µg/m³",
       "cs": "µg/m³",
-      "en": "µg/m³"
+      "en": "µg/m³",
+      "ko": "µg/m³"
      },
      "decimals": 1,
      "norm": {
@@ -1543,13 +1647,15 @@
      "label": {
       "pl": "Pył PM10",
       "cs": "Prach PM10",
-      "en": "PM10"
+      "en": "PM10",
+      "ko": "미세먼지 PM10"
      },
      "unit": "ugm3",
      "unitLabel": {
       "pl": "µg/m³",
       "cs": "µg/m³",
-      "en": "µg/m³"
+      "en": "µg/m³",
+      "ko": "µg/m³"
      },
      "decimals": 1,
      "norm": {
@@ -1571,13 +1677,15 @@
      "label": {
       "pl": "Odległość od głównej drogi",
       "cs": "Vzdálenost od hlavní silnice",
-      "en": "Distance to major road"
+      "en": "Distance to major road",
+      "ko": "간선도로까지 거리"
      },
      "unit": "m",
      "unitLabel": {
       "pl": "m",
       "cs": "m",
-      "en": "m"
+      "en": "m",
+      "ko": "m"
      },
      "decimals": 0,
      "norm": {
@@ -1601,13 +1709,15 @@
      "label": {
       "pl": "Tereny przemysłowe (1 km)",
       "cs": "Průmyslové plochy (1 km)",
-      "en": "Industrial land (1 km)"
+      "en": "Industrial land (1 km)",
+      "ko": "산업 용지 (1 km)"
      },
      "unit": "ha",
      "unitLabel": {
       "pl": "ha",
       "cs": "ha",
-      "en": "ha"
+      "en": "ha",
+      "ko": "ha"
      },
      "decimals": 0,
      "norm": {
@@ -1631,7 +1741,8 @@
    "label": {
     "pl": "Kultura, sport i gastronomia",
     "cs": "Kultura, sport a gastronomie",
-    "en": "Culture, sport & food"
+    "en": "Culture, sport & food",
+    "ko": "문화·스포츠·음식"
    },
    "runtime": null,
    "caveat": null,
@@ -1648,13 +1759,15 @@
      "label": {
       "pl": "Restauracje i kawiarnie (10 min)",
       "cs": "Restaurace a kavárny (10 min)",
-      "en": "Restaurants & cafés (10 min)"
+      "en": "Restaurants & cafés (10 min)",
+      "ko": "레스토랑·카페 (10분)"
      },
      "unit": "count",
      "unitLabel": {
       "pl": "",
       "cs": "",
-      "en": ""
+      "en": "",
+      "ko": ""
      },
      "decimals": 0,
      "norm": {
@@ -1676,13 +1789,15 @@
      "label": {
       "pl": "Kultura (teatr, kino, muzeum)",
       "cs": "Kultura (divadlo, kino, muzeum)",
-      "en": "Culture (theatre, cinema, museum)"
+      "en": "Culture (theatre, cinema, museum)",
+      "ko": "문화 시설 (극장, 영화관, 박물관)"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1706,13 +1821,15 @@
      "label": {
       "pl": "Sport i siłownia",
       "cs": "Sport a posilovna",
-      "en": "Sports & gym"
+      "en": "Sports & gym",
+      "ko": "스포츠·헬스장"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1736,13 +1853,15 @@
      "label": {
       "pl": "Życie nocne (10 min)",
       "cs": "Noční život (10 min)",
-      "en": "Nightlife (10 min)"
+      "en": "Nightlife (10 min)",
+      "ko": "나이트라이프 (10분)"
      },
      "unit": "count",
      "unitLabel": {
       "pl": "",
       "cs": "",
-      "en": ""
+      "en": "",
+      "ko": ""
      },
      "decimals": 0,
      "norm": {
@@ -1764,13 +1883,15 @@
      "label": {
       "pl": "Park (≥ 2 ha)",
       "cs": "Park (≥ 2 ha)",
-      "en": "Park (≥ 2 ha)"
+      "en": "Park (≥ 2 ha)",
+      "ko": "공원 (≥ 2 ha)"
      },
      "unit": "min",
      "unitLabel": {
       "pl": "min",
       "cs": "min",
-      "en": "min"
+      "en": "min",
+      "ko": "분"
      },
      "decimals": 0,
      "norm": {
@@ -1797,7 +1918,8 @@
    "label": {
     "pl": "Dostępność",
     "cs": "Bezbariérovost",
-    "en": "Accessibility"
+    "en": "Accessibility",
+    "ko": "무장애 접근성"
    },
    "runtime": null,
    "caveat": null,
@@ -1815,13 +1937,15 @@
      "label": {
       "pl": "Przystanki bez barier (500 m)",
       "cs": "Bezbariérové zastávky (500 m)",
-      "en": "Step-free stops (500 m)"
+      "en": "Step-free stops (500 m)",
+      "ko": "계단 없는 정류장 (500 m)"
      },
      "unit": "pct",
      "unitLabel": {
       "pl": "%",
       "cs": "%",
-      "en": "%"
+      "en": "%",
+      "ko": "%"
      },
      "decimals": 0,
      "norm": {
@@ -1845,13 +1969,15 @@
      "label": {
       "pl": "Kursy niskopodłogowe (500 m)",
       "cs": "Nízkopodlažní spoje (500 m)",
-      "en": "Low-floor trips (500 m)"
+      "en": "Low-floor trips (500 m)",
+      "ko": "저상 차량 운행 (500 m)"
      },
      "unit": "pct",
      "unitLabel": {
       "pl": "%",
       "cs": "%",
-      "en": "%"
+      "en": "%",
+      "ko": "%"
      },
      "decimals": 0,
      "norm": {
@@ -1875,13 +2001,15 @@
      "label": {
       "pl": "Ławki (300 m)",
       "cs": "Lavičky (300 m)",
-      "en": "Benches (300 m)"
+      "en": "Benches (300 m)",
+      "ko": "벤치 (300 m)"
      },
      "unit": "count",
      "unitLabel": {
       "pl": "",
       "cs": "",
-      "en": ""
+      "en": "",
+      "ko": ""
      },
      "decimals": 0,
      "norm": {
@@ -1903,13 +2031,15 @@
      "label": {
       "pl": "Nachylenie terenu",
       "cs": "Sklon terénu",
-      "en": "Terrain slope"
+      "en": "Terrain slope",
+      "ko": "지형 경사"
      },
      "unit": "pct",
      "unitLabel": {
       "pl": "%",
       "cs": "%",
-      "en": "%"
+      "en": "%",
+      "ko": "%"
      },
      "decimals": 1,
      "norm": {
@@ -1937,7 +2067,8 @@
    "label": {
     "pl": "Student/ka",
     "cs": "Student/ka",
-    "en": "Student"
+    "en": "Student",
+    "ko": "학생"
    },
    "weights": {
     "commute": 5,
@@ -1970,7 +2101,8 @@
      "label": {
       "pl": "Moja uczelnia",
       "cs": "Moje škola/univerzita",
-      "en": "My university"
+      "en": "My university",
+      "ko": "내 대학교"
      },
      "mode": "transit",
      "level": 5,
@@ -1984,7 +2116,8 @@
    "label": {
     "pl": "Pracuję",
     "cs": "Pracuji",
-    "en": "Working"
+    "en": "Working",
+    "ko": "직장인"
    },
    "weights": {
     "commute": 5,
@@ -2009,7 +2142,8 @@
      "label": {
       "pl": "Praca",
       "cs": "Práce",
-      "en": "Work"
+      "en": "Work",
+      "ko": "직장"
      },
      "mode": "transit",
      "level": 5
@@ -2022,7 +2156,8 @@
    "label": {
     "pl": "Rodzic",
     "cs": "Rodič",
-    "en": "Parent"
+    "en": "Parent",
+    "ko": "부모"
    },
    "weights": {
     "commute": 3,
@@ -2055,7 +2190,8 @@
      "label": {
       "pl": "Praca",
       "cs": "Práce",
-      "en": "Work"
+      "en": "Work",
+      "ko": "직장"
      },
      "mode": "transit",
      "level": 4
@@ -2065,7 +2201,8 @@
      "label": {
       "pl": "Szkoła dziecka",
       "cs": "Škola dítěte",
-      "en": "Child's school"
+      "en": "Child's school",
+      "ko": "아이 학교"
      },
      "mode": "walk",
      "level": 4,
@@ -2079,7 +2216,8 @@
    "label": {
     "pl": "W ciąży",
     "cs": "Těhotná",
-    "en": "Expecting"
+    "en": "Expecting",
+    "ko": "임신 중"
    },
    "weights": {
     "commute": 3,
@@ -2121,7 +2259,8 @@
      "label": {
       "pl": "Praca",
       "cs": "Práce",
-      "en": "Work"
+      "en": "Work",
+      "ko": "직장"
      },
      "mode": "transit",
      "level": 3
@@ -2134,7 +2273,8 @@
    "label": {
     "pl": "Senior/ka",
     "cs": "Senior/ka",
-    "en": "Senior"
+    "en": "Senior",
+    "ko": "시니어"
    },
    "weights": {
     "commute": 1,
@@ -2175,7 +2315,8 @@
      "label": {
       "pl": "Rodzina",
       "cs": "Rodina",
-      "en": "Family"
+      "en": "Family",
+      "ko": "가족"
      },
      "mode": "transit",
      "level": 3
@@ -2188,7 +2329,8 @@
    "label": {
     "pl": "Przeprowadzam się",
     "cs": "Stěhuju se",
-    "en": "Relocating"
+    "en": "Relocating",
+    "ko": "이주 예정"
    },
    "weights": {
     "commute": 4,
@@ -2213,7 +2355,8 @@
      "label": {
       "pl": "Praca",
       "cs": "Práce",
-      "en": "Work"
+      "en": "Work",
+      "ko": "직장"
      },
      "mode": "transit",
      "level": 5
@@ -2226,7 +2369,8 @@
    "label": {
     "pl": "Własny profil",
     "cs": "Vlastní profil",
-    "en": "Custom"
+    "en": "Custom",
+    "ko": "직접 설정"
    },
    "weights": {
     "commute": 3,
@@ -2255,7 +2399,8 @@
    "label": {
     "pl": "Żłobek",
     "cs": "Jesle",
-    "en": "Nursery"
+    "en": "Nursery",
+    "ko": "어린이집"
    },
    "available": true
   },
@@ -2265,7 +2410,8 @@
    "label": {
     "pl": "Przedszkole",
     "cs": "Mateřská škola",
-    "en": "Kindergarten"
+    "en": "Kindergarten",
+    "ko": "유치원"
    },
    "available": true
   },
@@ -2275,7 +2421,8 @@
    "label": {
     "pl": "Szkoła podstawowa",
     "cs": "Základní škola",
-    "en": "Primary school"
+    "en": "Primary school",
+    "ko": "초등학교"
    },
    "available": true
   },
@@ -2285,7 +2432,8 @@
    "label": {
     "pl": "Przystanek tramwajowy",
     "cs": "Tramvajová zastávka",
-    "en": "Tram stop"
+    "en": "Tram stop",
+    "ko": "트램 정류장"
    },
    "available": true
   },
@@ -2295,7 +2443,8 @@
    "label": {
     "pl": "Stacja metra",
     "cs": "Stanice metra",
-    "en": "Metro station"
+    "en": "Metro station",
+    "ko": "지하철역"
    },
    "available": false
   },
@@ -2305,7 +2454,8 @@
    "label": {
     "pl": "Stacja kolejowa",
     "cs": "Železniční stanice",
-    "en": "Rail station"
+    "en": "Rail station",
+    "ko": "기차역"
    },
    "available": true
   },
@@ -2315,7 +2465,8 @@
    "label": {
     "pl": "Park",
     "cs": "Park",
-    "en": "Park"
+    "en": "Park",
+    "ko": "공원"
    },
    "available": true
   },
@@ -2325,7 +2476,8 @@
    "label": {
     "pl": "Apteka",
     "cs": "Lékárna",
-    "en": "Pharmacy"
+    "en": "Pharmacy",
+    "ko": "약국"
    },
    "available": true
   },
@@ -2335,7 +2487,8 @@
    "label": {
     "pl": "Przychodnia",
     "cs": "Praktický lékař",
-    "en": "GP clinic"
+    "en": "GP clinic",
+    "ko": "동네 의원"
    },
    "available": true
   },
@@ -2345,7 +2498,8 @@
    "label": {
     "pl": "Supermarket",
     "cs": "Supermarket",
-    "en": "Supermarket"
+    "en": "Supermarket",
+    "ko": "슈퍼마켓"
    },
    "available": true
   },
@@ -2355,7 +2509,8 @@
    "label": {
     "pl": "Porodnia",
     "cs": "Porodnice",
-    "en": "Maternity ward"
+    "en": "Maternity ward",
+    "ko": "분만 병원"
    },
    "available": true
   }
@@ -2401,7 +2556,8 @@
    "label": {
     "pl": "Komunikacja",
     "cs": "MHD",
-    "en": "Transit"
+    "en": "Transit",
+    "ko": "대중교통"
    }
   },
   {
@@ -2410,7 +2566,8 @@
    "label": {
     "pl": "Rower",
     "cs": "Kolo",
-    "en": "Bike"
+    "en": "Bike",
+    "ko": "자전거"
    }
   },
   {
@@ -2419,7 +2576,8 @@
    "label": {
     "pl": "Pieszo",
     "cs": "Pěšky",
-    "en": "Walk"
+    "en": "Walk",
+    "ko": "도보"
    }
   }
  ],
@@ -2430,7 +2588,8 @@
   "unit": {
    "pl": "zł/m²",
    "cs": "zł/m²",
-   "en": "PLN/m²"
+   "en": "PLN/m²",
+   "ko": "PLN/m²"
   },
   "filterField": "maxPricePerM2",
   "budgetField": "total",
@@ -2443,7 +2602,8 @@
    "label": {
     "pl": "Dzielnica",
     "cs": "Čtvrť",
-    "en": "District"
+    "en": "District",
+    "ko": "구"
    },
    "count": 18
   },
@@ -2451,7 +2611,8 @@
    "label": {
     "pl": "Okolica",
     "cs": "Okolí",
-    "en": "Area"
+    "en": "Area",
+    "ko": "지역"
    },
    "count": null
   }

@@ -1,9 +1,11 @@
 """Every endpoint's response validates against contracts/openapi.yaml (B DoD: OpenAPI matches the contract)."""
+import re
+
 import pytest
 import yaml
 from validate_fixtures import check
 
-from app.config import REPO_DIR
+from app.config import LANGS, REPO_DIR
 from app.models import encode_state
 from conftest import persona_request
 
@@ -30,6 +32,29 @@ def test_health_and_cities(client):
 @pytest.mark.parametrize("city", CITIES)
 def test_meta(client, city):
     ok("meta", client.get(f"/api/{city}/meta?lang=en"), "Meta")
+
+
+def test_config_texts_cover_every_language():
+    """Every text in config/*.yaml has all LANGS, each with the same {{variables}}."""
+    var = re.compile(r"\{\{\s*(\w+)")
+    errors = []
+
+    def walk(node, path):
+        if isinstance(node, dict):
+            if isinstance(node.get("en"), str):
+                if set(node) != set(LANGS):
+                    errors.append(f"{path}: languages {sorted(node)}")
+                elif len({tuple(sorted(var.findall(node[lang]))) for lang in LANGS}) > 1:
+                    errors.append(f"{path}: variables differ")
+            for k, v in node.items():
+                walk(v, f"{path}.{k}")
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                walk(v, f"{path}[{i}]")
+
+    for f in [REPO_DIR / "config/indicators.yaml", *sorted((REPO_DIR / "config/cities").glob("*.yaml"))]:
+        walk(yaml.safe_load(f.read_text(encoding="utf-8")), f.name)
+    assert not errors, "\n".join(errors)
 
 
 @pytest.mark.parametrize("city", CITIES)

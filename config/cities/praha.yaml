@@ -1,6 +1,6 @@
 # Praha. Shape identical to krakow.yaml (README §7.1). Owner: Workstream B.
 id: praha
-name: {pl: "Praga", cs: "Praha", en: "Prague"}
+name: {pl: "Praga", cs: "Praha", en: "Prague", ko: "프라하"}
 country: CZ
 defaultLang: cs
 currency: CZK
@@ -16,13 +16,13 @@ habitableMinAddresses: 3
 h3Resolution: 9
 commuteDestResolution: 8
 levels:
-  district:     {source: ipr_mestske_casti,     count: 57, label: {pl: "Dzielnica", cs: "Městská část",      en: "District"}}
-  neighborhood: {source: ipr_katastralni_uzemi, count: 112, label: {pl: "Okolica", cs: "Katastrální území", en: "Area"}}
+  district:     {source: ipr_mestske_casti,     count: 57, label: {pl: "Dzielnica", cs: "Městská část",      en: "District", ko: "구"}}
+  neighborhood: {source: ipr_katastralni_uzemi, count: 112, label: {pl: "Okolica", cs: "Katastrální území", en: "Area", ko: "지역"}}
 price:
   indicator: rent_per_m2
   column: price.rent_per_m2
   mode: rent
-  unit: {pl: "Kč/m²/mies.", cs: "Kč/m²/měs.", en: "CZK/m²/month"}
+  unit: {pl: "Kč/m²/mies.", cs: "Kč/m²/měs.", en: "CZK/m²/month", ko: "CZK/m²/월"}
   filterField: maxRentPerM2         # ScoreRequest.filters.<filterField>
   budgetField: monthlyRent          # ScoreRequest.budget.<budgetField> (CZK/month) → budgetM2 = monthlyRent / price
 adapters: [ruian_addresses, ipr_admin, msmt_schools, nrpzs_health, chmi_air, ipr_noise, police_cz, mf_rent, golemio_pois]
@@ -31,7 +31,7 @@ live:
   departures: golemio_pid
 indicatorOverrides:
   "transit.rail_station_walk_min":
-    label:   {pl: "Metro lub pociąg", cs: "Metro nebo vlak", en: "Metro or train"}
-    explain: {pl: "Metro/pociąg {{value}} min pieszo", cs: "Metro/vlak {{value}} min pěšky", en: "Metro/train {{value}} min walk"}
+    label:   {pl: "Metro lub pociąg", cs: "Metro nebo vlak", en: "Metro or train", ko: "지하철 또는 기차"}
+    explain: {pl: "Metro/pociąg {{value}} min pieszo", cs: "Metro/vlak {{value}} min pěšky", en: "Metro/train {{value}} min walk", ko: "지하철·기차 도보 {{value}}분"}
   "environment.noise_db":
-    label:   {pl: "Hałas (LAeq)", cs: "Hluk (LAeq)", en: "Noise (LAeq)"}
+    label:   {pl: "Hałas (LAeq)", cs: "Hluk (LAeq)", en: "Noise (LAeq)", ko: "소음 (LAeq)"}

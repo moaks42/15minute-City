@@ -270,7 +270,7 @@ export interface components {
             };
         };
         /** @enum {string} */
-        Lang: "pl" | "cs" | "en";
+        Lang: "pl" | "cs" | "en" | "ko";
         /** @enum {string} */
         CityId: "krakow" | "praha";
         /** @enum {string} */
@@ -291,6 +291,7 @@ export interface components {
             pl: string;
             cs: string;
             en: string;
+            ko: string;
         };
         LatLon: {
             lat: number;

@@ -1,0 +1,387 @@
+{
+  "app": {
+    "name": "Kompas",
+    "tagline": "내 삶에 맞는 동네를 찾아보세요.",
+    "taglineCity": "{{city}} 내 삶에 맞는 곳을 찾아보세요.",
+    "dataMode": {
+      "fixtures": "데모 데이터",
+      "fixturesHint": "이 화면은 실제 측정값이 아닌 샘플 데이터를 사용합니다.",
+      "static": "오프라인 모드",
+      "staticHint": "엔진에 연결할 수 없습니다. 점수는 브라우저에서 계산되며, 통근 시간, 쌍둥이 동네, 실시간 데이터는 꺼져 있습니다."
+    },
+    "privacy": "로그인, 쿠키, 추적이 없습니다. 선택한 모든 내용은 링크에만 담깁니다."
+  },
+  "nav": {
+    "collapsePrefs": "선호 조건 숨기기",
+    "expandPrefs": "선호 조건 보기",
+    "collapseResults": "결과 숨기기",
+    "expandResults": "결과 패널 보기",
+    "about": "데이터 정보",
+    "share": "공유",
+    "shareCopied": "링크가 복사되었습니다",
+    "shareFailed": "이 링크를 복사하세요:",
+    "language": "언어",
+    "city": "도시",
+    "switchCity": "도시 변경",
+    "back": "뒤로",
+    "next": "다음",
+    "skip": "건너뛰기",
+    "showResults": "결과 보기",
+    "editPreferences": "선호 조건 수정",
+    "close": "닫기",
+    "home": "처음부터 다시",
+    "filters": "선호 조건",
+    "results": "결과",
+    "map": "지도"
+  },
+  "cities": {
+    "krakow": "크라쿠프",
+    "praha": "프라하",
+    "in": {
+      "krakow": "크라쿠프에서",
+      "praha": "프라하에서"
+    },
+    "cardHint": {
+      "krakow": "18개 구 · ZTP 트램과 버스 · 매매 가격",
+      "praha": "57개 구 · PID 지하철, 트램, 버스 · 월세"
+    }
+  },
+  "steps": {
+    "progress": "{{n}}/{{total}} 단계",
+    "city": {
+      "title": "어느 도시인가요?",
+      "lead": "도시를 선택하세요. 언제든 바꿀 수 있고 설정은 그대로 유지됩니다."
+    },
+    "persona": {
+      "title": "어떤 분이신가요?",
+      "lead": "가장 가까운 프로필을 고르세요. 보통 중요한 항목이 미리 채워지며, 모두 바꿀 수 있습니다."
+    },
+    "criteria": {
+      "title": "무엇이 중요하신가요?",
+      "lead": "각 주제를 이모지로 평가하세요. 관심 없는 주제는 건너뛰세요."
+    },
+    "places": {
+      "title": "나의 장소와 조건",
+      "lead": "선택 사항입니다. 자주 가는 장소를 추가하고 필수 조건을 설정하세요."
+    }
+  },
+  "levels": {
+    "0": "건너뛰기",
+    "1": "거의 상관없음",
+    "2": "있으면 좋음",
+    "3": "중요",
+    "4": "매우 중요",
+    "5": "필수",
+    "groupLabel": "{{criterion}} 중요도"
+  },
+  "criteria": {
+    "commute": "내 장소까지 통근",
+    "transit": "대중교통",
+    "active": "자전거·도보",
+    "green": "녹지",
+    "education": "교육",
+    "family": "가족·아이",
+    "safety": "안전",
+    "price": "합리적인 가격",
+    "shops": "쇼핑·생활 서비스",
+    "health": "의료",
+    "environment": "조용함·깨끗한 공기",
+    "leisure": "문화·스포츠·음식",
+    "accessibility": "무장애 접근성",
+    "hint": {
+      "commute": "다음 단계에서 추가할 장소까지 출발부터 도착까지 걸리는 시간.",
+      "transit": "가장 가까운 정류장, 시간당 출발 횟수, 지하철역과 기차역, 심야 노선.",
+      "active": "자전거 도로, 걷기 좋은 거리, 자전거 거치대.",
+      "green": "주변 녹지 비율과 큰 공원까지 걷는 거리.",
+      "education": "어린이집, 유치원, 학교, 대학교, 도서관.",
+      "family": "놀이터, 소아과, 수영장과 어린이 스포츠.",
+      "safety": "구별 신고 사건 수와 가로등.",
+      "price": "도시의 다른 지역과 비교한 이 지역의 가격 수준.",
+      "shops": "슈퍼마켓, 약국, 우체국과 택배 보관함.",
+      "health": "동네 의원, 약국, 병원, 치과.",
+      "environment": "교통 소음과 대기 오염.",
+      "leisure": "레스토랑, 카페, 문화, 스포츠.",
+      "accessibility": "계단 없는 정류장과 차량, 벤치."
+    },
+    "beta": "베타",
+    "betaHint": "이 도시는 데이터가 부족합니다. 이 기준은 반영 비중이 낮고 따로 표시됩니다.",
+    "noData": "데이터 없음",
+    "equalHint": "평가한 모든 주제의 중요도가 같아 균형 잡힌 개요가 표시됩니다. 순위는 수준 자체가 아니라 주제 간 차이에 따라서만 달라집니다. 일부를 높이거나 낮춰 나만의 순위를 만들어 보세요.",
+    "noneHint": "모든 주제를 건너뛰었습니다. 순위를 보려면 하나 이상 평가하세요."
+  },
+  "personas": {
+    "student": "학생",
+    "working": "직장인",
+    "parent": "부모",
+    "expecting": "임신 중",
+    "senior": "시니어",
+    "expat": "이주 예정",
+    "custom": "직접 설정",
+    "desc": {
+      "student": "캠퍼스까지 빠른 교통, 낮은 물가, 활기찬 저녁.",
+      "working": "짧은 통근, 오가는 길의 상점, 약간의 녹지.",
+      "parent": "학교, 놀이터, 공원, 조용하고 안전한 거리.",
+      "expecting": "가까운 병원과 분만 병원, 조용함, 깨끗한 공기, 짧은 산책.",
+      "senior": "걸어서 갈 수 있는 병원과 상점, 벤치, 계단 없는 대중교통.",
+      "expat": "크라쿠프와 프라하 사이에서 이사해요 – 지금 사는 곳과 비슷한 동네를 찾고 싶어요.",
+      "custom": "중립 상태에서 시작해 모두 직접 설정하세요."
+    }
+  },
+  "places": {
+    "sectionCount": "설정됨: {{count}}",
+    "anchors": "나의 장소",
+    "anchorsHint": "자주 가는 장소를 최대 3곳까지 추가하세요.",
+    "name": "이름",
+    "address": "주소",
+    "nameOptional": "이름(선택), 예: {{example}}",
+    "exampleName": "직장",
+    "changeAddress": "변경",
+    "addressUnknown": "지도 위의 지점",
+    "addAnchor": "장소 추가",
+    "removeAnchor": "{{label}} 삭제",
+    "searchPlaceholder": "주소나 지역 검색…",
+    "searchNoResults": "결과가 없습니다. 거리나 지역 이름으로 검색해 보세요.",
+    "searching": "검색 중…",
+    "labelPlaceholder": "이름, 예: 직장",
+    "mode": "이동 수단",
+    "modes": {
+      "transit": "대중교통",
+      "bike": "자전거",
+      "walk": "도보"
+    },
+    "importance": "중요도",
+    "maxMinutes": "최대",
+    "noLimit": "제한 없음",
+    "limits": "필수 조건",
+    "budget": {
+      "buy": "구매 예산(총액)",
+      "rent": "월세 예산",
+      "hint": "장소마다 몇 m²를 얻을 수 있는지 보여 드립니다."
+    },
+    "maxPrice": {
+      "buy": "m²당 최대 가격",
+      "rent": "m²당 최대 월세"
+    },
+    "maxNoise": "최대 소음",
+    "mustHave": "걸어서 갈 수 있는 거리에 꼭 있어야 할 곳",
+    "addMustHave": "필수 시설 추가",
+    "walkMinutes_other": "도보 {{count}}분 이내",
+    "categories": {
+      "nursery": "어린이집",
+      "kindergarten": "유치원",
+      "primary_school": "초등학교",
+      "tram_stop": "트램 정류장",
+      "metro_station": "지하철역",
+      "park": "공원",
+      "pharmacy": "약국",
+      "gp_clinic": "동네 의원",
+      "supermarket": "슈퍼마켓",
+      "maternity_ward": "분만 병원"
+    }
+  },
+  "prefs": {
+    "none": "없음"
+  },
+  "results": {
+    "tabs": {
+      "places": "장소",
+      "districts": "구"
+    },
+    "passing_other": "조건을 충족하는 장소 {{count}}곳",
+    "computed": "{{ms}}ms 만에 계산",
+    "match": "일치",
+    "matchPct": "{{pct}}% 일치",
+    "rank": "{{rank}}위",
+    "loading": "나에게 맞는 곳을 찾는 중…",
+    "error": "결과를 불러오는 중 문제가 발생했습니다.",
+    "retry": "다시 시도",
+    "empty": "모든 조건을 충족하는 장소가 없습니다.",
+    "relaxAction": "이 조건 제거",
+    "highlights": "잘 맞는 이유",
+    "warning": "주의할 점",
+    "compare": "비교",
+    "compareN": "비교 ({{count}})",
+    "compareLimit": "최대 3곳까지 비교할 수 있습니다",
+    "sharePassing": "구의 {{pct}}%가 조건 충족",
+    "budgetM2": "내 예산으로 약 {{m2}} m²",
+    "noDistricts": "아직 구 데이터가 없습니다.",
+    "openDetail": "{{name}} 상세 보기",
+    "noPrefs": {
+      "title": "아직 순위를 매길 기준이 없습니다",
+      "body": "모든 주제를 건너뛰었습니다(통근은 장소를 추가해야 반영됩니다). 순위를 보려면 하나 이상의 주제를 평가하세요.",
+      "action": "주제 평가하기"
+    },
+    "sortedBy": "정렬 기준:",
+    "sortMatch": "내 선호도와의 일치도",
+    "sortCommute": "{{place}}까지 이동 시간",
+    "sortReset": "다시 일치도순으로 정렬"
+  },
+  "saved": {
+    "save": "저장",
+    "saved": "저장됨",
+    "tab": "저장됨",
+    "empty": "아직 저장한 곳이 없습니다 – 장소의 북마크를 눌러 보세요.",
+    "remove": "저장 목록에서 {{name}} 삭제",
+    "open": "{{name}} 열기",
+    "district": "구"
+  },
+  "expat": {
+    "title": "지금 {{in}} 어디에 사시나요?",
+    "lead": "현재 주소를 입력하시면 {{in}} 일상 분위기가 비슷한 곳을 찾아 드립니다.",
+    "placeholder": "현재 사는 거리나 주소",
+    "loading": "비슷한 곳을 찾는 중…",
+    "error": "비슷한 곳을 불러오지 못했습니다.",
+    "empty": "비슷한 곳을 찾지 못했습니다. 다른 주소를 입력해 보세요.",
+    "show": "지도에서 보기",
+    "from": "기준: {{name}}",
+    "unavailable": "도시 간 비교에는 실시간 엔진이 필요합니다.",
+    "change": "주소 변경"
+  },
+  "map": {
+    "modes": {
+      "label": "지도 표시",
+      "match": "일치 %",
+      "commute": "이동 시간",
+      "criterion": "기준 하나"
+    },
+    "legend": {
+      "title": "범례",
+      "match": "내 선호도와의 일치도",
+      "commute": "{{place}}까지 이동 시간",
+      "criterion": "{{criterion}} 점수",
+      "low": "낮음",
+      "high": "높음",
+      "failing": "조건 밖",
+      "uninhabited": "주거지 없음",
+      "top": "상위 10",
+      "anchor": "나의 장소",
+      "relative": "색상은 도시의 장소를 같은 크기의 7개 그룹으로 나눕니다. 숫자는 그룹 경계의 점수입니다.",
+      "noPrefs": "아직 평가한 주제가 없어 보여 줄 일치도가 없습니다. 하나 이상의 주제를 평가하세요.",
+      "districtLine": "구 경계"
+    },
+    "commuteAsk": "어디로 이동하시나요?",
+    "commuteTo": "목적지",
+    "onMap": "지도에서",
+    "minutes": "{{count}}분",
+    "over60": "> 60분",
+    "loading": "지도를 불러오는 중…",
+    "error": "지도를 불러오지 못했습니다."
+  },
+  "mapUi": {
+    "searchPlaceholder": "주소나 장소 검색…",
+    "openSearch": "주소 검색",
+    "closeSearch": "검색 닫기",
+    "nearest": "이곳에는 사는 사람이 없습니다 – 가장 가까운 장소를 표시합니다",
+    "noneNearby": "이곳에는 사는 사람이 없고 주변에도 주거지가 없습니다",
+    "outside": "이 주소는 도시 지도 밖에 있습니다",
+    "hover": {
+      "match": "{{value}}% 일치",
+      "commute": "{{place}}까지 {{time}}",
+      "failing": "조건 밖",
+      "criterion": "{{criterion}} {{value}}/100",
+      "uninhabited": "사는 사람 없음",
+      "noData": "데이터 없음",
+      "district": "구 전체: {{value}}"
+    }
+  },
+  "detail": {
+    "title": "장소 상세",
+    "radar": "도시 중앙값과 비교",
+    "thisPlace": "이 장소",
+    "cityMedian": "도시 중앙값",
+    "indicators": "측정한 항목",
+    "nearest": "가장 가까운 곳",
+    "walk_other": "도보 {{count}}분",
+    "commute": "통근",
+    "budget": "내 예산으로",
+    "budgetM2": "약 {{m2}} m²",
+    "budgetNone": "선호 조건에서 예산을 설정하면 볼 수 있습니다.",
+    "price": "지역 가격",
+    "archetype": "동네 유형",
+    "archetypeHint": "두 도시의 비지도 군집으로 학습한 작은 신경망이 지정합니다. 참고용입니다.",
+    "probability": "확률 {{pct}}%",
+    "air": "현재 대기질",
+    "airUnavailable": "실시간 대기 데이터를 사용할 수 없습니다.",
+    "airLevels": {
+      "very_good": "매우 좋음",
+      "good": "좋음",
+      "moderate": "보통",
+      "sufficient": "다소 나쁨",
+      "bad": "나쁨",
+      "very_bad": "매우 나쁨"
+    },
+    "pm25": "PM2.5",
+    "similar": "이 도시의 비슷한 장소",
+    "twins": "쌍둥이 동네",
+    "twinsLead": "{{city}} 찾은, 일상 분위기가 비슷한 곳.",
+    "twinsOpen": "{{city}}에서 보기",
+    "similarity": "{{pct}}% 유사",
+    "imputed": "추정값: 이곳은 데이터가 없어 도시 중앙값을 사용했습니다.",
+    "loading": "상세 정보를 불러오는 중…",
+    "error": "상세 정보를 불러오지 못했습니다.",
+    "districtTitle": "구",
+    "thisDistrict": "이 구",
+    "districtBest": "이 구의 추천 장소",
+    "districtNoMatch": "이 구에는 조건을 충족하는 장소가 없습니다.",
+    "districtAvgNote": "수치는 구 안의 모든 거주 장소의 평균이며, 인구로 가중했습니다.",
+    "districtMedian": "구 내 장소들의 이동 시간 중앙값"
+  },
+  "compare": {
+    "title": "장소 비교",
+    "empty": "2–3곳에서 ‘비교’를 선택하세요.",
+    "clear": "지우기",
+    "criterion": "기준"
+  },
+  "about": {
+    "title": "데이터 정보",
+    "lead": "Kompas의 모든 숫자는 공공 데이터에서 나옵니다. 출처와 함께, 이 데이터로 알 수 없는 것도 알려 드립니다.",
+    "sources": "{{city}} 데이터 출처",
+    "table": {
+      "source": "출처",
+      "licence": "라이선스",
+      "fetched": "수집일",
+      "status": "상태",
+      "rows": "행 수"
+    },
+    "status": {
+      "ok": "정상",
+      "fallback": "대체",
+      "missing": "없음"
+    },
+    "methodTitle": "일치도 계산 방법",
+    "method": [
+      "도시를 약 0.1 km² 크기의 육각형(H3, 해상도 9)으로 나눕니다. 각 육각형마다 가장 가까운 정류장까지 걷는 시간, 시간당 출발 횟수, 녹지 비율, 소음(dB), m²당 지역 가격 같은 지표를 계산합니다.",
+      "각 지표는 같은 도시 안에서 비교해 0–100점으로 바꿉니다. 따라서 일치도 80%는 ‘이 도시 안에서 나에게 잘 맞는다’는 뜻입니다.",
+      "선택한 이모지가 가중치를 정합니다: 😐 1, 🙂 2, 😊 3, 😍 5, 🤩 8. 일치도는 기준들의 가중 평균입니다. 필수 조건은 점수를 낮추는 대신 장소를 결과에서 제외합니다.",
+      "동네 유형은 두 도시를 함께 군집화해서 만들고, 작은 신경망이 각 장소에 유형과 확률을 지정합니다. 쌍둥이 동네는 다른 도시에서 가장 비슷한 장소로, 두 도시에서 비교 가능한 측정값(걷는 시간, 주변 출발 횟수와 시설 수, 녹지 비율)만 사용합니다. 나라마다 측정 방식이 다른 소음, 대기질, 가격은 제외합니다."
+    ],
+    "safetyTitle": "안전에 관하여",
+    "safety": "안전은 구 단위로만 표시하며, 경찰에 신고된 주민 1,000명당 사건 수를 기준으로 합니다. 신고된 사건 수는 체감 안전도와 같지 않습니다. 방문객이 많은 번화한 도심일수록 신고 건수가 많습니다.",
+    "limitsTitle": "한계",
+    "limits": [
+      "크라쿠프에는 공식 월세 데이터가, 프라하에는 공식 매매가 데이터가 없습니다. 크라쿠프 가격은 매매 실거래가(RCN)이고, 프라하 가격은 월세(체코 재무부 임대료 지도)입니다.",
+      "데이터가 없는 곳은 도시 중앙값을 사용하고 추정값으로 표시합니다.",
+      "이동 시간은 실시간 교통이 아니라 평일 아침 기준으로 모델링한 값입니다.",
+      "프라하 범죄 데이터는 비상업적 용도로만 사용할 수 있습니다."
+    ],
+    "attribution": "데이터 및 지도 출처",
+    "back": "지도로 돌아가기"
+  },
+  "footer": {
+    "attribution": "지도 © OpenStreetMap 기여자 · OpenFreeMap",
+    "sources": "데이터: {{sources}}",
+    "team": "HackYeah 2026에서 제작"
+  },
+  "units": {
+    "min_other": "{{count}}분",
+    "departures_other": "시간당 {{count}}회 출발",
+    "places_other": "{{count}}곳",
+    "m2": "{{count}} m²"
+  },
+  "states": {
+    "loading": "불러오는 중…",
+    "error": "문제가 발생했습니다.",
+    "retry": "다시 시도",
+    "offline": "오프라인 상태입니다."
+  }
+}

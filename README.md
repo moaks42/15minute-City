@@ -40,7 +40,7 @@ You get your first ranking in about three clicks.
 
 - **Personal, not generic.** Most "best neighbourhood" lists are the same for everyone. Kompas ranks for *your* priorities.
 - **Explainable.** Every score breaks down into real values from open data, with the source and date. Missing data is labelled, never invented.
-- **Two cities, two countries, three languages.** The UI works fully in Polish, Czech and English with either city, which helps anyone moving between Kraków and Prague.
+- **Two cities, two countries, four languages.** The UI works fully in Polish, Czech, English and Korean with either city, which helps anyone moving between Kraków and Prague.
 - **Private by design.** No login, no cookies, no tracking. Your choices live only in the page link, which you can share.
 - **Reusable.** Any city with OpenStreetMap data and public-transport timetables (GTFS) can be added with a config file and a few data adapters.
 

@@ -35,7 +35,7 @@ export function CityPicker() {
         <LangSwitch />
       </div>
       <main className="mx-auto max-w-4xl px-4 pb-16 pt-6 sm:px-6 sm:pt-14">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Kraków · Praha</p>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">{CITY_IDS.map((c) => t(`cities.${c}`)).join(' · ')}</p>
         <h1 className="max-w-2xl font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-6xl">{t('app.tagline')}</h1>
         <p className="mt-5 max-w-xl text-lg text-ink-2">{t('app.privacy')}</p>
 

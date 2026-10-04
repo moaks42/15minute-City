@@ -113,7 +113,7 @@ def test_determinism(state, city):
 
 
 @pytest.mark.parametrize("city", CITIES)
-@pytest.mark.parametrize("lang", ["pl", "cs", "en"])
+@pytest.mark.parametrize("lang", ["pl", "cs", "en", "ko"])
 def test_explanations_match_raw(state, city, lang):
     cd, cfg = state.cities[city], state.cfg
     out = score_response(cd, cfg, req(state, "student", lang=lang, limit=20))

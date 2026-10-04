@@ -10,7 +10,7 @@ import yaml
 
 ENGINE_DIR = Path(__file__).resolve().parents[1]
 REPO_DIR = ENGINE_DIR.parent
-LANGS = ("pl", "cs", "en")
+LANGS = ("pl", "cs", "en", "ko")
 CITIES = ("krakow", "praha")
 
 

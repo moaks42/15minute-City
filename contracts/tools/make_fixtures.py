@@ -25,7 +25,7 @@ OUT = ROOT / "contracts/fixtures"
 RES = 9
 K_RING = 8  # 217 cells
 DATA_VERSION = "fixture-2026-10-03"
-LANGS = ("pl", "cs", "en")
+LANGS = ("pl", "cs", "en", "ko")
 
 # Approximate centroids (fixture only — real admin data comes from Workstream A).
 PLACES = {
@@ -139,11 +139,11 @@ def dist_to_polyline(lat, lon, pts) -> float:
     return best
 
 
-# ───────────────────────────────────────── number formatting (pl/cs/en)
+# ───────────────────────────────────────── number formatting (pl/cs/en/ko)
 def fmt(value: float, lang: str, decimals: int = 0) -> str:
     v = round(float(value), decimals)
-    s = f"{v:,.{decimals}f}"  # en style "12,450.5"
-    if lang == "en":
+    s = f"{v:,.{decimals}f}"  # en/ko style "12,450.5"
+    if lang in ("en", "ko"):
         return s
     int_part, _, dec_part = s.partition(".")
     digits = int_part.replace(",", "")

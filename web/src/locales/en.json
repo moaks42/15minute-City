@@ -311,6 +311,7 @@
       "bad": "Bad",
       "very_bad": "Very bad"
     },
+    "pm25": "PM2.5",
     "similar": "Similar places in this city",
     "twins": "Twin neighbourhoods",
     "twinsLead": "Places in {{city}} with a similar everyday feel.",

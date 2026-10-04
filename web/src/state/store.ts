@@ -39,7 +39,7 @@ export interface AppState {
 }
 
 export const CITY_IDS: CityId[] = ['krakow', 'praha']
-const LANGS: Lang[] = ['pl', 'cs', 'en']
+export const LANGS: Lang[] = ['pl', 'cs', 'en', 'ko']
 const LANG_KEY = 'kompas.lang'
 const PANELS_KEY = 'kompas.panels'
 

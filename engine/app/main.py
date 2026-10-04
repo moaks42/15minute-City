@@ -15,7 +15,7 @@ from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 
 from . import live, ml, prefs
-from .config import REPO_DIR, load_config, settings
+from .config import LANGS, REPO_DIR, load_config, settings
 from .data import CityData, load_all
 from .geocode import GeoIndex, geocode
 from .models import PrefFitRequest, ScoreRequest, decode_state
@@ -100,7 +100,7 @@ def cell_or_404(cd: CityData, h3: str) -> int:
 
 
 def lang_of(cd: CityData, lang: str | None) -> str:
-    return lang if lang in ("pl", "cs", "en") else cd.cc["defaultLang"]
+    return lang if lang in LANGS else cd.cc["defaultLang"]
 
 
 def coverage(cd: CityData) -> dict[str, float]:

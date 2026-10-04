@@ -319,6 +319,7 @@
       "bad": "Zła",
       "very_bad": "Bardzo zła"
     },
+    "pm25": "PM2,5",
     "similar": "Podobne miejsca w tym mieście",
     "twins": "Bliźniacze okolice",
     "twinsLead": "Miejsca {{city}} o podobnym charakterze na co dzień.",

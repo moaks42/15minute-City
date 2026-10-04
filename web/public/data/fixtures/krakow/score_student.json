@@ -2360,7 +2360,7 @@
      "indicator": "safety.crime_per_1000",
      "value": 48.0,
      "unit": "per_1000",
-     "text": "Zarejestrowane przestępstwa w dzielnicy: 48 na 1000 mieszk."
+     "text": "Przestępstwa w przestrzeni publicznej w dzielnicy: 48,0 na 1000 mieszk."
     }
    ],
    "warnings": [

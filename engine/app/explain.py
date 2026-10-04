@@ -1,4 +1,4 @@
-"""Explanation sentences in pl/cs/en (README §6.3). Always rendered from RAW values — never invented."""
+"""Explanation sentences in pl/cs/en/ko (README §6.3). Always rendered from RAW values — never invented."""
 from __future__ import annotations
 
 import math
@@ -7,12 +7,12 @@ NBSP = " "
 
 
 def fmt_number(value: float, lang: str, decimals: int = 0) -> str:
-    """Locale formatting mirroring Intl.NumberFormat: pl "12 450" (groups from 5 digits), cs "1 250", en "12,450"."""
+    """Locale formatting mirroring Intl.NumberFormat: pl "12 450" (groups from 5 digits), cs "1 250", en/ko "12,450"."""
     v = round(float(value), decimals)
     if decimals == 0:
         v = int(v)
     s = f"{v:,.{decimals}f}" if decimals else f"{v:,}"
-    if lang == "en":
+    if lang in ("en", "ko"):
         return s
     int_part, _, dec_part = s.partition(".")
     digits = int_part.replace(",", "")

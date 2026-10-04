@@ -2,7 +2,7 @@
 import type { CityId, Lang } from '@/api/types'
 import archetypes from '@/content/archetypes.json'
 
-const LOCALE: Record<Lang, string> = { pl: 'pl-PL', cs: 'cs-CZ', en: 'en-GB' }
+const LOCALE: Record<Lang, string> = { pl: 'pl-PL', cs: 'cs-CZ', en: 'en-GB', ko: 'ko-KR' }
 export const locale = (l: Lang) => LOCALE[l]
 export const CURRENCY: Record<CityId, 'PLN' | 'CZK'> = { krakow: 'PLN', praha: 'CZK' }
 
@@ -18,14 +18,22 @@ export function fmtMoney(v: number, lang: Lang, city: CityId) {
   }).format(v)
 }
 
-const PER: Record<Lang, { buy: string; rent: string }> = {
-  pl: { buy: '/m²', rent: '/m²/mies.' },
-  cs: { buy: '/m²', rent: '/m²/měs.' },
-  en: { buy: '/m²', rent: '/m²/month' },
+const PER: Record<Lang, { buy: string; rent: string; month: string }> = {
+  pl: { buy: '/m²', rent: '/m²/mies.', month: '/mies.' },
+  cs: { buy: '/m²', rent: '/m²/měs.', month: '/měs.' },
+  en: { buy: '/m²', rent: '/m²/month', month: '/mo' },
+  ko: { buy: '/m²', rent: '/m²/월', month: '/월' },
 }
 /** "12 450 zł/m²" · "385 Kč/m²/měs." · "PLN 12,450/m²" */
 export function fmtPricePerM2(v: number, lang: Lang, city: CityId) {
   return fmtMoney(v, lang, city) + PER[lang][city === 'krakow' ? 'buy' : 'rent']
+}
+
+/** Input suffix for an amount: "zł" · "Kč/měs." · "CZK/mo" (local symbol in pl/cs, ISO code otherwise). */
+export function currencySuffix(lang: Lang, city: CityId, monthly = false) {
+  const cur = CURRENCY[city]
+  const sym = lang === 'pl' || lang === 'cs' ? (cur === 'PLN' ? 'zł' : 'Kč') : cur
+  return sym + (monthly ? PER[lang].month : '')
 }
 
 export const collator = (l: Lang) => new Intl.Collator(LOCALE[l], { sensitivity: 'base' })

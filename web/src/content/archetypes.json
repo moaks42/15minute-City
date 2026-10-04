@@ -1,75 +1,83 @@
 {
-  "_note": "Archetype names per engine id (pl/cs/en), owned by Workstream C. Ids are fixed in config/indicators.yaml + contracts/openapi.yaml (ArchetypeId). Warm, non-stigmatizing wording (README §11 C.7).",
+  "_note": "Archetype names per engine id (pl/cs/en/ko), owned by Workstream C. Ids are fixed in config/indicators.yaml + contracts/openapi.yaml (ArchetypeId). Warm, non-stigmatizing wording (README §11 C.7).",
   "historic_core": {
     "color": 0,
-    "label": { "pl": "Historyczne serce", "cs": "Historické srdce", "en": "Historic heart" },
+    "label": { "pl": "Historyczne serce", "cs": "Historické srdce", "en": "Historic heart", "ko": "역사 중심지" },
     "desc": {
       "pl": "Zabytkowa zabudowa, wszystko pieszo, dużo ludzi i życia przez cały dzień.",
       "cs": "Historická zástavba, vše pěšky, hodně lidí a života po celý den.",
-      "en": "Historic streets, everything on foot, lively all day."
+      "en": "Historic streets, everything on foot, lively all day.",
+      "ko": "역사적인 거리, 어디든 걸어서, 하루 종일 활기찬 곳."
     }
   },
   "urban_mix": {
     "color": 1,
-    "label": { "pl": "Miejski mix", "cs": "Městský mix", "en": "Urban mix" },
+    "label": { "pl": "Miejski mix", "cs": "Městský mix", "en": "Urban mix", "ko": "도심 복합 지역" },
     "desc": {
       "pl": "Kamienice i bloki, sklepy blisko, dobra komunikacja.",
       "cs": "Činžáky i paneláky, obchody blízko, dobrá doprava.",
-      "en": "Mixed housing, shops nearby, good transport."
+      "en": "Mixed housing, shops nearby, good transport.",
+      "ko": "다양한 주택, 가까운 상점, 편리한 교통."
     }
   },
   "student_buzz": {
     "color": 2,
-    "label": { "pl": "Studencki puls", "cs": "Studentský puls", "en": "Student buzz" },
+    "label": { "pl": "Studencki puls", "cs": "Studentský puls", "en": "Student buzz", "ko": "활기찬 대학가" },
     "desc": {
       "pl": "Gęsta komunikacja, kawiarnie i kultura, życie także wieczorem.",
       "cs": "Hustá doprava, kavárny a kultura, život i po večerech.",
-      "en": "Frequent transport, cafés and culture, busy into the evening."
+      "en": "Frequent transport, cafés and culture, busy into the evening.",
+      "ko": "잦은 대중교통, 카페와 문화, 저녁까지 북적이는 곳."
     }
   },
   "estate_blocks": {
     "color": 3,
-    "label": { "pl": "Osiedle z pełnym zapleczem", "cs": "Sídliště s vybaveností", "en": "Estate with everything nearby" },
+    "label": { "pl": "Osiedle z pełnym zapleczem", "cs": "Sídliště s vybaveností", "en": "Estate with everything nearby", "ko": "생활 편의를 갖춘 아파트 단지" },
     "desc": {
       "pl": "Bloki z usługami na miejscu, tramwaj lub autobus niedaleko.",
       "cs": "Sídliště se službami na místě, tramvaj nebo metro nedaleko.",
-      "en": "Housing estate with services on site and transport close by."
+      "en": "Housing estate with services on site and transport close by.",
+      "ko": "단지 안에 편의 시설이 있고 대중교통이 가까운 곳."
     }
   },
   "green_residential": {
     "color": 4,
-    "label": { "pl": "Zielone osiedle", "cs": "Zelená rezidenční čtvrť", "en": "Green residential" },
+    "label": { "pl": "Zielone osiedle", "cs": "Zelená rezidenční čtvrť", "en": "Green residential", "ko": "녹지 주거 지역" },
     "desc": {
       "pl": "Spokojne ulice, dużo drzew i park w zasięgu spaceru.",
       "cs": "Klidné ulice, hodně stromů a park na dosah procházky.",
-      "en": "Calm streets, lots of trees and a park within a walk."
+      "en": "Calm streets, lots of trees and a park within a walk.",
+      "ko": "조용한 거리, 많은 나무, 걸어서 갈 수 있는 공원."
     }
   },
   "family_suburb": {
     "color": 5,
-    "label": { "pl": "Rodzinne przedmieście", "cs": "Rodinné předměstí", "en": "Family suburb" },
+    "label": { "pl": "Rodzinne przedmieście", "cs": "Rodinné předměstí", "en": "Family suburb", "ko": "가족 친화 교외" },
     "desc": {
       "pl": "Domy i niska zabudowa, szkoły i place zabaw, więcej miejsca.",
       "cs": "Domky a nízká zástavba, školy a hřiště, víc prostoru.",
-      "en": "Houses and low-rise, schools and playgrounds, more space."
+      "en": "Houses and low-rise, schools and playgrounds, more space.",
+      "ko": "단독 주택과 저층 건물, 학교와 놀이터, 넉넉한 공간."
     }
   },
   "quiet_outskirts": {
     "color": 6,
-    "label": { "pl": "Spokojne obrzeża", "cs": "Klidný okraj města", "en": "Quiet outskirts" },
+    "label": { "pl": "Spokojne obrzeża", "cs": "Klidný okraj města", "en": "Quiet outskirts", "ko": "조용한 외곽" },
     "desc": {
       "pl": "Cisza i natura, dalej do centrum i usług.",
       "cs": "Klid a příroda, dál do centra a za službami.",
-      "en": "Peace and nature; further from the centre and services."
+      "en": "Peace and nature; further from the centre and services.",
+      "ko": "평화로운 자연. 도심과 편의 시설까지는 조금 먼 곳."
     }
   },
   "industrial_edge": {
     "color": 7,
-    "label": { "pl": "Na styku z przemysłem", "cs": "Na pomezí průmyslu", "en": "Next to industry" },
+    "label": { "pl": "Na styku z przemysłem", "cs": "Na pomezí průmyslu", "en": "Next to industry", "ko": "산업 지역 인접" },
     "desc": {
       "pl": "Mieszkania obok zakładów, magazynów lub torów; często taniej, czasem głośniej.",
       "cs": "Bydlení u závodů, skladů nebo kolejí; často levněji, někdy hlučněji.",
-      "en": "Homes near works, warehouses or rail; often cheaper, sometimes louder."
+      "en": "Homes near works, warehouses or rail; often cheaper, sometimes louder.",
+      "ko": "공장, 창고, 철로 근처의 주거지. 대체로 저렴하지만 때로는 시끄러운 곳."
     }
   }
 }

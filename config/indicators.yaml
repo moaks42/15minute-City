@@ -1,4 +1,4 @@
-# Kompas — SINGLE SOURCE OF TRUTH for criteria, indicators, norms, personas and labels (pl/cs/en).
+# Kompas — SINGLE SOURCE OF TRUTH for criteria, indicators, norms, personas and labels (pl/cs/en/ko).
 # Owner: Workstream B. Changes after contracts-v1 are ADDITIVE ONLY (see docs/notes/B.md "Contract changes").
 #
 # Column naming: every indicator reads the features.parquet column "<criterion>.<indicator>"
@@ -16,7 +16,7 @@
 # is dropped from that city's criterion average and reported via /meta coverage.
 #
 # Explanation templates: {{value}} is the RAW feature value, formatted per language
-# (pl/cs: "12 450", "3,5"; en: "12,450", "3.5"), rounded to `decimals` (default 0).
+# (pl/cs: "12 450", "3,5"; en/ko: "12,450", "3.5"), rounded to `decimals` (default 0).
 # Templates are written to avoid plural agreement (counts go after a colon or before a rate unit).
 #
 # `cities:` restricts an indicator to the listed cities (omitted = all cities).
@@ -30,51 +30,51 @@ walkSpeedKmh: 4.8
 levels: {0: 0, 1: 1, 2: 2, 3: 3, 4: 5, 5: 8}
 levelEmoji: {0: "", 1: "😐", 2: "🙂", 3: "😊", 4: "😍", 5: "🤩"}
 levelLabel:
-  0: {pl: "Pomiń",        cs: "Přeskočit",      en: "Skip"}
-  1: {pl: "Mało ważne",   cs: "Málo důležité",  en: "Barely matters"}
-  2: {pl: "Miło by było", cs: "Bylo by fajn",   en: "Nice to have"}
-  3: {pl: "Ważne",        cs: "Důležité",       en: "Important"}
-  4: {pl: "Bardzo ważne", cs: "Velmi důležité", en: "Very important"}
-  5: {pl: "Kluczowe",     cs: "Zásadní",        en: "Essential"}
+  0: {pl: "Pomiń",        cs: "Přeskočit",      en: "Skip", ko: "건너뛰기"}
+  1: {pl: "Mało ważne",   cs: "Málo důležité",  en: "Barely matters", ko: "거의 상관없음"}
+  2: {pl: "Miło by było", cs: "Bylo by fajn",   en: "Nice to have", ko: "있으면 좋음"}
+  3: {pl: "Ważne",        cs: "Důležité",       en: "Important", ko: "중요"}
+  4: {pl: "Bardzo ważne", cs: "Velmi důležité", en: "Very important", ko: "매우 중요"}
+  5: {pl: "Kluczowe",     cs: "Zásadní",        en: "Essential", ko: "필수"}
 
 units:
-  min:          {pl: "min",             cs: "min",           en: "min"}
-  dep_h:        {pl: "odj./h",          cs: "odj./h",        en: "dep./h"}
-  count:        {pl: "",                cs: "",              en: ""}
-  km:           {pl: "km",              cs: "km",            en: "km"}
-  m:            {pl: "m",               cs: "m",             en: "m"}
-  pct:          {pl: "%",               cs: "%",             en: "%"}
-  ha:           {pl: "ha",              cs: "ha",            en: "ha"}
-  per_km2:      {pl: "/km²",            cs: "/km²",          en: "/km²"}
-  db:           {pl: "dB",              cs: "dB",            en: "dB"}
-  ugm3:         {pl: "µg/m³",           cs: "µg/m³",         en: "µg/m³"}
-  per_1000:     {pl: "na 1000 mieszk.", cs: "na 1000 obyv.", en: "per 1,000 residents"}
-  pln_m2:       {pl: "zł/m²",           cs: "zł/m²",         en: "PLN/m²"}
-  czk_m2_month: {pl: "Kč/m²/mies.",     cs: "Kč/m²/měs.",    en: "CZK/m²/month"}
+  min:          {pl: "min",             cs: "min",           en: "min", ko: "분"}
+  dep_h:        {pl: "odj./h",          cs: "odj./h",        en: "dep./h", ko: "회/시"}
+  count:        {pl: "",                cs: "",              en: "", ko: ""}
+  km:           {pl: "km",              cs: "km",            en: "km", ko: "km"}
+  m:            {pl: "m",               cs: "m",             en: "m", ko: "m"}
+  pct:          {pl: "%",               cs: "%",             en: "%", ko: "%"}
+  ha:           {pl: "ha",              cs: "ha",            en: "ha", ko: "ha"}
+  per_km2:      {pl: "/km²",            cs: "/km²",          en: "/km²", ko: "/km²"}
+  db:           {pl: "dB",              cs: "dB",            en: "dB", ko: "dB"}
+  ugm3:         {pl: "µg/m³",           cs: "µg/m³",         en: "µg/m³", ko: "µg/m³"}
+  per_1000:     {pl: "na 1000 mieszk.", cs: "na 1000 obyv.", en: "per 1,000 residents", ko: "건/1,000명"}
+  pln_m2:       {pl: "zł/m²",           cs: "zł/m²",         en: "PLN/m²", ko: "PLN/m²"}
+  czk_m2_month: {pl: "Kč/m²/mies.",     cs: "Kč/m²/měs.",    en: "CZK/m²/month", ko: "CZK/m²/월"}
 
 modes:
-  transit: {emoji: "🚋", label: {pl: "Komunikacja", cs: "MHD",   en: "Transit"}, phrase: {pl: "komunikacją", cs: "MHD",    en: "by transit"}}
-  bike:    {emoji: "🚲", label: {pl: "Rower",       cs: "Kolo",  en: "Bike"},    phrase: {pl: "rowerem",     cs: "na kole", en: "by bike"}}
-  walk:    {emoji: "🚶", label: {pl: "Pieszo",      cs: "Pěšky", en: "Walk"},    phrase: {pl: "pieszo",      cs: "pěšky",   en: "on foot"}}
+  transit: {emoji: "🚋", label: {pl: "Komunikacja", cs: "MHD",   en: "Transit", ko: "대중교통"}, phrase: {pl: "komunikacją", cs: "MHD",    en: "by transit", ko: "대중교통으로"}}
+  bike:    {emoji: "🚲", label: {pl: "Rower",       cs: "Kolo",  en: "Bike", ko: "자전거"},    phrase: {pl: "rowerem",     cs: "na kole", en: "by bike", ko: "자전거로"}}
+  walk:    {emoji: "🚶", label: {pl: "Pieszo",      cs: "Pěšky", en: "Walk", ko: "도보"},    phrase: {pl: "pieszo",      cs: "pěšky",   en: "on foot", ko: "걸어서"}}
 
 criteria:
   # ───────────────────────────────────────────── commute (runtime, from anchors + travel_times.npz)
   - id: commute
     emoji: "🧭"
-    label: {pl: "Dojazd do moich miejsc", cs: "Dojezd do mých míst", en: "Commute to my places"}
+    label: {pl: "Dojazd do moich miejsc", cs: "Dojezd do mých míst", en: "Commute to my places", ko: "내 장소까지 통근"}
     runtime: anchors          # no features.parquet columns; S = Σ_a W(a)·decay(t_a) / Σ W(a); ignored without anchors
     norm: {type: decay, good: 15, bad: 60}
-    explain: {pl: "{{anchor}}: {{value}} min {{mode}}", cs: "{{anchor}}: {{value}} min {{mode}}", en: "{{anchor}}: {{value}} min {{mode}}"}
+    explain: {pl: "{{anchor}}: {{value}} min {{mode}}", cs: "{{anchor}}: {{value}} min {{mode}}", en: "{{anchor}}: {{value}} min {{mode}}", ko: "{{anchor}}: {{mode}} {{value}}분"}
     sources: {krakow: [osm_krakow, gtfs_ztp], praha: [osm_praha, gtfs_pid]}
     indicators: []
 
   # ───────────────────────────────────────────── transit
   - id: transit
     emoji: "🚋"
-    label: {pl: "Komunikacja miejska", cs: "Veřejná doprava (MHD)", en: "Public transport"}
+    label: {pl: "Komunikacja miejska", cs: "Veřejná doprava (MHD)", en: "Public transport", ko: "대중교통"}
     indicators:
       - id: stop_walk_min
-        label: {pl: "Najbliższy przystanek", cs: "Nejbližší zastávka", en: "Nearest stop"}
+        label: {pl: "Najbliższy przystanek", cs: "Nejbližší zastávka", en: "Nearest stop", ko: "가장 가까운 정류장"}
         unit: min
         norm: {type: decay, good: 3, bad: 12}
         walkScaled: true
@@ -82,9 +82,9 @@ criteria:
         crossCity: true
         priority: P0
         sources: {krakow: [gtfs_ztp, osm_krakow], praha: [gtfs_pid, osm_praha]}
-        explain: {pl: "Przystanek {{value}} min pieszo", cs: "Zastávka {{value}} min pěšky", en: "Stop {{value}} min walk"}
+        explain: {pl: "Przystanek {{value}} min pieszo", cs: "Zastávka {{value}} min pěšky", en: "Stop {{value}} min walk", ko: "정류장 도보 {{value}}분"}
       - id: tram_stop_walk_min
-        label: {pl: "Najbliższy tramwaj", cs: "Nejbližší tramvaj", en: "Nearest tram stop"}
+        label: {pl: "Najbliższy tramwaj", cs: "Nejbližší tramvaj", en: "Nearest tram stop", ko: "가장 가까운 트램 정류장"}
         unit: min
         norm: {type: decay, good: 4, bad: 12}
         walkScaled: true
@@ -92,27 +92,27 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [gtfs_ztp], praha: [gtfs_pid]}
-        explain: {pl: "Tramwaj {{value}} min pieszo", cs: "Tramvaj {{value}} min pěšky", en: "Tram {{value}} min walk"}
+        explain: {pl: "Tramwaj {{value}} min pieszo", cs: "Tramvaj {{value}} min pěšky", en: "Tram {{value}} min walk", ko: "트램 정류장 도보 {{value}}분"}
       - id: departures_per_h_500m
-        label: {pl: "Odjazdy w szczycie (500 m)", cs: "Odjezdy ve špičce (500 m)", en: "Peak departures (500 m)"}
+        label: {pl: "Odjazdy w szczycie (500 m)", cs: "Odjezdy ve špičce (500 m)", en: "Peak departures (500 m)", ko: "출퇴근 시간 출발 횟수 (500 m)"}
         unit: dep_h
         norm: {type: percentile}
         weight: 3
         crossCity: true
         priority: P0
         sources: {krakow: [gtfs_ztp], praha: [gtfs_pid]}
-        explain: {pl: "{{value}} odj./h w promieniu 500 m", cs: "{{value}} odj./h do 500 m", en: "{{value}} departures/h within 500 m"}
+        explain: {pl: "{{value}} odj./h w promieniu 500 m", cs: "{{value}} odj./h do 500 m", en: "{{value}} departures/h within 500 m", ko: "500 m 이내 시간당 {{value}}회 출발"}
       - id: lines_500m
-        label: {pl: "Linie w promieniu 500 m", cs: "Linky do 500 m", en: "Lines within 500 m"}
+        label: {pl: "Linie w promieniu 500 m", cs: "Linky do 500 m", en: "Lines within 500 m", ko: "500 m 이내 노선"}
         unit: count
         norm: {type: percentile}
         weight: 1
         crossCity: true
         priority: P1
         sources: {krakow: [gtfs_ztp], praha: [gtfs_pid]}
-        explain: {pl: "Linie w promieniu 500 m: {{value}}", cs: "Linky do 500 m: {{value}}", en: "{{value}} lines within 500 m"}
+        explain: {pl: "Linie w promieniu 500 m: {{value}}", cs: "Linky do 500 m: {{value}}", en: "{{value}} lines within 500 m", ko: "500 m 이내 노선 {{value}}개"}
       - id: rail_station_walk_min       # K: SKA/rail · P: metro + S-trains (labels overridden in config/cities/*.yaml)
-        label: {pl: "Stacja kolejowa", cs: "Železniční stanice", en: "Rail station"}
+        label: {pl: "Stacja kolejowa", cs: "Železniční stanice", en: "Rail station", ko: "기차역"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -120,24 +120,24 @@ criteria:
         crossCity: true
         priority: P0
         sources: {krakow: [gtfs_ztp, osm_krakow], praha: [gtfs_pid]}
-        explain: {pl: "Stacja kolejowa {{value}} min pieszo", cs: "Nádraží {{value}} min pěšky", en: "Rail station {{value}} min walk"}
+        explain: {pl: "Stacja kolejowa {{value}} min pieszo", cs: "Nádraží {{value}} min pěšky", en: "Rail station {{value}} min walk", ko: "기차역 도보 {{value}}분"}
       - id: night_departures_500m
-        label: {pl: "Nocne odjazdy (500 m)", cs: "Noční odjezdy (500 m)", en: "Night departures (500 m)"}
+        label: {pl: "Nocne odjazdy (500 m)", cs: "Noční odjezdy (500 m)", en: "Night departures (500 m)", ko: "심야 출발 횟수 (500 m)"}
         unit: count
         norm: {type: percentile}
         weight: 1
         crossCity: true
         priority: P1
         sources: {krakow: [gtfs_ztp], praha: [gtfs_pid]}
-        explain: {pl: "Nocne odjazdy w pobliżu (23–5): {{value}}", cs: "Noční odjezdy poblíž (23–5): {{value}}", en: "{{value}} night departures nearby (23–05)"}
+        explain: {pl: "Nocne odjazdy w pobliżu (23–5): {{value}}", cs: "Noční odjezdy poblíž (23–5): {{value}}", en: "{{value}} night departures nearby (23–05)", ko: "근처 심야 출발 {{value}}회 (23–05시)"}
 
   # ───────────────────────────────────────────── active
   - id: active
     emoji: "🚲"
-    label: {pl: "Rower i spacery", cs: "Kolo a chůze", en: "Cycling & walking"}
+    label: {pl: "Rower i spacery", cs: "Kolo a chůze", en: "Cycling & walking", ko: "자전거·도보"}
     indicators:
       - id: cycleway_km_1km
-        label: {pl: "Drogi rowerowe (1 km)", cs: "Cyklostezky (1 km)", en: "Cycle paths (1 km)"}
+        label: {pl: "Drogi rowerowe (1 km)", cs: "Cyklostezky (1 km)", en: "Cycle paths (1 km)", ko: "자전거 도로 (1 km)"}
         unit: km
         decimals: 1
         norm: {type: percentile}
@@ -145,27 +145,27 @@ criteria:
         crossCity: true
         priority: P0
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "{{value}} km dróg rowerowych w promieniu 1 km", cs: "{{value}} km cyklostezek do 1 km", en: "{{value}} km of cycle paths within 1 km"}
+        explain: {pl: "{{value}} km dróg rowerowych w promieniu 1 km", cs: "{{value}} km cyklostezek do 1 km", en: "{{value}} km of cycle paths within 1 km", ko: "1 km 이내 자전거 도로 {{value}} km"}
       - id: intersection_density
-        label: {pl: "Gęstość skrzyżowań", cs: "Hustota křižovatek", en: "Intersection density"}
+        label: {pl: "Gęstość skrzyżowań", cs: "Hustota křižovatek", en: "Intersection density", ko: "교차로 밀도"}
         unit: per_km2
         norm: {type: percentile}
         weight: 2
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Gęsta sieć ulic: {{value}} skrzyżowań/km²", cs: "Hustá síť ulic: {{value}} křižovatek/km²", en: "Walkable grid: {{value}} intersections/km²"}
+        explain: {pl: "Gęsta sieć ulic: {{value}} skrzyżowań/km²", cs: "Hustá síť ulic: {{value}} křižovatek/km²", en: "Walkable grid: {{value}} intersections/km²", ko: "걷기 좋은 도로망: km²당 교차로 {{value}}개"}
       - id: bike_racks_300m
-        label: {pl: "Stojaki rowerowe (300 m)", cs: "Stojany na kola (300 m)", en: "Bike racks (300 m)"}
+        label: {pl: "Stojaki rowerowe (300 m)", cs: "Stojany na kola (300 m)", en: "Bike racks (300 m)", ko: "자전거 거치대 (300 m)"}
         unit: count
         norm: {type: percentile}
         weight: 1
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow, ztp_hub], praha: [osm_praha]}
-        explain: {pl: "Stojaki rowerowe w promieniu 300 m: {{value}}", cs: "Stojany na kola do 300 m: {{value}}", en: "{{value}} bike racks within 300 m"}
+        explain: {pl: "Stojaki rowerowe w promieniu 300 m: {{value}}", cs: "Stojany na kola do 300 m: {{value}}", en: "{{value}} bike racks within 300 m", ko: "300 m 이내 자전거 거치대 {{value}}개"}
       - id: car_free_walk_min
-        label: {pl: "Bulwary i deptaki", cs: "Nábřeží a pěší zóny", en: "Riverside & pedestrian zones"}
+        label: {pl: "Bulwary i deptaki", cs: "Nábřeží a pěší zóny", en: "Riverside & pedestrian zones", ko: "강변·보행자 구역"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -173,9 +173,9 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Bulwar lub deptak {{value}} min pieszo", cs: "Nábřeží či pěší zóna {{value}} min pěšky", en: "Riverside or pedestrian zone {{value}} min walk"}
+        explain: {pl: "Bulwar lub deptak {{value}} min pieszo", cs: "Nábřeží či pěší zóna {{value}} min pěšky", en: "Riverside or pedestrian zone {{value}} min walk", ko: "강변 또는 보행자 구역 도보 {{value}}분"}
       - id: bikeshare_walk_min
-        label: {pl: "Rower miejski", cs: "Sdílená kola", en: "Bike share"}
+        label: {pl: "Rower miejski", cs: "Sdílená kola", en: "Bike share", ko: "공유 자전거"}
         unit: min
         norm: {type: decay, good: 3, bad: 10}
         walkScaled: true
@@ -184,24 +184,24 @@ criteria:
         priority: P2
         cities: [praha]
         sources: {praha: [bikeshare_praha, golemio]}
-        explain: {pl: "Rower miejski {{value}} min pieszo", cs: "Sdílené kolo {{value}} min pěšky", en: "Bike share {{value}} min walk"}
+        explain: {pl: "Rower miejski {{value}} min pieszo", cs: "Sdílené kolo {{value}} min pěšky", en: "Bike share {{value}} min walk", ko: "공유 자전거 도보 {{value}}분"}
 
   # ───────────────────────────────────────────── green
   - id: green
     emoji: "🌳"
-    label: {pl: "Zieleń", cs: "Zeleň", en: "Green space"}
+    label: {pl: "Zieleń", cs: "Zeleň", en: "Green space", ko: "녹지"}
     indicators:
       - id: green_share_500m
-        label: {pl: "Udział zieleni (500 m)", cs: "Podíl zeleně (500 m)", en: "Green share (500 m)"}
+        label: {pl: "Udział zieleni (500 m)", cs: "Podíl zeleně (500 m)", en: "Green share (500 m)", ko: "녹지 비율 (500 m)"}
         unit: pct
         norm: {type: decay, good: 40, bad: 5}
         weight: 3
         crossCity: true
         priority: P0
         sources: {krakow: [osm_krakow, krk_open], praha: [osm_praha, ipr]}
-        explain: {pl: "{{value}}% zieleni w promieniu 500 m", cs: "{{value}} % zeleně do 500 m", en: "{{value}}% green within 500 m"}
+        explain: {pl: "{{value}}% zieleni w promieniu 500 m", cs: "{{value}} % zeleně do 500 m", en: "{{value}}% green within 500 m", ko: "500 m 이내 녹지 {{value}}%"}
       - id: park_walk_min               # park ≥ 2 ha
-        label: {pl: "Park (≥ 2 ha)", cs: "Park (≥ 2 ha)", en: "Park (≥ 2 ha)"}
+        label: {pl: "Park (≥ 2 ha)", cs: "Park (≥ 2 ha)", en: "Park (≥ 2 ha)", ko: "공원 (≥ 2 ha)"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -209,24 +209,24 @@ criteria:
         crossCity: true
         priority: P0
         sources: {krakow: [osm_krakow, krk_open], praha: [osm_praha, ipr, golemio]}
-        explain: {pl: "Park {{value}} min pieszo", cs: "Park {{value}} min pěšky", en: "Park {{value}} min walk"}
+        explain: {pl: "Park {{value}} min pieszo", cs: "Park {{value}} min pěšky", en: "Park {{value}} min walk", ko: "공원 도보 {{value}}분"}
       - id: forest_meadow_ha_1km
-        label: {pl: "Lasy i łąki (1 km)", cs: "Lesy a louky (1 km)", en: "Forest & meadows (1 km)"}
+        label: {pl: "Lasy i łąki (1 km)", cs: "Lesy a louky (1 km)", en: "Forest & meadows (1 km)", ko: "숲·초원 (1 km)"}
         unit: ha
         norm: {type: percentile}
         weight: 1
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha, ipr]}
-        explain: {pl: "{{value}} ha lasów i łąk w promieniu 1 km", cs: "{{value}} ha lesů a luk do 1 km", en: "{{value}} ha of forest & meadow within 1 km"}
+        explain: {pl: "{{value}} ha lasów i łąk w promieniu 1 km", cs: "{{value}} ha lesů a luk do 1 km", en: "{{value}} ha of forest & meadow within 1 km", ko: "1 km 이내 숲·초원 {{value}} ha"}
 
   # ───────────────────────────────────────────── education
   - id: education
     emoji: "🎓"
-    label: {pl: "Edukacja", cs: "Vzdělávání", en: "Education"}
+    label: {pl: "Edukacja", cs: "Vzdělávání", en: "Education", ko: "교육"}
     indicators:
       - id: nursery_walk_min
-        label: {pl: "Żłobek", cs: "Jesle", en: "Nursery (0–3)"}
+        label: {pl: "Żłobek", cs: "Jesle", en: "Nursery (0–3)", ko: "어린이집 (0–3세)"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -234,9 +234,9 @@ criteria:
         crossCity: true
         priority: P0
         sources: {krakow: [krk_open, osm_krakow], praha: [msmt_schools, osm_praha]}
-        explain: {pl: "Żłobek {{value}} min pieszo", cs: "Jesle {{value}} min pěšky", en: "Nursery {{value}} min walk"}
+        explain: {pl: "Żłobek {{value}} min pieszo", cs: "Jesle {{value}} min pěšky", en: "Nursery {{value}} min walk", ko: "어린이집 도보 {{value}}분"}
       - id: kindergarten_walk_min
-        label: {pl: "Przedszkole", cs: "Mateřská škola", en: "Kindergarten"}
+        label: {pl: "Przedszkole", cs: "Mateřská škola", en: "Kindergarten", ko: "유치원"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -244,9 +244,9 @@ criteria:
         crossCity: true
         priority: P0
         sources: {krakow: [men_schools], praha: [msmt_schools]}
-        explain: {pl: "Przedszkole {{value}} min pieszo", cs: "Školka {{value}} min pěšky", en: "Kindergarten {{value}} min walk"}
+        explain: {pl: "Przedszkole {{value}} min pieszo", cs: "Školka {{value}} min pěšky", en: "Kindergarten {{value}} min walk", ko: "유치원 도보 {{value}}분"}
       - id: primary_school_walk_min
-        label: {pl: "Szkoła podstawowa", cs: "Základní škola", en: "Primary school"}
+        label: {pl: "Szkoła podstawowa", cs: "Základní škola", en: "Primary school", ko: "초등학교"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -254,9 +254,9 @@ criteria:
         crossCity: true
         priority: P0
         sources: {krakow: [men_schools], praha: [msmt_schools]}
-        explain: {pl: "Szkoła podstawowa {{value}} min pieszo", cs: "Základní škola {{value}} min pěšky", en: "Primary school {{value}} min walk"}
+        explain: {pl: "Szkoła podstawowa {{value}} min pieszo", cs: "Základní škola {{value}} min pěšky", en: "Primary school {{value}} min walk", ko: "초등학교 도보 {{value}}분"}
       - id: secondary_school_walk_min
-        label: {pl: "Szkoła średnia", cs: "Střední škola", en: "Secondary school"}
+        label: {pl: "Szkoła średnia", cs: "Střední škola", en: "Secondary school", ko: "중·고등학교"}
         unit: min
         norm: {type: decay, good: 8, bad: 30}
         walkScaled: true
@@ -264,9 +264,9 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [men_schools], praha: [msmt_schools]}
-        explain: {pl: "Szkoła średnia {{value}} min pieszo", cs: "Střední škola {{value}} min pěšky", en: "Secondary school {{value}} min walk"}
+        explain: {pl: "Szkoła średnia {{value}} min pieszo", cs: "Střední škola {{value}} min pěšky", en: "Secondary school {{value}} min walk", ko: "중·고등학교 도보 {{value}}분"}
       - id: university_walk_min
-        label: {pl: "Uczelnia", cs: "Vysoká škola", en: "University"}
+        label: {pl: "Uczelnia", cs: "Vysoká škola", en: "University", ko: "대학교"}
         unit: min
         norm: {type: decay, good: 10, bad: 40}
         walkScaled: true
@@ -274,9 +274,9 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Uczelnia {{value}} min pieszo", cs: "Vysoká škola {{value}} min pěšky", en: "University {{value}} min walk"}
+        explain: {pl: "Uczelnia {{value}} min pieszo", cs: "Vysoká škola {{value}} min pěšky", en: "University {{value}} min walk", ko: "대학교 도보 {{value}}분"}
       - id: library_walk_min
-        label: {pl: "Biblioteka", cs: "Knihovna", en: "Library"}
+        label: {pl: "Biblioteka", cs: "Knihovna", en: "Library", ko: "도서관"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -284,24 +284,24 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha, golemio]}
-        explain: {pl: "Biblioteka {{value}} min pieszo", cs: "Knihovna {{value}} min pěšky", en: "Library {{value}} min walk"}
+        explain: {pl: "Biblioteka {{value}} min pieszo", cs: "Knihovna {{value}} min pěšky", en: "Library {{value}} min walk", ko: "도서관 도보 {{value}}분"}
 
   # ───────────────────────────────────────────── family
   - id: family
     emoji: "🧸"
-    label: {pl: "Rodzina i dzieci", cs: "Rodina a děti", en: "Family & kids"}
+    label: {pl: "Rodzina i dzieci", cs: "Rodina a děti", en: "Family & kids", ko: "가족·아이"}
     indicators:
       - id: playgrounds_500m
-        label: {pl: "Place zabaw (500 m)", cs: "Dětská hřiště (500 m)", en: "Playgrounds (500 m)"}
+        label: {pl: "Place zabaw (500 m)", cs: "Dětská hřiště (500 m)", en: "Playgrounds (500 m)", ko: "놀이터 (500 m)"}
         unit: count
         norm: {type: percentile}
         weight: 3
         crossCity: true
         priority: P0
         sources: {krakow: [osm_krakow], praha: [osm_praha, golemio]}
-        explain: {pl: "Place zabaw w promieniu 500 m: {{value}}", cs: "Dětská hřiště do 500 m: {{value}}", en: "{{value}} playgrounds within 500 m"}
+        explain: {pl: "Place zabaw w promieniu 500 m: {{value}}", cs: "Dětská hřiště do 500 m: {{value}}", en: "{{value}} playgrounds within 500 m", ko: "500 m 이내 놀이터 {{value}}곳"}
       - id: paediatrician_walk_min
-        label: {pl: "Pediatra", cs: "Dětský lékař", en: "Paediatrician"}
+        label: {pl: "Pediatra", cs: "Dětský lékař", en: "Paediatrician", ko: "소아과"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -309,9 +309,9 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [nrpzs]}
-        explain: {pl: "Pediatra {{value}} min pieszo", cs: "Dětský lékař {{value}} min pěšky", en: "Paediatrician {{value}} min walk"}
+        explain: {pl: "Pediatra {{value}} min pieszo", cs: "Dětský lékař {{value}} min pěšky", en: "Paediatrician {{value}} min walk", ko: "소아과 도보 {{value}}분"}
       - id: kids_sports_walk_min
-        label: {pl: "Basen lub sport dla dzieci", cs: "Bazén či sport pro děti", en: "Pool or kids' sports"}
+        label: {pl: "Basen lub sport dla dzieci", cs: "Bazén či sport pro děti", en: "Pool or kids' sports", ko: "수영장·어린이 스포츠"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -319,16 +319,16 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Basen lub sport {{value}} min pieszo", cs: "Bazén či sportoviště {{value}} min pěšky", en: "Pool or sports {{value}} min walk"}
+        explain: {pl: "Basen lub sport {{value}} min pieszo", cs: "Bazén či sportoviště {{value}} min pěšky", en: "Pool or sports {{value}} min walk", ko: "수영장·스포츠 시설 도보 {{value}}분"}
 
   # ───────────────────────────────────────────── safety (district level only; neutral wording)
   - id: safety
     emoji: "🛡️"
-    label: {pl: "Bezpieczeństwo", cs: "Bezpečnost", en: "Safety"}
-    caveat: {pl: "Zarejestrowane zdarzenia ≠ odczuwane bezpieczeństwo; ruchliwe centra notują więcej zdarzeń.", cs: "Evidované události ≠ pocit bezpečí; rušná centra mají více událostí.", en: "Recorded incidents ≠ perceived safety; busy centres record more incidents."}
+    label: {pl: "Bezpieczeństwo", cs: "Bezpečnost", en: "Safety", ko: "안전"}
+    caveat: {pl: "Zarejestrowane zdarzenia ≠ odczuwane bezpieczeństwo; ruchliwe centra notują więcej zdarzeń.", cs: "Evidované události ≠ pocit bezpečí; rušná centra mají více událostí.", en: "Recorded incidents ≠ perceived safety; busy centres record more incidents.", ko: "신고된 사건 수 ≠ 체감 안전도. 붐비는 도심일수록 신고 건수가 많습니다."}
     indicators:
       - id: crime_per_1000
-        label: {pl: "Zarejestrowane przestępstwa (dzielnica)", cs: "Evidovaná trestná činnost (městská část)", en: "Recorded crime (district)"}
+        label: {pl: "Zarejestrowane przestępstwa (dzielnica)", cs: "Evidovaná trestná činnost (městská část)", en: "Recorded crime (district)", ko: "신고된 범죄 (구 단위)"}
         unit: per_1000
         decimals: 0
         norm: {type: inverse_percentile}
@@ -337,24 +337,24 @@ criteria:
         noWarning: true
         priority: P0
         sources: {krakow: [safety_krk], praha: [police_cz]}
-        explain: {pl: "Zarejestrowane przestępstwa w dzielnicy: {{value}} na 1000 mieszk.", cs: "Evidované trestné činy v městské části: {{value}} na 1000 obyv.", en: "Recorded crime in district: {{value}} per 1,000 residents"}
+        explain: {pl: "Zarejestrowane przestępstwa w dzielnicy: {{value}} na 1000 mieszk.", cs: "Evidované trestné činy v městské části: {{value}} na 1000 obyv.", en: "Recorded crime in district: {{value}} per 1,000 residents", ko: "구 내 신고된 범죄: 주민 1,000명당 {{value}}건"}
       - id: lit_share
-        label: {pl: "Oświetlenie ulic", cs: "Osvětlení ulic", en: "Street lighting"}
+        label: {pl: "Oświetlenie ulic", cs: "Osvětlení ulic", en: "Street lighting", ko: "가로등"}
         unit: pct
         norm: {type: percentile}
         weight: 1
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Oświetlone ulice: {{value}}%", cs: "Osvětlené ulice: {{value}} %", en: "Lit streets: {{value}}%"}
+        explain: {pl: "Oświetlone ulice: {{value}}%", cs: "Osvětlené ulice: {{value}} %", en: "Lit streets: {{value}}%", ko: "조명이 있는 거리: {{value}}%"}
 
   # ───────────────────────────────────────────── price (city-specific source and currency)
   - id: price
     emoji: "💰"
-    label: {pl: "Przystępne ceny", cs: "Dostupné bydlení", en: "Affordability"}
+    label: {pl: "Przystępne ceny", cs: "Dostupné bydlení", en: "Affordability", ko: "합리적인 가격"}
     indicators:
       - id: buy_per_m2
-        label: {pl: "Ceny mieszkań (transakcje, 24 mies.)", cs: "Ceny bytů (transakce, 24 měs.)", en: "Flat prices (transactions, 24 months)"}
+        label: {pl: "Ceny mieszkań (transakcje, 24 mies.)", cs: "Ceny bytů (transakce, 24 měs.)", en: "Flat prices (transactions, 24 months)", ko: "아파트 매매가 (실거래, 24개월)"}
         unit: pln_m2
         norm: {type: inverse_percentile}
         weight: 3
@@ -362,9 +362,9 @@ criteria:
         cities: [krakow]
         priority: P0
         sources: {krakow: [rcn]}
-        explain: {pl: "Mieszkania ok. {{value}} zł/m²", cs: "Byty cca {{value}} zł/m²", en: "Flats ~{{value}} PLN/m²"}
+        explain: {pl: "Mieszkania ok. {{value}} zł/m²", cs: "Byty cca {{value}} zł/m²", en: "Flats ~{{value}} PLN/m²", ko: "아파트 약 {{value}} PLN/m²"}
       - id: rent_per_m2
-        label: {pl: "Czynsz najmu (mediana)", cs: "Nájemné (medián)", en: "Rent (median)"}
+        label: {pl: "Czynsz najmu (mediana)", cs: "Nájemné (medián)", en: "Rent (median)", ko: "월세 (중앙값)"}
         unit: czk_m2_month
         norm: {type: inverse_percentile}
         weight: 3
@@ -372,9 +372,9 @@ criteria:
         cities: [praha]
         priority: P0
         sources: {praha: [mf_rent]}
-        explain: {pl: "Najem ok. {{value}} Kč/m²/mies.", cs: "Nájem cca {{value}} Kč/m²/měs.", en: "Rent ~{{value}} CZK/m²/month"}
+        explain: {pl: "Najem ok. {{value}} Kč/m²/mies.", cs: "Nájem cca {{value}} Kč/m²/měs.", en: "Rent ~{{value}} CZK/m²/month", ko: "월세 약 {{value}} CZK/m²/월"}
       - id: discount_grocery_walk_min
-        label: {pl: "Dyskont spożywczy", cs: "Diskontní prodejna", en: "Discount grocery"}
+        label: {pl: "Dyskont spożywczy", cs: "Diskontní prodejna", en: "Discount grocery", ko: "할인 식료품점"}
         unit: min
         norm: {type: decay, good: 5, bad: 15}
         walkScaled: true
@@ -382,15 +382,15 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Dyskont {{value}} min pieszo", cs: "Diskont {{value}} min pěšky", en: "Discount grocery {{value}} min walk"}
+        explain: {pl: "Dyskont {{value}} min pieszo", cs: "Diskont {{value}} min pěšky", en: "Discount grocery {{value}} min walk", ko: "할인 식료품점 도보 {{value}}분"}
 
   # ───────────────────────────────────────────── shops
   - id: shops
     emoji: "🛒"
-    label: {pl: "Zakupy i usługi", cs: "Nákupy a služby", en: "Shops & services"}
+    label: {pl: "Zakupy i usługi", cs: "Nákupy a služby", en: "Shops & services", ko: "쇼핑·생활 서비스"}
     indicators:
       - id: supermarket_walk_min
-        label: {pl: "Supermarket", cs: "Supermarket", en: "Supermarket"}
+        label: {pl: "Supermarket", cs: "Supermarket", en: "Supermarket", ko: "슈퍼마켓"}
         unit: min
         norm: {type: decay, good: 3, bad: 12}
         walkScaled: true
@@ -398,10 +398,10 @@ criteria:
         crossCity: true
         priority: P0
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Supermarket {{value}} min pieszo", cs: "Supermarket {{value}} min pěšky", en: "Supermarket {{value}} min walk"}
+        explain: {pl: "Supermarket {{value}} min pieszo", cs: "Supermarket {{value}} min pěšky", en: "Supermarket {{value}} min walk", ko: "슈퍼마켓 도보 {{value}}분"}
       - id: pharmacy_walk_min
         column: health.pharmacy_walk_min
-        label: {pl: "Apteka", cs: "Lékárna", en: "Pharmacy"}
+        label: {pl: "Apteka", cs: "Lékárna", en: "Pharmacy", ko: "약국"}
         unit: min
         norm: {type: decay, good: 3, bad: 12}
         walkScaled: true
@@ -409,9 +409,9 @@ criteria:
         crossCity: false
         priority: P1
         sources: {krakow: [osm_krakow], praha: [nrpzs, osm_praha]}
-        explain: {pl: "Apteka {{value}} min pieszo", cs: "Lékárna {{value}} min pěšky", en: "Pharmacy {{value}} min walk"}
+        explain: {pl: "Apteka {{value}} min pieszo", cs: "Lékárna {{value}} min pěšky", en: "Pharmacy {{value}} min walk", ko: "약국 도보 {{value}}분"}
       - id: post_parcel_walk_min
-        label: {pl: "Poczta lub paczkomat", cs: "Pošta či výdejní box", en: "Post office or parcel locker"}
+        label: {pl: "Poczta lub paczkomat", cs: "Pošta či výdejní box", en: "Post office or parcel locker", ko: "우체국·택배 보관함"}
         unit: min
         norm: {type: decay, good: 3, bad: 12}
         walkScaled: true
@@ -419,9 +419,9 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Poczta lub paczkomat {{value}} min pieszo", cs: "Pošta či box {{value}} min pěšky", en: "Post office or locker {{value}} min walk"}
+        explain: {pl: "Poczta lub paczkomat {{value}} min pieszo", cs: "Pošta či box {{value}} min pěšky", en: "Post office or locker {{value}} min walk", ko: "우체국·택배 보관함 도보 {{value}}분"}
       - id: bakery_walk_min
-        label: {pl: "Piekarnia", cs: "Pekárna", en: "Bakery"}
+        label: {pl: "Piekarnia", cs: "Pekárna", en: "Bakery", ko: "빵집"}
         unit: min
         norm: {type: decay, good: 3, bad: 12}
         walkScaled: true
@@ -429,9 +429,9 @@ criteria:
         crossCity: true
         priority: P2
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Piekarnia {{value}} min pieszo", cs: "Pekárna {{value}} min pěšky", en: "Bakery {{value}} min walk"}
+        explain: {pl: "Piekarnia {{value}} min pieszo", cs: "Pekárna {{value}} min pěšky", en: "Bakery {{value}} min walk", ko: "빵집 도보 {{value}}분"}
       - id: marketplace_walk_min
-        label: {pl: "Targowisko", cs: "Tržnice", en: "Marketplace"}
+        label: {pl: "Targowisko", cs: "Tržnice", en: "Marketplace", ko: "시장"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -439,9 +439,9 @@ criteria:
         crossCity: true
         priority: P2
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Targowisko {{value}} min pieszo", cs: "Tržnice {{value}} min pěšky", en: "Market {{value}} min walk"}
+        explain: {pl: "Targowisko {{value}} min pieszo", cs: "Tržnice {{value}} min pěšky", en: "Market {{value}} min walk", ko: "시장 도보 {{value}}분"}
       - id: atm_walk_min
-        label: {pl: "Bankomat", cs: "Bankomat", en: "ATM"}
+        label: {pl: "Bankomat", cs: "Bankomat", en: "ATM", ko: "ATM"}
         unit: min
         norm: {type: decay, good: 3, bad: 12}
         walkScaled: true
@@ -449,24 +449,24 @@ criteria:
         crossCity: true
         priority: P2
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Bankomat {{value}} min pieszo", cs: "Bankomat {{value}} min pěšky", en: "ATM {{value}} min walk"}
+        explain: {pl: "Bankomat {{value}} min pieszo", cs: "Bankomat {{value}} min pěšky", en: "ATM {{value}} min walk", ko: "ATM 도보 {{value}}분"}
       - id: shops_10min
-        label: {pl: "Sklepy w zasięgu 10 min", cs: "Obchody do 10 min", en: "Shops within 10 min"}
+        label: {pl: "Sklepy w zasięgu 10 min", cs: "Obchody do 10 min", en: "Shops within 10 min", ko: "도보 10분 내 상점"}
         unit: count
         norm: {type: percentile}
         weight: 2
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Sklepy w zasięgu 10 min pieszo: {{value}}", cs: "Obchody do 10 min pěšky: {{value}}", en: "{{value}} shops within a 10-min walk"}
+        explain: {pl: "Sklepy w zasięgu 10 min pieszo: {{value}}", cs: "Obchody do 10 min pěšky: {{value}}", en: "{{value}} shops within a 10-min walk", ko: "도보 10분 이내 상점 {{value}}곳"}
 
   # ───────────────────────────────────────────── health
   - id: health
     emoji: "🏥"
-    label: {pl: "Zdrowie", cs: "Zdraví", en: "Health"}
+    label: {pl: "Zdrowie", cs: "Zdraví", en: "Health", ko: "의료"}
     indicators:
       - id: gp_walk_min
-        label: {pl: "Przychodnia POZ", cs: "Praktický lékař", en: "GP clinic"}
+        label: {pl: "Przychodnia POZ", cs: "Praktický lékař", en: "GP clinic", ko: "동네 의원"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -474,9 +474,9 @@ criteria:
         crossCity: true
         priority: P0
         sources: {krakow: [osm_krakow], praha: [nrpzs]}
-        explain: {pl: "Przychodnia {{value}} min pieszo", cs: "Praktický lékař {{value}} min pěšky", en: "GP clinic {{value}} min walk"}
+        explain: {pl: "Przychodnia {{value}} min pieszo", cs: "Praktický lékař {{value}} min pěšky", en: "GP clinic {{value}} min walk", ko: "동네 의원 도보 {{value}}분"}
       - id: pharmacy_walk_min
-        label: {pl: "Apteka", cs: "Lékárna", en: "Pharmacy"}
+        label: {pl: "Apteka", cs: "Lékárna", en: "Pharmacy", ko: "약국"}
         unit: min
         norm: {type: decay, good: 3, bad: 12}
         walkScaled: true
@@ -484,9 +484,9 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [nrpzs, osm_praha]}
-        explain: {pl: "Apteka {{value}} min pieszo", cs: "Lékárna {{value}} min pěšky", en: "Pharmacy {{value}} min walk"}
+        explain: {pl: "Apteka {{value}} min pieszo", cs: "Lékárna {{value}} min pěšky", en: "Pharmacy {{value}} min walk", ko: "약국 도보 {{value}}분"}
       - id: hospital_er_walk_min
-        label: {pl: "Szpital z SOR", cs: "Nemocnice s urgentním příjmem", en: "Hospital with ER"}
+        label: {pl: "Szpital z SOR", cs: "Nemocnice s urgentním příjmem", en: "Hospital with ER", ko: "응급실 있는 병원"}
         unit: min
         norm: {type: decay, good: 10, bad: 45}
         walkScaled: true
@@ -494,9 +494,9 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [nrpzs]}
-        explain: {pl: "Szpital z SOR {{value}} min pieszo", cs: "Urgentní příjem {{value}} min pěšky", en: "Hospital ER {{value}} min walk"}
+        explain: {pl: "Szpital z SOR {{value}} min pieszo", cs: "Urgentní příjem {{value}} min pěšky", en: "Hospital ER {{value}} min walk", ko: "응급실 도보 {{value}}분"}
       - id: maternity_walk_min
-        label: {pl: "Porodnia", cs: "Porodnice", en: "Maternity ward"}
+        label: {pl: "Porodnia", cs: "Porodnice", en: "Maternity ward", ko: "분만 병원"}
         unit: min
         norm: {type: decay, good: 10, bad: 45}
         walkScaled: true
@@ -504,9 +504,9 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [nrpzs]}
-        explain: {pl: "Porodnia {{value}} min pieszo", cs: "Porodnice {{value}} min pěšky", en: "Maternity ward {{value}} min walk"}
+        explain: {pl: "Porodnia {{value}} min pieszo", cs: "Porodnice {{value}} min pěšky", en: "Maternity ward {{value}} min walk", ko: "분만 병원 도보 {{value}}분"}
       - id: gynaecology_walk_min
-        label: {pl: "Ginekolog", cs: "Gynekolog", en: "Gynaecologist"}
+        label: {pl: "Ginekolog", cs: "Gynekolog", en: "Gynaecologist", ko: "산부인과"}
         unit: min
         norm: {type: decay, good: 5, bad: 25}
         walkScaled: true
@@ -514,9 +514,9 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [nrpzs]}
-        explain: {pl: "Ginekolog {{value}} min pieszo", cs: "Gynekolog {{value}} min pěšky", en: "Gynaecologist {{value}} min walk"}
+        explain: {pl: "Ginekolog {{value}} min pieszo", cs: "Gynekolog {{value}} min pěšky", en: "Gynaecologist {{value}} min walk", ko: "산부인과 도보 {{value}}분"}
       - id: dentist_walk_min
-        label: {pl: "Dentysta", cs: "Zubař", en: "Dentist"}
+        label: {pl: "Dentysta", cs: "Zubař", en: "Dentist", ko: "치과"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -524,24 +524,24 @@ criteria:
         crossCity: true
         priority: P2
         sources: {krakow: [osm_krakow], praha: [nrpzs]}
-        explain: {pl: "Dentysta {{value}} min pieszo", cs: "Zubař {{value}} min pěšky", en: "Dentist {{value}} min walk"}
+        explain: {pl: "Dentysta {{value}} min pieszo", cs: "Zubař {{value}} min pěšky", en: "Dentist {{value}} min walk", ko: "치과 도보 {{value}}분"}
 
   # ───────────────────────────────────────────── environment
   - id: environment
     emoji: "🌬️"
-    label: {pl: "Cisza i czyste powietrze", cs: "Klid a čisté ovzduší", en: "Quiet & clean air"}
+    label: {pl: "Cisza i czyste powietrze", cs: "Klid a čisté ovzduší", en: "Quiet & clean air", ko: "조용함·깨끗한 공기"}
     indicators:
       - id: noise_db                    # max of road/tram/rail, area-weighted. K: Lden (MSIP) · P: LAeq/Ldvn (IPR)
-        label: {pl: "Hałas", cs: "Hluk", en: "Noise"}
+        label: {pl: "Hałas", cs: "Hluk", en: "Noise", ko: "소음"}
         unit: db
         norm: {type: inverse_percentile}
         weight: 3
         crossCity: false        # city-level offset (K Lden vs P LAeq; regional PM) dominates → not comparable across cities
         priority: P0
         sources: {krakow: [msip], praha: [ipr]}
-        explain: {pl: "Hałas ok. {{value}} dB", cs: "Hluk cca {{value}} dB", en: "Noise ~{{value}} dB"}
+        explain: {pl: "Hałas ok. {{value}} dB", cs: "Hluk cca {{value}} dB", en: "Noise ~{{value}} dB", ko: "소음 약 {{value}} dB"}
       - id: pm25
-        label: {pl: "Pył PM2,5", cs: "Prach PM2,5", en: "PM2.5"}
+        label: {pl: "Pył PM2,5", cs: "Prach PM2,5", en: "PM2.5", ko: "초미세먼지 PM2.5"}
         unit: ugm3
         decimals: 1
         norm: {type: inverse_percentile}
@@ -549,9 +549,9 @@ criteria:
         crossCity: false        # city-level offset (K Lden vs P LAeq; regional PM) dominates → not comparable across cities
         priority: P0
         sources: {krakow: [gios], praha: [chmi_air]}
-        explain: {pl: "PM2,5 ok. {{value}} µg/m³", cs: "PM2,5 cca {{value}} µg/m³", en: "PM2.5 ~{{value}} µg/m³"}
+        explain: {pl: "PM2,5 ok. {{value}} µg/m³", cs: "PM2,5 cca {{value}} µg/m³", en: "PM2.5 ~{{value}} µg/m³", ko: "PM2.5 약 {{value}} µg/m³"}
       - id: pm10
-        label: {pl: "Pył PM10", cs: "Prach PM10", en: "PM10"}
+        label: {pl: "Pył PM10", cs: "Prach PM10", en: "PM10", ko: "미세먼지 PM10"}
         unit: ugm3
         decimals: 1
         norm: {type: inverse_percentile}
@@ -559,42 +559,42 @@ criteria:
         crossCity: false        # city-level offset (K Lden vs P LAeq; regional PM) dominates → not comparable across cities
         priority: P0
         sources: {krakow: [gios], praha: [chmi_air]}
-        explain: {pl: "PM10 ok. {{value}} µg/m³", cs: "PM10 cca {{value}} µg/m³", en: "PM10 ~{{value}} µg/m³"}
+        explain: {pl: "PM10 ok. {{value}} µg/m³", cs: "PM10 cca {{value}} µg/m³", en: "PM10 ~{{value}} µg/m³", ko: "PM10 약 {{value}} µg/m³"}
       - id: major_road_m
-        label: {pl: "Odległość od głównej drogi", cs: "Vzdálenost od hlavní silnice", en: "Distance to major road"}
+        label: {pl: "Odległość od głównej drogi", cs: "Vzdálenost od hlavní silnice", en: "Distance to major road", ko: "간선도로까지 거리"}
         unit: m
         norm: {type: decay, good: 300, bad: 30}
         weight: 1
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Główna droga {{value}} m dalej", cs: "Hlavní silnice {{value}} m daleko", en: "Major road {{value}} m away"}
+        explain: {pl: "Główna droga {{value}} m dalej", cs: "Hlavní silnice {{value}} m daleko", en: "Major road {{value}} m away", ko: "간선도로까지 {{value}} m"}
       - id: industrial_ha_1km
-        label: {pl: "Tereny przemysłowe (1 km)", cs: "Průmyslové plochy (1 km)", en: "Industrial land (1 km)"}
+        label: {pl: "Tereny przemysłowe (1 km)", cs: "Průmyslové plochy (1 km)", en: "Industrial land (1 km)", ko: "산업 용지 (1 km)"}
         unit: ha
         norm: {type: inverse_percentile}
         weight: 1
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Tereny przemysłowe w promieniu 1 km: {{value}} ha", cs: "Průmyslové plochy do 1 km: {{value}} ha", en: "{{value}} ha of industrial land within 1 km"}
+        explain: {pl: "Tereny przemysłowe w promieniu 1 km: {{value}} ha", cs: "Průmyslové plochy do 1 km: {{value}} ha", en: "{{value}} ha of industrial land within 1 km", ko: "1 km 이내 산업 용지 {{value}} ha"}
 
   # ───────────────────────────────────────────── leisure
   - id: leisure
     emoji: "🎭"
-    label: {pl: "Kultura, sport i gastronomia", cs: "Kultura, sport a gastronomie", en: "Culture, sport & food"}
+    label: {pl: "Kultura, sport i gastronomia", cs: "Kultura, sport a gastronomie", en: "Culture, sport & food", ko: "문화·스포츠·음식"}
     indicators:
       - id: food_10min
-        label: {pl: "Restauracje i kawiarnie (10 min)", cs: "Restaurace a kavárny (10 min)", en: "Restaurants & cafés (10 min)"}
+        label: {pl: "Restauracje i kawiarnie (10 min)", cs: "Restaurace a kavárny (10 min)", en: "Restaurants & cafés (10 min)", ko: "레스토랑·카페 (10분)"}
         unit: count
         norm: {type: percentile}
         weight: 2
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Restauracje i kawiarnie w zasięgu 10 min: {{value}}", cs: "Restaurace a kavárny do 10 min: {{value}}", en: "{{value}} restaurants & cafés within 10 min"}
+        explain: {pl: "Restauracje i kawiarnie w zasięgu 10 min: {{value}}", cs: "Restaurace a kavárny do 10 min: {{value}}", en: "{{value}} restaurants & cafés within 10 min", ko: "10분 이내 레스토랑·카페 {{value}}곳"}
       - id: culture_walk_min
-        label: {pl: "Kultura (teatr, kino, muzeum)", cs: "Kultura (divadlo, kino, muzeum)", en: "Culture (theatre, cinema, museum)"}
+        label: {pl: "Kultura (teatr, kino, muzeum)", cs: "Kultura (divadlo, kino, muzeum)", en: "Culture (theatre, cinema, museum)", ko: "문화 시설 (극장, 영화관, 박물관)"}
         unit: min
         norm: {type: decay, good: 5, bad: 25}
         walkScaled: true
@@ -602,9 +602,9 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Kultura {{value}} min pieszo", cs: "Kultura {{value}} min pěšky", en: "Culture venue {{value}} min walk"}
+        explain: {pl: "Kultura {{value}} min pieszo", cs: "Kultura {{value}} min pěšky", en: "Culture venue {{value}} min walk", ko: "문화 시설 도보 {{value}}분"}
       - id: sports_walk_min
-        label: {pl: "Sport i siłownia", cs: "Sport a posilovna", en: "Sports & gym"}
+        label: {pl: "Sport i siłownia", cs: "Sport a posilovna", en: "Sports & gym", ko: "스포츠·헬스장"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -612,19 +612,19 @@ criteria:
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Obiekt sportowy {{value}} min pieszo", cs: "Sportoviště {{value}} min pěšky", en: "Sports venue {{value}} min walk"}
+        explain: {pl: "Obiekt sportowy {{value}} min pieszo", cs: "Sportoviště {{value}} min pěšky", en: "Sports venue {{value}} min walk", ko: "스포츠 시설 도보 {{value}}분"}
       - id: nightlife_10min
-        label: {pl: "Życie nocne (10 min)", cs: "Noční život (10 min)", en: "Nightlife (10 min)"}
+        label: {pl: "Życie nocne (10 min)", cs: "Noční život (10 min)", en: "Nightlife (10 min)", ko: "나이트라이프 (10분)"}
         unit: count
         norm: {type: percentile}
         weight: 1
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Bary i kluby w zasięgu 10 min: {{value}}", cs: "Bary a kluby do 10 min: {{value}}", en: "{{value}} bars & clubs within 10 min"}
+        explain: {pl: "Bary i kluby w zasięgu 10 min: {{value}}", cs: "Bary a kluby do 10 min: {{value}}", en: "{{value}} bars & clubs within 10 min", ko: "10분 이내 바·클럽 {{value}}곳"}
       - id: park_walk_min               # alias: seniors' leisure counts parks
         column: green.park_walk_min
-        label: {pl: "Park (≥ 2 ha)", cs: "Park (≥ 2 ha)", en: "Park (≥ 2 ha)"}
+        label: {pl: "Park (≥ 2 ha)", cs: "Park (≥ 2 ha)", en: "Park (≥ 2 ha)", ko: "공원 (≥ 2 ha)"}
         unit: min
         norm: {type: decay, good: 5, bad: 20}
         walkScaled: true
@@ -632,42 +632,42 @@ criteria:
         crossCity: false
         priority: P1
         sources: {krakow: [osm_krakow, krk_open], praha: [osm_praha, ipr, golemio]}
-        explain: {pl: "Park {{value}} min pieszo", cs: "Park {{value}} min pěšky", en: "Park {{value}} min walk"}
+        explain: {pl: "Park {{value}} min pieszo", cs: "Park {{value}} min pěšky", en: "Park {{value}} min walk", ko: "공원 도보 {{value}}분"}
 
   # ───────────────────────────────────────────── accessibility
   - id: accessibility
     emoji: "♿"
-    label: {pl: "Dostępność", cs: "Bezbariérovost", en: "Accessibility"}
+    label: {pl: "Dostępność", cs: "Bezbariérovost", en: "Accessibility", ko: "무장애 접근성"}
     indicators:
       - id: accessible_stop_share       # GTFS stops.wheelchair_boarding=1 within 500 m
-        label: {pl: "Przystanki bez barier (500 m)", cs: "Bezbariérové zastávky (500 m)", en: "Step-free stops (500 m)"}
+        label: {pl: "Przystanki bez barier (500 m)", cs: "Bezbariérové zastávky (500 m)", en: "Step-free stops (500 m)", ko: "계단 없는 정류장 (500 m)"}
         unit: pct
         norm: {type: decay, good: 90, bad: 20}
         weight: 2
         crossCity: true
         priority: P0
         sources: {krakow: [gtfs_ztp], praha: [gtfs_pid]}
-        explain: {pl: "Przystanki bez barier w pobliżu: {{value}}%", cs: "Bezbariérové zastávky poblíž: {{value}} %", en: "Step-free stops nearby: {{value}}%"}
+        explain: {pl: "Przystanki bez barier w pobliżu: {{value}}%", cs: "Bezbariérové zastávky poblíž: {{value}} %", en: "Step-free stops nearby: {{value}}%", ko: "근처 계단 없는 정류장: {{value}}%"}
       - id: lowfloor_trip_share         # GTFS trips.wheelchair_accessible=1 among trips at stops within 500 m
-        label: {pl: "Kursy niskopodłogowe (500 m)", cs: "Nízkopodlažní spoje (500 m)", en: "Low-floor trips (500 m)"}
+        label: {pl: "Kursy niskopodłogowe (500 m)", cs: "Nízkopodlažní spoje (500 m)", en: "Low-floor trips (500 m)", ko: "저상 차량 운행 (500 m)"}
         unit: pct
         norm: {type: decay, good: 95, bad: 40}
         weight: 2
         crossCity: true
         priority: P0
         sources: {krakow: [gtfs_ztp], praha: [gtfs_pid]}
-        explain: {pl: "Kursy niskopodłogowe: {{value}}%", cs: "Nízkopodlažní spoje: {{value}} %", en: "Low-floor trips: {{value}}%"}
+        explain: {pl: "Kursy niskopodłogowe: {{value}}%", cs: "Nízkopodlažní spoje: {{value}} %", en: "Low-floor trips: {{value}}%", ko: "저상 차량 운행: {{value}}%"}
       - id: benches_300m
-        label: {pl: "Ławki (300 m)", cs: "Lavičky (300 m)", en: "Benches (300 m)"}
+        label: {pl: "Ławki (300 m)", cs: "Lavičky (300 m)", en: "Benches (300 m)", ko: "벤치 (300 m)"}
         unit: count
         norm: {type: percentile}
         weight: 1
         crossCity: true
         priority: P1
         sources: {krakow: [osm_krakow], praha: [osm_praha]}
-        explain: {pl: "Ławki w promieniu 300 m: {{value}}", cs: "Lavičky do 300 m: {{value}}", en: "{{value}} benches within 300 m"}
+        explain: {pl: "Ławki w promieniu 300 m: {{value}}", cs: "Lavičky do 300 m: {{value}}", en: "{{value}} benches within 300 m", ko: "300 m 이내 벤치 {{value}}개"}
       - id: slope_pct
-        label: {pl: "Nachylenie terenu", cs: "Sklon terénu", en: "Terrain slope"}
+        label: {pl: "Nachylenie terenu", cs: "Sklon terénu", en: "Terrain slope", ko: "지형 경사"}
         unit: pct
         decimals: 1
         norm: {type: decay, good: 2, bad: 8}
@@ -675,13 +675,13 @@ criteria:
         crossCity: true
         priority: P2
         sources: {krakow: [dem], praha: [dem]}
-        explain: {pl: "Średnie nachylenie {{value}}%", cs: "Průměrný sklon {{value}} %", en: "Average slope {{value}}%"}
+        explain: {pl: "Średnie nachylenie {{value}}%", cs: "Průměrný sklon {{value}} %", en: "Average slope {{value}}%", ko: "평균 경사 {{value}}%"}
 
 # ───────────────────────────────────────────── personas (identical in both cities; README §3.4)
 personas:
   - id: student
     emoji: "🎒"
-    label: {pl: "Student/ka", cs: "Student/ka", en: "Student"}
+    label: {pl: "Student/ka", cs: "Student/ka", en: "Student", ko: "학생"}
     weights: {commute: 5, transit: 5, active: 3, green: 2, education: 1, family: 0, safety: 3,
               price: 5, shops: 3, health: 1, environment: 2, leisure: 5, accessibility: 0}
     indicatorWeights:
@@ -694,21 +694,21 @@ personas:
       "transit.night_departures_500m": 2
     walkFactor: 1.0
     suggestedAnchors:
-      - {id: university, label: {pl: "Moja uczelnia", cs: "Moje škola/univerzita", en: "My university"}, mode: transit, level: 5, poiCategory: university}
+      - {id: university, label: {pl: "Moja uczelnia", cs: "Moje škola/univerzita", en: "My university", ko: "내 대학교"}, mode: transit, level: 5, poiCategory: university}
 
   - id: working
     emoji: "💼"
-    label: {pl: "Pracuję", cs: "Pracuji", en: "Working"}
+    label: {pl: "Pracuję", cs: "Pracuji", en: "Working", ko: "직장인"}
     weights: {commute: 5, transit: 4, active: 4, green: 3, education: 0, family: 0, safety: 3,
               price: 4, shops: 4, health: 2, environment: 3, leisure: 4, accessibility: 0}
     indicatorWeights: {}
     walkFactor: 1.0
     suggestedAnchors:
-      - {id: work, label: {pl: "Praca", cs: "Práce", en: "Work"}, mode: transit, level: 5}
+      - {id: work, label: {pl: "Praca", cs: "Práce", en: "Work", ko: "직장"}, mode: transit, level: 5}
 
   - id: parent
     emoji: "👨‍👩‍👧"
-    label: {pl: "Rodzic", cs: "Rodič", en: "Parent"}
+    label: {pl: "Rodzic", cs: "Rodič", en: "Parent", ko: "부모"}
     weights: {commute: 3, transit: 3, active: 2, green: 5, education: 5, family: 5, safety: 5,
               price: 3, shops: 4, health: 4, environment: 4, leisure: 1, accessibility: 2}
     indicatorWeights:
@@ -721,12 +721,12 @@ personas:
       "family.playgrounds_500m": 4
     walkFactor: 1.0
     suggestedAnchors:
-      - {id: work,   label: {pl: "Praca", cs: "Práce", en: "Work"}, mode: transit, level: 4}
-      - {id: school, label: {pl: "Szkoła dziecka", cs: "Škola dítěte", en: "Child's school"}, mode: walk, level: 4, poiCategory: primary_school}
+      - {id: work,   label: {pl: "Praca", cs: "Práce", en: "Work", ko: "직장"}, mode: transit, level: 4}
+      - {id: school, label: {pl: "Szkoła dziecka", cs: "Škola dítěte", en: "Child's school", ko: "아이 학교"}, mode: walk, level: 4, poiCategory: primary_school}
 
   - id: expecting
     emoji: "🤰"
-    label: {pl: "W ciąży", cs: "Těhotná", en: "Expecting"}
+    label: {pl: "W ciąży", cs: "Těhotná", en: "Expecting", ko: "임신 중"}
     weights: {commute: 3, transit: 4, active: 2, green: 4, education: 3, family: 4, safety: 4,
               price: 3, shops: 4, health: 5, environment: 5, leisure: 1, accessibility: 4}
     indicatorWeights:
@@ -748,11 +748,11 @@ personas:
       "accessibility.slope_pct": 0
     walkFactor: 1.3
     suggestedAnchors:
-      - {id: work, label: {pl: "Praca", cs: "Práce", en: "Work"}, mode: transit, level: 3}
+      - {id: work, label: {pl: "Praca", cs: "Práce", en: "Work", ko: "직장"}, mode: transit, level: 3}
 
   - id: senior
     emoji: "🧓"
-    label: {pl: "Senior/ka", cs: "Senior/ka", en: "Senior"}
+    label: {pl: "Senior/ka", cs: "Senior/ka", en: "Senior", ko: "시니어"}
     weights: {commute: 1, transit: 4, active: 3, green: 4, education: 0, family: 0, safety: 5,
               price: 3, shops: 5, health: 5, environment: 4, leisure: 3, accessibility: 5}
     indicatorWeights:
@@ -773,21 +773,21 @@ personas:
       "leisure.sports_walk_min": 0
     walkFactor: 1.35
     suggestedAnchors:
-      - {id: family, label: {pl: "Rodzina", cs: "Rodina", en: "Family"}, mode: transit, level: 3}
+      - {id: family, label: {pl: "Rodzina", cs: "Rodina", en: "Family", ko: "가족"}, mode: transit, level: 3}
 
   - id: expat
     emoji: "🧳"
-    label: {pl: "Przeprowadzam się", cs: "Stěhuju se", en: "Relocating"}
+    label: {pl: "Przeprowadzam się", cs: "Stěhuju se", en: "Relocating", ko: "이주 예정"}
     weights: {commute: 4, transit: 5, active: 3, green: 3, education: 0, family: 0, safety: 4,
               price: 4, shops: 4, health: 2, environment: 3, leisure: 5, accessibility: 0}
     indicatorWeights: {}
     walkFactor: 1.0
     suggestedAnchors:
-      - {id: work, label: {pl: "Praca", cs: "Práce", en: "Work"}, mode: transit, level: 5}
+      - {id: work, label: {pl: "Praca", cs: "Práce", en: "Work", ko: "직장"}, mode: transit, level: 5}
 
   - id: custom
     emoji: "✏️"
-    label: {pl: "Własny profil", cs: "Vlastní profil", en: "Custom"}
+    label: {pl: "Własny profil", cs: "Vlastní profil", en: "Custom", ko: "직접 설정"}
     weights: {commute: 3, transit: 3, active: 3, green: 3, education: 3, family: 3, safety: 3,
               price: 3, shops: 3, health: 3, environment: 3, leisure: 3, accessibility: 3}
     indicatorWeights: {}
@@ -797,20 +797,20 @@ personas:
 # ───────────────────────────────────────────── hard filter: must-have within N minutes' walk
 # `column` is the features.parquet column whose raw walk minutes are compared with maxWalkMin.
 mustHaveCategories:
-  - {id: nursery,        emoji: "🍼", column: "education.nursery_walk_min",        label: {pl: "Żłobek",            cs: "Jesle",                 en: "Nursery"}}
-  - {id: kindergarten,   emoji: "🧒", column: "education.kindergarten_walk_min",   label: {pl: "Przedszkole",       cs: "Mateřská škola",        en: "Kindergarten"}}
-  - {id: primary_school, emoji: "🏫", column: "education.primary_school_walk_min", label: {pl: "Szkoła podstawowa", cs: "Základní škola",        en: "Primary school"}}
-  - {id: tram_stop,      emoji: "🚋", column: "transit.tram_stop_walk_min",        label: {pl: "Przystanek tramwajowy", cs: "Tramvajová zastávka", en: "Tram stop"}}
-  - {id: metro_station,  emoji: "🚇", column: "poi.metro_station_walk_min",        label: {pl: "Stacja metra",      cs: "Stanice metra",         en: "Metro station"}, cities: [praha]}
-  - {id: rail_station,   emoji: "🚆", column: "transit.rail_station_walk_min",     label: {pl: "Stacja kolejowa",   cs: "Železniční stanice",    en: "Rail station"}}
-  - {id: park,           emoji: "🌳", column: "green.park_walk_min",               label: {pl: "Park",              cs: "Park",                  en: "Park"}}
-  - {id: pharmacy,       emoji: "💊", column: "health.pharmacy_walk_min",          label: {pl: "Apteka",            cs: "Lékárna",               en: "Pharmacy"}}
-  - {id: gp_clinic,      emoji: "🩺", column: "health.gp_walk_min",                label: {pl: "Przychodnia",       cs: "Praktický lékař",       en: "GP clinic"}}
-  - {id: supermarket,    emoji: "🛒", column: "shops.supermarket_walk_min",        label: {pl: "Supermarket",       cs: "Supermarket",           en: "Supermarket"}}
-  - {id: maternity_ward, emoji: "🤱", column: "health.maternity_walk_min",         label: {pl: "Porodnia",          cs: "Porodnice",             en: "Maternity ward"}}
+  - {id: nursery,        emoji: "🍼", column: "education.nursery_walk_min",        label: {pl: "Żłobek",            cs: "Jesle",                 en: "Nursery", ko: "어린이집"}}
+  - {id: kindergarten,   emoji: "🧒", column: "education.kindergarten_walk_min",   label: {pl: "Przedszkole",       cs: "Mateřská škola",        en: "Kindergarten", ko: "유치원"}}
+  - {id: primary_school, emoji: "🏫", column: "education.primary_school_walk_min", label: {pl: "Szkoła podstawowa", cs: "Základní škola",        en: "Primary school", ko: "초등학교"}}
+  - {id: tram_stop,      emoji: "🚋", column: "transit.tram_stop_walk_min",        label: {pl: "Przystanek tramwajowy", cs: "Tramvajová zastávka", en: "Tram stop", ko: "트램 정류장"}}
+  - {id: metro_station,  emoji: "🚇", column: "poi.metro_station_walk_min",        label: {pl: "Stacja metra",      cs: "Stanice metra",         en: "Metro station", ko: "지하철역"}, cities: [praha]}
+  - {id: rail_station,   emoji: "🚆", column: "transit.rail_station_walk_min",     label: {pl: "Stacja kolejowa",   cs: "Železniční stanice",    en: "Rail station", ko: "기차역"}}
+  - {id: park,           emoji: "🌳", column: "green.park_walk_min",               label: {pl: "Park",              cs: "Park",                  en: "Park", ko: "공원"}}
+  - {id: pharmacy,       emoji: "💊", column: "health.pharmacy_walk_min",          label: {pl: "Apteka",            cs: "Lékárna",               en: "Pharmacy", ko: "약국"}}
+  - {id: gp_clinic,      emoji: "🩺", column: "health.gp_walk_min",                label: {pl: "Przychodnia",       cs: "Praktický lékař",       en: "GP clinic", ko: "동네 의원"}}
+  - {id: supermarket,    emoji: "🛒", column: "shops.supermarket_walk_min",        label: {pl: "Supermarket",       cs: "Supermarket",           en: "Supermarket", ko: "슈퍼마켓"}}
+  - {id: maternity_ward, emoji: "🤱", column: "health.maternity_walk_min",         label: {pl: "Porodnia",          cs: "Porodnice",             en: "Maternity ward", ko: "분만 병원"}}
 
 # ───────────────────────────────────────────── neighbourhood archetypes (pooled KMeans → MLP)
-# The API returns ids only. Workstream C owns the pl/cs/en names ("archetype.<id>" in web/src/locales).
+# The API returns ids only. Workstream C owns the pl/cs/en/ko names ("archetype.<id>" in web/src/locales).
 # k is chosen in 6–8 by silhouette; clusters are mapped to these ids by profile, unused ids are simply absent.
 archetypes:
   - {id: historic_core,     emoji: "🏛️", hint: "dense historic centre: top transit, food & culture; noisy, little green"}
@@ -824,18 +824,18 @@ archetypes:
 
 # ───────────────────────────────────────────── server-side text templates
 texts:
-  budget: {pl: "Za Twój budżet ~{{value}} m²", cs: "Za váš rozpočet ~{{value}} m²", en: "Your budget ≈ {{value}} m²"}
-  noData: {pl: "brak danych", cs: "chybí data", en: "no data"}
-  imputed: {pl: "szacunek (mediana miasta)", cs: "odhad (medián města)", en: "estimate (city median)"}
+  budget: {pl: "Za Twój budżet ~{{value}} m²", cs: "Za váš rozpočet ~{{value}} m²", en: "Your budget ≈ {{value}} m²", ko: "내 예산으로 약 {{value}} m²"}
+  noData: {pl: "brak danych", cs: "chybí data", en: "no data", ko: "데이터 없음"}
+  imputed: {pl: "szacunek (mediana miasta)", cs: "odhad (medián města)", en: "estimate (city median)", ko: "추정값 (도시 중앙값)"}
   airLevel:            # LiveAir.level — common 0–5 scale (GIOŚ index ids map 1:1; ČHMÚ/Golemio mapped by PM thresholds)
-    0: {pl: "Bardzo dobra",  cs: "Velmi dobrá",   en: "Very good"}
-    1: {pl: "Dobra",         cs: "Dobrá",         en: "Good"}
-    2: {pl: "Umiarkowana",   cs: "Uspokojivá",    en: "Moderate"}
-    3: {pl: "Dostateczna",   cs: "Vyhovující",    en: "Sufficient"}
-    4: {pl: "Zła",           cs: "Špatná",        en: "Poor"}
-    5: {pl: "Bardzo zła",    cs: "Velmi špatná",  en: "Very poor"}
+    0: {pl: "Bardzo dobra",  cs: "Velmi dobrá",   en: "Very good", ko: "매우 좋음"}
+    1: {pl: "Dobra",         cs: "Dobrá",         en: "Good", ko: "좋음"}
+    2: {pl: "Umiarkowana",   cs: "Uspokojivá",    en: "Moderate", ko: "보통"}
+    3: {pl: "Dostateczna",   cs: "Vyhovující",    en: "Sufficient", ko: "다소 나쁨"}
+    4: {pl: "Zła",           cs: "Špatná",        en: "Poor", ko: "나쁨"}
+    5: {pl: "Bardzo zła",    cs: "Velmi špatná",  en: "Very poor", ko: "매우 나쁨"}
   relax:
-    price:     {pl: "Bez limitu ceny pasujących miejsc: {{count}}", cs: "Bez cenového limitu vyhovujících míst: {{count}}", en: "Without the price limit: {{count}} matching places"}
-    commute:   {pl: "Bez limitu dojazdu do „{{anchor}}” pasujących miejsc: {{count}}", cs: "Bez limitu dojezdu do „{{anchor}}“ vyhovujících míst: {{count}}", en: "Without the commute limit to “{{anchor}}”: {{count}} matching places"}
-    mustHave:  {pl: "Bez wymogu „{{category}}” pasujących miejsc: {{count}}", cs: "Bez požadavku „{{category}}“ vyhovujících míst: {{count}}", en: "Without “{{category}}” nearby: {{count}} matching places"}
-    noise:     {pl: "Bez limitu hałasu pasujących miejsc: {{count}}", cs: "Bez limitu hluku vyhovujících míst: {{count}}", en: "Without the noise limit: {{count}} matching places"}
+    price:     {pl: "Bez limitu ceny pasujących miejsc: {{count}}", cs: "Bez cenového limitu vyhovujících míst: {{count}}", en: "Without the price limit: {{count}} matching places", ko: "가격 제한을 없애면 맞는 장소: {{count}}곳"}
+    commute:   {pl: "Bez limitu dojazdu do „{{anchor}}” pasujących miejsc: {{count}}", cs: "Bez limitu dojezdu do „{{anchor}}“ vyhovujících míst: {{count}}", en: "Without the commute limit to “{{anchor}}”: {{count}} matching places", ko: "“{{anchor}}” 통근 제한을 없애면 맞는 장소: {{count}}곳"}
+    mustHave:  {pl: "Bez wymogu „{{category}}” pasujących miejsc: {{count}}", cs: "Bez požadavku „{{category}}“ vyhovujících míst: {{count}}", en: "Without “{{category}}” nearby: {{count}} matching places", ko: "근처 “{{category}}” 조건을 없애면 맞는 장소: {{count}}곳"}
+    noise:     {pl: "Bez limitu hałasu pasujących miejsc: {{count}}", cs: "Bez limitu hluku vyhovujících míst: {{count}}", en: "Without the noise limit: {{count}} matching places", ko: "소음 제한을 없애면 맞는 장소: {{count}}곳"}

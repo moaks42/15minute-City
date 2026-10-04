@@ -7,7 +7,7 @@ info:
     Contract v1 (tag contracts-v1). Changes after v1 are ADDITIVE ONLY and are listed in docs/notes/B.md.
 
     Conventions
-    - All labels that come from config are I18nText objects ({pl, cs, en}) so a language switch needs no refetch.
+    - All labels that come from config are I18nText objects ({pl, cs, en, ko}) so a language switch needs no refetch.
     - Server-rendered sentences (explanations, relax hint) are plain strings in the requested `lang`.
     - Scores are integers 0–100. Coordinates are WGS84 (EPSG:4326). H3 cells are res 9 unless stated.
     - Archetypes are returned as ids; the web app owns their names ("archetype.<id>").
@@ -245,7 +245,7 @@ components:
           properties:
             code: {type: string, examples: [unknown_city, unknown_cell, invalid_request, unavailable]}
             message: {type: string}
-    Lang: {type: string, enum: [pl, cs, en]}
+    Lang: {type: string, enum: [pl, cs, en, ko]}
     CityId: {type: string, enum: [krakow, praha]}
     Currency: {type: string, enum: [PLN, CZK]}
     Mode: {type: string, enum: [transit, bike, walk], default: transit}
@@ -259,8 +259,8 @@ components:
       enum: [historic_core, urban_mix, student_buzz, estate_blocks, green_residential, family_suburb, quiet_outskirts, industrial_edge]
     I18nText:
       type: object
-      required: [pl, cs, en]
-      properties: {pl: {type: string}, cs: {type: string}, en: {type: string}}
+      required: [pl, cs, en, ko]
+      properties: {pl: {type: string}, cs: {type: string}, en: {type: string}, ko: {type: string}}
     LatLon:
       type: object
       required: [lat, lon]

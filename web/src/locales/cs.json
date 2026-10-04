@@ -283,7 +283,7 @@
     "hover": {
       "match": "{{value}} % shoda",
       "commute": "{{place}}: {{time}}",
-      "failing": "mimo tvé limity",
+      "failing": "mimo vaše limity",
       "criterion": "{{criterion}} {{value}}/100",
       "uninhabited": "Nikdo tu nebydlí",
       "noData": "bez dat",
@@ -319,6 +319,7 @@
       "bad": "Špatná",
       "very_bad": "Velmi špatná"
     },
+    "pm25": "PM2,5",
     "similar": "Podobná místa v tomto městě",
     "twins": "Dvojčata čtvrtí",
     "twinsLead": "Místa {{city}} s podobným každodenním charakterem.",

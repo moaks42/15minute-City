@@ -128,11 +128,18 @@ test('the results follow the map lens; a district opens as a whole', async ({ pa
 
 test('a chosen language survives reload and city choice', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('radio', { name: 'cs' }).click()
+  await page.getByTestId('lang-select').selectOption('cs')
   await expect(page.locator('html')).toHaveAttribute('lang', 'cs')
   await page.reload()
   await expect(page.locator('html')).toHaveAttribute('lang', 'cs')
   await page.getByTestId('city-krakow').click()
   await expect(page).toHaveURL(/\/krakow/)
   await expect(page.locator('html')).toHaveAttribute('lang', 'cs')
+})
+
+test('Korean is picked from the language menu', async ({ page }) => {
+  await page.goto('/')
+  await page.getByTestId('lang-select').selectOption('ko')
+  await expect(page.locator('html')).toHaveAttribute('lang', 'ko')
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('내 삶에 맞는 동네를 찾아보세요.')
 })

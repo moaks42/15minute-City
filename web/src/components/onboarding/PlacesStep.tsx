@@ -6,7 +6,7 @@ import type { Anchor, GeocodeHit, Mode } from '@/api/types'
 import { GeoSearch } from '@/components/common/GeoSearch'
 import { Button } from '@/components/ui/button'
 import { MUST_HAVE } from '@/content/defaults'
-import { CURRENCY } from '@/lib/format'
+import { currencySuffix } from '@/lib/format'
 import { L, cn } from '@/lib/utils'
 import { useApp } from '@/state/store'
 import { LEVEL_EMOJI, MODE_ICON } from './icons'
@@ -216,8 +216,7 @@ export function LimitsForm() {
   const { city, lang, filters, setFilters, budget, set } = useApp()
   const { data: meta } = useMeta(city)
   const isBuy = city === 'krakow'
-  const cur = CURRENCY[city!]
-  const curSym = cur === 'PLN' ? (lang === 'en' ? 'PLN' : 'zł') : lang === 'en' ? 'CZK' : 'Kč'
+  const curSym = currencySuffix(lang, city!)
   const categories = (meta?.mustHaveCategories?.length ? meta.mustHaveCategories.filter((c) => c.available) : MUST_HAVE.map((id) => ({ id, emoji: '', label: null }))).map((c) => ({
     id: c.id,
     label: `${c.emoji ? c.emoji + ' ' : ''}${c.label ? L(c.label, lang) : t(`places.categories.${c.id}`, { defaultValue: c.id })}`,
@@ -234,7 +233,7 @@ export function LimitsForm() {
           hint={t('places.budget.hint')}
           value={budget}
           onChange={(v) => set({ budget: v })}
-          suffix={isBuy ? curSym : `${curSym}/${lang === 'en' ? 'mo' : lang === 'pl' ? 'mies.' : 'měs.'}`}
+          suffix={currencySuffix(lang, city!, !isBuy)}
         />
         <NumberField
           label={t(isBuy ? 'places.maxPrice.buy' : 'places.maxPrice.rent')}
