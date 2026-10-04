@@ -1,7 +1,7 @@
 import { AlertTriangle, ArrowRight, Check, Info, Wind } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Legend as RLegend } from 'recharts'
-import { useAir, useMeta, usePlace, useSimilar, useTwins } from '@/api/hooks'
+import { useAir, useMatchBreaks, useMeta, useNoEffectiveWeights, usePlace, useSimilar, useTwins } from '@/api/hooks'
 import type { CityId, CriterionId, Place } from '@/api/types'
 import { Button } from '@/components/ui/button'
 import { Tip } from '@/components/ui/tooltip'
@@ -148,6 +148,8 @@ export function DetailPanel({ h3 }: { h3: string }) {
   const q = usePlace(h3)
   const { data: meta } = useMeta(city)
   const similar = useSimilar(h3)
+  const breaks = useMatchBreaks()
+  const neutral = useNoEffectiveWeights() // nothing rated: no match % to show
   const p = q.data
   if (q.isPending) return <p className="p-5 text-ink-3">{t('detail.loading')}</p>
   if (q.isError || !p || !city)
@@ -176,13 +178,13 @@ export function DetailPanel({ h3 }: { h3: string }) {
   return (
     <div data-testid="detail">
       <div className="flex items-center gap-4 px-5 py-4">
-        <ScoreBadge score={p.score ?? 0} size="lg" />
+        {!neutral && <ScoreBadge score={p.score ?? 0} size="lg" breaks={breaks} />}
         <div className="min-w-0 flex-1">
           <h2 className="font-display text-2xl font-semibold leading-tight" data-testid="detail-name">
             {p.name}
           </h2>
           <p className="text-sm text-ink-3">{p.district?.name}</p>
-          <p className="text-sm text-ink-2">{t('results.matchPct', { pct: p.score ?? 0 })}</p>
+          {!neutral && <p className="text-sm text-ink-2">{t('results.matchPct', { pct: p.score ?? 0 })}</p>}
           {lensAnchor && lensTime && LensIcon && (
             <p className="flex items-center gap-1.5 text-sm font-semibold text-accent" data-testid="detail-lens">
               <LensIcon size={15} aria-hidden />

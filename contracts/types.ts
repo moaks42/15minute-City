@@ -158,7 +158,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** @description Twin neighbourhoods across cities (cosine similarity on the pooled cross-city feature vector). Give either h3 or district. */
+        /** @description Twin neighbourhoods across cities (distance similarity on the pooled cross-city feature vector: 1 − d / median random-pair distance, clipped to 0–1). Give either h3 or district. */
         get: operations["getTwins"];
         put?: never;
         post?: never;

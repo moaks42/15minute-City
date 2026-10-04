@@ -1,10 +1,11 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { useEffect, useMemo, useState } from 'react'
 import { api } from './client'
-import type { CityId, CriterionId, Mode, ScoreRequest } from './types'
+import type { CityId, CriterionId, Mode, ScoreRequest, ScoreResponse } from './types'
 import { CRITERIA } from './types'
 import { useApp } from '@/state/store'
 import { STATIC_FALLBACK } from '@/lib/env'
+import { quantileBreaks } from '@/lib/palette'
 
 function useDebounced<T>(value: T, ms: number): T {
   const [v, setV] = useState(value)
@@ -55,6 +56,25 @@ export function useScore(aggregate: ScoreRequest['aggregate'] = 'hex', enabled =
     placeholderData: keepPreviousData,
     staleTime: 60_000,
   })
+}
+
+/** Nothing the ranking can use is rated: every topic skipped, or only the
+ *  commute without places. The engine then falls back to equal weights, which
+ *  is not the user's ranking, so the UI shows a neutral state instead. */
+export function noEffectiveWeights(res: ScoreResponse | undefined): boolean {
+  if (!res) return false
+  return !Object.entries(res.weightsUsed).some(([c, level]) => level > 0 && !res.excludedCriteria.includes(c as CriterionId))
+}
+
+export function useNoEffectiveWeights(): boolean {
+  return noEffectiveWeights(useScore('hex').data)
+}
+
+/** Quantile classes of the match map; the score badges use them too, so a
+ *  place's badge has the same colour as its hexagon. */
+export function useMatchBreaks(): number[] {
+  const score = useScore('hex')
+  return useMemo(() => quantileBreaks((score.data?.cells ?? []).filter((c) => c[2] === 1).map((c) => c[1])), [score.data])
 }
 
 /** Single-criterion map mode: /score with only that criterion weighted

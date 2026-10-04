@@ -62,10 +62,10 @@ One row per grid cell, **same cells and order as `grid.geojson`**.
 |---|---|---|---|---|---|
 | `transit.stop_walk_min` | min | 0–60 (cap 60 = none within 60 min) | krakow, praha | P0 | Nearest stop (any GTFS stop); crossCity |
 | `transit.tram_stop_walk_min` | min | 0–60 | krakow, praha | P1 | Nearest tram stop (GTFS `route_type` 0); crossCity |
-| `transit.departures_per_h_500m` | dep_h | 0–600 | krakow, praha | P0 | Departures/h at stops within 500 m, Mon–Fri 07–09 (mean per hour); crossCity |
+| `transit.departures_per_h_500m` | dep_h | 0–600 | krakow, praha | P0 | Distinct trips/h departing from stops within 500 m, Mon–Fri 07–09 (mean per hour; a vehicle serving several nearby stops counts once); crossCity |
 | `transit.lines_500m` | count | ≥ 0 | krakow, praha | P1 | Distinct `route_id`s serving stops within 500 m; crossCity |
 | `transit.rail_station_walk_min` | min | 0–60 | krakow, praha | P0 | K: rail/SKA stations. P: metro + S-train stations; crossCity |
-| `transit.night_departures_500m` | count | ≥ 0 | krakow, praha | P1 | Departures 23:00–05:00 within 500 m on one weeknight; crossCity |
+| `transit.night_departures_500m` | count | ≥ 0 | krakow, praha | P1 | Distinct trips departing 23:00–05:00 from stops within 500 m on one weeknight; crossCity |
 | `active.cycleway_km_1km` | km | 0–100 | krakow, praha | P0 | Cycle-infrastructure length within 1 km; crossCity |
 | `active.intersection_density` | per_km2 | 0–1000 | krakow, praha | P1 | Walkable-network intersections (degree ≥ 3) per km² within 500 m; crossCity |
 | `active.bike_racks_300m` | count | ≥ 0 | krakow, praha | P1 | crossCity |

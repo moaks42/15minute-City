@@ -213,3 +213,49 @@ def test_explanations_are_meaningful(state, city):
                 j = next(j for j, s in enumerate(cd.specs) if s.column == e["indicator"])
                 s = float(cd.normalized(state.cfg.persona(persona)["walkFactor"])[i, j])
                 assert (s >= 60) if good else (s <= 40), (persona, e, s)
+
+
+@pytest.mark.parametrize("city", CITIES)
+def test_only_level_ratios_matter(state, city):
+    """Match % is a weighted average: all 😐, all 🤩 and all skipped (equal-weight fallback) give the same map. The
+    web tells the skipped cases apart via weightsUsed/excludedCriteria and shows a neutral state instead."""
+    cd, cfg = state.cities[city], state.cfg
+    ids = cfg.criterion_ids
+    maps = [compute(cd, cfg, req(state, weights={c: lv for c in ids})).M for lv in (0, 1, 5)]
+    assert np.array_equal(maps[0], maps[1]) and np.array_equal(maps[1], maps[2])
+    for only in (None, "commute"):  # nothing rated; only the commute, but no places
+        out = score_response(cd, cfg, req(state, weights={c: 5 if c == only else 0 for c in ids}, limit=1))
+        assert not any(lv > 0 and c not in out["excludedCriteria"] for c, lv in out["weightsUsed"].items())
+
+
+def test_krakow_crime_shows_decimals(state):
+    """Kraków's source counts only public-space offences (0.2–5 per 1,000), so whole numbers would read "0"."""
+    cd = state.cities["krakow"]
+    s = cd.specs[cd.spec_index("safety.crime_per_1000")]
+    assert s.decimals == 1 and "public-space" in s.label["en"].lower()
+    low = float(np.nanmin(cd.col("safety.crime_per_1000")))
+    assert display_value(low, s.unit, "pl", s.decimals) not in ("0", "0,0")
+
+
+def test_noise_within_band_range(state):
+    """A mean of 5-dB band values cannot leave the bands' range (FFT round-off at the edge of the Praha noise map
+    once produced 0–175 dB)."""
+    for city in CITIES:
+        v = state.cities[city].col("environment.noise_db")
+        v = v[~np.isnan(v)]
+        assert 30 <= v.min() and v.max() <= 85, (city, v.min(), v.max())
+
+
+def test_twin_similarity_is_calibrated(state):
+    """distance_sim: identical → 1, two random places → ≈ 0 (cosine's (cos + 1) / 2 called them ≈ 50 % similar)."""
+    from app import ml
+    P = state.pooled
+    k, p = state.cities["krakow"], state.cities["praha"]
+    Zk, Zp, ref = P.Z["krakow"], P.Z["praha"], P.d_ref[("krakow", "praha")]
+    i = int(np.flatnonzero(k.habitable)[10])
+    assert ml.distance_sim(Zk[i], Zk[i], P.d_ref[("krakow", "krakow")])[0] == pytest.approx(1.0)
+    rng = np.random.default_rng(1)
+    a, b = rng.choice(np.flatnonzero(k.habitable), 2000), rng.choice(np.flatnonzero(p.habitable), 2000)
+    assert abs(np.median(1 - np.linalg.norm(Zk[a] - Zp[b], axis=1) / ref)) < 0.05
+    best = np.sort(ml.distance_sim(Zk[i], Zp[p.habitable], ref))[-5:]
+    assert 0 < best.min() <= best.max() < 1

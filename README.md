@@ -59,7 +59,7 @@ flowchart LR
 2. **Scoring engine.** Turns each measurement into a 0–100 score **compared within the same city**, then combines them using your emoji weights (😐 1 · 🙂 2 · 😊 3 · 😍 5 · 🤩 8). Hard limits remove places instead of lowering their score. Travel times are pre-computed on the real transport network for a weekday morning.
 3. **Machine learning.**
    - **Neighbourhood types:** clusters both cities together into types such as *Historic heart*, *Student buzz* or *Green residential*; a small neural network then gives each place a type with a probability. The types come from unsupervised clustering, so they are indicative only.
-   - **Twin neighbourhoods:** the most similar places in the other city, using only measurements that compare across countries (minutes, counts, dB, µg/m³; not prices in different currencies).
+   - **Twin neighbourhoods:** the most similar places in the other city, using only measurements that compare across countries (walking minutes, departures, counts, green share; not noise, air quality or prices, which each country measures differently).
 4. **Web app.** Shows it all on an interactive map. It works on phones and laptops.
 
 ## Data sources

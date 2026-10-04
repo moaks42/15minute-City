@@ -36,8 +36,12 @@ class Canvas:
         yy, xx = np.mgrid[-k:k + 1, -k:k + 1]
         return ((xx ** 2 + yy ** 2) * self.res ** 2 <= radius ** 2).astype("float32")
 
-    def mean_within(self, grid: np.ndarray, xy: np.ndarray, radius: float, valid: np.ndarray | None = None) -> np.ndarray:
-        """Mean of `grid` within radius of each point (ignoring cells where valid==0)."""
+    def mean_within(self, grid: np.ndarray, xy: np.ndarray, radius: float, valid: np.ndarray | None = None,
+                    min_valid: float = 0.05) -> np.ndarray:
+        """Mean of `grid` within radius of each point (ignoring cells where valid==0).
+
+        With `valid`, points whose disk is less than `min_valid` covered get NaN: there the FFT round-off
+        (~1e-7) in both sums would otherwise make the ratio arbitrary (e.g. 0 or 175 dB at a noise-map edge)."""
         k = self.disk(radius)
         if valid is None:
             num = fftconvolve(grid, k, mode="same")
@@ -48,4 +52,8 @@ class Canvas:
         r, c = self.rc(xy)
         with np.errstate(invalid="ignore", divide="ignore"):
             out = num[r, c] / (den[r, c] if np.ndim(den) else den)
-        return np.clip(out, 0, None)  # FFT round-off can give -1e-7
+        if valid is None:
+            return np.clip(out, 0, None)  # FFT round-off can give -1e-7
+        out = np.where(den[r, c] >= min_valid * k.sum(), out, np.nan)
+        vals = grid[valid > 0]
+        return np.clip(out, vals.min(), vals.max()) if vals.size else out  # a mean never leaves the value range

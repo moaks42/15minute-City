@@ -3,7 +3,7 @@ import { COMMUTE, COMMUTE_BANDS, FAILING, SEQ, UNINHABITED } from '@/lib/palette
 import { useApp } from '@/state/store'
 
 /** Always-visible legend (README §3.6, §3.8). */
-export function Legend({ commuteLabel, breaks }: { commuteLabel?: string; breaks: number[] }) {
+export function Legend({ commuteLabel, breaks, neutral }: { commuteLabel?: string; breaks: number[]; neutral?: boolean }) {
   const { t } = useTranslation()
   const mapMode = useApp((s) => s.mapMode)
   const title =
@@ -16,7 +16,11 @@ export function Legend({ commuteLabel, breaks }: { commuteLabel?: string; breaks
   return (
     <div className="pointer-events-auto absolute bottom-[calc(38%+0.75rem)] left-3 z-10 w-[min(260px,calc(100%-1.5rem))] lg:bottom-8 rounded-xl border border-line bg-surface/95 p-2 text-xs sm:p-3 shadow-[var(--shadow-card)] backdrop-blur" role="group" aria-label={t('map.legend.title')} data-testid="legend">
       <p className="mb-1.5 font-semibold text-ink sm:mb-2">{title}</p>
-      {mapMode === 'commute' ? (
+      {neutral ? (
+        <p className="text-ink-2" data-testid="legend-no-prefs">
+          {t('map.legend.noPrefs')}
+        </p>
+      ) : mapMode === 'commute' ? (
         <>
           <div className="flex overflow-hidden rounded">
             {COMMUTE.map((c) => (
@@ -50,6 +54,7 @@ export function Legend({ commuteLabel, breaks }: { commuteLabel?: string; breaks
             <span>← {t('map.legend.low')}</span>
             <span>{t('map.legend.high')} →</span>
           </div>
+          <p className="mt-1 hidden text-[11px] leading-snug text-ink-3 sm:block">{t('map.legend.relative')}</p>
         </>
       )}
       <ul className="mt-2 hidden space-y-1 text-ink-2 sm:block">
@@ -63,7 +68,7 @@ export function Legend({ commuteLabel, breaks }: { commuteLabel?: string; breaks
           <span className="h-3 w-5 rounded-sm border border-line" style={{ background: UNINHABITED }} />
           {t('map.legend.uninhabited')}
         </li>
-        {mapMode === 'match' && (
+        {mapMode === 'match' && !neutral && (
           <li className="flex items-center gap-2">
             <span className="grid h-4 w-4 place-items-center rounded-full bg-accent text-[9px] font-bold text-white">1</span>
             {t('map.legend.top')}

@@ -121,7 +121,8 @@ def compute(cd: CityData, cfg: Config, req: ScoreRequest) -> Ctx:
     levels = {c: max(0, min(5, lv)) for c, lv in levels.items()}
     W = {c: cfg.level_weight(lv) for c, lv in levels.items() if lv > 0 and c in crit}
     excluded = [c for c, lv in levels.items() if lv > 0 and c not in crit]
-    if not W:  # everything skipped → neutral ranking over all criteria with data
+    # Match % is a weighted average, so only the ratios between levels matter (all 😐 ranks exactly like all 🤩).
+    if not W:  # everything skipped → neutral ranking over all criteria with data; the web shows a neutral state
         W = {c: 1.0 for c in crit}
     total_w = float(sum(W.values()))
     Mf = np.zeros(cd.n, dtype=np.float64)

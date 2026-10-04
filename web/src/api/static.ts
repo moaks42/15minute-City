@@ -48,14 +48,20 @@ function load(city: CityId): Promise<Loaded> {
 function weighted(scores: (number | null)[], criteria: CriterionId[], req: ScoreRequest, levels: Record<string, number>) {
   let num = 0
   let den = 0
+  let all = 0
+  let n = 0
   criteria.forEach((c, i) => {
     const v = scores[i]
+    if (v == null) return
+    all += v
+    n += 1
     const w = levels[String(req.weights[c] ?? 0)] ?? 0
-    if (v == null || !w) return
     num += w * v
     den += w
   })
-  return den ? Math.round(num / den) : 0
+  // Like the engine: nothing rated with data here → equal weights, not 0 (which would colour it as the worst).
+  if (!den) return n ? Math.round(all / n) : 0
+  return Math.round(num / den)
 }
 
 export async function staticScore(city: CityId, req: ScoreRequest): Promise<ScoreResponse> {

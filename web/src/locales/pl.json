@@ -105,7 +105,9 @@
     },
     "beta": "beta",
     "betaHint": "W tym mieście danych jest mniej. Kryterium liczy się słabiej i jest oznaczone.",
-    "noData": "brak danych"
+    "noData": "brak danych",
+    "equalHint": "Wszystkie ocenione tematy mają tę samą wagę, więc widzisz zrównoważony przegląd: ranking zależy tylko od różnic między tematami, a nie od samego poziomu. Podnieś lub obniż niektóre, aby był Twój.",
+    "noneHint": "Wszystkie tematy są pominięte. Oceń przynajmniej jeden, aby powstał ranking."
   },
   "personas": {
     "student": "Student/ka",
@@ -209,7 +211,12 @@
     "sharePassing": "{{pct}}% dzielnicy spełnia limity",
     "budgetM2": "Za Twój budżet ~{{m2}} m²",
     "noDistricts": "Brak jeszcze danych o dzielnicach.",
-    "openDetail": "Pokaż szczegóły: {{name}}"
+    "openDetail": "Pokaż szczegóły: {{name}}",
+    "noPrefs": {
+      "title": "Na razie nie ma czego uszeregować",
+      "body": "Wszystkie tematy są pominięte (dojazd liczy się dopiero po dodaniu miejsca). Oceń przynajmniej jeden temat, aby zobaczyć swój ranking.",
+      "action": "Oceń tematy"
+    }
   },
   "saved": {
     "save": "Zapisz",
@@ -249,7 +256,9 @@
       "failing": "Poza Twoimi limitami",
       "uninhabited": "Brak zabudowy mieszkalnej",
       "top": "Top 10",
-      "anchor": "Twoje miejsce"
+      "anchor": "Twoje miejsce",
+      "relative": "Kolory dzielą miejsca w mieście na 7 równych grup; liczby to wyniki na granicach grup.",
+      "noPrefs": "Nic nie jest jeszcze ocenione, więc nie ma czego pokazać. Oceń przynajmniej jeden temat."
     },
     "commuteAsk": "Dokąd dojeżdżasz?",
     "commuteTo": "Do:",
@@ -340,7 +349,7 @@
       "Miasto dzielimy na sześciokąty o powierzchni ok. 0,1 km² (H3, rozdzielczość 9). Dla każdego liczymy wskaźniki, np. minuty pieszo do przystanku, odjazdy na godzinę, udział zieleni, hałas w dB czy lokalną cenę za m².",
       "Każdy wskaźnik zamieniamy na ocenę 0–100 w porównaniu z tym samym miastem, więc 80% dopasowania znaczy „pasuje Ci dobrze w tym mieście”.",
       "Twoje emotki ustalają wagi: 😐 1, 🙂 2, 😊 3, 😍 5, 🤩 8. Dopasowanie to średnia ważona kryteriów. Twarde limity wykluczają miejsca zamiast obniżać ich ocenę.",
-      "Typy okolic powstają z grupowania obu miast razem; mała sieć neuronowa przypisuje każdemu miejscu typ z prawdopodobieństwem. Bliźniacze okolice to najbardziej podobne miejsca w drugim mieście, liczone tylko na porównywalnych pomiarach (minuty, liczby obiektów, dB, µg/m³)."
+      "Typy okolic powstają z grupowania obu miast razem; mała sieć neuronowa przypisuje każdemu miejscu typ z prawdopodobieństwem. Bliźniacze okolice to najbardziej podobne miejsca w drugim mieście, liczone tylko na porównywalnych pomiarach (minuty dojścia, odjazdy i liczby obiektów w pobliżu, udział zieleni; bez hałasu, powietrza i cen, które każdy kraj mierzy inaczej)."
     ],
     "safetyTitle": "O bezpieczeństwie",
     "safety": "Bezpieczeństwo pokazujemy tylko na poziomie dzielnicy, na podstawie zdarzeń zarejestrowanych przez policję na 1000 mieszkańców. Zarejestrowane zdarzenia to nie to samo co poczucie bezpieczeństwa. W ruchliwym centrum, gdzie jest wielu odwiedzających, notuje się ich więcej.",

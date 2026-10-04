@@ -13,14 +13,25 @@ export const CATEGORICAL = ['#E69F00', '#56B4E9', '#009E73', '#D4C21F', '#0072B2
 
 export const FAILING = '#b8b2a8'
 export const UNINHABITED = '#e9e5df'
+/** Match map when nothing is rated: no ranking to show. */
+export const NEUTRAL = '#d4d0c8'
 
-export function seqColor(score: number) {
-  const i = Math.max(0, Math.min(SEQ.length - 1, Math.floor((score / 100) * SEQ.length)))
-  return SEQ[i]
+/** SEQ class of a score. With `breaks` (the map's quantile classes) it picks
+ *  the same colour as the map's step expression; without, equal 0–100 bands. */
+export function seqIndex(score: number, breaks?: number[]) {
+  if (breaks) return breaks.filter((b) => score >= b).length
+  return Math.max(0, Math.min(SEQ.length - 1, Math.floor((score / 100) * SEQ.length)))
+}
+
+export function seqColor(score: number, breaks?: number[]) {
+  return SEQ[seqIndex(score, breaks)]
 }
 
 /** Quantile class breaks (SEQ.length − 1 thresholds) so the map differentiates
- *  even when scores cluster; the legend prints the real values. */
+ *  even when scores cluster; the legend prints the real values. Breaks are
+ *  strictly increasing and above 0, because the step expression already has a
+ *  stop at 0 (many zero scores used to produce a duplicate, invalid stop).
+ *  Scores are whole numbers, so breaks are ≥ 1 apart: no class is empty. */
 export function quantileBreaks(values: number[]): number[] {
   const v = values.filter((x) => Number.isFinite(x)).sort((a, b) => a - b)
   const fallback = SEQ.slice(1).map((_, i) => Math.round(((i + 1) * 100) / SEQ.length))
@@ -28,7 +39,7 @@ export function quantileBreaks(values: number[]): number[] {
   const out: number[] = []
   for (let i = 1; i < SEQ.length; i++) {
     const q = v[Math.floor((i / SEQ.length) * (v.length - 1))]
-    out.push(Math.max(q, (out[out.length - 1] ?? -1) + 0.5))
+    out.push(Math.max(q, (out[out.length - 1] ?? 0) + 1))
   }
   return out
 }

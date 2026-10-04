@@ -8,6 +8,7 @@ import geopandas as gpd
 import numpy as np
 import pandas as pd
 import shapely
+from scipy import sparse
 from scipy.spatial import cKDTree
 
 from . import osm, slope
@@ -64,6 +65,22 @@ LANDUSE_FILTERS = ["nwr/leisure=park,garden,nature_reserve,recreation_ground,dog
                    "nwr/landuse=forest,grass,meadow,recreation_ground,village_green,allotments,cemetery,orchard",
                    "nwr/natural=wood,scrub,grassland,heath,wetland,water", "nwr/landuse=industrial",
                    "nwr/waterway=riverbank"]
+
+
+def distinct_within(nb: list[list[int]], stop_items: np.ndarray) -> np.ndarray:
+    """Number of distinct items (trip ids) over the stops within reach of each point: a tram that serves three
+    platforms within 500 m is one departure, not three. (cells × stops) @ (stops × trips) → non-zeros per row."""
+    vocab: dict[str, int] = {}
+    rows, cols = [], []
+    for s, items in enumerate(stop_items):
+        for it in items:
+            rows.append(s)
+            cols.append(vocab.setdefault(it, len(vocab)))
+    A = sparse.csr_matrix((np.ones(len(rows), np.int32), (rows, cols)), shape=(len(stop_items), max(len(vocab), 1)))
+    r = [i for i, n in enumerate(nb) for _ in n]
+    c = [j for n in nb for j in n]
+    B = sparse.csr_matrix((np.ones(len(r), np.int32), (r, c)), shape=(len(nb), len(stop_items)))
+    return np.diff((B @ A).indptr).astype(float)
 
 
 def landuse(ctx: Ctx) -> gpd.GeoDataFrame:
@@ -189,6 +206,9 @@ def compute(ctx: Ctx, parks_extra: gpd.GeoDataFrame | None = None, walk_override
         a_night[i] = night[n].sum()
         a_wcs[i] = 100 * (wcb[n] == "1").mean() if has_wcb else np.nan
         a_wct[i] = 100 * depwc[n].sum() / dep[n].sum() if has_wct and dep[n].sum() > 0 else np.nan
+    if {"peak_trips", "night_trips"} <= set(st.columns):  # distinct vehicles, not the sum over every nearby stop
+        a_dep = distinct_within(nb, st["peak_trips"].to_numpy()) / 2.0
+        a_night = distinct_within(nb, st["night_trips"].to_numpy())
     out["transit.departures_per_h_500m"] = a_dep.round(1)
     out["transit.lines_500m"] = a_lines
     out["transit.night_departures_500m"] = a_night

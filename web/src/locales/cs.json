@@ -105,7 +105,9 @@
     },
     "beta": "beta",
     "betaHint": "V tomto městě je méně dat. Kritérium má menší váhu a je označené.",
-    "noData": "chybí data"
+    "noData": "chybí data",
+    "equalHint": "Všechna ohodnocená témata mají stejnou důležitost, takže vidíte vyvážený přehled: žebříček závisí jen na rozdílech mezi tématy, ne na samotné úrovni. Některá zvyšte nebo snižte a bude váš.",
+    "noneHint": "Všechna témata jsou přeskočená. Ohodnoťte aspoň jedno, ať vznikne žebříček."
   },
   "personas": {
     "student": "Student/ka",
@@ -209,7 +211,12 @@
     "sharePassing": "Limitům vyhovuje {{pct}} % části",
     "budgetM2": "Za váš rozpočet ~{{m2}} m²",
     "noDistricts": "Data o městských částech zatím nejsou.",
-    "openDetail": "Otevřít detail: {{name}}"
+    "openDetail": "Otevřít detail: {{name}}",
+    "noPrefs": {
+      "title": "Zatím není podle čeho řadit",
+      "body": "Všechna témata jsou přeskočená (dojezd se počítá, až přidáte místo). Ohodnoťte aspoň jedno téma a uvidíte svůj žebříček.",
+      "action": "Ohodnotit témata"
+    }
   },
   "saved": {
     "save": "Uložit",
@@ -249,7 +256,9 @@
       "failing": "Mimo vaše limity",
       "uninhabited": "Bez obytné zástavby",
       "top": "Top 10",
-      "anchor": "Vaše místo"
+      "anchor": "Vaše místo",
+      "relative": "Barvy dělí místa ve městě do 7 stejně velkých skupin; čísla jsou skóre na hranicích skupin.",
+      "noPrefs": "Zatím není nic ohodnoceno, takže není co ukázat. Ohodnoťte aspoň jedno téma."
     },
     "commuteAsk": "Kam dojíždíte?",
     "commuteTo": "Do:",
@@ -340,7 +349,7 @@
       "Město dělíme na šestiúhelníky o ploše asi 0,1 km² (H3, rozlišení 9). Pro každý počítáme ukazatele, např. minuty pěšky na zastávku, odjezdy za hodinu, podíl zeleně, hluk v dB nebo místní cenu za m².",
       "Každý ukazatel převedeme na skóre 0–100 ve srovnání v rámci téhož města, takže shoda 80 % znamená „v tomto městě vám to sedí dobře“.",
       "Vaše emoji určují váhy: 😐 1, 🙂 2, 😊 3, 😍 5, 🤩 8. Shoda je vážený průměr kritérií. Pevné limity místa vyřadí, místo aby jim snižovaly skóre.",
-      "Typy čtvrtí vznikají shlukováním obou měst dohromady; malá neuronová síť pak každému místu přiřadí typ s pravděpodobností. Dvojčata čtvrtí jsou nejpodobnější místa v druhém městě, počítaná jen ze srovnatelných měření (minuty, počty, dB, µg/m³)."
+      "Typy čtvrtí vznikají shlukováním obou měst dohromady; malá neuronová síť pak každému místu přiřadí typ s pravděpodobností. Dvojčata čtvrtí jsou nejpodobnější místa v druhém městě, počítaná jen ze srovnatelných měření (minuty chůze, odjezdy a počty v okolí, podíl zeleně; bez hluku, ovzduší a cen, které každá země měří jinak)."
     ],
     "safetyTitle": "K bezpečnosti",
     "safety": "Bezpečnost ukazujeme jen za celou městskou část, podle událostí evidovaných policií na 1 000 obyvatel. Evidované události nejsou totéž co pocit bezpečí. V rušném centru s mnoha návštěvníky se jich eviduje víc.",

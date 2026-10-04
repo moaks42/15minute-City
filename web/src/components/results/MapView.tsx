@@ -3,9 +3,9 @@ import type { MapLayerMouseEvent, MapRef } from 'react-map-gl/maplibre'
 import Map, { Layer, Marker, NavigationControl, Source } from 'react-map-gl/maplibre'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useCommute, useCriterionScore, useGrid, useScore } from '@/api/hooks'
+import { noEffectiveWeights, useCommute, useCriterionScore, useGrid, useMatchBreaks, useScore } from '@/api/hooks'
 import type { CityId } from '@/api/types'
-import { commuteExpression, FAILING, quantileBreaks, seqExpression, UNINHABITED } from '@/lib/palette'
+import { commuteExpression, FAILING, NEUTRAL, quantileBreaks, seqExpression, UNINHABITED } from '@/lib/palette'
 import { activeAnchor, useApp } from '@/state/store'
 import { HoverCard, type HoverInfo } from './HoverCard'
 import { Legend } from './Legend'
@@ -46,6 +46,9 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
   const [srcLoaded, setSrcLoaded] = useState(false)
   const grid = useGrid(city)
   const score = useScore('hex')
+  const matchBreaks = useMatchBreaks()
+  // Nothing rated: the engine's equal-weight fallback is not the user's ranking, so the map stays neutral.
+  const neutral = mapMode === 'match' && noEffectiveWeights(score.data)
   const anchor = activeAnchor({ anchors, commuteAnchor })
   const commute = useCommute(mapMode === 'commute' ? anchor?.lat : undefined, anchor?.lon, anchor?.mode)
   const critMode = mapMode !== 'match' && mapMode !== 'commute' ? mapMode : null
@@ -73,6 +76,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
     const noData = { value: t('mapUi.hover.noData'), note: null }
     if (mapMode === 'match') {
       const v = scoreByCell.get(pointer.h3)
+      if (v && neutral) return { value: null, note: v.pass === 0 ? t('mapUi.hover.failing') : null }
       return v ? { value: t('mapUi.hover.match', { value: v.s }), note: v.pass === 0 ? t('mapUi.hover.failing') : null } : noData
     }
     if (mapMode === 'commute') {
@@ -84,7 +88,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
     }
     const v = critByCell.get(pointer.h3)
     return v == null || !critMode ? noData : { value: t('mapUi.hover.criterion', { criterion: t(`criteria.${critMode}`), value: Math.round(v) }), note: null }
-  }, [pointer, mapMode, critMode, scoreByCell, commuteByCell, critByCell, commute.data, anchor, t])
+  }, [pointer, mapMode, critMode, neutral, scoreByCell, commuteByCell, critByCell, commute.data, anchor, t])
 
   // Fly to the city when it changes.
   useEffect(() => {
@@ -158,21 +162,22 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
   )
 
   const breaks = useMemo(() => {
-    if (mapMode === 'match') return quantileBreaks((score.data?.cells ?? []).filter((c) => c[2] === 1).map((c) => c[1]))
+    if (mapMode === 'match') return matchBreaks
     if (critMode && critScores.data) return quantileBreaks(critScores.data.cells.filter(([id]) => habitable.has(id)).map((c) => c[1]))
     return quantileBreaks([])
-  }, [mapMode, critMode, score.data, critScores.data, habitable])
+  }, [mapMode, critMode, matchBreaks, critScores.data, habitable])
 
   const fillColor = useMemo(() => {
     if (mapMode === 'commute') return commuteExpression('minutes')
+    if (neutral) return NEUTRAL
     const seq = seqExpression('score', breaks)
     if (mapMode === 'match') return ['case', ['==', ['feature-state', 'pass'], 0], FAILING, seq]
     return seq
-  }, [mapMode, breaks])
+  }, [mapMode, breaks, neutral])
 
   if (!city) return null
   const v = CITY_VIEW[city]
-  const top = mapMode === 'match' && !preview ? (score.data?.top ?? []).slice(0, 10) : []
+  const top = mapMode === 'match' && !preview && !neutral ? (score.data?.top ?? []).slice(0, 10) : []
 
   return (
     <div className="absolute inset-0" data-testid="map">
@@ -267,7 +272,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
           ))}
       </Map>
       {/* Commute without a place has nothing to explain yet: the lens card asks for one. */}
-      {!preview && !(mapMode === 'commute' && !anchor) && <Legend commuteLabel={anchor?.label} breaks={breaks} />}
+      {!preview && !(mapMode === 'commute' && !anchor) && <Legend commuteLabel={anchor?.label} breaks={breaks} neutral={neutral} />}
     </div>
   )
 }

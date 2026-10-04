@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import json
 import logging
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import joblib
 import numpy as np
@@ -61,6 +61,9 @@ class Pooled:
     units: list[str]
     scaler: StandardScaler
     Z: dict[str, np.ndarray]     # city → (n, d) standardized vectors (all cells; NaN → city median)
+    # (from, to) → median distance between two random habitable cells / two districts (see calibrate)
+    d_ref: dict[tuple[str, str], float] = field(default_factory=dict)
+    d_ref_district: dict[tuple[str, str], float] = field(default_factory=dict)
 
 
 def cross_columns(cities: dict[str, CityData]) -> tuple[list[str], list[str]]:
@@ -163,17 +166,37 @@ def load_or_train(cities: dict[str, CityData], cfg: Config) -> tuple[dict, Poole
         for col, aid in enumerate(per_cluster):
             agg[:, ids.index(aid)] += proba[:, col]
         cd.archetype_ids, cd.archetype_proba = ids, agg
+    calibrate(pooled, cities)
     return model, pooled
 
 
 # ───────────────────────────────────────── similarity
-def _unit(Z: np.ndarray) -> np.ndarray:
-    return Z / (np.linalg.norm(Z, axis=1, keepdims=True) + 1e-9)
+REF_PAIRS = 4000
 
 
-def cosine_rank(query: np.ndarray, Z: np.ndarray) -> np.ndarray:
-    q = query / (np.linalg.norm(query) + 1e-9)
-    return (_unit(Z) @ q + 1.0) / 2.0   # map [-1, 1] → [0, 1]
+def distance_sim(query: np.ndarray, Z: np.ndarray, d_ref: float) -> np.ndarray:
+    """1 − d / d_ref, d = Euclidean distance in the pooled z-space: 1 = identical, 0 = as far apart as two random
+    places, < 0 = further still. Rank on this value; clip to [0, 1] only for display. (Cosine ignored how strongly
+    a place shows its profile, and (cos + 1) / 2 made an unrelated place look about 50 % similar.)"""
+    return 1.0 - np.linalg.norm(np.atleast_2d(Z) - query, axis=1) / d_ref
+
+
+def district_vectors(Z: np.ndarray, cd: CityData) -> np.ndarray:
+    return np.array([group_vector(Z, cd, g.habitable) for g in cd.districts.values() if len(g.habitable)])
+
+
+def calibrate(pooled: Pooled, cities: dict[str, CityData]) -> None:
+    """Reference distances for distance_sim per (from, to) city pair: median over random habitable cell pairs, and
+    separately over district pairs (district averages lie closer together than single cells)."""
+    rng = np.random.default_rng(SEED)
+    for a, ca in cities.items():
+        for b, cb in cities.items():
+            ia = rng.choice(np.flatnonzero(ca.habitable), REF_PAIRS)
+            ib = rng.choice(np.flatnonzero(cb.habitable), REF_PAIRS)
+            pooled.d_ref[(a, b)] = float(np.median(np.linalg.norm(pooled.Z[a][ia] - pooled.Z[b][ib], axis=1)))
+            Ga, Gb = district_vectors(pooled.Z[a], ca), district_vectors(pooled.Z[b], cb)
+            d = np.linalg.norm(Ga[:, None, :] - Gb[None, :, :], axis=2)
+            pooled.d_ref_district[(a, b)] = float(np.median(d[~np.eye(len(Ga), dtype=bool)] if a == b else d))
 
 
 def diverse_top(sim: np.ndarray, candidates: np.ndarray, groups: np.ndarray, limit: int, per_group: int = 1) -> list[int]:

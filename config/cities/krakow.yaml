@@ -38,3 +38,8 @@ indicatorOverrides:
     explain: {pl: "Pociąg SKA {{value}} min pieszo", cs: "Vlak SKA {{value}} min pěšky", en: "SKA train {{value}} min walk"}
   "environment.noise_db":
     label:   {pl: "Hałas (Lden)", cs: "Hluk (Lden)", en: "Noise (Lden)"}
+  # Source counts only offences in public space (0.2–5 per 1,000), so whole numbers would read "0".
+  "safety.crime_per_1000":
+    decimals: 1
+    label:   {pl: "Przestępstwa w przestrzeni publicznej (dzielnica)", cs: "Trestné činy ve veřejném prostoru (čtvrť)", en: "Public-space offences (district)"}
+    explain: {pl: "Przestępstwa w przestrzeni publicznej w dzielnicy: {{value}} na 1000 mieszk.", cs: "Trestné činy ve veřejném prostoru ve čtvrti: {{value}} na 1000 obyv.", en: "Public-space offences in district: {{value}} per 1,000 residents"}

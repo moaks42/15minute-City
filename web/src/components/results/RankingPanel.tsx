@@ -2,13 +2,13 @@ import { latLngToCell } from 'h3-js'
 import { AlertTriangle, Bookmark, BookmarkCheck, Check, RefreshCw, Trash2 } from 'lucide-react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useScore } from '@/api/hooks'
+import { noEffectiveWeights, useMatchBreaks, useScore } from '@/api/hooks'
 import type { CityId, RankedPlace } from '@/api/types'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CRITERION_EMOJI } from '@/content/defaults'
 import { archetypeInfo, fmtPricePerM2 } from '@/lib/format'
-import { CATEGORICAL, seqColor } from '@/lib/palette'
+import { CATEGORICAL, seqColor, seqIndex } from '@/lib/palette'
 import { cn } from '@/lib/utils'
 import { type SavedItem, useIsSaved, useSaved } from '@/state/saved'
 import { activeAnchor, useApp } from '@/state/store'
@@ -69,12 +69,13 @@ function SavedList() {
   )
 }
 
-export function ScoreBadge({ score, size = 'md' }: { score: number; size?: 'md' | 'lg' }) {
-  const dark = score >= 57
+/** Match % badge; pass the map's `breaks` so it has the colour of the place's hexagon. */
+export function ScoreBadge({ score, size = 'md', breaks }: { score: number; size?: 'md' | 'lg'; breaks?: number[] }) {
+  const dark = seqIndex(score, breaks) >= 4
   return (
     <span
       className={cn('grid shrink-0 place-items-center rounded-xl font-bold tabular-nums', size === 'lg' ? 'h-16 w-16 text-2xl' : 'h-12 w-12 text-lg')}
-      style={{ background: seqColor(score), color: dark ? '#fff' : '#1f1d1a' }}
+      style={{ background: seqColor(score, breaks), color: dark ? '#fff' : '#1f1d1a' }}
     >
       {score}
       <span className="sr-only">%</span>
@@ -105,7 +106,7 @@ function MiniBars({ criteria, focus }: { criteria: RankedPlace['criteria']; focu
   )
 }
 
-export function PlaceCard({ p }: { p: RankedPlace }) {
+export function PlaceCard({ p, breaks }: { p: RankedPlace; breaks?: number[] }) {
   const { t } = useTranslation()
   const { city, lang, anchors, sel, select, set, compare, toggleCompare, hover, mapMode, commuteAnchor } = useApp()
   const arch = p.archetype ? archetypeInfo(p.archetype.id, lang) : null
@@ -124,7 +125,7 @@ export function PlaceCard({ p }: { p: RankedPlace }) {
     >
       <button className="absolute inset-0 rounded-2xl" onClick={() => select(p.kind === 'hex' ? p.id : latLngToCell(p.centroid.lat, p.centroid.lon, 9))} aria-label={t('results.openDetail', { name: p.name })} />
       <div className="pointer-events-none relative flex gap-3">
-        <ScoreBadge score={p.score} />
+        <ScoreBadge score={p.score} breaks={breaks} />
         <div className="min-w-0 flex-1">
           <div className="flex items-baseline gap-2">
             <span className="text-xs font-semibold text-ink-3">{p.rank}.</span>
@@ -194,6 +195,8 @@ export function RankingPanel() {
   const districts = useScore('district', tab === 'districts')
   const q = tab === 'districts' ? districts : places
   const data = q.data
+  const breaks = useMatchBreaks()
+  const neutral = noEffectiveWeights(data)
 
   const relax = (filter: string) => {
     if (filter === 'price') setFilters({ maxPricePerM2: null, maxRentPerM2: null })
@@ -252,7 +255,16 @@ export function RankingPanel() {
                 </Button>
               </div>
             )}
-            {data && data.top.length === 0 && (
+            {data && neutral && (
+              <div className="rounded-2xl border border-dashed border-line-strong p-4 text-sm" role="status" data-testid="no-prefs">
+                <p className="font-medium">{t('results.noPrefs.title')}</p>
+                <p className="mt-2 text-ink-2">{t('results.noPrefs.body')}</p>
+                <Button className="mt-3" size="sm" variant="secondary" onClick={() => set({ prefsOpen: true, prefsSection: 'criteria' })}>
+                  {t('results.noPrefs.action')}
+                </Button>
+              </div>
+            )}
+            {data && !neutral && data.top.length === 0 && (
               <div className="rounded-2xl border border-dashed border-line-strong p-4 text-sm" role="status">
                 <p className="font-medium">{tab === 'districts' ? t('results.noDistricts') : t('results.empty')}</p>
                 {data.relaxHint && (
@@ -265,10 +277,10 @@ export function RankingPanel() {
                 )}
               </div>
             )}
-            {data && data.top.length > 0 && (
+            {data && !neutral && data.top.length > 0 && (
               <ol className="space-y-3" aria-label={t(`results.tabs.${tab}`)}>
                 {data.top.map((p) => (
-                  <PlaceCard key={p.id} p={p} />
+                  <PlaceCard key={p.id} p={p} breaks={breaks} />
                 ))}
               </ol>
             )}

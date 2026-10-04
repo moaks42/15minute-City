@@ -111,7 +111,8 @@ def _spec(crit: dict, ind: dict, override: dict) -> IndicatorSpec:
     key = f"{crit['id']}.{ind['id']}"
     return IndicatorSpec(
         key=key, criterion=crit["id"], id=ind["id"], column=ind.get("column", key),
-        label=override.get("label", ind["label"]), unit=ind["unit"], decimals=int(ind.get("decimals", 0)),
+        label=override.get("label", ind["label"]), unit=ind["unit"],
+        decimals=int(override.get("decimals", ind.get("decimals", 0))),
         norm=dict(ind["norm"]), weight=float(ind["weight"]), walk_scaled=bool(ind.get("walkScaled", False)),
         cross_city=bool(ind.get("crossCity", False)), no_warning=bool(ind.get("noWarning", False)),
         priority=ind.get("priority", "P1"), cities=tuple(ind["cities"]) if ind.get("cities") else None,

@@ -21,32 +21,34 @@ Code: `engine/app/ml.py`. Artifacts: `engine/models/archetypes.joblib` + `metric
 |---|---|
 | cells (habitable, both cities) | 5,129 (train 4,103 / test 1,026) |
 | features | 44 cross-city indicators |
-| silhouette k = 6 / 7 / 8 | 0.103 / 0.099 / 0.101 → **k = 8** (within 0.005 of the best) |
-| MLP holdout accuracy | **0.943** |
+| silhouette k = 6 / 7 / 8 | 0.103 / 0.104 / 0.102 → **k = 8** (within 0.005 of the best) |
+| MLP holdout accuracy | **0.923** |
 | archetypes in use | 5 of 8: `urban_mix`, `estate_blocks`, `family_suburb`, `green_residential`, `quiet_outskirts` (`historic_core`, `student_buzz`, `industrial_edge` don't emerge as separate clusters) |
 
 | archetype | Kraków | Praha | typical neighbourhoods (K / P) |
 |---|---|---|---|
-| urban_mix | 17.6% | 34.9% | Nowa Huta, Grzegórzki, Łobzów, Stare Podgórze / Žižkov, Vinohrady, Holešovice, Smíchov, Libeň |
-| estate_blocks | 23.7% | 15.7% | Wola Duchacka, Kabel, Ruczaj, Azory / Stodůlky, Chodov, Háje, Modřany |
-| family_suburb | 17.9% | 36.3% | Grębałów, Mydlniki, Lasówka / Horní Počernice, Uhříněves, Újezd nad Lesy, Radotín |
-| green_residential | 15.3% | 9.0% | Wola Justowska, Zwierzyniec, Pychowice / Dejvice, Troja, Kunratice |
-| quiet_outskirts | 25.6% | 4.2% | Łuczanowice, Kostrze, Ruszcza / Lipence, Točná, Přední Kopanina |
+| urban_mix | 17.9% | 35.2% | Nowa Huta, Grzegórzki, Łobzów, Stare Podgórze / Žižkov, Vinohrady, Holešovice, Smíchov, Libeň |
+| estate_blocks | 23.6% | 15.5% | Wola Duchacka, Kabel, Ruczaj, Azory / Stodůlky, Chodov, Háje, Modřany |
+| family_suburb | 17.4% | 35.9% | Grębałów, Mydlniki, Lasówka / Horní Počernice, Uhříněves, Újezd nad Lesy, Radotín |
+| green_residential | 15.5% | 9.2% | Wola Justowska, Zwierzyniec, Pychowice / Dejvice, Troja, Kunratice |
+| quiet_outskirts | 25.5% | 4.3% | Łuczanowice, Kostrze, Ruszcza / Lipence, Točná, Přední Kopanina |
 
-Twins sanity check: Kazimierz (Kraków) → Josefov, Žižkov, Staré Město, Karlín, Nové Město (similarity ≈ 0.93).
+Twins sanity check: Kazimierz (Kraków) → Žižkov 0.69, Vinohrady 0.59, Karlín 0.59, Staré Město 0.58, Josefov 0.57; district Stare Miasto → Praha 1 0.58, Praha 2 0.54 (distance similarity, §2).
 
 **Limitations.** The MLP is very confident (p ≈ 1 in cluster cores) because it learns hard cluster labels; treat p as "how typical", not as a calibrated probability. A low silhouette (≈ 0.1) means the city is a continuum, not crisp clusters. That's expected for urban form, and it's why we show probabilities rather than hard labels. The prototype matching is a heuristic: check the names against the map, and if a label looks wrong, adjust the rules in `ml.name_cluster`.
 
 ## 2. Similar places (same city): `/api/{city}/similar/{h3}`
 
-Cosine similarity on the same standardized cross-city vectors, mapped to 0–1 as `(cos + 1) / 2`. The cell's own 2-ring (its immediate neighbours) is excluded, and results are diversified to at most 1 cell per neighbourhood.
+Distance similarity on the same standardized cross-city vectors: `similarity = 1 − d / d_ref`, where `d` is the Euclidean distance and `d_ref` the median distance between two random habitable cells (4,000 seeded pairs, per city pair; `ml.calibrate`). So **0 % = as alike as two random places, 100 % = identical**; values below 0 are shown as 0 but still ranked. The cell's own 2-ring (its immediate neighbours) is excluded, and results are diversified to at most 1 cell per neighbourhood.
+
+Why not cosine: cosine ignores how *strongly* a place shows its profile (z-vector norms range from ~4 to ~13), and the old `(cos + 1) / 2` mapping made an unrelated random place look ≈ 48 % similar and the top twins ≈ 86 %.
 
 ## 3. Twin neighbourhoods (across cities): `/api/twins`
 
-The same vector space is shared by both cities (pooled scaler), so Kraków → Praha (and back) is a plain cosine nearest-neighbour search:
+The same vector space is shared by both cities (pooled scaler), so Kraków → Praha (and back) is a plain nearest-neighbour search with the distance similarity above:
 
 - `h3=` → the top cells in the other city, at most 1 per neighbourhood (so you get Karlín, Vinohrady, Žižkov… rather than five adjacent hexes)
-- `district=` → district vector = population-weighted mean of its cells, compared with every district of the other city
+- `district=` → district vector = population-weighted mean of its cells, compared with every district of the other city (`d_ref` = median distance between district vectors, since averages lie closer together than single cells)
 - `sharedTraits` = criteria where both places score ≥ 60 (≥ 55 for districts) within their own city
 
 ## 4. Preference learning (P2): `/api/{city}/prefs/pairs` + `/api/prefs/fit`

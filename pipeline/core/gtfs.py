@@ -123,13 +123,18 @@ def stop_stats(paths: list[Path], day: str, prefix_ids: bool = True) -> pd.DataF
         df["dep_peak_per_h"] = peak.groupby("stop_id").size().reindex(df.index).fillna(0) / 2.0
         df["dep_peak_wc_per_h"] = peak[peak["wc"]].groupby("stop_id").size().reindex(df.index).fillna(0) / 2.0
         df["dep_night"] = night.groupby("stop_id").size().reindex(df.index).fillna(0)
+        # trip ids per stop, so per-cell counts can take one vehicle serving several nearby stops once
+        for colname, part in (("peak_trips", peak), ("night_trips", night)):
+            trips_at = part.groupby("stop_id")["trip_id"].agg(lambda s: sorted(set(s)))
+            df[colname] = [list(trips_at.get(sid, [])) for sid in df.index]
         s = stops.set_index("stop_id")
         df = df.join(s[["stop_name", "stop_lat", "stop_lon"]
                        + (["wheelchair_boarding"] if "wheelchair_boarding" in s.columns else [])], how="left")
         df["feed"] = tag
         df = df.reset_index().rename(columns={"index": "stop_id"})
         if prefix_ids:
-            df["routes"] = df["routes"].apply(lambda rs: [f"{tag}:{r}" for r in rs])
+            for colname in ("routes", "peak_trips", "night_trips"):
+                df[colname] = df[colname].apply(lambda xs: [f"{tag}:{x}" for x in xs])
         out.append(df)
     df = pd.concat(out, ignore_index=True)
     df["lat"] = pd.to_numeric(df["stop_lat"], errors="coerce")

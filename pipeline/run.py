@@ -45,7 +45,8 @@ def gtfs_stops(ctx: Ctx) -> pd.DataFrame:
     ctx.service_date = day
     if cache.exists():
         st = pd.read_parquet(cache)
-        if st.attrs.get("day", day) == day and "day" in st.columns and st["day"].iloc[0] == day:
+        if (st.attrs.get("day", day) == day and "day" in st.columns and st["day"].iloc[0] == day
+                and {"peak_trips", "night_trips"} <= set(st.columns)):
             return st
     st = gtfs.stop_stats(paths, day)
     st["day"] = day

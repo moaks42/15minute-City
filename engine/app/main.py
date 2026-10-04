@@ -254,7 +254,7 @@ def _place_ref(cd: CityData, i: int, sim: float, other_crit: dict | None = None)
     return {"id": cd.cells[i], "kind": "hex", "name": cd.neighborhood[i] or cd.district_name[i],
             "district": {"id": str(cd.district_id[i]), "name": str(cd.district_name[i])},
             "centroid": {"lat": round(float(cd.lat[i]), 6), "lon": round(float(cd.lon[i]), 6)},
-            "similarity": round(float(sim), 3), "archetype": archetype(cd, np.array([i])),
+            "similarity": round(min(max(float(sim), 0.0), 1.0), 3), "archetype": archetype(cd, np.array([i])),
             "sharedTraits": ml.shared_traits(other_crit, crit) if other_crit else []}
 
 
@@ -265,7 +265,7 @@ def similar(city: str, h3: str, limit: int = Query(5, ge=1, le=20), lang: str | 
     i = cell_or_404(cd, h3)
     pooled = _ml_or_503()
     Z = pooled.Z[city]
-    sim = ml.cosine_rank(Z[i], Z)
+    sim = ml.distance_sim(Z[i], Z, pooled.d_ref[(city, city)])
     near = {cd.index[c] for c in h3lib.grid_disk(h3, 2) if c in cd.index}
     cand = np.array([j for j in np.flatnonzero(cd.habitable) if j not in near])
     groups = np.where(cd.neighborhood == None, cd.district_name, cd.neighborhood)  # noqa: E711
@@ -292,7 +292,7 @@ def twins(from_: str = Query(alias="from"), to: str = Query(...), h3: str | None
                "district": {"id": str(src.district_id[i]), "name": str(src.district_name[i])},
                "centroid": {"lat": round(float(src.lat[i]), 6), "lon": round(float(src.lon[i]), 6)},
                "archetype": archetype(src, np.array([i]))}
-        sim = ml.cosine_rank(q, Zd)
+        sim = ml.distance_sim(q, Zd, pooled.d_ref[(from_, to)])
         groups = np.where(dst.neighborhood == None, dst.district_name, dst.neighborhood)  # noqa: E711
         top = ml.diverse_top(sim, np.flatnonzero(dst.habitable), groups, limit)
         return {"from": frm, "to": to, "items": [_place_ref(dst, j, sim[j], crit_q) for j in top]}
@@ -309,13 +309,14 @@ def twins(from_: str = Query(alias="from"), to: str = Query(...), h3: str | None
             if len(gd.habitable) == 0:
                 continue
             v = ml.group_vector(Zd, dst, gd.habitable)
-            sim = float(ml.cosine_rank(q, v[None, :])[0])
+            sim = float(ml.distance_sim(q, v, pooled.d_ref_district[(from_, to)])[0])
             crit_d = {c: float(np.mean(s[gd.habitable])) for c, s in S.default_crit[to].items()}
-            items.append({"id": gd.id, "kind": "district", "name": gd.name, "district": None,
-                          "centroid": {"lat": round(gd.lat, 6), "lon": round(gd.lon, 6)}, "similarity": round(sim, 3),
-                          "archetype": archetype(dst, gd.habitable), "sharedTraits": ml.shared_traits(crit_q, crit_d, 55)})
-        items.sort(key=lambda x: -x["similarity"])
-        return {"from": frm, "to": to, "items": items[:limit]}
+            items.append((sim, {"id": gd.id, "kind": "district", "name": gd.name, "district": None,
+                                "centroid": {"lat": round(gd.lat, 6), "lon": round(gd.lon, 6)},
+                                "similarity": round(max(sim, 0.0), 3), "archetype": archetype(dst, gd.habitable),
+                                "sharedTraits": ml.shared_traits(crit_q, crit_d, 55)}))
+        items.sort(key=lambda x: -x[0])   # unclipped, so districts beyond "random" stay ordered
+        return {"from": frm, "to": to, "items": [x for _, x in items[:limit]]}
     raise ApiError(422, "invalid_request", "give h3 or district")
 
 

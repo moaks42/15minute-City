@@ -136,7 +136,7 @@ paths:
     get:
       tags: [ml]
       operationId: getTwins
-      description: Twin neighbourhoods across cities (cosine similarity on the pooled cross-city feature vector). Give either h3 or district.
+      description: "Twin neighbourhoods across cities (distance similarity on the pooled cross-city feature vector: 1 − d / median random-pair distance, clipped to 0–1). Give either h3 or district."
       parameters:
         - {name: from, in: query, required: true, schema: {$ref: "#/components/schemas/CityId"}}
         - {name: to, in: query, required: true, schema: {$ref: "#/components/schemas/CityId"}}

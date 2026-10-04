@@ -105,7 +105,9 @@
     },
     "beta": "beta",
     "betaHint": "Limited data in this city. The criterion counts less and is labelled.",
-    "noData": "no data"
+    "noData": "no data",
+    "equalHint": "All rated topics have the same importance, so you get a balanced overview: the ranking depends only on the differences between topics, not on the level itself. Rate some higher or lower to make it yours.",
+    "noneHint": "Every topic is skipped. Rate at least one to get a ranking."
   },
   "personas": {
     "student": "Student",
@@ -204,7 +206,12 @@
     "sharePassing": "{{pct}}% of the district passes",
     "budgetM2": "Your budget ≈ {{m2}} m²",
     "noDistricts": "No district data yet.",
-    "openDetail": "Open details for {{name}}"
+    "openDetail": "Open details for {{name}}",
+    "noPrefs": {
+      "title": "Nothing to rank yet",
+      "body": "All topics are skipped (the commute only counts once you add a place). Rate at least one topic to see your ranking.",
+      "action": "Rate topics"
+    }
   },
   "saved": {
     "save": "Save",
@@ -244,7 +251,9 @@
       "failing": "Outside your limits",
       "uninhabited": "No housing",
       "top": "Top 10",
-      "anchor": "Your place"
+      "anchor": "Your place",
+      "relative": "Colours split the city's places into 7 equal-sized groups; the numbers are the scores at the group boundaries.",
+      "noPrefs": "Nothing is rated yet, so there is no match to show. Rate at least one topic."
     },
     "commuteAsk": "Where do you travel to?",
     "commuteTo": "To",
@@ -332,7 +341,7 @@
       "The city is divided into hexagons of about 0.1 km² (H3, resolution 9). For each hexagon we compute indicators such as walking minutes to the nearest stop, departures per hour, green share, noise in dB or the local price per m².",
       "Each indicator becomes a 0–100 score compared within the same city, so a match of 80% means “fits you well in this city”.",
       "Your emoji choices set the weights: 😐 1, 🙂 2, 😊 3, 😍 5, 🤩 8. The match is the weighted average of the criteria. Hard limits remove places instead of lowering their score.",
-      "Neighbourhood types come from clustering both cities together; a small neural network then assigns each place a type with a probability. Twin neighbourhoods are the most similar places in the other city, using only measurements that are comparable across both (minutes, counts, dB, µg/m³)."
+      "Neighbourhood types come from clustering both cities together; a small neural network then assigns each place a type with a probability. Twin neighbourhoods are the most similar places in the other city, using only measurements that are comparable across both (walking minutes, departures and counts nearby, green share; not noise, air quality or prices, which differ in how each country measures them)."
     ],
     "safetyTitle": "A note on safety",
     "safety": "Safety is shown only per district, based on incidents registered by the police per 1,000 residents. Registered incidents are not the same as how safe a place feels. Busy centres with many visitors register more incidents.",
