@@ -13,6 +13,7 @@ import type {
   Meta,
   Mode,
   Place,
+  RankedPlace,
   ScoreRequest,
   ScoreResponse,
   SimilarResponse,
@@ -49,13 +50,23 @@ export function encodeState(req: ScoreRequest): string {
 }
 
 // ---------- fixtures (static files; responses don't react to weights) ----------
+/** Order and filter a fixture's `top` the way the engine does for rankBy / district. */
+function fxRank(res: ScoreResponse, req: ScoreRequest): ScoreResponse {
+  const rb = req.rankBy
+  if (!rb && !req.district) return res
+  const key = (p: RankedPlace) =>
+    !rb ? p.score : rb.startsWith('anchor:') ? -(p.anchors.find((a) => `anchor:${a.id}` === rb)?.minutes ?? 999) : (p.criteria[rb] ?? -1)
+  const top = res.top.filter((p) => !req.district || p.district?.id === req.district).sort((a, b) => key(b) - key(a) || b.score - a.score)
+  return { ...res, top: top.map((p, i) => ({ ...p, rank: i + 1 })) }
+}
+
 const fx = {
-  score(city: CityId, req: ScoreRequest): Promise<ScoreResponse> {
+  async score(city: CityId, req: ScoreRequest): Promise<ScoreResponse> {
     const f = req.filters
     const tight = !!(f?.maxPricePerM2 || f?.maxRentPerM2 || f?.maxNoiseDb || f?.mustHave?.length)
     const name =
       req.aggregate !== 'hex' ? 'score_districts' : tight && f?.mustHave?.length ? 'score_nomatch' : req.persona === 'parent' || req.persona === 'expecting' ? 'score_parent' : 'score_student'
-    return getJson(`${FX}/${city}/${name}.json`)
+    return fxRank(await getJson<ScoreResponse>(`${FX}/${city}/${name}.json`), req)
   },
   async geocode(city: CityId, q: string): Promise<GeocodeHit[]> {
     const r = await getJson<GeocodeResponse>(`${FX}/${city}/geocode.json`)
@@ -75,6 +86,8 @@ export const api = {
 
   grid: (city: CityId): Promise<GeoJSON.FeatureCollection> =>
     USE_FIXTURES ? getJson(`${FX}/${city}/grid.sample.geojson`) : STATIC_FALLBACK ? getJson(`/data/${city}/grid.geojson`) : get(`/api/${city}/grid`),
+
+  districtShapes: (city: CityId): Promise<GeoJSON.FeatureCollection<GeoJSON.Polygon | GeoJSON.MultiPolygon>> => getJson(`/data/${city}/districts.geojson`),
 
   score: (city: CityId, req: ScoreRequest): Promise<ScoreResponse> =>
     STATIC_FALLBACK ? staticScore(city, req) : USE_FIXTURES ? fx.score(city, req) : post(`/api/${city}/score`, req),

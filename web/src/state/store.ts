@@ -1,5 +1,5 @@
 // All app state lives here and is mirrored to the URL (README §3.7):
-// /{city}[/about]?v=1&lang=&p=&w=&a=&f=&b=&mode=&sel=&step=&cmp=
+// /{city}[/about]?v=1&lang=&p=&w=&a=&f=&b=&mode=&sel=&d=&step=&cmp=
 import { create } from 'zustand'
 import type { Anchor, CityId, CriterionId, Filters, Lang, Mode, MustHave, Weights } from '@/api/types'
 import { CRITERIA } from '@/api/types'
@@ -26,10 +26,12 @@ export interface AppState {
   mapMode: MapMode
   commuteAnchor: string | null
   sel: string | null
+  selDistrict: string | null // district detail; `sel` (a place) opens on top of it
   tab: Tab
   compare: string[]
   hover: string | null
   // UI only, not in the URL.
+  hoverDistrict: string | null
   prefsSection: PrefsSection | null // open accordion section (persisted in localStorage)
   prefsOpen: boolean // preferences: mobile sheet / desktop left panel
   leftOpen: boolean // desktop panels (persisted in localStorage)
@@ -160,7 +162,8 @@ export function stateFromUrl(loc: Location = window.location): Partial<AppState>
     budget: Number(q.get('b')) || null,
     mapMode: mode === 'commute' || (CRITERIA as readonly string[]).includes(mode ?? '') ? (mode as MapMode) : 'match',
     sel: q.get('sel'),
-    tab: q.get('tab') === 'districts' ? 'districts' : 'places',
+    selDistrict: q.get('d'),
+    tab: q.get('tab') === 'districts' || q.get('d') ? 'districts' : 'places',
     compare: (q.get('cmp') ?? '').split(',').filter(Boolean).slice(0, 3),
   }
 }
@@ -179,6 +182,7 @@ export function urlFromState(s: AppState): string {
   if (s.step !== 'results') q.set('step', s.step)
   if (s.mapMode !== 'match') q.set('mode', s.mapMode)
   if (s.sel) q.set('sel', s.sel)
+  if (s.selDistrict) q.set('d', s.selDistrict)
   if (s.tab !== 'places') q.set('tab', s.tab)
   if (s.compare.length) q.set('cmp', s.compare.join(','))
   return `/${s.city}${s.view === 'about' ? '/about' : ''}?${q.toString()}`
@@ -195,6 +199,7 @@ interface Actions {
   removeAnchor: (id: string) => void
   setFilters: (f: Partial<Filters>) => void
   select: (h3: string | null) => void
+  selectDistrict: (id: string | null) => void
   toggleCompare: (id: string) => void
 }
 
@@ -211,14 +216,16 @@ const initial: AppState = {
   mapMode: 'match',
   commuteAnchor: null,
   sel: null,
+  selDistrict: null,
   tab: 'places',
   compare: [],
   hover: null,
+  hoverDistrict: null,
   prefsOpen: false,
   ...storedPanels(),
   ...stateFromUrl(),
 }
-if (initial.sel) initial.rightOpen = true
+if (initial.sel || initial.selDistrict) initial.rightOpen = true
 // A link opened on a lens shows its preferences, as switching the lens does (see the subscription below).
 if (initial.mapMode !== 'match') initial.prefsSection = initial.mapMode === 'commute' ? 'places' : 'criteria'
 
@@ -244,6 +251,7 @@ export const useApp = create<AppState & Actions>((set, get) => ({
         filters: { ...s.filters, maxPricePerM2: null, maxRentPerM2: null },
         budget: null,
         sel: null,
+        selDistrict: null,
         compare: [],
         commuteAnchor: null,
         mapMode: s.mapMode === 'commute' ? 'match' : s.mapMode,
@@ -269,7 +277,9 @@ export const useApp = create<AppState & Actions>((set, get) => ({
   },
   setFilters: (f) => set((s) => ({ filters: { ...s.filters, ...f } })),
   // Selecting a place expands a collapsed right panel so the detail is visible.
+  // A place keeps the district it was opened from, so Back returns to the district.
   select: (sel) => set(sel ? { sel, rightOpen: true } : { sel }),
+  selectDistrict: (id) => set(id ? { selDistrict: id, sel: null, tab: 'districts', rightOpen: true } : { selDistrict: null }),
   toggleCompare: (id) =>
     set((s) => ({
       compare: s.compare.includes(id) ? s.compare.filter((x) => x !== id) : [...s.compare, id].slice(-3),
@@ -300,7 +310,7 @@ useApp.subscribe((s, prev) => {
 })
 window.addEventListener('popstate', () => {
   fromPop = true
-  useApp.setState({ ...stateFromUrl(), hover: null })
+  useApp.setState({ ...stateFromUrl(), hover: null, hoverDistrict: null })
   lastUrl = window.location.pathname + window.location.search
   fromPop = false
 })

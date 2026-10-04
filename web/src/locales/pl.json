@@ -216,7 +216,11 @@
       "title": "Na razie nie ma czego uszeregować",
       "body": "Wszystkie tematy są pominięte (dojazd liczy się dopiero po dodaniu miejsca). Oceń przynajmniej jeden temat, aby zobaczyć swój ranking.",
       "action": "Oceń tematy"
-    }
+    },
+    "sortedBy": "Sortowane według:",
+    "sortMatch": "dopasowania do Twoich preferencji",
+    "sortCommute": "Dojazd do: {{place}}",
+    "sortReset": "Sortuj znów według dopasowania"
   },
   "saved": {
     "save": "Zapisz",
@@ -258,7 +262,8 @@
       "top": "Top 10",
       "anchor": "Twoje miejsce",
       "relative": "Kolory dzielą miejsca w mieście na 7 równych grup; liczby to wyniki na granicach grup.",
-      "noPrefs": "Nic nie jest jeszcze ocenione, więc nie ma czego pokazać. Oceń przynajmniej jeden temat."
+      "noPrefs": "Nic nie jest jeszcze ocenione, więc nie ma czego pokazać. Oceń przynajmniej jeden temat.",
+      "districtLine": "Granica dzielnicy"
     },
     "commuteAsk": "Dokąd dojeżdżasz?",
     "commuteTo": "Do:",
@@ -281,7 +286,8 @@
       "failing": "poza Twoimi limitami",
       "criterion": "{{criterion}} {{value}}/100",
       "uninhabited": "Tu nikt nie mieszka",
-      "noData": "brak danych"
+      "noData": "brak danych",
+      "district": "Cała dzielnica: {{value}}"
     }
   },
   "detail": {
@@ -320,7 +326,13 @@
     "similarity": "{{pct}}% podobieństwa",
     "imputed": "Szacunek: brak danych, użyliśmy mediany miasta.",
     "loading": "Ładuję szczegóły…",
-    "error": "Nie udało się załadować szczegółów."
+    "error": "Nie udało się załadować szczegółów.",
+    "districtTitle": "Dzielnica",
+    "thisDistrict": "Ta dzielnica",
+    "districtBest": "Najlepsze miejsca w tej dzielnicy",
+    "districtNoMatch": "Żadne miejsce w tej dzielnicy nie spełnia Twoich limitów.",
+    "districtAvgNote": "Liczby to średnia wszystkich zamieszkanych miejsc w dzielnicy, ważona liczbą mieszkańców.",
+    "districtMedian": "Mediana czasu dojazdu dla miejsc w dzielnicy"
   },
   "compare": {
     "title": "Porównanie miejsc",

@@ -508,6 +508,8 @@ components:
         aggregate: {type: string, enum: [hex, district, neighborhood], default: hex}
         limit: {type: integer, minimum: 1, maximum: 100, default: 20}
         includeCells: {type: boolean, default: true, description: "false → cells: [] (smaller payload)"}
+        rankBy: {type: [string, "null"], description: "what `top` is ordered by: null = match %, a CriterionId = that criterion's score, \"anchor:<id>\" = shortest travel time to that anchor; unknown values rank by match %. `score` stays the match %"}
+        district: {type: [string, "null"], description: "aggregate=hex only: restrict `top` to the cells of this district id"}
 
     CellTuple:
       type: array
@@ -569,7 +571,7 @@ components:
         id: {type: string, description: "h3 for kind=hex, admin id otherwise"}
         kind: {type: string, enum: [hex, district, neighborhood]}
         rank: {type: integer, minimum: 1}
-        score: {type: integer, minimum: 0, maximum: 100}
+        score: {type: integer, minimum: 0, maximum: 100, description: "match %; aggregates: population-weighted mean over all habitable cells"}
         name: {type: string, description: "neighbourhood name for hex, admin name otherwise"}
         district: {oneOf: [{$ref: "#/components/schemas/PlaceRef"}, {type: "null"}]}
         centroid: {$ref: "#/components/schemas/LatLon"}

@@ -54,6 +54,13 @@ export function seqExpression(stateKey: string, breaks: number[]): unknown[] {
   return ['step', ['coalesce', ['feature-state', stateKey], -1], UNINHABITED, 0, ...stops]
 }
 
+/** Commute band colour of a travel time, as on the commute map (null = over 60 min). */
+export function commuteColor(minutes: number | null) {
+  if (minutes == null) return COMMUTE[COMMUTE.length - 1]
+  const i = COMMUTE_BANDS.findIndex((b) => minutes <= b)
+  return COMMUTE[i < 0 ? COMMUTE.length - 1 : i]
+}
+
 export function commuteExpression(stateKey: string): unknown[] {
   return [
     'step',

@@ -24,7 +24,7 @@
 |---|---|
 | `config.py` | settings from env; yaml → `IndicatorSpec` per city (applies `indicatorOverrides`) |
 | `data.py` | loads `data/processed/{city}` into NumPy: raw `(cells × indicators)` matrix, imputation with the city median, coverage, normalized sub-score matrix **cached per walkFactor**, travel-time lookup, POIs, admin groups |
-| `scoring.py` | `/score` core: effective indicator weights (yaml → persona → request), criterion scores as one matmul `S @ (G·v)`, commute from anchors, match % `Σ W(level)·S_c / Σ W`, hard-filter masks, relax hint, ranking, district/neighbourhood aggregation (population-weighted top 50%), explanations, place detail |
+| `scoring.py` | `/score` core: effective indicator weights (yaml → persona → request), criterion scores as one matmul `S @ (G·v)`, commute from anchors, match % `Σ W(level)·S_c / Σ W`, hard-filter masks, relax hint, ranking, district/neighbourhood aggregation (population-weighted mean of all habitable cells), `rankBy` ordering (map lens), explanations, place detail |
 | `explain.py` | pl/cs/en number formatting (nbsp grouping, decimal comma) and templates; values are always raw |
 | `ml.py` | pooled archetypes (KMeans → MLP), similar places, twins (see `docs/ML.md`) |
 | `geocode.py` | accent-insensitive local index (districts, places, POIs, addresses) + Photon fallback |

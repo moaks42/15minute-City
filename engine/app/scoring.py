@@ -341,24 +341,57 @@ def ranked_hex(ctx: Ctx, i: int, rank: int) -> dict:
     }
 
 
+def rank_key(ctx: Ctx) -> np.ndarray:
+    """Per-cell value `top` is ordered by (higher = better): the map lens the web shows (req.rankBy)."""
+    rb = ctx.req.rankBy
+    if rb and rb.startswith("anchor:"):
+        m = ctx.anchor_min.get(rb.split(":", 1)[1])
+        if m is not None:
+            return -np.minimum(m, UNREACHABLE).astype(np.float64)
+    elif rb in ctx.crit:
+        return ctx.crit[rb].astype(np.float64)
+    return ctx.Mf
+
+
+def _median_minutes(m: np.ndarray, idx: np.ndarray) -> float | None:
+    vals = m[idx]
+    vals = vals[vals < UNREACHABLE]
+    return float(np.median(vals)) if len(vals) else None
+
+
+def _group_key(ctx: Ctx, pool: np.ndarray, w: np.ndarray, score: float) -> float:
+    """A group's rank_key: the same number its card shows (criterion mean, median minutes, match %)."""
+    rb = ctx.req.rankBy
+    if rb and rb.startswith("anchor:"):
+        m = ctx.anchor_min.get(rb.split(":", 1)[1])
+        if m is not None:
+            med = _median_minutes(m, pool)
+            return -float(UNREACHABLE) if med is None else -int(med)
+    elif rb in ctx.crit:
+        return float(np.average(ctx.crit[rb][pool], weights=w))
+    return score
+
+
 def ranked_groups(ctx: Ctx, level: str, limit: int) -> list[dict]:
+    """Districts/neighbourhoods: population-weighted means over ALL habitable cells of the group (the
+    group as a whole, not its best part); hard filters only drop groups where no cell passes."""
     cd = ctx.cd
     groups = cd.districts if level == "district" else cd.neighborhoods
     price_col = cd.col(cd.cc["price"]["column"])
     rows = []
     for g in groups.values():
-        if len(g.habitable) == 0:
+        pool = g.habitable
+        if len(pool) == 0:
             continue
-        ok = g.habitable[ctx.passing[g.habitable]]
-        if len(ok) == 0:
+        share = float(ctx.passing[pool].mean())
+        if share == 0:
             continue
-        pool = ok[np.argsort(-ctx.Mf[ok], kind="stable")][: max(1, math.ceil(len(ok) / 2))]
         w = cd.population[pool].astype(float) + 1.0
         score = float(np.average(ctx.Mf[pool], weights=w))
-        rows.append((score, len(ok) / len(g.habitable), g, pool, w))
-    rows.sort(key=lambda r: (-r[0], -r[1], r[2].id))
+        rows.append((_group_key(ctx, pool, w, score), score, share, g, pool, w))
+    rows.sort(key=lambda r: (-r[0], -r[1], r[3].id))
     out = []
-    for rank, (score, share, g, pool, w) in enumerate(rows[:limit], start=1):
+    for rank, (_, score, share, g, pool, w) in enumerate(rows[:limit], start=1):
         crit, sub, raw, imputed, mins = _row(ctx, pool, w)
         hl, wn = explain(ctx, crit, sub, raw, imputed, mins)
         pv = None
@@ -376,7 +409,7 @@ def ranked_groups(ctx: Ctx, level: str, limit: int) -> list[dict]:
             "centroid": _centroid(g.lat, g.lon), "criteria": {c: int(round(v)) for c, v in crit.items()},
             "highlights": hl, "warnings": wn, "anchors": anchor_times(ctx, mins), "price": pr,
             "budgetM2": m2, "budgetText": m2t, "archetype": archetype(cd, pool, w), "imputed": imputed_columns(ctx, imputed),
-            "passes": True, "sharePassing": round(float(share), 3), "cellCount": int(len(g.habitable)),
+            "passes": True, "sharePassing": round(share, 3), "cellCount": int(len(pool)),
             "populationEst": int(g.population),
         })
     return out
@@ -384,9 +417,10 @@ def ranked_groups(ctx: Ctx, level: str, limit: int) -> list[dict]:
 
 def score_response(cd: CityData, cfg: Config, req: ScoreRequest) -> dict:
     ctx = compute(cd, cfg, req)
-    cand = np.flatnonzero(ctx.passing)
-    order = cand[np.lexsort((cand, -ctx.Mf[cand]))]
     if req.aggregate == "hex":
+        ok = ctx.passing if req.district is None else ctx.passing & (cd.district_id == str(req.district))
+        cand = np.flatnonzero(ok)
+        order = cand[np.lexsort((cand, -ctx.Mf[cand], -rank_key(ctx)[cand]))]   # the lens first, then match %
         picked, seen = [], set()
         for i in order:   # at most one cell per neighbourhood, so the list shows distinct places
             g = cd.neighborhood[i] or cd.district_name[i]

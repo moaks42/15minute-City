@@ -55,6 +55,8 @@ class ScoreRequest(_M):
     aggregate: Literal["hex", "district", "neighborhood"] = "hex"
     limit: int = Field(default=20, ge=1, le=100)
     includeCells: bool = True
+    rankBy: str | None = None      # None = match %, a criterion id, or "anchor:<id>" (shortest travel time)
+    district: str | None = None    # aggregate=hex: only cells of this district
 
 
 class PrefChoice(_M):

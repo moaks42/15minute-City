@@ -14,7 +14,7 @@ import { activeAnchor, useApp } from '@/state/store'
 import { L } from '@/lib/utils'
 import { SaveButton, ScoreBadge } from './RankingPanel'
 
-function Section({ title, children, hint }: { title: string; children: React.ReactNode; hint?: string }) {
+export function Section({ title, children, hint }: { title: string; children: React.ReactNode; hint?: string }) {
   return (
     <section className="border-t border-line px-5 py-4">
       <h3 className="mb-3 flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-ink-3">

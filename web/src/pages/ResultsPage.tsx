@@ -7,6 +7,7 @@ import { CriteriaList } from '@/components/onboarding/CriteriaList'
 import { LimitsForm, PlacesList } from '@/components/onboarding/PlacesStep'
 import { Compare } from '@/components/results/Compare'
 import { DetailPanel } from '@/components/results/DetailPanel'
+import { DistrictDetail } from '@/components/results/DistrictDetail'
 import { MapModeSwitch } from '@/components/results/MapModeSwitch'
 import { RankingPanel } from '@/components/results/RankingPanel'
 import { Button } from '@/components/ui/button'
@@ -153,7 +154,7 @@ function CollapseButton({ side, label, onClick }: { side: 'left' | 'right'; labe
 export function ResultsPage() {
   const { t } = useTranslation()
   const desktop = useIsDesktop()
-  const { sel, select, compare, set, city, prefsOpen, leftOpen, rightOpen } = useApp()
+  const { sel, select, selDistrict, selectDistrict, compare, set, city, prefsOpen, leftOpen, rightOpen } = useApp()
   const [compareOpen, setCompareOpen] = useState(false)
   const [sheetUp, setSheetUp] = useState(false)
 
@@ -169,19 +170,23 @@ export function ResultsPage() {
   )
 
   const collapseRight = <CollapseButton side="right" label={t('nav.collapseResults')} onClick={() => set({ rightOpen: false })} />
-  const right = sel ? (
+  // A place opened from a district goes back to that district; the district goes back to the list.
+  const detail = (title: string, onBack: () => void, body: ReactNode) => (
     <div className="flex h-full min-h-0 flex-col">
       <div className="flex items-center gap-2 border-b border-line px-3 py-2">
-        <Button variant="ghost" size="sm" onClick={() => select(null)} data-testid="detail-back">
+        <Button variant="ghost" size="sm" onClick={onBack} data-testid="detail-back">
           <ArrowLeft size={16} /> {t('nav.back')}
         </Button>
-        <h2 className="truncate font-display text-lg font-semibold">{t('detail.title')}</h2>
+        <h2 className="truncate font-display text-lg font-semibold">{title}</h2>
         {collapseRight}
       </div>
-      <div className="min-h-0 flex-1 overflow-y-auto">
-        <DetailPanel h3={sel} />
-      </div>
+      <div className="min-h-0 flex-1 overflow-y-auto">{body}</div>
     </div>
+  )
+  const right = sel ? (
+    detail(t('detail.title'), () => select(null), <DetailPanel h3={sel} />)
+  ) : selDistrict ? (
+    detail(t('detail.districtTitle'), () => selectDistrict(null), <DistrictDetail key={selDistrict} id={selDistrict} />)
   ) : (
     <div className="flex h-full min-h-0 flex-col">
       <div className="flex items-center gap-2 border-b border-line py-1 pl-4 pr-3">
@@ -272,6 +277,9 @@ export function ResultsPage() {
                   {t('nav.showResults')}
                 </Button>
               </div>
+            </Sheet>
+            <Sheet open={!!selDistrict && !sel} onOpenChange={(o) => !o && selectDistrict(null)} title={t('detail.districtTitle')} side="bottom" className="h-[92dvh]">
+              {selDistrict && <DistrictDetail key={selDistrict} id={selDistrict} />}
             </Sheet>
             <Sheet open={!!sel} onOpenChange={(o) => !o && select(null)} title={t('detail.title')} side="bottom" className="h-[92dvh]">
               {sel && <DetailPanel h3={sel} />}

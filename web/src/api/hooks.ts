@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { api } from './client'
 import type { CityId, CriterionId, Mode, ScoreRequest, ScoreResponse } from './types'
 import { CRITERIA } from './types'
-import { useApp } from '@/state/store'
+import { activeAnchor, useApp } from '@/state/store'
 import { STATIC_FALLBACK } from '@/lib/env'
 import { quantileBreaks } from '@/lib/palette'
 
@@ -26,8 +26,12 @@ export function useMeta(city: CityId | null) {
 export const useGrid = (city: CityId | null) =>
   useQuery({ queryKey: ['grid', city], queryFn: () => api.grid(city!), enabled: !!city, staleTime: Infinity })
 
-/** The /score request built from the current state. */
-export function useScoreRequest(aggregate: ScoreRequest['aggregate'] = 'hex'): ScoreRequest {
+/** How `top` is ordered (null = match %) and, for places, the one district they must lie in. */
+export type RankOpts = { rankBy?: string | null; district?: string | null }
+
+/** The /score request built from the current state. Without opts it is exactly
+ *  the map's request, so the map and the match ranking share one query. */
+export function useScoreRequest(aggregate: ScoreRequest['aggregate'] = 'hex', { rankBy, district }: RankOpts = {}): ScoreRequest {
   const { lang, persona, weights, anchors, filters, budget, city } = useApp()
   return useMemo(
     () => ({
@@ -39,16 +43,18 @@ export function useScoreRequest(aggregate: ScoreRequest['aggregate'] = 'hex'): S
       filters,
       budget: city === 'krakow' ? { total: budget } : { monthlyRent: budget },
       aggregate,
-      limit: 20,
-      includeCells: aggregate === 'hex',
+      limit: aggregate === 'hex' ? 20 : 100, // every district, so any of them can open its detail
+      includeCells: aggregate === 'hex' && !rankBy && !district,
+      ...(rankBy ? { rankBy } : {}),
+      ...(district ? { district } : {}),
     }),
-    [lang, persona, weights, anchors, filters, budget, city, aggregate],
+    [lang, persona, weights, anchors, filters, budget, city, aggregate, rankBy, district],
   )
 }
 
-export function useScore(aggregate: ScoreRequest['aggregate'] = 'hex', enabled = true) {
+export function useScore(aggregate: ScoreRequest['aggregate'] = 'hex', enabled = true, opts: RankOpts = {}) {
   const city = useApp((s) => s.city)
-  const req = useDebounced(useScoreRequest(aggregate), 250)
+  const req = useDebounced(useScoreRequest(aggregate, opts), 250)
   return useQuery({
     queryKey: ['score', city, req],
     queryFn: () => api.score(city!, req),
@@ -68,6 +74,20 @@ export function noEffectiveWeights(res: ScoreResponse | undefined): boolean {
 
 export function useNoEffectiveWeights(): boolean {
   return noEffectiveWeights(useScore('hex').data)
+}
+
+/** What the results are ordered by: the map lens. null = match % (also for the commute lens without a place). */
+export function useRankBy(): string | null {
+  const mapMode = useApp((s) => s.mapMode)
+  const anchorId = useApp((s) => activeAnchor(s)?.id)
+  if (mapMode === 'match') return null
+  if (mapMode === 'commute') return anchorId ? `anchor:${anchorId}` : null
+  return mapMode
+}
+
+/** The ranking the results list, its map markers and the district detail show. */
+export function useRanking(aggregate: 'hex' | 'district', enabled = true) {
+  return useScore(aggregate, enabled, { rankBy: useRankBy() })
 }
 
 /** Quantile classes of the match map; the score badges use them too, so a
@@ -101,6 +121,33 @@ export function useCriterionScore(criterion: CriterionId | null) {
     staleTime: Infinity,
   })
 }
+
+/** Colour classes of what the map shows (match % or one criterion), so a badge
+ *  has the colour of its hexagon in every lens. */
+export function useLensBreaks(): number[] {
+  const mapMode = useApp((s) => s.mapMode)
+  const crit = mapMode !== 'match' && mapMode !== 'commute' ? mapMode : null
+  const match = useMatchBreaks()
+  const critScores = useCriterionScore(crit)
+  return useMemo(() => {
+    if (mapMode === 'match') return match
+    // A criterion-only request has no filters, so "passes" means habitable.
+    if (crit && critScores.data) return quantileBreaks(critScores.data.cells.filter((c) => c[2] === 1).map((c) => c[1]))
+    return quantileBreaks([])
+  }, [mapMode, crit, match, critScores.data])
+}
+
+/** The lens the results follow: what orders them and the colour classes of their badges. */
+export function useLens() {
+  const rankBy = useRankBy()
+  const breaks = useLensBreaks()
+  return useMemo(() => ({ rankBy, breaks }), [rankBy, breaks])
+}
+export type Lens = ReturnType<typeof useLens>
+
+/** District outlines (static file in every mode; ids = grid district_id). */
+export const useDistrictShapes = (city: CityId | null) =>
+  useQuery({ queryKey: ['districtShapes', city], queryFn: () => api.districtShapes(city!), enabled: !!city, staleTime: Infinity })
 
 export function usePlace(h3: string | null) {
   const city = useApp((s) => s.city)

@@ -1,17 +1,16 @@
-import { latLngToCell } from 'h3-js'
-import { AlertTriangle, Bookmark, BookmarkCheck, Check, RefreshCw, Trash2 } from 'lucide-react'
-import { useState } from 'react'
+import { AlertTriangle, Bookmark, BookmarkCheck, Check, RefreshCw, Trash2, X } from 'lucide-react'
+import { useState, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
-import { noEffectiveWeights, useMatchBreaks, useScore } from '@/api/hooks'
-import type { CityId, RankedPlace } from '@/api/types'
+import { type Lens, noEffectiveWeights, useLens, useRanking } from '@/api/hooks'
+import type { CityId, CriterionId, RankedPlace } from '@/api/types'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CRITERION_EMOJI } from '@/content/defaults'
 import { archetypeInfo, fmtPricePerM2 } from '@/lib/format'
-import { CATEGORICAL, seqColor, seqIndex } from '@/lib/palette'
+import { CATEGORICAL, COMMUTE, commuteColor, seqColor, seqIndex } from '@/lib/palette'
 import { cn } from '@/lib/utils'
 import { type SavedItem, useIsSaved, useSaved } from '@/state/saved'
-import { activeAnchor, useApp } from '@/state/store'
+import { useApp } from '@/state/store'
 import { ExpatTwins } from './ExpatTwins'
 
 export function SaveButton({ item, className }: { item: Omit<SavedItem, 'savedAt' | 'city'> & { city: CityId | null }; className?: string }) {
@@ -38,7 +37,7 @@ export function SaveButton({ item, className }: { item: Omit<SavedItem, 'savedAt
 
 function SavedList() {
   const { t } = useTranslation()
-  const { city, select, sel } = useApp()
+  const { city, select, sel, selectDistrict, selDistrict } = useApp()
   const all = useSaved((s) => s.items)
   const remove = useSaved((s) => s.remove)
   const items = all.filter((x) => x.city === city).sort((a, b) => b.savedAt - a.savedAt)
@@ -51,11 +50,11 @@ function SavedList() {
   return (
     <ul className="space-y-2" aria-label={t('saved.tab')} data-testid="saved-list">
       {items.map((x) => {
-        const h3 = x.kind === 'hex' ? x.id : latLngToCell(x.lat, x.lon, 9)
+        const hex = x.kind === 'hex'
         return (
-          <li key={x.id} className={cn('flex items-center gap-2 rounded-2xl border bg-surface p-2 pl-3', sel === h3 ? 'border-ink' : 'border-line')}>
+          <li key={x.id} className={cn('flex items-center gap-2 rounded-2xl border bg-surface p-2 pl-3', (hex ? sel : selDistrict) === x.id ? 'border-ink' : 'border-line')}>
             <Bookmark size={16} className="shrink-0 text-accent" fill="currentColor" aria-hidden />
-            <button className="min-w-0 flex-1 py-1 text-left" onClick={() => select(h3)} aria-label={t('saved.open', { name: x.name })}>
+            <button className="min-w-0 flex-1 py-1 text-left" onClick={() => (hex ? select(x.id) : selectDistrict(x.id))} aria-label={t('saved.open', { name: x.name })}>
               <span className="block truncate font-medium">{x.name}</span>
               {x.kind === 'district' && <span className="block text-xs text-ink-3">{t('saved.district')}</span>}
             </button>
@@ -69,18 +68,56 @@ function SavedList() {
   )
 }
 
-/** Match % badge; pass the map's `breaks` so it has the colour of the place's hexagon. */
-export function ScoreBadge({ score, size = 'md', breaks }: { score: number; size?: 'md' | 'lg'; breaks?: number[] }) {
-  const dark = seqIndex(score, breaks) >= 4
+/** One number on its map colour, with a small caption saying what it is. */
+function Badge({ value, caption, bg, dark, size = 'md', label }: { value: ReactNode; caption?: string; bg: string; dark: boolean; size?: 'md' | 'lg'; label: string }) {
   return (
     <span
-      className={cn('grid shrink-0 place-items-center rounded-xl font-bold tabular-nums', size === 'lg' ? 'h-16 w-16 text-2xl' : 'h-12 w-12 text-lg')}
-      style={{ background: seqColor(score, breaks), color: dark ? '#fff' : '#1f1d1a' }}
+      className={cn('flex shrink-0 flex-col items-center justify-center rounded-xl font-bold leading-none tabular-nums', size === 'lg' ? 'h-16 w-16 text-2xl' : 'h-12 w-12 text-lg')}
+      style={{ background: bg, color: dark ? '#fff' : '#1f1d1a' }}
+      title={label}
+      data-testid="lens-badge"
+      data-value={typeof value === 'number' ? value : undefined}
     >
-      {score}
-      <span className="sr-only">%</span>
+      <span aria-hidden>{value}</span>
+      {caption && (
+        <span aria-hidden className={cn('mt-0.5 font-semibold opacity-80', size === 'lg' ? 'text-xs' : 'text-[10px]')}>
+          {caption}
+        </span>
+      )}
+      <span className="sr-only">{label}</span>
     </span>
   )
+}
+
+/** Match % badge; pass the map's `breaks` so it has the colour of the place's hexagon. */
+export function ScoreBadge({ score, size = 'md', breaks }: { score: number; size?: 'md' | 'lg'; breaks?: number[] }) {
+  const { t } = useTranslation()
+  return <Badge value={score} caption="%" bg={seqColor(score, breaks)} dark={seqIndex(score, breaks) >= 4} size={size} label={t('results.matchPct', { pct: score })} />
+}
+
+/** The number the results are ordered by, coloured like the place on the map:
+ *  match %, the lens criterion's score or the travel time to the lens place. */
+export function LensBadge({ p, lens, size }: { p: RankedPlace; lens: Lens; size?: 'md' | 'lg' }) {
+  const { t } = useTranslation()
+  const rb = lens.rankBy
+  if (rb?.startsWith('anchor:')) {
+    const m = p.anchors.find((a) => `anchor:${a.id}` === rb)?.minutes ?? null
+    const bg = commuteColor(m)
+    return <Badge value={m ?? '–'} caption="min" bg={bg} dark={COMMUTE.indexOf(bg) <= 1} size={size} label={m != null ? t('map.minutes', { count: m }) : t('map.over60')} />
+  }
+  const v = rb ? p.criteria[rb] : undefined
+  if (rb && v != null)
+    return (
+      <Badge
+        value={v}
+        caption={CRITERION_EMOJI[rb as CriterionId]}
+        bg={seqColor(v, lens.breaks)}
+        dark={seqIndex(v, lens.breaks) >= 4}
+        size={size}
+        label={t('mapUi.hover.criterion', { criterion: t(`criteria.${rb}`), value: v })}
+      />
+    )
+  return <ScoreBadge score={p.score} size={size} breaks={lens.breaks} />
 }
 
 /** The four strongest criteria; `focus` (the one the map shows) always comes first and stands out. */
@@ -106,34 +143,42 @@ function MiniBars({ criteria, focus }: { criteria: RankedPlace['criteria']; focu
   )
 }
 
-export function PlaceCard({ p, breaks }: { p: RankedPlace; breaks?: number[] }) {
+/** A ranked place or district. `showMatch`: the lens is not match %, so the match % goes under the name. */
+export function PlaceCard({ p, lens, showMatch }: { p: RankedPlace; lens: Lens; showMatch: boolean }) {
   const { t } = useTranslation()
-  const { city, lang, anchors, sel, select, set, compare, toggleCompare, hover, mapMode, commuteAnchor } = useApp()
+  const { city, lang, anchors, sel, selDistrict, select, selectDistrict, set, compare, toggleCompare, hover, hoverDistrict } = useApp()
+  const hex = p.kind === 'hex'
   const arch = p.archetype ? archetypeInfo(p.archetype.id, lang) : null
-  const lensAnchorId = mapMode === 'commute' ? activeAnchor({ anchors, commuteAnchor })?.id : null
-  const active = sel === p.id
+  const lensAnchorId = lens.rankBy?.startsWith('anchor:') ? lens.rankBy.slice('anchor:'.length) : null
+  const active = hex ? sel === p.id : selDistrict === p.id
+  const hovered = hex ? hover === p.id : hoverDistrict === p.id
   const inCompare = compare.includes(p.id)
+  const sub = [
+    hex ? p.district?.name : t('saved.district'),
+    !hex && p.sharePassing != null && p.sharePassing < 1 ? t('results.sharePassing', { pct: Math.round(p.sharePassing * 100) }) : null,
+  ]
+    .filter(Boolean)
+    .join(' · ')
   return (
     <li
       className={cn(
         'group relative rounded-2xl border bg-surface p-3 transition-shadow',
-        active ? 'border-ink shadow-[var(--shadow-pop)]' : hover === p.id ? 'border-accent' : 'border-line',
+        active ? 'border-ink shadow-[var(--shadow-pop)]' : hovered ? 'border-accent' : 'border-line',
       )}
-      onMouseEnter={() => p.kind === 'hex' && set({ hover: p.id })}
-      onMouseLeave={() => set({ hover: null })}
+      onMouseEnter={() => set(hex ? { hover: p.id } : { hoverDistrict: p.id })}
+      onMouseLeave={() => set({ hover: null, hoverDistrict: null })}
       data-testid="place-card"
     >
-      <button className="absolute inset-0 rounded-2xl" onClick={() => select(p.kind === 'hex' ? p.id : latLngToCell(p.centroid.lat, p.centroid.lon, 9))} aria-label={t('results.openDetail', { name: p.name })} />
+      <button className="absolute inset-0 rounded-2xl" onClick={() => (hex ? select(p.id) : selectDistrict(p.id))} aria-label={t('results.openDetail', { name: p.name })} />
       <div className="pointer-events-none relative flex gap-3">
-        <ScoreBadge score={p.score} breaks={breaks} />
+        <LensBadge p={p} lens={lens} />
         <div className="min-w-0 flex-1">
           <div className="flex items-baseline gap-2">
             <span className="text-xs font-semibold text-ink-3">{p.rank}.</span>
             <h3 className="truncate font-semibold">{p.name}</h3>
+            {showMatch && <span className="ml-auto shrink-0 text-xs font-medium tabular-nums text-ink-2">{t('results.matchPct', { pct: p.score })}</span>}
           </div>
-          <p className="truncate text-xs text-ink-3">
-            {p.kind === 'hex' ? p.district?.name : p.sharePassing != null ? t('results.sharePassing', { pct: Math.round(p.sharePassing * 100) }) : ''}
-          </p>
+          <p className="truncate text-xs text-ink-3">{sub}</p>
           {arch && (
             <span className="mt-1 inline-flex items-center gap-1.5 text-xs text-ink-2">
               <span className="h-2.5 w-2.5 rounded-full" style={{ background: CATEGORICAL[arch.color] }} />
@@ -143,7 +188,7 @@ export function PlaceCard({ p, breaks }: { p: RankedPlace; breaks?: number[] }) 
         </div>
       </div>
       <div className="pointer-events-none relative mt-3">
-        <MiniBars criteria={p.criteria} focus={mapMode !== 'match' && mapMode !== 'commute' ? mapMode : null} />
+        <MiniBars criteria={p.criteria} focus={lensAnchorId ? null : lens.rankBy} />
       </div>
       {(p.highlights.length > 0 || p.warnings.length > 0) && (
         <ul className="pointer-events-none relative mt-3 space-y-1 text-sm">
@@ -173,16 +218,49 @@ export function PlaceCard({ p, breaks }: { p: RankedPlace; breaks?: number[] }) 
         {p.price?.value != null && city && <span className="pointer-events-none">💰 {fmtPricePerM2(p.price.value, lang, city)}</span>}
         {p.budgetM2 != null && <span className="pointer-events-none font-medium text-accent">{p.budgetText ?? t('results.budgetM2', { m2: p.budgetM2 })}</span>}
         <span className="relative z-10 ml-auto flex items-center gap-1">
-          {p.kind === 'hex' && (
+          {hex && (
             <label className="relative z-10 inline-flex min-h-9 cursor-pointer items-center gap-1.5 rounded-full px-2 hover:bg-sunken">
               <input type="checkbox" checked={inCompare} onChange={() => toggleCompare(p.id)} className="h-4 w-4 accent-[var(--color-accent)]" data-testid="compare-toggle" />
               {t('results.compare')}
             </label>
           )}
-          <SaveButton item={{ city, id: p.id, kind: p.kind === 'hex' ? 'hex' : 'district', name: p.name, lat: p.centroid.lat, lon: p.centroid.lon }} />
+          <SaveButton item={{ city, id: p.id, kind: hex ? 'hex' : 'district', name: p.name, lat: p.centroid.lat, lon: p.centroid.lon }} />
         </span>
       </div>
     </li>
+  )
+}
+
+/** "Sorted by" follows the map lens; the chip's × switches the map back to match %. */
+function SortedBy({ rankBy }: { rankBy: string | null }) {
+  const { t } = useTranslation()
+  const { set, anchors } = useApp()
+  const anchorId = rankBy?.startsWith('anchor:') ? rankBy.slice('anchor:'.length) : null
+  const label = !rankBy
+    ? null
+    : anchorId
+      ? `🧭 ${t('results.sortCommute', { place: anchors.find((a) => a.id === anchorId)?.label || t('map.legend.anchor') })}`
+      : `${CRITERION_EMOJI[rankBy as CriterionId] ?? ''} ${t(`criteria.${rankBy}`)}`
+  return (
+    <div className="flex min-h-7 min-w-0 items-center gap-1.5 text-xs" data-testid="sorted-by">
+      <span className="shrink-0 text-ink-3">{t('results.sortedBy')}</span>
+      {label ? (
+        <span className="inline-flex h-7 min-w-0 items-center gap-0.5 rounded-full bg-accent-soft pl-2.5 pr-0.5 font-semibold text-accent-strong">
+          <span className="truncate">{label}</span>
+          <button
+            onClick={() => set({ mapMode: 'match' })}
+            aria-label={t('results.sortReset')}
+            title={t('results.sortReset')}
+            className="grid h-6 w-6 shrink-0 place-items-center rounded-full hover:bg-ink/5"
+            data-testid="sort-reset"
+          >
+            <X size={14} />
+          </button>
+        </span>
+      ) : (
+        <span className="font-semibold text-ink-2">{t('results.sortMatch')}</span>
+      )}
+    </div>
   )
 }
 
@@ -191,12 +269,14 @@ export function RankingPanel() {
   const { tab, set, setFilters, filters, anchors, setAnchors, city, persona } = useApp()
   const [showSaved, setShowSaved] = useState(false)
   const savedCount = useSaved((s) => s.items.filter((x) => x.city === city).length)
-  const places = useScore('hex')
-  const districts = useScore('district', tab === 'districts')
+  const lens = useLens()
+  const places = useRanking('hex')
+  const districts = useRanking('district', tab === 'districts')
   const q = tab === 'districts' ? districts : places
   const data = q.data
-  const breaks = useMatchBreaks()
-  const neutral = noEffectiveWeights(data)
+  const unrated = noEffectiveWeights(data)
+  // Nothing rated means no match ranking; a lens (one criterion, a commute) still orders the places.
+  const neutral = unrated && !lens.rankBy
 
   const relax = (filter: string) => {
     if (filter === 'price') setFilters({ maxPricePerM2: null, maxRentPerM2: null })
@@ -229,9 +309,12 @@ export function RankingPanel() {
         {!showSaved && q.isFetching && <RefreshCw size={16} className="animate-spin text-ink-3" aria-label={t('states.loading')} />}
       </div>
       {data && !showSaved && (
-        <p className="px-4 pb-2 text-xs text-ink-3" aria-live="polite">
-          {t('results.passing', { count: data.count.passing })} · {t('results.computed', { ms: data.computeMs })}
-        </p>
+        <div className="px-4 pb-2">
+          <SortedBy rankBy={lens.rankBy} />
+          <p className="mt-0.5 text-xs text-ink-3" aria-live="polite">
+            {t('results.passing', { count: data.count.passing })} · {t('results.computed', { ms: data.computeMs })}
+          </p>
+        </div>
       )}
       <div className="min-h-0 flex-1 overflow-y-auto px-3 pb-4">
         {showSaved ? (
@@ -280,7 +363,7 @@ export function RankingPanel() {
             {data && !neutral && data.top.length > 0 && (
               <ol className="space-y-3" aria-label={t(`results.tabs.${tab}`)}>
                 {data.top.map((p) => (
-                  <PlaceCard key={p.id} p={p} breaks={breaks} />
+                  <PlaceCard key={p.id} p={p} lens={lens} showMatch={!!lens.rankBy && !unrated} />
                 ))}
               </ol>
             )}

@@ -3,7 +3,7 @@ import { COMMUTE, COMMUTE_BANDS, FAILING, SEQ, UNINHABITED } from '@/lib/palette
 import { useApp } from '@/state/store'
 
 /** Always-visible legend (README §3.6, §3.8). */
-export function Legend({ commuteLabel, breaks, neutral }: { commuteLabel?: string; breaks: number[]; neutral?: boolean }) {
+export function Legend({ commuteLabel, breaks, neutral, showTop, showDistricts }: { commuteLabel?: string; breaks: number[]; neutral?: boolean; showTop?: boolean; showDistricts?: boolean }) {
   const { t } = useTranslation()
   const mapMode = useApp((s) => s.mapMode)
   const title =
@@ -68,7 +68,13 @@ export function Legend({ commuteLabel, breaks, neutral }: { commuteLabel?: strin
           <span className="h-3 w-5 rounded-sm border border-line" style={{ background: UNINHABITED }} />
           {t('map.legend.uninhabited')}
         </li>
-        {mapMode === 'match' && !neutral && (
+        {showDistricts && (
+          <li className="flex items-center gap-2">
+            <span className="h-3 w-5 rounded-sm border-2 border-ink/60" />
+            {t('map.legend.districtLine')}
+          </li>
+        )}
+        {showTop && (
           <li className="flex items-center gap-2">
             <span className="grid h-4 w-4 place-items-center rounded-full bg-accent text-[9px] font-bold text-white">1</span>
             {t('map.legend.top')}

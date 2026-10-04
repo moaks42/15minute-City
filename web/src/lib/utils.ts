@@ -20,3 +20,20 @@ export function debounce<A extends unknown[]>(fn: (...a: A) => void, ms: number)
     t = setTimeout(() => fn(...a), ms)
   }
 }
+
+/** [[west, south], [east, north]] of a polygon, for fitBounds and a rough centre. */
+export function geoBounds(g: GeoJSON.Polygon | GeoJSON.MultiPolygon): [[number, number], [number, number]] {
+  const rings = g.type === 'Polygon' ? g.coordinates : g.coordinates.flat()
+  let [w, s, e, n] = [Infinity, Infinity, -Infinity, -Infinity]
+  for (const ring of rings)
+    for (const [x, y] of ring) {
+      w = Math.min(w, x)
+      s = Math.min(s, y)
+      e = Math.max(e, x)
+      n = Math.max(n, y)
+    }
+  return [
+    [w, s],
+    [e, n],
+  ]
+}

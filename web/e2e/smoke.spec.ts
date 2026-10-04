@@ -79,6 +79,53 @@ for (const city of ['krakow', 'praha'] as const) {
   })
 }
 
+test('the results follow the map lens; a district opens as a whole', async ({ page, isMobile }) => {
+  const errors: string[] = []
+  page.on('pageerror', (e) => errors.push(e.message))
+  await page.goto('/praha?v=1&lang=en&p=student')
+  const cards = page.getByTestId('place-card')
+  await expect(cards.first()).toBeVisible({ timeout: 20_000 })
+  await expect(page.getByTestId('sorted-by')).toContainText('match')
+
+  // One criterion on the map: the list is ordered by it, and the chip's × goes back to match %.
+  await page.getByTestId('mode-criterion').click()
+  await page.getByTestId('criterion-select').selectOption('green')
+  await expect(page.getByTestId('sorted-by')).toContainText('Green space')
+  const badges = cards.getByTestId('lens-badge')
+  await expect(badges.first()).toHaveAttribute('title', /Green space/)
+  // The previous list stays on screen until the re-ranked one arrives.
+  await expect
+    .poll(async () => {
+      const v = await badges.evaluateAll((els) => els.map((e) => Number(e.getAttribute('data-value'))))
+      return v.length > 1 && v.every((x, i) => i === 0 || v[i - 1] >= x)
+    })
+    .toBe(true)
+  await page.getByTestId('sort-reset').click()
+  await expect(page.getByTestId('mode-match')).toHaveAttribute('aria-checked', 'true')
+
+  // Districts: the card opens the whole district (outline + its own detail), not one hexagon.
+  await page.getByTestId('tab-districts').click()
+  await cards.first().getByRole('button').first().click({ position: { x: 40, y: 24 } })
+  const district = page.getByTestId('district-detail').last()
+  await expect(district).toBeVisible()
+  await expect(page).toHaveURL(/[?&]d=\d+/)
+  await expect(page).not.toHaveURL(/[?&]sel=/)
+  const best = district.getByTestId('district-best').getByTestId('place-card')
+  await expect(best.first()).toBeVisible()
+  if (!isMobile) {
+    // A place opened from the district goes back to the district.
+    await best.first().getByRole('button').first().click({ position: { x: 40, y: 24 } })
+    await expect(page.getByTestId('detail')).toBeVisible()
+    await page.getByTestId('detail-back').click()
+    await expect(page.getByTestId('district-detail')).toBeVisible()
+    await page.getByTestId('detail-back').click()
+    await expect(page.getByTestId('tab-districts')).toBeVisible()
+    await expect(page).not.toHaveURL(/[?&]d=/)
+  }
+
+  expect(errors, isMobile ? 'mobile' : 'desktop').toEqual([])
+})
+
 test('a chosen language survives reload and city choice', async ({ page }) => {
   await page.goto('/')
   await page.getByRole('radio', { name: 'cs' }).click()

@@ -216,7 +216,11 @@
       "title": "Zatím není podle čeho řadit",
       "body": "Všechna témata jsou přeskočená (dojezd se počítá, až přidáte místo). Ohodnoťte aspoň jedno téma a uvidíte svůj žebříček.",
       "action": "Ohodnotit témata"
-    }
+    },
+    "sortedBy": "Řazeno podle:",
+    "sortMatch": "shody s vašimi preferencemi",
+    "sortCommute": "Dojezd do: {{place}}",
+    "sortReset": "Řadit zase podle shody"
   },
   "saved": {
     "save": "Uložit",
@@ -258,7 +262,8 @@
       "top": "Top 10",
       "anchor": "Vaše místo",
       "relative": "Barvy dělí místa ve městě do 7 stejně velkých skupin; čísla jsou skóre na hranicích skupin.",
-      "noPrefs": "Zatím není nic ohodnoceno, takže není co ukázat. Ohodnoťte aspoň jedno téma."
+      "noPrefs": "Zatím není nic ohodnoceno, takže není co ukázat. Ohodnoťte aspoň jedno téma.",
+      "districtLine": "Hranice městské části"
     },
     "commuteAsk": "Kam dojíždíte?",
     "commuteTo": "Do:",
@@ -281,7 +286,8 @@
       "failing": "mimo tvé limity",
       "criterion": "{{criterion}} {{value}}/100",
       "uninhabited": "Nikdo tu nebydlí",
-      "noData": "bez dat"
+      "noData": "bez dat",
+      "district": "Celá část: {{value}}"
     }
   },
   "detail": {
@@ -320,7 +326,13 @@
     "similarity": "podobnost {{pct}} %",
     "imputed": "Odhad: chybí data, použili jsme medián města.",
     "loading": "Načítám detail…",
-    "error": "Detail se nepodařilo načíst."
+    "error": "Detail se nepodařilo načíst.",
+    "districtTitle": "Městská část",
+    "thisDistrict": "Tato část",
+    "districtBest": "Nejlepší místa v této části",
+    "districtNoMatch": "V této části vašim limitům nevyhovuje žádné místo.",
+    "districtAvgNote": "Čísla jsou průměr všech obydlených míst v části, vážený počtem obyvatel.",
+    "districtMedian": "Medián dojezdu přes místa v části"
   },
   "compare": {
     "title": "Porovnání míst",

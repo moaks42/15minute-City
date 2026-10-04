@@ -259,3 +259,50 @@ def test_twin_similarity_is_calibrated(state):
     assert abs(np.median(1 - np.linalg.norm(Zk[a] - Zp[b], axis=1) / ref)) < 0.05
     best = np.sort(ml.distance_sim(Zk[i], Zp[p.habitable], ref))[-5:]
     assert 0 < best.min() <= best.max() < 1
+
+
+@pytest.mark.parametrize("city", CITIES)
+def test_rank_by_criterion(state, city):
+    """rankBy orders `top` by that criterion (the map lens); `score` stays the match %."""
+    cd, cfg = state.cities[city], state.cfg
+    for aggregate in ("hex", "district"):
+        out = score_response(cd, cfg, req(state, "parent", rankBy="green", aggregate=aggregate, limit=15))
+        green = [p["criteria"]["green"] for p in out["top"]]
+        assert len(green) > 3 and green == sorted(green, reverse=True)
+        match = score_response(cd, cfg, req(state, "parent", aggregate=aggregate, limit=15))
+        scores = {p["id"]: p["score"] for p in match["top"]}
+        assert all(p["score"] == scores[p["id"]] for p in out["top"] if p["id"] in scores)
+
+
+@pytest.mark.parametrize("city", CITIES)
+def test_rank_by_anchor(state, city):
+    cd, cfg = state.cities[city], state.cfg
+    la, lo = cd.cc["center"]
+    for aggregate in ("hex", "district"):
+        out = score_response(cd, cfg, req(state, "working", rankBy="anchor:a1", aggregate=aggregate, limit=15,
+                                          anchors=[{"id": "a1", "lat": la, "lon": lo, "mode": "transit"}]))
+        mins = [p["anchors"][0]["minutes"] for p in out["top"]]
+        assert len(mins) > 3 and None not in mins and mins == sorted(mins)
+
+
+@pytest.mark.parametrize("city", CITIES)
+def test_district_is_mean_of_all_habitable_cells(state, city):
+    cd, cfg = state.cities[city], state.cfg
+    r = req(state, "parent", aggregate="district", limit=100)
+    ctx = compute(cd, cfg, r)
+    out = score_response(cd, cfg, r)
+    assert len(out["top"]) == sum(1 for g in cd.districts.values() if ctx.passing[g.habitable].any())
+    for p in out["top"][:5]:
+        g = cd.districts[p["id"]]
+        w = cd.population[g.habitable].astype(float) + 1.0
+        assert p["score"] == int(round(float(np.average(ctx.Mf[g.habitable], weights=w))))
+        assert p["cellCount"] == len(g.habitable)
+    assert [p["score"] for p in out["top"]] == sorted((p["score"] for p in out["top"]), reverse=True)
+
+
+@pytest.mark.parametrize("city", CITIES)
+def test_district_filter(state, city):
+    cd, cfg = state.cities[city], state.cfg
+    did = max(cd.districts.values(), key=lambda g: len(g.habitable)).id
+    out = score_response(cd, cfg, req(state, "parent", district=did, rankBy="transit", limit=5))
+    assert out["top"] and all(p["district"]["id"] == did for p in out["top"])

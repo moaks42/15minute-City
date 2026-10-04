@@ -44,6 +44,17 @@ def test_score(client, state, city, aggregate):
 
 
 @pytest.mark.parametrize("city", CITIES)
+@pytest.mark.parametrize("rank_by", ["green", "anchor:a1", "nonsense"])
+def test_score_rank_by(client, state, city, rank_by):
+    la, lo = ANCHOR[city]
+    did = next(iter(state.cities[city].districts))
+    for extra in ({"aggregate": "district"}, {"aggregate": "hex", "district": did, "includeCells": False}):
+        req = persona_request(state, "parent", limit=5, rankBy=rank_by,
+                              anchors=[{"id": "a1", "label": "Work", "lat": la, "lon": lo, "mode": "transit"}], **extra)
+        ok("score", client.post(f"/api/{city}/score", json=req), "ScoreResponse")
+
+
+@pytest.mark.parametrize("city", CITIES)
 def test_score_nomatch(client, state, city):
     req = persona_request(state, "student", filters={"maxPricePerM2": 1, "maxRentPerM2": 1})
     r = client.post(f"/api/{city}/score", json=req)

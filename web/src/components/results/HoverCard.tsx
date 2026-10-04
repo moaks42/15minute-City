@@ -1,6 +1,6 @@
 import { Popup } from 'react-map-gl/maplibre'
 
-export type HoverInfo = { h3: string; lng: number; lat: number; name: string | null; district: string | null; habitable: boolean }
+export type HoverInfo = { h3: string; lng: number; lat: number; name: string | null; district: string | null; districtId?: string | null; habitable: boolean }
 
 /** Desktop-only card that follows the mouse over the hex map (pointer-events disabled, never steals hover). */
 export function HoverCard({ info, value, note }: { info: HoverInfo; value?: string | null; note?: string | null }) {

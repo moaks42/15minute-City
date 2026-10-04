@@ -556,6 +556,10 @@ export interface components {
              * @default true
              */
             includeCells: boolean;
+            /** @description what `top` is ordered by: null = match %, a CriterionId = that criterion's score, "anchor:<id>" = shortest travel time to that anchor; unknown values rank by match %. `score` stays the match % */
+            rankBy?: string | null;
+            /** @description aggregate=hex only: restrict `top` to the cells of this district id */
+            district?: string | null;
         };
         /** @description [h3, score 0–100, passes 0|1]. passes = habitable AND all hard filters pass. */
         CellTuple: [
@@ -605,6 +609,7 @@ export interface components {
             /** @enum {string} */
             kind: "hex" | "district" | "neighborhood";
             rank: number;
+            /** @description match %; aggregates: population-weighted mean over all habitable cells */
             score: number;
             /** @description neighbourhood name for hex, admin name otherwise */
             name: string;

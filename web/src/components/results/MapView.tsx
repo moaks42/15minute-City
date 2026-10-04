@@ -3,14 +3,19 @@ import type { MapLayerMouseEvent, MapRef } from 'react-map-gl/maplibre'
 import Map, { Layer, Marker, NavigationControl, Source } from 'react-map-gl/maplibre'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { noEffectiveWeights, useCommute, useCriterionScore, useGrid, useMatchBreaks, useScore } from '@/api/hooks'
-import type { CityId } from '@/api/types'
-import { commuteExpression, FAILING, NEUTRAL, quantileBreaks, seqExpression, UNINHABITED } from '@/lib/palette'
+import { noEffectiveWeights, useCommute, useCriterionScore, useDistrictShapes, useGrid, useLens, useRanking, useScore } from '@/api/hooks'
+import type { CityId, CriterionId, RankedPlace } from '@/api/types'
+import { CRITERION_EMOJI } from '@/content/defaults'
+import { commuteExpression, FAILING, NEUTRAL, seqExpression, UNINHABITED } from '@/lib/palette'
+import { geoBounds } from '@/lib/utils'
 import { activeAnchor, useApp } from '@/state/store'
 import { HoverCard, type HoverInfo } from './HoverCard'
 import { Legend } from './Legend'
 
 const NOT_HAB = ['!', ['to-boolean', ['get', 'habitable']]]
+const INK = '#1f1d1a'
+const ACCENT = '#0e6e6c'
+const districtIs = (id: string | null) => ['==', ['to-string', ['get', 'id']], id ?? '']
 const STYLE = 'https://tiles.openfreemap.org/styles/positron'
 const CITY_VIEW: Record<CityId, { lat: number; lon: number; zoom: number }> = {
   krakow: { lat: 50.06, lon: 19.94, zoom: 11.5 },
@@ -37,7 +42,8 @@ function hatchImage(): ImageData {
 
 export default function MapView({ preview = false }: { preview?: boolean }) {
   const { t } = useTranslation()
-  const { city, mapMode, anchors, commuteAnchor, sel, select, hover, set } = useApp()
+  const { city, mapMode, anchors, commuteAnchor, sel, select, hover, set, tab, selDistrict, selectDistrict, hoverDistrict } = useApp()
+  const districtsTab = tab === 'districts' && !preview
   const mapRef = useRef<MapRef>(null)
   const [ready, setReady] = useState(false)
   const [beforeId, setBeforeId] = useState<string | undefined>()
@@ -46,7 +52,11 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
   const [srcLoaded, setSrcLoaded] = useState(false)
   const grid = useGrid(city)
   const score = useScore('hex')
-  const matchBreaks = useMatchBreaks()
+  const lens = useLens()
+  const breaks = lens.breaks
+  // The numbered markers are the results list: same lens, same tab, same query.
+  const ranking = useRanking(districtsTab ? 'district' : 'hex', !preview)
+  const shapes = useDistrictShapes(city)
   // Nothing rated: the engine's equal-weight fallback is not the user's ranking, so the map stays neutral.
   const neutral = mapMode === 'match' && noEffectiveWeights(score.data)
   const anchor = activeAnchor({ anchors, commuteAnchor })
@@ -70,8 +80,24 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
   const scoreByCell = useMemo(() => new globalThis.Map((score.data?.cells ?? []).map(([id, s, pass]) => [id, { s, pass }] as const)), [score.data])
   const commuteByCell = useMemo(() => new globalThis.Map((commute.data?.cells ?? []).map(([id, m]) => [id, m] as const)), [commute.data])
   const critByCell = useMemo(() => new globalThis.Map((critScores.data?.cells ?? []).map(([id, v]) => [id, v] as const)), [critScores.data])
+  const districtById = useMemo(
+    () => new globalThis.Map<string, RankedPlace>(districtsTab ? (ranking.data?.top ?? []).map((p) => [p.id, p] as const) : []),
+    [districtsTab, ranking.data],
+  )
   const hoverText = useMemo((): { value: string | null; note: string | null } | null => {
     if (!pointer) return null
+    if (districtsTab) {
+      // The whole district, in the lens the list is ordered by.
+      const d = pointer.districtId ? districtById.get(pointer.districtId) : undefined
+      if (!d) return { value: null, note: ranking.data ? t('mapUi.hover.failing') : null }
+      const rb = lens.rankBy
+      const m = rb?.startsWith('anchor:') ? d.anchors.find((a) => `anchor:${a.id}` === rb)?.minutes : undefined
+      const v = rb && !rb.startsWith('anchor:') ? d.criteria[rb] : undefined
+      const value = rb?.startsWith('anchor:')
+        ? m != null ? t('map.minutes', { count: m }) : t('map.over60')
+        : v != null ? `${CRITERION_EMOJI[rb as CriterionId] ?? ''} ${v}/100` : t('mapUi.hover.match', { value: d.score })
+      return { value: t('mapUi.hover.district', { value }), note: null }
+    }
     if (!pointer.habitable) return { value: t('mapUi.hover.uninhabited'), note: null }
     const noData = { value: t('mapUi.hover.noData'), note: null }
     if (mapMode === 'match') {
@@ -88,7 +114,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
     }
     const v = critByCell.get(pointer.h3)
     return v == null || !critMode ? noData : { value: t('mapUi.hover.criterion', { criterion: t(`criteria.${critMode}`), value: Math.round(v) }), note: null }
-  }, [pointer, mapMode, critMode, neutral, scoreByCell, commuteByCell, critByCell, commute.data, anchor, t])
+  }, [pointer, mapMode, critMode, neutral, scoreByCell, commuteByCell, critByCell, commute.data, anchor, districtsTab, districtById, ranking.data, lens.rankBy, t])
 
   // Fly to the city when it changes.
   useEffect(() => {
@@ -108,6 +134,16 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
     const m = mapRef.current
     if (!m.getBounds().contains([lon, lat]) || m.getZoom() < 12.5) m.flyTo({ center: [lon, lat], zoom: Math.max(m.getZoom(), 13.2), duration: 900 })
   }, [sel, grid.data, preview])
+
+  // Fit a selected district.
+  useEffect(() => {
+    const m = mapRef.current
+    if (!selDistrict || !m || preview) return
+    const f = shapes.data?.features.find((x) => String(x.properties?.id) === selDistrict)
+    if (!f) return
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    m.fitBounds(geoBounds(f.geometry), { padding: { top: 110, bottom: 40, left: 40, right: 60 }, maxZoom: 14.5, duration: reduce ? 0 : 900 })
+  }, [selDistrict, shapes.data, ready, preview])
 
   // Push scores into feature-state.
   useEffect(() => {
@@ -152,20 +188,19 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
     setReady(true)
   }, [])
 
+  // The districts tab picks whole districts; otherwise a habitable cell.
   const onClick = useCallback(
     (e: MapLayerMouseEvent) => {
-      const f = e.features?.[0]
-      const id = f?.properties?.h3 as string | undefined
+      const p = e.features?.[0]?.properties
+      if (districtsTab) {
+        if (p?.district_id != null) selectDistrict(String(p.district_id))
+        return
+      }
+      const id = p?.h3 as string | undefined
       if (id && habitable.has(id)) select(id)
     },
-    [habitable, select],
+    [habitable, select, selectDistrict, districtsTab],
   )
-
-  const breaks = useMemo(() => {
-    if (mapMode === 'match') return matchBreaks
-    if (critMode && critScores.data) return quantileBreaks(critScores.data.cells.filter(([id]) => habitable.has(id)).map((c) => c[1]))
-    return quantileBreaks([])
-  }, [mapMode, critMode, matchBreaks, critScores.data, habitable])
 
   const fillColor = useMemo(() => {
     if (mapMode === 'commute') return commuteExpression('minutes')
@@ -177,7 +212,10 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
 
   if (!city) return null
   const v = CITY_VIEW[city]
-  const top = mapMode === 'match' && !preview && !neutral ? (score.data?.top ?? []).slice(0, 10) : []
+  // Nothing rated and no lens: there is no ranking to number.
+  const unranked = !lens.rankBy && noEffectiveWeights(score.data)
+  const top = !preview && !unranked ? (ranking.data?.top ?? []).slice(0, 10) : []
+  const showDistricts = districtsTab || !!selDistrict
 
   return (
     <div className="absolute inset-0" data-testid="map">
@@ -198,17 +236,28 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
             : (e) => {
                 const p = e.features?.[0]?.properties
                 const id = (p?.h3 as string | undefined) ?? null
-                set({ hover: id })
+                const districtId = p?.district_id != null ? String(p.district_id) : null
+                const s = useApp.getState()
+                const hd = districtsTab ? districtId : null
+                if (s.hover !== id || s.hoverDistrict !== hd) set({ hover: id, hoverDistrict: hd })
                 if (!canHover) return
                 setPointer(
                   id && p
-                    ? { h3: id, lng: e.lngLat.lng, lat: e.lngLat.lat, name: (p.neighborhood as string) || null, district: (p.district_name as string) || null, habitable: !!p.habitable }
+                    ? {
+                        h3: id,
+                        lng: e.lngLat.lng,
+                        lat: e.lngLat.lat,
+                        name: districtsTab ? null : (p.neighborhood as string) || null,
+                        district: (p.district_name as string) || null,
+                        districtId,
+                        habitable: !!p.habitable,
+                      }
                     : null,
                 )
               }
         }
         onMouseLeave={() => {
-          set({ hover: null })
+          set({ hover: null, hoverDistrict: null })
           setPointer(null)
         }}
         cursor={hover ? 'pointer' : 'grab'}
@@ -244,22 +293,42 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
               beforeId={beforeId}
               paint={{ 'line-color': '#ffffff', 'line-width': ['interpolate', ['linear'], ['zoom'], 11, 0, 13, 0.4, 15, 1] as never, 'line-opacity': 0.6 }}
             />
-            <Layer id="hex-sel" type="line" filter={['==', ['get', 'h3'], sel ?? '']} paint={{ 'line-color': '#1f1d1a', 'line-width': 3 }} />
+            <Layer id="hex-sel" type="line" filter={['==', ['get', 'h3'], sel ?? '']} paint={{ 'line-color': INK, 'line-width': 3 }} />
           </Source>
         )}
-        {top.map((p) => (
-          <Marker key={p.id} latitude={p.centroid.lat} longitude={p.centroid.lon} anchor="center">
-            <button
-              onClick={() => select(p.id)}
-              onMouseEnter={() => set({ hover: p.id })}
-              onMouseLeave={() => set({ hover: null })}
-              aria-label={t('results.openDetail', { name: p.name })}
-              className={`grid h-7 w-7 place-items-center rounded-full border-2 border-white text-xs font-bold shadow-md ${sel === p.id ? 'bg-ink text-white' : 'bg-accent text-white'}`}
-            >
-              {p.rank}
-            </button>
-          </Marker>
-        ))}
+        {/* Mounted only after the grid, so the outlines are inserted above the hexagons whichever file loads first. */}
+        {ready && grid.data && shapes.data && !preview && (
+          <Source id="districts" type="geojson" data={shapes.data}>
+            <Layer
+              id="district-line"
+              type="line"
+              beforeId={beforeId}
+              layout={{ visibility: showDistricts ? 'visible' : 'none' }}
+              paint={{ 'line-color': INK, 'line-opacity': 0.45, 'line-width': ['interpolate', ['linear'], ['zoom'], 10, 0.8, 14, 1.6] as never }}
+            />
+            <Layer id="district-hover" type="line" filter={districtIs(showDistricts ? hoverDistrict : null) as never} paint={{ 'line-color': ACCENT, 'line-width': 2.5 }} />
+            <Layer id="district-sel-casing" type="line" filter={districtIs(selDistrict) as never} paint={{ 'line-color': '#ffffff', 'line-width': 6, 'line-opacity': 0.9 }} />
+            <Layer id="district-sel" type="line" filter={districtIs(selDistrict) as never} paint={{ 'line-color': INK, 'line-width': 3 }} />
+          </Source>
+        )}
+        {top.map((p) => {
+          const hex = p.kind === 'hex'
+          const on = hex ? sel === p.id : selDistrict === p.id
+          return (
+            <Marker key={p.id} latitude={p.centroid.lat} longitude={p.centroid.lon} anchor="center">
+              <button
+                onClick={() => (hex ? select(p.id) : selectDistrict(p.id))}
+                onMouseEnter={() => set(hex ? { hover: p.id } : { hoverDistrict: p.id })}
+                onMouseLeave={() => set({ hover: null, hoverDistrict: null })}
+                aria-label={t('results.openDetail', { name: p.name })}
+                className={`grid h-7 w-7 place-items-center rounded-full border-2 border-white text-xs font-bold shadow-md ${on ? 'bg-ink text-white' : 'bg-accent text-white'}`}
+                data-testid="map-marker"
+              >
+                {p.rank}
+              </button>
+            </Marker>
+          )
+        })}
         {!preview && canHover && pointer && hoverText && <HoverCard info={pointer} value={hoverText.value} note={hoverText.note} />}
         {!preview &&
           anchors.map((a) => (
@@ -272,7 +341,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
           ))}
       </Map>
       {/* Commute without a place has nothing to explain yet: the lens card asks for one. */}
-      {!preview && !(mapMode === 'commute' && !anchor) && <Legend commuteLabel={anchor?.label} breaks={breaks} neutral={neutral} />}
+      {!preview && !(mapMode === 'commute' && !anchor) && <Legend commuteLabel={anchor?.label} breaks={breaks} neutral={neutral} showTop={top.length > 0} showDistricts={showDistricts} />}
     </div>
   )
 }

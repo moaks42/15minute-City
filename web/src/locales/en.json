@@ -211,7 +211,11 @@
       "title": "Nothing to rank yet",
       "body": "All topics are skipped (the commute only counts once you add a place). Rate at least one topic to see your ranking.",
       "action": "Rate topics"
-    }
+    },
+    "sortedBy": "Sorted by:",
+    "sortMatch": "match with your preferences",
+    "sortCommute": "Travel time to {{place}}",
+    "sortReset": "Sort by match again"
   },
   "saved": {
     "save": "Save",
@@ -253,7 +257,8 @@
       "top": "Top 10",
       "anchor": "Your place",
       "relative": "Colours split the city's places into 7 equal-sized groups; the numbers are the scores at the group boundaries.",
-      "noPrefs": "Nothing is rated yet, so there is no match to show. Rate at least one topic."
+      "noPrefs": "Nothing is rated yet, so there is no match to show. Rate at least one topic.",
+      "districtLine": "District boundary"
     },
     "commuteAsk": "Where do you travel to?",
     "commuteTo": "To",
@@ -276,7 +281,8 @@
       "failing": "outside your limits",
       "criterion": "{{criterion}} {{value}}/100",
       "uninhabited": "Nobody lives here",
-      "noData": "no data"
+      "noData": "no data",
+      "district": "Whole district: {{value}}"
     }
   },
   "detail": {
@@ -312,7 +318,13 @@
     "similarity": "{{pct}}% similar",
     "imputed": "Estimated: no data here, we used the city median.",
     "loading": "Loading details…",
-    "error": "Could not load details."
+    "error": "Could not load details.",
+    "districtTitle": "District",
+    "thisDistrict": "This district",
+    "districtBest": "Best places in this district",
+    "districtNoMatch": "No place in this district passes your limits.",
+    "districtAvgNote": "Numbers are the average of all inhabited places in the district, weighted by population.",
+    "districtMedian": "Median travel time over the district's places"
   },
   "compare": {
     "title": "Compare places",
