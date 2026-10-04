@@ -9,6 +9,9 @@ export const CURRENCY: Record<CityId, 'PLN' | 'CZK'> = { krakow: 'PLN', praha: '
 export const fmtNum = (v: number, lang: Lang, digits = 0) =>
   new Intl.NumberFormat(LOCALE[lang], { maximumFractionDigits: digits }).format(v)
 
+/** A 0–100 score as a percentage: "84%" · "84 %" (cs) */
+export const fmtPct = (v: number, lang: Lang) => new Intl.NumberFormat(LOCALE[lang], { style: 'percent', maximumFractionDigits: 0 }).format(v / 100)
+
 export function fmtMoney(v: number, lang: Lang, city: CityId) {
   return new Intl.NumberFormat(LOCALE[lang], {
     style: 'currency',

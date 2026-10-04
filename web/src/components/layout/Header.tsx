@@ -10,14 +10,15 @@ import { cn } from '@/lib/utils'
 import { CITY_IDS, LANGS, useApp } from '@/state/store'
 import { HeaderSearch } from './HeaderSearch'
 
-/** `compact`: in the app header on phones the name gives way to search, language and share. */
-export function Logo({ onClick, compact }: { onClick?: () => void; compact?: boolean }) {
+/** `compact`: in the app header on phones the name gives way to search, language and share.
+ *  `light`: for dark backgrounds (the welcome hero); the name takes the text colour around it. */
+export function Logo({ onClick, compact, light }: { onClick?: () => void; compact?: boolean; light?: boolean }) {
   const { t } = useTranslation()
   return (
     <button onClick={onClick} className="flex items-center gap-2 rounded-lg" aria-label={`${t('app.name')} – ${t('nav.home')}`}>
       <svg viewBox="0 0 32 32" className="h-8 w-8" aria-hidden>
-        <circle cx="16" cy="16" r="15" fill="var(--color-accent)" />
-        <path d="M16 5l4 11-4 11-4-11z" fill="#fff" />
+        <circle cx="16" cy="16" r="15" fill={light ? 'var(--color-bg)' : 'var(--color-accent)'} />
+        <path d="M16 5l4 11-4 11-4-11z" fill={light ? 'var(--color-accent)' : '#fff'} />
         <path d="M16 5l4 11h-8z" fill="var(--color-sun)" />
       </svg>
       <span className={cn('hidden font-display text-xl font-bold tracking-tight', compact ? 'sm:inline' : 'min-[400px]:inline')}>{t('app.name')}</span>
@@ -33,15 +34,19 @@ const LANG_LABEL: Record<Lang, { flag: string; name: string }> = {
   ko: { flag: '🇰🇷', name: '한국어' },
 }
 
-/** Native select under a pill (flag + name, just the code on phones), so phones get their own picker. */
-export function LangSwitch({ className }: { className?: string }) {
+/** Native select under a pill (flag + name, just the code on phones), so phones get their own picker.
+ *  `dark`: a glass pill for dark backgrounds (the welcome hero). */
+export function LangSwitch({ className, dark }: { className?: string; dark?: boolean }) {
   const { t } = useTranslation()
   const { lang, setLang } = useApp()
   return (
     <div
       className={cn(
-        'relative inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-sunken pl-3 pr-2 text-sm font-medium text-ink hover:bg-line',
-        'has-[select:focus-visible]:outline-3 has-[select:focus-visible]:outline-offset-2 has-[select:focus-visible]:outline-accent',
+        'relative inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full pl-3 pr-2 text-sm font-medium',
+        'has-[select:focus-visible]:outline-3 has-[select:focus-visible]:outline-offset-2',
+        dark
+          ? 'border border-white/35 bg-white/10 text-white hover:bg-white/20 has-[select:focus-visible]:outline-white'
+          : 'bg-sunken text-ink hover:bg-line has-[select:focus-visible]:outline-accent',
         className,
       )}
     >
@@ -54,7 +59,7 @@ export function LangSwitch({ className }: { className?: string }) {
       <span aria-hidden className="text-xs font-semibold uppercase tracking-wide sm:hidden">
         {lang}
       </span>
-      <ChevronDown size={14} aria-hidden className="text-ink-3" />
+      <ChevronDown size={14} aria-hidden className={dark ? 'text-white/80' : 'text-ink-3'} />
       <select
         value={lang}
         onChange={(e) => setLang(e.target.value as Lang)}

@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { latLngToCell } from 'h3-js'
 import { ArrowRight, X } from 'lucide-react'
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { api } from '@/api/client'
 import type { CityId, GeocodeHit } from '@/api/types'
@@ -13,9 +12,11 @@ import { useApp } from '@/state/store'
 /** Relocation helper: pick your current address in the other city, get look-alike places here. */
 export function ExpatTwins({ city }: { city: CityId }) {
   const { t } = useTranslation()
-  const { lang, select } = useApp()
+  const { lang, select, set, expatHome } = useApp()
   const other: CityId = city === 'krakow' ? 'praha' : 'krakow'
-  const [home, setHome] = useState<{ label: string; h3: string } | null>(null)
+  // Kept in the store so an address picked on the welcome screen is already here.
+  const home = expatHome?.city === other ? expatHome : null
+  const setHome = (h: { label: string; h3: string } | null) => set({ expatHome: h && { city: other, ...h } })
   const twins = useQuery({
     queryKey: ['expat-twins', other, home?.h3, city, lang],
     queryFn: () => api.twins(other, home!.h3, city, lang),

@@ -12,6 +12,8 @@ export type Tab = 'places' | 'districts'
 /** Sections of the preferences accordion (one open at a time). */
 export type PrefsSection = 'profile' | 'criteria' | 'places' | 'limits'
 const PREFS_SECTIONS: PrefsSection[] = ['profile', 'criteria', 'places', 'limits']
+/** Where a relocating user lives now: a cell in the other city. */
+export type ExpatHome = { city: CityId; label: string; h3: string }
 
 export interface AppState {
   city: CityId | null
@@ -32,6 +34,7 @@ export interface AppState {
   hover: string | null
   // UI only, not in the URL.
   hoverDistrict: string | null
+  expatHome: ExpatHome | null // picked on the welcome screen or in the results
   prefsSection: PrefsSection | null // open accordion section (persisted in localStorage)
   prefsOpen: boolean // preferences: mobile sheet / desktop left panel
   leftOpen: boolean // desktop panels (persisted in localStorage)
@@ -44,7 +47,7 @@ const LANG_KEY = 'kompas.lang'
 const PANELS_KEY = 'kompas.panels'
 
 export const DEFAULT_WEIGHTS = Object.fromEntries(CRITERIA.map((c) => [c, 3])) as Weights
-const EMPTY_FILTERS: Filters = { maxPricePerM2: null, maxRentPerM2: null, mustHave: [], maxNoiseDb: null }
+export const EMPTY_FILTERS: Filters = { maxPricePerM2: null, maxRentPerM2: null, mustHave: [], maxNoiseDb: null }
 
 export function browserLang(): Lang {
   for (const l of navigator.languages ?? [navigator.language]) {
@@ -221,6 +224,7 @@ const initial: AppState = {
   compare: [],
   hover: null,
   hoverDistrict: null,
+  expatHome: null,
   prefsOpen: false,
   ...storedPanels(),
   ...stateFromUrl(),
@@ -228,6 +232,28 @@ const initial: AppState = {
 if (initial.sel || initial.selDistrict) initial.rightOpen = true
 // A link opened on a lens shows its preferences, as switching the lens does (see the subscription below).
 if (initial.mapMode !== 'match') initial.prefsSection = initial.mapMode === 'commute' ? 'places' : 'criteria'
+
+/** A fresh search from the welcome screen: city, who you are and your limits;
+ *  everything tied to an earlier city or search starts empty. */
+export function searchState(city: CityId, persona: string, weights: Record<string, number>, filters: Filters, expatHome: ExpatHome | null = null): Partial<AppState> {
+  return {
+    city,
+    view: 'app',
+    step: 'results',
+    persona,
+    weights: { ...DEFAULT_WEIGHTS, ...weights } as Weights,
+    filters,
+    expatHome,
+    anchors: [],
+    budget: null,
+    sel: null,
+    selDistrict: null,
+    compare: [],
+    commuteAnchor: null,
+    mapMode: 'match',
+    tab: 'places',
+  }
+}
 
 /** The place the commute map measures to: the chosen one, else the first. */
 export const activeAnchor = (s: Pick<AppState, 'anchors' | 'commuteAnchor'>): Anchor | undefined => s.anchors.find((a) => a.id === s.commuteAnchor) ?? s.anchors[0]

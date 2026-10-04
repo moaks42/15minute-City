@@ -13,6 +13,9 @@ export function GeoSearch({
   city: cityProp,
   placeholder,
   className,
+  inputClassName,
+  ariaLabel,
+  icon = true,
   autoFocus,
   testId = 'geo-search',
 }: {
@@ -20,6 +23,9 @@ export function GeoSearch({
   city?: CityId
   placeholder?: string
   className?: string
+  inputClassName?: string
+  ariaLabel?: string
+  icon?: boolean
   autoFocus?: boolean
   testId?: string
 }) {
@@ -56,9 +62,9 @@ export function GeoSearch({
 
   return (
     <div className={cn('relative', className)}>
-      <MapPin size={18} className="pointer-events-none absolute left-3 top-3 text-ink-3" />
+      {icon && <MapPin size={18} className="pointer-events-none absolute left-3 top-3 text-ink-3" />}
       <input
-        className={cn(inputCls, 'pl-9')}
+        className={cn(inputCls, icon && 'pl-9', inputClassName)}
         placeholder={label}
         value={q}
         onChange={(e) => setQ(e.target.value)}
@@ -66,7 +72,7 @@ export function GeoSearch({
         aria-expanded={!!hits?.length}
         aria-controls={listId}
         aria-autocomplete="list"
-        aria-label={label}
+        aria-label={ariaLabel ?? label}
         data-testid={testId}
         autoFocus={autoFocus}
         onKeyDown={(e) => {

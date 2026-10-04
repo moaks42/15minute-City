@@ -11,6 +11,44 @@
     },
     "privacy": "No login, no cookies, no tracking. Everything you choose stays in the link."
   },
+  "welcome": {
+    "everything": "Everything in one place.",
+    "search": "Find places",
+    "liveNow": "I live now {{in}}",
+    "show": "Show places",
+    "needs": "My needs",
+    "addNeed": "Add a need",
+    "needWalk": "{{what}} within {{min}} min",
+    "needPrice": "Up to {{price}}",
+    "needNoise": "Noise up to {{db}} dB",
+    "collections": "Your future starts here",
+    "topPlaces": "Best matches",
+    "collection": {
+      "family": {
+        "title": "Family-friendly Kraków",
+        "desc": "Schools, playgrounds and calm streets"
+      },
+      "student": {
+        "title": "Student Kraków",
+        "desc": "Fast transit, low prices, evenings out"
+      },
+      "senior": {
+        "title": "Quiet Prague for seniors",
+        "desc": "Doctors and shops a short walk away"
+      }
+    },
+    "photo": {
+      "wawel": "Wawel from the Vistula boulevards",
+      "tramGreenery": "Greenery along the tram line",
+      "tramStreet": "Calm street with a tram line",
+      "mainSquare": "Main Square & St Mary's Basilica",
+      "townHall": "Town Hall Tower at sunset",
+      "cafeTerrace": "Terrace by the Town Hall Tower",
+      "charlesBridge": "Charles Bridge & Prague Castle",
+      "parkView": "View of the National Museum",
+      "cafe": "A quiet café nearby"
+    }
+  },
   "nav": {
     "collapsePrefs": "Hide preferences",
     "expandPrefs": "Show preferences",

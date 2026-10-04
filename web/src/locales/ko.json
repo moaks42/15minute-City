@@ -11,6 +11,44 @@
     },
     "privacy": "로그인, 쿠키, 추적이 없습니다. 선택한 모든 내용은 링크에만 담깁니다."
   },
+  "welcome": {
+    "everything": "모든 것을 한곳에서.",
+    "search": "장소 찾기",
+    "liveNow": "지금 {{in}} 사는 곳",
+    "show": "장소 보기",
+    "needs": "필요한 것",
+    "addNeed": "조건 추가",
+    "needWalk": "{{min}}분 이내 {{what}}",
+    "needPrice": "최대 {{price}}",
+    "needNoise": "소음 {{db}} dB 이하",
+    "collections": "당신의 미래는 여기서 시작됩니다",
+    "topPlaces": "가장 잘 맞는 곳",
+    "collection": {
+      "family": {
+        "title": "가족 친화적인 크라쿠프",
+        "desc": "학교, 놀이터, 조용한 거리"
+      },
+      "student": {
+        "title": "학생을 위한 크라쿠프",
+        "desc": "빠른 교통, 낮은 물가, 저녁 외출"
+      },
+      "senior": {
+        "title": "시니어를 위한 조용한 프라하",
+        "desc": "병원과 상점이 걸어서 가까운 곳"
+      }
+    },
+    "photo": {
+      "wawel": "비스와 강변에서 본 바벨성",
+      "tramGreenery": "트램 선로를 따라 난 녹지",
+      "tramStreet": "트램이 다니는 조용한 거리",
+      "mainSquare": "중앙 광장과 성모 마리아 대성당",
+      "townHall": "해 질 녘의 시청 탑",
+      "cafeTerrace": "시청 탑 아래 노천 테라스",
+      "charlesBridge": "카를교와 프라하성",
+      "parkView": "국립박물관 전망",
+      "cafe": "근처의 조용한 카페"
+    }
+  },
   "nav": {
     "collapsePrefs": "선호 조건 숨기기",
     "expandPrefs": "선호 조건 보기",

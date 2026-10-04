@@ -11,6 +11,44 @@
     },
     "privacy": "Bez logowania, bez ciasteczek, bez śledzenia. Wszystkie wybory zostają w linku."
   },
+  "welcome": {
+    "everything": "Wszystko w jednym miejscu.",
+    "search": "Szukaj miejsc",
+    "liveNow": "Mieszkam teraz {{in}}",
+    "show": "Pokaż miejsca",
+    "needs": "Moje potrzeby",
+    "addNeed": "Dodaj potrzebę",
+    "needWalk": "{{what}} do {{min}} min",
+    "needPrice": "Do {{price}}",
+    "needNoise": "Hałas do {{db}} dB",
+    "collections": "Twoja przyszłość zaczyna się tutaj",
+    "topPlaces": "Najlepsze dopasowania",
+    "collection": {
+      "family": {
+        "title": "Rodzinny Kraków",
+        "desc": "Szkoły, place zabaw i spokojne ulice"
+      },
+      "student": {
+        "title": "Studencki Kraków",
+        "desc": "Szybki dojazd, niskie ceny, wieczorne wyjścia"
+      },
+      "senior": {
+        "title": "Spokojna Praga dla seniorów",
+        "desc": "Lekarze i sklepy w zasięgu krótkiego spaceru"
+      }
+    },
+    "photo": {
+      "wawel": "Wawel z bulwarów wiślanych",
+      "tramGreenery": "Zieleń wzdłuż torów tramwajowych",
+      "tramStreet": "Spokojna ulica z tramwajem",
+      "mainSquare": "Rynek Główny i Bazylika Mariacka",
+      "townHall": "Wieża Ratuszowa o zachodzie słońca",
+      "cafeTerrace": "Ogródek pod Wieżą Ratuszową",
+      "charlesBridge": "Most Karola i Zamek Praski",
+      "parkView": "Widok na Muzeum Narodowe",
+      "cafe": "Spokojna kawiarnia w pobliżu"
+    }
+  },
   "nav": {
     "collapsePrefs": "Ukryj preferencje",
     "expandPrefs": "Pokaż preferencje",

@@ -11,6 +11,44 @@
     },
     "privacy": "Bez přihlášení, bez cookies, bez sledování. Vše, co zvolíte, zůstává v odkazu."
   },
+  "welcome": {
+    "everything": "Všechno na jednom místě.",
+    "search": "Hledat místa",
+    "liveNow": "Teď bydlím {{in}}",
+    "show": "Ukázat místa",
+    "needs": "Moje potřeby",
+    "addNeed": "Přidat potřebu",
+    "needWalk": "{{what}} do {{min}} min",
+    "needPrice": "Do {{price}}",
+    "needNoise": "Hluk do {{db}} dB",
+    "collections": "Vaše budoucnost začíná tady",
+    "topPlaces": "Nejlepší shody",
+    "collection": {
+      "family": {
+        "title": "Krakov pro rodiny",
+        "desc": "Školy, hřiště a klidné ulice"
+      },
+      "student": {
+        "title": "Studentský Krakov",
+        "desc": "Rychlá doprava, nízké ceny, večery venku"
+      },
+      "senior": {
+        "title": "Klidná Praha pro seniory",
+        "desc": "Lékař a obchody kousek pěšky"
+      }
+    },
+    "photo": {
+      "wawel": "Wawel z nábřeží Visly",
+      "tramGreenery": "Zeleň podél tramvajové trati",
+      "tramStreet": "Klidná ulice s tramvají",
+      "mainSquare": "Hlavní náměstí a Mariánská bazilika",
+      "townHall": "Radniční věž při západu slunce",
+      "cafeTerrace": "Zahrádka pod Radniční věží",
+      "charlesBridge": "Karlův most a Pražský hrad",
+      "parkView": "Výhled na Národní muzeum",
+      "cafe": "Klidná kavárna poblíž"
+    }
+  },
   "nav": {
     "collapsePrefs": "Skrýt preference",
     "expandPrefs": "Zobrazit preference",

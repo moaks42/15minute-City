@@ -1,64 +1,56 @@
-import { ArrowRight } from 'lucide-react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { CityId } from '@/api/types'
 import { LangSwitch, Logo } from '@/components/layout/Header'
-import { CITY_IDS, useApp } from '@/state/store'
+import { Collections } from '@/components/welcome/Collections'
+import { HeroGrid } from '@/components/welcome/HeroGrid'
+import { SearchBox } from '@/components/welcome/SearchBox'
+import { usePersonas } from '@/components/welcome/shared'
+import { EMPTY_FILTERS, searchState, useApp } from '@/state/store'
 
-const CITY_STYLE: Record<CityId, { bg: string; dot: string }> = {
-  krakow: { bg: 'linear-gradient(135deg,#0e6e6c 0%,#1d4e6e 100%)', dot: '#f2b84b' },
-  praha: { bg: 'linear-gradient(135deg,#7b2d43 0%,#3f2a5c 100%)', dot: '#f6d58e' },
-}
+// Teal → indigo, a gold glow top right, and a soft shade on the left so the
+// gold and white text keep AA contrast (gold #E8C46A ≥ 4.5:1 on the shaded teal).
+const HERO_BG = [
+  'radial-gradient(circle at 92% -10%, rgb(212 168 75 / 0.42), transparent 42%)',
+  'linear-gradient(90deg, rgb(6 32 36 / 0.32) 0%, rgb(6 32 36 / 0.12) 45%, transparent 70%)',
+  'linear-gradient(120deg, #17766F 0%, #1D5F70 48%, #3D3A6B 100%)',
+].join(',')
 
-function HexMotif({ color }: { color: string }) {
-  const hexes = []
-  for (let r = 0; r < 4; r++)
-    for (let c = 0; c < 6; c++) {
-      const x = c * 26 + (r % 2) * 13
-      const y = r * 22
-      const o = ((r * 7 + c * 13) % 10) / 14 + 0.12
-      hexes.push(<polygon key={`${r}-${c}`} points="13,0 26,7.5 26,22.5 13,30 0,22.5 0,7.5" transform={`translate(${x} ${y}) scale(.8)`} fill={color} opacity={o} />)
-    }
-  return (
-    <svg viewBox="0 0 170 100" className="absolute -right-4 -bottom-3 h-28 w-48" aria-hidden>
-      {hexes}
-    </svg>
-  )
-}
-
+/** Welcome screen: hero with the city's hex grid, the search bar and curated collections. */
 export function CityPicker() {
   const { t } = useTranslation()
-  const setCity = useApp((s) => s.setCity)
-  return (
-    <div className="h-full overflow-y-auto bg-bg">
-      <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4 sm:px-6">
-        <Logo />
-        <LangSwitch />
-      </div>
-      <main className="mx-auto max-w-4xl px-4 pb-16 pt-6 sm:px-6 sm:pt-14">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">{CITY_IDS.map((c) => t(`cities.${c}`)).join(' · ')}</p>
-        <h1 className="max-w-2xl font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-6xl">{t('app.tagline')}</h1>
-        <p className="mt-5 max-w-xl text-lg text-ink-2">{t('app.privacy')}</p>
+  const { persona: lastPersona, set } = useApp()
+  const [city, setCity] = useState<CityId>('krakow')
+  const [persona, setPersona] = useState(lastPersona ?? 'working')
+  const personas = usePersonas(city)
+  const p = personas.find((x) => x.id === persona) ?? personas[0]
 
-        <h2 className="mt-12 font-display text-2xl font-semibold">{t('steps.city.title')}</h2>
-        <p className="mt-1 text-ink-3">{t('steps.city.lead')}</p>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2">
-          {CITY_IDS.map((c) => (
+  return (
+    <div className="h-full overflow-y-auto overflow-x-hidden bg-bg">
+      <section className="relative isolate overflow-hidden text-white" style={{ background: HERO_BG }}>
+        <HeroGrid city={city} persona={p} className="pointer-events-none absolute inset-y-0 right-0 -z-10 h-full w-full opacity-50 md:w-[68%] md:opacity-100" />
+        <header className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-5 sm:px-6 [&_button:focus-visible]:outline-white">
+          <Logo light />
+          <nav className="flex items-center gap-1 sm:gap-2">
+            {/* "Back to the map" there opens the results for what is picked here. */}
             <button
-              key={c}
-              data-testid={`city-${c}`}
-              onClick={() => setCity(c)}
-              className="group relative min-h-44 overflow-hidden rounded-2xl p-6 text-left text-white shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5"
-              style={{ background: CITY_STYLE[c].bg }}
+              onClick={() => set({ ...searchState(city, p.id, p.weights, EMPTY_FILTERS), view: 'about' })}
+              className="rounded-full px-3 py-2 text-sm font-semibold hover:bg-white/10"
             >
-              <HexMotif color={CITY_STYLE[c].dot} />
-              <span className="relative block font-display text-4xl font-bold">{t(`cities.${c}`)}</span>
-              <span className="relative mt-2 block max-w-[16rem] text-sm text-white/85">{t(`cities.cardHint.${c}`)}</span>
-              <span className="relative mt-6 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-semibold backdrop-blur transition-colors group-hover:bg-white/25">
-                {t('nav.next')} <ArrowRight size={16} />
-              </span>
+              {t('nav.about')}
             </button>
-          ))}
+            <LangSwitch dark />
+          </nav>
+        </header>
+        <div className="mx-auto max-w-6xl px-4 pb-32 pt-6 sm:px-6 sm:pb-36 sm:pt-12">
+          <h1 className="max-w-3xl font-display text-[2.5rem] font-bold leading-[1.05] tracking-tight sm:text-6xl">{t('app.tagline')}</h1>
+          <p className="mt-3 font-display text-2xl font-semibold text-[#E8C46A] sm:text-3xl">{t('welcome.everything')}</p>
         </div>
+      </section>
+
+      <main className="relative mx-auto -mt-20 max-w-6xl px-4 pb-20 sm:-mt-24 sm:px-6">
+        <SearchBox city={city} onCity={setCity} persona={p.id} onPersona={setPersona} />
+        <Collections />
       </main>
     </div>
   )

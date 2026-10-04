@@ -1,24 +1,18 @@
 import { expect, test } from '@playwright/test'
 
-// city → persona → criteria → results → places → detail → twins, for both cities.
+// welcome search (city + persona) → results → places → detail → twins, for both cities.
 for (const city of ['krakow', 'praha'] as const) {
   test(`smoke: ${city}`, async ({ page, isMobile }) => {
     const errors: string[] = []
     page.on('pageerror', (e) => errors.push(e.message))
 
     await page.goto('/')
-    await page.getByTestId(`city-${city}`).click()
-    await expect(page).toHaveURL(new RegExp(`/${city}`))
+    await page.getByTestId('search-city').selectOption(city)
+    await page.getByTestId('search-persona').selectOption('student')
+    await page.getByTestId('search-submit').click()
+    await expect(page).toHaveURL(new RegExp(`/${city}\\?.*p=student`))
     // The language follows the browser (Playwright: en-US), never the city.
     await expect(page.locator('html')).toHaveAttribute('lang', 'en')
-
-    // Two steps: picking a persona moves on to the criteria.
-    await expect(page.getByText('Step 1 of 2')).toBeVisible()
-    await page.getByTestId('persona-student').click()
-    await expect(page.getByTestId('criterion-transit')).toBeVisible()
-    await expect(page.getByText('Step 2 of 2')).toBeVisible()
-    await expect(page.getByTestId('wizard-next')).toHaveCount(0)
-    await page.getByTestId('show-results').click()
 
     const cards = page.getByTestId('place-card')
     await expect(cards.first()).toBeVisible({ timeout: 20_000 })
@@ -79,6 +73,59 @@ for (const city of ['krakow', 'praha'] as const) {
   })
 }
 
+test('the wizard still works from a link', async ({ page }) => {
+  await page.goto('/krakow?step=persona')
+  // Two steps: picking a persona moves on to the criteria.
+  await expect(page.getByText('Step 1 of 2')).toBeVisible()
+  await page.getByTestId('persona-student').click()
+  await expect(page.getByTestId('criterion-transit')).toBeVisible()
+  await expect(page.getByText('Step 2 of 2')).toBeVisible()
+  await expect(page.getByTestId('wizard-next')).toHaveCount(0)
+  await page.getByTestId('show-results').click()
+  await expect(page.getByTestId('place-card').first()).toBeVisible({ timeout: 20_000 })
+})
+
+test('welcome: needs become limits, collections open their results', async ({ page }) => {
+  const errors: string[] = []
+  page.on('pageerror', (e) => errors.push(e.message))
+  await page.goto('/')
+
+  // Every collection lists its live top 3.
+  const tops = page.getByRole('list', { name: 'Best matches' })
+  await expect(tops).toHaveCount(3)
+  for (const list of await tops.all()) await expect(list.getByRole('listitem')).toHaveCount(3)
+
+  // A suggested need turns into a removable chip and reaches the results as a hard limit.
+  await page.getByTestId('need-m:park').click()
+  await expect(page.getByTestId('need-chip')).toHaveText(/Park within 10 min/)
+  await page.getByTestId('add-need').selectOption('noise')
+  await expect(page.getByTestId('need-chip')).toHaveCount(2)
+  await page.getByTestId('need-chip').first().getByRole('button').click()
+  await expect(page.getByTestId('need-chip')).toHaveCount(1)
+  await page.getByTestId('search-submit').click()
+  await expect(page).toHaveURL(/\/krakow\?.*f=n%3A55/)
+
+  await page.goBack()
+  await page.getByTestId('collection-senior').click()
+  await expect(page).toHaveURL(/\/praha\?.*p=senior/)
+  await expect(page.getByTestId('place-card').first()).toBeVisible({ timeout: 20_000 })
+  expect(errors).toEqual([])
+})
+
+test('welcome: relocating carries the current address into the results', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByTestId('search-home')).toHaveCount(0)
+  await page.getByTestId('search-persona').selectOption('expat')
+  // City is Kraków, so the address is searched in Prague.
+  await expect(page.getByText('I live now in Prague')).toBeVisible()
+  await page.getByTestId('search-home').fill('ul')
+  await page.getByRole('listbox').getByRole('option').first().click()
+  await expect(page.getByTestId('search-home-value')).not.toBeEmpty()
+  await page.getByTestId('search-submit').click()
+  await expect(page).toHaveURL(/\/krakow\?.*p=expat/)
+  await expect(page.getByTestId('expat-twin').first()).toBeAttached({ timeout: 20_000 })
+})
+
 test('the results follow the map lens; a district opens as a whole', async ({ page, isMobile }) => {
   const errors: string[] = []
   page.on('pageerror', (e) => errors.push(e.message))
@@ -132,7 +179,7 @@ test('a chosen language survives reload and city choice', async ({ page }) => {
   await expect(page.locator('html')).toHaveAttribute('lang', 'cs')
   await page.reload()
   await expect(page.locator('html')).toHaveAttribute('lang', 'cs')
-  await page.getByTestId('city-krakow').click()
+  await page.getByTestId('search-submit').click()
   await expect(page).toHaveURL(/\/krakow/)
   await expect(page.locator('html')).toHaveAttribute('lang', 'cs')
 })
