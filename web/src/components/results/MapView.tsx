@@ -12,7 +12,7 @@ import { Legend } from './Legend'
 
 const NOT_HAB = ['!', ['to-boolean', ['get', 'habitable']]]
 const STYLE = 'https://tiles.openfreemap.org/styles/positron'
-export const CITY_VIEW: Record<CityId, { lat: number; lon: number; zoom: number }> = {
+const CITY_VIEW: Record<CityId, { lat: number; lon: number; zoom: number }> = {
   krakow: { lat: 50.06, lon: 19.94, zoom: 11.5 },
   praha: { lat: 50.08, lon: 14.44, zoom: 11 },
 }

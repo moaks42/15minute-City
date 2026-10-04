@@ -1,4 +1,4 @@
-import { Bike, Footprints, MapPin, Plus, TramFront, Trash2, X } from 'lucide-react'
+import { MapPin, Plus, Trash2, X } from 'lucide-react'
 import { useId, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useMeta } from '@/api/hooks'
@@ -9,9 +9,7 @@ import { MUST_HAVE } from '@/content/defaults'
 import { CURRENCY } from '@/lib/format'
 import { L, cn } from '@/lib/utils'
 import { useApp } from '@/state/store'
-import { LEVEL_EMOJI } from './EmojiRow'
-
-export const MODE_ICON: Record<Mode, typeof TramFront> = { transit: TramFront, bike: Bike, walk: Footprints }
+import { LEVEL_EMOJI, MODE_ICON } from './icons'
 
 const inputCls = 'h-11 w-full rounded-xl border border-line bg-surface px-3 text-[15px] placeholder:text-ink-3 focus:border-accent focus:outline-none focus-visible:outline-3 focus-visible:outline-accent'
 const labelCls = 'mb-1 block text-xs font-medium text-ink-3'
@@ -22,7 +20,7 @@ const addressOf = (h: GeocodeHit) => (h.sublabel ? `${h.label}, ${h.sublabel}` :
 const shortOf = (address: string) => address.split(',')[0]
 
 /** Adds a geocoded place as an anchor, named as the user typed it or after its address. Returns the new anchor id. */
-export function useAddAnchor() {
+function useAddAnchor() {
   const { t } = useTranslation()
   const { city, lang, persona, anchors, setAnchors } = useApp()
   const { data: meta } = useMeta(city)

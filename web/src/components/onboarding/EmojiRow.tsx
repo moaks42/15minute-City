@@ -4,8 +4,7 @@ import type { CriterionId } from '@/api/types'
 import type { CriterionLite } from '@/content/defaults'
 import { Tip } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
-
-export const LEVEL_EMOJI = ['', '😐', '🙂', '😊', '😍', '🤩']
+import { LEVEL_EMOJI } from './icons'
 
 /** One criterion row: native radio group (arrow keys work), 5 emoji + skip. */
 export function EmojiRow({

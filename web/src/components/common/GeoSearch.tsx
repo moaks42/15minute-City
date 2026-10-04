@@ -28,17 +28,14 @@ export function GeoSearch({
   const city = (cityProp ?? storeCity)!
   const label = placeholder ?? t('places.searchPlaceholder')
   const [q, setQ] = useState('')
-  const [hits, setHits] = useState<GeocodeHit[] | null>(null)
-  const [busy, setBusy] = useState(false)
+  const [results, setHits] = useState<GeocodeHit[] | null>(null)
+  // Too short a query shows nothing; otherwise null means a search is in flight.
+  const hits = q.trim().length < 2 ? null : results
   const [active, setActive] = useState(0)
   const listId = useId()
 
   useEffect(() => {
-    if (q.trim().length < 2) {
-      setHits(null)
-      return
-    }
-    setBusy(true)
+    if (q.trim().length < 2) return
     const h = setTimeout(() => {
       api
         .geocode(city, q.trim())
@@ -47,7 +44,6 @@ export function GeoSearch({
           setActive(0)
         })
         .catch(() => setHits([]))
-        .finally(() => setBusy(false))
     }, 250)
     return () => clearTimeout(h)
   }, [q, city])
@@ -86,7 +82,7 @@ export function GeoSearch({
       />
       {q.trim().length >= 2 && (
         <div className="absolute z-20 mt-1 w-full overflow-hidden rounded-xl border border-line bg-surface shadow-[var(--shadow-pop)]">
-          {busy && !hits && <p className="px-3 py-2 text-sm text-ink-3">{t('places.searching')}</p>}
+          {!hits && <p className="px-3 py-2 text-sm text-ink-3">{t('places.searching')}</p>}
           {hits && hits.length === 0 && <p className="px-3 py-2 text-sm text-ink-3">{t('places.searchNoResults')}</p>}
           {hits && hits.length > 0 && (
             <ul id={listId} role="listbox">
