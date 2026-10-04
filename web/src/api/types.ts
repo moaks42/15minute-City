@@ -32,8 +32,8 @@ export type {
   GeocodeResponse,
 } from '@contracts/types'
 
-/** App anchors always carry a label and a mode. */
-export type Anchor = C.Anchor & { label: string; mode: C.Mode }
+/** App anchors always carry a label and a mode; `address` is what the user picked (UI and URL only, never sent). */
+export type Anchor = C.Anchor & { label: string; mode: C.Mode; address?: string }
 
 export type GeocodeHit = C.GeocodeResponse['items'][number]
 

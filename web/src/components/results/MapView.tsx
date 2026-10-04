@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { useCommute, useCriterionScore, useGrid, useScore } from '@/api/hooks'
 import type { CityId } from '@/api/types'
 import { commuteExpression, FAILING, quantileBreaks, seqExpression, UNINHABITED } from '@/lib/palette'
-import { useApp } from '@/state/store'
+import { activeAnchor, useApp } from '@/state/store'
 import { HoverCard, type HoverInfo } from './HoverCard'
 import { Legend } from './Legend'
 
@@ -46,7 +46,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
   const [srcLoaded, setSrcLoaded] = useState(false)
   const grid = useGrid(city)
   const score = useScore('hex')
-  const anchor = anchors.find((a) => a.id === commuteAnchor) ?? anchors[0]
+  const anchor = activeAnchor({ anchors, commuteAnchor })
   const commute = useCommute(mapMode === 'commute' ? anchor?.lat : undefined, anchor?.lon, anchor?.mode)
   const critMode = mapMode !== 'match' && mapMode !== 'commute' ? mapMode : null
   const critScores = useCriterionScore(critMode)
@@ -67,7 +67,7 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
   const scoreByCell = useMemo(() => new globalThis.Map((score.data?.cells ?? []).map(([id, s, pass]) => [id, { s, pass }] as const)), [score.data])
   const commuteByCell = useMemo(() => new globalThis.Map((commute.data?.cells ?? []).map(([id, m]) => [id, m] as const)), [commute.data])
   const critByCell = useMemo(() => new globalThis.Map((critScores.data?.cells ?? []).map(([id, v]) => [id, v] as const)), [critScores.data])
-  const hoverText = useMemo((): { value: string; note: string | null } | null => {
+  const hoverText = useMemo((): { value: string | null; note: string | null } | null => {
     if (!pointer) return null
     if (!pointer.habitable) return { value: t('mapUi.hover.uninhabited'), note: null }
     const noData = { value: t('mapUi.hover.noData'), note: null }
@@ -76,13 +76,15 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
       return v ? { value: t('mapUi.hover.match', { value: v.s }), note: v.pass === 0 ? t('mapUi.hover.failing') : null } : noData
     }
     if (mapMode === 'commute') {
-      if (!commute.data) return noData
+      // No place yet (the lens card asks for one) or still loading: just the name, never "no data".
+      if (!anchor || !commute.data) return { value: null, note: null }
       const m = commuteByCell.get(pointer.h3)
-      return { value: m === undefined || m >= 255 ? t('map.over60') : t('map.minutes', { count: m }), note: null }
+      const time = m === undefined || m >= 255 ? t('map.over60') : t('map.minutes', { count: m })
+      return { value: t('mapUi.hover.commute', { time, place: anchor.label || t('map.legend.anchor') }), note: null }
     }
     const v = critByCell.get(pointer.h3)
     return v == null || !critMode ? noData : { value: t('mapUi.hover.criterion', { criterion: t(`criteria.${critMode}`), value: Math.round(v) }), note: null }
-  }, [pointer, mapMode, critMode, scoreByCell, commuteByCell, critByCell, commute.data, t])
+  }, [pointer, mapMode, critMode, scoreByCell, commuteByCell, critByCell, commute.data, anchor, t])
 
   // Fly to the city when it changes.
   useEffect(() => {
@@ -264,7 +266,8 @@ export default function MapView({ preview = false }: { preview?: boolean }) {
             </Marker>
           ))}
       </Map>
-      {!preview && <Legend commuteLabel={anchor?.label} breaks={breaks} />}
+      {/* Commute without a place has nothing to explain yet: the lens card asks for one. */}
+      {!preview && !(mapMode === 'commute' && !anchor) && <Legend commuteLabel={anchor?.label} breaks={breaks} />}
     </div>
   )
 }

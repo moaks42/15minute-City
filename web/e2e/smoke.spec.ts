@@ -24,6 +24,25 @@ for (const city of ['krakow', 'praha'] as const) {
     await expect(cards.first()).toBeVisible({ timeout: 20_000 })
     await expect(page.getByTestId('legend')).toBeVisible()
 
+    // Map lens: every mode keeps its controls inside the switch card.
+    await page.getByTestId('mode-commute').click()
+    const lens = page.getByTestId('lens-commute')
+    await expect(lens).toBeVisible()
+    await expect(page.getByTestId('legend')).toHaveCount(0) // nothing to explain until there is a place
+    // A place has a name the user gives and an address they pick; nothing is named for them.
+    await lens.getByTestId('commute-name').fill('Office')
+    await lens.getByTestId('commute-search').fill('ul')
+    await page.getByRole('listbox').getByRole('option').first().click()
+    await expect(lens.getByTestId('commute-anchor')).toHaveText('Office')
+    await expect(page.getByTestId('legend')).toContainText('Travel time to Office')
+    await lens.getByTestId('commute-remove').click()
+    await expect(lens.getByTestId('commute-anchor')).toHaveCount(0)
+    await expect(lens.getByTestId('commute-search')).toBeVisible()
+    await page.getByTestId('mode-criterion').click()
+    await expect(page.getByTestId('criterion-select')).toBeVisible()
+    await page.getByTestId('mode-match').click()
+    await expect(page.getByTestId('lens-commute')).toHaveCount(0)
+
     // Places and limits live in the results now.
     if (isMobile) await page.getByTestId('open-filters').click()
     const places = page.getByTestId('places-section').last()

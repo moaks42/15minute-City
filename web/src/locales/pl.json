@@ -126,10 +126,15 @@
     }
   },
   "places": {
-    "section": "Moje miejsca i limity",
     "sectionCount": "Ustawione: {{count}}",
     "anchors": "Moje miejsca",
     "anchorsHint": "Do 3 miejsc, do których często dojeżdżasz.",
+    "name": "Nazwa",
+    "address": "Adres",
+    "nameOptional": "Nazwa (opcjonalnie), np. {{example}}",
+    "exampleName": "Praca",
+    "changeAddress": "Zmień",
+    "addressUnknown": "Punkt na mapie",
     "addAnchor": "Dodaj miejsce",
     "removeAnchor": "Usuń: {{label}}",
     "searchPlaceholder": "Wpisz adres lub okolicę…",
@@ -145,7 +150,6 @@
     "importance": "Waga",
     "maxMinutes": "Najwyżej",
     "noLimit": "bez limitu",
-    "suggested": "Proponowane: {{label}}",
     "limits": "Twarde limity",
     "budget": {
       "buy": "Twój budżet na zakup (łącznie)",
@@ -175,6 +179,9 @@
       "supermarket": "Supermarket",
       "maternity_ward": "Porodówka"
     }
+  },
+  "prefs": {
+    "none": "Brak"
   },
   "results": {
     "tabs": {
@@ -244,8 +251,9 @@
       "top": "Top 10",
       "anchor": "Twoje miejsce"
     },
-    "commuteNoAnchor": "Dodaj miejsce w preferencjach, aby zobaczyć czasy dojazdu.",
-    "commuteFrom": "Z",
+    "commuteAsk": "Dokąd dojeżdżasz?",
+    "commuteTo": "Do:",
+    "onMap": "Na mapie",
     "minutes": "{{count}} min",
     "over60": "> 60 min",
     "loading": "Ładuję mapę…",
@@ -260,6 +268,7 @@
     "outside": "Ten adres jest poza mapą miasta",
     "hover": {
       "match": "{{value}}% dopasowania",
+      "commute": "{{place}}: {{time}}",
       "failing": "poza Twoimi limitami",
       "criterion": "{{criterion}} {{value}}/100",
       "uninhabited": "Tu nikt nie mieszka",

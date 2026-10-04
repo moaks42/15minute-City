@@ -126,10 +126,15 @@
     }
   },
   "places": {
-    "section": "My places and limits",
     "sectionCount": "Set: {{count}}",
     "anchors": "My places",
     "anchorsHint": "Up to 3 places you travel to often.",
+    "name": "Name",
+    "address": "Address",
+    "nameOptional": "Name (optional), e.g. {{example}}",
+    "exampleName": "Work",
+    "changeAddress": "Change",
+    "addressUnknown": "Point on the map",
     "addAnchor": "Add a place",
     "removeAnchor": "Remove {{label}}",
     "searchPlaceholder": "Search an address or area…",
@@ -145,7 +150,6 @@
     "importance": "Importance",
     "maxMinutes": "At most",
     "noLimit": "no limit",
-    "suggested": "Suggested: {{label}}",
     "limits": "Hard limits",
     "budget": {
       "buy": "Your budget to buy (total)",
@@ -172,6 +176,9 @@
       "supermarket": "Supermarket",
       "maternity_ward": "Maternity ward"
     }
+  },
+  "prefs": {
+    "none": "None"
   },
   "results": {
     "tabs": {
@@ -239,8 +246,9 @@
       "top": "Top 10",
       "anchor": "Your place"
     },
-    "commuteNoAnchor": "Add a place in your preferences to see commute times.",
-    "commuteFrom": "From",
+    "commuteAsk": "Where do you travel to?",
+    "commuteTo": "To",
+    "onMap": "On map",
     "minutes": "{{count}} min",
     "over60": "> 60 min",
     "loading": "Loading map…",
@@ -255,6 +263,7 @@
     "outside": "This address is outside the city map",
     "hover": {
       "match": "{{value}}% match",
+      "commute": "{{time}} to {{place}}",
       "failing": "outside your limits",
       "criterion": "{{criterion}} {{value}}/100",
       "uninhabited": "Nobody lives here",

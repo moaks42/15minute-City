@@ -9,6 +9,9 @@ import { CRITERIA } from '@/api/types'
 export type Step = 'persona' | 'criteria' | 'results' | 'places'
 export type MapMode = 'match' | 'commute' | CriterionId
 export type Tab = 'places' | 'districts'
+/** Sections of the preferences accordion (one open at a time). */
+export type PrefsSection = 'profile' | 'criteria' | 'places' | 'limits'
+const PREFS_SECTIONS: PrefsSection[] = ['profile', 'criteria', 'places', 'limits']
 
 export interface AppState {
   city: CityId | null
@@ -27,7 +30,7 @@ export interface AppState {
   compare: string[]
   hover: string | null
   // UI only, not in the URL.
-  placesOpen: boolean // "My places and limits" section in the preferences panel
+  prefsSection: PrefsSection | null // open accordion section (persisted in localStorage)
   prefsOpen: boolean // preferences: mobile sheet / desktop left panel
   leftOpen: boolean // desktop panels (persisted in localStorage)
   rightOpen: boolean
@@ -60,12 +63,13 @@ export function storedLang(): Lang | null {
   }
 }
 
-function storedPanels(): { leftOpen: boolean; rightOpen: boolean } {
+function storedPanels(): Pick<AppState, 'leftOpen' | 'rightOpen' | 'prefsSection'> {
   try {
-    const p = JSON.parse(localStorage.getItem(PANELS_KEY) ?? '{}') as { left?: boolean; right?: boolean }
-    return { leftOpen: p.left !== false, rightOpen: p.right !== false }
+    const p = JSON.parse(localStorage.getItem(PANELS_KEY) ?? '{}') as { left?: boolean; right?: boolean; section?: string | null }
+    const section = p.section === null ? null : PREFS_SECTIONS.includes(p.section as PrefsSection) ? (p.section as PrefsSection) : 'criteria'
+    return { leftOpen: p.left !== false, rightOpen: p.right !== false, prefsSection: section }
   } catch {
-    return { leftOpen: true, rightOpen: true }
+    return { leftOpen: true, rightOpen: true, prefsSection: 'criteria' }
   }
 }
 
@@ -88,7 +92,9 @@ export function decodeWeights(s: string | null): Weights | null {
   return Object.fromEntries(CRITERIA.map((c, i) => [c, Number(s[i])])) as Weights
 }
 function encodeAnchors(a: Anchor[]) {
-  return a.map((x) => [clean(x.label), x.lat.toFixed(5), x.lon.toFixed(5), x.mode[0], x.level, x.maxMinutes ?? ''].join('~')).join('!')
+  return a
+    .map((x) => [clean(x.label), x.lat.toFixed(5), x.lon.toFixed(5), x.mode[0], x.level, x.maxMinutes ?? '', ...(x.address ? [clean(x.address)] : [])].join('~'))
+    .join('!')
 }
 function decodeAnchors(s: string | null): Anchor[] {
   if (!s) return []
@@ -96,10 +102,11 @@ function decodeAnchors(s: string | null): Anchor[] {
   return s
     .split('!')
     .map((part, i) => {
-      const [label, lat, lon, m, level, max] = part.split('~')
+      const [label, lat, lon, m, level, max, address] = part.split('~')
       return {
         id: `a${i + 1}`,
         label: label ?? '',
+        ...(address ? { address } : {}),
         lat: Number(lat),
         lon: Number(lon),
         mode: modes[m] ?? 'transit',
@@ -145,7 +152,7 @@ export function stateFromUrl(loc: Location = window.location): Partial<AppState>
     lang: storedLang() ?? (lang && LANGS.includes(lang) ? lang : browserLang()),
     // Old links may still say step=places: that section now lives in the results.
     step: step === 'persona' || step === 'criteria' || step === 'results' ? step : step === 'places' || q.get('p') ? 'results' : 'persona',
-    ...(step === 'places' ? { placesOpen: true, prefsOpen: true } : {}),
+    ...(step === 'places' ? { prefsSection: 'places' as const, prefsOpen: true } : {}),
     persona: q.get('p'),
     weights: decodeWeights(q.get('w')) ?? DEFAULT_WEIGHTS,
     anchors: decodeAnchors(q.get('a')),
@@ -185,6 +192,7 @@ interface Actions {
   pickPersona: (id: string, weights: Record<string, number>) => void
   setLevel: (c: CriterionId, level: number) => void
   setAnchors: (a: Anchor[]) => void
+  removeAnchor: (id: string) => void
   setFilters: (f: Partial<Filters>) => void
   select: (h3: string | null) => void
   toggleCompare: (id: string) => void
@@ -206,19 +214,24 @@ const initial: AppState = {
   tab: 'places',
   compare: [],
   hover: null,
-  placesOpen: false,
   prefsOpen: false,
   ...storedPanels(),
   ...stateFromUrl(),
 }
 if (initial.sel) initial.rightOpen = true
+// A link opened on a lens shows its preferences, as switching the lens does (see the subscription below).
+if (initial.mapMode !== 'match') initial.prefsSection = initial.mapMode === 'commute' ? 'places' : 'criteria'
+
+/** The place the commute map measures to: the chosen one, else the first. */
+export const activeAnchor = (s: Pick<AppState, 'anchors' | 'commuteAnchor'>): Anchor | undefined => s.anchors.find((a) => a.id === s.commuteAnchor) ?? s.anchors[0]
+const renumber = (anchors: Anchor[]) => anchors.map((a, i) => ({ ...a, id: `a${i + 1}` }))
 
 export const useApp = create<AppState & Actions>((set, get) => ({
   ...initial,
   set: (p) => {
-    if (p.step === 'places') p = { ...p, step: 'results', placesOpen: true, prefsOpen: true }
-    // Opening the preferences or places expands a collapsed left panel.
-    set(p.placesOpen || p.prefsOpen ? { ...p, leftOpen: true } : p)
+    if (p.step === 'places') p = { ...p, step: 'results', prefsSection: 'places', prefsOpen: true }
+    // Opening the preferences expands a collapsed left panel; switching a section alone does not.
+    set(p.prefsOpen ? { ...p, leftOpen: true } : p)
   },
   setCity: (city) => {
     const s = get()
@@ -245,7 +258,15 @@ export const useApp = create<AppState & Actions>((set, get) => ({
   },
   pickPersona: (persona, weights) => set({ persona, weights: { ...DEFAULT_WEIGHTS, ...weights } as Weights }),
   setLevel: (c, level) => set((s) => ({ weights: { ...s.weights, [c]: level } })),
-  setAnchors: (anchors) => set({ anchors: anchors.map((a, i) => ({ ...a, id: `a${i + 1}` })) }),
+  setAnchors: (anchors) => set({ anchors: renumber(anchors) }),
+  // Ids are positional, so keep the commute map on the same place after renumbering.
+  removeAnchor: (id) => {
+    const s = get()
+    const keep = activeAnchor(s)
+    const rest = s.anchors.filter((a) => a.id !== id)
+    const idx = keep && keep.id !== id ? rest.indexOf(keep) : -1
+    set({ anchors: renumber(rest), commuteAnchor: idx >= 0 ? `a${idx + 1}` : null })
+  },
   setFilters: (f) => set((s) => ({ filters: { ...s.filters, ...f } })),
   // Selecting a place expands a collapsed right panel so the detail is visible.
   select: (sel) => set(sel ? { sel, rightOpen: true } : { sel }),
@@ -268,7 +289,14 @@ useApp.subscribe((s, prev) => {
   lastUrl = url
 })
 useApp.subscribe((s, prev) => {
-  if (s.leftOpen !== prev.leftOpen || s.rightOpen !== prev.rightOpen) save(PANELS_KEY, JSON.stringify({ left: s.leftOpen, right: s.rightOpen }))
+  if (s.leftOpen !== prev.leftOpen || s.rightOpen !== prev.rightOpen || s.prefsSection !== prev.prefsSection)
+    save(PANELS_KEY, JSON.stringify({ left: s.leftOpen, right: s.rightOpen, section: s.prefsSection }))
+})
+// The preferences follow the map lens: commute → my places, one criterion → what matters.
+useApp.subscribe((s, prev) => {
+  if (s.mapMode === prev.mapMode || s.mapMode === 'match') return
+  const section: PrefsSection = s.mapMode === 'commute' ? 'places' : 'criteria'
+  if (s.prefsSection !== section) useApp.setState({ prefsSection: section })
 })
 window.addEventListener('popstate', () => {
   fromPop = true

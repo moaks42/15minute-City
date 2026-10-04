@@ -9,7 +9,8 @@ import { CRITERION_EMOJI } from '@/content/defaults'
 import { STATIC_FALLBACK } from '@/lib/env'
 import { archetypeInfo, fmtNum, fmtPricePerM2 } from '@/lib/format'
 import { CATEGORICAL, seqColor } from '@/lib/palette'
-import { useApp } from '@/state/store'
+import { MODE_ICON } from '@/components/onboarding/PlacesStep'
+import { activeAnchor, useApp } from '@/state/store'
 import { L } from '@/lib/utils'
 import { SaveButton, ScoreBadge } from './RankingPanel'
 
@@ -143,7 +144,7 @@ function Air({ lat, lon }: { lat: number; lon: number }) {
 
 export function DetailPanel({ h3 }: { h3: string }) {
   const { t } = useTranslation()
-  const { city, lang, anchors, budget, select, set } = useApp()
+  const { city, lang, anchors, budget, select, set, mapMode, commuteAnchor } = useApp()
   const q = usePlace(h3)
   const { data: meta } = useMeta(city)
   const similar = useSimilar(h3)
@@ -159,6 +160,11 @@ export function DetailPanel({ h3 }: { h3: string }) {
       </div>
     )
   const arch = p.archetype ? archetypeInfo(p.archetype.id, lang) : null
+  // What the map lens shows, for this place.
+  const lensCrit = mapMode !== 'match' && mapMode !== 'commute' && p.criteria[mapMode] != null ? mapMode : null
+  const lensAnchor = mapMode === 'commute' ? activeAnchor({ anchors, commuteAnchor }) : undefined
+  const lensTime = lensAnchor && p.anchors.find((a) => a.id === lensAnchor.id)
+  const LensIcon = lensAnchor ? MODE_ICON[lensAnchor.mode] : null
   const catLabel = (id: string) => {
     const c = meta?.mustHaveCategories.find((x) => x.id === id)
     return c ? `${c.emoji} ${L(c.label, lang)}` : t(`places.categories.${id}`, { defaultValue: id.replace(/_/g, ' ') })
@@ -177,6 +183,20 @@ export function DetailPanel({ h3 }: { h3: string }) {
           </h2>
           <p className="text-sm text-ink-3">{p.district?.name}</p>
           <p className="text-sm text-ink-2">{t('results.matchPct', { pct: p.score ?? 0 })}</p>
+          {lensAnchor && lensTime && LensIcon && (
+            <p className="flex items-center gap-1.5 text-sm font-semibold text-accent" data-testid="detail-lens">
+              <LensIcon size={15} aria-hidden />
+              {t('mapUi.hover.commute', {
+                time: lensTime.minutes != null ? t('map.minutes', { count: lensTime.minutes }) : t('map.over60'),
+                place: lensAnchor.label || t('map.legend.anchor'),
+              })}
+            </p>
+          )}
+          {lensCrit && (
+            <p className="text-sm font-semibold text-accent" data-testid="detail-lens">
+              <span aria-hidden>{CRITERION_EMOJI[lensCrit]}</span> {t('mapUi.hover.criterion', { criterion: t(`criteria.${lensCrit}`), value: p.criteria[lensCrit] })}
+            </p>
+          )}
           {arch && (
             <Tip content={`${arch.desc} ${t('detail.archetypeHint')}`}>
               <span tabIndex={0} className="mt-1 inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-xs font-medium" data-testid="archetype">
@@ -228,7 +248,7 @@ export function DetailPanel({ h3 }: { h3: string }) {
                 {t('detail.budgetM2', { m2: fmtNum(p.budgetM2, lang) })}
               </p>
             ) : (
-              <button className="text-sm text-accent underline-offset-2 hover:underline" onClick={() => set({ step: 'places' })}>
+              <button className="text-sm text-accent underline-offset-2 hover:underline" onClick={() => set({ prefsSection: 'limits', prefsOpen: true })}>
                 {t('detail.budgetNone')}
               </button>
             )}

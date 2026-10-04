@@ -34,7 +34,7 @@ export function useScoreRequest(aggregate: ScoreRequest['aggregate'] = 'hex'): S
       lang,
       persona: persona ?? 'custom',
       weights,
-      anchors,
+      anchors: anchors.map(({ address: _address, ...a }) => a), // the address is UI-only
       filters,
       budget: city === 'krakow' ? { total: budget } : { monthlyRent: budget },
       aggregate,

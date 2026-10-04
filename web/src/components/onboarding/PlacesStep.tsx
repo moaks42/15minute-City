@@ -1,4 +1,4 @@
-import { Bike, Footprints, Plus, TramFront, Trash2 } from 'lucide-react'
+import { Bike, Footprints, MapPin, Plus, TramFront, Trash2, X } from 'lucide-react'
 import { useId, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useMeta } from '@/api/hooks'
@@ -11,20 +11,109 @@ import { L, cn } from '@/lib/utils'
 import { useApp } from '@/state/store'
 import { LEVEL_EMOJI } from './EmojiRow'
 
-const MODE_ICON: Record<Mode, typeof TramFront> = { transit: TramFront, bike: Bike, walk: Footprints }
+export const MODE_ICON: Record<Mode, typeof TramFront> = { transit: TramFront, bike: Bike, walk: Footprints }
+
 const inputCls = 'h-11 w-full rounded-xl border border-line bg-surface px-3 text-[15px] placeholder:text-ink-3 focus:border-accent focus:outline-none focus-visible:outline-3 focus-visible:outline-accent'
+const labelCls = 'mb-1 block text-xs font-medium text-ink-3'
+
+/** The full address of a geocoder hit, e.g. "Kolbenova 922, Vysočany". */
+const addressOf = (h: GeocodeHit) => (h.sublabel ? `${h.label}, ${h.sublabel}` : h.label)
+/** The short form used as a name when the user gives none. */
+const shortOf = (address: string) => address.split(',')[0]
+
+/** Adds a geocoded place as an anchor, named as the user typed it or after its address. Returns the new anchor id. */
+export function useAddAnchor() {
+  const { t } = useTranslation()
+  const { city, lang, persona, anchors, setAnchors } = useApp()
+  const { data: meta } = useMeta(city)
+  // The persona's next suggestion is only a placeholder example, never a silent default.
+  const suggested = meta?.personas.find((p) => p.id === persona)?.suggestedAnchors?.[anchors.length]
+  const add = (h: GeocodeHit, name = '') => {
+    const address = addressOf(h)
+    setAnchors([...anchors, { id: '', label: name.trim() || shortOf(address), address, lat: h.lat, lon: h.lon, mode: 'transit', level: 4, maxMinutes: null }])
+    return `a${anchors.length + 1}`
+  }
+  return { add, example: suggested ? L(suggested.label, lang) : t('places.exampleName') }
+}
+
+/** Optional name + address search; picking an address adds the place. Shared by the map card and "My places". */
+export function AddPlaceForm({ onAdded, autoFocus, testPrefix }: { onAdded?: (id: string) => void; autoFocus?: boolean; testPrefix?: string }) {
+  const { t } = useTranslation()
+  const { add, example } = useAddAnchor()
+  const [name, setName] = useState('')
+  return (
+    <div className="space-y-2">
+      <input
+        className={inputCls}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        // Enter moves on to the address, as the place is only added once an address is picked.
+        onKeyDown={(e) => e.key === 'Enter' && e.currentTarget.parentElement?.querySelector<HTMLInputElement>('[role=combobox]')?.focus()}
+        placeholder={t('places.nameOptional', { example })}
+        aria-label={t('places.name')}
+        autoFocus={autoFocus}
+        data-testid={`${testPrefix ?? 'place'}-name`}
+      />
+      <GeoSearch
+        onPick={(h) => {
+          const id = add(h, name)
+          setName('')
+          onAdded?.(id)
+        }}
+        testId={testPrefix ? `${testPrefix}-search` : undefined}
+      />
+    </div>
+  )
+}
 
 function AnchorRow({ a, onChange, onRemove }: { a: Anchor; onChange: (a: Anchor) => void; onRemove: () => void }) {
   const { t } = useTranslation()
+  const [editing, setEditing] = useState(false)
+  const nameId = useId()
+  const repick = (h: GeocodeHit) => {
+    const address = addressOf(h)
+    // A name that was just the old address follows the new one; a name the user chose stays.
+    const auto = !a.label || (!!a.address && a.label === shortOf(a.address))
+    onChange({ ...a, lat: h.lat, lon: h.lon, address, label: auto ? shortOf(address) : a.label })
+    setEditing(false)
+  }
   return (
-    <div className="rounded-2xl border border-line bg-surface p-3" data-testid="anchor-row">
-      <div className="flex items-center gap-2">
-        <input className={inputCls} value={a.label} aria-label={t('places.labelPlaceholder')} placeholder={t('places.labelPlaceholder')} onChange={(e) => onChange({ ...a, label: e.target.value })} />
-        <Button variant="ghost" size="icon" onClick={onRemove} aria-label={t('places.removeAnchor', { label: a.label })}>
-          <Trash2 size={18} />
-        </Button>
+    <div className="space-y-3 rounded-2xl border border-line bg-surface p-3" data-testid="anchor-row">
+      <div>
+        <label htmlFor={nameId} className={labelCls}>
+          {t('places.name')}
+        </label>
+        <div className="flex items-center gap-1">
+          <input id={nameId} className={inputCls} value={a.label} placeholder={t('places.labelPlaceholder')} onChange={(e) => onChange({ ...a, label: e.target.value })} />
+          <Button variant="ghost" size="icon" onClick={onRemove} aria-label={t('places.removeAnchor', { label: a.label })} title={t('places.removeAnchor', { label: a.label })}>
+            <Trash2 size={18} />
+          </Button>
+        </div>
       </div>
-      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+      <div>
+        <span className={labelCls}>{t('places.address')}</span>
+        {editing ? (
+          <div className="flex items-center gap-1" onKeyDown={(e) => e.key === 'Escape' && setEditing(false)}>
+            <GeoSearch className="min-w-0 flex-1" onPick={repick} autoFocus />
+            <Button variant="ghost" size="icon" onClick={() => setEditing(false)} aria-label={t('nav.close')} title={t('nav.close')}>
+              <X size={18} />
+            </Button>
+          </div>
+        ) : (
+          <button
+            className={cn(inputCls, 'flex items-center gap-2 text-left hover:border-line-strong')}
+            onClick={() => setEditing(true)}
+            aria-label={`${t('places.address')}: ${a.address || t('places.addressUnknown')}. ${t('places.changeAddress')}`}
+            title={a.address}
+            data-testid="anchor-address"
+          >
+            <MapPin size={16} className="shrink-0 text-ink-3" />
+            <span className={cn('min-w-0 flex-1 truncate', !a.address && 'text-ink-3')}>{a.address || t('places.addressUnknown')}</span>
+            <span className="shrink-0 text-sm font-medium text-accent">{t('places.changeAddress')}</span>
+          </button>
+        )}
+      </div>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <div role="radiogroup" aria-label={t('places.mode')} className="inline-flex rounded-full bg-sunken p-1">
           {(['transit', 'bike', 'walk'] as Mode[]).map((m) => {
             const Icon = MODE_ICON[m]
@@ -103,15 +192,34 @@ function NumberField({ label, value, onChange, suffix, hint, testId }: { label: 
   )
 }
 
-/** `compact`: inside the narrow preferences panel (one column, tighter spacing). */
-export function PlacesStep({ compact = false }: { compact?: boolean }) {
+/** "My places": the places you travel to, each with a name and an address. */
+export function PlacesList() {
   const { t } = useTranslation()
-  const { city, lang, persona, anchors, setAnchors, filters, setFilters, budget, set } = useApp()
+  const { anchors, setAnchors, removeAnchor } = useApp()
+  return (
+    <div className="space-y-3">
+      <p className="text-sm text-ink-3">{t('places.anchorsHint')}</p>
+      {anchors.map((a, i) => (
+        <AnchorRow key={a.id} a={a} onChange={(n) => setAnchors(anchors.map((x, j) => (j === i ? n : x)))} onRemove={() => removeAnchor(a.id)} />
+      ))}
+      {anchors.length < 3 && (
+        <div className="rounded-2xl border border-dashed border-line-strong p-3">
+          <p className="mb-2 text-sm font-medium">{t('places.addAnchor')}</p>
+          <AddPlaceForm />
+        </div>
+      )}
+    </div>
+  )
+}
+
+/** "Hard limits": budget, price, noise and must-haves within walking distance. */
+export function LimitsForm() {
+  const { t } = useTranslation()
+  const { city, lang, filters, setFilters, budget, set } = useApp()
   const { data: meta } = useMeta(city)
   const isBuy = city === 'krakow'
   const cur = CURRENCY[city!]
   const curSym = cur === 'PLN' ? (lang === 'en' ? 'PLN' : 'zł') : lang === 'en' ? 'CZK' : 'Kč'
-  const suggested = meta?.personas.find((p) => p.id === persona)?.suggestedAnchors?.[anchors.length]
   const categories = (meta?.mustHaveCategories?.length ? meta.mustHaveCategories.filter((c) => c.available) : MUST_HAVE.map((id) => ({ id, emoji: '', label: null }))).map((c) => ({
     id: c.id,
     label: `${c.emoji ? c.emoji + ' ' : ''}${c.label ? L(c.label, lang) : t(`places.categories.${c.id}`, { defaultValue: c.id })}`,
@@ -119,80 +227,56 @@ export function PlacesStep({ compact = false }: { compact?: boolean }) {
   const catLabel = (id: string) => categories.find((c) => c.id === id)?.label ?? t(`places.categories.${id}`, { defaultValue: id })
   const [mhCat, setMhCat] = useState(categories[0]?.id ?? 'park')
 
-  const add = (h: GeocodeHit) => {
-    const label = suggested ? L(suggested.label, lang) : h.label.split(',')[0]
-    setAnchors([...anchors, { id: '', label, lat: h.lat, lon: h.lon, mode: suggested?.mode ?? 'transit', level: suggested?.level ?? 4, maxMinutes: null }])
-  }
-
   return (
-    <div className={compact ? 'space-y-5' : 'space-y-8'}>
-      <section>
-        <h3 className={cn('font-semibold', compact && 'text-sm')}>{t('places.anchors')}</h3>
-        <p className="mb-3 text-sm text-ink-3">{t('places.anchorsHint')}</p>
-        <div className="space-y-3">
-          {anchors.map((a, i) => (
-            <AnchorRow key={i} a={a} onChange={(n) => setAnchors(anchors.map((x, j) => (j === i ? n : x)))} onRemove={() => setAnchors(anchors.filter((_, j) => j !== i))} />
-          ))}
-          {anchors.length < 3 && (
-            <div>
-              {suggested && <p className="mb-1 text-xs font-medium text-accent">{t('places.suggested', { label: L(suggested.label, lang) })}</p>}
-              <GeoSearch onPick={add} />
-            </div>
-          )}
-        </div>
-      </section>
+    <div>
+      <div className="grid gap-3">
+        <NumberField
+          testId="budget"
+          label={t(isBuy ? 'places.budget.buy' : 'places.budget.rent')}
+          hint={t('places.budget.hint')}
+          value={budget}
+          onChange={(v) => set({ budget: v })}
+          suffix={isBuy ? curSym : `${curSym}/${lang === 'en' ? 'mo' : lang === 'pl' ? 'mies.' : 'měs.'}`}
+        />
+        <NumberField
+          label={t(isBuy ? 'places.maxPrice.buy' : 'places.maxPrice.rent')}
+          value={isBuy ? filters.maxPricePerM2 : filters.maxRentPerM2}
+          onChange={(v) => setFilters(isBuy ? { maxPricePerM2: v } : { maxRentPerM2: v })}
+          suffix={`${curSym}/m²`}
+        />
+        <NumberField label={t('places.maxNoise')} value={filters.maxNoiseDb} onChange={(v) => setFilters({ maxNoiseDb: v })} suffix="dB" />
+      </div>
 
-      <section>
-        <h3 className={cn('mb-3 font-semibold', compact && 'text-sm')}>{t('places.limits')}</h3>
-        <div className={cn('grid', compact ? 'gap-3' : 'gap-4 sm:grid-cols-2')}>
-          <NumberField
-            testId="budget"
-            label={t(isBuy ? 'places.budget.buy' : 'places.budget.rent')}
-            hint={t('places.budget.hint')}
-            value={budget}
-            onChange={(v) => set({ budget: v })}
-            suffix={isBuy ? curSym : `${curSym}/${lang === 'en' ? 'mo' : lang === 'pl' ? 'mies.' : 'měs.'}`}
-          />
-          <NumberField
-            label={t(isBuy ? 'places.maxPrice.buy' : 'places.maxPrice.rent')}
-            value={isBuy ? filters.maxPricePerM2 : filters.maxRentPerM2}
-            onChange={(v) => setFilters(isBuy ? { maxPricePerM2: v } : { maxRentPerM2: v })}
-            suffix={`${curSym}/m²`}
-          />
-          <NumberField label={t('places.maxNoise')} value={filters.maxNoiseDb} onChange={(v) => setFilters({ maxNoiseDb: v })} suffix="dB" />
-        </div>
-
-        <h4 className={cn('mb-2 text-sm font-medium text-ink-2', compact ? 'mt-4' : 'mt-6')}>{t('places.mustHave')}</h4>
-        <ul className="mb-3 flex flex-wrap gap-2">
-          {filters.mustHave.map((m, i) => (
-            <li key={i} className="inline-flex items-center gap-1 rounded-full bg-accent-soft py-1 pl-3 pr-1 text-sm">
-              {catLabel(m.category)} · {t('places.walkMinutes', { count: m.maxWalkMin })}
-              <button
-                className="grid h-7 w-7 place-items-center rounded-full hover:bg-white"
-                aria-label={t('places.removeAnchor', { label: catLabel(m.category) })}
-                onClick={() => setFilters({ mustHave: filters.mustHave.filter((_, j) => j !== i) })}
-              >
-                <Trash2 size={14} />
-              </button>
-            </li>
+      <h4 className="mb-2 mt-4 text-sm font-medium text-ink-2">{t('places.mustHave')}</h4>
+      <ul className="mb-3 flex flex-wrap gap-2">
+        {filters.mustHave.map((m, i) => (
+          <li key={i} className="inline-flex items-center gap-1 rounded-full bg-accent-soft py-1 pl-3 pr-1 text-sm">
+            {catLabel(m.category)} · {t('places.walkMinutes', { count: m.maxWalkMin })}
+            <button
+              className="grid h-7 w-7 place-items-center rounded-full hover:bg-white"
+              aria-label={t('places.removeAnchor', { label: catLabel(m.category) })}
+              onClick={() => setFilters({ mustHave: filters.mustHave.filter((_, j) => j !== i) })}
+            >
+              <Trash2 size={14} />
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className="flex flex-wrap gap-2">
+        <select className="h-11 min-w-0 flex-1 rounded-xl border border-line bg-surface px-3" value={mhCat} onChange={(e) => setMhCat(e.target.value)} aria-label={t('places.mustHave')}>
+          {categories.map((c) => (
+            <option key={c.id} value={c.id}>
+              {c.label}
+            </option>
           ))}
-        </ul>
-        <div className="flex flex-wrap gap-2">
-          <select className={cn('h-11 rounded-xl border border-line bg-surface px-3', compact && 'min-w-0 flex-1')} value={mhCat} onChange={(e) => setMhCat(e.target.value)} aria-label={t('places.mustHave')}>
-            {categories.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.label}
-              </option>
-            ))}
-          </select>
-          <Button
-            variant="secondary"
-            onClick={() => setFilters({ mustHave: [...filters.mustHave.filter((m) => m.category !== mhCat), { category: mhCat, maxWalkMin: 10 }] })}
-          >
-            <Plus size={16} /> {t('places.addMustHave')}
-          </Button>
-        </div>
-      </section>
+        </select>
+        <Button
+          variant="secondary"
+          onClick={() => setFilters({ mustHave: [...filters.mustHave.filter((m) => m.category !== mhCat), { category: mhCat, maxWalkMin: 10 }] })}
+        >
+          <Plus size={16} /> {t('places.addMustHave')}
+        </Button>
+      </div>
     </div>
   )
 }

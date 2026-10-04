@@ -8,7 +8,21 @@ import { useApp } from '@/state/store'
 
 const inputCls = 'h-11 w-full rounded-xl border border-line bg-surface px-3 text-[15px] placeholder:text-ink-3 focus:border-accent focus:outline-none focus-visible:outline-3 focus-visible:outline-accent'
 
-export function GeoSearch({ onPick, city: cityProp, placeholder, className }: { onPick: (h: GeocodeHit) => void; city?: CityId; placeholder?: string; className?: string }) {
+export function GeoSearch({
+  onPick,
+  city: cityProp,
+  placeholder,
+  className,
+  autoFocus,
+  testId = 'geo-search',
+}: {
+  onPick: (h: GeocodeHit) => void
+  city?: CityId
+  placeholder?: string
+  className?: string
+  autoFocus?: boolean
+  testId?: string
+}) {
   const { t } = useTranslation()
   const storeCity = useApp((s) => s.city)
   const city = (cityProp ?? storeCity)!
@@ -57,7 +71,8 @@ export function GeoSearch({ onPick, city: cityProp, placeholder, className }: { 
         aria-controls={listId}
         aria-autocomplete="list"
         aria-label={label}
-        data-testid="geo-search"
+        data-testid={testId}
+        autoFocus={autoFocus}
         onKeyDown={(e) => {
           if (!hits?.length) return
           if (e.key === 'ArrowDown') setActive((a) => Math.min(hits.length - 1, a + 1))
@@ -87,6 +102,8 @@ export function GeoSearch({ onPick, city: cityProp, placeholder, className }: { 
                   className={cn('cursor-pointer px-3 py-2.5 text-sm', i === active && 'bg-accent-soft')}
                 >
                   {h.label}
+                  {/* Same-named streets differ only by district. */}
+                  {h.sublabel && <span className="ml-1.5 text-ink-3">{h.sublabel}</span>}
                 </li>
               ))}
             </ul>

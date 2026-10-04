@@ -10,7 +10,7 @@ export function Legend({ commuteLabel, breaks }: { commuteLabel?: string; breaks
     mapMode === 'match'
       ? t('map.legend.match')
       : mapMode === 'commute'
-        ? t('map.legend.commute', { place: commuteLabel ?? '–' })
+        ? t('map.legend.commute', { place: commuteLabel || t('map.legend.anchor') })
         : t('map.legend.criterion', { criterion: t(`criteria.${mapMode}`) })
 
   return (
@@ -31,7 +31,6 @@ export function Legend({ commuteLabel, breaks }: { commuteLabel?: string; breaks
             ))}
             <span className="flex-1 text-center">60+</span>
           </div>
-          {!commuteLabel && <p className="mt-2 text-ink-3">{t('map.commuteNoAnchor')}</p>}
         </>
       ) : (
         <>

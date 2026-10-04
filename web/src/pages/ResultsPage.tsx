@@ -1,20 +1,20 @@
-import { ArrowLeft, ChevronDown, ChevronUp, Info, MapPin, PanelLeftClose, PanelLeftOpen, PanelRightClose, PanelRightOpen, SlidersHorizontal } from 'lucide-react'
-import { lazy, Suspense, useEffect, useId, useRef, useState } from 'react'
+import { ArrowLeft, ChevronDown, ChevronUp, Funnel, Heart, Info, MapPin, PanelLeftClose, PanelLeftOpen, PanelRightClose, PanelRightOpen, SlidersHorizontal, UserRound, type LucideIcon } from 'lucide-react'
+import { lazy, Suspense, useEffect, useId, useRef, useState, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useMeta } from '@/api/hooks'
 import { CitySwitch, Header } from '@/components/layout/Header'
 import { CriteriaList } from '@/components/onboarding/CriteriaList'
-import { PlacesStep } from '@/components/onboarding/PlacesStep'
+import { LimitsForm, PlacesList } from '@/components/onboarding/PlacesStep'
 import { Compare } from '@/components/results/Compare'
 import { DetailPanel } from '@/components/results/DetailPanel'
 import { MapModeSwitch } from '@/components/results/MapModeSwitch'
 import { RankingPanel } from '@/components/results/RankingPanel'
 import { Button } from '@/components/ui/button'
 import { Sheet } from '@/components/ui/sheet'
-import { DEFAULT_PERSONAS, type PersonaLite } from '@/content/defaults'
+import { DEFAULT_CRITERIA, DEFAULT_PERSONAS, type CriterionLite, type PersonaLite } from '@/content/defaults'
 import { Attribution } from '@/components/layout/Attribution'
 import { cn } from '@/lib/utils'
-import { useApp } from '@/state/store'
+import { useApp, type PrefsSection as PrefsSectionId } from '@/state/store'
 
 const MapView = lazy(() => import('@/components/results/MapView'))
 
@@ -37,66 +37,87 @@ function scrollToTop(el: HTMLElement) {
   p?.scrollBy({ top: el.getBoundingClientRect().top - p.getBoundingClientRect().top - 8, behavior: 'smooth' })
 }
 
-/** "My places and limits": collapsible, opened from the map or the detail too. */
-function PlacesSection() {
-  const { t } = useTranslation()
-  const { placesOpen, set, anchors, filters, budget } = useApp()
+/** One accordion section of the preferences: a header with a summary, content only while open. */
+function PrefsSection({ id, icon: Icon, title, summary, children }: { id: PrefsSectionId; icon: LucideIcon; title: string; summary: string; children: ReactNode }) {
+  const open = useApp((s) => s.prefsSection === id)
+  const set = useApp((s) => s.set)
   const ref = useRef<HTMLElement>(null)
-  const id = useId()
-  const limits = (budget ? 1 : 0) + (filters.maxPricePerM2 || filters.maxRentPerM2 ? 1 : 0) + (filters.maxNoiseDb ? 1 : 0) + filters.mustHave.length
+  const contentId = useId()
+  const wasOpen = useRef(open)
   useEffect(() => {
-    if (placesOpen && ref.current) scrollToTop(ref.current)
-  }, [placesOpen])
+    // A section that just opened comes into view: its focused row (the criterion on the map) or its header.
+    if (open && !wasOpen.current && ref.current) {
+      const focus = ref.current.querySelector<HTMLElement>('[data-focus]')
+      if (focus) focus.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      else scrollToTop(ref.current)
+    }
+    wasOpen.current = open
+  }, [open])
   return (
-    <section ref={ref} className="mt-3 rounded-2xl border border-line bg-surface" data-testid="places-section">
+    <section ref={ref} className="border-b border-line" data-testid={`${id}-section`}>
       <button
-        className="flex min-h-11 w-full items-center gap-2 rounded-2xl px-3 py-2 text-left font-medium hover:bg-sunken"
-        aria-expanded={placesOpen}
-        aria-controls={id}
-        onClick={() => set({ placesOpen: !placesOpen })}
-        data-testid="places-toggle"
+        className={cn('flex min-h-12 w-full items-center gap-2.5 px-4 py-2 text-left hover:bg-sunken', open && 'sticky top-0 z-10 border-b border-line bg-surface')}
+        aria-expanded={open}
+        aria-controls={contentId}
+        onClick={() => set({ prefsSection: open ? null : id })}
+        data-testid={`${id}-toggle`}
       >
-        <MapPin size={16} className="shrink-0 text-accent" />
-        <span className="min-w-0 flex-1 truncate">{t('places.section')}</span>
-        {anchors.length + limits > 0 && (
-          <span className="rounded-full bg-accent px-1.5 text-xs text-white" aria-label={t('places.sectionCount', { count: anchors.length + limits })}>
-            {anchors.length + limits}
-          </span>
-        )}
-        <ChevronDown size={18} className={cn('shrink-0 text-ink-3 transition-transform', placesOpen && 'rotate-180')} />
+        <Icon size={18} className="shrink-0 text-accent" aria-hidden />
+        <span className="shrink-0 text-[15px] font-semibold">{title}</span>
+        <span className="min-w-0 flex-1 truncate text-right text-sm text-ink-3">{summary}</span>
+        <ChevronDown size={18} className={cn('shrink-0 text-ink-3 transition-transform', open && 'rotate-180')} />
       </button>
-      {placesOpen && (
-        <div id={id} className="border-t border-line px-3 pb-4 pt-3">
-          <PlacesStep compact />
+      {open && (
+        <div id={contentId} className="px-4 pb-4 pt-3">
+          {children}
         </div>
       )}
     </section>
   )
 }
 
+/** Preferences as an accordion: who you are · what matters · my places · hard limits. */
 function Preferences() {
   const { t } = useTranslation()
-  const { city, persona, pickPersona } = useApp()
+  const { city, persona, pickPersona, weights, anchors, filters, budget } = useApp()
   const { data: meta } = useMeta(city)
   const personas: PersonaLite[] = meta?.personas?.length ? meta.personas : DEFAULT_PERSONAS
+  const current = personas.find((p) => p.id === persona)
+  const criteria: CriterionLite[] = (meta?.criteria?.length ? meta.criteria : DEFAULT_CRITERIA).filter((c) => c.coverage > 0)
+  const rated = criteria.filter((c) => (weights[c.id] ?? 0) > 0).sort((a, b) => (weights[b.id] ?? 0) - (weights[a.id] ?? 0))
+  const limits = (budget ? 1 : 0) + (filters.maxPricePerM2 || filters.maxRentPerM2 ? 1 : 0) + (filters.maxNoiseDb ? 1 : 0) + filters.mustHave.length
   return (
-    <div className="px-4 py-3">
-      <div role="radiogroup" aria-label={t('steps.persona.title')} className="mb-2 flex flex-wrap gap-1.5">
-        {personas.map((p) => (
-          <button
-            key={p.id}
-            role="radio"
-            aria-checked={persona === p.id}
-            onClick={() => pickPersona(p.id, p.weights)}
-            className={cn('inline-flex min-h-9 items-center gap-1 rounded-full border px-2.5 text-sm', persona === p.id ? 'border-accent bg-accent-soft font-medium' : 'border-line hover:bg-sunken')}
-            data-testid={`pref-persona-${p.id}`}
-          >
-            <span aria-hidden>{p.emoji}</span> {t(`personas.${p.id}`)}
-          </button>
-        ))}
-      </div>
-      <CriteriaList compact />
-      <PlacesSection />
+    <div>
+      <PrefsSection id="profile" icon={UserRound} title={t('steps.persona.title')} summary={current ? `${current.emoji} ${t(`personas.${current.id}`)}` : t('prefs.none')}>
+        <div role="radiogroup" aria-label={t('steps.persona.title')} className="flex flex-wrap gap-1.5">
+          {personas.map((p) => (
+            <button
+              key={p.id}
+              role="radio"
+              aria-checked={persona === p.id}
+              onClick={() => pickPersona(p.id, p.weights)}
+              className={cn('inline-flex min-h-9 items-center gap-1 rounded-full border px-2.5 text-sm', persona === p.id ? 'border-accent bg-accent-soft font-medium' : 'border-line hover:bg-sunken')}
+              data-testid={`pref-persona-${p.id}`}
+            >
+              <span aria-hidden>{p.emoji}</span> {t(`personas.${p.id}`)}
+            </button>
+          ))}
+        </div>
+      </PrefsSection>
+      <PrefsSection
+        id="criteria"
+        icon={Heart}
+        title={t('steps.criteria.title')}
+        summary={rated.length ? `${rated.slice(0, 4).map((c) => c.emoji).join(' ')}${rated.length > 4 ? ` +${rated.length - 4}` : ''}` : t('prefs.none')}
+      >
+        <CriteriaList compact />
+      </PrefsSection>
+      <PrefsSection id="places" icon={MapPin} title={t('places.anchors')} summary={anchors.length ? anchors.map((a) => a.label).join(', ') : t('prefs.none')}>
+        <PlacesList />
+      </PrefsSection>
+      <PrefsSection id="limits" icon={Funnel} title={t('places.limits')} summary={limits ? t('places.sectionCount', { count: limits }) : t('prefs.none')}>
+        <LimitsForm />
+      </PrefsSection>
     </div>
   )
 }

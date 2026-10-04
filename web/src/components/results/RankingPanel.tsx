@@ -11,7 +11,7 @@ import { archetypeInfo, fmtPricePerM2 } from '@/lib/format'
 import { CATEGORICAL, seqColor } from '@/lib/palette'
 import { cn } from '@/lib/utils'
 import { type SavedItem, useIsSaved, useSaved } from '@/state/saved'
-import { useApp } from '@/state/store'
+import { activeAnchor, useApp } from '@/state/store'
 import { ExpatTwins } from './ExpatTwins'
 
 export function SaveButton({ item, className }: { item: Omit<SavedItem, 'savedAt' | 'city'> & { city: CityId | null }; className?: string }) {
@@ -82,21 +82,23 @@ export function ScoreBadge({ score, size = 'md' }: { score: number; size?: 'md' 
   )
 }
 
-function MiniBars({ criteria }: { criteria: RankedPlace['criteria'] }) {
+/** The four strongest criteria; `focus` (the one the map shows) always comes first and stands out. */
+function MiniBars({ criteria, focus }: { criteria: RankedPlace['criteria']; focus?: string | null }) {
   const { t } = useTranslation()
   const rows = Object.entries(criteria)
-    .sort((a, b) => (b[1] ?? 0) - (a[1] ?? 0))
+    .sort((a, b) => Number(b[0] === focus) - Number(a[0] === focus) || (b[1] ?? 0) - (a[1] ?? 0))
     .slice(0, 4)
+  const lens = !!focus && focus in criteria
   return (
     <ul className="grid grid-cols-2 gap-x-3 gap-y-1">
       {rows.map(([k, v]) => (
-        <li key={k} className="flex items-center gap-1.5 text-xs" title={`${t(`criteria.${k}`)}: ${v}`}>
+        <li key={k} className={cn('flex items-center gap-1.5 text-xs', lens && (k === focus ? 'font-semibold' : 'opacity-55'))} title={`${t(`criteria.${k}`)}: ${v}`}>
           <span aria-hidden>{CRITERION_EMOJI[k as keyof typeof CRITERION_EMOJI]}</span>
           <span className="sr-only">{t(`criteria.${k}`)}</span>
           <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-sunken">
             <span className="block h-full rounded-full bg-accent" style={{ width: `${v}%` }} />
           </span>
-          <span className="w-6 text-right tabular-nums text-ink-3">{v}</span>
+          <span className={cn('w-6 text-right tabular-nums', lens && k === focus ? 'text-accent' : 'text-ink-3')}>{v}</span>
         </li>
       ))}
     </ul>
@@ -105,8 +107,9 @@ function MiniBars({ criteria }: { criteria: RankedPlace['criteria'] }) {
 
 export function PlaceCard({ p }: { p: RankedPlace }) {
   const { t } = useTranslation()
-  const { city, lang, anchors, sel, select, set, compare, toggleCompare, hover } = useApp()
+  const { city, lang, anchors, sel, select, set, compare, toggleCompare, hover, mapMode, commuteAnchor } = useApp()
   const arch = p.archetype ? archetypeInfo(p.archetype.id, lang) : null
+  const lensAnchorId = mapMode === 'commute' ? activeAnchor({ anchors, commuteAnchor })?.id : null
   const active = sel === p.id
   const inCompare = compare.includes(p.id)
   return (
@@ -139,7 +142,7 @@ export function PlaceCard({ p }: { p: RankedPlace }) {
         </div>
       </div>
       <div className="pointer-events-none relative mt-3">
-        <MiniBars criteria={p.criteria} />
+        <MiniBars criteria={p.criteria} focus={mapMode !== 'match' && mapMode !== 'commute' ? mapMode : null} />
       </div>
       {(p.highlights.length > 0 || p.warnings.length > 0) && (
         <ul className="pointer-events-none relative mt-3 space-y-1 text-sm">
@@ -161,7 +164,7 @@ export function PlaceCard({ p }: { p: RankedPlace }) {
         {p.anchors.map((a) => {
           const an = anchors.find((x) => x.id === a.id)
           return (
-            <span key={a.id} className="pointer-events-none">
+            <span key={a.id} className={cn('pointer-events-none', a.id === lensAnchorId && 'font-semibold text-accent')}>
               🧭 {an?.label ?? a.label ?? a.id}: <b className="tabular-nums">{a.minutes != null ? t('map.minutes', { count: a.minutes }) : '–'}</b>
             </span>
           )
